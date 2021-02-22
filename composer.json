@@ -1,0 +1,35 @@
+{
+	"name": "armandphilippot/armandphilippot-com",
+	"description": "A WordPress theme for my personal website.",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Armand Philippot",
+			"email": "contact@armandphilippot.com",
+			"homepage": "https://www.armandphilippot.com/"
+		}
+	],
+	"homepage": "https://github.com/ArmandPhilippot/armandphilippot.com#readme",
+	"support": {
+		"issues": "https://github.com/ArmandPhilippot/armandphilippot.com/issues",
+		"source": "https://github.com/ArmandPhilippot/armandphilippot.com"
+	},
+	"keywords": [
+		"WordPress",
+		"theme"
+	],
+	"type": "wordpress-theme",
+	"require": {
+		"composer/installers": "^1.9"
+	},
+	"require-dev": {
+		"wp-coding-standards/wpcs": "^2.3",
+		"squizlabs/php_codesniffer": "^3.5",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
+	},
+	"scripts": {
+		"lint": "phpcs --standard=WordPress",
+		"fix": "phpcbf --standard=WordPress"
+	}
+}
