@@ -1,0 +1,276 @@
+# Copyright (C) 2021 ArmandPhilippot-com
+# This file is distributed under the same license as the ArmandPhilippot-com package.
+msgid ""
+msgstr ""
+"Project-Id-Version: ArmandPhilippot-com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Armand Philippot <contact@armandphilippot.com>\n"
+"Last-Translator: Armand Philippot <contact@armandphilippot.com>\n"
+"Report-Msgid-Bugs-To: https://github.com/ArmandPhilippot/armandphilippot.com/issues\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: author.php:24
+msgid "Website:"
+msgstr ""
+
+#: author.php:38
+msgid "Introduction"
+msgstr ""
+
+#. translators: %s: author name.
+#: author.php:53
+msgctxt "username"
+msgid "%s's articles"
+msgstr ""
+
+#: category.php:27, index.php:24, search.php:28, tag.php:26
+msgid "Total"
+msgstr ""
+
+#. translators: %s number of posts.
+#. translators: %s number of posts.
+#. translators: %s number of posts.
+#. translators: %s number of posts.
+#: category.php:33, index.php:30, search.php:34, tag.php:32
+msgid "%s article"
+msgid_plural "%s articles"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of comments, 2: post title.
+#: comments.php:39
+msgctxt "comments title"
+msgid "%1$s reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s replies to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:34
+msgctxt "comments title"
+msgid "No comments to &ldquo;%s&rdquo; yet."
+msgstr ""
+
+#: comments.php:55
+msgid "Subscribe to comments"
+msgstr ""
+
+#: comments.php:66
+msgid "Reply"
+msgstr ""
+
+#: comments.php:75, template-parts/main/pagination.php:13
+msgid "Previous"
+msgstr ""
+
+#: comments.php:76, template-parts/main/pagination.php:14
+msgid "Next"
+msgstr ""
+
+#: comments.php:84
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:73
+msgid "Main menu"
+msgstr ""
+
+#: functions.php:74
+msgid "Footer menu"
+msgstr ""
+
+#: functions.php:164
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:166
+msgid "Add widgets here to appear in your blog sidebar."
+msgstr ""
+
+#: functions.php:176
+msgid "Home Widgets"
+msgstr ""
+
+#: functions.php:178
+msgid "Add widgets here to appear below the front-page content."
+msgstr ""
+
+#: functions.php:188
+msgid "Articles & Pages Widgets"
+msgstr ""
+
+#: functions.php:190
+msgid "Add widgets here to appear below the articles and pages."
+msgstr ""
+
+#: header.php:21
+msgid "Skip to content"
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:21, template-parts/main/breadcrumb.php:33
+msgid "Search results for: %s"
+msgstr ""
+
+#: searchform.php:17
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:20
+msgctxt "placeholder"
+msgid "Keywords &hellip;"
+msgstr ""
+
+#: searchform.php:23
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#. translators: %s : reading time in minutes.
+#: inc/helpers.php:71
+msgctxt "reading time"
+msgid "%s minute"
+msgid_plural "%s minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/helpers.php:78
+msgid "minutes"
+msgstr ""
+
+#: inc/helpers.php:65
+msgid "seconds"
+msgstr ""
+
+#. translators: %s : number of words.
+#: inc/helpers.php:85
+msgid "Approximately %1$s words read at %2$s words per minute."
+msgstr ""
+
+#. translators: %s: Name of the current post.
+#. translators: %s: Name of the current post.
+#: inc/hooks.php:203, inc/hooks.php:225
+msgid "Continue reading %s"
+msgstr ""
+
+#: inc/hooks.php:263
+msgid "Leave a comment"
+msgstr ""
+
+#: template-parts/footer/back-to-top.php:12
+msgid "Back to top"
+msgstr ""
+
+#: template-parts/footer/copyright.php:20
+msgid "CC BY SA"
+msgstr ""
+
+#: template-parts/header/branding.php:23, template-parts/header/branding.php:24
+msgid "Logo"
+msgstr ""
+
+#: template-parts/header/main-nav.php:16
+msgid "Open search"
+msgstr ""
+
+#: template-parts/header/main-nav.php:19
+msgid "Close search"
+msgstr ""
+
+#: template-parts/main/articles-list.php:20, template-parts/main/page-header.php:23
+msgid "Published on"
+msgstr ""
+
+#: template-parts/main/articles-list.php:30, template-parts/main/page-header.php:48
+msgid "Reading time"
+msgstr ""
+
+#: template-parts/main/articles-list.php:46
+msgid "Posted in"
+msgstr ""
+
+#: template-parts/main/articles-list.php:67, template-parts/main/page-header.php:60
+msgid "Comments"
+msgstr ""
+
+#: template-parts/main/breadcrumb.php:12
+msgid "Home"
+msgstr ""
+
+#: template-parts/main/breadcrumb.php:76
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: template-parts/main/breadcrumb.php:77
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: template-parts/main/breadcrumb.php:78
+msgctxt "monthly archives date format"
+msgid "m"
+msgstr ""
+
+#: template-parts/main/breadcrumb.php:79
+msgctxt "daily archives date format"
+msgid "d"
+msgstr ""
+
+#: template-parts/main/breadcrumb.php:41
+msgid "Page not found"
+msgstr ""
+
+#: template-parts/main/breadcrumb.php:141
+msgid "You are here:"
+msgstr ""
+
+#: template-parts/main/none.php:13
+msgid "Nothing found"
+msgstr ""
+
+#: template-parts/main/none.php:30
+msgid "It seems we can't find what you're looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/main/none.php:22
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/main/page-content-attachment.php:41
+msgid "The file can be downloaded here:"
+msgstr ""
+
+#: template-parts/main/page-footer.php:84
+msgid "Is not attached to any article."
+msgstr ""
+
+#: template-parts/main/page-footer.php:82
+msgid "Published in:"
+msgstr ""
+
+#: template-parts/main/page-footer.php:23
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/main/page-footer.php:55
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/main/page-header.php:34
+msgid "Updated on"
+msgstr ""
+
+#: template-parts/main/pagination.php:22
+msgid "No more articles."
+msgstr ""

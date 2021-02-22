@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="26.458334mm"
+   height="26.458334mm"
+   viewBox="0 0 26.458334 26.458334"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="chronometer.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="32.074403"
+     inkscape:cy="32.285878"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer3"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1019"
+     inkscape:window-x="0"
+     inkscape:window-y="33"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(93.098732,-28.462618)">
+    <circle
+       style="fill:#13406c;stroke-width:1.00347;fill-opacity:1"
+       id="path835"
+       cx="-79.869568"
+       cy="41.691784"
+       r="13.229167" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Calque 2"
+     style="display:inline">
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.880144"
+       id="path835-3"
+       cx="13.229172"
+       cy="13.229166"
+       r="11.603316" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Calque 5"
+     style="display:inline">
+    <path
+       id="path835-3-3"
+       style="display:inline;fill:#6e4307;fill-opacity:0.25098;stroke-width:0.880144"
+       d="M 13.229173,13.229164 V 1.6258486 c 3.204166,0 6.104995,1.2987452 8.204782,3.3985328 z"
+       sodipodi:nodetypes="cccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Calque 3"
+     style="display:inline">
+    <rect
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.328022"
+       id="rect869"
+       width="1.0951537"
+       height="3.7479868"
+       x="12.681587"
+       y="0.62442726" />
+    <rect
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.328022"
+       id="rect869-7"
+       width="1.0951537"
+       height="3.7479868"
+       x="12.681587"
+       y="22.085918" />
+    <rect
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.328018"
+       id="rect869-5"
+       width="1.0951537"
+       height="3.74789"
+       x="12.681589"
+       y="-4.3723192"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.328022"
+       id="rect869-5-3"
+       width="1.0951537"
+       height="3.7479868"
+       x="12.681589"
+       y="-25.833899"
+       transform="rotate(90)" />
+    <circle
+       style="display:inline;fill:#13406c;fill-opacity:1;stroke-width:0.0960504"
+       id="path835-3-9"
+       cx="13.229172"
+       cy="13.229166"
+       r="1.2662721" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Calque 4">
+    <path
+       id="rect992-0"
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.864145"
+       d="M 13.027212,12.402679 18.858757,6.571134 C 19.335742,6.2978859 19.859923,6.1966433 20.387433,6.0680564 20.305986,6.6143006 20.109232,7.1002183 19.884356,7.59673 l -5.831546,5.831547 z"
+       sodipodi:nodetypes="cccccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Calque 6" />
+</svg>

@@ -260,7 +260,7 @@ add_filter( 'navigation_markup_template', 'apcom_navigation_markup_template', 10
  */
 function apcom_comment_form_submit_button( $button ) {
 	$button =
-	'<button class="comment-form__submit button" type="submit"><span class="button__body">' . __( 'Leave a comment', 'APCom' ) . '</span></button>';
+	'<button class="comment-form__button" type="submit"><span class="button__body">' . __( 'Leave a comment', 'APCom' ) . '</span></button>';
 	return $button;
 }
 add_filter( 'comment_form_submit_button', 'apcom_comment_form_submit_button' );
