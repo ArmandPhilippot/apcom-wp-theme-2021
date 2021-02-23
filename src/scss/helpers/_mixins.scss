@@ -1,0 +1,148 @@
+/// Declare a set of CSS custom properties properly prefixed
+///
+/// @see https://dev.to/felipperegazio/css-custom-properties-vars-with-sass-scss-a-practical-architecture-strategy-1m88
+///
+/// @param {String} $variables - Variable name and value
+/// @param {String} $prefix - Variable prefix
+@mixin declareCssVars($variables, $prefix: apcom) {
+	:root {
+		@each $name, $value in $variables {
+			--#{$prefix}-#{$name}: #{$value};
+		}
+	}
+}
+
+/// Override a CSS custom property value
+///
+/// @see https://dev.to/felipperegazio/css-custom-properties-vars-with-sass-scss-a-practical-architecture-strategy-1m88
+///
+/// @param {String} $name - Variable name
+/// @param {String} $value - Variable value
+/// @param {String} $prefix - Variable prefix
+@mixin cssVar($name, $value: "", $prefix: apcom) {
+	--#{$prefix}-#{$name}: #{$value};
+}
+
+/// Update a set of CSS custom properties properly prefixed
+///
+/// @param {String} $variables - Variable name and value
+/// @param {String} $prefix - Variable prefix
+@mixin updateCssVars($variables, $prefix: apcom) {
+	@each $name, $value in $variables {
+		--#{$prefix}-#{$name}: #{$value};
+	}
+}
+
+/// Media query: media types
+///
+/// @param {Arglist} $types - Media types list.
+@mixin media($type) {
+	@if $type == "retina" {
+		$type: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+	} @else if $type == "screen" or $type == "print" {
+		$type: "only #{$type}";
+	}
+	@media #{$type} {
+		@content;
+	}
+}
+
+/// Media query: min-width / max-width
+///
+/// @param {String} $from - min-width breakpoint.
+/// @param {String} $until - max-width breakpoint.
+@mixin dimensions($from: null, $until: null) {
+	$query: "";
+
+	@if $from {
+		@if type-of($from) == "string" {
+			$size: map-get($breakpoints, $from);
+			$query: "(min-width: #{$size})";
+		} @else {
+			@error "`$from` must be a string.";
+		}
+	}
+
+	@if $from and $until {
+		$query: $query + " and ";
+	}
+
+	@if $until {
+		@if type-of($until) == "string" {
+			$size: map-get($breakpoints, $until);
+			$query: $query + "(max-width: #{$size})";
+		} @else {
+			@error "`$until` must be a string.";
+		}
+	}
+
+	@media #{$query} {
+		@content;
+	}
+}
+
+/// Media query: prefers-reduced-motion
+///
+/// @param {String} $value - Media query value: `no-preference` or `reduce`.
+@mixin reduced-motion($value) {
+	@if $value == "no-preference" or $value == "reduce" {
+		@media (prefers-reduced-motion: #{$value}) {
+			@content;
+		}
+	} @else {
+		@error "Allowed values are `no-preference` and `reduce`.";
+	}
+}
+
+/// Media query: any-pointer
+///
+/// @param {String} $value - Media query value: `fine`, `coarse` or `none`.
+@mixin pointer($value) {
+	@if $value == "fine" or $value == "coarse" or $value == "none" {
+		@media (any-pointer: #{$value}) {
+			@content;
+		}
+	} @else {
+		@error "Allowed values are `fine`, `coarse` and `none`.";
+	}
+}
+
+/// Set up clearfix
+@mixin clearfix {
+	*zoom: 1;
+	&::before,
+	&::after {
+		content: " ";
+		display: table;
+	}
+	&::after {
+		clear: both;
+	}
+}
+
+/// List Reset
+@mixin listReset {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+/// Ordered List Reset
+@mixin orderedListReset {
+	@include listReset;
+	li {
+		display: list-item;
+		counter-increment: none;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+/// Display an inline list with Flexbox
+@mixin flexList {
+	@include listReset();
+	display: flex;
+	flex-flow: row wrap;
+}

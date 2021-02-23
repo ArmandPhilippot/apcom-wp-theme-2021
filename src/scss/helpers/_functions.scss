@@ -1,0 +1,65 @@
+/// Convert px to rem
+/// @param  {Number} $px Value in px
+/// @param  {Number} $standard 1rem = 16px
+/// @return {Number} Value in rem
+@function pxToRem($px, $standard: 16) {
+	@return $px/$standard + 0rem;
+}
+
+/// Convert px to em
+/// @param  {Number} $px Value in px
+/// @param  {Number} $standard 1em = 16px
+/// @return {Number} Value in em
+@function pxToEm($px, $standard: 16) {
+	@return $px/$standard + 0em;
+}
+
+/// Retrieve a CSS variable value with prefix
+/// @see https://dev.to/felipperegazio/css-custom-properties-vars-with-sass-scss-a-practical-architecture-strategy-1m88
+///
+/// @param  {String} $name Variable name
+/// @param  {String} $prefix Variable prefix
+/// @return {String} Variable in CSS format
+@function cssVar($name, $prefix: apcom) {
+	@return var(--#{$prefix}-#{$name});
+}
+
+/// Retrieve the value of a power factor
+/// @param {integer} $number A number to factorize
+/// @param {integer} $exponent The exponent
+/// @return {integer} The number factorized
+@function pow($number, $exponent) {
+	@if (round($exponent) != $exponent) {
+		@return exp($exponent * ln($number));
+	}
+
+	$value: 1;
+
+	@if $exponent > 0 {
+		@for $i from 1 through $exponent {
+			$value: $value * $number;
+		}
+	} @else if $exponent < 0 {
+		@for $i from 1 through -$exponent {
+			$value: $value / $number;
+		}
+	}
+
+	@return $value;
+}
+
+/// Define `clamp` values from a minimum size.
+/// @param {String} $minSize The minimum size.
+/// @param {Number} $minViewport The min viewport size in pixel without unit.
+/// @param {Number} $maxViewport The max viewport size in pixel without unit.
+/// @return {String} The `clamp` function.
+@function clampThis($minSize, $minViewport: 320, $maxViewport: 1200) {
+	@return clamp(
+		#{$minSize},
+		calc(
+			#{$minSize} + (100vw - #{pxToRem($minViewport)}) / (#{$maxViewport} -
+						#{$minViewport})
+		),
+		#{$minSize} * 2
+	);
+}
