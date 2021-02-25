@@ -15,9 +15,7 @@
 >>> TABLE OF CONTENTS:
 ===============================================================================
 1.0 Normalize.css
-2.0 Section title
-3.0 Section title
-4.0 Section title
+2.0 Base
 =============================================================================*/
 
 /**
@@ -30,7 +28,8 @@
 @import "normalize.css/normalize";
 
 /**
-* 2.0 Section title
+* 2.0 Base
 *
-* Description of section, whether or not it has media queries, etc.
+* Define colors, fonts and box-sizing.
 */
+@import "base/fonts";
