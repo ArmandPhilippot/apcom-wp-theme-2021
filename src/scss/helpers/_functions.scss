@@ -50,16 +50,22 @@
 
 /// Define `clamp` values from a minimum size.
 /// @param {String} $minSize The minimum size.
-/// @param {Number} $minViewport The min viewport size in pixel without unit.
-/// @param {Number} $maxViewport The max viewport size in pixel without unit.
+/// @param {Number} $multiplier The multiplier to use to obtain the max value from the minimum size. Default: 2.
+/// @param {Number} $minViewport The min viewport size in pixel without unit. Default: 1280.
+/// @param {Number} $maxViewport The max viewport size in pixel without unit. Default: 320.
 /// @return {String} The `clamp` function.
-@function clampThis($minSize, $minViewport: 320, $maxViewport: 1200) {
+@function clampThis(
+	$minSize,
+	$multiplier: 2,
+	$minViewport: 320,
+	$maxViewport: 1280
+) {
 	@return clamp(
 		#{$minSize},
 		calc(
 			#{$minSize} + (100vw - #{pxToRem($minViewport)}) / (#{$maxViewport} -
 						#{$minViewport})
 		),
-		#{$minSize} * 2
+		#{$minSize} * #{$multiplier}
 	);
 }
