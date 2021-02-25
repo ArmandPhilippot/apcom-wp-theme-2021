@@ -64,6 +64,7 @@ $apcom_comment_form_args = array(
 					'avatar_size' => 100,
 					'style'       => 'ol',
 					'reply_text'  => __( 'Reply', 'APCom' ),
+					'walker'      => new APCom\Includes\Custom_Walker_Comment(),
 				)
 			)
 			?>

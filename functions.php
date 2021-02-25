@@ -204,3 +204,4 @@ add_action( 'widgets_init', 'apcom_widgets_init' );
  */
 require get_parent_theme_file_path( '/inc/helpers.php' );
 require get_parent_theme_file_path( '/inc/hooks.php' );
+require get_parent_theme_file_path( 'inc/class-custom-walker-comment.php' );
