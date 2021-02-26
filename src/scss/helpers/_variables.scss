@@ -1,10 +1,11 @@
 //==============================================================================
 // Theme Information
 //==============================================================================
-$theme_name: "ArmandPhilippot-Com";
+$theme_name: "ArmandPhilippot-com";
 $theme_uri: "https://github.com/ArmandPhilippot/armandphilippot.com";
 $theme_description: "A WordPress theme for my personal website.";
 $theme_version: "0.0.1";
+$theme_wordpress_compatibility: "5.2";
 $theme_author: "Armand Philippot <contact@armandphilippot.com>";
 $theme_author-uri: "https://www.armandphilippot.com/";
 $theme_license: "GNU General Public License v2 or later";
@@ -12,3 +13,53 @@ $theme_license-uri: "http://www.gnu.org/licenses/gpl-2.0.html";
 $theme_domain: "APCom";
 $theme_domain-path: "/languages/";
 $theme_tags: "editor-style, translation-ready";
+
+//=============================================================================
+// Globals
+//=============================================================================
+$golden-number: 1.618;
+$ratio: 1.2;
+$breakpoints: (
+	"xs": pxToEm(568),
+	"sm": pxToEm(768),
+	"md": pxToEm(1024),
+	"lg": pxToEm(1280),
+	"xl": pxToEm(1600),
+);
+
+//=============================================================================
+// Fonts
+//=============================================================================
+$font-family_primary: (Arial, "Liberation Sans", sans-serif);
+$font-family_secondary: ("Kanit", Arial, "Liberation Sans", sans-serif);
+$font-family_mono: ("Courier New", Courier, monospace);
+
+$line-height: $golden-number;
+
+$font-size_base: 16px;
+$font-size_base-rem: pxToRem(16);
+
+$font-size_sm: $font-size_base-rem * pow($ratio, -1);
+$font-size_md: $font-size_base-rem * pow($ratio, 0);
+$font-size_lg: $font-size_base-rem * pow($ratio, 1);
+$font-size_xl: $font-size_base-rem * pow($ratio, 2);
+$font-size_2xl: $font-size_base-rem * pow($ratio, 3);
+$font-size_3xl: $font-size_base-rem * pow($ratio, 4);
+$font-size_4xl: $font-size_base-rem * pow($ratio, 5);
+
+//==============================================================================
+// Spacings
+//==============================================================================
+$spacing_base: $golden-number * 1rem;
+
+$spacing_3xs: $spacing_base / 5;
+$spacing_2xs: $spacing_base / 4;
+$spacing_xs: $spacing_base / 3;
+$spacing_sm: $spacing_base / 2;
+$spacing_md: $spacing_base;
+$spacing_lg: $spacing_base * 1.5;
+$spacing_xl: $spacing_base * 2;
+$spacing_2xl: $spacing_base * 2.5;
+$spacing_3xl: $spacing_base * 3;
+$spacing_4xl: $spacing_base * 4;
+$spacing_5xl: $spacing_base * 5;

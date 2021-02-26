@@ -3,6 +3,7 @@ Theme Name: #{ $theme_name }
 Theme URI: #{ $theme_uri }
 Description: #{ $theme_description }
 Version: #{ $theme_version }
+Requires at least: #{ $theme_wordpress_compatibility }
 Author: #{ $theme_author }
 Author URI: #{ $theme_author-uri }
 License: #{ $theme_license }

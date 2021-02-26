@@ -278,3 +278,19 @@
 	font-style: italic;
 	font-display: swap;
 }
+
+@include declareCssVars(
+	(
+		font-family-primary: #{$font-family_primary},
+		font-family-secondary: #{$font-family_secondary},
+		font-family-mono: #{$font-family_mono},
+		font-size-sm: clampThis($font-size_sm),
+		font-size-md: clampThis($font-size_md),
+		font-size-lg: clampThis($font-size_lg),
+		font-size-xl: clampThis($font-size_xl),
+		font-size-2xl: clampThis($font-size_2xl),
+		font-size-3xl: clampThis($font-size_3xl),
+		font-size-4xl: clampThis($font-size_4xl),
+		line-height: #{$line-height},
+	)
+);
