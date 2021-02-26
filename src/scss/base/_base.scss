@@ -14,4 +14,14 @@ html {
 *:after,
 *:before {
 	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: cssVar(color-bg-secondary);
+	color: cssVar(color-fg);
+	font-family: cssVar(font-family-primary);
+	font-size: cssVar(font-size-md);
+	line-height: cssVar(line-height);
 }

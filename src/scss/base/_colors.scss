@@ -1,0 +1,10 @@
+@include declareCssVars(
+	(
+		color-bg: #{$color_black-squeeze},
+		color-bg-secondary: #{$color_catskill-white},
+		color-bg-tertiary: #{$color_link-water},
+		color-fg: #{$color_big-stone},
+		color-fg-inverted: #{$color_black-squeeze},
+		color-fg-secondary: #{$color_chathams-blue-dark},
+	)
+);
