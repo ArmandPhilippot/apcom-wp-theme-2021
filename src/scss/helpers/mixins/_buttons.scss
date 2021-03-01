@@ -1,0 +1,95 @@
+@mixin buttonBase {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: max-content;
+	cursor: pointer;
+	font-weight: 700;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+@mixin buttonStyle1 {
+	background: linear-gradient(
+			to left,
+			cssVar(color-primary) 0 33.3%,
+			cssVar(color-primary-light) 33.3% 66.6%,
+			cssVar(color-primary-dark) 66.6% 100%
+		)
+		100% 0 / 300% 100% no-repeat;
+	border: none;
+	border-radius: #{pxToRem(3)} / #{pxToRem(8)};
+	color: cssVar(color-fg-inverted);
+	font-variant: small-caps;
+	text-shadow: pxToRem(1) pxToRem(1) pxToRem(1) cssVar(color-shadow-dark);
+	box-shadow: pxToRem(2) pxToRem(2) 0 pxToRem(2) cssVar(color-primary-dark),
+		0 0 0 pxToRem(2) cssVar(color-primary),
+		inset 0 0 0 pxToRem(2) cssVar(color-shadow-lighter),
+		inset 0 pxToRem(-10) pxToRem(16) pxToRem(6) rgba(0, 0, 0, 0.13),
+		inset 0 pxToRem(9) pxToRem(32) pxToRem(4) rgba(255, 255, 255, 0.13);
+	padding: cssVar(spacing-sm) cssVar(spacing-md);
+	transform: skewX(-15deg);
+
+	&:hover {
+		box-shadow: pxToRem(2) pxToRem(2) 0 pxToRem(2)
+				cssVar(color-primary-light),
+			0 0 0 pxToRem(2) cssVar(color-primary-light),
+			inset 0 0 0 pxToRem(2) cssVar(color-shadow-lighter),
+			inset 0 pxToRem(-10) pxToRem(16) pxToRem(6) rgba(0, 0, 0, 0.13),
+			inset 0 pxToRem(9) pxToRem(32) pxToRem(4) rgba(255, 255, 255, 0.13);
+		background-position: 50% 0;
+	}
+
+	&:focus {
+		box-shadow: pxToRem(0) pxToRem(0) pxToRem(4) pxToRem(4)
+				cssVar(color-shadow-dark),
+			pxToRem(2) pxToRem(2) 0 pxToRem(2) cssVar(color-primary-light),
+			0 0 0 pxToRem(2) cssVar(color-primary-light),
+			inset 0 0 0 pxToRem(2) cssVar(color-shadow-lighter),
+			inset 0 pxToRem(-10) pxToRem(16) pxToRem(6) rgba(0, 0, 0, 0.13),
+			inset 0 pxToRem(9) pxToRem(32) pxToRem(4) rgba(255, 255, 255, 0.13);
+		background-position: 50% 0;
+	}
+
+	&:active {
+		background-position: 0 0;
+		box-shadow: 0 0 0 0 cssVar(color-primary-dark),
+			0 0 0 pxToRem(2) cssVar(color-primary-dark),
+			inset 0 0 0 pxToRem(2) cssVar(color-shadow-lighter),
+			inset 0 pxToRem(-10) pxToRem(16) pxToRem(6) rgba(0, 0, 0, 0.13),
+			inset 0 pxToRem(9) pxToRem(32) pxToRem(4) rgba(255, 255, 255, 0.13);
+		transform: skewX(-15deg) translateX(#{pxToRem(3)})
+			translateY(#{pxToRem(3)});
+	}
+
+	span {
+		transform: skewX(15deg);
+	}
+}
+
+@mixin buttonStyle2 {
+	background: cssVar(color-bg);
+	border: pxToRem(2) solid cssVar(color-primary);
+	box-shadow: pxToRem(3) pxToRem(3) 0 0 cssVar(color-primary);
+	padding: cssVar(spacing-xs) cssVar(spacing-sm);
+
+	&:hover,
+	&:focus {
+		color: cssVar(color-primary-light);
+		border-color: cssVar(color-primary-light);
+		box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-primary-light);
+		transform: translateX(#{pxToRem(-3)}) translateY(#{pxToRem(-3)});
+	}
+
+	&:focus {
+		text-decoration: underline;
+	}
+
+	&:active {
+		border-color: cssVar(color-primary-dark);
+		box-shadow: 0 0 0 0 cssVar(color-primary);
+		color: cssVar(color-primary-dark);
+		text-decoration: none;
+		transform: translateX(#{pxToRem(3)}) translateY(#{pxToRem(3)});
+	}
+}
