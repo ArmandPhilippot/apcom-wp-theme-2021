@@ -1,0 +1,205 @@
+form {
+	position: relative;
+}
+
+form,
+button,
+input,
+optgroup,
+select,
+textarea {
+	max-width: 100%;
+}
+
+button,
+input[type="submit"] {
+	@include buttonBase;
+}
+
+label {
+	display: block;
+	cursor: pointer;
+	color: cssVar(color-fg-secondary);
+	font-size: cssVar(font-size-sm);
+	text-transform: uppercase;
+	text-shadow: pxToRem(1) pxToRem(1) 0 cssVar(color-shadow-lighter);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	background: cssVar(color-bg-tertiary);
+	border: pxToRem(1) solid cssVar(color-border);
+	box-shadow: pxToRem(4) pxToRem(4) 0 0 cssVar(color-shadow);
+	padding: cssVar(spacing-sm);
+	width: 100%;
+	transition: all 0.2s ease-in 0s;
+
+	&:hover {
+		box-shadow: pxToRem(5) pxToRem(5) 0 0 cssVar(color-shadow);
+		transform: translateX(#{pxToRem(-1)}) translateY(#{pxToRem(-1)});
+	}
+
+	&:focus {
+		background: cssVar(color-bg);
+		box-shadow: pxToRem(2) pxToRem(2) 0 0 cssVar(color-primary-light);
+		outline: none;
+		transform: translateX(#{pxToRem(2)}) translateY(#{pxToRem(2)});
+	}
+
+	&::placeholder {
+		color: cssVar(color-fg-tertiary);
+	}
+}
+
+input[type="checkbox"] {
+	position: absolute;
+	left: 0;
+	opacity: 0.01;
+
+	+ label {
+		position: relative;
+		padding-left: cssVar(spacing-md);
+		cursor: pointer;
+	}
+
+	&:not(:checked),
+	&:checked {
+		+ label {
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: pxToRem(-2);
+				width: pxToRem(19);
+				height: pxToRem(19);
+				background: cssVar(color-bg-tertiary);
+				border-radius: pxToRem(3);
+				border: pxToRem(1) solid cssVar(color-border);
+				box-shadow: pxToRem(2) pxToRem(2) 0 0 cssVar(color-shadow);
+				transition: all 0.3s ease-in-out 0s;
+			}
+
+			&::after {
+				content: "\2715";
+				speak: never;
+				position: absolute;
+				top: pxToRem(8);
+				left: pxToRem(1);
+				font-size: cssVar(font-size-lg);
+				color: cssVar(color-primary);
+				line-height: 0;
+				transition: all 0.3s ease-in-out 0s;
+			}
+		}
+
+		&:hover {
+			+ label {
+				&::before {
+					box-shadow: pxToRem(3) pxToRem(3) 0 0 cssVar(color-shadow);
+					transform: translateX(#{pxToRem(-1)})
+						translateY(#{pxToRem(-1)});
+				}
+			}
+		}
+
+		&:focus {
+			+ label {
+				&::before {
+					background: cssVar(color-bg);
+					box-shadow: 0 0 0 pxToRem(4)
+							cssVar(color-primary-light-opacity),
+						pxToRem(1) pxToRem(1) 0 0 cssVar(color-shadow);
+					transform: translateX(#{pxToRem(1)})
+						translateY(#{pxToRem(1)});
+				}
+			}
+		}
+	}
+
+	&:not(:checked) {
+		+ label {
+			&::after {
+				opacity: 0;
+				transform: scale(0);
+			}
+		}
+	}
+
+	&:checked {
+		+ label {
+			&::after {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+
+		&:focus {
+			+ label {
+				&::after {
+					top: pxToRem(9);
+					left: pxToRem(2);
+				}
+			}
+		}
+
+		&:hover:not(:focus) {
+			+ label {
+				&::after {
+					top: pxToRem(7);
+					left: 0;
+				}
+			}
+		}
+	}
+}
+
+select {
+	appearance: none;
+	background-color: cssVar(color-bg-tertiary);
+	background-image: url(encodeSvg(
+		'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path d="M3.707 7L3 7.707l6.125 6.125L11 15.707l1.875-1.875L19 7.707 18.293 7l-6.125 6.125L11 14.293l-1.168-1.168L3.707 7" fill="#{$color_chathams-blue-dark}"/></svg>'
+	));
+	background-position: calc(100% - #{cssVar(spacing-sm)}) center;
+	background-repeat: no-repeat;
+	background-size: pxToRem(24);
+	border: pxToRem(1) solid cssVar(color-border);
+	box-shadow: pxToRem(4) pxToRem(4) 0 0 cssVar(color-shadow);
+	cursor: pointer;
+	padding: cssVar(spacing-sm);
+	width: 100%;
+	transition: all 0.3s ease-in-out 0s;
+
+	&:hover {
+		box-shadow: pxToRem(5) pxToRem(5) 0 0 cssVar(color-shadow);
+		transform: translateX(#{pxToRem(-1)}) translateY(#{pxToRem(-1)});
+	}
+
+	&:focus {
+		background-color: cssVar(color-bg);
+		box-shadow: pxToRem(1) pxToRem(1) 0 pxToRem(5)
+				cssVar(color-primary-light-opacity),
+			pxToRem(2) pxToRem(2) 0 0 cssVar(color-shadow);
+		outline: none;
+		transform: translateX(#{pxToRem(2)}) translateY(#{pxToRem(2)});
+	}
+}
+
+option {
+	&:hover {
+		background: cssVar(color-bg-secondary);
+	}
+}
