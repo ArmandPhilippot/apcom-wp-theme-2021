@@ -1,0 +1,92 @@
+a {
+	color: cssVar(color-primary);
+	text-decoration-thickness: pxToRem(2);
+	text-underline-offset: pxToRem(3);
+	transition: all 0.3s ease-in-out 0s;
+
+	&:hover,
+	&:focus {
+		color: cssVar(color-primary-light);
+		text-decoration-color: cssVar(color-primary-light);
+		text-decoration-thickness: pxToRem(4);
+	}
+
+	&:active {
+		color: cssVar(color-primary-dark);
+		text-decoration-color: cssVar(color-primary-dark);
+		text-decoration-thickness: pxToRem(2);
+	}
+
+	&[hreflang],
+	&.download,
+	&.external,
+	&.mailto,
+	&.tel {
+		&::after {
+			display: inline-block;
+			position: relative;
+			vertical-align: super;
+			font-size: cssVar(font-size-sm);
+		}
+	}
+
+	&[hreflang] {
+		&::after {
+			content: "\0000a0["attr(hreflang) "]";
+		}
+
+		&.download {
+			&::after {
+				content: "\0000a0["attr(hreflang) "]\0000a0\21A7";
+			}
+
+			&.external {
+				&::after {
+					content: "\0000a0["attr(hreflang) "]\0000a0\0000a0\f08e\0000a0\21A7";
+				}
+			}
+		}
+
+		&.external {
+			&::after {
+				content: "\0000a0["attr(hreflang) "]\0000a0[\279A]";
+			}
+		}
+
+		&.mailto {
+			&::after {
+				content: "\0000a0["attr(hreflang) "]\0000a0\2709";
+			}
+		}
+
+		&.tel {
+			&::after {
+				content: "\0000a0["attr(hreflang) "]\0000a0\2706";
+			}
+		}
+	}
+
+	&.download {
+		&::after {
+			content: "\0000a0[\21A7]";
+		}
+	}
+
+	&.external {
+		&::after {
+			content: "\0000a0[\279A]";
+		}
+	}
+
+	&.mailto {
+		&::after {
+			content: "\0000a0\2709";
+		}
+	}
+
+	&.tel {
+		&::after {
+			content: "\0000a0\2706";
+		}
+	}
+}
