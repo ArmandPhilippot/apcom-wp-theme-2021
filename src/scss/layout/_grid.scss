@@ -1,0 +1,169 @@
+.body {
+	display: flex;
+	flex-flow: column nowrap;
+	min-height: 100vh;
+}
+
+.header {
+	display: grid;
+	grid-template-columns: cssVar(spacing-md) minmax(0, 1fr) cssVar(spacing-md);
+	align-items: center;
+
+	.branding {
+		grid-column: 2;
+	}
+
+	@include media("screen") {
+		@include dimensions("lg") {
+			grid-template-columns: cssVar(spacing-md) max-content minmax(0, 1fr) cssVar(
+					spacing-md
+				);
+
+			.branding {
+				grid-row: 2;
+				display: grid;
+				grid-template-columns: max-content 1fr;
+				column-gap: cssVar(spacing-md);
+				align-items: center;
+
+				&__logo {
+					grid-column: 1;
+					grid-row: span 2;
+				}
+
+				&__title {
+					grid-column: 2;
+					grid-row: 1;
+				}
+
+				&__baseline {
+					grid-column: 2;
+					grid-row: 2;
+				}
+			}
+
+			.main-nav {
+				grid-column: 3;
+				grid-row: 2;
+				justify-self: end;
+			}
+		}
+
+		@include dimensions("xl") {
+			grid-template-columns: minmax(0, 0.5fr) max-content minmax(0, 3fr) minmax(
+					0,
+					0.5fr
+				);
+		}
+	}
+}
+
+.main,
+.breadcrumb,
+.page__header,
+.page__comments {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+
+	@include media("screen") {
+		@include dimensions("lg") {
+			grid-template-columns: minmax(0, 90ch) minmax(0, 1fr);
+		}
+
+		@include dimensions("xl") {
+			grid-template-columns:
+				minmax(0, 1fr) minmax(0, 90ch)
+				minmax(0, 1fr);
+		}
+	}
+}
+
+.main {
+	flex: 1;
+
+	@include media("screen") {
+		@include dimensions("lg") {
+			grid-auto-flow: row dense;
+			column-gap: cssVar(spacing-md);
+		}
+	}
+}
+
+.breadcrumb,
+.page__header,
+.page__comments {
+	grid-column: 1 / -1;
+}
+
+.breadcrumb {
+	&__list {
+		grid-column: 1;
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				grid-column: 1 / -1;
+			}
+
+			@include dimensions("xl") {
+				grid-column: 2;
+			}
+		}
+	}
+}
+
+.page {
+	display: contents;
+
+	&__title,
+	&__meta,
+	&__introduction,
+	&__body,
+	&__footer,
+	.comments__header,
+	.comments__list,
+	.comments__form {
+		grid-column: 1;
+
+		@include media("screen") {
+			@include dimensions("xl") {
+				grid-column: 2;
+			}
+		}
+	}
+
+	&__body {
+		@include media("screen") {
+			@include dimensions("lg") {
+				grid-row: 3 / span 4;
+			}
+		}
+	}
+
+	&__aside {
+		grid-column: 1;
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				grid-column: 2;
+
+				&--first {
+					grid-row: 3;
+				}
+
+				&--last {
+					grid-row: span 2;
+				}
+			}
+
+			@include dimensions("xl") {
+				&--first {
+					grid-column: 1;
+				}
+				&--last {
+					grid-column: 3;
+					grid-row: 3;
+				}
+			}
+		}
+	}
+}
