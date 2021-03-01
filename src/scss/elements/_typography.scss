@@ -1,0 +1,49 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: cssVar(color-fg-secondary);
+	font-family: cssVar(font-family-secondary);
+	font-weight: 400;
+	margin: 0 0 cssVar(spacing-md);
+}
+
+h1 {
+	font-size: cssVar(font-size-3xl);
+}
+
+h2 {
+	font-size: cssVar(font-size-2xl);
+}
+
+h3 {
+	font-size: cssVar(font-size-xl);
+}
+
+h4 {
+	font-size: cssVar(font-size-lg);
+}
+
+h5 {
+	font-size: cssVar(font-size-md);
+	font-weight: 600;
+}
+
+h6 {
+	font-size: cssVar(font-size-md);
+	font-weight: 500;
+}
+
+p {
+	margin: 0 0 cssVar(spacing-md);
+}
+
+hr {
+	margin: cssVar(spacing-md) 0;
+}
+
+small {
+	font-size: cssVar(font-size-sm);
+}

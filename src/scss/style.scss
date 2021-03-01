@@ -17,6 +17,7 @@
 1.0 Normalize.css
 2.0 Base
 3.0 Helpers
+4.0 Elements
 =============================================================================*/
 
 /**
@@ -44,3 +45,10 @@
 * Classes and other stuffs that can be used anywhere like screen-reader-text.
 */
 @import "helpers/accessibility";
+
+/**
+* 4.0 Elements
+*
+* Define elements styles like links, lists, forms...
+*/
+@import "elements/typography";
