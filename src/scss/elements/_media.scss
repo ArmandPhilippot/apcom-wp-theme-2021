@@ -7,7 +7,7 @@ video {
 }
 
 img {
-	filter: drop-shadow(0 pxToRem(1) pxToRem(2) cssVar(color-shadow));
+	box-shadow: 0 pxToRem(1) pxToRem(3) 0 cssVar(color-shadow);
 	transition: all 0.3s ease-in-out 0s;
 }
 
@@ -30,7 +30,7 @@ a {
 	&:hover,
 	&:focus {
 		img {
-			filter: drop-shadow(0 pxToRem(1) pxToRem(4) cssVar(color-shadow));
+			box-shadow: 0 pxToRem(1) pxToRem(4) pxToRem(1) cssVar(color-shadow);
 			transform: scale(1.05);
 		}
 	}
