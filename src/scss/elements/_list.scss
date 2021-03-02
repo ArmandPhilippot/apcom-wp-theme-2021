@@ -1,0 +1,68 @@
+ul,
+ol,
+dl {
+	margin-bottom: cssVar(spacing-md);
+
+	ul,
+	ol,
+	dl {
+		margin: 0;
+	}
+
+	::marker {
+		color: cssVar(color-secondary);
+	}
+}
+
+ul {
+	padding-left: cssVar(spacing-sm);
+}
+
+ol {
+	list-style-type: none;
+	counter-reset: li;
+
+	> li {
+		display: table;
+		counter-increment: li;
+
+		&::before {
+			content: counters(li, ".") ". ";
+			color: cssVar(color-secondary);
+			display: table-cell;
+			padding-right: cssVar(spacing-2xs);
+		}
+	}
+
+	li ol > li::before {
+		content: counters(li, ".") ". ";
+	}
+}
+
+dl {
+	@include media("screen") {
+		@include dimensions("xs") {
+			display: grid;
+			grid-template-columns: max-content auto;
+			column-gap: cssVar(spacing-sm);
+		}
+	}
+}
+
+dt {
+	font-weight: 700;
+
+	@include media("screen") {
+		@include dimensions("xs") {
+			grid-column: 1;
+		}
+	}
+}
+
+dd {
+	@include media("screen") {
+		@include dimensions("xs") {
+			grid-column: 2;
+		}
+	}
+}
