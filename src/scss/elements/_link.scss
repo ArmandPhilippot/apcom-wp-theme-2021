@@ -11,6 +11,10 @@ a {
 		text-decoration-thickness: pxToRem(4);
 	}
 
+	&:focus {
+		outline: none;
+	}
+
 	&:active {
 		color: cssVar(color-primary-dark);
 		text-decoration-color: cssVar(color-primary-dark);

@@ -1,0 +1,51 @@
+audio,
+img,
+video {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+img {
+	filter: drop-shadow(0 pxToRem(1) pxToRem(2) cssVar(color-shadow));
+	transition: all 0.3s ease-in-out 0s;
+}
+
+figure {
+	margin-bottom: cssVar(spacing-md);
+	max-width: 100%;
+}
+
+figcaption {
+	display: block;
+	color: cssVar(color-fg-tertiary);
+	font-size: cssVar(font-size-sm);
+	font-weight: 700;
+	text-align: center;
+	width: max-content;
+	margin: 0 auto;
+}
+
+a {
+	&:hover,
+	&:focus {
+		img {
+			filter: drop-shadow(0 pxToRem(1) pxToRem(4) cssVar(color-shadow));
+			transform: scale(1.05);
+		}
+	}
+
+	&:focus {
+		img {
+			outline: cssVar(color-primary-light-opacity) solid pxToRem(4);
+		}
+	}
+
+	&:active {
+		img {
+			filter: drop-shadow(0 pxToRem(1) pxToRem(2) cssVar(color-shadow));
+			outline: none;
+			transform: scale(1);
+		}
+	}
+}
