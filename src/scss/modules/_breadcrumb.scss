@@ -1,0 +1,36 @@
+.breadcrumb {
+	background: cssVar(color-bg);
+	padding: cssVar(spacing-md) 0;
+
+	&__list {
+		@include orderedListReset;
+
+		display: inline-block;
+		font-size: cssVar(font-size-sm);
+		padding: 0 cssVar(spacing-md);
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				padding: 0 cssVar(spacing-xl);
+			}
+		}
+
+		li {
+			display: initial;
+		}
+	}
+
+	&__item {
+		&:not(:first-child) {
+			&::before {
+				display: inline-block;
+				content: ">";
+				margin-left: cssVar(spacing-xs);
+			}
+		}
+	}
+
+	&__link {
+		display: inline-block;
+	}
+}
