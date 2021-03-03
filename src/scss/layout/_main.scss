@@ -1,0 +1,248 @@
+.main {
+	background: cssVar(color-bg);
+}
+
+.article {
+	border-bottom: pxToRem(1) solid cssVar(color-border-lighter);
+	margin-bottom: cssVar(spacing-md);
+	padding-bottom: cssVar(spacing-lg);
+
+	&__header {
+		margin-bottom: cssVar(spacing-md);
+	}
+
+	&__body {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	&__figure {
+		margin: 0 auto cssVar(spacing-md);
+
+		@include media("screen") {
+			@include dimensions("sm") {
+				order: 2;
+				margin-left: cssVar(spacing-md);
+				margin-top: cssVar(spacing-xs);
+			}
+
+			@include dimensions("xl") {
+				margin-left: cssVar(spacing-xl);
+			}
+		}
+	}
+
+	&__image {
+		max-height: pxToRem(150);
+		width: auto;
+
+		@include media("screen") {
+			@include dimensions("sm") {
+				max-width: pxToRem(250);
+			}
+		}
+	}
+
+	&__description {
+		@include media("screen") {
+			@include dimensions("sm") {
+				flex: 1 1 calc(#{pxToRem(250)} - #{cssVar(spacing-md)}); // 100% - image width - spacing
+				order: 1;
+			}
+		}
+
+		p {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.page {
+	&__header {
+		background: cssVar(color-bg-secondary);
+		border-bottom: pxToRem(1) solid cssVar(color-border-lighter);
+		border-top: pxToRem(1) solid cssVar(color-border-lighter);
+		padding-bottom: cssVar(spacing-md);
+	}
+
+	&__title {
+		max-width: 100%;
+		width: max-content;
+		padding: cssVar(spacing-sm) cssVar(spacing-md);
+		position: relative;
+		z-index: 1;
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				padding: cssVar(spacing-sm) cssVar(spacing-md)
+					cssVar(spacing-sm) cssVar(spacing-xl);
+			}
+		}
+
+		&::before {
+			display: block;
+			content: "";
+			background: cssVar(color-bg-tertiary);
+			box-shadow: 0 0 0 pxToRem(3) cssVar(color-bg),
+				pxToRem(4) pxToRem(4) 0 0 cssVar(color-shadow-lighter);
+			position: absolute;
+			top: pxToRem(-1); // box shadow size
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin-left: -1000%;
+			z-index: -1;
+		}
+	}
+
+	&__meta {
+		margin-bottom: 0;
+	}
+
+	&__introduction {
+		margin-top: cssVar(spacing-md);
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__meta,
+	&__introduction {
+		padding: 0 cssVar(spacing-md);
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				padding: 0 cssVar(spacing-xl);
+			}
+		}
+	}
+
+	&__body {
+		overflow-x: hidden;
+		padding: cssVar(spacing-md) cssVar(spacing-md) 0;
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				padding: cssVar(spacing-md) cssVar(spacing-xl) 0;
+			}
+		}
+
+		&--front-page {
+			padding: 0;
+		}
+	}
+
+	&__footer {
+		padding: 0 cssVar(spacing-md);
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				padding: cssVar(spacing-md) cssVar(spacing-xl);
+			}
+		}
+
+		.meta {
+			font-size: cssVar(font-size-md);
+
+			&__item {
+				border-right: pxToRem(1) solid cssVar(color-border);
+				padding-right: cssVar(spacing-sm);
+
+				&:last-child,
+				&:only-child {
+					border-right: none;
+					margin-right: 0;
+					padding-right: 0;
+				}
+
+				&:nth-child(2n) {
+					margin-left: 0;
+				}
+
+				@include media("screen") {
+					@include dimensions("xs") {
+						padding-right: cssVar(spacing-md);
+					}
+				}
+			}
+		}
+	}
+
+	&__aside {
+		&--first {
+			padding: cssVar(spacing-md) cssVar(spacing-md) 0;
+		}
+
+		&--last {
+			padding: 0 cssVar(spacing-md) cssVar(spacing-md);
+
+			@include media("screen") {
+				@include dimensions("lg") {
+					padding: cssVar(spacing-md);
+				}
+			}
+		}
+
+		@include media("screen") {
+			@include dimensions("xl") {
+				&--first,
+				&--last {
+					padding: cssVar(spacing-md) cssVar(spacing-xl);
+				}
+			}
+		}
+
+		.toc {
+			ol {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__comments {
+		background: cssVar(color-bg-secondary);
+		border-top: pxToRem(1) solid cssVar(color-border-lighter);
+
+		.comments {
+			&__header {
+				padding: cssVar(spacing-md);
+
+				@include media("screen") {
+					@include dimensions("lg") {
+						padding: cssVar(spacing-md) cssVar(spacing-xl);
+					}
+				}
+			}
+
+			&__list {
+				margin-top: cssVar(spacing-md);
+			}
+
+			&__form {
+				padding: 0 cssVar(spacing-md) cssVar(spacing-lg);
+
+				@include media("screen") {
+					@include dimensions("lg") {
+						padding: 0 cssVar(spacing-xl) cssVar(spacing-xl);
+					}
+				}
+			}
+		}
+	}
+}
+
+.no-comments {
+	.page {
+		&__body {
+			@include media("screen") {
+				@include dimensions("lg") {
+					padding: cssVar(spacing-md) cssVar(spacing-xl)
+						cssVar(spacing-2xl);
+				}
+			}
+		}
+	}
+}
