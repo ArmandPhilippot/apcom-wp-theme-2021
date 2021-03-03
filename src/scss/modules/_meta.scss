@@ -1,0 +1,83 @@
+.meta {
+	display: flex;
+	flex-flow: row wrap;
+	row-gap: cssVar(spacing-sm);
+	justify-content: space-between;
+	color: cssVar(color-fg-secondary);
+	font-size: cssVar(font-size-sm);
+
+	@include media("screen") {
+		@include dimensions("xs") {
+			justify-content: flex-start;
+		}
+	}
+
+	&__item {
+		flex: 0 0 46%;
+
+		&:nth-child(2n) {
+			margin-left: cssVar(spacing-sm);
+		}
+
+		&--has-icon {
+			background: 0 0 / #{pxToRem(22)} 100% no-repeat;
+			padding-left: calc(
+				#{pxToRem(22)} + #{cssVar(spacing-xs)}
+			); // icon size + padding
+		}
+
+		@include media("screen") {
+			@include dimensions("xs") {
+				flex: initial;
+				margin-right: cssVar(spacing-md);
+
+				&:nth-child(2n) {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	&__articles {
+		background-image: url("assets/images/icon-articles.svg");
+	}
+
+	&__publication-date {
+		background-image: url("assets/images/icon-calendar.svg");
+	}
+
+	&__update-date {
+		background-image: url("assets/images/icon-calendar-update.svg");
+	}
+
+	&__reading-time {
+		background-image: url("assets/images/icon-chronometer.svg");
+	}
+
+	&__themes {
+		background-image: url("assets/images/icon-folder.svg");
+	}
+
+	&__theme {
+		@include media("screen") {
+			@include dimensions("sm") {
+				display: inline-block;
+
+				&:not(:first-of-type) {
+					&::before {
+						display: inline-block;
+						content: "/";
+					}
+				}
+			}
+		}
+	}
+
+	&__comments {
+		background-image: url("assets/images/icon-comments.svg");
+	}
+
+	&__website {
+		background-image: url("assets/images/icon-website.svg");
+	}
+}

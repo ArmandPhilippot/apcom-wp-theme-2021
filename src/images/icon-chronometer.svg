@@ -12,7 +12,7 @@
    viewBox="0 0 26.458334 26.458334"
    version="1.1"
    id="svg8"
-   sodipodi:docname="chronometer.svg"
+   sodipodi:docname="icon-chronometer.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
   <defs
      id="defs2" />
@@ -23,11 +23,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="32.074403"
-     inkscape:cy="32.285878"
+     inkscape:zoom="2.8"
+     inkscape:cx="-52.713943"
+     inkscape:cy="75.841881"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer6"
      inkscape:document-rotation="0"
      showgrid="false"
      fit-margin-top="0"
@@ -57,11 +57,11 @@
      id="layer1"
      transform="translate(93.098732,-28.462618)">
     <circle
-       style="fill:#13406c;stroke-width:1.00347;fill-opacity:1"
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.987473"
        id="path835"
        cx="-79.869568"
-       cy="41.691784"
-       r="13.229167" />
+       cy="41.902679"
+       r="13.01827" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -69,11 +69,11 @@
      inkscape:label="Calque 2"
      style="display:inline">
     <circle
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.880144"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.866113"
        id="path835-3"
-       cx="13.229172"
-       cy="13.229166"
-       r="11.603316" />
+       cx="13.229177"
+       cy="13.440065"
+       r="11.418339" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -82,8 +82,8 @@
      style="display:inline">
     <path
        id="path835-3-3"
-       style="display:inline;fill:#6e4307;fill-opacity:0.25098;stroke-width:0.880144"
-       d="M 13.229173,13.229164 V 1.6258486 c 3.204166,0 6.104995,1.2987452 8.204782,3.3985328 z"
+       style="display:inline;fill:#6e4307;fill-opacity:0.25098;stroke-width:0.866113"
+       d="M 13.229178,13.440063 V 2.0217252 c 3.153086,0 6.00767,1.2780409 8.073983,3.3443541 z"
        sodipodi:nodetypes="cccc" />
   </g>
   <g
@@ -92,41 +92,41 @@
      inkscape:label="Calque 3"
      style="display:inline">
     <rect
-       style="fill:#13406c;fill-opacity:1;stroke-width:0.328022"
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.322793"
        id="rect869"
-       width="1.0951537"
-       height="3.7479868"
-       x="12.681587"
-       y="0.62442726" />
+       width="1.077695"
+       height="3.6882372"
+       x="12.690322"
+       y="1.0362684" />
     <rect
-       style="fill:#13406c;fill-opacity:1;stroke-width:0.328022"
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.322793"
        id="rect869-7"
-       width="1.0951537"
-       height="3.7479868"
-       x="12.681587"
-       y="22.085918" />
+       width="1.077695"
+       height="3.6882372"
+       x="12.690322"
+       y="22.155624" />
     <rect
-       style="fill:#13406c;fill-opacity:1;stroke-width:0.328018"
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.322789"
        id="rect869-5"
-       width="1.0951537"
-       height="3.74789"
-       x="12.681589"
-       y="-4.3723192"
+       width="1.077695"
+       height="3.6881418"
+       x="12.901217"
+       y="-4.5135188"
        transform="rotate(90)" />
     <rect
-       style="fill:#13406c;fill-opacity:1;stroke-width:0.328022"
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.322793"
        id="rect869-5-3"
-       width="1.0951537"
-       height="3.7479868"
-       x="12.681589"
-       y="-25.833899"
+       width="1.077695"
+       height="3.6882372"
+       x="12.901217"
+       y="-25.632961"
        transform="rotate(90)" />
     <circle
-       style="display:inline;fill:#13406c;fill-opacity:1;stroke-width:0.0960504"
+       style="display:inline;fill:#13406c;fill-opacity:1;stroke-width:0.0945192"
        id="path835-3-9"
-       cx="13.229172"
-       cy="13.229166"
-       r="1.2662721" />
+       cx="13.229177"
+       cy="13.440065"
+       r="1.2460854" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -134,12 +134,19 @@
      inkscape:label="Calque 4">
     <path
        id="rect992-0"
-       style="fill:#13406c;fill-opacity:1;stroke-width:0.864145"
-       d="M 13.027212,12.402679 18.858757,6.571134 C 19.335742,6.2978859 19.859923,6.1966433 20.387433,6.0680564 20.305986,6.6143006 20.109232,7.1002183 19.884356,7.59673 l -5.831546,5.831547 z"
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.850369"
+       d="m 13.030437,12.626754 5.738579,-5.7385802 c 0.469381,-0.268892 0.985206,-0.3685206 1.504306,-0.4950576 -0.08015,0.5375361 -0.273766,1.0157074 -0.495057,1.5043038 l -5.73858,5.738582 z"
        sodipodi:nodetypes="cccccc" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer6"
-     inkscape:label="Calque 6" />
+     inkscape:label="Calque 6"
+     style="display:inline">
+    <path
+       d="m 18.89036,0.07765367 c 0.2657,-0.46251326 3.290733,1.27633923 3.021097,1.74377283 L 21.148803,3.1410654 C 21.023826,3.357561 18.009618,1.6029636 18.127707,1.3972924 Z M 4.5465475,1.8233946 C 4.2798643,1.3608813 7.2980089,-0.38879582 7.5676442,0.07863773 L 8.3293149,1.3982765 C 8.4542918,1.6147723 5.4272907,3.3487044 5.3082181,3.1430336 Z"
+       id="path12"
+       style="fill:#13406c;fill-opacity:1;stroke-width:0.984068"
+       sodipodi:nodetypes="cccccccccc" />
+  </g>
 </svg>

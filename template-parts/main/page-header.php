@@ -18,7 +18,7 @@ $apcom_comment_count = get_comments_number();
 		<?php single_post_title(); ?>
 	</h1>
 	<dl class="page__meta meta">
-		<div class="meta__item meta__publication-date">
+		<div class="meta__item meta__item--has-icon meta__publication-date">
 			<dt class="meta__term">
 				<?php esc_html_e( 'Published on', 'APCom' ); ?>
 			</dt>
@@ -29,7 +29,7 @@ $apcom_comment_count = get_comments_number();
 			</dd>
 		</div>
 		<?php if ( $apcom_published_on !== $apcom_updated_on ) { ?>
-			<div class="meta__item meta__update-date">
+			<div class="meta__item meta__item--has-icon meta__update-date">
 				<dt class="meta__term">
 					<?php esc_html_e( 'Updated on', 'APCom' ); ?>
 				</dt>
@@ -43,7 +43,7 @@ $apcom_comment_count = get_comments_number();
 		}
 		if ( ! is_attachment() ) {
 			?>
-			<div class="meta__item meta__reading-time">
+			<div class="meta__item meta__item--has-icon meta__reading-time">
 				<dt class="meta__term">
 					<?php esc_html_e( 'Reading time', 'APCom' ); ?>
 				</dt>
@@ -55,7 +55,7 @@ $apcom_comment_count = get_comments_number();
 		}
 		if ( comments_open() || $apcom_comment_count > 0 ) {
 			?>
-			<div class="meta__item meta__comments">
+			<div class="meta__item meta__item--has-icon meta__comments">
 				<dt class="meta__term">
 					<?php esc_html_e( 'Comments', 'APCom' ); ?>
 				</dt>
