@@ -1,0 +1,85 @@
+.header {
+	background: cssVar(color-primary);
+	color: cssVar(color-fg-inverted);
+	text-align: center;
+	padding: cssVar(spacing-xl) 0;
+	position: relative;
+
+	@include media("screen") {
+		@include dimensions("lg") {
+			text-align: left;
+			padding: cssVar(spacing-2xl) 0;
+		}
+	}
+}
+
+.branding {
+	&__logo {
+		position: relative;
+
+		.logo {
+			&__link {
+				display: block;
+				margin: 0 auto;
+				width: max-content;
+				border-radius: 50%;
+				transform-style: preserve-3d;
+				transition: all 0.5s ease-in-out 0s;
+
+				&:hover {
+					transform: rotateY(180deg);
+				}
+			}
+
+			&__image {
+				border: pxToRem(3) solid cssVar(color-border-light);
+				border-radius: 50%;
+				box-shadow: 0 0 pxToRem(3) pxToRem(3) cssVar(color-shadow-dark);
+				width: clampThis(#{pxToRem(90)});
+
+				&--front {
+					position: relative;
+					backface-visibility: hidden;
+				}
+
+				&--back {
+					position: absolute;
+					top: 0;
+					left: 0;
+					backface-visibility: hidden;
+					transform: rotateY(180deg);
+				}
+			}
+		}
+	}
+
+	&__title {
+		font-family: cssVar(font-family-secondary);
+		font-size: cssVar(font-size-4xl);
+		font-weight: 500;
+		margin: 0;
+	}
+
+	&__baseline {
+		font-family: cssVar(font-family-secondary);
+		font-size: cssVar(font-size-md);
+		font-weight: 500;
+		text-transform: uppercase;
+		margin: 0;
+	}
+
+	&__link {
+		color: cssVar(color-fg-inverted);
+
+		&:hover,
+		&:focus {
+			color: cssVar(color-fg-inverted-secondary);
+			text-decoration-color: cssVar(color-fg-inverted-secondary);
+		}
+
+		&:active {
+			color: cssVar(color-fg-inverted);
+			text-decoration-color: cssVar(color-fg-inverted);
+		}
+	}
+}

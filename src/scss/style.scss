@@ -19,6 +19,7 @@
 3.0 Helpers
 4.0 Elements
 5.0 Layout
+6.0 Modules
 =============================================================================*/
 
 /**
@@ -65,3 +66,11 @@
 * Define website layout.
 */
 @import "layout/grid";
+@import "layout/header";
+
+/**
+* 6.0 Modules
+*
+* Define modules used like navigation, breadcrumbs...
+*/
+@import "modules/main-nav";

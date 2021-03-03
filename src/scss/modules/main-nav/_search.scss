@@ -1,0 +1,367 @@
+.main-nav {
+	.search {
+		position: relative;
+		padding-right: cssVar(spacing-xs);
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				position: initial;
+				padding-right: 0;
+			}
+		}
+
+		&__label {
+			display: flex;
+			justify-content: center;
+			background: linear-gradient(
+						to bottom,
+						transparent 0 25%,
+						cssVar(color-primary) 25% 50%,
+						cssVar(color-primary-light) 50% 75%,
+						cssVar(color-primary-dark) 75% 100%
+					)
+					0 33.3% / 100% 400% no-repeat,
+				linear-gradient(
+						to bottom,
+						cssVar(color-bg) 0 50%,
+						transparent 50% 100%
+					)
+					0 100% / 100% 200% no-repeat;
+			height: pxToRem(60);
+			width: pxToRem(60);
+			padding: cssVar(spacing-sm);
+			transition: all 0.3s ease-in-out 0s;
+
+			&:hover {
+				background-position: 0 66.6%, 0 100%;
+			}
+
+			@include media("screen") {
+				@include dimensions("lg") {
+					background: linear-gradient(
+								to top,
+								cssVar(color-bg) pxToRem(3),
+								transparent pxToRem(3)
+							)
+							center / 0 100% no-repeat,
+						linear-gradient(
+								to right,
+								cssVar(color-bg) 100%,
+								transparent 100%
+							)
+							center / 0 100% no-repeat;
+					height: auto;
+
+					&:hover {
+						background-position: center, center;
+						background-size: calc(
+									100% - (#{cssVar(spacing-sm)} * 2)
+								)
+								100%,
+							0 100%; // 100% - padding
+
+						svg {
+							fill: cssVar(color-primary-light);
+						}
+					}
+				}
+			}
+
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+
+		&__icon {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			background: cssVar(color-bg);
+			border-radius: 50%;
+			box-shadow: pxToRem(1) pxToRem(1) pxToRem(2) 0
+				cssVar(color-shadow-dark);
+			padding: pxToRem(3);
+			transition: all 0.2s ease-in-out 0s;
+
+			svg {
+				fill: cssVar(color-primary);
+			}
+		}
+
+		&__checkbox {
+			cursor: pointer;
+			opacity: 0;
+			position: absolute;
+			top: pxToRem(
+				60/2 - 8
+			); // label height/2 - approximate checkbox height
+			right: calc(
+				#{pxToRem(60/2 - 8)} + #{cssVar(spacing-xs)}
+			); // label width/2 - approximate checkbox width + li padding
+			left: auto;
+
+			@include media("screen") {
+				@include dimensions("lg") {
+					top: pxToRem(
+						60/2 - 8
+					); // approximate label height/2 - approximate checkbox height
+					right: pxToRem(
+						60/2 - 8
+					); // label width/2 - approximate checkbox width
+				}
+			}
+
+			&:hover {
+				~ .search__label {
+					background-position: 0 66.6%, 0 100%;
+
+					@include media("screen") {
+						@include dimensions("lg") {
+							background-position: center, center;
+							background-size: calc(
+										100% - (#{cssVar(spacing-sm)} * 2)
+									)
+									100%,
+								0 100%; // 100% - padding
+
+							svg {
+								fill: cssVar(color-primary-light);
+							}
+
+							.search__icon {
+								background: cssVar(color-bg-secondary);
+							}
+						}
+					}
+				}
+			}
+
+			&:focus {
+				~ .search__label {
+					background-position: 0 0, 0 0;
+
+					@include media("screen") {
+						@include dimensions("lg") {
+							background-position: center, center;
+							background-size: 0 100%, 200% 100%;
+						}
+					}
+
+					.search__icon {
+						background: cssVar(color-primary);
+
+						svg {
+							fill: cssVar(color-bg);
+						}
+					}
+				}
+			}
+
+			&:not(:checked) {
+				& ~ .search-form {
+					display: none;
+				}
+			}
+
+			&:checked {
+				& ~ .search-form {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-flow: column wrap;
+
+					@include media("screen") {
+						@include dimensions("lg") {
+							align-items: stretch;
+							justify-content: flex-start;
+							flex-flow: row nowrap;
+						}
+					}
+				}
+
+				~ .search__label {
+					background-position: 0 100%, 0 100%;
+					background-size: 100% 400%, 100% 200%;
+
+					@include media("screen") {
+						@include dimensions("lg") {
+							background-position: center, center;
+							background-size: 50% 100%, 0 100%;
+						}
+					}
+
+					.search__icon {
+						background: cssVar(color-bg-secondary);
+
+						svg {
+							fill: cssVar(color-primary-dark);
+						}
+					}
+				}
+
+				&:hover {
+					~ .search__label {
+						.search__icon {
+							background: cssVar(color-bg);
+
+							svg {
+								fill: cssVar(color-primary-light);
+							}
+						}
+					}
+				}
+
+				&:focus {
+					~ .search__label {
+						background-position: 0 0, 0 0;
+
+						@include media("screen") {
+							@include dimensions("lg") {
+								background-position: center, center;
+								background-size: 0 100%, 200% 100%;
+							}
+						}
+
+						.search__icon {
+							background: cssVar(color-primary);
+
+							svg {
+								fill: cssVar(color-bg);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.search-form {
+		background: cssVar(color-bg-secondary);
+		box-shadow: 0 pxToRem(2) pxToRem(2) 0 cssVar(color-shadow-dark);
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: pxToRem(60); // main-nav height
+		left: 0;
+		padding: cssVar(spacing-md);
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				background: transparent;
+				box-shadow: none;
+				position: absolute;
+				bottom: auto;
+				top: 125%;
+				padding: 0;
+			}
+		}
+
+		&__btn {
+			@include buttonStyle1;
+
+			@include media("screen") {
+				@include dimensions("lg") {
+					background: linear-gradient(
+							to right,
+							transparent 0 33.3%,
+							cssVar(color-primary-light) 33.3% 66.6%,
+							cssVar(color-primary-dark) 66.6% 100%
+						)
+						0% 0% / 300% 100% no-repeat;
+					border-radius: 0;
+					box-shadow: none;
+					padding: 0 cssVar(spacing-3xs);
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					transform: none;
+					transition: all 0.4s ease-in-out 0s;
+
+					&:hover,
+					&:focus {
+						background-position: 50% 0;
+						box-shadow: none;
+
+						svg {
+							fill: cssVar(color-fg-inverted);
+							filter: drop-shadow(
+								pxToRem(1) pxToRem(1) 0
+									cssVar(color-shadow-dark)
+							);
+							transform: rotate(360deg);
+						}
+					}
+
+					&:active {
+						background-position: 100% 0;
+						border: none;
+						box-shadow: none;
+						transform: none;
+					}
+
+					span {
+						transform: none;
+					}
+				}
+			}
+
+			&--icon {
+				display: none;
+
+				@include media("screen") {
+					@include dimensions("lg") {
+						display: flex;
+						align-items: center;
+
+						svg {
+							fill: cssVar(color-primary);
+							filter: drop-shadow(
+								pxToRem(1) pxToRem(1) 0
+									cssVar(color-shadow-lighter)
+							);
+							width: pxToRem(30);
+							transition: all 0.3s ease-in 0s;
+						}
+					}
+				}
+			}
+
+			&--txt {
+				@include media("screen") {
+					@include dimensions("lg") {
+						display: none;
+					}
+				}
+			}
+		}
+
+		&__field {
+			margin: cssVar(spacing-md) 0;
+
+			@include media("screen") {
+				@include dimensions("lg") {
+					margin: 0;
+
+					&:hover {
+						~ .search-form__btn {
+							transform: translateX(#{pxToRem(-2)})
+								translateY(#{pxToRem(-2)});
+						}
+					}
+
+					&:focus {
+						box-shadow: pxToRem(2) pxToRem(2) 0 0
+							cssVar(color-shadow);
+
+						~ .search-form__btn {
+							transform: translateX(#{pxToRem(2)})
+								translateY(#{pxToRem(2)});
+						}
+					}
+				}
+			}
+		}
+	}
+}
