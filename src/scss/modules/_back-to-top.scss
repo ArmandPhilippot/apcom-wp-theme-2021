@@ -1,0 +1,80 @@
+.back-to-top {
+	position: fixed;
+	right: cssVar(spacing-sm);
+	bottom: calc(
+		#{pxToRem(60)} + #{cssVar(spacing-sm)}
+	); // main-nav height + spacing
+	z-index: 2;
+
+	@include media("screen") {
+		@include dimensions("lg") {
+			bottom: cssVar(spacing-sm);
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(
+				to left,
+				cssVar(color-primary) 0 33.3%,
+				cssVar(color-primary-light) 33.3% 66.6%,
+				cssVar(color-primary-dark) 66.6% 100%
+			)
+			100% 0 / 300% 100% no-repeat;
+		border-radius: 50%;
+		box-shadow: 0 0 pxToRem(2) pxToRem(1) cssVar(color-shadow-dark),
+			inset 0 0 0 pxToRem(3) cssVar(color-shadow-lighter),
+			inset 0 pxToRem(-10) pxToRem(16) pxToRem(6) rgba(0, 0, 0, 0.13),
+			inset 0 pxToRem(9) pxToRem(32) pxToRem(4) rgba(255, 255, 255, 0.13);
+		color: cssVar(color-fg-inverted);
+		height: pxToRem(50);
+		width: pxToRem(50);
+
+		&:hover,
+		&:focus {
+			background-position: 50% 0;
+
+			svg {
+				transform: scale(1.2);
+			}
+		}
+
+		&:focus {
+			box-shadow: pxToRem(0) pxToRem(0) pxToRem(2) pxToRem(3)
+					cssVar(color-shadow-dark),
+				0 0 pxToRem(2) pxToRem(1) cssVar(color-shadow-dark),
+				inset 0 0 0 pxToRem(3) cssVar(color-shadow-lighter),
+				inset 0 pxToRem(-10) pxToRem(16) pxToRem(6) rgba(0, 0, 0, 0.13),
+				inset 0 pxToRem(9) pxToRem(32) pxToRem(4)
+					rgba(255, 255, 255, 0.13);
+		}
+
+		&:active {
+			background-position: 0 0;
+			box-shadow: 0 0 pxToRem(2) pxToRem(1) cssVar(color-shadow-dark),
+				inset 0 0 0 pxToRem(3) cssVar(color-shadow-light),
+				inset 0 pxToRem(-10) pxToRem(16) pxToRem(6) rgba(0, 0, 0, 0.13),
+				inset 0 pxToRem(9) pxToRem(32) pxToRem(4)
+					rgba(255, 255, 255, 0.13);
+
+			svg {
+				transform: scale(1);
+			}
+		}
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: pxToRem(30);
+		transform: rotate(-90deg);
+
+		svg {
+			fill: cssVar(color-fg-inverted);
+			transition: all 0.25s ease-in-out 0s;
+		}
+	}
+}
