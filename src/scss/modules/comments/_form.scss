@@ -1,0 +1,36 @@
+.comments__form {
+	#cancel-comment-reply-link {
+		@include buttonBase;
+		@include buttonStyle2;
+		margin: cssVar(spacing-sm) 0;
+	}
+}
+
+.comment-form {
+	@include media("screen") {
+		@include dimensions("sm") {
+			max-width: 80%;
+		}
+	}
+
+	&-cookies-consent {
+		label {
+			display: inline;
+			text-transform: none;
+			vertical-align: text-bottom;
+		}
+	}
+
+	&__button {
+		margin: auto;
+		@include buttonStyle1;
+	}
+
+	label {
+		text-align: left;
+	}
+
+	.required {
+		color: cssVar(color-secondary);
+	}
+}

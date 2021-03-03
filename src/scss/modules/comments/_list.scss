@@ -1,0 +1,176 @@
+.comments__list {
+	@include orderedListReset;
+
+	padding: 0 cssVar(spacing-sm);
+
+	.comments__form {
+		background: cssVar(color-bg);
+		border: pxToRem(1) solid cssVar(color-border-lighter);
+		margin-bottom: cssVar(spacing-md);
+		padding: cssVar(spacing-md);
+
+		@include media("screen") {
+			@include dimensions("sm") {
+				padding: cssVar(spacing-md) cssVar(spacing-xl);
+			}
+		}
+	}
+}
+
+.comment {
+	margin: 0 0 cssVar(spacing-md);
+
+	&__inner {
+		background: cssVar(color-bg);
+		border: pxToRem(1) solid cssVar(color-border-lighter);
+		padding: cssVar(spacing-md);
+		position: relative;
+
+		@include media("screen") {
+			@include dimensions("sm") {
+				display: grid;
+				grid-template-columns: minmax(#{pxToRem(150)}, 1fr) minmax(
+						0,
+						85ch
+					);
+				column-gap: cssVar(spacing-md);
+				padding: cssVar(spacing-sm) cssVar(spacing-md);
+			}
+
+			@include dimensions("lg") {
+				column-gap: cssVar(spacing-xl);
+			}
+		}
+	}
+
+	&__header {
+		@include media("screen") {
+			@include dimensions("sm") {
+				display: contents;
+			}
+		}
+	}
+
+	&__author {
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+		row-gap: cssVar(spacing-sm);
+
+		@include media("screen") {
+			@include dimensions("sm") {
+				grid-row: 1 / 4;
+				text-align: center;
+				padding: cssVar(spacing-md) 0;
+			}
+		}
+	}
+
+	&__date {
+		color: cssVar(color-fg-secondary);
+		font-size: cssVar(font-size-sm);
+		margin: cssVar(spacing-md) 0;
+		display: grid;
+		grid-template-columns: repeat(2, max-content);
+		column-gap: cssVar(spacing-2xs);
+		justify-content: center;
+
+		@include media("screen") {
+			@include dimensions("xs") {
+				column-gap: cssVar(spacing-2xs);
+				margin: cssVar(spacing-md) auto;
+				width: max-content;
+			}
+
+			@include dimensions("sm") {
+				margin: cssVar(spacing-md) 0;
+			}
+		}
+
+		dt {
+			grid-column: 1;
+		}
+
+		dd {
+			grid-column: 2;
+		}
+	}
+
+	&__body {
+		overflow-wrap: break-word;
+
+		@include media("screen") {
+			@include dimensions("sm") {
+				grid-column: 2;
+				grid-row: 2;
+			}
+		}
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding: cssVar(spacing-sm) 0;
+
+		@include media("screen") {
+			@include dimensions("sm") {
+				grid-column: 2;
+				grid-row: 3;
+			}
+		}
+	}
+
+	.author {
+		&__avatar {
+			background: cssVar(color-bg);
+
+			.avatar {
+				border-radius: pxToRem(8);
+				box-shadow: 0 0 pxToRem(1) 0 cssVar(color-shadow-dark),
+					0 0 pxToRem(5) pxToRem(-1) cssVar(color-shadow-dark);
+				max-width: clampThis(#{pxToRem(85)});
+			}
+		}
+
+		&__name {
+			font-weight: 700;
+		}
+
+		&__post {
+			background: cssVar(color-bg-tertiary);
+			box-shadow: 0 0 8px 2px var(--apcom-color-bg-tertiary);
+			color: cssVar(color-fg-secondary);
+			font-size: cssVar(font-size-sm);
+			font-variant: small-caps;
+			padding: cssVar(spacing-2xs) cssVar(spacing-xs);
+			width: max-content;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+
+	&__edit,
+	&__reply {
+		.comment-reply-link {
+			@include buttonBase;
+			@include buttonStyle2;
+		}
+	}
+
+	.children {
+		padding-top: cssVar(spacing-sm);
+		padding-left: cssVar(spacing-md);
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				padding-left: cssVar(spacing-2xl);
+			}
+		}
+
+		.comment {
+			margin: 0 0 cssVar(spacing-sm);
+		}
+	}
+}
