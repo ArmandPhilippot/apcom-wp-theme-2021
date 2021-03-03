@@ -49,8 +49,8 @@ textarea {
 	transition: all 0.2s ease-in 0s;
 
 	&:hover {
-		box-shadow: pxToRem(5) pxToRem(5) 0 0 cssVar(color-shadow);
-		transform: translateX(#{pxToRem(-1)}) translateY(#{pxToRem(-1)});
+		box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-shadow);
+		transform: translateX(#{pxToRem(-2)}) translateY(#{pxToRem(-2)});
 	}
 
 	&:focus {
@@ -184,8 +184,8 @@ select {
 	transition: all 0.3s ease-in-out 0s;
 
 	&:hover {
-		box-shadow: pxToRem(5) pxToRem(5) 0 0 cssVar(color-shadow);
-		transform: translateX(#{pxToRem(-1)}) translateY(#{pxToRem(-1)});
+		box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-shadow);
+		transform: translateX(#{pxToRem(-2)}) translateY(#{pxToRem(-2)});
 	}
 
 	&:focus {
