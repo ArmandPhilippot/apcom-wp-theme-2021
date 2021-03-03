@@ -1,0 +1,53 @@
+.footer {
+	background: cssVar(color-primary);
+	color: cssVar(color-fg-inverted);
+	text-align: center;
+	margin-bottom: pxToRem(60); // main-nav height
+	padding: cssVar(spacing-xl) cssVar(spacing-md) cssVar(spacing-md);
+	position: relative;
+
+	@include media("screen") {
+		@include dimensions("lg") {
+			margin: 0;
+			padding: cssVar(spacing-xl) cssVar(spacing-md);
+		}
+	}
+
+	&__copyright {
+		.copyright {
+			&__icon {
+				fill: cssVar(color-fg-inverted);
+				max-height: pxToRem(30);
+			}
+
+			&__body {
+				font-family: cssVar(font-family-secondary);
+				margin: cssVar(spacing-sm);
+			}
+		}
+	}
+
+	&__nav {
+		.nav {
+			&__list {
+				@include flexList;
+				justify-content: center;
+			}
+
+			&__link {
+				color: cssVar(color-fg-inverted);
+
+				&:hover,
+				&:focus {
+					color: cssVar(color-fg-inverted-secondary);
+					text-decoration-color: cssVar(color-fg-inverted-secondary);
+				}
+
+				&:active {
+					color: cssVar(color-fg-inverted);
+					text-decoration-color: cssVar(color-fg-inverted);
+				}
+			}
+		}
+	}
+}
