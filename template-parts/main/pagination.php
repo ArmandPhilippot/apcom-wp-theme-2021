@@ -16,10 +16,4 @@ if ( get_next_posts_link() || get_previous_posts_link() ) {
 			'class'     => 'articles',
 		)
 	);
-} else {
-	?>
-	<div class="pagination pagination--missing box">
-		<?php esc_html_e( 'No more articles.', 'APCom' ); ?>
-	</div>
-	<?php
 }

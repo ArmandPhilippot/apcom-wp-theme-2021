@@ -197,7 +197,7 @@ add_filter( 'nav_menu_link_attributes', 'apcom_nav_menu_link_attributes', 10, 4 
  */
 function apcom_content_more_link() {
 	$link = sprintf(
-		'<a href="%1$s" class="more-link" itemprop="url"><span class="more-link__body">%2$s</span></a>',
+		'<a href="%1$s" class="more-link" itemprop="url"><span class="more-link__body">%2$s</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.442 15.531" class="more-link__icon"><path d="M0 10.221l20.697-.012v5.322l12.745-7.78L20.612 0v5.322L0 5.416v4.805z" /></svg></a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		// translators: %s: Name of the current post.
 		sprintf( __( 'Continue reading %s', 'APCom' ), the_title( '<span class="screen-reader-text">', '</span>', false ) )
@@ -219,7 +219,7 @@ add_filter( 'the_content_more_link', 'apcom_content_more_link' );
  */
 function apcom_excerpt_more_link( $output ) {
 	$link = sprintf(
-		'<a href="%1$s" class="more-link" itemprop="url"><span class="more-link__body">%2$s</span></a>',
+		'<a href="%1$s" class="more-link" itemprop="url"><span class="more-link__body">%2$s</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.442 15.531" class="more-link__icon"><path d="M0 10.221l20.697-.012v5.322l12.745-7.78L20.612 0v5.322L0 5.416v4.805z" /></svg></a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		// translators: %s: Name of the current post.
 		sprintf( __( 'Continue reading %s', 'APCom' ), the_title( '<span class="screen-reader-text">', '</span>', false ) )

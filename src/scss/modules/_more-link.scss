@@ -1,0 +1,26 @@
+.more-link {
+	@include buttonBase;
+	@include buttonStyle2;
+
+	&__icon {
+		fill: cssVar(color-primary);
+		margin-left: cssVar(spacing-sm);
+		width: pxToRem(20);
+		transition: all 0.3s ease-in-out 0s;
+	}
+
+	&:hover,
+	&:focus {
+		.more-link__icon {
+			fill: cssVar(color-primary-light);
+			transform: scale(1.2);
+		}
+	}
+
+	&:active {
+		.more-link__icon {
+			fill: cssVar(color-primary-dark);
+			transform: scale(1);
+		}
+	}
+}

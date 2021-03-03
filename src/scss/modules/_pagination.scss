@@ -1,0 +1,62 @@
+.pagination {
+	margin: cssVar(spacing-md) 0;
+
+	@include media("screen") {
+		@include dimensions("lg") {
+			margin: cssVar(spacing-xl) 0;
+		}
+	}
+
+	ul.page-numbers {
+		@include flexList;
+
+		.page-numbers {
+			margin-top: pxToRem(-1);
+			margin-left: pxToRem(-1);
+		}
+	}
+
+	a.page-numbers {
+		@include buttonBase;
+		@include buttonStyle2;
+
+		position: relative;
+	}
+
+	&__icon {
+		fill: cssVar(color-primary);
+		width: pxToRem(15);
+		transition: all 0.2s ease-in 0s;
+
+		&--next {
+			margin-left: cssVar(spacing-xs);
+		}
+
+		&--previous {
+			margin-right: cssVar(spacing-xs);
+			rotate: 180deg;
+		}
+	}
+
+	.current,
+	.dots {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: cssVar(color-bg);
+		border: pxToRem(2) solid cssVar(color-primary);
+		text-decoration: none;
+		padding: cssVar(spacing-xs) cssVar(spacing-sm);
+		width: max-content;
+		position: relative;
+	}
+
+	.current {
+		font-weight: 700;
+		transform: translateX(#{pxToRem(3)}) translateY(#{pxToRem(3)});
+	}
+
+	.dots {
+		box-shadow: pxToRem(3) pxToRem(3) 0 0 cssVar(color-primary);
+	}
+}
