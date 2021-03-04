@@ -13,7 +13,7 @@
 			<?php esc_html_e( 'Nothing found', 'APCom' ); ?>
 		</h1>
 	</header>
-	<div class="page__body box" itemprop="articleBody">
+	<div class="page__body" itemprop="articleBody">
 	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) { ?>
 			<p>
 				<?php

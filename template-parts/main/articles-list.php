@@ -7,7 +7,7 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'box' ); ?> itemscope itemtype="http://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting">
 	<header class="article__header">
 		<h2 class="article__title" itemprop="name headline">
 			<a href="<?php the_permalink(); ?>" rel="bookmark" class="article__link">

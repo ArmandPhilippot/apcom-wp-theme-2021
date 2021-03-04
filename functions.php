@@ -166,7 +166,7 @@ function apcom_widgets_init() {
 				'description'   => __( 'Add widgets here to appear in your blog sidebar.', 'APCom' ),
 				'before_title'  => '<h2 class="widget__title">',
 				'after_title'   => '</h2>',
-				'before_widget' => '<div id="%1s" class="widget %2s box">',
+				'before_widget' => '<div id="%1s" class="widget %2s">',
 				'after_widget'  => '</div>',
 			)
 		);
@@ -178,7 +178,7 @@ function apcom_widgets_init() {
 				'description'   => __( 'Add widgets here to appear below the front-page content.', 'APCom' ),
 				'before_title'  => '<h2 class="widget__title">',
 				'after_title'   => '</h2>',
-				'before_widget' => '<div id="%1s" class="widget %2s box">',
+				'before_widget' => '<div id="%1s" class="widget %2s">',
 				'after_widget'  => '</div>',
 			)
 		);
@@ -190,7 +190,7 @@ function apcom_widgets_init() {
 				'description'   => __( 'Add widgets here to appear below the articles and pages.', 'APCom' ),
 				'before_title'  => '<h2 class="widget__title">',
 				'after_title'   => '</h2>',
-				'before_widget' => '<div id="%1s" class="widget %2s box">',
+				'before_widget' => '<div id="%1s" class="widget %2s">',
 				'after_widget'  => '</div>',
 			)
 		);

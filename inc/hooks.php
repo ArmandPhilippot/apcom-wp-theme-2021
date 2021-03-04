@@ -241,7 +241,7 @@ function apcom_navigation_markup_template( $template, $class ) {
 	$class ? $modifier = 'pagination--' . $class : $modifier = '';
 
 	$template = '
-	<nav class="pagination ' . $modifier . ' box">
+	<nav class="pagination ' . $modifier . '">
 		<h2 class="screen-reader-text">%2$s</h2>
 		%3$s
 	</nav>';

@@ -33,7 +33,7 @@ if ( have_posts() ) {
 		</header>
 		<div class="page__body" itemprop="articleBody">
 			<?php if ( '' !== get_the_author_meta( 'description', $apcom_author_id ) ) { ?>
-				<div class="author__introduction box">
+				<div class="author__introduction">
 					<h2 class="author__title">
 						<?php esc_html_e( 'Introduction', 'APCom' ); ?>
 					</h2>
@@ -46,7 +46,7 @@ if ( have_posts() ) {
 				</div>
 			<?php } ?>
 			<div class="author__articles">
-				<h2 class="box">
+				<h2>
 					<?php
 					printf(
 						// translators: %s: author name.

@@ -7,7 +7,7 @@
  */
 
 ?>
-<div id="page__content" class="page__body box" itemprop="articleBody">
+<div id="page__content" class="page__body" itemprop="articleBody">
 	<?php the_content( '', true ); ?>
 </div>
 

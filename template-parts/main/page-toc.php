@@ -8,5 +8,5 @@
 
 ?>
 <section class="page__aside page__aside--first toc">
-	<div class="toc__inner" id="table-of-content"></div>
+	<div class="toc__inner widget" id="table-of-content"></div>
 </section>

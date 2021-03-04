@@ -7,7 +7,7 @@
  */
 
 ?>
-<div id="page__content" class="page__content box" itemprop="articleBody">
+<div id="page__content" class="page__body" itemprop="articleBody">
 	<?php if ( wp_attachment_is_image( $post->id ) ) { ?>
 		<figure>
 			<?php

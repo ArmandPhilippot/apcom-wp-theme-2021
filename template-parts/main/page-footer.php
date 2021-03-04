@@ -7,7 +7,7 @@
  */
 
 ?>
-<footer class="page__footer box">
+<footer class="page__footer">
 	<?php if ( has_category() || has_tag() ) { ?>
 		<dl class="footer__meta meta">
 			<?php

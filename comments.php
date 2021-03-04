@@ -15,7 +15,7 @@ if ( post_password_required() ) {
 }
 
 $apcom_comment_form_args = array(
-	'class_container'    => 'comments__form box',
+	'class_container'    => 'comments__form',
 	'class_form'         => 'comment-form',
 	'class_submit'       => 'comment-form__btn',
 	'title_reply_before' => '<h2 id="reply-title" class="comment-form__title">',
@@ -25,7 +25,7 @@ $apcom_comment_form_args = array(
 );
 ?>
 <section class="page__comments comments">
-	<div class="comments__header box">
+	<div class="comments__header">
 		<h2 class="comments__title">
 			<?php
 			$apcom_comment_count = get_comments_number();

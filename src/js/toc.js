@@ -112,7 +112,7 @@ class TableOfContent {
 		let currentLevel;
 		let previousLevel = currentLevel;
 
-		markup += '<nav class="toc box">';
+		markup += '<nav class="toc">';
 		markup += this.createTitleMarkup();
 		markup += this.startListNode();
 
