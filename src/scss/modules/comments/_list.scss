@@ -18,6 +18,10 @@
 .comment {
 	margin: 0 0 cssVar(spacing-md);
 
+	&:last-child {
+		margin-bottom: cssVar(spacing-md);
+	}
+
 	&__inner {
 		background: cssVar(color-bg);
 		border: pxToRem(1) solid cssVar(color-border-lighter);
@@ -151,10 +155,21 @@
 
 	&__edit,
 	&__reply {
-		.comment-reply-link {
+		a {
 			@include buttonBase;
 			@include buttonStyle2;
 		}
+	}
+
+	&__edit {
+		margin-right: cssVar(spacing-sm);
+	}
+
+	&__awaiting-moderation {
+		flex: 1 1 100%;
+		color: cssVar(color-fg-tertiary);
+		font-size: cssVar(font-size-sm);
+		font-style: italic;
 	}
 
 	.children {

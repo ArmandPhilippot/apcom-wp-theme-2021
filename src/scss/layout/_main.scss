@@ -65,11 +65,17 @@
 		border-bottom: pxToRem(1) solid cssVar(color-border-lighter);
 		border-top: pxToRem(1) solid cssVar(color-border-lighter);
 		padding-bottom: cssVar(spacing-md);
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				padding-bottom: cssVar(spacing-lg);
+			}
+		}
 	}
 
 	&__title {
 		max-width: 100%;
-		padding: cssVar(spacing-sm) 0;
+		padding: cssVar(spacing-sm) cssVar(spacing-sm) cssVar(spacing-sm) 0;
 		position: relative;
 		z-index: 1;
 
@@ -107,7 +113,7 @@
 
 		@include media("screen") {
 			@include dimensions("lg") {
-				padding: cssVar(spacing-md) 0 0;
+				padding: cssVar(spacing-lg) 0 0;
 			}
 		}
 
@@ -117,9 +123,11 @@
 	}
 
 	&__footer {
+		margin: cssVar(spacing-md) 0;
+
 		@include media("screen") {
 			@include dimensions("lg") {
-				padding: cssVar(spacing-md) 0;
+				padding: cssVar(spacing-sm) 0 0;
 			}
 		}
 
@@ -129,6 +137,14 @@
 			&__item {
 				border-right: pxToRem(1) solid cssVar(color-border);
 				padding-right: cssVar(spacing-sm);
+
+				@include media("screen") {
+					@include dimensions("xs") {
+						display: grid;
+						column-gap: cssVar(spacing-sm);
+						padding-right: cssVar(spacing-xl);
+					}
+				}
 
 				&:last-child,
 				&:only-child {
@@ -140,12 +156,6 @@
 				&:nth-child(2n) {
 					margin-left: 0;
 				}
-
-				@include media("screen") {
-					@include dimensions("xs") {
-						padding-right: cssVar(spacing-md);
-					}
-				}
 			}
 		}
 	}
@@ -155,6 +165,12 @@
 
 		&--first {
 			padding: cssVar(spacing-md) 0 0;
+
+			@include media("screen") {
+				@include dimensions("lg") {
+					padding: cssVar(spacing-lg) 0 0;
+				}
+			}
 		}
 
 		&--last {
@@ -171,7 +187,7 @@
 			@include dimensions("xl") {
 				&--first,
 				&--last {
-					padding: cssVar(spacing-md) cssVar(spacing-xl);
+					padding: cssVar(spacing-lg);
 				}
 			}
 		}
@@ -193,7 +209,7 @@
 
 				@include media("screen") {
 					@include dimensions("lg") {
-						padding: cssVar(spacing-md) 0;
+						padding: cssVar(spacing-lg) 0;
 					}
 				}
 			}

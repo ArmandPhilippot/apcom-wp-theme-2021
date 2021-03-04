@@ -14,7 +14,7 @@ pre {
 	font-size: cssVar(font-size-md);
 	max-width: 100%;
 	overflow: auto;
-	margin: cssVar(spacing-md) 0;
+	margin: 0 0 cssVar(spacing-md);
 	padding: cssVar(spacing-sm);
 	white-space: pre;
 	word-spacing: normal;
@@ -24,7 +24,6 @@ pre {
 	@include media("screen") {
 		@include dimensions("sm") {
 			padding: cssVar(spacing-md);
-			width: min-content;
 		}
 	}
 }
