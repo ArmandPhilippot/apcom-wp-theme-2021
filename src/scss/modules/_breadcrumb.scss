@@ -7,13 +7,6 @@
 
 		display: inline-block;
 		font-size: cssVar(font-size-sm);
-		padding: 0 cssVar(spacing-md);
-
-		@include media("screen") {
-			@include dimensions("lg") {
-				padding: 0 cssVar(spacing-xl);
-			}
-		}
 
 		li {
 			display: initial;

@@ -1,8 +1,6 @@
 .comments__list {
 	@include orderedListReset;
 
-	padding: 0 cssVar(spacing-sm);
-
 	.comments__form {
 		background: cssVar(color-bg);
 		border: pxToRem(1) solid cssVar(color-border-lighter);

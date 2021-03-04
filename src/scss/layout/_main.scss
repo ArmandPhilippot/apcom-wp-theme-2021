@@ -69,17 +69,9 @@
 
 	&__title {
 		max-width: 100%;
-		width: max-content;
-		padding: cssVar(spacing-sm) cssVar(spacing-md);
+		padding: cssVar(spacing-sm) 0;
 		position: relative;
 		z-index: 1;
-
-		@include media("screen") {
-			@include dimensions("lg") {
-				padding: cssVar(spacing-sm) cssVar(spacing-md)
-					cssVar(spacing-sm) cssVar(spacing-xl);
-			}
-		}
 
 		&::before {
 			display: block;
@@ -109,24 +101,13 @@
 		}
 	}
 
-	&__meta,
-	&__introduction {
-		padding: 0 cssVar(spacing-md);
-
-		@include media("screen") {
-			@include dimensions("lg") {
-				padding: 0 cssVar(spacing-xl);
-			}
-		}
-	}
-
 	&__body {
 		overflow-x: hidden;
-		padding: cssVar(spacing-md) cssVar(spacing-md) 0;
+		padding: cssVar(spacing-md) 0 0;
 
 		@include media("screen") {
 			@include dimensions("lg") {
-				padding: cssVar(spacing-md) cssVar(spacing-xl) 0;
+				padding: cssVar(spacing-md) 0 0;
 			}
 		}
 
@@ -136,11 +117,9 @@
 	}
 
 	&__footer {
-		padding: 0 cssVar(spacing-md);
-
 		@include media("screen") {
 			@include dimensions("lg") {
-				padding: cssVar(spacing-md) cssVar(spacing-xl);
+				padding: cssVar(spacing-md) 0;
 			}
 		}
 
@@ -172,16 +151,18 @@
 	}
 
 	&__aside {
+		position: relative;
+
 		&--first {
-			padding: cssVar(spacing-md) cssVar(spacing-md) 0;
+			padding: cssVar(spacing-md) 0 0;
 		}
 
 		&--last {
-			padding: 0 cssVar(spacing-md) cssVar(spacing-md);
+			padding: 0 0 cssVar(spacing-md);
 
 			@include media("screen") {
 				@include dimensions("lg") {
-					padding: cssVar(spacing-md);
+					padding: cssVar(spacing-md) 0;
 				}
 			}
 		}
@@ -208,25 +189,25 @@
 
 		.comments {
 			&__header {
-				padding: cssVar(spacing-md);
+				padding: cssVar(spacing-md) 0;
 
 				@include media("screen") {
 					@include dimensions("lg") {
-						padding: cssVar(spacing-md) cssVar(spacing-xl);
+						padding: cssVar(spacing-md) 0;
 					}
 				}
 			}
 
 			&__list {
-				margin-top: cssVar(spacing-md);
+				margin-top: cssVar(spacing-md) 0;
 			}
 
 			&__form {
-				padding: 0 cssVar(spacing-md) cssVar(spacing-lg);
+				padding: 0 0 cssVar(spacing-lg);
 
 				@include media("screen") {
 					@include dimensions("lg") {
-						padding: 0 cssVar(spacing-xl) cssVar(spacing-xl);
+						padding: 0 0 cssVar(spacing-xl);
 					}
 				}
 			}
@@ -239,8 +220,7 @@
 		&__body {
 			@include media("screen") {
 				@include dimensions("lg") {
-					padding: cssVar(spacing-md) cssVar(spacing-xl)
-						cssVar(spacing-2xl);
+					padding: cssVar(spacing-md) 0 cssVar(spacing-2xl);
 				}
 			}
 		}
