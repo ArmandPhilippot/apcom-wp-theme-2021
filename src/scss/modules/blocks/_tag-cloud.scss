@@ -1,0 +1,38 @@
+.wp-block-tag-cloud {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	gap: cssVar(spacing-2xs);
+
+	.tag-cloud-link {
+		border: pxToRem(1) solid cssVar(color-primary);
+		border-radius: pxToRem(3);
+		box-shadow: pxToRem(3) pxToRem(3) 0 0 cssVar(color-primary);
+		text-decoration: none;
+		text-decoration-thickness: 0;
+		padding: cssVar(spacing-3xs);
+
+		&::before {
+			content: "#";
+			speak: never;
+		}
+
+		&:hover,
+		&:focus {
+			box-shadow: pxToRem(5) pxToRem(5) 0 0 cssVar(color-primary-light);
+			transform: translateX(#{pxToRem(-2)}) translateY(#{pxToRem(-2)});
+		}
+
+		&:focus {
+			text-decoration: underline;
+			text-decoration-color: cssVar(color-primary-light);
+			text-decoration-thickness: pxToRem(4);
+		}
+
+		&:active {
+			box-shadow: 0 0 0 0 cssVar(color-primary-dark);
+			text-decoration: none;
+			transform: translateX(#{pxToRem(3)}) translateY(#{pxToRem(3)});
+		}
+	}
+}

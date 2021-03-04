@@ -1,0 +1,32 @@
+.wp-block-search {
+	position: relative;
+
+	&__button {
+		background: linear-gradient(
+				to right,
+				transparent 0 33.3%,
+				cssVar(color-primary-light) 33.3% 66.6%,
+				cssVar(color-primary-dark) 66.6% 100%
+			)
+			0% 0% / 300% 100% no-repeat;
+		border: pxToRem(1) solid cssVar(color-primary);
+		box-shadow: pxToRem(4) pxToRem(4) 0 0 cssVar(color-shadow);
+		margin-left: cssVar(spacing-sm);
+		padding: 0 cssVar(spacing-3xs);
+		transition: all 0.4s ease-in-out 0s;
+
+		&:hover,
+		&:focus {
+			background-position: 50% 0;
+			box-shadow: pxToRem(4) pxToRem(4) 0 0 cssVar(color-primary-light);
+			color: cssVar(color-fg-inverted);
+		}
+
+		&:active {
+			background-position: 100% 0;
+			box-shadow: pxToRem(2) pxToRem(2) 0 0 cssVar(color-primary-dark);
+			color: cssVar(color-fg-inverted);
+			transform: translateX(#{pxToRem(2)}) translateY(#{pxToRem(2)});
+		}
+	}
+}

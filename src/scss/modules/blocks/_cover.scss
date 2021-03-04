@@ -1,0 +1,9 @@
+.wp-block-cover {
+	height: initial;
+
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

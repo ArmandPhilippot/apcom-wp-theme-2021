@@ -1,0 +1,50 @@
+code,
+kbd,
+pre,
+tt,
+var {
+	font-family: cssVar(font-family-mono);
+}
+
+pre {
+	display: block;
+	background: cssVar(color-bg-secondary);
+	border: pxToRem(1) solid cssVar(color-border-light);
+	border-radius: pxToRem(3);
+	font-size: cssVar(font-size-md);
+	max-width: 100%;
+	overflow: auto;
+	margin: cssVar(spacing-md) 0;
+	padding: cssVar(spacing-sm);
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+
+	@include media("screen") {
+		@include dimensions("sm") {
+			padding: cssVar(spacing-md);
+			width: min-content;
+		}
+	}
+}
+
+code {
+	background: cssVar(color-bg-tertiary);
+	box-decoration-break: clone;
+	border-radius: pxToRem(3);
+	color: cssVar(color-fg);
+	padding: pxToRem(2) pxToRem(5);
+	word-wrap: break-word;
+}
+
+pre code {
+	background: inherit;
+	border-radius: 0;
+	display: block;
+	padding: 0;
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+	word-wrap: normal;
+}

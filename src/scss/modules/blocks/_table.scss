@@ -1,0 +1,20 @@
+.wp-block-table {
+	&.is-style-stripes {
+		tbody {
+			tr:nth-child(2n + 1) {
+				background-color: cssVar(color-bg-secondary);
+			}
+		}
+	}
+
+	td,
+	th {
+		border: pxToRem(1) solid cssVar(color-border);
+		padding: cssVar(spacing-xs);
+	}
+
+	tfoot {
+		font-weight: 700;
+		text-align: center;
+	}
+}

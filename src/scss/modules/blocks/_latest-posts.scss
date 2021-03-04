@@ -1,0 +1,30 @@
+.wp-block-latest-posts {
+	&#{&}__list {
+		padding-left: 0;
+
+		li {
+			&::before {
+				display: inline-block;
+				content: "\0025B8";
+				color: cssVar(color-secondary);
+				margin-right: cssVar(spacing-3xs);
+			}
+		}
+	}
+
+	&.is-grid {
+		&.wp-block-latest-posts__list {
+			list-style: none;
+
+			li {
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__post-date {
+		color: cssVar(color-fg-tertiary);
+	}
+}

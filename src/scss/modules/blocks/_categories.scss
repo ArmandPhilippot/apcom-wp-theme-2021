@@ -1,0 +1,16 @@
+.wp-block-categories {
+	&-list {
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			&::before {
+				display: inline-block;
+				content: "#";
+				color: cssVar(color-secondary);
+				font-weight: 700;
+				margin-right: cssVar(spacing-3xs);
+			}
+		}
+	}
+}

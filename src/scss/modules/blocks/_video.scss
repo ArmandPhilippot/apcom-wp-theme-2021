@@ -1,0 +1,8 @@
+.wp-block-video {
+	&.alignwide,
+	&.alignfull {
+		video {
+			width: 100%;
+		}
+	}
+}

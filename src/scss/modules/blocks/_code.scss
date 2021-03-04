@@ -1,0 +1,13 @@
+.wp-block-code {
+	max-height: pxToRem(400);
+
+	@include media("screen") {
+		@include dimensions("lg") {
+			max-height: pxToRem(500);
+		}
+
+		@include dimensions("xl") {
+			max-height: pxToRem(600);
+		}
+	}
+}

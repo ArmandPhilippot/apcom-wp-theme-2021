@@ -59,6 +59,8 @@
 @import "elements/link";
 @import "elements/list";
 @import "elements/media";
+@import "elements/preformat";
+@import "elements/table";
 @import "elements/typography";
 
 /**
@@ -77,6 +79,7 @@
 * Define modules used like navigation, breadcrumbs...
 */
 @import "modules/back-to-top";
+@import "modules/blocks";
 @import "modules/breadcrumb";
 @import "modules/comments";
 @import "modules/gallery";

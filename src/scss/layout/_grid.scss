@@ -129,6 +129,14 @@
 		.alignwide {
 			grid-column: 1 / -1;
 		}
+
+		.alignleft {
+			justify-self: start;
+		}
+
+		.alignright {
+			justify-self: end;
+		}
 	}
 
 	&__aside {

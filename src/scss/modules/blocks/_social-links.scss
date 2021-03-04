@@ -1,0 +1,11 @@
+.wp-block-social-links {
+	a {
+		background: none;
+
+		&:focus {
+			color: currentColor;
+			opacity: 0.85;
+			outline: cssVar(color-primary-light) dotted pxToRem(2);
+		}
+	}
+}
