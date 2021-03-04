@@ -68,15 +68,10 @@ if ( is_home() ) {
 				),
 			);
 		} elseif ( is_date() ) {
-			$apcom_breadcrumb_data += array(
-				3 => array(
-					'txt' => '',
-				),
-			);
-			$apcom_year             = get_the_date( _x( 'Y', 'yearly archives date format', 'APCom' ) );
-			$apcom_month            = get_the_date( _x( 'F', 'monthly archives date format', 'APCom' ) );
-			$apcom_month_number     = get_the_date( _x( 'm', 'monthly archives date format', 'APCom' ) );
-			$apcom_day              = get_the_date( _x( 'd', 'daily archives date format', 'APCom' ) );
+			$apcom_year         = get_the_date( _x( 'Y', 'yearly archives date format', 'APCom' ) );
+			$apcom_month        = get_the_date( _x( 'F', 'monthly archives date format', 'APCom' ) );
+			$apcom_month_number = get_the_date( _x( 'm', 'monthly archives date format', 'APCom' ) );
+			$apcom_day          = get_the_date( _x( 'd', 'daily archives date format', 'APCom' ) );
 			if ( is_day() ) {
 				$apcom_breadcrumb_data += array(
 					3 => array(
@@ -160,7 +155,7 @@ if ( ! apcom_is_frontpage() ) {
 						<?php
 					}
 					?>
-					<meta itemprop="position" content="<?php esc_attr( $apcom_depth ); ?>" />
+					<meta itemprop="position" content="<?php echo esc_attr( $apcom_depth ); ?>" />
 				</li>
 				<?php
 			}
