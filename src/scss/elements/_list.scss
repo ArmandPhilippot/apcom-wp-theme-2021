@@ -3,10 +3,24 @@ ol,
 dl {
 	margin-bottom: cssVar(spacing-md);
 
+	li {
+		margin-bottom: cssVar(spacing-3xs);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
 	ul,
 	ol,
 	dl {
 		margin: 0;
+
+		li {
+			&:first-child {
+				margin-top: cssVar(spacing-3xs);
+			}
+		}
 	}
 
 	::marker {
