@@ -31,7 +31,7 @@ if ( is_home() ) {
 			'txt' => sprintf(
 				// translators: %s: search query.
 				esc_html__( 'Search results for: %s', 'APCom' ),
-				'<span  itemprop="name" class="search-query">' . get_search_query() . '</span>'
+				get_search_query()
 			),
 		),
 	);
