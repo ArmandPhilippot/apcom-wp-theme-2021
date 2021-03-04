@@ -259,6 +259,7 @@
 
 		&__btn {
 			@include buttonStyle1;
+			position: relative;
 
 			@include media("screen") {
 				@include dimensions("lg") {
@@ -329,6 +330,8 @@
 			}
 
 			&--txt {
+				display: block;
+
 				@include media("screen") {
 					@include dimensions("lg") {
 						display: none;
@@ -343,19 +346,30 @@
 			@include media("screen") {
 				@include dimensions("lg") {
 					margin: 0;
+				}
+			}
 
-					&:hover {
-						~ .search-form__btn {
+			&:hover {
+				~ .search-form__btn {
+					transform: skewX(-15deg);
+
+					@include media("screen") {
+						@include dimensions("lg") {
 							transform: translateX(#{pxToRem(-2)})
 								translateY(#{pxToRem(-2)});
 						}
 					}
+				}
+			}
 
-					&:focus {
-						box-shadow: pxToRem(2) pxToRem(2) 0 0
-							cssVar(color-shadow);
+			&:focus {
+				box-shadow: pxToRem(2) pxToRem(2) 0 0 cssVar(color-shadow);
 
-						~ .search-form__btn {
+				~ .search-form__btn {
+					transform: skewX(-15deg);
+
+					@include media("screen") {
+						@include dimensions("lg") {
 							transform: translateX(#{pxToRem(2)})
 								translateY(#{pxToRem(2)});
 						}
