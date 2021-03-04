@@ -1,0 +1,48 @@
+.alignleft {
+	/*rtl:ignore*/
+	float: left;
+	/*rtl:ignore*/
+	margin-right: cssVar(spacing-sm);
+}
+
+.alignright {
+	/*rtl:ignore*/
+	float: right;
+	/*rtl:ignore*/
+	margin-left: cssVar(spacing-sm);
+}
+
+.alignleft,
+.alignright {
+	margin-top: cssVar(spacing-xs);
+	margin-bottom: cssVar(spacing-xs);
+	max-width: calc(50% - #{cssVar(spacing-sm)});
+}
+
+.aligncenter {
+	display: block;
+	margin: cssVar(spacing-md) auto;
+	text-align: center;
+}
+
+.alignfull,
+.alignwide {
+	max-width: 100vw;
+}
+
+.alignwide {
+	width: 95vw;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media("screen") {
+		@include dimensions("lg") {
+			margin-left: 0;
+			width: 80vw;
+		}
+
+		@include dimensions("xl") {
+			margin-left: auto;
+		}
+	}
+}
