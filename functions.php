@@ -161,9 +161,21 @@ function apcom_widgets_init() {
 	if ( function_exists( 'register_sidebar' ) ) {
 		register_sidebar(
 			array(
-				'name'          => __( 'Blog Sidebar', 'APCom' ),
-				'id'            => 'sidebar__blog',
-				'description'   => __( 'Add widgets here to appear in your blog sidebar.', 'APCom' ),
+				'name'          => __( 'Blog Sidebar - Left/First', 'APCom' ),
+				'id'            => 'sidebar__blog1',
+				'description'   => __( 'Add widgets here to appear in your blog sidebar (first on mobile view, left on large screens).', 'APCom' ),
+				'before_title'  => '<h2 class="widget__title">',
+				'after_title'   => '</h2>',
+				'before_widget' => '<div id="%1s" class="widget %2s">',
+				'after_widget'  => '</div>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => __( 'Blog Sidebar - Right/Last', 'APCom' ),
+				'id'            => 'sidebar__blog2',
+				'description'   => __( 'Add widgets here to appear in your blog sidebar(last on mobile view, right on large screens).', 'APCom' ),
 				'before_title'  => '<h2 class="widget__title">',
 				'after_title'   => '</h2>',
 				'before_widget' => '<div id="%1s" class="widget %2s">',

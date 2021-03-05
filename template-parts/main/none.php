@@ -36,6 +36,5 @@
 		?>
 	</div>
 </article>
-<aside class="page__aside page__aside--last">
-	<?php get_sidebar(); ?>
-</aside>
+<?php
+get_sidebar();

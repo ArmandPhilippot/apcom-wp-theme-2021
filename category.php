@@ -64,10 +64,8 @@ if ( have_posts() ) {
 			?>
 		</div>
 	</article>
-	<aside class="page__aside page__aside--last">
-		<?php get_sidebar(); ?>
-	</aside>
 	<?php
+	get_sidebar();
 } else {
 	get_template_part( 'template-parts/main/none' );
 }
