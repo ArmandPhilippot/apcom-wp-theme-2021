@@ -164,37 +164,29 @@
 		position: relative;
 
 		&--first {
-			padding: cssVar(spacing-md) 0 0;
+			margin-top: cssVar(spacing-md);
 
 			@include media("screen") {
 				@include dimensions("lg") {
-					padding: cssVar(spacing-lg) 0 0;
+					margin-top: cssVar(spacing-lg);
+				}
+			}
+
+			.toc {
+				ol,
+				&__wrapper {
+					margin-bottom: 0;
 				}
 			}
 		}
 
 		&--last {
-			padding: 0 0 cssVar(spacing-md);
+			margin-bottom: cssVar(spacing-md);
 
 			@include media("screen") {
-				@include dimensions("lg") {
-					padding: cssVar(spacing-md) 0;
+				@include dimensions("xl") {
+					margin-top: cssVar(spacing-lg);
 				}
-			}
-		}
-
-		@include media("screen") {
-			@include dimensions("xl") {
-				&--first,
-				&--last {
-					padding: cssVar(spacing-lg);
-				}
-			}
-		}
-
-		.toc {
-			ol {
-				margin-bottom: 0;
 			}
 		}
 	}

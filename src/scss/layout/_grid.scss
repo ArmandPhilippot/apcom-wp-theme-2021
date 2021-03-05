@@ -60,14 +60,14 @@
 
 .main,
 .breadcrumb,
-.page__body,
 .page__header,
+.page__body,
 .page__comments {
 	display: grid;
+	grid-auto-rows: max-content;
 	grid-template-columns: minmax(0, 1fr) minmax(auto, 90ch) minmax(0, 1fr);
 	justify-content: center;
 	column-gap: cssVar(spacing-md);
-	max-width: 100vw;
 
 	@include media("screen") {
 		@include dimensions("lg") {
@@ -86,40 +86,61 @@
 
 .main {
 	flex: 1;
-}
+	grid-template-areas:
+		"breadcrumb breadcrumb breadcrumb"
+		"page__header page__header page__header"
+		". page__aside--first ."
+		"page__body page__body page__body"
+		". page__footer ."
+		". page__aside--last ."
+		"page__comments page__comments page__comments";
 
-.breadcrumb,
-.page__header,
-.page__body,
-.page__comments {
-	grid-column: 1 / -1;
+	@include media("screen") {
+		@include dimensions("lg") {
+			grid-template-areas:
+				"breadcrumb breadcrumb breadcrumb"
+				"page__header page__header page__header"
+				"page__body page__body page__aside--first"
+				"page__body page__body page__aside--last"
+				"page__body page__body ."
+				". page__footer ."
+				"page__comments page__comments page__comments";
+		}
+
+		@include dimensions("xl") {
+			grid-template-areas:
+				"breadcrumb breadcrumb breadcrumb"
+				"page__header page__header page__header"
+				"page__aside--first page__body page__aside--last"
+				". page__footer ."
+				"page__comments page__comments page__comments";
+		}
+	}
 }
 
 .breadcrumb {
+	grid-area: breadcrumb;
+	grid-template-areas: ". breadcrumb__list .";
+
 	&__list {
-		grid-column: 2;
+		grid-area: breadcrumb__list;
 	}
 }
 
 .page {
 	display: contents;
 
-	&__title,
-	&__meta,
-	&__introduction,
-	&__footer,
-	.comments__header,
-	.comments__list,
-	.comments__form {
-		grid-column: 2;
+	&__header {
+		grid-area: page__header;
+		grid-template-areas:
+			". page__title ."
+			". page__meta ."
+			". page__introduction .";
 	}
 
 	&__body {
-		@include media("screen") {
-			@include dimensions("lg") {
-				grid-row: 3 / span 4;
-			}
-		}
+		grid-area: page__body;
+		grid-column: 1 / -1;
 
 		> *:not(.alignfull):not(.alignwide) {
 			grid-column: 2;
@@ -139,31 +160,80 @@
 		}
 	}
 
+	&__footer {
+		grid-area: page__footer;
+	}
+
 	&__aside {
-		grid-column: 2;
+		&--first {
+			grid-area: page__aside--first;
+		}
+
+		&--last {
+			grid-area: page__aside--last;
+		}
+	}
+
+	&__comments {
+		grid-area: page__comments;
+		grid-template-areas:
+			". comments__header ."
+			". comments__list ."
+			". comments__form .";
+	}
+
+	&__title {
+		grid-area: page__title;
+	}
+
+	&__meta {
+		grid-area: page__meta;
+	}
+
+	&__introduction {
+		grid-area: page__introduction;
+	}
+}
+
+.comments {
+	&__header {
+		grid-area: comments__header;
+	}
+
+	&__list {
+		grid-area: comments__list;
+	}
+
+	&__form {
+		grid-area: comments__form;
+	}
+}
+
+.articles-list {
+	.main {
+		flex: 1;
+		grid-template-areas:
+			"breadcrumb breadcrumb breadcrumb"
+			"page__header page__header page__header"
+			"page__body page__body page__body"
+			". page__aside--first ."
+			". page__aside--last .";
 
 		@include media("screen") {
 			@include dimensions("lg") {
-				grid-column: 3;
-
-				&--first {
-					grid-row: 3;
-				}
-
-				&--last {
-					grid-row: 4 / span 2;
-				}
+				grid-template-areas:
+					"breadcrumb breadcrumb breadcrumb"
+					"page__header page__header page__header"
+					"page__body page__body page__aside--first"
+					"page__body page__body page__aside--last"
+					"page__body page__body .";
 			}
 
 			@include dimensions("xl") {
-				&--first {
-					grid-column: 1;
-				}
-
-				&--last {
-					grid-column: 3;
-					grid-row: 3;
-				}
+				grid-template-areas:
+					"breadcrumb breadcrumb breadcrumb"
+					"page__header page__header page__header"
+					"page__aside--first page__body page__aside--last";
 			}
 		}
 	}
