@@ -9,9 +9,6 @@
 ?>
 <article class="page page--front-page">
 	<div class="page__body page__body--front-page" itemprop="articleBody">
-		<div class="front-page__body box">
 		<?php the_content(); ?>
-		</div>
-		<?php get_sidebar( 'home-widgets' ); ?>
 	</div>
 </article>

@@ -19,7 +19,8 @@
 3.0 Helpers
 4.0 Elements
 5.0 Layout
-6.0 Modules
+6.0 Pages
+7.0 Modules
 =============================================================================*/
 
 /**
@@ -74,7 +75,14 @@
 @import "layout/footer";
 
 /**
-* 6.0 Modules
+* 6.0 Pages
+*
+* Define pages specific styles.
+*/
+@import "pages/front-page";
+
+/**
+* 7.0 Modules
 *
 * Define modules used like navigation, breadcrumbs...
 */

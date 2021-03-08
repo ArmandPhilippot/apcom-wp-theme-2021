@@ -1,0 +1,52 @@
+.front-page {
+	.buttons-list {
+		@include flexList;
+		gap: cssVar(spacing-md);
+		margin-bottom: cssVar(spacing-md);
+
+		a {
+			@include buttonBase;
+			@include buttonStyle2;
+		}
+	}
+
+	.wp-block-group {
+		border-bottom: pxToRem(3) solid cssVar(color-primary);
+		padding: cssVar(spacing-lg) 0 cssVar(spacing-md);
+		display: grid;
+		grid-auto-rows: max-content;
+		grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
+		justify-content: center;
+		column-gap: cssVar(spacing-md);
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				padding: cssVar(spacing-xl) 0 cssVar(spacing-lg);
+				grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(
+						0,
+						1fr
+					);
+				column-gap: cssVar(spacing-xl);
+			}
+		}
+
+		&:nth-child(2n) {
+			background: cssVar(color-bg-secondary);
+		}
+
+		&:last-child {
+			border: none;
+			padding-bottom: cssVar(spacing-xl);
+
+			@include media("screen") {
+				@include dimensions("lg") {
+					padding-bottom: cssVar(spacing-4xl);
+				}
+			}
+		}
+
+		&__inner-container {
+			grid-column: 2;
+		}
+	}
+}

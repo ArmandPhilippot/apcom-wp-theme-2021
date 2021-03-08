@@ -185,18 +185,6 @@ function apcom_widgets_init() {
 
 		register_sidebar(
 			array(
-				'name'          => __( 'Home Widgets', 'APCom' ),
-				'id'            => 'sidebar__home-widgets',
-				'description'   => __( 'Add widgets here to appear below the front-page content.', 'APCom' ),
-				'before_title'  => '<h2 class="widget__title">',
-				'after_title'   => '</h2>',
-				'before_widget' => '<div id="%1s" class="widget %2s">',
-				'after_widget'  => '</div>',
-			)
-		);
-
-		register_sidebar(
-			array(
 				'name'          => __( 'Articles & Pages Widgets', 'APCom' ),
 				'id'            => 'sidebar__pages-widgets',
 				'description'   => __( 'Add widgets here to appear below the articles and pages.', 'APCom' ),
