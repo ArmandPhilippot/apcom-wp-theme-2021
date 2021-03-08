@@ -15,9 +15,9 @@
 
 	@include media("screen") {
 		@include dimensions("lg") {
-			grid-template-columns: cssVar(spacing-md) max-content minmax(0, 1fr) cssVar(
-					spacing-md
-				);
+			grid-template-columns:
+				cssVar(spacing-2xl) max-content minmax(0, 1fr)
+				cssVar(spacing-2xl);
 
 			.branding {
 				grid-row: 2;
@@ -50,10 +50,12 @@
 		}
 
 		@include dimensions("xl") {
-			grid-template-columns: minmax(0, 0.5fr) max-content minmax(0, 3fr) minmax(
-					0,
-					0.5fr
-				);
+			grid-template-columns:
+				minmax(#{cssVar(spacing-2xl)}, 1fr) minmax(auto, 100ch) minmax(
+					auto,
+					100ch
+				)
+				minmax(#{cssVar(spacing-2xl)}, 1fr);
 		}
 	}
 }
@@ -65,21 +67,24 @@
 .page__comments {
 	display: grid;
 	grid-auto-rows: max-content;
-	grid-template-columns: minmax(0, 1fr) minmax(auto, 90ch) minmax(0, 1fr);
+	grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
 	justify-content: center;
 	column-gap: cssVar(spacing-md);
 
 	@include media("screen") {
+		@include dimensions("sm") {
+			column-gap: cssVar(spacing-lg);
+		}
+
 		@include dimensions("lg") {
-			grid-template-columns: 0 minmax(auto, 90ch) minmax(0, 1fr);
-			column-gap: cssVar(spacing-xl);
+			grid-template-columns: 0 minmax(auto, 80ch) minmax(0, 1fr);
+			column-gap: cssVar(spacing-2xl);
 		}
 
 		@include dimensions("xl") {
-			grid-template-columns: minmax(0, 1fr) minmax(auto, 90ch) minmax(
-					0,
-					1fr
-				);
+			grid-template-columns:
+				minmax(0, 1fr) minmax(0, 80ch) 80ch minmax(0, 80ch)
+				minmax(0, 1fr);
 		}
 	}
 }
@@ -109,11 +114,11 @@
 
 		@include dimensions("xl") {
 			grid-template-areas:
-				"breadcrumb breadcrumb breadcrumb"
-				"page__header page__header page__header"
-				"page__aside--first page__body page__aside--last"
-				". page__footer ."
-				"page__comments page__comments page__comments";
+				"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb"
+				"page__header page__header page__header page__header page__header"
+				". page__aside--first page__body page__aside--last ."
+				". page__aside--first page__footer page__aside--last ."
+				"page__comments page__comments page__comments page__comments page__comments";
 		}
 	}
 }
@@ -121,6 +126,12 @@
 .breadcrumb {
 	grid-area: breadcrumb;
 	grid-template-areas: ". breadcrumb__list .";
+
+	@include media("screen") {
+		@include dimensions("xl") {
+			grid-template-areas: ". . breadcrumb__list . .";
+		}
+	}
 
 	&__list {
 		grid-area: breadcrumb__list;
@@ -136,6 +147,15 @@
 			". page__title ."
 			". page__meta ."
 			". page__introduction .";
+
+		@include media("screen") {
+			@include dimensions("xl") {
+				grid-template-areas:
+					". . page__title . ."
+					". . page__meta . ."
+					". . page__introduction . .";
+			}
+		}
 	}
 
 	&__body {
@@ -144,6 +164,12 @@
 
 		> *:not(.alignfull):not(.alignwide) {
 			grid-column: 2;
+
+			@include media("screen") {
+				@include dimensions("xl") {
+					grid-column: 3;
+				}
+			}
 		}
 
 		.alignfull,
@@ -167,6 +193,12 @@
 	&__aside {
 		&--first {
 			grid-area: page__aside--first;
+
+			@include media("screen") {
+				@include dimensions("xl") {
+					justify-self: end;
+				}
+			}
 		}
 
 		&--last {
@@ -180,6 +212,15 @@
 			". comments__header ."
 			". comments__list ."
 			". comments__form .";
+
+		@include media("screen") {
+			@include dimensions("xl") {
+				grid-template-areas:
+					". . comments__header . ."
+					". . comments__list . ."
+					". . comments__form . .";
+			}
+		}
 	}
 
 	&__title {
@@ -231,9 +272,9 @@
 
 			@include dimensions("xl") {
 				grid-template-areas:
-					"breadcrumb breadcrumb breadcrumb"
-					"page__header page__header page__header"
-					"page__aside--first page__body page__aside--last";
+					"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb"
+					"page__header page__header page__header page__header page__header"
+					". page__aside--first page__body page__aside--last .";
 			}
 		}
 	}
