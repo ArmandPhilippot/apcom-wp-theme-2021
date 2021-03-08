@@ -3,7 +3,7 @@
  * Overwrite default WordPress walker comment.
  *
  * @package ArmandPhilippot-com
- * @since 0.0.2
+ * @since 0.0.1
  */
 
 namespace APCom\Includes;

@@ -155,7 +155,7 @@ add_action( 'enqueue_block_editor_assets', 'apcom_enqueue_editor_styles' );
 /**
  * Register sidebars.
  *
- * @since 0.0.2
+ * @since 0.0.1
  */
 function apcom_widgets_init() {
 	if ( function_exists( 'register_sidebar' ) ) {

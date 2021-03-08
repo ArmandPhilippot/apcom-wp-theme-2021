@@ -3,7 +3,7 @@
  * The template for displaying front-page content.
  *
  * @package ArmandPhilippot-com
- * @since 0.0.2
+ * @since 0.0.1
  */
 
 ?>

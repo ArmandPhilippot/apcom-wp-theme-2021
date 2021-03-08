@@ -268,6 +268,7 @@ add_filter( 'comment_form_submit_button', 'apcom_comment_form_submit_button' );
 /**
  * Simulate non-empty content to enable Gutenberg editor on Blog page.
  *
+ * @since  0.0.1
  * @see https://wordpress.stackexchange.com/a/350563
  *
  * @param bool    $replace Whether to replace the editor.
