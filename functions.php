@@ -116,11 +116,17 @@ add_action( 'wp_enqueue_scripts', 'apcom_enqueue_styles' );
 function apcom_enqueue_scripts() {
 	$theme_uri            = get_template_directory_uri();
 	$theme_directory      = get_template_directory();
-	$scripts_path         = $theme_directory . '/assets/js/scripts.min.js';
+	$footer_scripts_path  = $theme_directory . '/assets/js/app.min.js';
+	$header_scripts_path  = $theme_directory . '/assets/js/scripts.min.js';
 	$vendors_scripts_path = $theme_directory . '/assets/js/vendors.min.js';
 
-	if ( file_exists( $scripts_path ) ) {
-		wp_register_script( 'apcom-scripts', $theme_uri . '/assets/js/scripts.min.js', array(), APCOM_VERSION, true );
+	if ( file_exists( $footer_scripts_path ) ) {
+		wp_register_script( 'apcom-app', $theme_uri . '/assets/js/app.min.js', array(), APCOM_VERSION, true );
+		wp_enqueue_script( 'apcom-app' );
+	}
+
+	if ( file_exists( $header_scripts_path ) ) {
+		wp_register_script( 'apcom-scripts', $theme_uri . '/assets/js/scripts.min.js', array(), APCOM_VERSION, false );
 		wp_enqueue_script( 'apcom-scripts' );
 	}
 

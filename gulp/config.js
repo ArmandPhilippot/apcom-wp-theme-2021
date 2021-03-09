@@ -121,15 +121,18 @@ module.exports = {
 	},
 	scripts: {
 		src: {
-			main: ['src/js/**/*.js', '!src/js/vendors/**/*.js'],
+			footer: 'src/js/footer/**/*.js',
+			header: 'src/js/header/**/*.js',
 			vendors: 'src/js/vendors/**/*.js',
 		},
 		dest: {
-			main: 'assets/js/',
+			footer: 'assets/js/',
+			header: 'assets/js/',
 			vendors: 'assets/js/',
 		},
 		watch: {
-			main: ['src/js/**/*.js', '!src/js/vendors/**/*.js'],
+			footer: 'src/js/footer/**/*.js',
+			header: 'src/js/header/**/*.js',
 			vendors: 'src/js/vendors/**/*.js',
 		},
 	},

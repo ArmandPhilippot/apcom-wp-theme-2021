@@ -260,25 +260,53 @@ function vendorsStyles() {
 }
 
 /**
- * Task: `scripts`
+ * Task: `footerScripts`
  *
- * Generate scripts.js and scripts.min.js. JS concatenation and minification.
+ * Generate app.js and app.min.js to place in footer. JS concatenation and minification.
  */
-function scripts() {
+function footerScripts() {
 	return pipeline(
 		[
-			src(config.scripts.src.main, { sourcemaps: true }),
+			src(config.scripts.src.footer, { sourcemaps: true }),
 			babel(),
-			concat('scripts.js'),
+			concat('app.js'),
 			lec(),
-			dest(config.scripts.dest.main),
+			dest(config.scripts.dest.footer),
 			rename({ suffix: '.min' }),
 			uglify(),
 			lec(),
-			dest(config.scripts.dest.main, { sourcemaps: '.' }),
+			dest(config.scripts.dest.footer, { sourcemaps: '.' }),
 			server.stream(),
 			notify({
-				title: 'Scripts task complete',
+				title: 'footerScripts task complete',
+				message: 'app.js and app.min.js have been compiled.',
+				onLast: config.notify.onLastOption,
+			}),
+		],
+		errorHandler
+	);
+}
+
+/**
+ * Task: `headerScripts`
+ *
+ * Generate scripts.js and scripts.min.js to place in header. JS concatenation and minification.
+ */
+function headerScripts() {
+	return pipeline(
+		[
+			src(config.scripts.src.header, { sourcemaps: true }),
+			babel(),
+			concat('scripts.js'),
+			lec(),
+			dest(config.scripts.dest.header),
+			rename({ suffix: '.min' }),
+			uglify(),
+			lec(),
+			dest(config.scripts.dest.header, { sourcemaps: '.' }),
+			server.stream(),
+			notify({
+				title: 'headerScripts task complete',
 				message: 'scripts.js and scripts.min.js have been compiled.',
 				onLast: config.notify.onLastOption,
 			}),
@@ -501,7 +529,14 @@ function watchFiles(done) {
 		'change',
 		series(vendorsStyles, reload)
 	);
-	watch(config.scripts.watch.main).on('change', series(scripts, reload));
+	watch(config.scripts.watch.footer).on(
+		'change',
+		series(footerScripts, reload)
+	);
+	watch(config.scripts.watch.header).on(
+		'change',
+		series(headerScripts, reload)
+	);
 	watch(config.scripts.watch.vendors).on(
 		'change',
 		series(vendorsScripts, reload)
@@ -521,7 +556,8 @@ const build = parallel(
 	printStyles,
 	editorStyles,
 	vendorsStyles,
-	scripts,
+	footerScripts,
+	headerScripts,
 	vendorsScripts,
 	images,
 	compilePotFile,
