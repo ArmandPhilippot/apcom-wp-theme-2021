@@ -92,7 +92,16 @@
 			</figure>
 		<?php } ?>
 		<div class="article__description" itemprop="description">
-			<?php the_content(); ?>
+			<?php
+			$apcom_post_parts    = get_extended( $post->post_content );
+			$apcom_post_extended = $apcom_post_parts['extended'];
+
+			if ( ! empty( $apcom_post_extended ) ) {
+				the_content();
+			} else {
+				the_excerpt();
+			}
+			?>
 		</div>
 	</div>
 </article>
