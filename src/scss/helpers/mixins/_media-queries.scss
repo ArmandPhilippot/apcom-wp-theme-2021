@@ -35,6 +35,7 @@
 	@if $until {
 		@if type-of($until) == "string" {
 			$size: map-get($breakpoints, $until);
+			$size: calc(#{$size} - 1px);
 			$query: $query + "(max-width: #{$size})";
 		} @else {
 			@error "`$until` must be a string.";
