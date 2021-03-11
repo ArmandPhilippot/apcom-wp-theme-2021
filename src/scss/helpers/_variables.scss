@@ -25,6 +25,7 @@ $breakpoints: (
 	"md": pxToEm(1024),
 	"lg": pxToEm(1280),
 	"xl": pxToEm(1600),
+	"2xl": pxToEm(1920),
 );
 
 //=============================================================================
@@ -67,10 +68,25 @@ $spacing_5xl: $spacing_base * 5;
 //==============================================================================
 // Colors
 //==============================================================================
-$color_black-squeeze: hsl(210, 50%, 97%);
-$color_catskill-white: hsl(210, 45%, 92%);
-$color_link-water: hsl(210, 46%, 88%);
-$color_chathams-blue: hsl(210, 65%, 28%);
-$color_chathams-blue-light: hsl(210, 90%, 30%);
-$color_chathams-blue-dark: hsl(210, 70%, 25%);
-$color_big-stone: hsl(210, 50%, 15%);
+$color_black-squeeze: hsl(212, 50%, 97%);
+$color_catskill-white: hsl(212, 45%, 92%);
+$color_link-water: hsl(212, 46%, 88%);
+$color_casper: hsl(212, 30%, 80%);
+$color_san-marino: hsl(212, 40%, 42%);
+$color_chathams-blue: hsl(212, 65%, 28%);
+$color_chathams-blue-light: hsl(212, 90%, 30%);
+$color_chathams-blue-light-opacity-25: hsla(212, 90%, 30%, 0.25);
+$color_chathams-blue-dark: hsl(212, 70%, 25%);
+$color_nile-blue: hsl(212, 50%, 20%);
+$color_big-stone: hsl(212, 50%, 15%);
+$color_cafe-royale: hsl(37, 80%, 25%);
+
+$color_light-theme_red: hsl(0, 87%, 31%);
+$color_light-theme_green: hsl(126, 91%, 18%);
+$color_light-theme_purple: hsl(271, 87%, 34%);
+$color_light-theme_magenta: hsl(303, 93%, 28%);
+$color_light-theme_yellow: hsl(53, 91%, 17%);
+$color_light-theme_cyan: hsl(186, 90%, 19%);
+$color_light-theme_blue: hsl(202, 92%, 24%);
+$color_light-theme_grey: hsl(211, 22%, 31%);
+$color_light-theme_orange: hsl(28, 87%, 25%);
