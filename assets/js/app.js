@@ -23,6 +23,186 @@ window.addEventListener('scroll', function () {
   return showBackToTopOnScroll();
 });
 "use strict";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * Reading progress
+ *
+ * Represents a progress bar to indicate reading progression based on scroll position.
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Armand Philippot <https://www.armandphilippot.com>
+ */
+var readingProgress = /*#__PURE__*/function () {
+  /**
+   * Define the progress bar container.
+   * @param {string} containerId Id of the container.
+   */
+  function readingProgress(containerId) {
+    _classCallCheck(this, readingProgress);
+
+    this.container = containerId ? document.getElementById(containerId) : '';
+    this.progressBarWrapper = document.createElement('div');
+    this.progressBar = document.createElement('div');
+  }
+  /**
+   * Define the progress bar classes.
+   * @param {array} barClasses - One or more classes for the progress bar.
+   */
+
+
+  _createClass(readingProgress, [{
+    key: "setProgressBarClasses",
+    value: function setProgressBarClasses(barClasses) {
+      var _this = this;
+
+      if (barClasses) {
+        barClasses.forEach(function (className) {
+          _this.progressBar.classList.add(className);
+        });
+      } else {
+        this.progressBar.classList.add('reading-progress__bar');
+      }
+    }
+    /**
+     * Define the progress bar wrapper classes.
+     * @param {array} wrapperClasses - One or more classes for the progress bar wrapper.
+     */
+
+  }, {
+    key: "setProgressBarWrapperClasses",
+    value: function setProgressBarWrapperClasses(wrapperClasses) {
+      var _this2 = this;
+
+      if (wrapperClasses) {
+        wrapperClasses.forEach(function (className) {
+          _this2.progressBarWrapper.classList.add(className);
+        });
+      } else {
+        this.progressBarWrapper.classList.add('reading-progress');
+      }
+    }
+    /**
+     * Insert the progress bar inside the container.
+     * @param {string} position - The progress bar position: `top` or `bottom` of its container.
+     */
+
+  }, {
+    key: "insertReadingProgressBar",
+    value: function insertReadingProgressBar(position) {
+      this.progressBar.style.height = '100%';
+      this.progressBar.style.maxWidth = '100%';
+      this.progressBarWrapper.appendChild(this.progressBar);
+      this.progressBarWrapper.style.position = 'sticky';
+
+      if (position === 'bottom') {
+        this.container.appendChild(this.progressBarWrapper);
+        this.progressBarWrapper.style.bottom = '0';
+      } else {
+        var containerFirstChild = this.container.firstChild;
+        this.container.insertBefore(this.progressBarWrapper, containerFirstChild);
+        this.progressBarWrapper.style.top = '0';
+      }
+    }
+    /**
+     * Display or not the progress bar.
+     * @param {boolean} bool - True of false.
+     */
+
+  }, {
+    key: "showProgressBar",
+    value: function showProgressBar(bool) {
+      if (bool === true) {
+        this.progressBarWrapper.style.display = 'block';
+      } else {
+        this.progressBarWrapper.style.display = 'none';
+      }
+    }
+    /**
+     * Calculate the distance traveled as a percentage without unit.
+     * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
+     * @return {number} A percentage without unit.
+     */
+
+  }, {
+    key: "getScrollPercent",
+    value: function getScrollPercent(recordFrom) {
+      var target = '';
+
+      if (recordFrom === 'body') {
+        target = document.body;
+      } else if (typeof recordFrom === 'string' && recordFrom !== 'container') {
+        target = document.getElementById(recordFrom);
+      } else {
+        target = this.container;
+      }
+
+      var windowHeight = window.innerHeight;
+      var windowTop = window.scrollY;
+      var targetHeight = target.offsetHeight;
+      var targetTop = target.offsetTop;
+      var scrollPercent = (windowTop - targetTop) / (targetHeight - windowHeight) * 100;
+      return scrollPercent;
+    }
+    /**
+     * Use the distance traveled as progressBar width.
+     * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
+     */
+
+  }, {
+    key: "recordProgression",
+    value: function recordProgression(recordFrom) {
+      var scrollPercent = this.getScrollPercent(recordFrom);
+
+      if (scrollPercent > 1 && scrollPercent <= 100) {
+        this.showProgressBar(true);
+      } else {
+        this.showProgressBar(false);
+      }
+
+      this.progressBar.style.width = scrollPercent + '%';
+    }
+    /**
+     * Initialize the reading progress bar.
+     * @param {array}  wrapperClasses - One or more classes for the progress bar wrapper. Default: `['reading-progress']`.
+     * @param {array}  barClasses - One or more classes for the progress bar. Default `['reading-progress__bar']`.
+     * @param {string} position - The progress bar position: `top` or `bottom` of its container. Default: `top`.
+     * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID. Default `container`.
+     */
+
+  }, {
+    key: "init",
+    value: function init() {
+      var wrapperClasses = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ['reading-progress'];
+      var barClasses = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ['reading-progress__bar'];
+      var position = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'top';
+      var recordFrom = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'container';
+
+      if (this.container !== '') {
+        this.setProgressBarWrapperClasses(wrapperClasses);
+        this.setProgressBarClasses(barClasses);
+        this.insertReadingProgressBar(position);
+        this.recordProgression(recordFrom);
+      }
+    }
+  }]);
+
+  return readingProgress;
+}();
+
+var bodyClasses = document.body.classList;
+
+if (bodyClasses.contains('single-page') && !bodyClasses.contains('attachment')) {
+  var APComScrollBar = new readingProgress('page__content');
+  document.addEventListener('scroll', function () {
+    APComScrollBar.init();
+  });
+}
 "use strict";
 
 /**

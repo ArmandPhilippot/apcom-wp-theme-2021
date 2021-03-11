@@ -4,7 +4,7 @@ blockquote {
 	box-shadow: pxToRem(1) pxToRem(1) pxToRem(3) pxToRem(1)
 		cssVar(color-shadow-light);
 	font-style: italic;
-	margin: 0 calc(#{cssVar(spacing-sm)} * -1) cssVar(spacing-md);
+	margin: 0 0 cssVar(spacing-md);
 	padding: cssVar(spacing-sm) cssVar(spacing-md);
 	position: relative;
 
