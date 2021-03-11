@@ -16,11 +16,10 @@
 	@include media("screen") {
 		@include dimensions("lg") {
 			grid-template-columns:
-				cssVar(spacing-2xl) max-content minmax(0, 1fr)
-				cssVar(spacing-2xl);
+				cssVar(spacing-3xl) max-content minmax(0, 1fr) max-content
+				cssVar(spacing-3xl);
 
 			.branding {
-				grid-row: 2;
 				display: grid;
 				grid-template-columns: max-content 1fr;
 				column-gap: cssVar(spacing-md);
@@ -44,18 +43,32 @@
 
 			.main-nav {
 				grid-column: 3;
-				grid-row: 2;
 				justify-self: end;
+			}
+
+			.tools {
+				grid-column: 4;
 			}
 		}
 
 		@include dimensions("xl") {
 			grid-template-columns:
-				minmax(#{cssVar(spacing-2xl)}, 1fr) minmax(auto, 100ch) minmax(
+				minmax(#{cssVar(spacing-3xl)}, 1fr) minmax(auto, 100ch) minmax(
 					auto,
 					100ch
 				)
-				minmax(#{cssVar(spacing-2xl)}, 1fr);
+				max-content
+				minmax(#{cssVar(spacing-3xl)}, 1fr);
+		}
+
+		@include dimensions("2xl") {
+			grid-template-columns:
+				minmax(#{cssVar(spacing-4xl)}, 1fr) minmax(auto, 100ch) minmax(
+					auto,
+					100ch
+				)
+				max-content
+				minmax(#{cssVar(spacing-4xl)}, 1fr);
 		}
 	}
 }
@@ -78,13 +91,17 @@
 
 		@include dimensions("lg") {
 			grid-template-columns: 0 minmax(auto, 80ch) minmax(0, 1fr);
-			column-gap: cssVar(spacing-2xl);
+			column-gap: cssVar(spacing-3xl);
 		}
 
 		@include dimensions("xl") {
 			grid-template-columns:
 				minmax(0, 1fr) minmax(0, 80ch) 80ch minmax(0, 80ch)
 				minmax(0, 1fr);
+		}
+
+		@include dimensions("2xl") {
+			column-gap: cssVar(spacing-4xl);
 		}
 	}
 }

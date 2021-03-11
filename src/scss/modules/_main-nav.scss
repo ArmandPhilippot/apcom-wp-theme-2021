@@ -16,6 +16,7 @@
 			margin: 0;
 			background: none;
 			box-shadow: none;
+			z-index: 2;
 		}
 	}
 
@@ -36,7 +37,238 @@
 		display: flex;
 		flex-flow: row nowrap;
 	}
-}
 
-@import "main-nav/links";
-@import "main-nav/search";
+	&__link {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		background: linear-gradient(
+					to top,
+					cssVar(color-bg) pxToRem(3),
+					transparent pxToRem(3)
+				)
+				center / 0 100% no-repeat,
+			linear-gradient(
+					to bottom,
+					transparent 0 25%,
+					cssVar(color-primary) 25% 50%,
+					cssVar(color-primary-light) 50% 75%,
+					cssVar(color-primary-dark) 75% 100%
+				)
+				0 33.3% / 100% 400% no-repeat,
+			linear-gradient(
+					to bottom,
+					cssVar(color-bg) 0 50%,
+					transparent 50% 100%
+				)
+				0 100% / 100% 200% no-repeat;
+		color: cssVar(color-fg-inverted);
+		font-size: cssVar(font-size-md);
+		font-variant: small-caps;
+		font-weight: 700;
+		text-decoration: none;
+		text-shadow: pxToRem(1) pxToRem(1) pxToRem(1) cssVar(color-shadow-dark);
+		height: pxToRem(60);
+		padding: 0 cssVar(spacing-sm);
+
+		&:hover {
+			background-position: center, 0 66.6%, 0 100%;
+			color: cssVar(color-fg-inverted);
+		}
+
+		&:focus {
+			background-position: center, 0 0, 0 0;
+			color: cssVar(color-primary);
+			text-shadow: pxToRem(1) pxToRem(1) pxToRem(1)
+				cssVar(color-shadow-lighter);
+		}
+
+		&:active {
+			background-position: center, 0 100%, 0 100%;
+			color: cssVar(color-fg-inverted);
+		}
+
+		@include media("screen") {
+			@include dimensions("sm") {
+				font-size: cssVar(font-size-lg);
+				height: pxToRem(70);
+			}
+
+			@include dimensions("lg") {
+				background-image: linear-gradient(
+						to right,
+						transparent,
+						transparent
+					),
+					linear-gradient(to bottom, transparent, transparent),
+					linear-gradient(to left, transparent, transparent),
+					linear-gradient(to top, transparent, transparent);
+				background-position: top left, top right, bottom right,
+					bottom left;
+				background-size: 0 cssVar(draw-border-width),
+					cssVar(draw-border-width) 0, 0 cssVar(draw-border-width),
+					cssVar(draw-border-width) 0;
+				background-color: transparent;
+				background-repeat: no-repeat;
+				border-radius: 8%;
+				color: cssVar(color-primary);
+				text-shadow: pxToRem(1) pxToRem(1) pxToRem(1)
+					cssVar(color-shadow-light);
+				height: auto;
+				margin: 0 pxToRem(3);
+				padding: cssVar(spacing-3xs) cssVar(spacing-sm);
+				transform: skew(-20deg);
+				transition: all 0.3s linear 0s;
+
+				&:hover,
+				&:focus {
+					background-image: linear-gradient(
+							to right,
+							cssVar(color-primary-light),
+							cssVar(color-primary-light)
+						),
+						linear-gradient(
+							to bottom,
+							cssVar(color-primary-light),
+							cssVar(color-primary-light)
+						),
+						linear-gradient(
+							to left,
+							cssVar(color-primary-light),
+							cssVar(color-primary-light)
+						),
+						linear-gradient(
+							to top,
+							cssVar(color-primary-light),
+							cssVar(color-primary-light)
+						);
+					background-position: top left, top right, bottom right,
+						bottom left;
+					background-size: 100% cssVar(draw-border-width),
+						cssVar(draw-border-width) 100%,
+						100% cssVar(draw-border-width),
+						cssVar(draw-border-width) 100%;
+					color: cssVar(color-primary-light);
+					animation: drawBorders 1s linear 1 0s;
+				}
+
+				&:active {
+					background-image: linear-gradient(
+							to right,
+							cssVar(color-primary-dark),
+							cssVar(color-primary-dark)
+						),
+						linear-gradient(
+							to bottom,
+							cssVar(color-primary-dark),
+							cssVar(color-primary-dark)
+						),
+						linear-gradient(
+							to left,
+							cssVar(color-primary-dark),
+							cssVar(color-primary-dark)
+						),
+						linear-gradient(
+							to top,
+							cssVar(color-primary-dark),
+							cssVar(color-primary-dark)
+						);
+					background-position: top left, top right, bottom right,
+						bottom left;
+					background-size: 0 cssVar(draw-border-width),
+						cssVar(draw-border-width) 0, 0 cssVar(draw-border-width),
+						cssVar(draw-border-width) 0;
+					color: cssVar(color-primary-dark);
+				}
+
+				span {
+					transform: skew(20deg);
+				}
+			}
+		}
+	}
+
+	.current_page_item {
+		.main-nav__link {
+			background-size: 50% 100%, 100% 400%, 100% 200%;
+
+			@include media("screen") {
+				@include dimensions("lg") {
+					background-image: linear-gradient(
+							to right,
+							transparent,
+							transparent
+						),
+						linear-gradient(to bottom, transparent, transparent),
+						linear-gradient(
+							to left,
+							cssVar(color-primary-light),
+							cssVar(color-primary-light)
+						),
+						linear-gradient(to top, transparent, transparent);
+					background-position: top left, top right, bottom right 25%,
+						bottom left;
+					background-size: 0 cssVar(draw-border-width),
+						cssVar(draw-border-width) 0,
+						70% cssVar(draw-border-width),
+						cssVar(draw-border-width) 0;
+
+					&:hover,
+					&:focus {
+						background-image: linear-gradient(
+								to right,
+								cssVar(color-primary-light),
+								cssVar(color-primary-light)
+							),
+							linear-gradient(
+								to bottom,
+								cssVar(color-primary-light),
+								cssVar(color-primary-light)
+							),
+							linear-gradient(
+								to left,
+								cssVar(color-primary-light),
+								cssVar(color-primary-light)
+							),
+							linear-gradient(
+								to top,
+								cssVar(color-primary-light),
+								cssVar(color-primary-light)
+							);
+						background-size: 100% cssVar(draw-border-width),
+							cssVar(draw-border-width) 100%,
+							100% cssVar(draw-border-width),
+							cssVar(draw-border-width) 100%;
+					}
+
+					&:active {
+						background-image: linear-gradient(
+								to right,
+								cssVar(color-primary-light),
+								cssVar(color-primary-light)
+							),
+							linear-gradient(
+								to bottom,
+								cssVar(color-primary-light),
+								cssVar(color-primary-light)
+							),
+							linear-gradient(
+								to left,
+								cssVar(color-primary-light),
+								cssVar(color-primary-light)
+							),
+							linear-gradient(
+								to top,
+								cssVar(color-primary-light),
+								cssVar(color-primary-light)
+							);
+						background-size: 0 cssVar(draw-border-width),
+							cssVar(draw-border-width) 0,
+							0 cssVar(draw-border-width),
+							cssVar(draw-border-width) 0;
+					}
+				}
+			}
+		}
+	}
+}

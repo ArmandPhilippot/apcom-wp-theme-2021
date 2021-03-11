@@ -65,7 +65,7 @@ textarea {
 	}
 }
 
-input[type="checkbox"] {
+input[type="checkbox"]:not(.toggle) {
 	position: absolute;
 	left: 0;
 	opacity: 0.01;

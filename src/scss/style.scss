@@ -35,8 +35,9 @@
 /**
 * 2.0 Base
 *
-* Define colors, fonts and box-sizing.
+* Define CSS variables (colors, fonts...) and box-sizing.
 */
+@import "base/animations";
 @import "base/colors";
 @import "base/fonts";
 @import "base/spacings";
@@ -49,6 +50,7 @@
 */
 @import "helpers/accessibility";
 @import "helpers/alignments";
+@import "helpers/animations";
 
 /**
 * 4.0 Elements
@@ -96,4 +98,5 @@
 @import "modules/more-link";
 @import "modules/pagination";
 @import "modules/search";
+@import "modules/tools";
 @import "modules/widgets";

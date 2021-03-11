@@ -1,0 +1,146 @@
+.tools {
+	display: flex;
+	flex-flow: column wrap;
+	gap: cssVar(spacing-sm);
+	align-items: center;
+	position: absolute;
+	top: cssVar(spacing-md);
+	right: cssVar(spacing-md);
+
+	@include media("screen") {
+		@include dimensions("sm") {
+			flex-flow: row wrap;
+		}
+
+		@include dimensions("lg") {
+			position: initial;
+			top: auto;
+			right: auto;
+			margin-left: cssVar(spacing-md);
+		}
+	}
+
+	&__item {
+		z-index: 3;
+	}
+
+	&__label {
+		@include buttonBase;
+		@include buttonStyle3;
+
+		width: pxToRem(40);
+		height: pxToRem(40);
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: pxToRem(8);
+
+		svg {
+			fill: cssVar(color-bg-secondary);
+		}
+	}
+
+	&__checkbox {
+		&:hover,
+		&:focus {
+			~ .tools__label {
+				.tools__icon {
+					animation: zoomOutIn 1.2s;
+					animation-iteration-count: infinite;
+				}
+			}
+		}
+
+		&:focus {
+			~ .tools__label {
+				box-shadow: 0 0 0 pxToRem(2) cssVar(color-shadow),
+					pxToRem(2) pxToRem(2) pxToRem(1) pxToRem(1)
+						cssVar(color-shadow),
+					pxToRem(1) pxToRem(1) pxToRem(2) pxToRem(3)
+						cssVar(color-shadow-light),
+					0 0 0 pxToRem(6) cssVar(color-primary-light-opacity);
+			}
+		}
+
+		&:not(:checked) {
+			~ .tools__label {
+				.tools__label--activated {
+					display: none;
+				}
+			}
+		}
+
+		&:checked {
+			~ .tools__label {
+				.tools__label--inactivated {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.search-form {
+		z-index: -1;
+
+		&__field {
+			background: cssVar(color-bg-secondary);
+		}
+
+		@include media("screen") {
+			@include dimensions(null, "sm") {
+				bottom: pxToRem(60); // main-nav height
+			}
+
+			@include dimensions("sm", "lg") {
+				bottom: pxToRem(70); // main-nav height
+			}
+
+			@include dimensions(null, "lg") {
+				background: cssVar(color-bg-tertiary);
+				box-shadow: 0 pxToRem(2) pxToRem(2) 0 cssVar(color-shadow-dark);
+				position: fixed;
+				top: 0;
+				right: 0;
+				left: 0;
+				padding: cssVar(spacing-md);
+				animation: fadeIn 0.3s;
+
+				&__btn {
+					@include buttonStyle1;
+					position: relative;
+
+					&--icon {
+						display: none;
+					}
+
+					&--txt {
+						display: block;
+					}
+				}
+
+				&__field {
+					margin: cssVar(spacing-md) 0;
+
+					&:hover,
+					&:focus {
+						~ .search-form__btn {
+							transform: skewX(-15deg);
+						}
+					}
+				}
+			}
+
+			@include dimensions("lg") {
+				position: absolute;
+				bottom: calc(#{cssVar(spacing-3xl)} * -1);
+				right: 0;
+				width: 40ch;
+				max-width: unset;
+				animation: scaleFullWidth 0.6s;
+			}
+		}
+	}
+}

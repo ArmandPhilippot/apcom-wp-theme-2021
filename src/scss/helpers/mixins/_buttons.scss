@@ -93,3 +93,50 @@
 		transform: translateX(#{pxToRem(3)}) translateY(#{pxToRem(3)});
 	}
 }
+
+@mixin buttonStyle3 {
+	justify-content: center;
+	background: linear-gradient(
+			to bottom,
+			cssVar(color-primary) 0 33.33%,
+			cssVar(color-primary-light) 33.33% 66.66%,
+			cssVar(color-primary-dark) 66.66% 100%
+		)
+		0 0 / 100% 300% no-repeat;
+	border: pxToRem(2) solid cssVar(color-border-light);
+	border-radius: 50%;
+	box-shadow: 0 0 0 pxToRem(2) cssVar(color-shadow),
+		pxToRem(2) pxToRem(2) pxToRem(1) pxToRem(1) cssVar(color-shadow),
+		pxToRem(1) pxToRem(1) pxToRem(2) pxToRem(3) cssVar(color-shadow-light);
+
+	&:hover,
+	&:focus {
+		background-position: 0 50%;
+
+		svg {
+			animation: zoomOutIn 1.2s;
+			animation-iteration-count: infinite;
+		}
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 pxToRem(2) cssVar(color-shadow),
+			pxToRem(2) pxToRem(2) pxToRem(1) pxToRem(1) cssVar(color-shadow),
+			pxToRem(1) pxToRem(1) pxToRem(2) pxToRem(3)
+				cssVar(color-shadow-light),
+			0 0 0 pxToRem(6) cssVar(color-primary-light-opacity);
+	}
+
+	&:active {
+		background-position: 0 100%;
+		box-shadow: 0 0 0 pxToRem(2) cssVar(color-shadow),
+			0 0 pxToRem(1) pxToRem(1) cssVar(color-shadow),
+			pxToRem(1) pxToRem(1) pxToRem(2) pxToRem(3)
+				cssVar(color-shadow-light);
+		transform: translateX(#{pxToRem(2)}) translateY(#{pxToRem(2)});
+
+		svg {
+			animation: unset;
+		}
+	}
+}

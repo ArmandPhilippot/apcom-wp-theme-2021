@@ -1,14 +1,24 @@
 .header {
-	background: cssVar(color-primary);
-	color: cssVar(color-fg-inverted);
+	background: cssVar(color-bg-tertiary);
 	text-align: center;
 	padding: cssVar(spacing-xl) 0;
 	position: relative;
 
+	&::before {
+		display: block;
+		content: "";
+		position: absolute;
+		bottom: pxToRem(-30);
+		left: 0;
+		width: 100%;
+		height: pxToRem(30);
+		background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 97.839"><path fill="#{$color_link-water}" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/><path d="M400 15.395v36.778H200v39.666H0v6h206V58.173h200V21.395h168v36.778h200v39.666h26v-6h-20V52.173H580V15.395z" fill="#{$color_catskill-white}"/><path d="M394 9.395v36.778H194v39.666H0v6h200V52.173h200V15.395h180v36.778h200v39.666h20v-6h-14V46.173H586V9.395z" fill="#{$color_casper}"/></svg>')});
+	}
+
 	@include media("screen") {
 		@include dimensions("lg") {
 			text-align: left;
-			padding: cssVar(spacing-2xl) 0;
+			padding: cssVar(spacing-3xl) 0;
 		}
 	}
 }
@@ -32,27 +42,44 @@
 				transform-style: preserve-3d;
 				transition: all 0.6s linear 0s;
 
-				&:hover {
+				&:hover,
+				&:focus {
 					transform: rotateY(180deg);
+					outline: none;
+
+					.logo__image {
+						&--front {
+							transform: none;
+						}
+
+						&--back {
+							transform: rotateY(180deg);
+						}
+					}
 				}
 
 				&:focus {
-					transform: rotateY(180deg);
+					.logo__image {
+						box-shadow: 0 0 pxToRem(6) pxToRem(1)
+								cssVar(color-shadow),
+							0 0 0 pxToRem(5) cssVar(color-primary-light-opacity);
+						outline: none;
+					}
 				}
 
 				&:active {
 					.logo__image {
-						box-shadow: pxToRem(0) pxToRem(0) pxToRem(2) pxToRem(5)
-								cssVar(color-shadow-dark),
-							0 0 pxToRem(3) pxToRem(3) cssVar(color-shadow-dark);
+						box-shadow: 0 0 pxToRem(6) pxToRem(1)
+								cssVar(color-shadow),
+							0 0 0 pxToRem(7) cssVar(color-primary-light-opacity);
 					}
 				}
 			}
 
 			&__image {
-				border: pxToRem(3) solid cssVar(color-border-light);
+				border: pxToRem(3) solid cssVar(color-border-lighter);
 				border-radius: 50%;
-				box-shadow: 0 0 pxToRem(3) pxToRem(3) cssVar(color-shadow-dark);
+				box-shadow: 0 0 pxToRem(6) pxToRem(1) cssVar(color-shadow);
 				backface-visibility: hidden;
 				position: absolute;
 				top: 0;
@@ -67,31 +94,42 @@
 
 	&__title {
 		font-family: cssVar(font-family-secondary);
-		font-size: cssVar(font-size-4xl);
+		font-size: cssVar(font-size-3xl);
 		font-weight: 500;
-		margin: 0;
+		margin: cssVar(spacing-sm) 0;
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				margin: 0;
+			}
+		}
+	}
+
+	&__link {
+		background: linear-gradient(
+				to top,
+				cssVar(color-primary-light) pxToRem(5),
+				transparent pxToRem(5)
+			)
+			center / 0 100% no-repeat;
+		text-decoration: none;
+		transition: all 0.5s ease-in-out 0s;
+
+		&:hover,
+		&:focus {
+			background-size: 100% 100%;
+		}
+
+		&:active {
+			background-size: 0 100%;
+		}
 	}
 
 	&__baseline {
 		font-family: cssVar(font-family-secondary);
 		font-size: cssVar(font-size-md);
-		font-weight: 500;
+		font-weight: 400;
 		text-transform: uppercase;
 		margin: 0;
-	}
-
-	&__link {
-		color: cssVar(color-fg-inverted);
-
-		&:hover,
-		&:focus {
-			color: cssVar(color-fg-inverted-secondary);
-			text-decoration-color: cssVar(color-fg-inverted-secondary);
-		}
-
-		&:active {
-			color: cssVar(color-fg-inverted);
-			text-decoration-color: cssVar(color-fg-inverted);
-		}
 	}
 }
