@@ -1,12 +1,11 @@
 .widget {
 	background: cssVar(color-bg);
-	margin: 0 0 cssVar(spacing-md);
-	max-width: 70ch;
+	margin-bottom: cssVar(spacing-md);
+	max-width: 80ch;
 
 	@include media("screen") {
 		@include dimensions("lg") {
-			margin: 0 auto cssVar(spacing-md);
-			padding: 0 cssVar(spacing-md) cssVar(spacing-md);
+			padding: 0 0 cssVar(spacing-md);
 		}
 	}
 

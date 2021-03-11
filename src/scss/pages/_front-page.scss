@@ -11,17 +11,17 @@
 	}
 
 	.wp-block-group {
-		border-bottom: pxToRem(3) solid cssVar(color-primary);
-		padding: cssVar(spacing-lg) 0 cssVar(spacing-md);
+		padding: cssVar(spacing-xl) 0;
 		display: grid;
 		grid-auto-rows: max-content;
 		grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
 		justify-content: center;
 		column-gap: cssVar(spacing-md);
+		position: relative;
 
 		@include media("screen") {
 			@include dimensions("lg") {
-				padding: cssVar(spacing-xl) 0 cssVar(spacing-lg);
+				padding: cssVar(spacing-2xl) 0;
 				grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(
 						0,
 						1fr
@@ -32,6 +32,45 @@
 
 		&:nth-child(2n) {
 			background: cssVar(color-bg-secondary);
+			padding: cssVar(spacing-md) 0 cssVar(spacing-md);
+
+			@include media("screen") {
+				@include dimensions("lg") {
+					padding: cssVar(spacing-md) 0 cssVar(spacing-lg);
+				}
+			}
+
+			&::before,
+			&::after {
+				display: block;
+				content: "";
+				background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130.427" preserveAspectRatio="none"><path d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_link-water}"/><path d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_catskill-white}"/></svg>')});
+				background-repeat: repeat-x;
+				background-size: 100% 100%;
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: cssVar(spacing-md);
+			}
+
+			&::before {
+				top: calc(#{cssVar(spacing-md)} * -1);
+			}
+
+			&::after {
+				bottom: calc(#{cssVar(spacing-md)} * -1);
+				transform: rotate(180deg);
+			}
+		}
+
+		&:first-child {
+			padding-top: cssVar(spacing-2xl);
+
+			@include media("screen") {
+				@include dimensions("sm") {
+					padding-top: cssVar(spacing-3xl);
+				}
+			}
 		}
 
 		&:last-child {

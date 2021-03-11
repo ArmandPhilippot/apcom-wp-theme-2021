@@ -1,11 +1,5 @@
 .pagination {
-	margin: cssVar(spacing-md) 0;
-
-	@include media("screen") {
-		@include dimensions("lg") {
-			margin: cssVar(spacing-xl) 0;
-		}
-	}
+	margin: cssVar(spacing-sm) 0 cssVar(spacing-md);
 
 	ul.page-numbers {
 		@include flexList;

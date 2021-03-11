@@ -1,6 +1,12 @@
 .breadcrumb {
 	background: cssVar(color-bg);
-	padding: cssVar(spacing-md) 0;
+	padding: cssVar(spacing-2xl) 0 cssVar(spacing-xl);
+
+	@include media("screen") {
+		@include dimensions("sm") {
+			padding: cssVar(spacing-3xl) 0 cssVar(spacing-xl);
+		}
+	}
 
 	&__list {
 		@include orderedListReset;

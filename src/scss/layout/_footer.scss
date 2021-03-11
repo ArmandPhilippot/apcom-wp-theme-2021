@@ -1,22 +1,33 @@
 .footer {
-	background: cssVar(color-primary);
-	color: cssVar(color-fg-inverted);
+	background: cssVar(color-bg-tertiary);
 	text-align: center;
 	margin-bottom: pxToRem(60); // main-nav height
-	padding: cssVar(spacing-xl) cssVar(spacing-md) cssVar(spacing-md);
+	padding: cssVar(spacing-md) cssVar(spacing-md) cssVar(spacing-lg);
 	position: relative;
+
+	&::before {
+		display: block;
+		content: "";
+		position: absolute;
+		top: pxToRem(-30);
+		left: 0;
+		width: 100%;
+		height: pxToRem(30);
+		background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 97.839"><path fill="#{$color_link-water}" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/><path d="M400 15.395v36.778H200v39.666H0v6h206V58.173h200V21.395h168v36.778h200v39.666h26v-6h-20V52.173H580V15.395z" fill="#{$color_catskill-white}"/><path d="M394 9.395v36.778H194v39.666H0v6h200V52.173h200V15.395h180v36.778h200v39.666h20v-6h-14V46.173H586V9.395z" fill="#{$color_casper}"/></svg>')});
+		transform: rotate(180deg);
+	}
 
 	@include media("screen") {
 		@include dimensions("lg") {
 			margin: 0;
-			padding: cssVar(spacing-xl) cssVar(spacing-md);
+			padding: cssVar(spacing-lg) cssVar(spacing-md);
 		}
 	}
 
 	&__copyright {
 		.copyright {
 			&__icon {
-				fill: cssVar(color-fg-inverted);
+				fill: cssVar(color-primary-dark);
 				max-height: pxToRem(30);
 			}
 
@@ -32,21 +43,6 @@
 			&__list {
 				@include flexList;
 				justify-content: center;
-			}
-
-			&__link {
-				color: cssVar(color-fg-inverted);
-
-				&:hover,
-				&:focus {
-					color: cssVar(color-fg-inverted-secondary);
-					text-decoration-color: cssVar(color-fg-inverted-secondary);
-				}
-
-				&:active {
-					color: cssVar(color-fg-inverted);
-					text-decoration-color: cssVar(color-fg-inverted);
-				}
 			}
 		}
 	}
