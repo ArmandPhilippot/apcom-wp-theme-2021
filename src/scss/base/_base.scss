@@ -18,6 +18,14 @@ html {
 	padding: 0;
 }
 
+*::-moz-selection {
+	background: cssVar(color-primary-light-opacity);
+}
+
+*::selection {
+	background: cssVar(color-primary-light-opacity);
+}
+
 body {
 	background: cssVar(color-bg-secondary);
 	color: cssVar(color-fg);
