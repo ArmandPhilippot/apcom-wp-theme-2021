@@ -1,4 +1,30 @@
 "use strict";
+"use strict";
+"use strict";
+
+/**
+ * hideSearch
+ *
+ * Hide search input when user click outside or focus move outside search form.
+ *
+ * @param {*} target Event target
+ */
+function hideSearch(target) {
+  var menuItemSearch = document.getElementById('tools__search');
+  var searchCheckbox = document.getElementById('search__checkbox');
+
+  if (!menuItemSearch.contains(target) && target !== null) {
+    searchCheckbox.checked = false;
+  }
+}
+
+document.addEventListener('click', function (event) {
+  hideSearch(event.target);
+});
+document.addEventListener('focusout', function (event) {
+  hideSearch(event.relatedTarget);
+});
+"use strict";
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
