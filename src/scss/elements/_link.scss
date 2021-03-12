@@ -12,13 +12,14 @@ a {
 	}
 
 	&:focus {
-		outline: none;
+		outline: cssVar(color-primary) dotted pxToRem(1);
 	}
 
 	&:active {
 		color: cssVar(color-primary-dark);
 		text-decoration-color: cssVar(color-primary-dark);
 		text-decoration-thickness: pxToRem(2);
+		outline: none;
 	}
 
 	&[hreflang],

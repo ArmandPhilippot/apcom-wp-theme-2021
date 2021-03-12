@@ -9,7 +9,8 @@
 		figcaption {
 			background: cssVar(color-bg-secondary);
 			color: cssVar(color-fg-tertiary);
-			padding: cssVar(spacing-2xs);
+			font-size: cssVar(spacing-sm);
+			padding: cssVar(spacing-3xs);
 		}
 	}
 }

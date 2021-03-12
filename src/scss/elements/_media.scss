@@ -7,7 +7,8 @@ video {
 }
 
 img {
-	box-shadow: 0 pxToRem(1) pxToRem(3) 0 cssVar(color-shadow);
+	box-shadow: 0 0 pxToRem(2) 0 cssVar(color-shadow-dark),
+		pxToRem(4) pxToRem(4) pxToRem(3) 0 cssVar(color-shadow-light);
 	transition: all 0.3s ease-in-out 0s;
 }
 
@@ -22,7 +23,7 @@ figcaption {
 	font-weight: 700;
 	text-align: center;
 	width: max-content;
-	margin: 0 auto;
+	margin: cssVar(spacing-sm) auto 0;
 }
 
 a {

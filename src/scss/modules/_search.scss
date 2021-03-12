@@ -107,7 +107,7 @@
 			svg {
 				fill: cssVar(color-fg-inverted);
 				filter: drop-shadow(
-					pxToRem(1) pxToRem(1) 0 cssVar(color-shadow-dark)
+					pxToRem(1) pxToRem(1) 0 cssVar(color-shadow-darker)
 				);
 				transform: rotate(360deg);
 			}

@@ -187,6 +187,7 @@ pre.line-numbers > code {
 pre.line-numbers .line-numbers-rows {
 	background: var(--apcom-color-bg-tertiary);
 	left: 0;
+	letter-spacing: -0.0625rem;
 	padding: var(--apcom-spacing-md) 0;
 	pointer-events: none;
 	position: absolute;
