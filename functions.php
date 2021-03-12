@@ -120,6 +120,11 @@ function apcom_enqueue_scripts() {
 	$header_scripts_path  = $theme_directory . '/assets/js/scripts.min.js';
 	$vendors_scripts_path = $theme_directory . '/assets/js/vendors.min.js';
 
+	$prism_vars = array(
+		'lightThemeText' => __( 'Switch to dark theme', 'APCom' ),
+		'darkThemeText'  => __( 'Switch to light theme', 'APCom' ),
+	);
+
 	if ( file_exists( $footer_scripts_path ) ) {
 		wp_register_script( 'apcom-app', $theme_uri . '/assets/js/app.min.js', array(), APCOM_VERSION, true );
 		wp_enqueue_script( 'apcom-app' );
@@ -133,6 +138,7 @@ function apcom_enqueue_scripts() {
 	if ( file_exists( $vendors_scripts_path ) ) {
 		wp_register_script( 'vendors-scripts', $theme_uri . '/assets/js/vendors.min.js', array(), APCOM_VERSION, true );
 		wp_enqueue_script( 'vendors-scripts' );
+		wp_localize_script( 'vendors-scripts', 'prism_vars', $prism_vars );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
