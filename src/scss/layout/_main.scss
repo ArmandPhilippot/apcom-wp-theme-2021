@@ -243,6 +243,17 @@
 
 	&__comments {
 		background: cssVar(color-bg-secondary);
+		padding: 0 0 cssVar(spacing-3xl);
+
+		@include media("screen") {
+			@include dimensions("lg") {
+				padding: 0 0 cssVar(spacing-4xl);
+			}
+
+			@include dimensions("xl") {
+				padding: 0 0 cssVar(spacing-5xl);
+			}
+		}
 		position: relative;
 
 		&::before {
@@ -266,20 +277,6 @@
 
 			&__list {
 				margin-top: cssVar(spacing-md) 0;
-			}
-
-			&__form {
-				padding: 0 0 cssVar(spacing-3xl);
-
-				@include media("screen") {
-					@include dimensions("lg") {
-						padding: 0 0 cssVar(spacing-4xl);
-					}
-
-					@include dimensions("xl") {
-						padding: 0 0 cssVar(spacing-5xl);
-					}
-				}
 			}
 		}
 	}
