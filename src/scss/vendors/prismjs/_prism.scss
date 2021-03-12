@@ -1,0 +1,287 @@
+.code-toolbar {
+	position: relative;
+	margin-top: calc(
+		#{pxToRem(50)} + #{cssVar(spacing-md)}
+	); // toolbar height + spacing
+	width: 100%;
+
+	> .toolbar {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		background: cssVar(color-bg-tertiary);
+		border: solid cssVar(color-border-light);
+		border-width: pxToRem(1) pxToRem(1) 0 pxToRem(1);
+		border-top-left-radius: pxToRem(3);
+		border-top-left-radius: pxToRem(3);
+		border-top-right-radius: pxToRem(3);
+		box-shadow: 0 pxToRem(2) pxToRem(3) pxToRem(-2) cssVar(color-shadow);
+		width: 100%;
+		height: pxToRem(50);
+		position: absolute;
+		top: pxToRem(-50);
+		left: 0;
+	}
+
+	.toolbar-item {
+		color: cssVar(color-fg-secondary);
+
+		&:first-child {
+			font-size: cssVar(font-size-sm);
+			font-weight: 600;
+			margin-right: auto;
+			margin-left: cssVar(spacing-sm);
+		}
+
+		&:last-child {
+			margin: 0 cssVar(spacing-sm);
+		}
+
+		button {
+			@include buttonStyle3;
+
+			color: cssVar(color-fg-inverted);
+			font-size: cssVar(font-size-sm);
+			padding: cssVar(spacing-3xs) cssVar(spacing-2xs);
+		}
+	}
+
+	pre {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		width: auto;
+	}
+}
+
+pre {
+	&[data-line] {
+		position: relative;
+	}
+
+	&[class*="language-"] {
+		.token {
+			&.cdata,
+			&.comment,
+			&.prolog {
+				color: cssVar(color-token-grey);
+			}
+
+			&.punctuation {
+				color: cssVar(color-fg);
+			}
+
+			&.attr-name,
+			&.hexcode,
+			&.inserted,
+			&.string {
+				color: cssVar(color-token-green);
+			}
+
+			&.class,
+			&.coord,
+			&.id,
+			&.function {
+				color: cssVar(color-token-purple);
+			}
+
+			&.builtin,
+			&.builtin.class-name,
+			&.property-access,
+			&.regex,
+			&.scope {
+				color: cssVar(color-token-magenta);
+			}
+
+			&.class-name,
+			&.constant,
+			&.global,
+			&.interpolation,
+			&.key,
+			&.package,
+			&.property,
+			&.this,
+			&.title,
+			&.variable {
+				color: cssVar(color-token-blue);
+			}
+
+			&.combinator,
+			&.keyword,
+			&.operator,
+			&.pseudo-class,
+			&.pseudo-element,
+			&.rule,
+			&.selector,
+			&.unit {
+				color: cssVar(color-token-orange);
+			}
+
+			&.attr-value,
+			&.boolean,
+			&.number {
+				color: cssVar(color-token-yellow);
+			}
+
+			&.delimiter,
+			&.doctype,
+			&.parameter,
+			&.parent,
+			&.shebang,
+			&.tag {
+				color: cssVar(color-token-cyan);
+			}
+
+			&.deleted {
+				color: cssVar(color-token-red);
+			}
+
+			&.deleted.prefix,
+			&.important:not(.boolean),
+			&.inserted.prefix,
+			&.bold,
+			&.this {
+				font-weight: bold;
+			}
+
+			&.coord,
+			&.italic {
+				font-style: italic;
+			}
+
+			&.entity {
+				cursor: help;
+			}
+		}
+
+		.language-css,
+		.language-scss {
+			.token {
+				&.variable {
+					color: cssVar(color-token-cyan);
+				}
+			}
+		}
+
+		.language-markdown {
+			.token {
+				&.url {
+					color: cssVar(color-token-yellow);
+
+					.token.content {
+						color: cssVar(color-token-green);
+					}
+				}
+
+				&.code {
+					color: cssVar(color-token-cyan);
+				}
+
+				&.hr.punctuation {
+					color: cssVar(color-token-blue);
+				}
+
+				&.blockquote.punctuation {
+					color: cssVar(color-token-magenta);
+				}
+			}
+		}
+
+		code {
+			white-space: pre;
+		}
+	}
+
+	&.line-numbers {
+		counter-reset: linenumber;
+		padding: 0;
+
+		> code {
+			position: relative;
+			padding: cssVar(spacing-md) cssVar(spacing-sm) cssVar(spacing-md)
+				calc(#{pxToRem(60)} + #{cssVar(spacing-sm)}); // gutter width + spacing
+			overflow-wrap: normal;
+			white-space: pre;
+		}
+
+		.line-numbers-rows {
+			background: cssVar(color-bg-tertiary);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: pxToRem(60);
+			padding: cssVar(spacing-md) 0;
+			pointer-events: none;
+			user-select: none;
+
+			> span {
+				display: block;
+				counter-increment: linenumber;
+
+				&::before {
+					display: block;
+					content: counter(linenumber);
+					padding-right: cssVar(spacing-sm);
+					text-align: right;
+				}
+			}
+		}
+	}
+
+	&.diff-highlight {
+		> code .token.deleted:not(.prefix) {
+			display: block;
+			background-color: rgba(140, 33, 33, 0.15);
+			color: inherit;
+		}
+
+		> code .token.inserted:not(.prefix) {
+			display: block;
+			background-color: rgba(12, 87, 5, 0.15);
+			color: inherit;
+		}
+
+		.token.unchanged {
+			opacity: 0.5;
+		}
+	}
+
+	&.command-line {
+		overflow-wrap: normal;
+		white-space: pre;
+
+		code {
+			overflow-wrap: normal;
+			white-space: pre;
+		}
+
+		.command-line-prompt {
+			border-right: pxToRem(1) solid cssVar(color-border-light);
+			display: block;
+			float: left;
+			margin-right: cssVar(spacing-md);
+			pointer-events: none;
+			user-select: none;
+
+			> span {
+				&::before {
+					display: block;
+					content: "";
+					color: cssVar(color-token-grey);
+					padding-right: cssVar(spacing-sm);
+				}
+
+				&[data-user]::before {
+					content: "[" attr(data-user) "@" attr(data-host) "] $";
+				}
+
+				&[data-user="root"]::before {
+					content: "[" attr(data-user) "@" attr(data-host) "] #";
+				}
+
+				&[data-prompt]::before {
+					content: attr(data-prompt);
+				}
+			}
+		}
+	}
+}

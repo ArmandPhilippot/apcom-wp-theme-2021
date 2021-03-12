@@ -80,7 +80,7 @@
 .page__comments {
 	display: grid;
 	grid-auto-rows: max-content;
-	grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(0, 1fr);
+	grid-template-columns: minmax(0, 1fr) minmax(0, 80ch) minmax(0, 1fr);
 	justify-content: center;
 	column-gap: cssVar(spacing-md);
 
