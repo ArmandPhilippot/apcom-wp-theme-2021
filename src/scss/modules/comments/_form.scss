@@ -2,6 +2,8 @@
 	#cancel-comment-reply-link {
 		@include buttonBase;
 		@include buttonStyle2;
+
+		font-family: cssVar(font-family-primary);
 		margin: cssVar(spacing-sm) 0;
 	}
 }
