@@ -411,6 +411,21 @@ template {
 	--apcom-color-token-yellow: #534a04;
 }
 
+.code-toolbar[data-theme="dark"] pre {
+	--apcom-color-bg-secondary: #132539;
+	--apcom-color-bg-tertiary: #1a314d;
+	--apcom-color-fg: #f4f7fb;
+	--apcom-color-token-blue: #81c9f3;
+	--apcom-color-token-cyan: #79ced7;
+	--apcom-color-token-green: #8edc7f;
+	--apcom-color-token-grey: #b3c1d0;
+	--apcom-color-token-magenta: #fc9cf7;
+	--apcom-color-token-orange: #f9b36c;
+	--apcom-color-token-purple: #d5a9fe;
+	--apcom-color-token-red: #fea6a4;
+	--apcom-color-token-yellow: #ddd764;
+}
+
 @font-face {
 	font-display: swap;
 	font-family: "Kanit";
