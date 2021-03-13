@@ -31,3 +31,22 @@
 		color-token-yellow: #{$color_light-theme_yellow},
 	)
 );
+
+.code-toolbar[data-theme="dark"] pre {
+	@include updateCssVars(
+		(
+			color-bg-secondary: #{$color_big-stone},
+			color-bg-tertiary: #{$color_nile-blue},
+			color-fg: #{$color_black-squeeze},
+			color-token-blue: #{$color_dark-theme_blue},
+			color-token-cyan: #{$color_dark-theme_cyan},
+			color-token-green: #{$color_dark-theme_green},
+			color-token-grey: #{$color_dark-theme_grey},
+			color-token-magenta: #{$color_dark-theme_magenta},
+			color-token-orange: #{$color_dark-theme_orange},
+			color-token-purple: #{$color_dark-theme_purple},
+			color-token-red: #{$color_dark-theme_red},
+			color-token-yellow: #{$color_dark-theme_yellow},
+		)
+	);
+}

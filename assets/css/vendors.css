@@ -54,6 +54,7 @@
 	box-shadow: 0 0 0 0.125rem var(--apcom-color-shadow), 0.125rem 0.125rem 0.0625rem 0.0625rem var(--apcom-color-shadow), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
 	color: var(--apcom-color-fg-inverted);
 	font-size: var(--apcom-font-size-sm);
+	height: 2rem;
 	justify-content: center;
 	padding: var(--apcom-spacing-3xs) var(--apcom-spacing-2xs);
 }
@@ -79,6 +80,22 @@
 
 .code-toolbar .toolbar-item button:active svg {
 	animation: unset;
+}
+
+.code-toolbar .toolbar-item .prism-theme__btn {
+	padding: 0;
+	width: 2rem;
+}
+
+.code-toolbar .toolbar-item .prism-theme__icon {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: var(--apcom-spacing-3xs);
+}
+
+.code-toolbar .toolbar-item .prism-theme__icon svg {
+	fill: var(--apcom-color-bg);
 }
 
 .code-toolbar pre {

@@ -42,7 +42,26 @@
 
 			color: cssVar(color-fg-inverted);
 			font-size: cssVar(font-size-sm);
+			height: pxToRem(32);
 			padding: cssVar(spacing-3xs) cssVar(spacing-2xs);
+		}
+
+		.prism-theme {
+			&__btn {
+				width: pxToRem(32);
+				padding: 0;
+			}
+
+			&__icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: cssVar(spacing-3xs);
+
+				svg {
+					fill: cssVar(color-bg);
+				}
+			}
 		}
 	}
 
