@@ -99,24 +99,16 @@ Prism.plugins.toolbar.registerButton('switch-theme', function (env) {
 	}
 
 	/**
-	 * Update the button content according to the current theme.
+	 * Define the button content based on the preferred color scheme.
 	 */
-	function updateButtonContent() {
-		if (getPreference()) {
-			let colorScheme = getPreference();
+	function defineButtonContent() {
+		let colorScheme = getPreference();
 
-			if (colorScheme === 'dark') {
-				if (button.hasChildNodes()) {
-					button.replaceChild(darkSpan, lightSpan);
-				} else {
-					button.appendChild(darkSpan);
-				}
+		if (colorScheme === 'dark') {
+			if (button.hasChildNodes()) {
+				button.replaceChild(darkSpan, lightSpan);
 			} else {
-				if (button.hasChildNodes()) {
-					button.replaceChild(lightSpan, darkSpan);
-				} else {
-					button.appendChild(lightSpan);
-				}
+				button.appendChild(darkSpan);
 			}
 		} else {
 			if (button.hasChildNodes()) {
@@ -128,11 +120,33 @@ Prism.plugins.toolbar.registerButton('switch-theme', function (env) {
 	}
 
 	/**
+	 * Update the button content according to the current theme.
+	 */
+	function updateButtonContent() {
+		let codeBlocksButton = document.querySelectorAll('.prism-theme__btn');
+		let colorScheme = getPreference();
+
+		for (let i = 0; i < codeBlocksButton.length; i++) {
+			let buttonClone = '';
+
+			if (colorScheme === 'dark') {
+				buttonClone = darkSpan.cloneNode(true);
+				codeBlocksButton[i].innerHTML = '';
+				codeBlocksButton[i].appendChild(buttonClone);
+			} else {
+				buttonClone = lightSpan.cloneNode(true);
+				codeBlocksButton[i].innerHTML = '';
+				codeBlocksButton[i].appendChild(buttonClone);
+			}
+		}
+	}
+
+	/**
 	 * Initialize the theme to use based on user preferences.
 	 */
 	function initializeTheme() {
 		definePreference();
-		updateButtonContent();
+		defineButtonContent();
 		updateTheme();
 	}
 
@@ -150,7 +164,6 @@ Prism.plugins.toolbar.registerButton('switch-theme', function (env) {
 		}
 
 		updateTheme();
-		updateButtonContent();
 	}
 
 	/**
@@ -160,6 +173,7 @@ Prism.plugins.toolbar.registerButton('switch-theme', function (env) {
 		window.addEventListener('storage', e => {
 			if (e.key === 'apcom-code-theme') {
 				updateTheme();
+				updateButtonContent();
 			}
 		});
 	}
@@ -169,6 +183,7 @@ Prism.plugins.toolbar.registerButton('switch-theme', function (env) {
 
 	button.addEventListener('click', () => {
 		switchTheme();
+		updateButtonContent();
 	});
 
 	return button;
