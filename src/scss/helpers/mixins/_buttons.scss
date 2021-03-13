@@ -7,6 +7,10 @@
 	font-weight: 700;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
+
+	&:focus {
+		outline: none;
+	}
 }
 
 @mixin buttonStyle1 {

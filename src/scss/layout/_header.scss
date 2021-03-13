@@ -26,6 +26,8 @@
 .branding {
 	&__logo {
 		position: relative;
+		width: max-content;
+		margin: auto;
 
 		&:hover {
 			.logo__link {

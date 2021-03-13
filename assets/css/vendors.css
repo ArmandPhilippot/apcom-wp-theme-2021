@@ -96,6 +96,8 @@
 
 .code-toolbar .toolbar-item .prism-theme__icon svg {
 	fill: var(--apcom-color-bg);
+	height: 100%;
+	width: 100%;
 }
 
 .code-toolbar pre {

@@ -131,7 +131,7 @@
 	}
 
 	&__body {
-		padding: cssVar(spacing-2xl) 0 cssVar(spacing-4xl);
+		padding: cssVar(spacing-2xl) 0 0;
 
 		&--single-page {
 			padding: cssVar(spacing-lg) 0 0;
