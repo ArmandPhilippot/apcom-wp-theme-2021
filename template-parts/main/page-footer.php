@@ -76,9 +76,20 @@
 		<?php
 	} elseif ( is_attachment() ) {
 		if ( $post->post_parent ) {
-			$apcom_attachment_parent_link  = get_permalink( $post->post_parent );
-			$apcom_attachment_parent_title = get_the_title( $post->post_parent );
-			echo esc_html__( 'Published in:', 'APCom' ) . ' <a href="' . esc_url( $apcom_attachment_parent_link ) . '">' . esc_html( $apcom_attachment_parent_title ) . '</a>';
+			?>
+			<dl class="footer__meta meta">
+				<?php
+				$apcom_attachment_parent_link  = get_permalink( $post->post_parent );
+				$apcom_attachment_parent_title = get_the_title( $post->post_parent );
+				?>
+				<dd class="meta__description meta__location">
+					<?php echo esc_html__( 'Published in:', 'APCom' ); ?>
+				</dd>
+				<dt class="meta__term">
+					<a href="<?php echo esc_url( $apcom_attachment_parent_link ); ?>"><?php echo esc_html( $apcom_attachment_parent_title ); ?></a>
+				</dt>
+			</dl>
+			<?php
 		} else {
 			esc_html_e( 'Is not attached to any article.', 'APCom' );
 		}
