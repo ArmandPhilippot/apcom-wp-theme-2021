@@ -15,7 +15,7 @@
 .screen-reader-text:focus {
 	background: cssVar(color-bg);
 	border: pxToRem(3) solid cssVar(color-border);
-	box-shadow: 0 0 pxToRem(2) pxToRem(2) cssVar(color-shadow);
+	box-shadow: 0 0 pxToRem(2) pxToRem(2) cssVar(color-shadow-light);
 	color: cssVar(color-primary);
 	font-size: cssVar(font-size-md);
 	font-weight: 700;

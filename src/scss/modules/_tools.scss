@@ -58,12 +58,20 @@
 
 		&:focus {
 			~ .tools__label {
-				box-shadow: 0 0 0 pxToRem(2) cssVar(color-shadow),
+				box-shadow: 0 0 0 pxToRem(2) cssVar(color-primary-light),
 					pxToRem(2) pxToRem(2) pxToRem(1) pxToRem(1)
-						cssVar(color-shadow),
+						cssVar(color-primary),
 					pxToRem(1) pxToRem(1) pxToRem(2) pxToRem(3)
 						cssVar(color-shadow-light),
-					0 0 0 pxToRem(6) cssVar(color-primary-light-opacity);
+					pxToRem(1) pxToRem(1) 0 pxToRem(6)
+						cssVar(color-primary-light-opacity);
+				outline: none;
+			}
+		}
+
+		&:active {
+			~ .tools__label {
+				transform: translateX(#{pxToRem(2)}) translateY(#{pxToRem(2)});
 			}
 		}
 
@@ -102,7 +110,7 @@
 
 			@include dimensions(null, "lg") {
 				background: cssVar(color-bg-tertiary);
-				box-shadow: 0 pxToRem(2) pxToRem(2) 0
+				box-shadow: inset 0 pxToRem(-2) pxToRem(2) 0
 					cssVar(color-shadow-darker);
 				position: fixed;
 				top: 0;

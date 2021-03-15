@@ -106,9 +106,6 @@
 
 			svg {
 				fill: cssVar(color-fg-inverted);
-				filter: drop-shadow(
-					pxToRem(1) pxToRem(1) 0 cssVar(color-shadow-darker)
-				);
 				transform: rotate(360deg);
 			}
 		}
@@ -126,9 +123,6 @@
 
 			svg {
 				fill: cssVar(color-primary);
-				filter: drop-shadow(
-					pxToRem(1) pxToRem(1) 0 cssVar(color-shadow-lighter)
-				);
 				width: pxToRem(30);
 				transition: all 0.3s ease-in 0s;
 			}
@@ -142,13 +136,11 @@
 	&__field {
 		&:hover {
 			~ .search-form__btn {
-				transform: translateX(#{pxToRem(-2)}) translateY(#{pxToRem(-2)});
+				transform: translateX(#{pxToRem(-3)}) translateY(#{pxToRem(-3)});
 			}
 		}
 
 		&:focus {
-			box-shadow: pxToRem(2) pxToRem(2) 0 0 cssVar(color-shadow);
-
 			~ .search-form__btn {
 				transform: translateX(#{pxToRem(2)}) translateY(#{pxToRem(2)});
 			}

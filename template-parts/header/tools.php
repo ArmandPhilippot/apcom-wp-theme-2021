@@ -7,7 +7,7 @@
  */
 
 ?>
-<div class="tools">
+<div class="tools" id="tools">
 	<div class="tools__item search" id="tools__search">
 		<input type="checkbox" name="search__checkbox" id="search__checkbox" class="tools__checkbox search__checkbox toggle">
 		<label for="search__checkbox" class="tools__label tools__label--search search__label">

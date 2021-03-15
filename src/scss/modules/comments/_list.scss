@@ -5,7 +5,7 @@
 
 	.comments__form {
 		background: cssVar(color-bg);
-		border: pxToRem(1) solid cssVar(color-border-lighter);
+		border: pxToRem(1) solid cssVar(color-border-light);
 		margin-bottom: cssVar(spacing-md);
 		padding: cssVar(spacing-md);
 
@@ -30,9 +30,10 @@
 
 	&__inner {
 		background: cssVar(color-bg);
-		border: pxToRem(1) solid cssVar(color-border-lighter);
+		border: pxToRem(1) solid cssVar(color-border-light);
 		box-shadow: pxToRem(3) pxToRem(3) 0 0 cssVar(color-shadow-lighter),
-			pxToRem(4) pxToRem(4) pxToRem(3) pxToRem(-2) cssVar(color-shadow);
+			pxToRem(4) pxToRem(4) pxToRem(3) pxToRem(-2)
+				cssVar(color-shadow-darker);
 		padding: cssVar(spacing-md);
 		position: relative;
 
@@ -150,7 +151,7 @@
 		&__post {
 			background: cssVar(color-primary);
 			box-shadow: 0 0 0 pxToRem(1) cssVar(color-shadow-dark),
-				pxToRem(1) pxToRem(1) 0 pxToRem(1) cssVar(color-shadow-dark);
+				pxToRem(2) pxToRem(2) 0 0 cssVar(color-shadow-dark);
 			color: cssVar(color-fg-inverted);
 			font-size: cssVar(font-size-sm);
 			font-variant: small-caps;

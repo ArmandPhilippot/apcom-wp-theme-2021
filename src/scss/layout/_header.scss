@@ -23,6 +23,14 @@
 	}
 }
 
+[data-color-scheme="dark"] {
+	.header {
+		&::before {
+			background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 97.839"><path fill="#{$color_cello}" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/><path d="M400 15.395v36.778H200v39.666H0v6h206V58.173h200V21.395h168v36.778h200v39.666h26v-6h-20V52.173H580V15.395z" fill="#{$color_nile-blue}"/><path d="M394 9.395v36.778H194v39.666H0v6h200V52.173h200V15.395h180v36.778h200v39.666h20v-6h-14V46.173H586V9.395z" fill="#{$color_rhino}"/></svg>')});
+		}
+	}
+}
+
 .branding {
 	&__logo {
 		position: relative;
@@ -63,7 +71,7 @@
 				&:focus {
 					.logo__image {
 						box-shadow: 0 0 pxToRem(6) pxToRem(1)
-								cssVar(color-shadow),
+								cssVar(color-shadow-dark),
 							0 0 0 pxToRem(5) cssVar(color-primary-light-opacity);
 						outline: none;
 					}
@@ -72,16 +80,17 @@
 				&:active {
 					.logo__image {
 						box-shadow: 0 0 pxToRem(6) pxToRem(1)
-								cssVar(color-shadow),
+								cssVar(color-shadow-dark),
 							0 0 0 pxToRem(7) cssVar(color-primary-light-opacity);
 					}
 				}
 			}
 
 			&__image {
-				border: pxToRem(3) solid cssVar(color-border-lighter);
+				border: pxToRem(3) solid cssVar(color-border-light);
 				border-radius: 50%;
-				box-shadow: 0 0 pxToRem(6) pxToRem(1) cssVar(color-shadow);
+				box-shadow: 0 0 pxToRem(6) pxToRem(1)
+					cssVar(color-shadow-darker);
 				backface-visibility: hidden;
 				position: absolute;
 				top: 0;
