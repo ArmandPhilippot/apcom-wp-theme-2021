@@ -27,9 +27,9 @@ function getDarkThemeIcon() {
 }
 
 /**
- * Get the light theme label.
+ * Get the light theme label to display on dark theme.
  */
-function getLightThemeLabel() {
+function getDarkThemeLabel() {
 	let span = document.createElement('span');
 	let label = color_scheme_vars.lightThemeText;
 
@@ -41,9 +41,9 @@ function getLightThemeLabel() {
 }
 
 /**
- * Get the dark theme label.
+ * Get the dark theme label to display on light theme.
  */
-function getDarkThemeLabel() {
+function getLightThemeLabel() {
 	let span = document.createElement('span');
 	let label = color_scheme_vars.darkThemeText;
 
@@ -145,10 +145,10 @@ function createSwitchThemeButton() {
 	toggleDiv.classList.add('tools__item', 'themes');
 
 	if (preferredColorScheme === 'dark') {
-		switchButtonLabel = getDarkThemeLabel();
+		switchButtonLabel = getLightThemeLabel();
 		switchButtonIcon = getLightThemeIcon();
 	} else {
-		switchButtonLabel = getLightThemeLabel();
+		switchButtonLabel = getDarkThemeLabel();
 		switchButtonIcon = getDarkThemeIcon();
 	}
 
@@ -173,10 +173,10 @@ function updateSwitchThemeButton() {
 	toggleButton.innerHTML = '';
 
 	if (preferredColorScheme === 'dark') {
-		switchButtonLabel = getDarkThemeLabel();
+		switchButtonLabel = getLightThemeLabel();
 		switchButtonIcon = getLightThemeIcon();
 	} else {
-		switchButtonLabel = getLightThemeLabel();
+		switchButtonLabel = getDarkThemeLabel();
 		switchButtonIcon = getDarkThemeIcon();
 	}
 
