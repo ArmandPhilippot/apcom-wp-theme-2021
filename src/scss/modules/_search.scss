@@ -78,6 +78,24 @@
 	}
 }
 
+[data-color-scheme="dark"] {
+	.search {
+		&__checkbox {
+			&:checked {
+				~ .search__label {
+					.search__icon {
+						&::before {
+							display: block;
+							content: "";
+							background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{$color_big-stone}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 .search-form {
 	position: relative;
 
