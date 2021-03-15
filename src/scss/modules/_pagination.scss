@@ -5,7 +5,6 @@
 		@include flexList;
 
 		.page-numbers {
-			margin-top: pxToRem(-1);
 			margin-left: pxToRem(-1);
 		}
 	}
@@ -47,10 +46,10 @@
 
 	.current {
 		font-weight: 700;
-		transform: translateX(#{pxToRem(3)}) translateY(#{pxToRem(3)});
+		transform: translateX(#{pxToRem(4)}) translateY(#{pxToRem(4)});
 	}
 
 	.dots {
-		box-shadow: pxToRem(3) pxToRem(3) 0 0 cssVar(color-primary);
+		box-shadow: pxToRem(4) pxToRem(4) 0 0 cssVar(color-shadow);
 	}
 }

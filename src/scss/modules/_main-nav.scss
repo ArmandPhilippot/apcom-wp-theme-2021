@@ -67,8 +67,6 @@
 		font-variant: small-caps;
 		font-weight: 700;
 		text-decoration: none;
-		text-shadow: pxToRem(1) pxToRem(1) pxToRem(1)
-			cssVar(color-shadow-darker);
 		height: pxToRem(60);
 		padding: 0 cssVar(spacing-sm);
 
@@ -80,8 +78,6 @@
 		&:focus {
 			background-position: center, 0 0, 0 0;
 			color: cssVar(color-primary);
-			text-shadow: pxToRem(1) pxToRem(1) pxToRem(1)
-				cssVar(color-shadow-lighter);
 		}
 
 		&:active {
@@ -113,8 +109,6 @@
 				background-repeat: no-repeat;
 				border-radius: 8%;
 				color: cssVar(color-primary);
-				text-shadow: pxToRem(1) pxToRem(1) pxToRem(1)
-					cssVar(color-shadow-light);
 				height: auto;
 				margin: 0 pxToRem(3);
 				padding: cssVar(spacing-3xs) cssVar(spacing-sm);

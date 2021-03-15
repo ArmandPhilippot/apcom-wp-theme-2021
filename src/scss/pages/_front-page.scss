@@ -88,4 +88,15 @@
 			grid-column: 2;
 		}
 	}
+
+	&[data-color-scheme="dark"] {
+		.wp-block-group {
+			&:nth-child(2n) {
+				&::before,
+				&::after {
+					background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130.427" preserveAspectRatio="none"><path d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_cello}"/><path d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_nile-blue}"/></svg>')});
+				}
+			}
+		}
+	}
 }
