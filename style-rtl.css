@@ -429,7 +429,7 @@ template {
 	--apcom-color-shadow-lighter: #3f5873;
 	--apcom-color-primary: #b8d4f5;
 	--apcom-color-primary-light: #c3dcf9;
-	--apcom-color-primary-light-opacity: rgba(195, 220, 249, 0.25);
+	--apcom-color-primary-light-opacity: rgba(195, 220, 249, 0.35);
 	--apcom-color-primary-dark: #a5ccf8;
 	--apcom-color-secondary: #ffe4b8;
 	--apcom-color-token-blue: #81c9f3;
