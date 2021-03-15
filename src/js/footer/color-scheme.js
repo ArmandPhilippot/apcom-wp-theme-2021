@@ -67,15 +67,6 @@ function prefersDarkScheme() {
 }
 
 /**
- * Get preferred color scheme from local storage.
- */
-function getThemePreference() {
-	if (localStorage.getItem('apcom-color-scheme')) {
-		return localStorage.getItem('apcom-color-scheme');
-	}
-}
-
-/**
  * Update the preferred color scheme in local storage.
  * @param {string} preference A color scheme, either `light` or `dark`.
  */
@@ -98,20 +89,6 @@ function defineThemePreference() {
 	}
 
 	updateThemePreference(colorScheme);
-}
-
-/**
- * Update the theme to use based on the preferred color scheme.
- */
-function updateColorScheme() {
-	let body = document.getElementById('body');
-	let preferredColorScheme = getThemePreference();
-
-	if (preferredColorScheme === 'dark') {
-		body.setAttribute('data-color-scheme', 'dark');
-	} else {
-		body.setAttribute('data-color-scheme', 'light');
-	}
 }
 
 /**
