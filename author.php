@@ -58,7 +58,7 @@ if ( have_posts() ) {
 				<?php
 				while ( have_posts() ) {
 					the_post();
-					get_template_part( 'template-parts/main/list' );
+					get_template_part( 'template-parts/main/author-articles' );
 				}
 				get_template_part( 'template-parts/main/pagination' );
 				?>
