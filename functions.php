@@ -207,6 +207,30 @@ function apcom_widgets_init() {
 				'after_widget'  => '</div>',
 			)
 		);
+
+		register_sidebar(
+			array(
+				'name'          => __( 'CV Widgets', 'APCom' ),
+				'id'            => 'sidebar__cv-widgets',
+				'description'   => __( 'Add widgets here to appear below the CV page.', 'APCom' ),
+				'before_title'  => '<h2 class="widget__title">',
+				'after_title'   => '</h2>',
+				'before_widget' => '<div id="%1s" class="widget %2s">',
+				'after_widget'  => '</div>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => __( 'Contact Widgets', 'APCom' ),
+				'id'            => 'sidebar__contact-widgets',
+				'description'   => __( 'Add widgets here to appear below the Contact page.', 'APCom' ),
+				'before_title'  => '<h2 class="widget__title">',
+				'after_title'   => '</h2>',
+				'before_widget' => '<div id="%1s" class="widget %2s">',
+				'after_widget'  => '</div>',
+			)
+		);
 	}
 }
 add_action( 'widgets_init', 'apcom_widgets_init' );
