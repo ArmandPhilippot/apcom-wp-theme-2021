@@ -12,6 +12,16 @@ img {
 	transition: all 0.3s ease-in-out 0s;
 }
 
+[data-color-scheme="dark"] {
+	img {
+		filter: brightness(0.8) contrast(1.2);
+
+		&:active {
+			filter: none;
+		}
+	}
+}
+
 figure {
 	max-width: 100%;
 }

@@ -144,3 +144,11 @@
 		margin: 0;
 	}
 }
+
+[data-color-scheme="dark"] {
+	.branding {
+		.logo__image {
+			filter: brightness(0.9);
+		}
+	}
+}

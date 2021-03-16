@@ -1329,6 +1329,14 @@ img {
 	transition: all 0.3s ease-in-out 0s;
 }
 
+[data-color-scheme="dark"] img {
+	filter: brightness(0.8) contrast(1.2);
+}
+
+[data-color-scheme="dark"] img:active {
+	filter: none;
+}
+
 figure {
 	max-width: 100%;
 }
@@ -1844,6 +1852,10 @@ small {
 	font-weight: 400;
 	margin: 0;
 	text-transform: uppercase;
+}
+
+[data-color-scheme="dark"] .branding .logo__image {
+	filter: brightness(0.9);
 }
 
 .main {
