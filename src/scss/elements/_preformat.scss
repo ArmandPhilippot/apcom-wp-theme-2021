@@ -30,15 +30,17 @@ pre {
 
 code {
 	background: cssVar(color-bg-tertiary);
+	border: pxToRem(1) solid cssVar(color-border-light);
 	box-decoration-break: clone;
 	border-radius: pxToRem(3);
 	color: cssVar(color-fg);
-	padding: pxToRem(2) pxToRem(5);
+	padding: pxToRem(2) pxToRem(5) 0;
 	word-wrap: break-word;
 }
 
 pre code {
 	background: inherit;
+	border: none;
 	border-radius: 0;
 	display: block;
 	padding: 0;
