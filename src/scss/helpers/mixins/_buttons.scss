@@ -37,17 +37,17 @@
 	&:hover,
 	&:focus {
 		background-position: 50% 0;
-		padding: cssVar(spacing-sm) cssVar(spacing-lg);
+		padding: cssVar(spacing-sm) calc(#{cssVar(spacing-md)} + #{pxToRem(4)});
 		transform: skewX(0deg);
 
 		span {
-			transform: skewX(0deg) scale(1.2);
+			transform: skewX(0deg) scale(1.05);
 		}
 	}
 
 	&:hover {
 		box-shadow: 0 0 0 pxToRem(2) cssVar(color-primary-light),
-			pxToRem(2) pxToRem(2) 0 pxToRem(2) cssVar(color-primary),
+			pxToRem(2) pxToRem(2) 0 0 cssVar(color-primary),
 			pxToRem(3) pxToRem(3) pxToRem(3) pxToRem(2)
 				cssVar(color-shadow-darker),
 			inset 0 0 0 pxToRem(2) cssVar(color-shadow-lighter),
@@ -57,7 +57,7 @@
 
 	&:focus {
 		box-shadow: 0 0 0 pxToRem(2) cssVar(color-primary-light),
-			pxToRem(2) pxToRem(2) 0 pxToRem(2) cssVar(color-primary),
+			pxToRem(2) pxToRem(2) 0 0 cssVar(color-primary),
 			pxToRem(3) pxToRem(3) pxToRem(3) pxToRem(2)
 				cssVar(color-shadow-darker),
 			pxToRem(1) pxToRem(1) 0 pxToRem(8)
@@ -75,12 +75,12 @@
 			inset 0 0 0 pxToRem(2) cssVar(color-shadow-lighter),
 			inset 0 pxToRem(-10) pxToRem(16) pxToRem(6) rgba(0, 0, 0, 0.13),
 			inset 0 pxToRem(9) pxToRem(32) pxToRem(4) rgba(255, 255, 255, 0.13);
-		padding: cssVar(spacing-sm) cssVar(spacing-md);
-		transform: skewX(-15deg) translateX(#{pxToRem(3)})
+		padding: cssVar(spacing-sm) cssVar(spacing-sm);
+		transform: skewX(0deg) translateX(#{pxToRem(3)})
 			translateY(#{pxToRem(3)});
 
 		span {
-			transform: skewX(15deg) scale(1);
+			transform: skewX(0deg) scale(1);
 		}
 	}
 

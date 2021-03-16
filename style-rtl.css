@@ -3183,31 +3183,31 @@ small {
 
 .comment-form__button:hover, .comment-form__button:focus {
 	background-position: 50% 0;
-	padding: var(--apcom-spacing-sm) var(--apcom-spacing-lg);
+	padding: var(--apcom-spacing-sm) calc(var(--apcom-spacing-md) + 0.25rem);
 	transform: skewX(0deg);
 }
 
 .comment-form__button:hover span, .comment-form__button:focus span {
-	transform: skewX(0deg) scale(1.2);
+	transform: skewX(0deg) scale(1.05);
 }
 
 .comment-form__button:hover {
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), -0.125rem 0.125rem 0 0.125rem var(--apcom-color-primary), -0.1875rem 0.1875rem 0.1875rem 0.125rem var(--apcom-color-shadow-darker), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), -0.125rem 0.125rem 0 0 var(--apcom-color-primary), -0.1875rem 0.1875rem 0.1875rem 0.125rem var(--apcom-color-shadow-darker), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
 }
 
 .comment-form__button:focus {
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), -0.125rem 0.125rem 0 0.125rem var(--apcom-color-primary), -0.1875rem 0.1875rem 0.1875rem 0.125rem var(--apcom-color-shadow-darker), -0.0625rem 0.0625rem 0 0.5rem var(--apcom-color-primary-light-opacity), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), -0.125rem 0.125rem 0 0 var(--apcom-color-primary), -0.1875rem 0.1875rem 0.1875rem 0.125rem var(--apcom-color-shadow-darker), -0.0625rem 0.0625rem 0 0.5rem var(--apcom-color-primary-light-opacity), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
 }
 
 .comment-form__button:active {
 	background-position: 100% 0;
 	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-dark), -0.0625rem 0.0625rem 0 0.0625rem var(--apcom-color-shadow), 0 0 0 0 var(--apcom-color-shadow-darker), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
-	padding: var(--apcom-spacing-sm) var(--apcom-spacing-md);
-	transform: skewX(15deg) translateX(-0.1875rem) translateY(0.1875rem);
+	padding: var(--apcom-spacing-sm) var(--apcom-spacing-sm);
+	transform: skewX(0deg) translateX(-0.1875rem) translateY(0.1875rem);
 }
 
 .comment-form__button:active span {
-	transform: skewX(-15deg) scale(1);
+	transform: skewX(0deg) scale(1);
 }
 
 .comment-form__button span {
@@ -3973,26 +3973,26 @@ small {
 	}
 	.tools .search-form__btn:hover, .tools .search-form__btn:focus {
 		background-position: 50% 0;
-		padding: var(--apcom-spacing-sm) var(--apcom-spacing-lg);
+		padding: var(--apcom-spacing-sm) calc(var(--apcom-spacing-md) + 0.25rem);
 		transform: skewX(0deg);
 	}
 	.tools .search-form__btn:hover span, .tools .search-form__btn:focus span {
-		transform: skewX(0deg) scale(1.2);
+		transform: skewX(0deg) scale(1.05);
 	}
 	.tools .search-form__btn:hover {
-		box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), -0.125rem 0.125rem 0 0.125rem var(--apcom-color-primary), -0.1875rem 0.1875rem 0.1875rem 0.125rem var(--apcom-color-shadow-darker), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
+		box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), -0.125rem 0.125rem 0 0 var(--apcom-color-primary), -0.1875rem 0.1875rem 0.1875rem 0.125rem var(--apcom-color-shadow-darker), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
 	}
 	.tools .search-form__btn:focus {
-		box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), -0.125rem 0.125rem 0 0.125rem var(--apcom-color-primary), -0.1875rem 0.1875rem 0.1875rem 0.125rem var(--apcom-color-shadow-darker), -0.0625rem 0.0625rem 0 0.5rem var(--apcom-color-primary-light-opacity), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
+		box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), -0.125rem 0.125rem 0 0 var(--apcom-color-primary), -0.1875rem 0.1875rem 0.1875rem 0.125rem var(--apcom-color-shadow-darker), -0.0625rem 0.0625rem 0 0.5rem var(--apcom-color-primary-light-opacity), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
 	}
 	.tools .search-form__btn:active {
 		background-position: 100% 0;
 		box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-dark), -0.0625rem 0.0625rem 0 0.0625rem var(--apcom-color-shadow), 0 0 0 0 var(--apcom-color-shadow-darker), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
-		padding: var(--apcom-spacing-sm) var(--apcom-spacing-md);
-		transform: skewX(15deg) translateX(-0.1875rem) translateY(0.1875rem);
+		padding: var(--apcom-spacing-sm) var(--apcom-spacing-sm);
+		transform: skewX(0deg) translateX(-0.1875rem) translateY(0.1875rem);
 	}
 	.tools .search-form__btn:active span {
-		transform: skewX(-15deg) scale(1);
+		transform: skewX(0deg) scale(1);
 	}
 	.tools .search-form__btn span {
 		transform: skewX(-15deg);
