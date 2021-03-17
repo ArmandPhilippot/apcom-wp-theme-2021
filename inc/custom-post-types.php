@@ -7,9 +7,76 @@
  */
 
 /**
+ * Create the input option to change the thematic slug
+ *
+ * @since 0.0.2
+ */
+function apcom_thematic_base_output() {
+	?>
+	<input name="apcom_thematic_base" id="thematic_base" type="text" class="regular-text code" value="<?php echo esc_attr( get_option( 'apcom_thematic_base' ) ); ?>" placeholder="<?php echo 'thematic'; ?>" />
+	<?php
+}
+
+/**
+ * Create the input option to change the subject slug
+ *
+ * @since 0.0.2
+ */
+function apcom_subject_base_output() {
+	?>
+	<input name="apcom_subject_base" id="subject_base" type="text" class="regular-text code" value="<?php echo esc_attr( get_option( 'apcom_subject_base' ) ); ?>" placeholder="<?php echo 'subject'; ?>" />
+	<?php
+}
+
+/**
+ * Provide slug option for CPT in permalinks settings
+ *
+ * @since 0.0.2
+ */
+function apcom_add_cpt_slug_fields() {
+	add_settings_field( 'apcom_thematic_base', __( 'Thematic base', 'APCom' ), 'apcom_thematic_base_output', 'permalink', 'optional', array( 'label_for' => 'thematic_base' ) );
+	add_settings_field( 'apcom_subject_base', __( 'Subject base', 'APCom' ), 'apcom_subject_base_output', 'permalink', 'optional', array( 'label_for' => 'subject_base' ) );
+}
+add_action( 'admin_init', 'apcom_add_cpt_slug_fields' );
+
+/**
+ * Update the value of CPT slug options
+ *
+ * @since 0.0.2
+ */
+function apcom_update_cpt_slugs() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_die( esc_html__( 'Sorry, you are not allowed to manage options for this site.', 'APCom' ) );
+	}
+
+	if ( isset( $_POST['permalink_structure'] ) || isset( $_POST['apcom_thematic_base'] ) || isset( $_POST['apcom_subject_base'] ) ) {
+		check_admin_referer( 'update-permalink' );
+
+		if ( isset( $_POST['apcom_thematic_base'] ) ) {
+			$thematic_base = sanitize_text_field( wp_unslash( $_POST['apcom_thematic_base'] ) );
+
+			if ( get_option( 'apcom_thematic_base' ) !== $thematic_base ) {
+				update_option( 'apcom_thematic_base', $thematic_base );
+			}
+		}
+
+		if ( isset( $_POST['apcom_subject_base'] ) ) {
+			$subject_base = sanitize_text_field( wp_unslash( $_POST['apcom_subject_base'] ) );
+
+			if ( get_option( 'apcom_subject_base' ) !== $subject_base ) {
+				update_option( 'apcom_subject_base', $subject_base );
+			}
+		}
+	}
+}
+add_action( 'admin_init', 'apcom_update_cpt_slugs' );
+
+
+/**
  * Register a custom post type called "thematic".
  *
  * @see get_post_type_labels() for label keys.
+ * @since 0.0.2
  */
 function apcom_thematic_init() {
 	$labels = array(
@@ -39,6 +106,12 @@ function apcom_thematic_init() {
 		'items_list'            => __( 'Thematics list', 'APCom' ),
 	);
 
+	if ( get_option( 'apcom_thematic_base' ) !== '' ) {
+		$thematic_slug = get_option( 'apcom_thematic_base' );
+	} else {
+		$thematic_slug = 'thematic';
+	}
+
 	$args = array(
 		'labels'             => $labels,
 		'description'        => 'Thematic custom post type.',
@@ -47,7 +120,7 @@ function apcom_thematic_init() {
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'thematic' ),
+		'rewrite'            => array( 'slug' => $thematic_slug ),
 		'capability_type'    => 'post',
 		'has_archive'        => false,
 		'hierarchical'       => false,
@@ -65,6 +138,7 @@ add_action( 'init', 'apcom_thematic_init' );
  * Register a custom post type called "thematic".
  *
  * @see get_post_type_labels() for label keys.
+ * @since 0.0.2
  */
 function apcom_subject_init() {
 	$labels = array(
@@ -94,6 +168,12 @@ function apcom_subject_init() {
 		'items_list'            => __( 'Subjects list', 'APCom' ),
 	);
 
+	if ( get_option( 'apcom_subject_base' ) !== '' ) {
+		$subject_slug = get_option( 'apcom_subject_base' );
+	} else {
+		$subject_slug = 'subject';
+	}
+
 	$args = array(
 		'labels'             => $labels,
 		'description'        => 'Subject custom post type.',
@@ -102,7 +182,7 @@ function apcom_subject_init() {
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'subject' ),
+		'rewrite'            => array( 'slug' => $subject_slug ),
 		'capability_type'    => 'post',
 		'has_archive'        => false,
 		'hierarchical'       => false,
@@ -118,6 +198,8 @@ add_action( 'init', 'apcom_subject_init' );
 
 /**
  * Flushing rewrite on theme activation
+ *
+ * @since 0.0.2
  */
 function apcom_rewrite_flush() {
 	apcom_thematic_init();
