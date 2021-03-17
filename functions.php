@@ -239,6 +239,7 @@ add_action( 'widgets_init', 'apcom_widgets_init' );
  * REQUIRED FILES
  * Additional features and helpers functions.
  */
-require get_parent_theme_file_path( '/inc/helpers.php' );
-require get_parent_theme_file_path( '/inc/hooks.php' );
+require get_parent_theme_file_path( 'inc/helpers.php' );
+require get_parent_theme_file_path( 'inc/hooks.php' );
 require get_parent_theme_file_path( 'inc/class-custom-walker-comment.php' );
+require get_parent_theme_file_path( 'inc/custom-post-types.php' );
