@@ -142,14 +142,14 @@ if ( ! apcom_is_frontpage() ) {
 					if ( $apcom_depth === $apcom_breadcrumb_length ) {
 						?>
 						<span itemprop="name" class="breadcrumb__name" aria-current="location">
-							<?php echo esc_html( $apcom_breadcrumb_data[ $apcom_depth ]['txt'] ); ?>
+							<?php echo wp_kses_post( $apcom_breadcrumb_data[ $apcom_depth ]['txt'] ); ?>
 						</span>
 						<?php
 					} else {
 						?>
 						<a itemprop="item" class="breadcrumb__link" href="<?php echo esc_url( $apcom_breadcrumb_data[ $apcom_depth ]['url'] ); ?>">
 							<span itemprop="name" class="breadcrumb__name">
-								<?php echo esc_html( $apcom_breadcrumb_data[ $apcom_depth ]['txt'] ); ?>
+								<?php echo wp_kses_post( $apcom_breadcrumb_data[ $apcom_depth ]['txt'] ); ?>
 							</span>
 						</a>
 						<?php
