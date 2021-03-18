@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the Subject CPT content.
+ * The template for displaying the Subject CPT header.
  *
  * @package ArmandPhilippot-com
  * @since 0.0.2
