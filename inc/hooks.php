@@ -287,3 +287,36 @@ function apcom_enable_gutenberg_editor_for_blog_page( $replace, $post ) {
 	return $replace;
 }
 add_filter( 'replace_editor', 'apcom_enable_gutenberg_editor_for_blog_page', 10, 2 );
+
+/**
+ * Add article CPT to the main query.
+ *
+ * @since  0.0.2
+ *
+ * @param WP_Query $query The WP_Query instance (passed by reference).
+ * @return WP_Query The custom query.
+ */
+function apcom_add_cpt_to_query( $query ) {
+	if ( ( $query->is_home() || $query->is_date() ) && $query->is_main_query() ) {
+		$query->set( 'post_type', array( 'post', 'article' ) );
+
+		return $query;
+	}
+}
+add_action( 'pre_get_posts', 'apcom_add_cpt_to_query' );
+
+/**
+ * Add article CPT to the main RSS feed.
+ *
+ * @since  0.0.2
+ *
+ * @param array $query_vars The array of requested query variables.
+ * @return array The modified array of requested query variables.
+ */
+function apcom_feed_request( $query_vars ) {
+	if ( isset( $query_vars['feed'] ) && ! isset( $query_vars['post_type'] ) ) {
+		$query_vars['post_type'] = array( 'post', 'article' );
+	}
+	return $query_vars;
+}
+add_filter( 'request', 'apcom_feed_request' );

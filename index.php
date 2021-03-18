@@ -15,9 +15,10 @@ if ( have_posts() ) {
 				<?php single_post_title(); ?>
 			</h1>
 			<?php
-			$apcom_posts_number = wp_count_posts( 'post' );
-			if ( $apcom_posts_number ) {
-				$apcom_published_posts_number = $apcom_posts_number->publish;
+			$apcom_posts_number_post      = wp_count_posts( 'post' )->publish;
+			$apcom_posts_number_article   = wp_count_posts( 'article' )->publish;
+			$apcom_published_posts_number = intval( $apcom_posts_number_post ) + intval( $apcom_posts_number_article );
+			if ( $apcom_published_posts_number ) {
 				?>
 				<dl class="page__meta meta">
 					<div class="meta__item meta__item--has-icon meta__articles">

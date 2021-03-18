@@ -10,7 +10,7 @@ $apcom_thematic_id    = get_the_ID();
 $apcom_thematic_name  = get_the_title();
 $apcom_thematic_query = new WP_Query(
 	array(
-		'post_type'         => 'post',
+		'post_type'         => array( 'post', 'article' ),
 		'posts_per_page'    => -1,
 		'orderby'           => 'date',
 		'order'             => 'DESC',
