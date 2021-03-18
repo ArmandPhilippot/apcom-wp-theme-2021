@@ -54,6 +54,10 @@ function apcom_body_class( $classes ) {
 		$classes[] = 'articles-list';
 	}
 
+	if ( is_singular( array( 'thematic', 'subject' ) ) ) {
+		$classes[] = 'cpt';
+	}
+
 	if ( is_search() || is_404() ) {
 		$classes[] = 'search';
 	}
