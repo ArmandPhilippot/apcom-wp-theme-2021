@@ -20,10 +20,19 @@
 		}
 
 		&--has-icon {
-			background: 0 0 / #{pxToRem(22)} 100% no-repeat;
-			padding-left: calc(
-				#{pxToRem(22)} + #{cssVar(spacing-xs)}
-			); // icon size + padding
+			background: 0 #{pxToRem(12)} / #{pxToRem(22)} #{pxToRem(22)} no-repeat;
+
+			.meta {
+				&__term, &__description {
+					padding-left: calc(
+						#{pxToRem(22)} + #{cssVar(spacing-xs)}
+					); // icon size + padding
+				}
+
+				&__theme--icon {
+					padding-left: cssVar(spacing-3xs);
+				}
+			}
 		}
 
 		@include media("screen") {
@@ -81,6 +90,11 @@
 				}
 			}
 		}
+	}
+
+	.theme__img {
+		box-shadow: none;
+		width: pxToRem(22);
 	}
 
 	&__comments {

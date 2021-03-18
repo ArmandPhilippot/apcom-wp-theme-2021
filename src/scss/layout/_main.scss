@@ -88,8 +88,11 @@
 	}
 
 	&__title {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
 		max-width: 100%;
-		padding: cssVar(spacing-sm) cssVar(spacing-sm) cssVar(spacing-sm) 0;
+		padding: cssVar(spacing-3xs) cssVar(spacing-sm) cssVar(spacing-sm) 0;
 		position: relative;
 		margin-bottom: cssVar(spacing-lg);
 		z-index: 1;
@@ -304,10 +307,6 @@
 		&__body {
 			@include media("screen") {
 				@include dimensions("lg") {
-					padding-bottom: cssVar(spacing-4xl);
-				}
-
-				@include dimensions("xl") {
 					padding-bottom: cssVar(spacing-5xl);
 				}
 			}
