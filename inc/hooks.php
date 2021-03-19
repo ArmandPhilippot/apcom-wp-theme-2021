@@ -320,3 +320,29 @@ function apcom_feed_request( $query_vars ) {
 	return $query_vars;
 }
 add_filter( 'request', 'apcom_feed_request' );
+
+/**
+ * Add article CPT to the recent posts.
+ *
+ * @since  0.0.2
+ *
+ * @param array $args An array of arguments used to retrieve the recent posts.
+ * @return array The custom arguments
+ */
+function apcom_widget_posts_args_add_cpt( $args ) {
+	$args['post_type'] = array( 'post', 'article' );
+	return $args;
+}
+add_filter( 'widget_posts_args', 'apcom_widget_posts_args_add_cpt' );
+
+/**
+ * Add article CPT to the WHERE clause for retrieving archives.
+ *
+ * @param string $sql_where Portion of SQL query containing the WHERE clause.
+ * @return string The custom where clause.
+ */
+function apcom_getarchives_where( $sql_where ) {
+	$sql_where = str_replace( "post_type = 'post'", "post_type IN ( 'post', 'article' )", $sql_where );
+	return $sql_where;
+}
+add_filter( 'getarchives_where', 'apcom_getarchives_where' );
