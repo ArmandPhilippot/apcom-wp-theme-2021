@@ -34,30 +34,56 @@
 				</dd>
 			</div>
 			<?php
-			if ( ! is_category() ) {
-				$apcom_article_themes = get_the_category();
-			} else {
-				$apcom_article_themes = get_the_tags();
-			}
-			if ( $apcom_article_themes ) {
-				?>
-				<div class="meta__item meta__item--has-icon meta__themes">
-					<dt class="meta__term">
-						<?php esc_html_e( 'Posted in', 'APCom' ); ?>
-					</dt>
-					<?php
-					foreach ( $apcom_article_themes as $apcom_article_theme ) {
-						$apcom_article_theme_link = get_term_link( $apcom_article_theme->term_id );
-						$apcom_article_theme_name = $apcom_article_theme->name;
+			if ( get_post_type() === 'article' ) {
+				$apcom_article_thematics = get_post_meta( get_the_ID(), 'posts_in_thematic' );
+				if ( $apcom_article_thematics ) {
+					?>
+					<div class="meta__item meta__item--has-icon meta__themes">
+						<dt class="meta__term">
+							<?php esc_html_e( 'Posted in', 'APCom' ); ?>
+						</dt>
+						<?php
+						foreach ( $apcom_article_thematics[0] as $apcom_article_thematic_id ) {
+							$apcom_article_thematic_link = get_permalink( $apcom_article_thematic_id );
+							$apcom_article_thematic_name = get_the_title( $apcom_article_thematic_id );
+							?>
+							<dd class="meta__description meta__theme" itemprop="keywords">
+								<a href="<?php echo esc_url( $apcom_article_thematic_link ); ?>" rel="tag">
+									<?php echo esc_html( $apcom_article_thematic_name ); ?>
+								</a>
+							</dd>
+							<?php
+						}
 						?>
-						<dd class="meta__description meta__theme" itemprop="keywords">
-							<a href="<?php echo esc_url( $apcom_article_theme_link ); ?>" rel="tag">
-								<?php echo esc_html( $apcom_article_theme_name ); ?>
-							</a>
-						</dd>
-					<?php } ?>
-				</div>
-				<?php
+					</div>
+					<?php
+				}
+			} else {
+				if ( ! is_category() ) {
+					$apcom_article_themes = get_the_category();
+				} else {
+					$apcom_article_themes = get_the_tags();
+				}
+				if ( $apcom_article_themes ) {
+					?>
+					<div class="meta__item meta__item--has-icon meta__themes">
+						<dt class="meta__term">
+							<?php esc_html_e( 'Posted in', 'APCom' ); ?>
+						</dt>
+						<?php
+						foreach ( $apcom_article_themes as $apcom_article_theme ) {
+							$apcom_article_theme_link = get_term_link( $apcom_article_theme->term_id );
+							$apcom_article_theme_name = $apcom_article_theme->name;
+							?>
+							<dd class="meta__description meta__theme" itemprop="keywords">
+								<a href="<?php echo esc_url( $apcom_article_theme_link ); ?>" rel="tag">
+									<?php echo esc_html( $apcom_article_theme_name ); ?>
+								</a>
+							</dd>
+						<?php } ?>
+					</div>
+					<?php
+				}
 			}
 			$apcom_comment_count = get_comments_number();
 			?>
