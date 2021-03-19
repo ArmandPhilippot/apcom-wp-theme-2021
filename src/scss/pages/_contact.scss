@@ -1,0 +1,66 @@
+.template__page-contact {
+	.page {
+		&__introduction {
+			margin-top: 0;
+		}
+
+		&__body  {
+			> p {
+				&:first-of-type {
+					margin-top: cssVar(spacing-sm);
+				}
+			}
+		}
+	}
+}
+
+.contact-form {
+	&__item {
+		margin-bottom: cssVar(spacing-md);
+
+		&--none {
+			display: none;
+		}
+	}
+
+	&__field {
+		&--textarea {
+			min-height: pxToRem(200);
+		}
+	}
+
+	&__btn {
+		@include buttonStyle1;
+
+		margin: auto;
+	}
+
+	.required {
+		color: cssVar(color-secondary);
+	}
+
+	.alert {
+		border: pxToRem(2) solid cssVar(color-primary);
+		box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-primary);
+		font-weight: 600;
+		padding: cssVar(spacing-sm);
+
+		&.error {
+			border-color: cssVar(color-token-red);
+			box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-token-red);
+			color: cssVar(color-token-red);
+		}
+
+		&.valid {
+			border-color: cssVar(color-token-green);
+			box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-token-green);
+			color: cssVar(color-token-green);
+		}
+
+		&.nice-try {
+			border-color: cssVar(color-token-orange);
+			box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-token-orange);
+			color: cssVar(color-token-orange);
+		}
+	}
+}

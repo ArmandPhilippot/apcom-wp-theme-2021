@@ -244,3 +244,4 @@ require get_parent_theme_file_path( 'inc/hooks.php' );
 require get_parent_theme_file_path( 'inc/class-custom-walker-comment.php' );
 require get_parent_theme_file_path( 'inc/custom-post-types.php' );
 require get_parent_theme_file_path( 'inc/acf-hooks.php' );
+require get_parent_theme_file_path( 'inc/contact-form.php' );
