@@ -32,7 +32,7 @@ if ( have_posts() ) {
 		</header>
 			<div id="page__content" class="page__body page__body--single-page" itemprop="articleBody">
 				<?php the_content( '', true ); ?>
-				<form method="post" class="contact-form">
+				<form method="post" action="" class="contact-form">
 					<?php
 					wp_nonce_field( 'contact', 'contact-form' );
 					if ( get_query_var( 'contact-validation' ) ) {

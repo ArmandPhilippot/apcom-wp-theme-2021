@@ -16,14 +16,7 @@ if ( have_posts() ) {
 			get_template_part( 'template-parts/cpt/thematic/header' );
 			get_template_part( 'template-parts/main/page-toc' );
 			get_template_part( 'template-parts/cpt/thematic/content' );
-			?>
-			<aside class="page__aside page__aside--last">
-				<?php get_sidebar( 'pages' ); ?>
-			</aside>
-			<?php
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
-			}
+			get_sidebar( 'pages' );
 			?>
 		</article>
 		<?php

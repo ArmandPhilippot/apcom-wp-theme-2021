@@ -7,7 +7,7 @@
  */
 
 ?>
-<nav class="main-nav">
+<nav class="main-nav" aria-label="<?php esc_attr_e( 'Main', 'APCom' ); ?>">
 	<?php
 	wp_nav_menu(
 		array(

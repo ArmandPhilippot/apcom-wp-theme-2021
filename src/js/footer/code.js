@@ -7,6 +7,8 @@ function addPrismClassesToCodeBlock() {
 	for (let i = 0; i < preTags.length; i++) {
 		let preClasses = preTags[i].classList.length;
 
+		preTags[i].tabIndex = '0';
+
 		for (let j = 0; j < preClasses; j++) {
 			if (preTags[i].classList[j].startsWith('language')) {
 				if (

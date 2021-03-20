@@ -20,8 +20,8 @@ if ( apcom_is_frontpage() ) {
 	<?php } else { ?>
 		<div class="branding__logo branding__logo--default" itemprop="brand" itemscope itemtype="http://schema.org/Brand">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo__link" rel="home">
-				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/armand-philippot.jpg'; ?>" alt="<?php esc_html_e( 'Logo', 'APCom' ); ?>" class="logo__image logo__image--front" itemprop="image">
-				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/armand-philippot-logo.svg'; ?>" alt="<?php esc_html_e( 'Logo', 'APCom' ); ?>" class="logo__image logo__image--back" itemprop="logo">
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/armand-philippot.jpg'; ?>" alt="<?php esc_html_e( 'Back to Armand Philippot homepage', 'APCom' ); ?>" class="logo__image logo__image--front" itemprop="image">
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/armand-philippot-logo.svg'; ?>" alt="<?php esc_html_e( 'Back to Armand Philippot homepage', 'APCom' ); ?>" class="logo__image logo__image--back" itemprop="logo">
 			</a>
 		</div>
 	<?php } ?>

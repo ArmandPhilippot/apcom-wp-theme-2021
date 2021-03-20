@@ -75,7 +75,7 @@ class TableOfContent {
 		return (
 			'<' +
 			this.options.titleTag +
-			'>' +
+			' id="toc-title">' +
 			this.options.title +
 			'</' +
 			this.options.titleTag +
@@ -112,7 +112,7 @@ class TableOfContent {
 		let currentLevel;
 		let previousLevel = currentLevel;
 
-		markup += '<nav class="toc">';
+		markup += '<nav class="toc" aria-labelledby="toc-title">';
 		markup += this.createTitleMarkup();
 		markup += this.startListNode();
 

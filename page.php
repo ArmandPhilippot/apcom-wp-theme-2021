@@ -16,10 +16,8 @@ if ( have_posts() ) {
 			get_template_part( 'template-parts/main/page-header' );
 			get_template_part( 'template-parts/main/page-toc' );
 			get_template_part( 'template-parts/main/page-content' );
+			get_sidebar( 'pages' );
 			?>
-			<aside class="page__aside page__aside--last">
-				<?php get_sidebar( 'pages' ); ?>
-			</aside>
 		</article>
 		<?php
 	}

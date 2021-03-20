@@ -9,7 +9,7 @@
  * https://prismjs.com/
  */
 .code-toolbar {
-	margin-top: calc( 3.125rem + var(--apcom-spacing-md));
+	margin-top: 3.125rem;
 	position: relative;
 	width: 100%;
 }
@@ -65,7 +65,7 @@
 }
 
 .code-toolbar .toolbar-item button:hover svg, .code-toolbar .toolbar-item button:focus svg {
-	animation: zoomOutIn 1.2s;
+	animation: pulse 1.2s;
 	animation-iteration-count: infinite;
 }
 

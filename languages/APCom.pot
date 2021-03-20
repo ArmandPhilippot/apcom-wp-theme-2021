@@ -229,6 +229,14 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
+#: sidebar-cv.php:12
+msgid "In addition"
+msgstr ""
+
+#: sidebar.php:19
+msgid "Filter articles by:"
+msgstr ""
+
 #: inc/class-custom-walker-comment.php:35
 msgid "Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved."
 msgstr ""
@@ -531,6 +539,10 @@ msgstr ""
 msgid "Continue reading %s"
 msgstr ""
 
+#: inc/hooks.php:249
+msgid "Pagination"
+msgstr ""
+
 #: inc/hooks.php:267
 msgid "Leave a comment"
 msgstr ""
@@ -543,8 +555,16 @@ msgstr ""
 msgid "CC BY SA"
 msgstr ""
 
+#: template-parts/footer/nav.php:15
+msgid "Footer"
+msgstr ""
+
 #: template-parts/header/branding.php:23, template-parts/header/branding.php:24
-msgid "Logo"
+msgid "Back to Armand Philippot homepage"
+msgstr ""
+
+#: template-parts/header/main-nav.php:10
+msgid "Main"
 msgstr ""
 
 #: template-parts/header/tools.php:17
@@ -597,6 +617,10 @@ msgstr ""
 
 #: template-parts/main/breadcrumb.php:41
 msgid "Page not found"
+msgstr ""
+
+#: template-parts/main/breadcrumb.php:132
+msgid "Breadcrumb"
 msgstr ""
 
 #: template-parts/main/breadcrumb.php:134

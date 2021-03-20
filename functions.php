@@ -189,8 +189,8 @@ function apcom_widgets_init() {
 				'name'          => __( 'Blog Sidebar - Right/Last', 'APCom' ),
 				'id'            => 'sidebar__blog2',
 				'description'   => __( 'Add widgets here to appear in your blog sidebar(last on mobile view, right on large screens).', 'APCom' ),
-				'before_title'  => '<h2 class="widget__title">',
-				'after_title'   => '</h2>',
+				'before_title'  => '<h3 class="widget__title">',
+				'after_title'   => '</h3>',
 				'before_widget' => '<div id="%1s" class="widget %2s">',
 				'after_widget'  => '</div>',
 			)
@@ -213,8 +213,8 @@ function apcom_widgets_init() {
 				'name'          => __( 'CV Widgets', 'APCom' ),
 				'id'            => 'sidebar__cv-widgets',
 				'description'   => __( 'Add widgets here to appear below the CV page.', 'APCom' ),
-				'before_title'  => '<h2 class="widget__title">',
-				'after_title'   => '</h2>',
+				'before_title'  => '<h3 class="widget__title">',
+				'after_title'   => '</h3>',
 				'before_widget' => '<div id="%1s" class="widget %2s">',
 				'after_widget'  => '</div>',
 			)

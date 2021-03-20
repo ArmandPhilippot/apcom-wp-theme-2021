@@ -1,8 +1,6 @@
 .code-toolbar {
 	position: relative;
-	margin-top: calc(
-		#{pxToRem(50)} + #{cssVar(spacing-md)}
-	); // toolbar height + spacing
+	margin-top: pxToRem(50); // toolbar height
 	width: 100%;
 
 	> .toolbar {

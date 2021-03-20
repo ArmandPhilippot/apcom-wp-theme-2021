@@ -17,11 +17,7 @@ if ( have_posts() ) {
 			get_template_part( 'template-parts/main/page-toc' );
 			get_template_part( 'template-parts/main/page-content' );
 			get_template_part( 'template-parts/main/page-footer' );
-			?>
-			<aside class="page__aside page__aside--last">
-				<?php get_sidebar( 'pages' ); ?>
-			</aside>
-			<?php
+			get_sidebar( 'pages' );
 			if ( comments_open() || get_comments_number() ) {
 				comments_template();
 			}

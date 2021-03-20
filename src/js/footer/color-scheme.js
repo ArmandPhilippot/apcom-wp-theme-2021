@@ -8,6 +8,7 @@ function getLightThemeIcon() {
 
 	span.innerHTML = sunIcon;
 	span.classList.add('tools__icon', 'tools__icon--light');
+	span.setAttribute('aria-hidden', 'true');
 
 	return span;
 }
@@ -22,6 +23,7 @@ function getDarkThemeIcon() {
 
 	span.innerHTML = moonIcon;
 	span.classList.add('tools__icon', 'tools__icon--dark');
+	span.setAttribute('aria-hidden', 'true');
 
 	return span;
 }
@@ -131,6 +133,7 @@ function createSwitchThemeButton() {
 
 	switchButton.id = 'switch-theme';
 	switchButton.classList.add('tools__label', 'tools__btn');
+	switchButton.type = 'button';
 	switchButton.appendChild(switchButtonLabel);
 	switchButton.appendChild(switchButtonIcon);
 

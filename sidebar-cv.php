@@ -8,8 +8,9 @@
 
 if ( is_active_sidebar( 'sidebar__cv-widgets' ) ) {
 	?>
-	<aside class="page__aside page__aside--last">
+	<section class="page__aside page__aside--last">
+		<h2><?php esc_html_e( 'In addition', 'APCom' ); ?></h2>
 		<?php dynamic_sidebar( 'sidebar__cv-widgets' ); ?>
-	</aside>
+	</section>
 	<?php
 }
