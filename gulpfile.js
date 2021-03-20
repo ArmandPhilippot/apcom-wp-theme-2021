@@ -377,7 +377,7 @@ function images(done) {
 function compilePotFile(done) {
 	return pipeline(
 		[
-			src(config.translation.src, { since: lastRun(compilePotFile) }),
+			src(config.translation.src),
 			pot(config.translation.potOptions),
 			dest(config.translation.dest + '/' + config.translation.filename),
 			notify({
@@ -542,7 +542,7 @@ function watchFiles(done) {
 		series(vendorsScripts, reload)
 	);
 	watch(config.images.watch).on('change', series(images, reload));
-	watch(config.files.watch).on('change', series(reload));
+	watch(config.files.watch).on('change', series(compilePotFile, reload));
 	watch(config.fonts.watch).on('change', series(moveFonts, reload));
 	done();
 }
