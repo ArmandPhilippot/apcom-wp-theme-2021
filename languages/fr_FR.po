@@ -246,6 +246,14 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Rechercher"
 
+#: sidebar-cv.php:12
+msgid "In addition"
+msgstr "En complément"
+
+#: sidebar.php:19
+msgid "Filter articles by:"
+msgstr "Filtrer les articles par :"
+
 #: inc/class-custom-walker-comment.php:35
 msgid ""
 "Your comment is awaiting moderation. This is a preview; your comment will be "
@@ -557,6 +565,10 @@ msgstr "Environ %1$s mots lus à une vitesse de %2$s mots par minute."
 msgid "Continue reading %s"
 msgstr "Lire la suite de %s"
 
+#: inc/hooks.php:249
+msgid "Pagination"
+msgstr "Pagination"
+
 #: inc/hooks.php:267
 msgid "Leave a comment"
 msgstr "Laisser un commentaire"
@@ -569,9 +581,17 @@ msgstr "Retour en haut de page"
 msgid "CC BY SA"
 msgstr "CC BY SA"
 
+#: template-parts/footer/nav.php:15
+msgid "Footer"
+msgstr "Pied de page"
+
 #: template-parts/header/branding.php:23, template-parts/header/branding.php:24
-msgid "Logo"
-msgstr "Logo"
+msgid "Back to Armand Philippot homepage"
+msgstr "Retour à la page d'accueil d'Armand Philippot"
+
+#: template-parts/header/main-nav.php:10
+msgid "Main"
+msgstr "Principal"
 
 #: template-parts/header/tools.php:17
 msgid "Open search"
@@ -643,6 +663,10 @@ msgstr "d"
 #: template-parts/main/breadcrumb.php:41
 msgid "Page not found"
 msgstr "Page non trouvée"
+
+#: template-parts/main/breadcrumb.php:132
+msgid "Breadcrumb"
+msgstr "Fil d'Ariane"
 
 #: template-parts/main/breadcrumb.php:134
 msgid "You are here:"
@@ -730,3 +754,6 @@ msgid "Topic"
 msgid_plural "Topics"
 msgstr[0] "Sujet"
 msgstr[1] "Sujets"
+
+#~ msgid "Logo"
+#~ msgstr "Logo"
