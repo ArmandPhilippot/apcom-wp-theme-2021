@@ -90,7 +90,7 @@
 		}
 
 		@include dimensions("lg") {
-			grid-template-columns: 0 minmax(auto, 80ch) minmax(0, 1fr);
+			grid-template-columns: 0 minmax(0, 80ch) minmax(0, 1fr);
 			column-gap: cssVar(spacing-3xl);
 		}
 
