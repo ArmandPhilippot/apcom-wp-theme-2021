@@ -3,22 +3,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ArmandPhilippot-com\n"
+"Report-Msgid-Bugs-To: https://github.com/ArmandPhilippot/armandphilippot.com/"
+"issues\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Armand Philippot <contact@armandphilippot.com>\n"
+"Language-Team: Armand Philippot <contact@armandphilippot.com>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language-Team: Armand Philippot <contact@armandphilippot.com>\n"
-"Last-Translator: Armand Philippot <contact@armandphilippot.com>\n"
-"Report-Msgid-Bugs-To: https://github.com/ArmandPhilippot/armandphilippot.com/issues\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
+"_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;"
+"esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: archive.php:25, category.php:27, index.php:25, search.php:28, tag.php:26
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #. translators: %s number of posts.
 #. translators: %s number of posts.
@@ -28,651 +35,698 @@ msgstr ""
 #: archive.php:31, category.php:33, index.php:31, search.php:34, tag.php:32
 msgid "%s article"
 msgid_plural "%s articles"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s article"
+msgstr[1] "%s articles"
 
 #: author.php:24
 msgid "Website:"
-msgstr ""
+msgstr "Site web :"
 
 #: author.php:38
 msgid "Introduction"
-msgstr ""
+msgstr "Présentation"
 
 #. translators: %s: author name.
 #: author.php:53
 msgctxt "username"
 msgid "%s's articles"
-msgstr ""
+msgstr "Les articles de %s"
 
 #. translators: 1: number of comments, 2: post title.
 #: comments.php:39
 msgctxt "comments title"
 msgid "%1$s reply to &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s replies to &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$s réponse à &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s réponses à &ldquo;%2$s&rdquo;"
 
 #: comments.php:34
 msgctxt "comments title"
 msgid "No comments to &ldquo;%s&rdquo; yet."
-msgstr ""
+msgstr "Encore aucun commentaire sur &ldquo;%s&rdquo;."
 
 #: comments.php:55
 msgid "Subscribe to comments"
-msgstr ""
+msgstr "S'abonner aux commentaires"
 
 #: comments.php:66, inc/class-custom-walker-comment.php:116
 msgid "Reply"
-msgstr ""
+msgstr "Répondre"
 
 #: comments.php:76, template-parts/main/pagination.php:13
 msgid "Previous"
-msgstr ""
+msgstr "Précédent"
 
 #: comments.php:77, template-parts/main/pagination.php:14
 msgid "Next"
-msgstr ""
+msgstr "Suivant"
 
 #: comments.php:85
 msgid "Comments are closed."
-msgstr ""
+msgstr "Les commentaires sont fermés."
 
 #: functions.php:73
 msgid "Main menu"
-msgstr ""
+msgstr "Menu principal"
 
 #: functions.php:74
 msgid "Footer menu"
-msgstr ""
+msgstr "Menu du pied de page"
 
 #: functions.php:124
 msgid "Switch to dark theme"
-msgstr ""
+msgstr "Basculer sur le thème foncé"
 
 #: functions.php:125
 msgid "Switch to light theme"
-msgstr ""
+msgstr "Basculer sur le thème clair"
 
 #: functions.php:177
 msgid "Blog Sidebar - Left/First"
-msgstr ""
+msgstr "Barre latérale du blog - Gauche/Début"
 
 #: functions.php:179
-msgid "Add widgets here to appear in your blog sidebar (first on mobile view, left on large screens)."
+msgid ""
+"Add widgets here to appear in your blog sidebar (first on mobile view, left "
+"on large screens)."
 msgstr ""
+"Ajouter des widgets ici pour les faire apparaître dans la barre latérale du "
+"blog (au début sur mobile, à gauche sur les écrans larges)."
 
 #: functions.php:189
 msgid "Blog Sidebar - Right/Last"
-msgstr ""
+msgstr "Barre latérale du blog - Droite/Fin"
 
 #: functions.php:191
-msgid "Add widgets here to appear in your blog sidebar(last on mobile view, right on large screens)."
+msgid ""
+"Add widgets here to appear in your blog sidebar(last on mobile view, right "
+"on large screens)."
 msgstr ""
+"Ajouter des widgets ici pour les faire apparaître dans la barre latérale du "
+"blog (à la fin sur mobile, à droite sur les écrans larges)."
 
 #: functions.php:201
 msgid "Articles & Pages Widgets"
-msgstr ""
+msgstr "Widgets des Articles & Pages"
 
 #: functions.php:203
 msgid "Add widgets here to appear below the articles and pages."
 msgstr ""
+"Ajouter des widgets ici pour les faire apparaître sous les articles et pages."
 
 #: functions.php:213
 msgid "CV Widgets"
-msgstr ""
+msgstr "Widgets du CV"
 
 #: functions.php:215
 msgid "Add widgets here to appear below the CV page."
-msgstr ""
+msgstr "Ajouter des widgets ici pour les faire apparaître sous la page du CV."
 
 #: functions.php:225
 msgid "Contact Widgets"
-msgstr ""
+msgstr "Widgets de Contact"
 
 #: functions.php:227
 msgid "Add widgets here to appear below the Contact page."
 msgstr ""
+"Ajouter des widgets ici pour les faire apparaître sous la page de contact."
 
 #: header.php:21
 msgid "Skip to content"
-msgstr ""
+msgstr "Aller au contenu"
 
 #: page-contact.php:3
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 #: page-contact.php:42
 msgid "Some required fields have not been completed."
-msgstr ""
+msgstr "Certains champs requis n'ont pas été complétés."
 
 #: page-contact.php:45
 msgid "Your email address contains errors."
-msgstr ""
+msgstr "Votre adresse e-mail contient des erreurs."
 
 #: page-contact.php:48
 msgid "Your message has been sent."
-msgstr ""
+msgstr "Votre message a bien été envoyé."
 
 #: page-contact.php:51
 msgid "Nice try"
-msgstr ""
+msgstr "Bien essayé"
 
 #: page-contact.php:54
 msgid "An error has occurred."
-msgstr ""
+msgstr "Une erreur est survenue."
 
 #: page-contact.php:60
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: page-contact.php:63
 msgid "Firstname Lastname"
-msgstr ""
+msgstr "Prénom Nom"
 
 #: page-contact.php:67
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: page-contact.php:70
 msgid "your@email.com"
-msgstr ""
+msgstr "votre@email.fr"
 
 #: page-contact.php:74
 msgid "Object"
-msgstr ""
+msgstr "Objet"
 
 #: page-contact.php:76
 msgid "Mail subject"
-msgstr ""
+msgstr "Sujet du message"
 
 #: page-contact.php:80
 msgid "Message"
-msgstr ""
+msgstr "Message"
 
 #: page-contact.php:83
 msgid "Your message here..."
-msgstr ""
+msgstr "Votre message ici..."
 
 #: page-contact.php:87
 msgid "Phone"
-msgstr ""
+msgstr "Téléphone"
 
 #: page-contact.php:93
 msgid "Send"
-msgstr ""
+msgstr "Envoyer"
 
 #: page-cv.php:3
 msgid "CV"
-msgstr ""
+msgstr "CV"
 
 #: page-toc-no-sidebar.php:3
 msgid "ToC no sidebar"
-msgstr ""
+msgstr "TdM sans sidebar"
 
 #. translators: %s: search query.
 #: search.php:21, template-parts/main/breadcrumb.php:33
 msgid "Search results for: %s"
-msgstr ""
+msgstr "Résultats de la recherche pour : %s"
 
 #: searchform.php:17
 msgid "Search for:"
-msgstr ""
+msgstr "Rechercher :"
 
 #: searchform.php:20
 msgctxt "placeholder"
 msgid "Keywords &hellip;"
-msgstr ""
+msgstr "Mots-clés&hellip;"
 
 #: searchform.php:23
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: inc/class-custom-walker-comment.php:35
-msgid "Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved."
+msgid ""
+"Your comment is awaiting moderation. This is a preview; your comment will be "
+"visible after it has been approved."
 msgstr ""
+"Votre commentaire est en attente de modération. Ceci est un aperçu, votre "
+"commentaire sera visible après avoir été approuvé."
 
 #: inc/class-custom-walker-comment.php:33
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Votre commentaire est en attente de modération."
 
 #: inc/class-custom-walker-comment.php:68
 msgid "Author"
-msgstr ""
+msgstr "Auteur"
 
 #: inc/class-custom-walker-comment.php:74
 msgid "Published on:"
-msgstr ""
+msgstr "Publié le :"
 
 #. translators: 1: Comment date, 2: Comment time.
 #: inc/class-custom-walker-comment.php:82
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s à %2$s"
 
 #: inc/class-custom-walker-comment.php:99
 msgid "Edit"
-msgstr ""
+msgstr "Modifier"
 
 #: inc/custom-post-types.php:48
 msgid "Thematic base"
-msgstr ""
+msgstr "Préfixe des thématiques"
 
 #: inc/custom-post-types.php:49
 msgid "Subject base"
-msgstr ""
+msgstr "Préfixe des sujets"
 
 #: inc/custom-post-types.php:50
 msgid "Article base"
-msgstr ""
+msgstr "Préfixe des articles"
 
 #: inc/custom-post-types.php:61
 msgid "Sorry, you are not allowed to manage options for this site."
-msgstr ""
+msgstr "Désolé, vous n'êtes pas autorisé à modifier les options pour ce site."
 
 #: inc/custom-post-types.php:102, inc/custom-post-types.php:104
 msgid "Articles"
-msgstr ""
+msgstr "Articles"
 
 #: inc/custom-post-types.php:103, inc/custom-post-types.php:105
 msgid "Article"
-msgstr ""
+msgstr "Article"
 
-#: inc/custom-post-types.php:106, inc/custom-post-types.php:168, inc/custom-post-types.php:230
+#: inc/custom-post-types.php:106, inc/custom-post-types.php:168,
+#: inc/custom-post-types.php:230
 msgid "Add New"
-msgstr ""
+msgstr "Ajouter"
 
 #: inc/custom-post-types.php:107
 msgid "Add New Article"
-msgstr ""
+msgstr "Ajouter un nouvel article"
 
 #: inc/custom-post-types.php:108
 msgid "New Article"
-msgstr ""
+msgstr "Nouvel article"
 
 #: inc/custom-post-types.php:109
 msgid "Edit Article"
-msgstr ""
+msgstr "Modifier l'article"
 
 #: inc/custom-post-types.php:110
 msgid "View Article"
-msgstr ""
+msgstr "Voir l'article"
 
 #: inc/custom-post-types.php:111
 msgid "All Articles"
-msgstr ""
+msgstr "Tous les articles"
 
 #: inc/custom-post-types.php:112
 msgid "Search Articles"
-msgstr ""
+msgstr "Rechercher des articles"
 
 #: inc/custom-post-types.php:113
 msgid "Parent Articles:"
-msgstr ""
+msgstr "Parent des articles :"
 
 #: inc/custom-post-types.php:114
 msgid "No articles found."
-msgstr ""
+msgstr "Aucun article trouvé."
 
 #: inc/custom-post-types.php:115
 msgid "No articles found in Trash."
-msgstr ""
+msgstr "Aucun article trouvé dans la Corbeille."
 
 #: inc/custom-post-types.php:116
 msgid "Article Cover Image"
-msgstr ""
+msgstr "Image mise en avant de l'article"
 
-#: inc/custom-post-types.php:117, inc/custom-post-types.php:179, inc/custom-post-types.php:241
+#: inc/custom-post-types.php:117, inc/custom-post-types.php:179,
+#: inc/custom-post-types.php:241
 msgid "Set cover image"
-msgstr ""
+msgstr "Définir l'image mise en avant"
 
-#: inc/custom-post-types.php:118, inc/custom-post-types.php:180, inc/custom-post-types.php:242
+#: inc/custom-post-types.php:118, inc/custom-post-types.php:180,
+#: inc/custom-post-types.php:242
 msgid "Remove cover image"
-msgstr ""
+msgstr "Supprimer l'image mise en avant"
 
-#: inc/custom-post-types.php:119, inc/custom-post-types.php:181, inc/custom-post-types.php:243
+#: inc/custom-post-types.php:119, inc/custom-post-types.php:181,
+#: inc/custom-post-types.php:243
 msgid "Use as cover image"
-msgstr ""
+msgstr "Utiliser en tant qu'image mise en avant"
 
 #: inc/custom-post-types.php:120
 msgid "Article archives"
-msgstr ""
+msgstr "Archives des articles"
 
 #: inc/custom-post-types.php:121
 msgid "Insert into article"
-msgstr ""
+msgstr "Insérer dans l'article"
 
 #: inc/custom-post-types.php:122
 msgid "Uploaded to this article"
-msgstr ""
+msgstr "Télécharger dans cet article"
 
 #: inc/custom-post-types.php:123
 msgid "Filter articles list"
-msgstr ""
+msgstr "Filtrer la liste des articles"
 
 #: inc/custom-post-types.php:124
 msgid "Articles list navigation"
-msgstr ""
+msgstr "Navigation de la liste des articles"
 
 #: inc/custom-post-types.php:125
 msgid "Articles list"
-msgstr ""
+msgstr "Liste des articles"
 
 #: inc/custom-post-types.php:164, inc/custom-post-types.php:166
 msgid "Thematics"
-msgstr ""
+msgstr "Thématiques"
 
-#: inc/custom-post-types.php:165, inc/custom-post-types.php:167, template-parts/cpt/subject/content.php:109
+#: inc/custom-post-types.php:165, inc/custom-post-types.php:167,
+#: template-parts/cpt/subject/content.php:109
 msgid "Thematic"
 msgid_plural "Thematics"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Thématique"
+msgstr[1] "Thématiques"
 
 #: inc/custom-post-types.php:169
 msgid "Add New Thematic"
-msgstr ""
+msgstr "Ajouter une nouvelle thématique"
 
 #: inc/custom-post-types.php:170
 msgid "New Thematic"
-msgstr ""
+msgstr "Nouvelle thématique"
 
 #: inc/custom-post-types.php:171
 msgid "Edit Thematic"
-msgstr ""
+msgstr "Modifier la thématique"
 
 #: inc/custom-post-types.php:172
 msgid "View Thematic"
-msgstr ""
+msgstr "Voir la thématique"
 
 #: inc/custom-post-types.php:173
 msgid "All Thematics"
-msgstr ""
+msgstr "Toutes les thématiques"
 
 #: inc/custom-post-types.php:174
 msgid "Search Thematics"
-msgstr ""
+msgstr "Rechercher des thématiques"
 
 #: inc/custom-post-types.php:175
 msgid "Parent Thematics:"
-msgstr ""
+msgstr "Parent des thématiques :"
 
 #: inc/custom-post-types.php:176
 msgid "No thematics found."
-msgstr ""
+msgstr "Aucune thématique trouvée."
 
 #: inc/custom-post-types.php:177
 msgid "No thematics found in Trash."
-msgstr ""
+msgstr "Aucune thématique trouvée dans la Corbeille."
 
 #: inc/custom-post-types.php:178
 msgid "Thematic Cover Image"
-msgstr ""
+msgstr "Image mise en avant de la thématique"
 
 #: inc/custom-post-types.php:182
 msgid "Thematic archives"
-msgstr ""
+msgstr "Archives des thématiques"
 
 #: inc/custom-post-types.php:183
 msgid "Insert into thematic"
-msgstr ""
+msgstr "Insérer dans la thématique"
 
 #: inc/custom-post-types.php:184
 msgid "Uploaded to this thematic"
-msgstr ""
+msgstr "Télécharger dans cette thématique"
 
 #: inc/custom-post-types.php:185
 msgid "Filter thematics list"
-msgstr ""
+msgstr "Filtrer la liste des thématiques"
 
 #: inc/custom-post-types.php:186
 msgid "Thematics list navigation"
-msgstr ""
+msgstr "Navigation de la liste des thématiques"
 
 #: inc/custom-post-types.php:187
 msgid "Thematics list"
-msgstr ""
+msgstr "Liste des thématiques"
 
 #: inc/custom-post-types.php:226, inc/custom-post-types.php:228
 msgid "Subjects"
-msgstr ""
+msgstr "Sujets"
 
 #: inc/custom-post-types.php:227, inc/custom-post-types.php:229
 msgid "Subject"
-msgstr ""
+msgstr "Sujet"
 
 #: inc/custom-post-types.php:231
 msgid "Add New Subject"
-msgstr ""
+msgstr "Ajouter un nouveau sujet"
 
 #: inc/custom-post-types.php:232
 msgid "New Subject"
-msgstr ""
+msgstr "Nouveau sujet"
 
 #: inc/custom-post-types.php:233
 msgid "Edit Subject"
-msgstr ""
+msgstr "Modifier le sujet"
 
 #: inc/custom-post-types.php:234
 msgid "View Subject"
-msgstr ""
+msgstr "Voir le sujet"
 
 #: inc/custom-post-types.php:235
 msgid "All Subjects"
-msgstr ""
+msgstr "Tous les sujets"
 
 #: inc/custom-post-types.php:236
 msgid "Search Subjects"
-msgstr ""
+msgstr "Recherche des sujets"
 
 #: inc/custom-post-types.php:237
 msgid "Parent Subjects:"
-msgstr ""
+msgstr "Parent des sujets :"
 
 #: inc/custom-post-types.php:238
 msgid "No subjects found."
-msgstr ""
+msgstr "Aucun sujet trouvé."
 
 #: inc/custom-post-types.php:239
 msgid "No subjects found in Trash."
-msgstr ""
+msgstr "Aucun sujet trouvé dans la Corbeille."
 
 #: inc/custom-post-types.php:240
 msgid "Subject Cover Image"
-msgstr ""
+msgstr "Image mise en avant du sujet"
 
 #: inc/custom-post-types.php:244
 msgid "Subject archives"
-msgstr ""
+msgstr "Archive des sujets"
 
 #: inc/custom-post-types.php:245
 msgid "Insert into subject"
-msgstr ""
+msgstr "Insérer dans le sujet"
 
 #: inc/custom-post-types.php:246
 msgid "Uploaded to this subject"
-msgstr ""
+msgstr "Télécharger dans ce sujet"
 
 #: inc/custom-post-types.php:247
 msgid "Filter subjects list"
-msgstr ""
+msgstr "Filtrer la liste des sujets"
 
 #: inc/custom-post-types.php:248
 msgid "Subjects list navigation"
-msgstr ""
+msgstr "Navigation de la liste des sujets"
 
 #: inc/custom-post-types.php:249
 msgid "Subjects list"
-msgstr ""
+msgstr "Liste des sujets"
 
 #. translators: %s : reading time in minutes.
 #: inc/helpers.php:71
 msgctxt "reading time"
 msgid "%s minute"
 msgid_plural "%s minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s minute"
+msgstr[1] "%s minutes"
 
 #: inc/helpers.php:78
 msgid "minutes"
-msgstr ""
+msgstr "minutes"
 
 #: inc/helpers.php:65
 msgid "seconds"
-msgstr ""
+msgstr "secondes"
 
 #. translators: %s : number of words.
 #: inc/helpers.php:85
 msgid "Approximately %1$s words read at %2$s words per minute."
-msgstr ""
+msgstr "Environ %1$s mots lus à une vitesse de %2$s mots par minute."
 
 #. translators: %s: Name of the current post.
 #. translators: %s: Name of the current post.
 #: inc/hooks.php:207, inc/hooks.php:229
 msgid "Continue reading %s"
-msgstr ""
+msgstr "Lire la suite de %s"
 
 #: inc/hooks.php:267
 msgid "Leave a comment"
-msgstr ""
+msgstr "Laisser un commentaire"
 
 #: template-parts/footer/back-to-top.php:12
 msgid "Back to top"
-msgstr ""
+msgstr "Retour en haut de page"
 
 #: template-parts/footer/copyright.php:20
 msgid "CC BY SA"
-msgstr ""
+msgstr "CC BY SA"
 
 #: template-parts/header/branding.php:23, template-parts/header/branding.php:24
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: template-parts/header/tools.php:17
 msgid "Open search"
-msgstr ""
+msgstr "Ouvrir la recherche"
 
 #: template-parts/header/tools.php:18
 msgid "Close search"
-msgstr ""
+msgstr "Fermer la recherche"
 
-#: template-parts/main/articles-list.php:20, template-parts/main/author-articles.php:50, template-parts/main/page-header.php:23, template-parts/cpt/article/header.php:23, template-parts/cpt/subject/content.php:85, template-parts/cpt/subject/header.php:26, template-parts/cpt/thematic/content.php:84, template-parts/cpt/thematic/header.php:22
+#: template-parts/main/articles-list.php:20,
+#: template-parts/main/author-articles.php:50,
+#: template-parts/main/page-header.php:23,
+#: template-parts/cpt/article/header.php:23,
+#: template-parts/cpt/subject/content.php:85,
+#: template-parts/cpt/subject/header.php:26,
+#: template-parts/cpt/thematic/content.php:84,
+#: template-parts/cpt/thematic/header.php:22
 msgid "Published on"
-msgstr ""
+msgstr "Publié le"
 
-#: template-parts/main/articles-list.php:30, template-parts/main/author-articles.php:60, template-parts/main/page-header.php:48, template-parts/cpt/article/header.php:47, template-parts/cpt/subject/content.php:95, template-parts/cpt/thematic/content.php:94
+#: template-parts/main/articles-list.php:30,
+#: template-parts/main/author-articles.php:60,
+#: template-parts/main/page-header.php:48,
+#: template-parts/cpt/article/header.php:47,
+#: template-parts/cpt/subject/content.php:95,
+#: template-parts/cpt/thematic/content.php:94
 msgid "Reading time"
-msgstr ""
+msgstr "Temps de lecture"
 
-#: template-parts/main/articles-list.php:71, template-parts/main/articles-list.php:43, template-parts/main/author-articles.php:76
+#: template-parts/main/articles-list.php:71,
+#: template-parts/main/articles-list.php:43,
+#: template-parts/main/author-articles.php:76
 msgid "Posted in"
-msgstr ""
+msgstr "Publié dans"
 
-#: template-parts/main/articles-list.php:93, template-parts/main/author-articles.php:97, template-parts/main/page-header.php:60, template-parts/cpt/article/header.php:58, template-parts/cpt/subject/content.php:181, template-parts/cpt/thematic/content.php:144
+#: template-parts/main/articles-list.php:93,
+#: template-parts/main/author-articles.php:97,
+#: template-parts/main/page-header.php:60,
+#: template-parts/cpt/article/header.php:58,
+#: template-parts/cpt/subject/content.php:181,
+#: template-parts/cpt/thematic/content.php:144
 msgid "Comments"
-msgstr ""
+msgstr "Commentaires"
 
 #: template-parts/main/breadcrumb.php:12
 msgid "Home"
-msgstr ""
+msgstr "Accueil"
 
 #: template-parts/main/breadcrumb.php:71
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: template-parts/main/breadcrumb.php:72
 msgctxt "monthly archives date format"
 msgid "F"
-msgstr ""
+msgstr "F"
 
 #: template-parts/main/breadcrumb.php:73
 msgctxt "monthly archives date format"
 msgid "m"
-msgstr ""
+msgstr "m"
 
 #: template-parts/main/breadcrumb.php:74
 msgctxt "daily archives date format"
 msgid "d"
-msgstr ""
+msgstr "d"
 
 #: template-parts/main/breadcrumb.php:41
 msgid "Page not found"
-msgstr ""
+msgstr "Page non trouvée"
 
 #: template-parts/main/breadcrumb.php:134
 msgid "You are here:"
-msgstr ""
+msgstr "Vous êtes ici :"
 
 #: template-parts/main/none.php:13
 msgid "Nothing found"
-msgstr ""
+msgstr "Aucun résultat"
 
 #: template-parts/main/none.php:30
-msgid "It seems we can't find what you're looking for. Perhaps searching can help."
+msgid ""
+"It seems we can't find what you're looking for. Perhaps searching can help."
 msgstr ""
+"Il semblerait que nous ne pouvons trouver ce que vous cherchez. Une "
+"recherche pourrait vous être utile."
 
 #: template-parts/main/none.php:22
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Prêt à publier votre premier article ? <a href=\"%1$s\">Commencez ici</a>."
 
 #: template-parts/main/page-content-attachment.php:41
 msgid "The file can be downloaded here:"
-msgstr ""
+msgstr "Le fichier peut être téléchargé ici :"
 
 #: template-parts/main/page-footer.php:94
 msgid "Is not attached to any article."
-msgstr ""
+msgstr "N'est attaché à aucun article."
 
 #: template-parts/main/page-footer.php:86
 msgid "Published in:"
-msgstr ""
+msgstr "Publié dans :"
 
 #: template-parts/main/page-footer.php:22
 msgid "Category:"
 msgid_plural "Categories:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Catégorie :"
+msgstr[1] "Catégories :"
 
 #: template-parts/main/page-footer.php:54
 msgid "Tag:"
 msgid_plural "Tags:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Étiquette :"
+msgstr[1] "Étiquettes :"
 
-#: template-parts/main/page-header.php:34, template-parts/cpt/article/header.php:34, template-parts/cpt/subject/header.php:37, template-parts/cpt/thematic/header.php:33
+#: template-parts/main/page-header.php:34,
+#: template-parts/cpt/article/header.php:34,
+#: template-parts/cpt/subject/header.php:37,
+#: template-parts/cpt/thematic/header.php:33
 msgid "Updated on"
-msgstr ""
+msgstr "Mis à jour le"
 
 #: template-parts/cpt/article/footer.php:23
 msgid "Thematic:"
 msgid_plural "Thematics:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Thématique :"
+msgstr[1] "Thématiques :"
 
 #: template-parts/cpt/article/footer.php:54
 msgid "Topic:"
 msgid_plural "Topics:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Sujet :"
+msgstr[1] "Sujets :"
 
 #. translators: %s The subject name.
 #. translators: %s The thematic name.
-#: template-parts/cpt/subject/content.php:33, template-parts/cpt/thematic/content.php:33
+#: template-parts/cpt/subject/content.php:33,
+#: template-parts/cpt/thematic/content.php:33
 msgid "All articles in %s"
-msgstr ""
+msgstr "Tous les articles dans %s"
 
 #: template-parts/cpt/subject/content.php:144
 msgid "Related topic"
 msgid_plural "Related topics"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Sujet lié"
+msgstr[1] "Sujets liés"
 
 #: template-parts/cpt/subject/header.php:51
 msgid "Website"
-msgstr ""
+msgstr "Site web"
 
 #: template-parts/cpt/thematic/content.php:108
 msgid "Topic"
 msgid_plural "Topics"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Sujet"
+msgstr[1] "Sujets"
