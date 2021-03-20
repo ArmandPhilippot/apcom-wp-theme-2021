@@ -812,7 +812,7 @@ body {
 	}
 }
 
-@keyframes zoomOutIn {
+@keyframes pulse {
 	from {
 		transform: scale(1);
 	}
@@ -2657,7 +2657,7 @@ small {
 }
 
 .back-to-top__link:hover svg, .back-to-top__link:focus svg {
-	animation: zoomOutIn 1.2s;
+	animation: pulse 1.2s;
 	animation-iteration-count: infinite;
 }
 
@@ -4063,7 +4063,7 @@ small {
 }
 
 .tools__label:hover svg, .tools__label:focus svg {
-	animation: zoomOutIn 1.2s;
+	animation: pulse 1.2s;
 	animation-iteration-count: infinite;
 }
 
@@ -4094,8 +4094,8 @@ small {
 	width: 100%;
 }
 
-.tools__checkbox:hover ~ .tools__label .tools__icon, .tools__checkbox:focus ~ .tools__label .tools__icon {
-	animation: zoomOutIn 1.2s;
+.tools__checkbox:hover ~ .tools__label .tools__icon::before, .tools__checkbox:hover ~ .tools__label .tools__icon svg, .tools__checkbox:focus ~ .tools__label .tools__icon::before, .tools__checkbox:focus ~ .tools__label .tools__icon svg {
+	animation: pulse 1.2s;
 	animation-iteration-count: infinite;
 }
 

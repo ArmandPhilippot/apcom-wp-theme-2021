@@ -50,8 +50,10 @@
 		&:focus {
 			~ .tools__label {
 				.tools__icon {
-					animation: zoomOutIn 1.2s;
-					animation-iteration-count: infinite;
+					&::before, svg {
+						animation: pulse 1.2s;
+						animation-iteration-count: infinite;
+					}
 				}
 			}
 		}
