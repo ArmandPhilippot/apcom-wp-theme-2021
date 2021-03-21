@@ -346,3 +346,14 @@ function apcom_getarchives_where( $sql_where ) {
 	return $sql_where;
 }
 add_filter( 'getarchives_where', 'apcom_getarchives_where' );
+
+/**
+ * Add an async attribute to enqueued scripts
+ *
+ * @param string $tag Tag for the enqueued scripts.
+ * @return string Script tag for the enqueued scripts
+ */
+function apcom_async_scripts( $tag ) {
+	return str_replace( ' src', ' async src', $tag );
+}
+add_filter( 'script_loader_tag', 'apcom_async_scripts', 10, 2 );
