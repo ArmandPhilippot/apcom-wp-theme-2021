@@ -418,22 +418,95 @@ if (bodyClasses.contains('single-page') && !bodyClasses.contains('attachment')) 
 }
 "use strict";
 
+var toolSearch = document.getElementById('tools__search');
+var searchForm = toolSearch.getElementsByClassName('search-form')[0];
+var viewportWidth;
 /**
- * hideSearch
+ * Get the viewport width based on the window width.
  *
+ * @returns {number} The window inner width.
+ */
+
+function getViewportWidth() {
+  return window.innerWidth;
+}
+/**
  * Hide search input when user click outside or focus move outside search form.
  *
  * @param {*} target Event target
  */
+
+
 function hideSearch(target) {
-  var menuItemSearch = document.getElementById('tools__search');
   var searchCheckbox = document.getElementById('search__checkbox');
 
-  if (!menuItemSearch.contains(target) && target !== null) {
+  if (!toolSearch.contains(target) && target !== null) {
     searchCheckbox.checked = false;
   }
 }
+/**
+ * Disable body scroll
+ */
 
+
+function preventScrolling() {
+  var body = document.body;
+  var bodyWith = body.offsetWidth;
+  body.style.overflow = 'hidden';
+}
+/**
+ * Allow body scroll
+ */
+
+
+function allowScrolling() {
+  document.body.style.removeProperty('overflow');
+}
+/**
+ * Create an Intersection Observer to observe visibility of element objects.
+ *
+ * @param {*} element An array of elements or a single HTMLElement.
+ * @param {*} callback A function which is called when the targeted element is visible.
+ */
+
+
+function createVisibilityObserver(element, callback) {
+  var options = {};
+
+  var intersectionCallback = function intersectionCallback(entries) {
+    entries.forEach(function (entry) {
+      callback(entry.intersectionRatio > 0);
+    });
+  };
+
+  var observer = new IntersectionObserver(intersectionCallback, options);
+  observer.observe(element);
+}
+/**
+ * Call the Intersection Observer to prevent or allow scrolling.
+ *
+ * @param {*} element An array of elements or a single HTMLElement.
+ */
+
+
+function observeDisplayChange(element) {
+  viewportWidth = getViewportWidth();
+  createVisibilityObserver(element, function (visible) {
+    if (visible && viewportWidth < 1280) {
+      preventScrolling();
+    } else {
+      allowScrolling();
+    }
+  });
+}
+
+window.addEventListener('load', function () {
+  observeDisplayChange(searchForm);
+}, false);
+window.addEventListener('resize', function () {
+  viewportWidth = getViewportWidth();
+  observeDisplayChange(searchForm);
+});
 document.addEventListener('click', function (event) {
   hideSearch(event.target);
 });
