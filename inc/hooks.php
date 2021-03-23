@@ -351,9 +351,18 @@ add_filter( 'getarchives_where', 'apcom_getarchives_where' );
  * Add an async attribute to enqueued scripts
  *
  * @param string $tag Tag for the enqueued scripts.
+ * @param string $handle The script's registered handle.
  * @return string Script tag for the enqueued scripts
  */
-function apcom_async_scripts( $tag ) {
-	return str_replace( ' src', ' async src', $tag );
+function apcom_async_scripts( $tag, $handle ) {
+	$scripts_to_defer = array( 'apcom-app', 'vendors-scripts' );
+
+	foreach ( $scripts_to_defer as $defer_script ) {
+		if ( $defer_script === $handle ) {
+			return str_replace( ' src', ' async src', $tag );
+		}
+	}
+
+	return $tag;
 }
 add_filter( 'script_loader_tag', 'apcom_async_scripts', 10, 2 );
