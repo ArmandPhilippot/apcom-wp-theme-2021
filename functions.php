@@ -26,7 +26,7 @@ if ( ! function_exists( 'apcom_setup' ) ) {
 	 * @since 0.0.1
 	 */
 	function apcom_setup() {
-		load_textdomain( 'APCom', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'APCom', get_template_directory() . '/languages' );
 
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'automatic-feed-links' );
