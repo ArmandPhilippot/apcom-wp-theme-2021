@@ -40,6 +40,17 @@ function apcom_article_base_output() {
 }
 
 /**
+ * Create the input option to change the project slug
+ *
+ * @since 0.0.2
+ */
+function apcom_project_base_output() {
+	?>
+	<input name="apcom_project_base" id="project_base" type="text" class="regular-text code" value="<?php echo esc_attr( get_option( 'apcom_project_base' ) ); ?>" placeholder="<?php echo 'project'; ?>" />
+	<?php
+}
+
+/**
  * Provide slug option for CPT in permalinks settings
  *
  * @since 0.0.2
@@ -48,6 +59,7 @@ function apcom_add_cpt_slug_fields() {
 	add_settings_field( 'apcom_thematic_base', __( 'Thematic base', 'APCom' ), 'apcom_thematic_base_output', 'permalink', 'optional', array( 'label_for' => 'thematic_base' ) );
 	add_settings_field( 'apcom_subject_base', __( 'Subject base', 'APCom' ), 'apcom_subject_base_output', 'permalink', 'optional', array( 'label_for' => 'subject_base' ) );
 	add_settings_field( 'apcom_article_base', __( 'Article base', 'APCom' ), 'apcom_article_base_output', 'permalink', 'optional', array( 'label_for' => 'article_base' ) );
+	add_settings_field( 'apcom_project_base', __( 'Project base', 'APCom' ), 'apcom_project_base_output', 'permalink', 'optional', array( 'label_for' => 'project_base' ) );
 }
 add_action( 'admin_init', 'apcom_add_cpt_slug_fields' );
 
@@ -61,7 +73,7 @@ function apcom_update_cpt_slugs() {
 		wp_die( esc_html__( 'Sorry, you are not allowed to manage options for this site.', 'APCom' ) );
 	}
 
-	if ( isset( $_POST['permalink_structure'] ) || isset( $_POST['apcom_thematic_base'] ) || isset( $_POST['apcom_subject_base'] ) || isset( $_POST['apcom_article_base'] ) ) {
+	if ( isset( $_POST['permalink_structure'] ) || isset( $_POST['apcom_thematic_base'] ) || isset( $_POST['apcom_subject_base'] ) || isset( $_POST['apcom_article_base'] ) || isset( $_POST['apcom_project_base'] ) ) {
 		check_admin_referer( 'update-permalink' );
 
 		if ( isset( $_POST['apcom_thematic_base'] ) ) {
@@ -85,6 +97,14 @@ function apcom_update_cpt_slugs() {
 
 			if ( get_option( 'apcom_article_base' ) !== $article_base ) {
 				update_option( 'apcom_article_base', $article_base );
+			}
+		}
+
+		if ( isset( $_POST['apcom_project_base'] ) ) {
+			$project_base = sanitize_text_field( wp_unslash( $_POST['apcom_project_base'] ) );
+
+			if ( get_option( 'apcom_project_base' ) !== $project_base ) {
+				update_option( 'apcom_project_base', $project_base );
 			}
 		}
 	}
@@ -278,6 +298,68 @@ function apcom_subject_init() {
 add_action( 'init', 'apcom_subject_init' );
 
 /**
+ * Register a custom post type called "project".
+ *
+ * @see get_post_type_labels() for label keys.
+ * @since 0.0.2
+ */
+function apcom_project_init() {
+	$labels = array(
+		'name'                  => __( 'Projects', 'APCom' ),
+		'singular_name'         => __( 'Project', 'APCom' ),
+		'menu_name'             => __( 'Projects', 'APCom' ),
+		'name_admin_bar'        => __( 'Project', 'APCom' ),
+		'add_new'               => __( 'Add New', 'APCom' ),
+		'add_new_item'          => __( 'Add New Project', 'APCom' ),
+		'new_item'              => __( 'New Project', 'APCom' ),
+		'edit_item'             => __( 'Edit Project', 'APCom' ),
+		'view_item'             => __( 'View Project', 'APCom' ),
+		'all_items'             => __( 'All Projects', 'APCom' ),
+		'search_items'          => __( 'Search Projects', 'APCom' ),
+		'parent_item_colon'     => __( 'Parent Projects:', 'APCom' ),
+		'not_found'             => __( 'No projects found.', 'APCom' ),
+		'not_found_in_trash'    => __( 'No projects found in Trash.', 'APCom' ),
+		'featured_image'        => __( 'Project Cover Image', 'APCom' ),
+		'set_featured_image'    => __( 'Set cover image', 'APCom' ),
+		'remove_featured_image' => __( 'Remove cover image', 'APCom' ),
+		'use_featured_image'    => __( 'Use as cover image', 'APCom' ),
+		'archives'              => __( 'Project archives', 'APCom' ),
+		'insert_into_item'      => __( 'Insert into project', 'APCom' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this project', 'APCom' ),
+		'filter_items_list'     => __( 'Filter projects list', 'APCom' ),
+		'items_list_navigation' => __( 'Projects list navigation', 'APCom' ),
+		'items_list'            => __( 'Projects list', 'APCom' ),
+	);
+
+	if ( get_option( 'apcom_project_base' ) !== '' ) {
+		$project_slug = get_option( 'apcom_project_base' );
+	} else {
+		$project_slug = 'project';
+	}
+
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __( 'This page lists the presentations of my different open source projects. Not all of them necessarily benefit from a presentation. You can browse Github or Gitlab for others.', 'APCom' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => $project_slug ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 8,
+		'menu_icon'          => 'dashicons-open-folder',
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions', 'page-attributes', 'custom-fields' ),
+		'show_in_rest'       => true,
+	);
+
+	register_post_type( 'project', $args );
+}
+add_action( 'init', 'apcom_project_init' );
+
+/**
  * Flushing rewrite on theme activation
  *
  * @since 0.0.2
@@ -286,6 +368,7 @@ function apcom_rewrite_flush() {
 	apcom_article_init();
 	apcom_thematic_init();
 	apcom_subject_init();
+	apcom_project_init();
 	flush_rewrite_rules();
 }
 add_action( 'after_switch_theme', 'apcom_rewrite_flush' );
