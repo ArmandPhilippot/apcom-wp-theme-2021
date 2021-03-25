@@ -116,6 +116,17 @@ if ( is_home() ) {
 				),
 			);
 		}
+	} elseif ( is_singular( 'project' ) ) {
+		$apcom_post_type_object = get_post_type_object( 'project' );
+		$apcom_breadcrumb_data += array(
+			3 => array(
+				'url' => get_post_type_archive_link( 'project' ),
+				'txt' => $apcom_post_type_object->labels->singular_name,
+			),
+			4 => array(
+				'txt' => single_post_title( '', false ),
+			),
+		);
 	} elseif ( is_single() ) {
 		$apcom_breadcrumb_data += array(
 			3 => array(

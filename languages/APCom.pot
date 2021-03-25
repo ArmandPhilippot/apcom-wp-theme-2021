@@ -699,11 +699,11 @@ msgstr ""
 msgid "Page not found"
 msgstr ""
 
-#: template-parts/main/breadcrumb.php:132
+#: template-parts/main/breadcrumb.php:143
 msgid "Breadcrumb"
 msgstr ""
 
-#: template-parts/main/breadcrumb.php:134
+#: template-parts/main/breadcrumb.php:145
 msgid "You are here:"
 msgstr ""
 
