@@ -1,9 +1,14 @@
 .author {
 	&__introduction {
-		display: grid;
-		grid-template-columns: #{pxToRem(180)} 1fr;
-		column-gap: cssVar(spacing-lg);
 		margin-bottom: cssVar(spacing-lg);
+
+		@include media("screen") {
+			@include dimensions("xs") {
+				display: grid;
+				grid-template-columns: max-content 1fr;
+				column-gap: cssVar(spacing-lg);
+			}
+		}
 	}
 
 	&__title {
@@ -36,40 +41,51 @@
 	}
 
 	.article {
-		&__body {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+
+		&__header {
+			margin-bottom: 0;
+		}
+
+		&__footer {
+			grid-row: 2;
 			margin-bottom: cssVar(spacing-md);
 		}
 
+		&__meta {
+			margin-bottom: 0;
+		}
+
 		@include media("screen") {
-			@include dimensions("xs") {
-				display: grid;
-				grid-template-columns: #{pxToRem(180)} 1fr;
+			@include dimensions("sm") {
+				grid-template-columns: 1fr #{pxToRem(200)};
 				grid-template-rows: max-content 1fr;
 				column-gap: cssVar(spacing-lg);
 
 				&__header {
-					grid-column: 2;
+					grid-column: 1;
 					grid-row: 1;
-					margin-bottom: 0;
 				}
 
 				&__body {
-					grid-column: 2;
+					grid-column: 1;
 					grid-row: 2;
 				}
 
 				&__footer {
-					grid-column: 1;
+					grid-column: 2;
 					grid-row: 1 / -1;
+					margin-bottom: 0;
 				}
 
 				&__figure {
-					margin: 0;
+					margin: 0 0 cssVar(spacing-md);
 				}
 
 				&__image {
-					max-width: pxToRem(150);
-					max-height: pxToRem(80);
+					max-width: pxToRem(200);
+					max-height: pxToRem(100);
 					margin: 0 auto;
 				}
 
@@ -77,8 +93,34 @@
 					display: block;
 				}
 
-				.meta__item {
-					margin-top: cssVar(spacing-sm);
+				.meta {
+					&__item {
+						margin-top: cssVar(spacing-sm);
+					}
+
+					&__theme {
+						display: block;
+
+						&:not(:first-child) {
+							&::before {
+								display: none;
+							}
+						}
+
+						&:not(:last-child) {
+							margin-bottom: pxToRem(2);
+						}
+					}
+				}
+			}
+
+			@include dimensions("lg") {
+				column-gap: cssVar(spacing-2xl);
+
+				&:last-child {
+					border-bottom: none;
+					margin-bottom: cssVar(spacing-md);
+					padding-bottom: 0;
 				}
 			}
 		}
