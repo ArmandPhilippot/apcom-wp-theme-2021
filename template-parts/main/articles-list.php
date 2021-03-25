@@ -58,6 +58,24 @@
 					</div>
 					<?php
 				}
+			} elseif ( get_post_type() === 'project' ) {
+				?>
+				<div class="meta__item meta__item--has-icon meta__themes">
+					<dt class="meta__term">
+						<?php esc_html_e( 'Posted in', 'APCom' ); ?>
+					</dt>
+					<?php
+					$apcom_post_type_object      = get_post_type_object( 'project' );
+					$apcom_article_thematic_link = get_post_type_archive_link( 'project' );
+					$apcom_article_thematic_name = $apcom_post_type_object->labels->singular_name;
+					?>
+					<dd class="meta__description meta__theme" itemprop="keywords">
+						<a href="<?php echo esc_url( $apcom_article_thematic_link ); ?>" rel="tag">
+							<?php echo esc_html( $apcom_article_thematic_name ); ?>
+						</a>
+					</dd>
+				</div>
+				<?php
 			} else {
 				if ( ! is_category() ) {
 					$apcom_article_themes = get_the_category();

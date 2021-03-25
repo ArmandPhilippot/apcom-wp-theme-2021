@@ -663,11 +663,11 @@ msgstr ""
 msgid "Reading time"
 msgstr ""
 
-#: template-parts/main/articles-list.php:71, template-parts/main/articles-list.php:43, template-parts/main/author-articles.php:76
+#: template-parts/main/articles-list.php:89, template-parts/main/articles-list.php:65, template-parts/main/articles-list.php:43, template-parts/main/author-articles.php:76
 msgid "Posted in"
 msgstr ""
 
-#: template-parts/main/articles-list.php:93, template-parts/main/author-articles.php:97, template-parts/main/page-header.php:60, template-parts/cpt/article/header.php:58, template-parts/cpt/project/header.php:58, template-parts/cpt/subject/content.php:181, template-parts/cpt/thematic/content.php:144
+#: template-parts/main/articles-list.php:111, template-parts/main/author-articles.php:97, template-parts/main/page-header.php:60, template-parts/cpt/article/header.php:58, template-parts/cpt/project/header.php:58, template-parts/cpt/subject/content.php:181, template-parts/cpt/thematic/content.php:144
 msgid "Comments"
 msgstr ""
 
