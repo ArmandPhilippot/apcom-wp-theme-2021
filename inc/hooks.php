@@ -338,6 +338,8 @@ add_filter( 'widget_posts_args', 'apcom_widget_posts_args_add_cpt' );
 /**
  * Add article & project CPT to the WHERE clause for retrieving archives.
  *
+ * @since  0.0.2
+ *
  * @param string $sql_where Portion of SQL query containing the WHERE clause.
  * @return string The custom where clause.
  */
@@ -349,6 +351,8 @@ add_filter( 'getarchives_where', 'apcom_getarchives_where' );
 
 /**
  * Add an async attribute to enqueued scripts
+ *
+ * @since  0.0.2
  *
  * @param string $tag Tag for the enqueued scripts.
  * @param string $handle The script's registered handle.
@@ -366,3 +370,28 @@ function apcom_async_scripts( $tag, $handle ) {
 	return $tag;
 }
 add_filter( 'script_loader_tag', 'apcom_async_scripts', 10, 2 );
+
+/**
+ * Remove archive labels
+ *
+ * @since  0.0.2
+ *
+ * @param string $title Archive title.
+ * @return string Archive title without labels.
+ */
+function apcom_archive_title( $title ) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+		$title = get_the_author();
+	} elseif ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
+	} elseif ( is_tax() ) {
+		$title = single_term_title( '', false );
+	}
+
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'apcom_archive_title' );
