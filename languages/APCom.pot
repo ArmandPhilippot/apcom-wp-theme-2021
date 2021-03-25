@@ -655,11 +655,11 @@ msgstr ""
 msgid "Close search"
 msgstr ""
 
-#: template-parts/main/articles-list.php:20, template-parts/main/author-articles.php:50, template-parts/main/page-header.php:23, template-parts/cpt/article/header.php:23, template-parts/cpt/subject/content.php:85, template-parts/cpt/subject/header.php:26, template-parts/cpt/thematic/content.php:84, template-parts/cpt/thematic/header.php:22
+#: template-parts/main/articles-list.php:20, template-parts/main/author-articles.php:50, template-parts/main/page-header.php:23, template-parts/cpt/article/header.php:23, template-parts/cpt/project/header.php:23, template-parts/cpt/subject/content.php:85, template-parts/cpt/subject/header.php:26, template-parts/cpt/thematic/content.php:84, template-parts/cpt/thematic/header.php:22
 msgid "Published on"
 msgstr ""
 
-#: template-parts/main/articles-list.php:30, template-parts/main/author-articles.php:60, template-parts/main/page-header.php:48, template-parts/cpt/article/header.php:47, template-parts/cpt/subject/content.php:95, template-parts/cpt/thematic/content.php:94
+#: template-parts/main/articles-list.php:30, template-parts/main/author-articles.php:60, template-parts/main/page-header.php:48, template-parts/cpt/article/header.php:47, template-parts/cpt/project/header.php:47, template-parts/cpt/subject/content.php:95, template-parts/cpt/thematic/content.php:94
 msgid "Reading time"
 msgstr ""
 
@@ -667,7 +667,7 @@ msgstr ""
 msgid "Posted in"
 msgstr ""
 
-#: template-parts/main/articles-list.php:93, template-parts/main/author-articles.php:97, template-parts/main/page-header.php:60, template-parts/cpt/article/header.php:58, template-parts/cpt/subject/content.php:181, template-parts/cpt/thematic/content.php:144
+#: template-parts/main/articles-list.php:93, template-parts/main/author-articles.php:97, template-parts/main/page-header.php:60, template-parts/cpt/article/header.php:58, template-parts/cpt/project/header.php:58, template-parts/cpt/subject/content.php:181, template-parts/cpt/thematic/content.php:144
 msgid "Comments"
 msgstr ""
 
@@ -743,7 +743,7 @@ msgid_plural "Tags:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: template-parts/main/page-header.php:34, template-parts/cpt/article/header.php:34, template-parts/cpt/subject/header.php:37, template-parts/cpt/thematic/header.php:33
+#: template-parts/main/page-header.php:34, template-parts/cpt/article/header.php:34, template-parts/cpt/project/header.php:34, template-parts/cpt/subject/header.php:37, template-parts/cpt/thematic/header.php:33
 msgid "Updated on"
 msgstr ""
 
@@ -753,11 +753,15 @@ msgid_plural "Thematics:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: template-parts/cpt/article/footer.php:54
+#: template-parts/cpt/article/footer.php:54, template-parts/cpt/project/footer.php:34
 msgid "Topic:"
 msgid_plural "Topics:"
 msgstr[0] ""
 msgstr[1] ""
+
+#: template-parts/cpt/project/footer.php:15
+msgid "Posted in:"
+msgstr ""
 
 #. translators: %s The subject name.
 #. translators: %s The thematic name.
