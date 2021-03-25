@@ -262,334 +262,338 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: inc/custom-post-types.php:59
+#: inc/custom-post-types.php:61, inc/custom-post-types.php:378
+msgid "This page lists the presentations of my different open source projects."
+msgstr ""
+
+#: inc/custom-post-types.php:71
 msgid "Thematic base"
 msgstr ""
 
-#: inc/custom-post-types.php:60
+#: inc/custom-post-types.php:72
 msgid "Subject base"
 msgstr ""
 
-#: inc/custom-post-types.php:61
+#: inc/custom-post-types.php:73
 msgid "Article base"
 msgstr ""
 
-#: inc/custom-post-types.php:62
+#: inc/custom-post-types.php:74
 msgid "Project base"
 msgstr ""
 
-#: inc/custom-post-types.php:73
+#: inc/custom-post-types.php:75
+msgid "Project description"
+msgstr ""
+
+#: inc/custom-post-types.php:86, inc/custom-post-types.php:134
 msgid "Sorry, you are not allowed to manage options for this site."
 msgstr ""
 
-#: inc/custom-post-types.php:122, inc/custom-post-types.php:124
+#: inc/custom-post-types.php:157, inc/custom-post-types.php:159
 msgid "Articles"
 msgstr ""
 
-#: inc/custom-post-types.php:123, inc/custom-post-types.php:125
+#: inc/custom-post-types.php:158, inc/custom-post-types.php:160
 msgid "Article"
 msgstr ""
 
-#: inc/custom-post-types.php:126, inc/custom-post-types.php:188, inc/custom-post-types.php:250, inc/custom-post-types.php:312
+#: inc/custom-post-types.php:161, inc/custom-post-types.php:223, inc/custom-post-types.php:285, inc/custom-post-types.php:347
 msgid "Add New"
 msgstr ""
 
-#: inc/custom-post-types.php:127
+#: inc/custom-post-types.php:162
 msgid "Add New Article"
 msgstr ""
 
-#: inc/custom-post-types.php:128
+#: inc/custom-post-types.php:163
 msgid "New Article"
 msgstr ""
 
-#: inc/custom-post-types.php:129
+#: inc/custom-post-types.php:164
 msgid "Edit Article"
 msgstr ""
 
-#: inc/custom-post-types.php:130
+#: inc/custom-post-types.php:165
 msgid "View Article"
 msgstr ""
 
-#: inc/custom-post-types.php:131
+#: inc/custom-post-types.php:166
 msgid "All Articles"
 msgstr ""
 
-#: inc/custom-post-types.php:132
+#: inc/custom-post-types.php:167
 msgid "Search Articles"
 msgstr ""
 
-#: inc/custom-post-types.php:133
+#: inc/custom-post-types.php:168
 msgid "Parent Articles:"
 msgstr ""
 
-#: inc/custom-post-types.php:134
+#: inc/custom-post-types.php:169
 msgid "No articles found."
 msgstr ""
 
-#: inc/custom-post-types.php:135
+#: inc/custom-post-types.php:170
 msgid "No articles found in Trash."
 msgstr ""
 
-#: inc/custom-post-types.php:136
+#: inc/custom-post-types.php:171
 msgid "Article Cover Image"
 msgstr ""
 
-#: inc/custom-post-types.php:137, inc/custom-post-types.php:199, inc/custom-post-types.php:261, inc/custom-post-types.php:323
+#: inc/custom-post-types.php:172, inc/custom-post-types.php:234, inc/custom-post-types.php:296, inc/custom-post-types.php:358
 msgid "Set cover image"
 msgstr ""
 
-#: inc/custom-post-types.php:138, inc/custom-post-types.php:200, inc/custom-post-types.php:262, inc/custom-post-types.php:324
+#: inc/custom-post-types.php:173, inc/custom-post-types.php:235, inc/custom-post-types.php:297, inc/custom-post-types.php:359
 msgid "Remove cover image"
 msgstr ""
 
-#: inc/custom-post-types.php:139, inc/custom-post-types.php:201, inc/custom-post-types.php:263, inc/custom-post-types.php:325
+#: inc/custom-post-types.php:174, inc/custom-post-types.php:236, inc/custom-post-types.php:298, inc/custom-post-types.php:360
 msgid "Use as cover image"
 msgstr ""
 
-#: inc/custom-post-types.php:140
+#: inc/custom-post-types.php:175
 msgid "Article archives"
 msgstr ""
 
-#: inc/custom-post-types.php:141
+#: inc/custom-post-types.php:176
 msgid "Insert into article"
 msgstr ""
 
-#: inc/custom-post-types.php:142
+#: inc/custom-post-types.php:177
 msgid "Uploaded to this article"
 msgstr ""
 
-#: inc/custom-post-types.php:143
+#: inc/custom-post-types.php:178
 msgid "Filter articles list"
 msgstr ""
 
-#: inc/custom-post-types.php:144
+#: inc/custom-post-types.php:179
 msgid "Articles list navigation"
 msgstr ""
 
-#: inc/custom-post-types.php:145
+#: inc/custom-post-types.php:180
 msgid "Articles list"
 msgstr ""
 
-#: inc/custom-post-types.php:184, inc/custom-post-types.php:186
+#: inc/custom-post-types.php:219, inc/custom-post-types.php:221
 msgid "Thematics"
 msgstr ""
 
-#: inc/custom-post-types.php:185, inc/custom-post-types.php:187, template-parts/cpt/subject/content.php:109
+#: inc/custom-post-types.php:220, inc/custom-post-types.php:222, template-parts/cpt/subject/content.php:109
 msgid "Thematic"
 msgid_plural "Thematics"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/custom-post-types.php:189
+#: inc/custom-post-types.php:224
 msgid "Add New Thematic"
 msgstr ""
 
-#: inc/custom-post-types.php:190
+#: inc/custom-post-types.php:225
 msgid "New Thematic"
 msgstr ""
 
-#: inc/custom-post-types.php:191
+#: inc/custom-post-types.php:226
 msgid "Edit Thematic"
 msgstr ""
 
-#: inc/custom-post-types.php:192
+#: inc/custom-post-types.php:227
 msgid "View Thematic"
 msgstr ""
 
-#: inc/custom-post-types.php:193
+#: inc/custom-post-types.php:228
 msgid "All Thematics"
 msgstr ""
 
-#: inc/custom-post-types.php:194
+#: inc/custom-post-types.php:229
 msgid "Search Thematics"
 msgstr ""
 
-#: inc/custom-post-types.php:195
+#: inc/custom-post-types.php:230
 msgid "Parent Thematics:"
 msgstr ""
 
-#: inc/custom-post-types.php:196
+#: inc/custom-post-types.php:231
 msgid "No thematics found."
 msgstr ""
 
-#: inc/custom-post-types.php:197
+#: inc/custom-post-types.php:232
 msgid "No thematics found in Trash."
 msgstr ""
 
-#: inc/custom-post-types.php:198
+#: inc/custom-post-types.php:233
 msgid "Thematic Cover Image"
 msgstr ""
 
-#: inc/custom-post-types.php:202
+#: inc/custom-post-types.php:237
 msgid "Thematic archives"
 msgstr ""
 
-#: inc/custom-post-types.php:203
+#: inc/custom-post-types.php:238
 msgid "Insert into thematic"
 msgstr ""
 
-#: inc/custom-post-types.php:204
+#: inc/custom-post-types.php:239
 msgid "Uploaded to this thematic"
 msgstr ""
 
-#: inc/custom-post-types.php:205
+#: inc/custom-post-types.php:240
 msgid "Filter thematics list"
 msgstr ""
 
-#: inc/custom-post-types.php:206
+#: inc/custom-post-types.php:241
 msgid "Thematics list navigation"
 msgstr ""
 
-#: inc/custom-post-types.php:207
+#: inc/custom-post-types.php:242
 msgid "Thematics list"
 msgstr ""
 
-#: inc/custom-post-types.php:246, inc/custom-post-types.php:248
+#: inc/custom-post-types.php:281, inc/custom-post-types.php:283
 msgid "Subjects"
 msgstr ""
 
-#: inc/custom-post-types.php:247, inc/custom-post-types.php:249
+#: inc/custom-post-types.php:282, inc/custom-post-types.php:284
 msgid "Subject"
 msgstr ""
 
-#: inc/custom-post-types.php:251
+#: inc/custom-post-types.php:286
 msgid "Add New Subject"
 msgstr ""
 
-#: inc/custom-post-types.php:252
+#: inc/custom-post-types.php:287
 msgid "New Subject"
 msgstr ""
 
-#: inc/custom-post-types.php:253
+#: inc/custom-post-types.php:288
 msgid "Edit Subject"
 msgstr ""
 
-#: inc/custom-post-types.php:254
+#: inc/custom-post-types.php:289
 msgid "View Subject"
 msgstr ""
 
-#: inc/custom-post-types.php:255
+#: inc/custom-post-types.php:290
 msgid "All Subjects"
 msgstr ""
 
-#: inc/custom-post-types.php:256
+#: inc/custom-post-types.php:291
 msgid "Search Subjects"
 msgstr ""
 
-#: inc/custom-post-types.php:257
+#: inc/custom-post-types.php:292
 msgid "Parent Subjects:"
 msgstr ""
 
-#: inc/custom-post-types.php:258
+#: inc/custom-post-types.php:293
 msgid "No subjects found."
 msgstr ""
 
-#: inc/custom-post-types.php:259
+#: inc/custom-post-types.php:294
 msgid "No subjects found in Trash."
 msgstr ""
 
-#: inc/custom-post-types.php:260
+#: inc/custom-post-types.php:295
 msgid "Subject Cover Image"
 msgstr ""
 
-#: inc/custom-post-types.php:264
+#: inc/custom-post-types.php:299
 msgid "Subject archives"
 msgstr ""
 
-#: inc/custom-post-types.php:265
+#: inc/custom-post-types.php:300
 msgid "Insert into subject"
 msgstr ""
 
-#: inc/custom-post-types.php:266
+#: inc/custom-post-types.php:301
 msgid "Uploaded to this subject"
 msgstr ""
 
-#: inc/custom-post-types.php:267
+#: inc/custom-post-types.php:302
 msgid "Filter subjects list"
 msgstr ""
 
-#: inc/custom-post-types.php:268
+#: inc/custom-post-types.php:303
 msgid "Subjects list navigation"
 msgstr ""
 
-#: inc/custom-post-types.php:269
+#: inc/custom-post-types.php:304
 msgid "Subjects list"
 msgstr ""
 
-#: inc/custom-post-types.php:308, inc/custom-post-types.php:310
+#: inc/custom-post-types.php:343, inc/custom-post-types.php:345
 msgid "Projects"
 msgstr ""
 
-#: inc/custom-post-types.php:309, inc/custom-post-types.php:311
+#: inc/custom-post-types.php:344, inc/custom-post-types.php:346
 msgid "Project"
 msgstr ""
 
-#: inc/custom-post-types.php:313
+#: inc/custom-post-types.php:348
 msgid "Add New Project"
 msgstr ""
 
-#: inc/custom-post-types.php:314
+#: inc/custom-post-types.php:349
 msgid "New Project"
 msgstr ""
 
-#: inc/custom-post-types.php:315
+#: inc/custom-post-types.php:350
 msgid "Edit Project"
 msgstr ""
 
-#: inc/custom-post-types.php:316
+#: inc/custom-post-types.php:351
 msgid "View Project"
 msgstr ""
 
-#: inc/custom-post-types.php:317
+#: inc/custom-post-types.php:352
 msgid "All Projects"
 msgstr ""
 
-#: inc/custom-post-types.php:318
+#: inc/custom-post-types.php:353
 msgid "Search Projects"
 msgstr ""
 
-#: inc/custom-post-types.php:319
+#: inc/custom-post-types.php:354
 msgid "Parent Projects:"
 msgstr ""
 
-#: inc/custom-post-types.php:320
+#: inc/custom-post-types.php:355
 msgid "No projects found."
 msgstr ""
 
-#: inc/custom-post-types.php:321
+#: inc/custom-post-types.php:356
 msgid "No projects found in Trash."
 msgstr ""
 
-#: inc/custom-post-types.php:322
+#: inc/custom-post-types.php:357
 msgid "Project Cover Image"
 msgstr ""
 
-#: inc/custom-post-types.php:326
+#: inc/custom-post-types.php:361
 msgid "Project archives"
 msgstr ""
 
-#: inc/custom-post-types.php:327
+#: inc/custom-post-types.php:362
 msgid "Insert into project"
 msgstr ""
 
-#: inc/custom-post-types.php:328
+#: inc/custom-post-types.php:363
 msgid "Uploaded to this project"
 msgstr ""
 
-#: inc/custom-post-types.php:329
+#: inc/custom-post-types.php:364
 msgid "Filter projects list"
 msgstr ""
 
-#: inc/custom-post-types.php:330
+#: inc/custom-post-types.php:365
 msgid "Projects list navigation"
 msgstr ""
 
-#: inc/custom-post-types.php:331
+#: inc/custom-post-types.php:366
 msgid "Projects list"
-msgstr ""
-
-#: inc/custom-post-types.php:342
-msgid "This page lists the presentations of my different open source projects. Not all of them necessarily benefit from a presentation. You can browse Github or Gitlab for others."
 msgstr ""
 
 #. translators: %s : reading time in minutes.
