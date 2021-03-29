@@ -51,7 +51,7 @@
 	background: linear-gradient(to bottom, var(--apcom-color-primary) 0 33.33%, var(--apcom-color-primary-light) 33.33% 66.66%, var(--apcom-color-primary-dark) 66.66% 100%) 0 0/100% 300% no-repeat;
 	border: 0.125rem solid var(--apcom-color-border-light);
 	border-radius: 50%;
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-shadow), 0.125rem 0.125rem 0.0625rem 0.0625rem var(--apcom-color-shadow), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary), 0 0.125rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
 	color: var(--apcom-color-fg-inverted);
 	font-size: var(--apcom-font-size-sm);
 	height: 2rem;
@@ -61,7 +61,8 @@
 
 .code-toolbar .toolbar-item button:hover, .code-toolbar .toolbar-item button:focus {
 	background-position: 0 50%;
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0.125rem 0.125rem 0.0625rem 0.0625rem var(--apcom-color-primary), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0 0.1875rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	transform: translateY(-0.0625rem);
 }
 
 .code-toolbar .toolbar-item button:hover svg, .code-toolbar .toolbar-item button:focus svg {
@@ -70,13 +71,13 @@
 }
 
 .code-toolbar .toolbar-item button:focus {
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0.125rem 0.125rem 0.0625rem 0.0625rem var(--apcom-color-primary), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light), 0.0625rem 0.0625rem 0 0.375rem var(--apcom-color-primary-light-opacity);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0 0.1875rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light), 0 0.0625rem 0 0.4375rem var(--apcom-color-primary-light-opacity);
 }
 
 .code-toolbar .toolbar-item button:active {
 	background-position: 0 100%;
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-shadow), 0 0 0.0625rem 0.0625rem var(--apcom-color-shadow), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
-	transform: translateX(0.125rem) translateY(0.125rem);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary), 0 0 0 0.125rem var(--apcom-color-shadow-darker), 0 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	transform: translateY(0.125rem);
 }
 
 .code-toolbar .toolbar-item button:active svg {

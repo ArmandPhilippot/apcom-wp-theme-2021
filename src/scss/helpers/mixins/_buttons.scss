@@ -128,17 +128,17 @@
 		0 0 / 100% 300% no-repeat;
 	border: pxToRem(2) solid cssVar(color-border-light);
 	border-radius: 50%;
-	box-shadow: 0 0 0 pxToRem(2) cssVar(color-shadow),
-		pxToRem(2) pxToRem(2) pxToRem(1) pxToRem(1) cssVar(color-shadow),
-		pxToRem(1) pxToRem(1) pxToRem(2) pxToRem(3) cssVar(color-shadow-light);
+	box-shadow: 0 0 0 pxToRem(2) cssVar(color-primary),
+		0 pxToRem(2) 0 pxToRem(2) cssVar(color-shadow),
+		0 pxToRem(2) pxToRem(2) pxToRem(3) cssVar(color-shadow-light);
 
 	&:hover,
 	&:focus {
 		background-position: 0 50%;
 		box-shadow: 0 0 0 pxToRem(2) cssVar(color-primary-light),
-			pxToRem(2) pxToRem(2) pxToRem(1) pxToRem(1) cssVar(color-primary),
-			pxToRem(1) pxToRem(1) pxToRem(2) pxToRem(3)
-				cssVar(color-shadow-light);
+			0 pxToRem(3) 0 pxToRem(2) cssVar(color-shadow),
+			0 pxToRem(2) pxToRem(2) pxToRem(3) cssVar(color-shadow-light);
+		transform: translateY(#{pxToRem(-1)});
 
 		svg {
 			animation: pulse 1.2s;
@@ -148,20 +148,17 @@
 
 	&:focus {
 		box-shadow: 0 0 0 pxToRem(2) cssVar(color-primary-light),
-			pxToRem(2) pxToRem(2) pxToRem(1) pxToRem(1) cssVar(color-primary),
-			pxToRem(1) pxToRem(1) pxToRem(2) pxToRem(3)
-				cssVar(color-shadow-light),
-			pxToRem(1) pxToRem(1) 0 pxToRem(6)
-				cssVar(color-primary-light-opacity);
+			0 pxToRem(3) 0 pxToRem(2) cssVar(color-shadow),
+			0 pxToRem(2) pxToRem(2) pxToRem(3) cssVar(color-shadow-light),
+			0 pxToRem(1) 0 pxToRem(7) cssVar(color-primary-light-opacity);
 	}
 
 	&:active {
 		background-position: 0 100%;
-		box-shadow: 0 0 0 pxToRem(2) cssVar(color-shadow),
-			0 0 pxToRem(1) pxToRem(1) cssVar(color-shadow),
-			pxToRem(1) pxToRem(1) pxToRem(2) pxToRem(3)
-				cssVar(color-shadow-light);
-		transform: translateX(#{pxToRem(2)}) translateY(#{pxToRem(2)});
+		box-shadow: 0 0 0 pxToRem(2) cssVar(color-primary),
+			0 0 0 pxToRem(2) cssVar(color-shadow-darker),
+			0 pxToRem(1) pxToRem(2) pxToRem(3) cssVar(color-shadow-light);
+		transform: translateY(#{pxToRem(2)});
 
 		svg {
 			animation: unset;

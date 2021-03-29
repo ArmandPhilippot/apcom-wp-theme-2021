@@ -49,8 +49,15 @@
 		&:hover,
 		&:focus {
 			~ .tools__label {
+				box-shadow: 0 0 0 pxToRem(2) cssVar(color-primary-light),
+					0 pxToRem(3) 0 pxToRem(2) cssVar(color-shadow),
+					0 pxToRem(2) pxToRem(2) pxToRem(3)
+						cssVar(color-shadow-light);
+				transform: translateY(#{pxToRem(-1)});
+
 				.tools__icon {
-					&::before, svg {
+					&::before,
+					svg {
 						animation: pulse 1.2s;
 						animation-iteration-count: infinite;
 					}
@@ -61,11 +68,10 @@
 		&:focus {
 			~ .tools__label {
 				box-shadow: 0 0 0 pxToRem(2) cssVar(color-primary-light),
-					pxToRem(2) pxToRem(2) pxToRem(1) pxToRem(1)
-						cssVar(color-primary),
-					pxToRem(1) pxToRem(1) pxToRem(2) pxToRem(3)
+					0 pxToRem(3) 0 pxToRem(2) cssVar(color-shadow),
+					0 pxToRem(2) pxToRem(2) pxToRem(3)
 						cssVar(color-shadow-light),
-					pxToRem(1) pxToRem(1) 0 pxToRem(6)
+					0 pxToRem(1) 0 pxToRem(7)
 						cssVar(color-primary-light-opacity);
 				outline: none;
 			}
@@ -73,7 +79,7 @@
 
 		&:active {
 			~ .tools__label {
-				transform: translateX(#{pxToRem(2)}) translateY(#{pxToRem(2)});
+				transform: translateY(#{pxToRem(2)});
 			}
 		}
 

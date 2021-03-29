@@ -2672,7 +2672,7 @@ small {
 	background: linear-gradient(to bottom, var(--apcom-color-primary) 0 33.33%, var(--apcom-color-primary-light) 33.33% 66.66%, var(--apcom-color-primary-dark) 66.66% 100%) 0 0/100% 300% no-repeat;
 	border: 0.125rem solid var(--apcom-color-border-light);
 	border-radius: 50%;
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-shadow), 0.125rem 0.125rem 0.0625rem 0.0625rem var(--apcom-color-shadow), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary), 0 0.125rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
 	cursor: pointer;
 	display: flex;
 	font-weight: 700;
@@ -2691,7 +2691,8 @@ small {
 
 .back-to-top__link:hover, .back-to-top__link:focus {
 	background-position: 0 50%;
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0.125rem 0.125rem 0.0625rem 0.0625rem var(--apcom-color-primary), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0 0.1875rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	transform: translateY(-0.0625rem);
 }
 
 .back-to-top__link:hover svg, .back-to-top__link:focus svg {
@@ -2700,13 +2701,13 @@ small {
 }
 
 .back-to-top__link:focus {
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0.125rem 0.125rem 0.0625rem 0.0625rem var(--apcom-color-primary), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light), 0.0625rem 0.0625rem 0 0.375rem var(--apcom-color-primary-light-opacity);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0 0.1875rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light), 0 0.0625rem 0 0.4375rem var(--apcom-color-primary-light-opacity);
 }
 
 .back-to-top__link:active {
 	background-position: 0 100%;
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-shadow), 0 0 0.0625rem 0.0625rem var(--apcom-color-shadow), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
-	transform: translateX(0.125rem) translateY(0.125rem);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary), 0 0 0 0.125rem var(--apcom-color-shadow-darker), 0 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	transform: translateY(0.125rem);
 }
 
 .back-to-top__link:active svg {
@@ -4078,7 +4079,7 @@ small {
 	background: linear-gradient(to bottom, var(--apcom-color-primary) 0 33.33%, var(--apcom-color-primary-light) 33.33% 66.66%, var(--apcom-color-primary-dark) 66.66% 100%) 0 0/100% 300% no-repeat;
 	border: 0.125rem solid var(--apcom-color-border-light);
 	border-radius: 50%;
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-shadow), 0.125rem 0.125rem 0.0625rem 0.0625rem var(--apcom-color-shadow), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary), 0 0.125rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
 	cursor: pointer;
 	display: flex;
 	font-weight: 700;
@@ -4097,7 +4098,8 @@ small {
 
 .tools__label:hover, .tools__label:focus {
 	background-position: 0 50%;
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0.125rem 0.125rem 0.0625rem 0.0625rem var(--apcom-color-primary), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0 0.1875rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	transform: translateY(-0.0625rem);
 }
 
 .tools__label:hover svg, .tools__label:focus svg {
@@ -4106,13 +4108,13 @@ small {
 }
 
 .tools__label:focus {
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0.125rem 0.125rem 0.0625rem 0.0625rem var(--apcom-color-primary), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light), 0.0625rem 0.0625rem 0 0.375rem var(--apcom-color-primary-light-opacity);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0 0.1875rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light), 0 0.0625rem 0 0.4375rem var(--apcom-color-primary-light-opacity);
 }
 
 .tools__label:active {
 	background-position: 0 100%;
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-shadow), 0 0 0.0625rem 0.0625rem var(--apcom-color-shadow), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
-	transform: translateX(0.125rem) translateY(0.125rem);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary), 0 0 0 0.125rem var(--apcom-color-shadow-darker), 0 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	transform: translateY(0.125rem);
 }
 
 .tools__label:active svg {
@@ -4132,18 +4134,25 @@ small {
 	width: 100%;
 }
 
-.tools__checkbox:hover ~ .tools__label .tools__icon::before, .tools__checkbox:hover ~ .tools__label .tools__icon svg, .tools__checkbox:focus ~ .tools__label .tools__icon::before, .tools__checkbox:focus ~ .tools__label .tools__icon svg {
+.tools__checkbox:hover ~ .tools__label, .tools__checkbox:focus ~ .tools__label {
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0 0.1875rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
+	transform: translateY(-0.0625rem);
+}
+
+.tools__checkbox:hover ~ .tools__label .tools__icon::before,
+.tools__checkbox:hover ~ .tools__label .tools__icon svg, .tools__checkbox:focus ~ .tools__label .tools__icon::before,
+.tools__checkbox:focus ~ .tools__label .tools__icon svg {
 	animation: pulse 1.2s;
 	animation-iteration-count: infinite;
 }
 
 .tools__checkbox:focus ~ .tools__label {
-	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0.125rem 0.125rem 0.0625rem 0.0625rem var(--apcom-color-primary), 0.0625rem 0.0625rem 0.125rem 0.1875rem var(--apcom-color-shadow-light), 0.0625rem 0.0625rem 0 0.375rem var(--apcom-color-primary-light-opacity);
+	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-light), 0 0.1875rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light), 0 0.0625rem 0 0.4375rem var(--apcom-color-primary-light-opacity);
 	outline: none;
 }
 
 .tools__checkbox:active ~ .tools__label {
-	transform: translateX(0.125rem) translateY(0.125rem);
+	transform: translateY(0.125rem);
 }
 
 .tools__checkbox:not(:checked) ~ .tools__label .tools__label--activated {
