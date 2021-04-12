@@ -23,3 +23,18 @@ function updateColorScheme() {
     body.setAttribute('data-color-scheme', 'light');
   }
 }
+/**
+ * Use an observer to detect the existence of body tag.
+ */
+
+
+var observer = new MutationObserver(function () {
+  if (document.body) {
+    updateColorScheme();
+    observer.disconnect();
+  }
+});
+getThemePreference();
+observer.observe(document.documentElement, {
+  childList: true
+});
