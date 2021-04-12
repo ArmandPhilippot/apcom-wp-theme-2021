@@ -236,6 +236,24 @@ function apcom_widgets_init() {
 add_action( 'widgets_init', 'apcom_widgets_init' );
 
 /**
+ * Add custom favicon
+ *
+ * @since 1.0.0
+ */
+function apcom_favicon_links() {
+	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . esc_url( get_theme_file_uri( '/assets/images/favicon/apple-touch-icon.png' ) ) . '" />' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . esc_url( get_theme_file_uri( '/assets/images/favicon/favicon-32x32.png' ) ) . '" />' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . esc_url( get_theme_file_uri( '/assets/images/favicon/favicon-16x16.png' ) ) . '" />' . "\n";
+	echo '<link ref="manifest" href="' . esc_url( get_theme_file_uri( '/assets/images/favicon/site.webmanifest' ) ) . '" />' . "\n";
+	echo '<link rel="mask-icon" href="' . esc_url( get_theme_file_uri( '/assets/images/favicon/safari-pinned-tab.svg' ) ) . '" color="#194476" />' . "\n";
+	echo '<link rel="shortcut icon" type="image/x-icon" href="' . esc_url( get_theme_file_uri( '/assets/images/favicon/favicon.ico' ) ) . '" />' . "\n";
+	echo '<meta name="msapplication-TileColor" content="#194476">' . "\n";
+	echo '<meta name="msapplication-config" content="' . esc_url( get_theme_file_uri( '/assets/images/favicon/browserconfig.xml' ) ) . '">' . "\n";
+	echo '<meta name="theme-color" content="#194476">' . "\n";
+}
+add_action( 'wp_head', 'apcom_favicon_links' );
+
+/**
  * REQUIRED FILES
  * Additional features and helpers functions.
  */
