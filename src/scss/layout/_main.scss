@@ -301,6 +301,16 @@
 	}
 }
 
+.no-comments {
+	.page {
+		&__body {
+			&--single-page {
+				padding-bottom: cssVar(spacing-md);
+			}
+		}
+	}
+}
+
 .articles-list,
 .no-comments {
 	.page {

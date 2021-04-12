@@ -2152,6 +2152,10 @@ small {
 	background-image: url(data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130.427" preserveAspectRatio="none"%3E%3Cpath d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="%231a2f47"/%3E%3Cpath d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="%23152537"/%3E%3C/svg%3E);
 }
 
+.no-comments .page__body--single-page {
+	padding-bottom: var(--apcom-spacing-md);
+}
+
 @media only screen and (min-width: 80em) {
 	.articles-list .page__body,
 	.no-comments .page__body {
@@ -2339,6 +2343,10 @@ small {
 
 .template__page-contact .page__body > p:first-of-type {
 	margin-top: var(--apcom-spacing-sm);
+}
+
+.contact-form {
+	margin-bottom: var(--apcom-spacing-md);
 }
 
 .contact-form__item {
