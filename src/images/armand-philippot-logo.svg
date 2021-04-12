@@ -7,21 +7,15 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="92.604172mm"
-   height="92.604179mm"
-   viewBox="0 0 92.604172 92.604179"
+   width="92.604164mm"
+   height="92.604164mm"
+   viewBox="0 0 92.604164 92.604164"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
-   sodipodi:docname="logo-armand-philippot.svg">
+   sodipodi:docname="armand-philippot-logo.svg">
   <defs
      id="defs2">
-    <rect
-       x="12.538469"
-       y="125.53099"
-       width="93.292488"
-       height="59.707314"
-       id="rect851" />
     <rect
        x="50.243404"
        y="24.854818"
@@ -58,30 +52,6 @@
        width="80.992653"
        height="65.698357"
        id="rect928" />
-    <rect
-       x="12.538469"
-       y="125.53099"
-       width="93.292488"
-       height="59.707314"
-       id="rect851-3" />
-    <rect
-       x="12.538469"
-       y="125.53099"
-       width="93.292488"
-       height="59.707314"
-       id="rect864" />
-    <rect
-       x="12.538469"
-       y="125.53099"
-       width="93.292488"
-       height="59.707314"
-       id="rect851-36" />
-    <rect
-       x="12.538469"
-       y="125.53099"
-       width="93.292488"
-       height="59.707314"
-       id="rect863" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -90,11 +60,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="148.5962"
-     inkscape:cy="44.366569"
+     inkscape:zoom="1.979899"
+     inkscape:cx="62.374309"
+     inkscape:cy="220.65882"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer6"
      inkscape:document-rotation="0"
      showgrid="false"
      fit-margin-top="0"
@@ -119,15 +89,29 @@
     </rdf:RDF>
   </metadata>
   <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="BG"
+     style="display:inline"
+     transform="translate(-38.78392,-94.321098)">
+    <rect
+       style="fill:#386394;fill-opacity:1;stroke-width:0.767807"
+       id="rect1078"
+       width="92.604164"
+       height="92.604164"
+       x="38.78392"
+       y="94.321098" />
+  </g>
+  <g
      inkscape:label="PrimaryColor"
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline"
-     transform="translate(-38.783919,-94.321094)">
+     transform="translate(-38.78392,-94.321098)">
     <path
-       id="rect963-7"
-       style="display:inline;fill:#194776;fill-opacity:1;stroke-width:3.53549"
-       d="M 131.38801,94.321184 38.784005,186.92519 h 92.604005 z"
+       id="rect1424-4-2"
+       style="fill:#194776;fill-opacity:1;stroke:none;stroke-width:2.28419;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 131.38808,95.225357 39.688622,186.92526 h 91.699458 z"
        sodipodi:nodetypes="cccc" />
   </g>
   <g
@@ -135,40 +119,52 @@
      id="layer3"
      inkscape:label="PrimaryColor-Dark"
      style="display:inline"
-     transform="translate(-38.783919,-94.321094)">
+     transform="translate(-38.78392,-94.321098)">
     <path
-       id="rect963-7-5"
-       style="display:inline;fill:#13406c;fill-opacity:1;stroke-width:3.53549"
-       d="M 38.783919,94.321094 H 131.38809 L 38.783919,186.92527 Z"
+       id="rect1424-0"
+       style="display:inline;fill:#113d69;fill-opacity:1;stroke:none;stroke-width:2.2842;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 38.78392,94.321098 h 92.60403 L 38.78392,186.92514 Z"
        sodipodi:nodetypes="cccc" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="Shadow"
-     transform="translate(-38.783919,-94.321094)">
-    <text
-       xml:space="preserve"
-       id="text849-7"
-       style="font-style:normal;font-weight:normal;font-size:50.8px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect851-36);display:inline;fill:#1a334d;fill-opacity:1;stroke:none;"
-       transform="matrix(1.0098601,0,0,1.0098601,39.101979,-14.487029)"><tspan
-         x="12.539062"
-         y="170.47734"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:50.8px;font-family:Kanit;-inkscape-font-specification:'Kanit Medium';fill:#1a334d;fill-opacity:1">AP</tspan></tspan></text>
+     transform="translate(-38.78392,-94.321098)">
+    <g
+       aria-label="AP"
+       transform="matrix(1.0764391,0,0,1.0764391,-5.5904334,83.891018)"
+       id="text1469-5-2"
+       style="font-style:normal;font-weight:normal;font-size:50.8px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1471-2-3);display:inline;fill:#1a2f47;fill-opacity:1;stroke:none">
+      <path
+         d="m 51.514141,69.801562 12.547599,-32.7152 h 10.1092 l 12.5476,32.7152 h -9.9568 l -2.7432,-6.9596 h -9.8552 l -2.6924,6.9596 z m 13.919199,-13.8176 h 7.3152 l -3.6576,-9.6012 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;font-family:Kanit;-inkscape-font-specification:'Kanit Bold';fill:#1a2f47;fill-opacity:1"
+         id="path957-9" />
+      <path
+         d="m 90.274445,69.801562 v -32.7152 h 16.865595 q 4.0132,0 6.604,1.6256 2.6416,1.5748 3.9116,4.318 1.27,2.7432 1.27,6.096 0,3.4544 -1.4732,6.1468 -1.4732,2.6924 -4.1656,4.2164 -2.6924,1.524 -6.35,1.524 h -7.111995 v 8.7884 z m 9.5504,-16.1036 h 4.927605 q 2.23519,0 3.30199,-1.27 1.1176,-1.27 1.1176,-3.302 0,-2.1844 -1.016,-3.4544 -1.016,-1.27 -3.14959,-1.27 h -5.181605 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;font-family:Kanit;-inkscape-font-specification:'Kanit Bold';fill:#1a2f47;fill-opacity:1"
+         id="path959-1" />
+    </g>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="AP"
      style="display:inline"
-     transform="translate(-38.783919,-94.321094)">
-    <text
-       xml:space="preserve"
-       id="text849"
-       style="font-style:normal;font-weight:normal;font-size:50.8px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect851);fill:#000000;fill-opacity:1;stroke:none;"
-       transform="matrix(1.0098601,0,0,1.0098601,37.514478,-15.545363)"><tspan
-         x="12.539062"
-         y="170.47734"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:50.8px;font-family:Kanit;-inkscape-font-specification:'Kanit Medium';fill:#ffffff;fill-opacity:1">AP</tspan></tspan></text>
+     transform="translate(-38.78392,-94.321098)">
+    <g
+       aria-label="AP"
+       transform="matrix(1.0764391,0,0,1.0764391,-7.7056069,82.297001)"
+       id="text1469-5"
+       style="font-style:normal;font-weight:normal;font-size:50.8px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1471-2-3);fill:#f3f7fc;fill-opacity:1;stroke:none">
+      <path
+         d="m 51.514141,69.801562 12.547599,-32.7152 h 10.1092 l 12.5476,32.7152 h -9.9568 l -2.7432,-6.9596 h -9.8552 l -2.6924,6.9596 z m 13.919199,-13.8176 h 7.3152 l -3.6576,-9.6012 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;font-family:Kanit;-inkscape-font-specification:'Kanit Bold';fill:#f3f7fc;fill-opacity:1"
+         id="path957" />
+      <path
+         d="m 90.274445,69.801562 v -32.7152 h 16.865595 q 4.0132,0 6.604,1.6256 2.6416,1.5748 3.9116,4.318 1.27,2.7432 1.27,6.096 0,3.4544 -1.4732,6.1468 -1.4732,2.6924 -4.1656,4.2164 -2.6924,1.524 -6.35,1.524 h -7.111995 v 8.7884 z m 9.5504,-16.1036 h 4.927605 q 2.23519,0 3.30199,-1.27 1.1176,-1.27 1.1176,-3.302 0,-2.1844 -1.016,-3.4544 -1.016,-1.27 -3.14959,-1.27 h -5.181605 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;font-family:Kanit;-inkscape-font-specification:'Kanit Bold';fill:#f3f7fc;fill-opacity:1"
+         id="path959" />
+    </g>
   </g>
 </svg>
