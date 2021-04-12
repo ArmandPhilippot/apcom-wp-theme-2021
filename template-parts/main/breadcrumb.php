@@ -138,7 +138,12 @@ if ( is_home() ) {
 
 $apcom_breadcrumb_length = count( $apcom_breadcrumb_data );
 
-if ( ! apcom_is_frontpage() ) {
+if ( is_front_page() && is_home() ) {
+	?>
+	<div class="breadcrumb" itemprop="breadcrumb">
+	</div>
+	<?php
+} elseif ( ! apcom_is_frontpage() ) {
 	?>
 	<nav class="breadcrumb" itemprop="breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'APCom' ); ?>">
 		<span class="screen-reader-text">
