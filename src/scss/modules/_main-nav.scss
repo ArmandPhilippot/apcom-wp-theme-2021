@@ -32,13 +32,15 @@
 		}
 	}
 
-	&__item {
+	&__item,
+	&__list--page-menu li {
 		flex: 0 0 auto;
 		display: flex;
 		flex-flow: row nowrap;
 	}
 
-	&__link {
+	&__link,
+	&__list--page-menu a {
 		display: flex;
 		flex-flow: row wrap;
 		align-items: center;

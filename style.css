@@ -3541,13 +3541,15 @@ small {
 	}
 }
 
-.main-nav__item {
+.main-nav__item,
+.main-nav__list--page-menu li {
 	display: flex;
 	flex: 0 0 auto;
 	flex-flow: row nowrap;
 }
 
-.main-nav__link {
+.main-nav__link,
+.main-nav__list--page-menu a {
 	align-items: center;
 	background: linear-gradient(to top, var(--apcom-color-bg) 0.1875rem, transparent 0.1875rem) center/0 100% no-repeat, linear-gradient(to bottom, transparent 0 25%, var(--apcom-color-primary) 25% 50%, var(--apcom-color-primary-light) 50% 75%, var(--apcom-color-primary-dark) 75% 100%) 0 33.3%/100% 400% no-repeat, linear-gradient(to bottom, var(--apcom-color-bg) 0 50%, transparent 50% 100%) 0 100%/100% 200% no-repeat;
 	color: var(--apcom-color-fg-inverted);
@@ -3561,30 +3563,35 @@ small {
 	text-decoration: none;
 }
 
-.main-nav__link:hover {
+.main-nav__link:hover,
+.main-nav__list--page-menu a:hover {
 	background-position: center, 0 66.6%, 0 100%;
 	color: var(--apcom-color-fg-inverted);
 }
 
-.main-nav__link:focus {
+.main-nav__link:focus,
+.main-nav__list--page-menu a:focus {
 	background-position: center, 0 0, 0 0;
 	color: var(--apcom-color-primary);
 }
 
-.main-nav__link:active {
+.main-nav__link:active,
+.main-nav__list--page-menu a:active {
 	background-position: center, 0 100%, 0 100%;
 	color: var(--apcom-color-fg-inverted);
 }
 
 @media only screen and (min-width: 48em) {
-	.main-nav__link {
+	.main-nav__link,
+	.main-nav__list--page-menu a {
 		font-size: var(--apcom-font-size-lg);
 		height: 4.375rem;
 	}
 }
 
 @media only screen and (min-width: 80em) {
-	.main-nav__link {
+	.main-nav__link,
+	.main-nav__list--page-menu a {
 		background-color: transparent;
 		background-image: linear-gradient(to right, transparent, transparent), linear-gradient(to bottom, transparent, transparent), linear-gradient(to left, transparent, transparent), linear-gradient(to top, transparent, transparent);
 		background-position: top left, top right, bottom right, bottom left;
@@ -3598,20 +3605,24 @@ small {
 		transform: skew(-20deg);
 		transition: all 0.3s linear 0s;
 	}
-	.main-nav__link:hover, .main-nav__link:focus {
+	.main-nav__link:hover, .main-nav__link:focus,
+	.main-nav__list--page-menu a:hover,
+	.main-nav__list--page-menu a:focus {
 		animation: drawBorders 1s linear 1 0s;
 		background-image: linear-gradient(to right, var(--apcom-color-primary-light), var(--apcom-color-primary-light)), linear-gradient(to bottom, var(--apcom-color-primary-light), var(--apcom-color-primary-light)), linear-gradient(to left, var(--apcom-color-primary-light), var(--apcom-color-primary-light)), linear-gradient(to top, var(--apcom-color-primary-light), var(--apcom-color-primary-light));
 		background-position: top left, top right, bottom right, bottom left;
 		background-size: 100% var(--apcom-draw-border-width), var(--apcom-draw-border-width) 100%, 100% var(--apcom-draw-border-width), var(--apcom-draw-border-width) 100%;
 		color: var(--apcom-color-primary-light);
 	}
-	.main-nav__link:active {
+	.main-nav__link:active,
+	.main-nav__list--page-menu a:active {
 		background-image: linear-gradient(to right, var(--apcom-color-primary-dark), var(--apcom-color-primary-dark)), linear-gradient(to bottom, var(--apcom-color-primary-dark), var(--apcom-color-primary-dark)), linear-gradient(to left, var(--apcom-color-primary-dark), var(--apcom-color-primary-dark)), linear-gradient(to top, var(--apcom-color-primary-dark), var(--apcom-color-primary-dark));
 		background-position: top left, top right, bottom right, bottom left;
 		background-size: 0 var(--apcom-draw-border-width), var(--apcom-draw-border-width) 0, 0 var(--apcom-draw-border-width), var(--apcom-draw-border-width) 0;
 		color: var(--apcom-color-primary-dark);
 	}
-	.main-nav__link span {
+	.main-nav__link span,
+	.main-nav__list--page-menu a span {
 		transform: skew(20deg);
 	}
 }
