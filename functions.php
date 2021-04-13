@@ -252,6 +252,7 @@ function apcom_favicon_links() {
 	echo '<meta name="theme-color" content="#194476">' . "\n";
 }
 add_action( 'wp_head', 'apcom_favicon_links' );
+add_action( 'admin_head', 'apcom_favicon_links' );
 
 /**
  * REQUIRED FILES
