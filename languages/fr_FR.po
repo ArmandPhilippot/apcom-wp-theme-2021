@@ -644,17 +644,17 @@ msgstr "secondes"
 msgid "Approximately %1$s words read at %2$s words per minute."
 msgstr "Environ %1$s mots lus à une vitesse de %2$s mots par minute."
 
-#. translators: %s: Name of the current post.
-#. translators: %s: Name of the current post.
-#: inc/hooks.php:207, inc/hooks.php:229
-msgid "Continue reading %s"
-msgstr "Lire la suite de %s"
+#. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
+#. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
+#: inc/hooks.php:208, inc/hooks.php:235
+msgid "Continue reading %1$s%2$s%3$s"
+msgstr "Lire la suite %1$sde %2$s%3$s"
 
-#: inc/hooks.php:249
+#: inc/hooks.php:259
 msgid "Pagination"
 msgstr "Pagination"
 
-#: inc/hooks.php:267
+#: inc/hooks.php:277
 msgid "Leave a comment"
 msgstr "Laisser un commentaire"
 
@@ -753,11 +753,11 @@ msgstr "d"
 msgid "Page not found"
 msgstr "Page non trouvée"
 
-#: template-parts/main/breadcrumb.php:143
+#: template-parts/main/breadcrumb.php:148
 msgid "Breadcrumb"
 msgstr "Fil d'Ariane"
 
-#: template-parts/main/breadcrumb.php:145
+#: template-parts/main/breadcrumb.php:150
 msgid "You are here:"
 msgstr "Vous êtes ici :"
 

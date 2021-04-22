@@ -617,17 +617,17 @@ msgstr ""
 msgid "Approximately %1$s words read at %2$s words per minute."
 msgstr ""
 
-#. translators: %s: Name of the current post.
-#. translators: %s: Name of the current post.
-#: inc/hooks.php:207, inc/hooks.php:229
-msgid "Continue reading %s"
+#. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
+#. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
+#: inc/hooks.php:208, inc/hooks.php:235
+msgid "Continue reading %1$s%2$s%3$s"
 msgstr ""
 
-#: inc/hooks.php:249
+#: inc/hooks.php:259
 msgid "Pagination"
 msgstr ""
 
-#: inc/hooks.php:267
+#: inc/hooks.php:277
 msgid "Leave a comment"
 msgstr ""
 
