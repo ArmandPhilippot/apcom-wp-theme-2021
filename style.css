@@ -4396,8 +4396,12 @@ small {
 	transform: scale(1);
 }
 
-.widget .ptl_widget__item,
-.widget .lup__item {
+.widget .lup__item,
+.widget .ptl__item {
 	display: flex;
 	flex-flow: row nowrap;
+}
+
+.widget .lup__item {
+	margin-bottom: var(--apcom-spacing-md);
 }

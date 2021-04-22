@@ -143,11 +143,15 @@
 		}
 	}
 
-	.ptl_widget,
-	.lup {
+	.lup,
+	.ptl {
 		&__item {
 			display: flex;
 			flex-flow: row nowrap;
 		}
+	}
+
+	.lup__item {
+		margin-bottom: cssVar(spacing-md);
 	}
 }
