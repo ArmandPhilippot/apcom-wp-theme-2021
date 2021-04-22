@@ -413,4 +413,3 @@ function apcom_rewrite_flush() {
 	flush_rewrite_rules();
 }
 add_action( 'after_switch_theme', 'apcom_rewrite_flush' );
-add_action( 'upgrader_process_complete', 'apcom_rewrite_flush' );
