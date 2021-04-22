@@ -4395,3 +4395,9 @@ small {
 .widget .mslwidget__link:active .mslwidget__logo {
 	transform: scale(1);
 }
+
+.widget .ptl_widget__item,
+.widget .lup__item {
+	display: flex;
+	flex-flow: row nowrap;
+}

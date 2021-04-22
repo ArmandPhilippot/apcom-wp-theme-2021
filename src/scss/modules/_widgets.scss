@@ -142,4 +142,12 @@
 			}
 		}
 	}
+
+	.ptl_widget,
+	.lup {
+		&__item {
+			display: flex;
+			flex-flow: row nowrap;
+		}
+	}
 }
