@@ -317,6 +317,10 @@ var readingProgress = /*#__PURE__*/function () {
         this.container.appendChild(this.progressBarWrapper);
         this.progressBarWrapper.style.bottom = '0';
       } else {
+        if (!this.container) {
+          return;
+        }
+
         var containerFirstChild = this.container.firstChild;
         this.container.insertBefore(this.progressBarWrapper, containerFirstChild);
         this.progressBarWrapper.style.top = '0';
@@ -353,6 +357,10 @@ var readingProgress = /*#__PURE__*/function () {
         target = document.getElementById(recordFrom);
       } else {
         target = this.container;
+      }
+
+      if (!target) {
+        return;
       }
 
       var windowHeight = window.innerHeight;

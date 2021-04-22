@@ -62,6 +62,9 @@ class readingProgress {
 			this.container.appendChild(this.progressBarWrapper);
 			this.progressBarWrapper.style.bottom = '0';
 		} else {
+			if (!this.container) {
+				return;
+			}
 			let containerFirstChild = this.container.firstChild;
 			this.container.insertBefore(
 				this.progressBarWrapper,
@@ -100,6 +103,10 @@ class readingProgress {
 			target = document.getElementById(recordFrom);
 		} else {
 			target = this.container;
+		}
+
+		if (!target) {
+			return;
 		}
 
 		let windowHeight = window.innerHeight;
