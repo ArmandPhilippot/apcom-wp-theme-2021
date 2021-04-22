@@ -116,4 +116,30 @@
 			}
 		}
 	}
+
+	&.msbwidget,
+	&.mslwidget {
+		ul {
+			li::before {
+				display: none;
+			}
+		}
+	}
+
+	.mslwidget {
+		&__link {
+			&:hover,
+			&:focus {
+				.mslwidget__logo {
+					transform: scale(1.1);
+				}
+			}
+
+			&:active {
+				.mslwidget__logo {
+					transform: scale(1);
+				}
+			}
+		}
+	}
 }

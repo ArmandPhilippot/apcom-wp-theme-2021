@@ -4383,3 +4383,15 @@ small {
 	text-decoration: none;
 	transform: translateX(0.1875rem) translateY(0.1875rem);
 }
+
+.widget.msbwidget ul li::before, .widget.mslwidget ul li::before {
+	display: none;
+}
+
+.widget .mslwidget__link:hover .mslwidget__logo, .widget .mslwidget__link:focus .mslwidget__logo {
+	transform: scale(1.1);
+}
+
+.widget .mslwidget__link:active .mslwidget__logo {
+	transform: scale(1);
+}

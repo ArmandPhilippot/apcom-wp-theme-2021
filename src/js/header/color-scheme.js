@@ -24,7 +24,7 @@ function updateColorScheme() {
 /**
  * Use an observer to detect the existence of body tag.
  */
-var observer = new MutationObserver(() => {
+const observer = new MutationObserver(() => {
 	if (document.body) {
 		updateColorScheme();
 		observer.disconnect();
