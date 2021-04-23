@@ -21,8 +21,6 @@
 	}
 
 	&__avatar {
-		margin-bottom: cssVar(spacing-md);
-
 		@include media("screen") {
 			@include dimensions("xs") {
 				grid-column: 1;
