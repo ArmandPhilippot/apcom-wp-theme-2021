@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 0 800 97.83873"
+   viewBox="0 0 800 95.83873"
    version="1.1"
    id="svg4"
-   sodipodi:docname="separator-shape.svg"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="separator-shape1.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)"
    width="800"
-   height="97.83873">
+   height="95.83873">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -42,8 +42,8 @@
      id="namedview6"
      showgrid="false"
      inkscape:zoom="1.4024284"
-     inkscape:cx="338.06958"
-     inkscape:cy="33.242366"
+     inkscape:cx="359.68461"
+     inkscape:cy="-22.116393"
      inkscape:window-x="0"
      inkscape:window-y="33"
      inkscape:window-maximized="1"
@@ -60,14 +60,15 @@
      d="M 0,85.83917 H 194 V 46.17347 H 394 V 9.39537 h 192 v 36.7781 h 200 v 39.6657 h 14 V 0 H 0 Z"
      id="path2"
      sodipodi:nodetypes="ccccccccccccc"
-     style="fill:#cee1ef;fill-opacity:1;stroke-width:0.758062" />
+     style="fill:#ebf1fa;fill-opacity:1;stroke-width:0.758062" />
   <path
      id="path2-3-6"
-     style="fill:#d2dfee;fill-opacity:1;stroke-width:0.758062"
-     d="M 400,15.39537 V 52.17271 H 200 V 91.83873 H 0 v 6 H 206 V 58.17271 H 406 V 21.39537 h 168 v 36.77734 h 200 v 39.66602 h 26 v -6 H 780 V 52.17271 H 580 V 15.39537 Z" />
+     style="fill:#e0eaf5;fill-opacity:1;stroke-width:0.758062"
+     d="M 398,13.39537 V 50.17271 H 198 V 89.83873 H 0 v 6 H 204 V 56.17271 H 404 V 19.39537 h 172 v 36.77734 h 200 v 39.66602 h 24 v -6 H 782 V 50.17271 H 582 V 13.39537 Z"
+     sodipodi:nodetypes="ccccccccccccccccccccc" />
   <path
      id="path2-3"
-     style="fill:#194476;fill-opacity:1;stroke-width:0.758062"
-     d="M 394,9.39537 V 46.17271 H 194 V 85.83873 H 0 v 6 H 200 V 52.17271 H 400 V 15.39537 h 180 v 36.77734 h 200 v 39.66602 h 20 v -6 H 786 V 46.17271 H 586 V 9.39537 Z"
+     style="fill:#c8d3df;fill-opacity:1;stroke-width:0.758062"
+     d="M 394,9.39537 V 46.17271 H 194 V 85.83873 H 0 v 4 H 198 V 50.17271 H 398 V 13.39537 h 184 v 36.77734 h 200 v 39.66602 h 18 v -4 H 786 V 46.17271 H 586 V 9.39537 Z"
      sodipodi:nodetypes="ccccccccccccccccccccc" />
 </svg>

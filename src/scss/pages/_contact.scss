@@ -25,6 +25,10 @@
 		}
 	}
 
+	&__label {
+		margin-bottom: cssVar(spacing-3xs);
+	}
+
 	&__field {
 		&--textarea {
 			min-height: pxToRem(200);
