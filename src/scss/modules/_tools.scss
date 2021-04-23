@@ -159,6 +159,10 @@
 				width: 40ch;
 				max-width: unset;
 				animation: scaleFullWidth 0.6s;
+
+				&__field {
+					background: cssVar(color-bg-tertiary);
+				}
 			}
 		}
 	}
