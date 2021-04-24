@@ -4394,6 +4394,10 @@ small {
 	transform: translateX(0.1875rem) translateY(0.1875rem);
 }
 
+.widget .textwidget p:last-child {
+	margin-bottom: 0;
+}
+
 .widget.msbwidget ul li::before, .widget.mslwidget ul li::before {
 	display: none;
 }
