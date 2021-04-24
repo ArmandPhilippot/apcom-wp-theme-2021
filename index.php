@@ -16,7 +16,7 @@ if ( have_posts() ) {
 			</h1>
 			<?php
 			$apcom_posts_number_post      = wp_count_posts( 'post' )->publish;
-			$apcom_posts_number_article   = wp_count_posts( 'article' )->publish;
+			$apcom_posts_number_article   = post_type_exists( 'article' ) ? wp_count_posts( 'article' )->publish : 0;
 			$apcom_published_posts_number = intval( $apcom_posts_number_post ) + intval( $apcom_posts_number_article );
 			if ( $apcom_published_posts_number ) {
 				?>
