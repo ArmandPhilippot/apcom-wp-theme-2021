@@ -215,6 +215,10 @@
 				@include dimensions("xl") {
 					justify-self: end;
 				}
+
+				@include dimensions("2xl") {
+					justify-self: start;
+				}
 			}
 		}
 

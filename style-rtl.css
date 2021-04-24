@@ -1681,6 +1681,12 @@ small {
 	}
 }
 
+@media only screen and (min-width: 120em) {
+	.page__aside--first {
+		justify-self: start;
+	}
+}
+
 .page__aside--last {
 	grid-area: page__aside--last;
 }
