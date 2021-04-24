@@ -154,4 +154,32 @@
 	.lup__item {
 		margin-bottom: cssVar(spacing-md);
 	}
+
+	@include media("screen") {
+		@include dimensions("lg") {
+			&.toc__wrapper {
+				font-size: cssVar(font-size-sm);
+				font-weight: 700;
+
+				ol {
+					li {
+						margin-bottom: pxToRem(3);
+					}
+				}
+			}
+
+			&.msbwidget {
+				font-size: cssVar(font-size-sm);
+			}
+		}
+
+		@include dimensions("xl") {
+			&.toc__wrapper,
+			&.msbwidget {
+				position: sticky;
+				top: 0;
+				margin-bottom: cssVar(spacing-xl);
+			}
+		}
+	}
 }

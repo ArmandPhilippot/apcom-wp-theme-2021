@@ -4405,3 +4405,24 @@ small {
 .widget .lup__item {
 	margin-bottom: var(--apcom-spacing-md);
 }
+
+@media only screen and (min-width: 80em) {
+	.widget.toc__wrapper {
+		font-size: var(--apcom-font-size-sm);
+		font-weight: 700;
+	}
+	.widget.toc__wrapper ol li {
+		margin-bottom: 0.1875rem;
+	}
+	.widget.msbwidget {
+		font-size: var(--apcom-font-size-sm);
+	}
+}
+
+@media only screen and (min-width: 100em) {
+	.widget.toc__wrapper, .widget.msbwidget {
+		margin-bottom: var(--apcom-spacing-xl);
+		position: sticky;
+		top: 0;
+	}
+}
