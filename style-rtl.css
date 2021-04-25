@@ -2021,6 +2021,11 @@ small {
 	}
 }
 
+.page__body iframe {
+	margin-bottom: var(--apcom-spacing-md);
+	width: 100%;
+}
+
 .page__footer {
 	margin: var(--apcom-spacing-md) 0;
 }

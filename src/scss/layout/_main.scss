@@ -155,6 +155,11 @@
 				}
 			}
 		}
+
+		iframe {
+			width: 100%;
+			margin-bottom: cssVar(spacing-md);
+		}
 	}
 
 	&__footer {
