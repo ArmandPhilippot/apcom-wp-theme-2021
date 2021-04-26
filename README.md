@@ -8,6 +8,10 @@ A WordPress theme for my personal website.
 
 A WordPress theme designed for [armandphilippot.com](https://www.armandphilippot.com). This is actually the 6th version (I think) but I didn't keep the history with Git. So this repo starts from zero.
 
+## Screenshot
+
+![Preview](./screenshot.png)
+
 ## License
 
-This project is open source and available under the [MIT License](https://github.com/ArmandPhilippot/armandphilippot.com/blob/master/LICENSE).
+This project is open source and available under the [GPL2.0-or-later License](https://github.com/ArmandPhilippot/armandphilippot.com/blob/master/LICENSE).
