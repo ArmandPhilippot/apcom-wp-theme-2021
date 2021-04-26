@@ -98,7 +98,7 @@ $apcom_thematic_query = new WP_Query(
 							</dd>
 						</div>
 						<?php
-						if ( $apcom_posted_in_subject ) {
+						if ( $apcom_posted_in_subject && is_array( $apcom_posted_in_subject[0] ) ) {
 							$apcom_subjects_number = count( $apcom_posted_in_subject[0] );
 							?>
 							<div class="meta__item meta__item--has-icon meta__themes">
