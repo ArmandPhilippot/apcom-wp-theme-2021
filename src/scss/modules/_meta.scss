@@ -23,7 +23,8 @@
 			background: 0 #{pxToRem(12)} / #{pxToRem(22)} #{pxToRem(22)} no-repeat;
 
 			.meta {
-				&__term, &__description {
+				&__term,
+				&__description {
 					padding-left: calc(
 						#{pxToRem(22)} + #{cssVar(spacing-xs)}
 					); // icon size + padding
@@ -152,6 +153,29 @@
 			background-image: url(encodeSvg(
 				'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.458 26.458"><defs><path id="a" d="M-9.863 11.56h33.374v14.267H-9.863z"/></defs><path d="M13.215 0A13.23 13.23 0 000 13.23a13.23 13.23 0 0013.23 13.228A13.23 13.23 0 0026.457 13.23 13.23 13.23 0 0013.23 0a13.23 13.23 0 00-.014 0zm-.032 1.323a11.906 11.906 0 01.046 0 11.906 11.906 0 0111.906 11.906A11.906 11.906 0 0113.23 25.135 11.906 11.906 0 011.323 13.23a11.906 11.906 0 0111.86-11.906z" fill="#{$color_spindle-dark}"/><path d="M13.244 25.414c8.36-8.36 8.722-15.996 0-24.717m-.03 25.065c-8.36-8.36-8.721-15.996 0-24.717" fill="none" stroke="#{$color_spindle-dark}" stroke-width=".906"/><path d="M22.199 3.71c-6.219 5.285-11.97 5.268-17.934 0m17.934 19.042c-6.219-5.285-11.97-5.269-17.934 0" fill="none" stroke="#{$color_spindle-dark}" stroke-width=".719"/><g fill="#{$color_spindle-dark}" stroke="#{$color_spindle-dark}" stroke-width=".672"><path d="M13.168.336h.122v25.787h-.122z"/><path d="M26.123 13.168v.122H.336v-.122z"/></g><path fill="#{$color_spindle-dark}" d="M1.016 8.368h24.426v9.723H1.016z"/><path fill="#{$color_firefly}" d="M2.092 9.372h22.274v7.715H2.092z"/><g style="line-height:1.25;white-space:pre;shape-inside:url(#a)"><path d="M3.459 11.009h1.23l.662 3.06.668-3.06h1.056l.665 3.028.666-3.028h1.23l-1.043 4.44h-1.38l-.667-3.053-.664 3.053H4.5zm6.682 0h1.229l.664 3.06.666-3.06h1.057l.664 3.028.666-3.028h1.23l-1.042 4.44h-1.38l-.667-3.053-.665 3.053h-1.38zm6.68 0h1.231l.662 3.06.668-3.06h1.056l.665 3.028.666-3.028H23l-1.043 4.44h-1.38l-.667-3.053-.664 3.053h-1.381z" aria-label="www" font-weight="700" font-size="5.644" font-family="sans-serif" letter-spacing="0" word-spacing="0" fill="#{$color_spindle-dark}"/></g></svg>'
 			));
+		}
+	}
+}
+
+.articles-list {
+	.meta {
+		&__item {
+			&--has-icon {
+				.meta {
+					&__term,
+					&__description {
+						&:first-of-type {
+							padding-left: calc(
+								#{pxToRem(22)} + #{cssVar(spacing-xs)}
+							); // icon size + padding
+						}
+
+						&:not(:first-of-type) {
+							padding-left: pxToRem(2);
+						}
+					}
+				}
+			}
 		}
 	}
 }
