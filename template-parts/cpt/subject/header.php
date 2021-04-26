@@ -44,7 +44,7 @@ $apcom_subject_website = get_post_meta( get_the_ID(), 'official_website' );
 			</div>
 			<?php
 		}
-		if ( '' !== $apcom_subject_website[0] ) {
+		if ( $apcom_subject_website && '' !== $apcom_subject_website[0] ) {
 			?>
 			<div class="meta__item meta__item--has-icon meta__website">
 				<dt class="meta__term">
