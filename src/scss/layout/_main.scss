@@ -160,6 +160,18 @@
 			width: 100%;
 			margin-bottom: cssVar(spacing-md);
 		}
+
+		.content-warning {
+			border: pxToRem(3) solid cssVar(color-secondary);
+			border-radius: pxToRem(3);
+			margin-bottom: cssVar(spacing-md);
+			padding: cssVar(spacing-sm);
+
+			&__label {
+				color: cssVar(color-secondary);
+				font-weight: 700;
+			}
+		}
 	}
 
 	&__footer {
