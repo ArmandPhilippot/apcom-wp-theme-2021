@@ -3,7 +3,7 @@
  * The template for displaying articles list like in blog index.
  *
  * @package ArmandPhilippot-com
- * @since 0.0.1
+ * @since 1.0.0
  */
 
 ?>
@@ -34,74 +34,28 @@
 				</dd>
 			</div>
 			<?php
-			if ( get_post_type() === 'article' ) {
-				$apcom_article_thematics = get_post_meta( get_the_ID(), 'posts_in_thematic' );
-				if ( $apcom_article_thematics ) {
-					?>
-					<div class="meta__item meta__item--has-icon meta__themes">
-						<dt class="meta__term">
-							<?php esc_html_e( 'Posted in', 'APCom' ); ?>
-						</dt>
-						<?php
-						foreach ( $apcom_article_thematics[0] as $apcom_article_thematic_id ) {
-							$apcom_article_thematic_link = get_permalink( $apcom_article_thematic_id );
-							$apcom_article_thematic_name = get_the_title( $apcom_article_thematic_id );
-							?>
-							<dd class="meta__description meta__theme" itemprop="keywords">
-								<a href="<?php echo esc_url( $apcom_article_thematic_link ); ?>" rel="tag">
-									<?php echo esc_html( $apcom_article_thematic_name ); ?>
-								</a>
-							</dd>
-							<?php
-						}
-						?>
-					</div>
-					<?php
-				}
-			} elseif ( get_post_type_object( 'project' ) && get_post_type() === 'project' ) {
+			$apcom_project_subjects = get_post_meta( get_the_ID(), 'posts_in_subject' );
+			if ( $apcom_project_subjects ) {
 				?>
 				<div class="meta__item meta__item--has-icon meta__themes">
 					<dt class="meta__term">
-						<?php esc_html_e( 'Posted in', 'APCom' ); ?>
+						<?php esc_html_e( 'About', 'APCom' ); ?>
 					</dt>
 					<?php
-					$apcom_post_type_object      = get_post_type_object( 'project' );
-					$apcom_article_thematic_link = get_post_type_archive_link( 'project' );
-					$apcom_article_thematic_name = $apcom_post_type_object ? $apcom_post_type_object->labels->singular_name : '';
+					foreach ( $apcom_project_subjects[0] as $apcom_project_subject_id ) {
+						$apcom_project_subject_link = get_permalink( $apcom_project_subject_id );
+						$apcom_project_subject_name = get_the_title( $apcom_project_subject_id );
+						?>
+						<dd class="meta__description meta__theme" itemprop="keywords">
+							<a href="<?php echo esc_url( $apcom_project_subject_link ); ?>" rel="tag">
+								<?php echo esc_html( $apcom_project_subject_name ); ?>
+							</a>
+						</dd>
+						<?php
+					}
 					?>
-					<dd class="meta__description meta__theme" itemprop="keywords">
-						<a href="<?php echo esc_url( $apcom_article_thematic_link ); ?>" rel="tag">
-							<?php echo esc_html( $apcom_article_thematic_name ); ?>
-						</a>
-					</dd>
 				</div>
 				<?php
-			} else {
-				if ( ! is_category() ) {
-					$apcom_article_themes = get_the_category();
-				} else {
-					$apcom_article_themes = get_the_tags();
-				}
-				if ( $apcom_article_themes ) {
-					?>
-					<div class="meta__item meta__item--has-icon meta__themes">
-						<dt class="meta__term">
-							<?php esc_html_e( 'Posted in', 'APCom' ); ?>
-						</dt>
-						<?php
-						foreach ( $apcom_article_themes as $apcom_article_theme ) {
-							$apcom_article_theme_link = get_term_link( $apcom_article_theme->term_id );
-							$apcom_article_theme_name = $apcom_article_theme->name;
-							?>
-							<dd class="meta__description meta__theme" itemprop="keywords">
-								<a href="<?php echo esc_url( $apcom_article_theme_link ); ?>" rel="tag">
-									<?php echo esc_html( $apcom_article_theme_name ); ?>
-								</a>
-							</dd>
-						<?php } ?>
-					</div>
-					<?php
-				}
 			}
 			$apcom_comment_count = get_comments_number();
 			?>

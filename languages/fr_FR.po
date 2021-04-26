@@ -23,9 +23,17 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: archive.php:25, category.php:27, index.php:25, search.php:28, tag.php:26
+#: archive-project.php:25, archive.php:25, category.php:27, index.php:25,
+#: search.php:28, tag.php:26
 msgid "Total"
 msgstr "Total"
+
+#. translators: %s number of posts.
+#: archive-project.php:31
+msgid "%s project"
+msgid_plural "%s projects"
+msgstr[0] "%s projet"
+msgstr[1] "%s projets"
 
 #. translators: %s number of posts.
 #. translators: %s number of posts.
@@ -283,346 +291,6 @@ msgstr "%1$s à %2$s"
 msgid "Edit"
 msgstr "Modifier"
 
-#: inc/custom-post-types.php:61, inc/custom-post-types.php:378
-msgid "This page lists the presentations of my different open source projects."
-msgstr ""
-"Cette page liste les présentations de mes différents projets open source."
-
-#: inc/custom-post-types.php:71
-msgid "Thematic base"
-msgstr "Préfixe des thématiques"
-
-#: inc/custom-post-types.php:72
-msgid "Subject base"
-msgstr "Préfixe des sujets"
-
-#: inc/custom-post-types.php:73
-msgid "Article base"
-msgstr "Préfixe des articles"
-
-#: inc/custom-post-types.php:74
-msgid "Project base"
-msgstr "Préfixe des projets"
-
-#: inc/custom-post-types.php:75
-msgid "Project description"
-msgstr "Description de projet"
-
-#: inc/custom-post-types.php:86, inc/custom-post-types.php:134
-msgid "Sorry, you are not allowed to manage options for this site."
-msgstr "Désolé, vous n'êtes pas autorisé à modifier les options pour ce site."
-
-#: inc/custom-post-types.php:157, inc/custom-post-types.php:159
-msgid "Articles"
-msgstr "Articles"
-
-#: inc/custom-post-types.php:158, inc/custom-post-types.php:160
-msgid "Article"
-msgstr "Article"
-
-#: inc/custom-post-types.php:161, inc/custom-post-types.php:223,
-#: inc/custom-post-types.php:285, inc/custom-post-types.php:347
-msgid "Add New"
-msgstr "Ajouter"
-
-#: inc/custom-post-types.php:162
-msgid "Add New Article"
-msgstr "Ajouter un nouvel article"
-
-#: inc/custom-post-types.php:163
-msgid "New Article"
-msgstr "Nouvel article"
-
-#: inc/custom-post-types.php:164
-msgid "Edit Article"
-msgstr "Modifier l'article"
-
-#: inc/custom-post-types.php:165
-msgid "View Article"
-msgstr "Voir l'article"
-
-#: inc/custom-post-types.php:166
-msgid "All Articles"
-msgstr "Tous les articles"
-
-#: inc/custom-post-types.php:167
-msgid "Search Articles"
-msgstr "Rechercher des articles"
-
-#: inc/custom-post-types.php:168
-msgid "Parent Articles:"
-msgstr "Parent des articles :"
-
-#: inc/custom-post-types.php:169
-msgid "No articles found."
-msgstr "Aucun article trouvé."
-
-#: inc/custom-post-types.php:170
-msgid "No articles found in Trash."
-msgstr "Aucun article trouvé dans la Corbeille."
-
-#: inc/custom-post-types.php:171
-msgid "Article Cover Image"
-msgstr "Image mise en avant de l'article"
-
-#: inc/custom-post-types.php:172, inc/custom-post-types.php:234,
-#: inc/custom-post-types.php:296, inc/custom-post-types.php:358
-msgid "Set cover image"
-msgstr "Définir l'image mise en avant"
-
-#: inc/custom-post-types.php:173, inc/custom-post-types.php:235,
-#: inc/custom-post-types.php:297, inc/custom-post-types.php:359
-msgid "Remove cover image"
-msgstr "Supprimer l'image mise en avant"
-
-#: inc/custom-post-types.php:174, inc/custom-post-types.php:236,
-#: inc/custom-post-types.php:298, inc/custom-post-types.php:360
-msgid "Use as cover image"
-msgstr "Utiliser en tant qu'image mise en avant"
-
-#: inc/custom-post-types.php:175
-msgid "Article archives"
-msgstr "Archives des articles"
-
-#: inc/custom-post-types.php:176
-msgid "Insert into article"
-msgstr "Insérer dans l'article"
-
-#: inc/custom-post-types.php:177
-msgid "Uploaded to this article"
-msgstr "Télécharger dans cet article"
-
-#: inc/custom-post-types.php:178
-msgid "Filter articles list"
-msgstr "Filtrer la liste des articles"
-
-#: inc/custom-post-types.php:179
-msgid "Articles list navigation"
-msgstr "Navigation de la liste des articles"
-
-#: inc/custom-post-types.php:180
-msgid "Articles list"
-msgstr "Liste des articles"
-
-#: inc/custom-post-types.php:219, inc/custom-post-types.php:221
-msgid "Thematics"
-msgstr "Thématiques"
-
-#: inc/custom-post-types.php:220, inc/custom-post-types.php:222,
-#: template-parts/cpt/subject/content.php:109
-msgid "Thematic"
-msgid_plural "Thematics"
-msgstr[0] "Thématique"
-msgstr[1] "Thématiques"
-
-#: inc/custom-post-types.php:224
-msgid "Add New Thematic"
-msgstr "Ajouter une nouvelle thématique"
-
-#: inc/custom-post-types.php:225
-msgid "New Thematic"
-msgstr "Nouvelle thématique"
-
-#: inc/custom-post-types.php:226
-msgid "Edit Thematic"
-msgstr "Modifier la thématique"
-
-#: inc/custom-post-types.php:227
-msgid "View Thematic"
-msgstr "Voir la thématique"
-
-#: inc/custom-post-types.php:228
-msgid "All Thematics"
-msgstr "Toutes les thématiques"
-
-#: inc/custom-post-types.php:229
-msgid "Search Thematics"
-msgstr "Rechercher des thématiques"
-
-#: inc/custom-post-types.php:230
-msgid "Parent Thematics:"
-msgstr "Parent des thématiques :"
-
-#: inc/custom-post-types.php:231
-msgid "No thematics found."
-msgstr "Aucune thématique trouvée."
-
-#: inc/custom-post-types.php:232
-msgid "No thematics found in Trash."
-msgstr "Aucune thématique trouvée dans la Corbeille."
-
-#: inc/custom-post-types.php:233
-msgid "Thematic Cover Image"
-msgstr "Image mise en avant de la thématique"
-
-#: inc/custom-post-types.php:237
-msgid "Thematic archives"
-msgstr "Archives des thématiques"
-
-#: inc/custom-post-types.php:238
-msgid "Insert into thematic"
-msgstr "Insérer dans la thématique"
-
-#: inc/custom-post-types.php:239
-msgid "Uploaded to this thematic"
-msgstr "Télécharger dans cette thématique"
-
-#: inc/custom-post-types.php:240
-msgid "Filter thematics list"
-msgstr "Filtrer la liste des thématiques"
-
-#: inc/custom-post-types.php:241
-msgid "Thematics list navigation"
-msgstr "Navigation de la liste des thématiques"
-
-#: inc/custom-post-types.php:242
-msgid "Thematics list"
-msgstr "Liste des thématiques"
-
-#: inc/custom-post-types.php:281, inc/custom-post-types.php:283
-msgid "Subjects"
-msgstr "Sujets"
-
-#: inc/custom-post-types.php:282, inc/custom-post-types.php:284
-msgid "Subject"
-msgstr "Sujet"
-
-#: inc/custom-post-types.php:286
-msgid "Add New Subject"
-msgstr "Ajouter un nouveau sujet"
-
-#: inc/custom-post-types.php:287
-msgid "New Subject"
-msgstr "Nouveau sujet"
-
-#: inc/custom-post-types.php:288
-msgid "Edit Subject"
-msgstr "Modifier le sujet"
-
-#: inc/custom-post-types.php:289
-msgid "View Subject"
-msgstr "Voir le sujet"
-
-#: inc/custom-post-types.php:290
-msgid "All Subjects"
-msgstr "Tous les sujets"
-
-#: inc/custom-post-types.php:291
-msgid "Search Subjects"
-msgstr "Recherche des sujets"
-
-#: inc/custom-post-types.php:292
-msgid "Parent Subjects:"
-msgstr "Parent des sujets :"
-
-#: inc/custom-post-types.php:293
-msgid "No subjects found."
-msgstr "Aucun sujet trouvé."
-
-#: inc/custom-post-types.php:294
-msgid "No subjects found in Trash."
-msgstr "Aucun sujet trouvé dans la Corbeille."
-
-#: inc/custom-post-types.php:295
-msgid "Subject Cover Image"
-msgstr "Image mise en avant du sujet"
-
-#: inc/custom-post-types.php:299
-msgid "Subject archives"
-msgstr "Archive des sujets"
-
-#: inc/custom-post-types.php:300
-msgid "Insert into subject"
-msgstr "Insérer dans le sujet"
-
-#: inc/custom-post-types.php:301
-msgid "Uploaded to this subject"
-msgstr "Télécharger dans ce sujet"
-
-#: inc/custom-post-types.php:302
-msgid "Filter subjects list"
-msgstr "Filtrer la liste des sujets"
-
-#: inc/custom-post-types.php:303
-msgid "Subjects list navigation"
-msgstr "Navigation de la liste des sujets"
-
-#: inc/custom-post-types.php:304
-msgid "Subjects list"
-msgstr "Liste des sujets"
-
-#: inc/custom-post-types.php:343, inc/custom-post-types.php:345
-msgid "Projects"
-msgstr "Projets"
-
-#: inc/custom-post-types.php:344, inc/custom-post-types.php:346
-msgid "Project"
-msgstr "Projet"
-
-#: inc/custom-post-types.php:348
-msgid "Add New Project"
-msgstr "Ajouter un nouveau projet"
-
-#: inc/custom-post-types.php:349
-msgid "New Project"
-msgstr "Nouveau projet"
-
-#: inc/custom-post-types.php:350
-msgid "Edit Project"
-msgstr "Modifier le projet"
-
-#: inc/custom-post-types.php:351
-msgid "View Project"
-msgstr "Voir le projet"
-
-#: inc/custom-post-types.php:352
-msgid "All Projects"
-msgstr "Tous les projets"
-
-#: inc/custom-post-types.php:353
-msgid "Search Projects"
-msgstr "Recherche des projets"
-
-#: inc/custom-post-types.php:354
-msgid "Parent Projects:"
-msgstr "Parent des projets :"
-
-#: inc/custom-post-types.php:355
-msgid "No projects found."
-msgstr "Aucun projet trouvé."
-
-#: inc/custom-post-types.php:356
-msgid "No projects found in Trash."
-msgstr "Aucun projet trouvé dans la Corbeille."
-
-#: inc/custom-post-types.php:357
-msgid "Project Cover Image"
-msgstr "Image mise en avant du projet"
-
-#: inc/custom-post-types.php:361
-msgid "Project archives"
-msgstr "Archive des projets"
-
-#: inc/custom-post-types.php:362
-msgid "Insert into project"
-msgstr "Insérer dans le projet"
-
-#: inc/custom-post-types.php:363
-msgid "Uploaded to this project"
-msgstr "Télécharger dans ce projet"
-
-#: inc/custom-post-types.php:364
-msgid "Filter projects list"
-msgstr "Filtrer la liste des projets"
-
-#: inc/custom-post-types.php:365
-msgid "Projects list navigation"
-msgstr "Navigation de la liste des projets"
-
-#: inc/custom-post-types.php:366
-msgid "Projects list"
-msgstr "Liste des projets"
-
 #. translators: %s : reading time in minutes.
 #: inc/helpers.php:71
 msgctxt "reading time"
@@ -691,6 +359,7 @@ msgstr "Fermer la recherche"
 #: template-parts/main/page-header.php:23,
 #: template-parts/cpt/article/header.php:23,
 #: template-parts/cpt/project/header.php:23,
+#: template-parts/cpt/project/projects-list.php:20,
 #: template-parts/cpt/subject/content.php:85,
 #: template-parts/cpt/subject/header.php:26,
 #: template-parts/cpt/thematic/content.php:84,
@@ -703,6 +372,7 @@ msgstr "Publié le"
 #: template-parts/main/page-header.php:48,
 #: template-parts/cpt/article/header.php:47,
 #: template-parts/cpt/project/header.php:47,
+#: template-parts/cpt/project/projects-list.php:30,
 #: template-parts/cpt/subject/content.php:95,
 #: template-parts/cpt/thematic/content.php:94
 msgid "Reading time"
@@ -720,6 +390,7 @@ msgstr "Publié dans"
 #: template-parts/main/page-header.php:60,
 #: template-parts/cpt/article/header.php:58,
 #: template-parts/cpt/project/header.php:58,
+#: template-parts/cpt/project/projects-list.php:65,
 #: template-parts/cpt/subject/content.php:181,
 #: template-parts/cpt/thematic/content.php:144
 msgid "Comments"
@@ -827,12 +498,22 @@ msgstr[1] "Sujets :"
 msgid "Posted in:"
 msgstr "Publié dans :"
 
+#: template-parts/cpt/project/projects-list.php:42
+msgid "About"
+msgstr "Au sujet de"
+
 #. translators: %s The subject name.
 #. translators: %s The thematic name.
 #: template-parts/cpt/subject/content.php:33,
 #: template-parts/cpt/thematic/content.php:33
 msgid "All articles in %s"
 msgstr "Tous les articles dans %s"
+
+#: template-parts/cpt/subject/content.php:109
+msgid "Thematic"
+msgid_plural "Thematics"
+msgstr[0] "Thématique"
+msgstr[1] "Thématiques"
 
 #: template-parts/cpt/subject/content.php:144
 msgid "Related topic"
@@ -849,6 +530,252 @@ msgid "Topic"
 msgid_plural "Topics"
 msgstr[0] "Sujet"
 msgstr[1] "Sujets"
+
+#~ msgid ""
+#~ "This page lists the presentations of my different open source projects."
+#~ msgstr ""
+#~ "Cette page liste les présentations de mes différents projets open source."
+
+#~ msgid "Thematic base"
+#~ msgstr "Préfixe des thématiques"
+
+#~ msgid "Subject base"
+#~ msgstr "Préfixe des sujets"
+
+#~ msgid "Article base"
+#~ msgstr "Préfixe des articles"
+
+#~ msgid "Project base"
+#~ msgstr "Préfixe des projets"
+
+#~ msgid "Project description"
+#~ msgstr "Description de projet"
+
+#~ msgid "Sorry, you are not allowed to manage options for this site."
+#~ msgstr ""
+#~ "Désolé, vous n'êtes pas autorisé à modifier les options pour ce site."
+
+#~ msgid "Articles"
+#~ msgstr "Articles"
+
+#~ msgid "Article"
+#~ msgstr "Article"
+
+#~ msgid "Add New"
+#~ msgstr "Ajouter"
+
+#~ msgid "Add New Article"
+#~ msgstr "Ajouter un nouvel article"
+
+#~ msgid "New Article"
+#~ msgstr "Nouvel article"
+
+#~ msgid "Edit Article"
+#~ msgstr "Modifier l'article"
+
+#~ msgid "View Article"
+#~ msgstr "Voir l'article"
+
+#~ msgid "All Articles"
+#~ msgstr "Tous les articles"
+
+#~ msgid "Search Articles"
+#~ msgstr "Rechercher des articles"
+
+#~ msgid "Parent Articles:"
+#~ msgstr "Parent des articles :"
+
+#~ msgid "No articles found."
+#~ msgstr "Aucun article trouvé."
+
+#~ msgid "No articles found in Trash."
+#~ msgstr "Aucun article trouvé dans la Corbeille."
+
+#~ msgid "Article Cover Image"
+#~ msgstr "Image mise en avant de l'article"
+
+#~ msgid "Set cover image"
+#~ msgstr "Définir l'image mise en avant"
+
+#~ msgid "Remove cover image"
+#~ msgstr "Supprimer l'image mise en avant"
+
+#~ msgid "Use as cover image"
+#~ msgstr "Utiliser en tant qu'image mise en avant"
+
+#~ msgid "Article archives"
+#~ msgstr "Archives des articles"
+
+#~ msgid "Insert into article"
+#~ msgstr "Insérer dans l'article"
+
+#~ msgid "Uploaded to this article"
+#~ msgstr "Télécharger dans cet article"
+
+#~ msgid "Filter articles list"
+#~ msgstr "Filtrer la liste des articles"
+
+#~ msgid "Articles list navigation"
+#~ msgstr "Navigation de la liste des articles"
+
+#~ msgid "Articles list"
+#~ msgstr "Liste des articles"
+
+#~ msgid "Thematics"
+#~ msgstr "Thématiques"
+
+#~ msgid "Add New Thematic"
+#~ msgstr "Ajouter une nouvelle thématique"
+
+#~ msgid "New Thematic"
+#~ msgstr "Nouvelle thématique"
+
+#~ msgid "Edit Thematic"
+#~ msgstr "Modifier la thématique"
+
+#~ msgid "View Thematic"
+#~ msgstr "Voir la thématique"
+
+#~ msgid "All Thematics"
+#~ msgstr "Toutes les thématiques"
+
+#~ msgid "Search Thematics"
+#~ msgstr "Rechercher des thématiques"
+
+#~ msgid "Parent Thematics:"
+#~ msgstr "Parent des thématiques :"
+
+#~ msgid "No thematics found."
+#~ msgstr "Aucune thématique trouvée."
+
+#~ msgid "No thematics found in Trash."
+#~ msgstr "Aucune thématique trouvée dans la Corbeille."
+
+#~ msgid "Thematic Cover Image"
+#~ msgstr "Image mise en avant de la thématique"
+
+#~ msgid "Thematic archives"
+#~ msgstr "Archives des thématiques"
+
+#~ msgid "Insert into thematic"
+#~ msgstr "Insérer dans la thématique"
+
+#~ msgid "Uploaded to this thematic"
+#~ msgstr "Télécharger dans cette thématique"
+
+#~ msgid "Filter thematics list"
+#~ msgstr "Filtrer la liste des thématiques"
+
+#~ msgid "Thematics list navigation"
+#~ msgstr "Navigation de la liste des thématiques"
+
+#~ msgid "Thematics list"
+#~ msgstr "Liste des thématiques"
+
+#~ msgid "Subjects"
+#~ msgstr "Sujets"
+
+#~ msgid "Subject"
+#~ msgstr "Sujet"
+
+#~ msgid "Add New Subject"
+#~ msgstr "Ajouter un nouveau sujet"
+
+#~ msgid "New Subject"
+#~ msgstr "Nouveau sujet"
+
+#~ msgid "Edit Subject"
+#~ msgstr "Modifier le sujet"
+
+#~ msgid "View Subject"
+#~ msgstr "Voir le sujet"
+
+#~ msgid "All Subjects"
+#~ msgstr "Tous les sujets"
+
+#~ msgid "Search Subjects"
+#~ msgstr "Recherche des sujets"
+
+#~ msgid "Parent Subjects:"
+#~ msgstr "Parent des sujets :"
+
+#~ msgid "No subjects found."
+#~ msgstr "Aucun sujet trouvé."
+
+#~ msgid "No subjects found in Trash."
+#~ msgstr "Aucun sujet trouvé dans la Corbeille."
+
+#~ msgid "Subject Cover Image"
+#~ msgstr "Image mise en avant du sujet"
+
+#~ msgid "Subject archives"
+#~ msgstr "Archive des sujets"
+
+#~ msgid "Insert into subject"
+#~ msgstr "Insérer dans le sujet"
+
+#~ msgid "Uploaded to this subject"
+#~ msgstr "Télécharger dans ce sujet"
+
+#~ msgid "Filter subjects list"
+#~ msgstr "Filtrer la liste des sujets"
+
+#~ msgid "Subjects list navigation"
+#~ msgstr "Navigation de la liste des sujets"
+
+#~ msgid "Subjects list"
+#~ msgstr "Liste des sujets"
+
+#~ msgid "Projects"
+#~ msgstr "Projets"
+
+#~ msgid "Add New Project"
+#~ msgstr "Ajouter un nouveau projet"
+
+#~ msgid "New Project"
+#~ msgstr "Nouveau projet"
+
+#~ msgid "Edit Project"
+#~ msgstr "Modifier le projet"
+
+#~ msgid "View Project"
+#~ msgstr "Voir le projet"
+
+#~ msgid "All Projects"
+#~ msgstr "Tous les projets"
+
+#~ msgid "Search Projects"
+#~ msgstr "Recherche des projets"
+
+#~ msgid "Parent Projects:"
+#~ msgstr "Parent des projets :"
+
+#~ msgid "No projects found."
+#~ msgstr "Aucun projet trouvé."
+
+#~ msgid "No projects found in Trash."
+#~ msgstr "Aucun projet trouvé dans la Corbeille."
+
+#~ msgid "Project Cover Image"
+#~ msgstr "Image mise en avant du projet"
+
+#~ msgid "Project archives"
+#~ msgstr "Archive des projets"
+
+#~ msgid "Insert into project"
+#~ msgstr "Insérer dans le projet"
+
+#~ msgid "Uploaded to this project"
+#~ msgstr "Télécharger dans ce projet"
+
+#~ msgid "Filter projects list"
+#~ msgstr "Filtrer la liste des projets"
+
+#~ msgid "Projects list navigation"
+#~ msgstr "Navigation de la liste des projets"
+
+#~ msgid "Projects list"
+#~ msgstr "Liste des projets"
 
 #~ msgid "Logo"
 #~ msgstr "Logo"

@@ -16,9 +16,16 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: archive.php:25, category.php:27, index.php:25, search.php:28, tag.php:26
+#: archive-project.php:25, archive.php:25, category.php:27, index.php:25, search.php:28, tag.php:26
 msgid "Total"
 msgstr ""
+
+#. translators: %s number of posts.
+#: archive-project.php:31
+msgid "%s project"
+msgid_plural "%s projects"
+msgstr[0] ""
+msgstr[1] ""
 
 #. translators: %s number of posts.
 #. translators: %s number of posts.
@@ -262,340 +269,6 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: inc/custom-post-types.php:61, inc/custom-post-types.php:378
-msgid "This page lists the presentations of my different open source projects."
-msgstr ""
-
-#: inc/custom-post-types.php:71
-msgid "Thematic base"
-msgstr ""
-
-#: inc/custom-post-types.php:72
-msgid "Subject base"
-msgstr ""
-
-#: inc/custom-post-types.php:73
-msgid "Article base"
-msgstr ""
-
-#: inc/custom-post-types.php:74
-msgid "Project base"
-msgstr ""
-
-#: inc/custom-post-types.php:75
-msgid "Project description"
-msgstr ""
-
-#: inc/custom-post-types.php:86, inc/custom-post-types.php:134
-msgid "Sorry, you are not allowed to manage options for this site."
-msgstr ""
-
-#: inc/custom-post-types.php:157, inc/custom-post-types.php:159
-msgid "Articles"
-msgstr ""
-
-#: inc/custom-post-types.php:158, inc/custom-post-types.php:160
-msgid "Article"
-msgstr ""
-
-#: inc/custom-post-types.php:161, inc/custom-post-types.php:223, inc/custom-post-types.php:285, inc/custom-post-types.php:347
-msgid "Add New"
-msgstr ""
-
-#: inc/custom-post-types.php:162
-msgid "Add New Article"
-msgstr ""
-
-#: inc/custom-post-types.php:163
-msgid "New Article"
-msgstr ""
-
-#: inc/custom-post-types.php:164
-msgid "Edit Article"
-msgstr ""
-
-#: inc/custom-post-types.php:165
-msgid "View Article"
-msgstr ""
-
-#: inc/custom-post-types.php:166
-msgid "All Articles"
-msgstr ""
-
-#: inc/custom-post-types.php:167
-msgid "Search Articles"
-msgstr ""
-
-#: inc/custom-post-types.php:168
-msgid "Parent Articles:"
-msgstr ""
-
-#: inc/custom-post-types.php:169
-msgid "No articles found."
-msgstr ""
-
-#: inc/custom-post-types.php:170
-msgid "No articles found in Trash."
-msgstr ""
-
-#: inc/custom-post-types.php:171
-msgid "Article Cover Image"
-msgstr ""
-
-#: inc/custom-post-types.php:172, inc/custom-post-types.php:234, inc/custom-post-types.php:296, inc/custom-post-types.php:358
-msgid "Set cover image"
-msgstr ""
-
-#: inc/custom-post-types.php:173, inc/custom-post-types.php:235, inc/custom-post-types.php:297, inc/custom-post-types.php:359
-msgid "Remove cover image"
-msgstr ""
-
-#: inc/custom-post-types.php:174, inc/custom-post-types.php:236, inc/custom-post-types.php:298, inc/custom-post-types.php:360
-msgid "Use as cover image"
-msgstr ""
-
-#: inc/custom-post-types.php:175
-msgid "Article archives"
-msgstr ""
-
-#: inc/custom-post-types.php:176
-msgid "Insert into article"
-msgstr ""
-
-#: inc/custom-post-types.php:177
-msgid "Uploaded to this article"
-msgstr ""
-
-#: inc/custom-post-types.php:178
-msgid "Filter articles list"
-msgstr ""
-
-#: inc/custom-post-types.php:179
-msgid "Articles list navigation"
-msgstr ""
-
-#: inc/custom-post-types.php:180
-msgid "Articles list"
-msgstr ""
-
-#: inc/custom-post-types.php:219, inc/custom-post-types.php:221
-msgid "Thematics"
-msgstr ""
-
-#: inc/custom-post-types.php:220, inc/custom-post-types.php:222, template-parts/cpt/subject/content.php:109
-msgid "Thematic"
-msgid_plural "Thematics"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/custom-post-types.php:224
-msgid "Add New Thematic"
-msgstr ""
-
-#: inc/custom-post-types.php:225
-msgid "New Thematic"
-msgstr ""
-
-#: inc/custom-post-types.php:226
-msgid "Edit Thematic"
-msgstr ""
-
-#: inc/custom-post-types.php:227
-msgid "View Thematic"
-msgstr ""
-
-#: inc/custom-post-types.php:228
-msgid "All Thematics"
-msgstr ""
-
-#: inc/custom-post-types.php:229
-msgid "Search Thematics"
-msgstr ""
-
-#: inc/custom-post-types.php:230
-msgid "Parent Thematics:"
-msgstr ""
-
-#: inc/custom-post-types.php:231
-msgid "No thematics found."
-msgstr ""
-
-#: inc/custom-post-types.php:232
-msgid "No thematics found in Trash."
-msgstr ""
-
-#: inc/custom-post-types.php:233
-msgid "Thematic Cover Image"
-msgstr ""
-
-#: inc/custom-post-types.php:237
-msgid "Thematic archives"
-msgstr ""
-
-#: inc/custom-post-types.php:238
-msgid "Insert into thematic"
-msgstr ""
-
-#: inc/custom-post-types.php:239
-msgid "Uploaded to this thematic"
-msgstr ""
-
-#: inc/custom-post-types.php:240
-msgid "Filter thematics list"
-msgstr ""
-
-#: inc/custom-post-types.php:241
-msgid "Thematics list navigation"
-msgstr ""
-
-#: inc/custom-post-types.php:242
-msgid "Thematics list"
-msgstr ""
-
-#: inc/custom-post-types.php:281, inc/custom-post-types.php:283
-msgid "Subjects"
-msgstr ""
-
-#: inc/custom-post-types.php:282, inc/custom-post-types.php:284
-msgid "Subject"
-msgstr ""
-
-#: inc/custom-post-types.php:286
-msgid "Add New Subject"
-msgstr ""
-
-#: inc/custom-post-types.php:287
-msgid "New Subject"
-msgstr ""
-
-#: inc/custom-post-types.php:288
-msgid "Edit Subject"
-msgstr ""
-
-#: inc/custom-post-types.php:289
-msgid "View Subject"
-msgstr ""
-
-#: inc/custom-post-types.php:290
-msgid "All Subjects"
-msgstr ""
-
-#: inc/custom-post-types.php:291
-msgid "Search Subjects"
-msgstr ""
-
-#: inc/custom-post-types.php:292
-msgid "Parent Subjects:"
-msgstr ""
-
-#: inc/custom-post-types.php:293
-msgid "No subjects found."
-msgstr ""
-
-#: inc/custom-post-types.php:294
-msgid "No subjects found in Trash."
-msgstr ""
-
-#: inc/custom-post-types.php:295
-msgid "Subject Cover Image"
-msgstr ""
-
-#: inc/custom-post-types.php:299
-msgid "Subject archives"
-msgstr ""
-
-#: inc/custom-post-types.php:300
-msgid "Insert into subject"
-msgstr ""
-
-#: inc/custom-post-types.php:301
-msgid "Uploaded to this subject"
-msgstr ""
-
-#: inc/custom-post-types.php:302
-msgid "Filter subjects list"
-msgstr ""
-
-#: inc/custom-post-types.php:303
-msgid "Subjects list navigation"
-msgstr ""
-
-#: inc/custom-post-types.php:304
-msgid "Subjects list"
-msgstr ""
-
-#: inc/custom-post-types.php:343, inc/custom-post-types.php:345
-msgid "Projects"
-msgstr ""
-
-#: inc/custom-post-types.php:344, inc/custom-post-types.php:346
-msgid "Project"
-msgstr ""
-
-#: inc/custom-post-types.php:348
-msgid "Add New Project"
-msgstr ""
-
-#: inc/custom-post-types.php:349
-msgid "New Project"
-msgstr ""
-
-#: inc/custom-post-types.php:350
-msgid "Edit Project"
-msgstr ""
-
-#: inc/custom-post-types.php:351
-msgid "View Project"
-msgstr ""
-
-#: inc/custom-post-types.php:352
-msgid "All Projects"
-msgstr ""
-
-#: inc/custom-post-types.php:353
-msgid "Search Projects"
-msgstr ""
-
-#: inc/custom-post-types.php:354
-msgid "Parent Projects:"
-msgstr ""
-
-#: inc/custom-post-types.php:355
-msgid "No projects found."
-msgstr ""
-
-#: inc/custom-post-types.php:356
-msgid "No projects found in Trash."
-msgstr ""
-
-#: inc/custom-post-types.php:357
-msgid "Project Cover Image"
-msgstr ""
-
-#: inc/custom-post-types.php:361
-msgid "Project archives"
-msgstr ""
-
-#: inc/custom-post-types.php:362
-msgid "Insert into project"
-msgstr ""
-
-#: inc/custom-post-types.php:363
-msgid "Uploaded to this project"
-msgstr ""
-
-#: inc/custom-post-types.php:364
-msgid "Filter projects list"
-msgstr ""
-
-#: inc/custom-post-types.php:365
-msgid "Projects list navigation"
-msgstr ""
-
-#: inc/custom-post-types.php:366
-msgid "Projects list"
-msgstr ""
-
 #. translators: %s : reading time in minutes.
 #: inc/helpers.php:71
 msgctxt "reading time"
@@ -659,11 +332,11 @@ msgstr ""
 msgid "Close search"
 msgstr ""
 
-#: template-parts/main/articles-list.php:20, template-parts/main/author-articles.php:50, template-parts/main/page-header.php:23, template-parts/cpt/article/header.php:23, template-parts/cpt/project/header.php:23, template-parts/cpt/subject/content.php:85, template-parts/cpt/subject/header.php:26, template-parts/cpt/thematic/content.php:84, template-parts/cpt/thematic/header.php:22
+#: template-parts/main/articles-list.php:20, template-parts/main/author-articles.php:50, template-parts/main/page-header.php:23, template-parts/cpt/article/header.php:23, template-parts/cpt/project/header.php:23, template-parts/cpt/project/projects-list.php:20, template-parts/cpt/subject/content.php:85, template-parts/cpt/subject/header.php:26, template-parts/cpt/thematic/content.php:84, template-parts/cpt/thematic/header.php:22
 msgid "Published on"
 msgstr ""
 
-#: template-parts/main/articles-list.php:30, template-parts/main/author-articles.php:60, template-parts/main/page-header.php:48, template-parts/cpt/article/header.php:47, template-parts/cpt/project/header.php:47, template-parts/cpt/subject/content.php:95, template-parts/cpt/thematic/content.php:94
+#: template-parts/main/articles-list.php:30, template-parts/main/author-articles.php:60, template-parts/main/page-header.php:48, template-parts/cpt/article/header.php:47, template-parts/cpt/project/header.php:47, template-parts/cpt/project/projects-list.php:30, template-parts/cpt/subject/content.php:95, template-parts/cpt/thematic/content.php:94
 msgid "Reading time"
 msgstr ""
 
@@ -671,7 +344,7 @@ msgstr ""
 msgid "Posted in"
 msgstr ""
 
-#: template-parts/main/articles-list.php:111, template-parts/main/author-articles.php:97, template-parts/main/page-header.php:60, template-parts/cpt/article/header.php:58, template-parts/cpt/project/header.php:58, template-parts/cpt/subject/content.php:181, template-parts/cpt/thematic/content.php:144
+#: template-parts/main/articles-list.php:111, template-parts/main/author-articles.php:97, template-parts/main/page-header.php:60, template-parts/cpt/article/header.php:58, template-parts/cpt/project/header.php:58, template-parts/cpt/project/projects-list.php:65, template-parts/cpt/subject/content.php:181, template-parts/cpt/thematic/content.php:144
 msgid "Comments"
 msgstr ""
 
@@ -767,11 +440,21 @@ msgstr[1] ""
 msgid "Posted in:"
 msgstr ""
 
+#: template-parts/cpt/project/projects-list.php:42
+msgid "About"
+msgstr ""
+
 #. translators: %s The subject name.
 #. translators: %s The thematic name.
 #: template-parts/cpt/subject/content.php:33, template-parts/cpt/thematic/content.php:33
 msgid "All articles in %s"
 msgstr ""
+
+#: template-parts/cpt/subject/content.php:109
+msgid "Thematic"
+msgid_plural "Thematics"
+msgstr[0] ""
+msgstr[1] ""
 
 #: template-parts/cpt/subject/content.php:144
 msgid "Related topic"
