@@ -237,6 +237,59 @@ document.getElementById('switch-theme').addEventListener('click', function () {
 });
 "use strict";
 
+/**
+ * Check if the diff between two dates is longer than one year.
+ *
+ * @param {Int} firstDate A date in milliseconds.
+ * @param {Int} secondDate A date in milliseconds.
+ * @returns {Bool} True if the diff is greater than one year.
+ */
+var isMoreThanOneYear = function isMoreThanOneYear(firstDate, secondDate) {
+  var diffInMilliseconds = firstDate > secondDate ? firstDate - secondDate : secondDate - firstDate;
+  var diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
+  return diffInDays > 365;
+};
+/**
+ * Insert a new HTML element above the page content.
+ *
+ * @param {HTMLElement} node An HTML element to insert.
+ */
+
+
+var insertBeforeContent = function insertBeforeContent(node) {
+  var pageContent = document.getElementById('page__content');
+  var firstChild = pageContent.firstChild;
+  pageContent.insertBefore(node, firstChild);
+};
+
+var handleDateWarnings = function handleDateWarnings() {
+  var body = document.getElementById('body');
+
+  if (body.classList.contains('single-page') && !body.classList.contains('cpt')) {
+    var publicationDateWrapper = document.getElementById('meta__publication-date');
+    var updateDateWrapper = document.getElementById('meta__update-date');
+    var publicationDate = publicationDateWrapper ? new Date(publicationDateWrapper.dateTime).getTime() : null;
+    var updateDate = updateDateWrapper ? new Date(updateDateWrapper.dateTime).getTime() : null;
+    var currentDate = new Date().getTime();
+
+    if (!isMoreThanOneYear(publicationDate, currentDate)) {
+      return;
+    }
+
+    if (!isMoreThanOneYear(publicationDate, updateDate)) {
+      return;
+    }
+
+    var div = document.createElement('div');
+    div.classList.add('content-warning');
+    div.innerHTML = date_warning.beAware + ' ' + date_warning.oldContent + ' ' + date_warning.noMoreValid + ' ' + date_warning.contentEvolved;
+    insertBeforeContent(div);
+  }
+};
+
+handleDateWarnings();
+"use strict";
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
