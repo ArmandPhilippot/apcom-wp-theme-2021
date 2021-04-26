@@ -2026,6 +2026,18 @@ small {
 	width: 100%;
 }
 
+.page__body .content-warning {
+	border: 0.1875rem solid var(--apcom-color-secondary);
+	border-radius: 0.1875rem;
+	margin-bottom: var(--apcom-spacing-md);
+	padding: var(--apcom-spacing-sm);
+}
+
+.page__body .content-warning__label {
+	color: var(--apcom-color-secondary);
+	font-weight: 700;
+}
+
 .page__footer {
 	margin: var(--apcom-spacing-md) 0;
 }

@@ -125,10 +125,23 @@ function apcom_enqueue_scripts() {
 		'darkThemeText'  => __( 'Switch to light theme', 'APCom' ),
 	);
 
+	$date_warning = array(
+		'beAware'        => sprintf(
+			// translators: %1$s Open HTML element. %2$s Closing HTML element.
+			__( '%1$sWarning:%2$s', 'APCom' ),
+			'<span class="content-warning__label">',
+			'</span>'
+		),
+		'oldContent'     => __( 'This content has not been updated for over a year.', 'APCom' ),
+		'noMoreValid'    => __( 'The content may no longer be valid.', 'APCom' ),
+		'contentEvolved' => __( 'For example, the subject may have evolved since the writing of the article or my opinion may have changed.', 'APCom' ),
+	);
+
 	if ( file_exists( $footer_scripts_path ) ) {
 		wp_register_script( 'apcom-app', $theme_uri . '/assets/js/app.min.js', array(), APCOM_VERSION, true );
 		wp_enqueue_script( 'apcom-app' );
 		wp_localize_script( 'apcom-app', 'color_scheme_vars', $color_scheme_vars );
+		wp_localize_script( 'apcom-app', 'date_warning', $date_warning );
 	}
 
 	if ( file_exists( $header_scripts_path ) ) {

@@ -109,11 +109,32 @@ msgstr "Basculer sur le thème foncé"
 msgid "Switch to light theme"
 msgstr "Basculer sur le thème clair"
 
-#: functions.php:177
+#. translators: %1$s Open HTML element. %2$s Closing HTML element.
+#: functions.php:131
+msgid "%1$sWarning:%2$s"
+msgstr "%1$sAttention :%2$s"
+
+#: functions.php:135
+msgid "This content has not been updated for over a year."
+msgstr "Ce contenu n'a pas été mis à jour depuis plus d'un an."
+
+#: functions.php:136
+msgid "The content may no longer be valid."
+msgstr "Le contenu n'est peut-être plus valide."
+
+#: functions.php:137
+msgid ""
+"For example, the subject may have evolved since the writing of the article "
+"or my opinion may have changed."
+msgstr ""
+"Par exemple, le sujet a pu évoluer depuis l'écriture de l'article ou mon "
+"opinion a pu changer."
+
+#: functions.php:190
 msgid "Blog Sidebar - Left/First"
 msgstr "Barre latérale du blog - Gauche/Début"
 
-#: functions.php:179
+#: functions.php:192
 msgid ""
 "Add widgets here to appear in your blog sidebar (first on mobile view, left "
 "on large screens)."
@@ -121,11 +142,11 @@ msgstr ""
 "Ajouter des widgets ici pour les faire apparaître dans la barre latérale du "
 "blog (au début sur mobile, à gauche sur les écrans larges)."
 
-#: functions.php:189
+#: functions.php:202
 msgid "Blog Sidebar - Right/Last"
 msgstr "Barre latérale du blog - Droite/Fin"
 
-#: functions.php:191
+#: functions.php:204
 msgid ""
 "Add widgets here to appear in your blog sidebar(last on mobile view, right "
 "on large screens)."
@@ -133,28 +154,28 @@ msgstr ""
 "Ajouter des widgets ici pour les faire apparaître dans la barre latérale du "
 "blog (à la fin sur mobile, à droite sur les écrans larges)."
 
-#: functions.php:201
+#: functions.php:214
 msgid "Articles & Pages Widgets"
 msgstr "Widgets des Articles & Pages"
 
-#: functions.php:203
+#: functions.php:216
 msgid "Add widgets here to appear below the articles and pages."
 msgstr ""
 "Ajouter des widgets ici pour les faire apparaître sous les articles et pages."
 
-#: functions.php:213
+#: functions.php:226
 msgid "CV Widgets"
 msgstr "Widgets du CV"
 
-#: functions.php:215
+#: functions.php:228
 msgid "Add widgets here to appear below the CV page."
 msgstr "Ajouter des widgets ici pour les faire apparaître sous la page du CV."
 
-#: functions.php:225
+#: functions.php:238
 msgid "Contact Widgets"
 msgstr "Widgets de Contact"
 
-#: functions.php:227
+#: functions.php:240
 msgid "Add widgets here to appear below the Contact page."
 msgstr ""
 "Ajouter des widgets ici pour les faire apparaître sous la page de contact."
