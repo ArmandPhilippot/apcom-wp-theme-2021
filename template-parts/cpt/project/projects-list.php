@@ -35,7 +35,7 @@
 			</div>
 			<?php
 			$apcom_project_subjects = get_post_meta( get_the_ID(), 'posts_in_subject' );
-			if ( $apcom_project_subjects ) {
+			if ( $apcom_project_subjects && is_array( $apcom_project_subjects[0] ) ) {
 				?>
 				<div class="meta__item meta__item--has-icon meta__themes">
 					<dt class="meta__term">

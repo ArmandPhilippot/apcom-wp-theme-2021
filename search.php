@@ -19,7 +19,7 @@ if ( have_posts() ) {
 				printf(
 					// translators: %s: search query.
 					esc_html__( 'Search results for: %s', 'APCom' ),
-					'<span>' . esc_html( $apcom_search_query ) . '</span>'
+					esc_html( $apcom_search_query )
 				);
 				?>
 			</h1>

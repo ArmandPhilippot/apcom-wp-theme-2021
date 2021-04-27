@@ -77,7 +77,7 @@ msgstr "Encore aucun commentaire sur &ldquo;%s&rdquo;."
 msgid "Subscribe to comments"
 msgstr "S'abonner aux commentaires"
 
-#: comments.php:66, inc/class-custom-walker-comment.php:116
+#: comments.php:66, inc/class-custom-walker-comment.php:126
 msgid "Reply"
 msgstr "Répondre"
 
@@ -310,20 +310,25 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération."
 
-#: inc/class-custom-walker-comment.php:68
+#. translators: %1$s Comment ID. %2$s Comment author.
+#: inc/class-custom-walker-comment.php:45
+msgid "Comment %1$s written by %2$s"
+msgstr "Commentaire %1$s écrit par %2$s"
+
+#: inc/class-custom-walker-comment.php:78
 msgid "Author"
 msgstr "Auteur"
 
-#: inc/class-custom-walker-comment.php:74
+#: inc/class-custom-walker-comment.php:84
 msgid "Published on:"
 msgstr "Publié le :"
 
 #. translators: 1: Comment date, 2: Comment time.
-#: inc/class-custom-walker-comment.php:82
+#: inc/class-custom-walker-comment.php:92
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
 
-#: inc/class-custom-walker-comment.php:99
+#: inc/class-custom-walker-comment.php:109
 msgid "Edit"
 msgstr "Modifier"
 

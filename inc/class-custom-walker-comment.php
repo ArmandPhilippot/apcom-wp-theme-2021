@@ -35,9 +35,19 @@ class Custom_Walker_Comment extends Walker_Comment {
 			$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'APCom' );
 		}
 		?>
-		<<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'comment--parent' : '', $comment ); ?>>
-			<article class="comment__inner" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+		<<?php echo esc_attr( $tag ); ?> <?php comment_class( $this->has_children ? 'comment--parent' : '', $comment ); ?>>
+			<article id="comment-<?php comment_ID(); ?>" class="comment__inner" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
 				<header class="comment__header">
+					<h3 class="screen-reader-text">
+						<?php
+						printf(
+							// translators: %1$s Comment ID. %2$s Comment author.
+							esc_html__( 'Comment %1$s written by %2$s', 'APCom' ),
+							esc_html( get_comment_ID() ),
+							esc_html( get_comment_author() )
+						);
+						?>
+					</h3>
 					<div class="comment__author">
 						<?php
 						if ( 0 !== $args['avatar_size'] ) {

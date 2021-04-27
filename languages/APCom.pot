@@ -69,7 +69,7 @@ msgstr ""
 msgid "Subscribe to comments"
 msgstr ""
 
-#: comments.php:66, inc/class-custom-walker-comment.php:116
+#: comments.php:66, inc/class-custom-walker-comment.php:126
 msgid "Reply"
 msgstr ""
 
@@ -277,20 +277,25 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/class-custom-walker-comment.php:68
+#. translators: %1$s Comment ID. %2$s Comment author.
+#: inc/class-custom-walker-comment.php:45
+msgid "Comment %1$s written by %2$s"
+msgstr ""
+
+#: inc/class-custom-walker-comment.php:78
 msgid "Author"
 msgstr ""
 
-#: inc/class-custom-walker-comment.php:74
+#: inc/class-custom-walker-comment.php:84
 msgid "Published on:"
 msgstr ""
 
 #. translators: 1: Comment date, 2: Comment time.
-#: inc/class-custom-walker-comment.php:82
+#: inc/class-custom-walker-comment.php:92
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/class-custom-walker-comment.php:99
+#: inc/class-custom-walker-comment.php:109
 msgid "Edit"
 msgstr ""
 

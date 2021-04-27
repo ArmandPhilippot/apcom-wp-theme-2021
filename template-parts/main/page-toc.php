@@ -7,6 +7,6 @@
  */
 
 ?>
-<section class="page__aside page__aside--first">
+<div class="page__aside page__aside--first">
 	<div class="toc__wrapper widget" id="table-of-content"></div>
-</section>
+</div>
