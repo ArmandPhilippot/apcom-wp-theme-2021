@@ -3711,7 +3711,7 @@ small {
 }
 
 .meta__item--has-icon .meta__theme--icon {
-	padding-left: var(--apcom-spacing-3xs);
+	padding-left: var(--apcom-spacing-xs);
 }
 
 @media only screen and (min-width: 35.5em) {
@@ -3756,7 +3756,8 @@ small {
 
 .meta .theme__img {
 	box-shadow: none;
-	width: 1.375rem;
+	max-height: 1.125rem;
+	max-width: 1.125rem;
 }
 
 .meta__comments {

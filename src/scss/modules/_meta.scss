@@ -31,7 +31,7 @@
 				}
 
 				&__theme--icon {
-					padding-left: cssVar(spacing-3xs);
+					padding-left: cssVar(spacing-xs);
 				}
 			}
 		}
@@ -95,7 +95,8 @@
 
 	.theme__img {
 		box-shadow: none;
-		width: pxToRem(22);
+		max-width: pxToRem(18);
+		max-height: pxToRem(18);
 	}
 
 	&__comments {
