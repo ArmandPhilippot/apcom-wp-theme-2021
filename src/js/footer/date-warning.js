@@ -1,18 +1,19 @@
 /**
- * Check if the diff between two dates is longer than one year.
+ * Check if the diff between two dates is longer than two years.
  *
  * @param {Int} firstDate A date in milliseconds.
  * @param {Int} secondDate A date in milliseconds.
- * @returns {Bool} True if the diff is greater than one year.
+ * @returns {Bool} True if the diff is greater than two years.
  */
-const isMoreThanOneYear = (firstDate, secondDate) => {
+const isMoreThanTwoYears = (firstDate, secondDate) => {
 	const diffInMilliseconds =
 		firstDate > secondDate
 			? firstDate - secondDate
 			: secondDate - firstDate;
 	const diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
+	const twoYears = 365 * 2;
 
-	return diffInDays > 365;
+	return diffInDays > twoYears;
 };
 
 /**
@@ -26,47 +27,85 @@ const insertBeforeContent = node => {
 	pageContent.insertBefore(node, firstChild);
 };
 
-const handleDateWarnings = () => {
+/**
+ * Check if the current page is an article.
+ * @returns {Bool} True if it is an article.
+ */
+const isArticle = () => {
 	const body = document.getElementById('body');
-
-	if (
+	return (
 		body.classList.contains('single-page') &&
-		!body.classList.contains('cpt')
-	) {
-		const publicationDateWrapper = document.getElementById(
-			'meta__publication-date'
-		);
-		const updateDateWrapper = document.getElementById('meta__update-date');
+		!body.classList.contains('cpt') &&
+		!body.classList.contains('no-comments')
+	);
+};
 
-		const publicationDate = publicationDateWrapper
-			? new Date(publicationDateWrapper.dateTime).getTime()
-			: null;
-		const updateDate = updateDateWrapper
-			? new Date(updateDateWrapper.dateTime).getTime()
-			: null;
+/**
+ * Get warning message.
+ * @returns {String} The translated warning message.
+ */
+const getWarning = () => {
+	return (
+		date_warning.beAware +
+		' ' +
+		date_warning.oldContent +
+		' ' +
+		date_warning.noMoreValid +
+		' ' +
+		date_warning.contentEvolved
+	);
+};
+
+/**
+ * Get the publication date of an article.
+ * @returns {Mixed} Date element or null.
+ */
+const getPublicationDate = () => {
+	const publicationDateWrapper = document.getElementById(
+		'meta__publication-date'
+	);
+
+	return publicationDateWrapper
+		? new Date(publicationDateWrapper.dateTime).getTime()
+		: null;
+};
+
+/**
+ * Get the update date of an article.
+ * @returns {Mixed} Date element or null
+ */
+const getUpdateDate = () => {
+	const updateDateWrapper = document.getElementById('meta__update-date');
+
+	return updateDateWrapper
+		? new Date(updateDateWrapper.dateTime).getTime()
+		: null;
+};
+
+/**
+ * Display a warning if an article is not updated since more than two years.
+ */
+const displayWarningIfNeeded = () => {
+	if (isArticle()) {
+		const publicationDate = getPublicationDate();
+		const updateDate = getUpdateDate();
 		const currentDate = new Date().getTime();
 
-		if (!isMoreThanOneYear(publicationDate, currentDate)) {
+		if (
+			!publicationDate ||
+			!isMoreThanTwoYears(publicationDate, currentDate)
+		)
 			return;
-		}
 
-		if (!isMoreThanOneYear(publicationDate, updateDate)) {
+		if (updateDate && !isMoreThanTwoYears(publicationDate, updateDate))
 			return;
-		}
 
 		const div = document.createElement('div');
 		div.classList.add('content-warning');
-		div.innerHTML =
-			date_warning.beAware +
-			' ' +
-			date_warning.oldContent +
-			' ' +
-			date_warning.noMoreValid +
-			' ' +
-			date_warning.contentEvolved;
+		div.innerHTML = getWarning();
 
 		insertBeforeContent(div);
 	}
 };
 
-handleDateWarnings();
+displayWarningIfNeeded();

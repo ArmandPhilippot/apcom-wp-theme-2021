@@ -238,16 +238,17 @@ document.getElementById('switch-theme').addEventListener('click', function () {
 "use strict";
 
 /**
- * Check if the diff between two dates is longer than one year.
+ * Check if the diff between two dates is longer than two years.
  *
  * @param {Int} firstDate A date in milliseconds.
  * @param {Int} secondDate A date in milliseconds.
- * @returns {Bool} True if the diff is greater than one year.
+ * @returns {Bool} True if the diff is greater than two years.
  */
-var isMoreThanOneYear = function isMoreThanOneYear(firstDate, secondDate) {
+var isMoreThanTwoYears = function isMoreThanTwoYears(firstDate, secondDate) {
   var diffInMilliseconds = firstDate > secondDate ? firstDate - secondDate : secondDate - firstDate;
   var diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
-  return diffInDays > 365;
+  var twoYears = 365 * 2;
+  return diffInDays > twoYears;
 };
 /**
  * Insert a new HTML element above the page content.
@@ -261,33 +262,65 @@ var insertBeforeContent = function insertBeforeContent(node) {
   var firstChild = pageContent.firstChild;
   pageContent.insertBefore(node, firstChild);
 };
+/**
+ * Check if the current page is an article.
+ * @returns {Bool} True if it is an article.
+ */
 
-var handleDateWarnings = function handleDateWarnings() {
+
+var isArticle = function isArticle() {
   var body = document.getElementById('body');
+  return body.classList.contains('single-page') && !body.classList.contains('cpt') && !body.classList.contains('no-comments');
+};
+/**
+ * Get warning message.
+ * @returns {String} The translated warning message.
+ */
 
-  if (body.classList.contains('single-page') && !body.classList.contains('cpt')) {
-    var publicationDateWrapper = document.getElementById('meta__publication-date');
-    var updateDateWrapper = document.getElementById('meta__update-date');
-    var publicationDate = publicationDateWrapper ? new Date(publicationDateWrapper.dateTime).getTime() : null;
-    var updateDate = updateDateWrapper ? new Date(updateDateWrapper.dateTime).getTime() : null;
+
+var getWarning = function getWarning() {
+  return date_warning.beAware + ' ' + date_warning.oldContent + ' ' + date_warning.noMoreValid + ' ' + date_warning.contentEvolved;
+};
+/**
+ * Get the publication date of an article.
+ * @returns {Mixed} Date element or null.
+ */
+
+
+var getPublicationDate = function getPublicationDate() {
+  var publicationDateWrapper = document.getElementById('meta__publication-date');
+  return publicationDateWrapper ? new Date(publicationDateWrapper.dateTime).getTime() : null;
+};
+/**
+ * Get the update date of an article.
+ * @returns {Mixed} Date element or null
+ */
+
+
+var getUpdateDate = function getUpdateDate() {
+  var updateDateWrapper = document.getElementById('meta__update-date');
+  return updateDateWrapper ? new Date(updateDateWrapper.dateTime).getTime() : null;
+};
+/**
+ * Display a warning if an article is not updated since more than two years.
+ */
+
+
+var displayWarningIfNeeded = function displayWarningIfNeeded() {
+  if (isArticle()) {
+    var publicationDate = getPublicationDate();
+    var updateDate = getUpdateDate();
     var currentDate = new Date().getTime();
-
-    if (!isMoreThanOneYear(publicationDate, currentDate)) {
-      return;
-    }
-
-    if (!isMoreThanOneYear(publicationDate, updateDate)) {
-      return;
-    }
-
+    if (!publicationDate || !isMoreThanTwoYears(publicationDate, currentDate)) return;
+    if (updateDate && !isMoreThanTwoYears(publicationDate, updateDate)) return;
     var div = document.createElement('div');
     div.classList.add('content-warning');
-    div.innerHTML = date_warning.beAware + ' ' + date_warning.oldContent + ' ' + date_warning.noMoreValid + ' ' + date_warning.contentEvolved;
+    div.innerHTML = getWarning();
     insertBeforeContent(div);
   }
 };
 
-handleDateWarnings();
+displayWarningIfNeeded();
 "use strict";
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
