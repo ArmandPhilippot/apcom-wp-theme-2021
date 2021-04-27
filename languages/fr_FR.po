@@ -130,11 +130,26 @@ msgstr ""
 "Par exemple, le sujet a pu évoluer depuis l'écriture de l'article ou mon "
 "opinion a pu changer."
 
-#: functions.php:190
+#: functions.php:141
+msgid "Table of contents"
+msgstr "Table des matières"
+
+#: functions.php:142, template-parts/main/articles-list.php:111,
+#: template-parts/main/author-articles.php:97,
+#: template-parts/main/page-header.php:60,
+#: template-parts/cpt/article/header.php:58,
+#: template-parts/cpt/project/header.php:58,
+#: template-parts/cpt/project/projects-list.php:65,
+#: template-parts/cpt/subject/content.php:181,
+#: template-parts/cpt/thematic/content.php:144
+msgid "Comments"
+msgstr "Commentaires"
+
+#: functions.php:196
 msgid "Blog Sidebar - Left/First"
 msgstr "Barre latérale du blog - Gauche/Début"
 
-#: functions.php:192
+#: functions.php:198
 msgid ""
 "Add widgets here to appear in your blog sidebar (first on mobile view, left "
 "on large screens)."
@@ -142,11 +157,11 @@ msgstr ""
 "Ajouter des widgets ici pour les faire apparaître dans la barre latérale du "
 "blog (au début sur mobile, à gauche sur les écrans larges)."
 
-#: functions.php:202
+#: functions.php:208
 msgid "Blog Sidebar - Right/Last"
 msgstr "Barre latérale du blog - Droite/Fin"
 
-#: functions.php:204
+#: functions.php:210
 msgid ""
 "Add widgets here to appear in your blog sidebar(last on mobile view, right "
 "on large screens)."
@@ -154,28 +169,28 @@ msgstr ""
 "Ajouter des widgets ici pour les faire apparaître dans la barre latérale du "
 "blog (à la fin sur mobile, à droite sur les écrans larges)."
 
-#: functions.php:214
+#: functions.php:220
 msgid "Articles & Pages Widgets"
 msgstr "Widgets des Articles & Pages"
 
-#: functions.php:216
+#: functions.php:222
 msgid "Add widgets here to appear below the articles and pages."
 msgstr ""
 "Ajouter des widgets ici pour les faire apparaître sous les articles et pages."
 
-#: functions.php:226
+#: functions.php:232
 msgid "CV Widgets"
 msgstr "Widgets du CV"
 
-#: functions.php:228
+#: functions.php:234
 msgid "Add widgets here to appear below the CV page."
 msgstr "Ajouter des widgets ici pour les faire apparaître sous la page du CV."
 
-#: functions.php:238
+#: functions.php:244
 msgid "Contact Widgets"
 msgstr "Widgets de Contact"
 
-#: functions.php:240
+#: functions.php:246
 msgid "Add widgets here to appear below the Contact page."
 msgstr ""
 "Ajouter des widgets ici pour les faire apparaître sous la page de contact."
@@ -420,17 +435,6 @@ msgstr "Temps de lecture"
 #: template-parts/main/author-articles.php:76
 msgid "Posted in"
 msgstr "Publié dans"
-
-#: template-parts/main/articles-list.php:111,
-#: template-parts/main/author-articles.php:97,
-#: template-parts/main/page-header.php:60,
-#: template-parts/cpt/article/header.php:58,
-#: template-parts/cpt/project/header.php:58,
-#: template-parts/cpt/project/projects-list.php:65,
-#: template-parts/cpt/subject/content.php:181,
-#: template-parts/cpt/thematic/content.php:144
-msgid "Comments"
-msgstr "Commentaires"
 
 #: template-parts/main/breadcrumb.php:12
 msgid "Home"

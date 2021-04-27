@@ -24,9 +24,9 @@ $apcom_comment_form_args = array(
 	'format'             => 'html5',
 );
 ?>
-<section class="page__comments comments">
+<section class="page__comments comments" id="comments">
 	<div class="comments__header">
-		<h2 class="comments__title">
+		<h2 class="comments__title" id="comments__title">
 			<?php
 			$apcom_comment_count = get_comments_number();
 			if ( '0' === $apcom_comment_count ) {

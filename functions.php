@@ -137,11 +137,17 @@ function apcom_enqueue_scripts() {
 		'contentEvolved' => __( 'For example, the subject may have evolved since the writing of the article or my opinion may have changed.', 'APCom' ),
 	);
 
+	$toc_args = array(
+		'tocTitle'     => __( 'Table of contents', 'APCom' ),
+		'commentTitle' => __( 'Comments', 'APCom' ),
+	);
+
 	if ( file_exists( $footer_scripts_path ) ) {
 		wp_register_script( 'apcom-app', $theme_uri . '/assets/js/app.min.js', array(), APCOM_VERSION, true );
 		wp_enqueue_script( 'apcom-app' );
 		wp_localize_script( 'apcom-app', 'color_scheme_vars', $color_scheme_vars );
 		wp_localize_script( 'apcom-app', 'date_warning', $date_warning );
+		wp_localize_script( 'apcom-app', 'toc_args', $toc_args );
 	}
 
 	if ( file_exists( $header_scripts_path ) ) {

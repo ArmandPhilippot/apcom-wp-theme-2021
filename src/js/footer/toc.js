@@ -68,7 +68,19 @@ class TableOfContent {
 	}
 
 	getHeadingList() {
-		return this.source.querySelectorAll(this.options.headings);
+		const allTitles = this.source.querySelectorAll(this.options.headings);
+		const titlesWithoutLinks = [...allTitles].filter(
+			title =>
+				!title.firstElementChild ||
+				'A' !== title.firstElementChild.tagName
+		);
+		const commentsTitle = document.getElementById('comments__title');
+
+		if (commentsTitle) {
+			titlesWithoutLinks.push(commentsTitle);
+		}
+
+		return titlesWithoutLinks;
 	}
 
 	createTitleMarkup() {
@@ -137,12 +149,21 @@ class TableOfContent {
 			}
 
 			markup += '<li>';
-			markup +=
-				'<a href="#' +
-				this.addSlug(headingList[i]) +
-				'">' +
-				headingList[i].innerText +
-				'</a>';
+			if ('comments__title' === headingList[i].id) {
+				markup +=
+					'<a href="#' +
+					this.addSlug(headingList[i]) +
+					'">' +
+					toc_args.commentTitle +
+					'</a>';
+			} else {
+				markup +=
+					'<a href="#' +
+					this.addSlug(headingList[i]) +
+					'">' +
+					headingList[i].innerText +
+					'</a>';
+			}
 
 			previousLevel = currentLevel;
 		}
@@ -185,4 +206,6 @@ class TableOfContent {
 
 const Minimalist_TOC = new TableOfContent();
 
-Minimalist_TOC.init('page__content', 'table-of-content');
+Minimalist_TOC.init('page__content', 'table-of-content', {
+	title: toc_args.tocTitle,
+});

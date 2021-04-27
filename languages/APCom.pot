@@ -118,43 +118,51 @@ msgstr ""
 msgid "For example, the subject may have evolved since the writing of the article or my opinion may have changed."
 msgstr ""
 
-#: functions.php:190
+#: functions.php:141
+msgid "Table of contents"
+msgstr ""
+
+#: functions.php:142, template-parts/main/articles-list.php:111, template-parts/main/author-articles.php:97, template-parts/main/page-header.php:60, template-parts/cpt/article/header.php:58, template-parts/cpt/project/header.php:58, template-parts/cpt/project/projects-list.php:65, template-parts/cpt/subject/content.php:181, template-parts/cpt/thematic/content.php:144
+msgid "Comments"
+msgstr ""
+
+#: functions.php:196
 msgid "Blog Sidebar - Left/First"
 msgstr ""
 
-#: functions.php:192
+#: functions.php:198
 msgid "Add widgets here to appear in your blog sidebar (first on mobile view, left on large screens)."
 msgstr ""
 
-#: functions.php:202
+#: functions.php:208
 msgid "Blog Sidebar - Right/Last"
 msgstr ""
 
-#: functions.php:204
+#: functions.php:210
 msgid "Add widgets here to appear in your blog sidebar(last on mobile view, right on large screens)."
 msgstr ""
 
-#: functions.php:214
+#: functions.php:220
 msgid "Articles & Pages Widgets"
 msgstr ""
 
-#: functions.php:216
+#: functions.php:222
 msgid "Add widgets here to appear below the articles and pages."
 msgstr ""
 
-#: functions.php:226
+#: functions.php:232
 msgid "CV Widgets"
 msgstr ""
 
-#: functions.php:228
+#: functions.php:234
 msgid "Add widgets here to appear below the CV page."
 msgstr ""
 
-#: functions.php:238
+#: functions.php:244
 msgid "Contact Widgets"
 msgstr ""
 
-#: functions.php:240
+#: functions.php:246
 msgid "Add widgets here to appear below the Contact page."
 msgstr ""
 
@@ -374,10 +382,6 @@ msgstr ""
 
 #: template-parts/main/articles-list.php:89, template-parts/main/articles-list.php:65, template-parts/main/articles-list.php:43, template-parts/main/author-articles.php:76
 msgid "Posted in"
-msgstr ""
-
-#: template-parts/main/articles-list.php:111, template-parts/main/author-articles.php:97, template-parts/main/page-header.php:60, template-parts/cpt/article/header.php:58, template-parts/cpt/project/header.php:58, template-parts/cpt/project/projects-list.php:65, template-parts/cpt/subject/content.php:181, template-parts/cpt/thematic/content.php:144
-msgid "Comments"
 msgstr ""
 
 #: template-parts/main/breadcrumb.php:12
