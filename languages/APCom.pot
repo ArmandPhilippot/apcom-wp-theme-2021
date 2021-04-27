@@ -321,6 +321,21 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
+#: inc/hooks.php:408
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: inc/hooks.php:406
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/hooks.php:404, template-parts/main/breadcrumb.php:71
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
 #: template-parts/footer/back-to-top.php:12
 msgid "Back to top"
 msgstr ""
@@ -367,11 +382,6 @@ msgstr ""
 
 #: template-parts/main/breadcrumb.php:12
 msgid "Home"
-msgstr ""
-
-#: template-parts/main/breadcrumb.php:71
-msgctxt "yearly archives date format"
-msgid "Y"
 msgstr ""
 
 #: template-parts/main/breadcrumb.php:72

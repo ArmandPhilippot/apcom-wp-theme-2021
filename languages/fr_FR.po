@@ -347,6 +347,21 @@ msgstr "Pagination"
 msgid "Leave a comment"
 msgstr "Laisser un commentaire"
 
+#: inc/hooks.php:408
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "j F Y"
+
+#: inc/hooks.php:406
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/hooks.php:404, template-parts/main/breadcrumb.php:71
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
 #: template-parts/footer/back-to-top.php:12
 msgid "Back to top"
 msgstr "Retour en haut de page"
@@ -420,11 +435,6 @@ msgstr "Commentaires"
 #: template-parts/main/breadcrumb.php:12
 msgid "Home"
 msgstr "Accueil"
-
-#: template-parts/main/breadcrumb.php:71
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr "Y"
 
 #: template-parts/main/breadcrumb.php:72
 msgctxt "monthly archives date format"

@@ -400,6 +400,12 @@ function apcom_archive_title( $title ) {
 		$title = post_type_archive_title( '', false );
 	} elseif ( is_tax() ) {
 		$title = single_term_title( '', false );
+	} elseif ( is_year() ) {
+		$title = ucfirst( get_the_date( _x( 'Y', 'yearly archives date format', 'APCom' ) ) );
+	} elseif ( is_month() ) {
+		$title = ucfirst( get_the_date( _x( 'F Y', 'monthly archives date format', 'APCom' ) ) );
+	} elseif ( is_day() ) {
+		$title = ucfirst( get_the_date( _x( 'F j, Y', 'daily archives date format', 'APCom' ) ) );
 	}
 
 	return $title;
