@@ -17,7 +17,7 @@
 /**
  * Currently theme version.
  */
-define( 'APCOM_VERSION', '0.0.1' );
+define( 'APCOM_VERSION', '1.0.0' );
 
 if ( ! function_exists( 'apcom_setup' ) ) {
 	/**
