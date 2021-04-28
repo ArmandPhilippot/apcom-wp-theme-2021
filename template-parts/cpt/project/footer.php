@@ -25,7 +25,7 @@ $apcom_article_subjects = get_post_meta( get_the_ID(), 'posts_in_subject' );
 					</a>
 				</dd>
 			</div>
-			<?php if ( $apcom_article_subjects ) { ?>
+			<?php if ( $apcom_article_subjects && is_array( $apcom_article_subjects[0] ) ) { ?>
 				<div class="meta__item meta__tags">
 					<dt class="meta__term">
 						<?php
