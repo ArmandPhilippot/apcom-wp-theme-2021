@@ -172,6 +172,10 @@
 				font-weight: 700;
 			}
 		}
+
+		.heading-warning {
+			color: cssVar(color-secondary);
+		}
 	}
 
 	&__footer {
