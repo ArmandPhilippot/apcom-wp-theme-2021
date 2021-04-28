@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.0...v1.0.1) (2021-04-28)
+
+
+### Bug Fixes
+
+* check if subjects exists before displaying them ([4ec1ef1](https://github.com/ArmandPhilippot/armandphilippot.com/commit/4ec1ef186789e635fa130e6299d382aaaf5397ca))
+
 ## [1.0.0](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v0.0.1...v1.0.0) (2021-04-27)
 
 
