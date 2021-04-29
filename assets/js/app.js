@@ -44,9 +44,7 @@ function addPrismClassesToCodeBlock() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  return addPrismClassesToCodeBlock();
-});
+document.addEventListener('DOMContentLoaded', addPrismClassesToCodeBlock());
 "use strict";
 
 /**
