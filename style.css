@@ -2410,13 +2410,13 @@ small {
 	color: var(--apcom-color-fg-inverted);
 	font-variant: small-caps;
 	margin: auto;
-	padding: var(--apcom-spacing-sm) var(--apcom-spacing-md);
+	padding: 1.25rem var(--apcom-spacing-md);
 	transform: skewX(-15deg);
 }
 
 .contact-form__btn:hover, .contact-form__btn:focus {
 	background-position: 50% 0;
-	padding: var(--apcom-spacing-sm) calc(var(--apcom-spacing-md) + 0.25rem);
+	padding: 1.25rem calc(var(--apcom-spacing-md) + 0.25rem);
 	transform: skewX(0deg);
 }
 
@@ -2435,12 +2435,24 @@ small {
 .contact-form__btn:active {
 	background-position: 0 0;
 	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-dark), 0.0625rem 0.0625rem 0 0.0625rem var(--apcom-color-shadow), 0 0 0 0 var(--apcom-color-shadow-darker), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
-	padding: var(--apcom-spacing-sm) var(--apcom-spacing-sm);
+	padding: 1.25rem var(--apcom-spacing-sm);
 	transform: skewX(0deg) translateX(0.1875rem) translateY(0.1875rem);
 }
 
 .contact-form__btn:active span {
 	transform: skewX(0deg) scale(1);
+}
+
+@media (any-pointer: fine) {
+	.contact-form__btn {
+		padding: var(--apcom-spacing-sm) var(--apcom-spacing-md);
+	}
+	.contact-form__btn:hover, .contact-form__btn:focus {
+		padding: var(--apcom-spacing-sm) calc(var(--apcom-spacing-md) + 0.25rem);
+	}
+	.contact-form__btn:active {
+		padding: var(--apcom-spacing-sm);
+	}
 }
 
 .contact-form__btn span {
@@ -2580,7 +2592,7 @@ small {
 	display: flex;
 	font-weight: 700;
 	justify-content: space-between;
-	padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
 	width: max-content;
@@ -2588,6 +2600,12 @@ small {
 
 .front-page .buttons-list a:focus {
 	outline: none;
+}
+
+@media (any-pointer: fine) {
+	.front-page .buttons-list a {
+		padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	}
 }
 
 .front-page .buttons-list a:hover, .front-page .buttons-list a:focus {
@@ -3103,7 +3121,7 @@ small {
 	display: flex;
 	font-weight: 700;
 	justify-content: space-between;
-	padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
 	width: max-content;
@@ -3111,6 +3129,12 @@ small {
 
 .comments__feed .feed__link:focus {
 	outline: none;
+}
+
+@media (any-pointer: fine) {
+	.comments__feed .feed__link {
+		padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	}
 }
 
 .comments__feed .feed__link:hover, .comments__feed .feed__link:focus {
@@ -3321,7 +3345,7 @@ small {
 	display: flex;
 	font-weight: 700;
 	justify-content: space-between;
-	padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
 	width: max-content;
@@ -3329,6 +3353,12 @@ small {
 
 .comment__edit a:focus, .comment__reply a:focus {
 	outline: none;
+}
+
+@media (any-pointer: fine) {
+	.comment__edit a, .comment__reply a {
+		padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	}
 }
 
 .comment__edit a:hover, .comment__edit a:focus, .comment__reply a:hover, .comment__reply a:focus {
@@ -3387,7 +3417,7 @@ small {
 	font-weight: 700;
 	justify-content: space-between;
 	margin: var(--apcom-spacing-sm) 0;
-	padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
 	width: max-content;
@@ -3395,6 +3425,12 @@ small {
 
 .comments__form #cancel-comment-reply-link:focus {
 	outline: none;
+}
+
+@media (any-pointer: fine) {
+	.comments__form #cancel-comment-reply-link {
+		padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	}
 }
 
 .comments__form #cancel-comment-reply-link:hover, .comments__form #cancel-comment-reply-link:focus {
@@ -3436,13 +3472,13 @@ small {
 	color: var(--apcom-color-fg-inverted);
 	font-variant: small-caps;
 	margin: auto;
-	padding: var(--apcom-spacing-sm) var(--apcom-spacing-md);
+	padding: 1.25rem var(--apcom-spacing-md);
 	transform: skewX(-15deg);
 }
 
 .comment-form__button:hover, .comment-form__button:focus {
 	background-position: 50% 0;
-	padding: var(--apcom-spacing-sm) calc(var(--apcom-spacing-md) + 0.25rem);
+	padding: 1.25rem calc(var(--apcom-spacing-md) + 0.25rem);
 	transform: skewX(0deg);
 }
 
@@ -3461,12 +3497,24 @@ small {
 .comment-form__button:active {
 	background-position: 0 0;
 	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-dark), 0.0625rem 0.0625rem 0 0.0625rem var(--apcom-color-shadow), 0 0 0 0 var(--apcom-color-shadow-darker), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
-	padding: var(--apcom-spacing-sm) var(--apcom-spacing-sm);
+	padding: 1.25rem var(--apcom-spacing-sm);
 	transform: skewX(0deg) translateX(0.1875rem) translateY(0.1875rem);
 }
 
 .comment-form__button:active span {
 	transform: skewX(0deg) scale(1);
+}
+
+@media (any-pointer: fine) {
+	.comment-form__button {
+		padding: var(--apcom-spacing-sm) var(--apcom-spacing-md);
+	}
+	.comment-form__button:hover, .comment-form__button:focus {
+		padding: var(--apcom-spacing-sm) calc(var(--apcom-spacing-md) + 0.25rem);
+	}
+	.comment-form__button:active {
+		padding: var(--apcom-spacing-sm);
+	}
 }
 
 .comment-form__button span {
@@ -3826,7 +3874,7 @@ small {
 	display: flex;
 	font-weight: 700;
 	justify-content: space-between;
-	padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
 	width: max-content;
@@ -3834,6 +3882,12 @@ small {
 
 .more-link:focus {
 	outline: none;
+}
+
+@media (any-pointer: fine) {
+	.more-link {
+		padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	}
 }
 
 .more-link:hover, .more-link:focus {
@@ -3905,7 +3959,7 @@ small {
 	display: flex;
 	font-weight: 700;
 	justify-content: space-between;
-	padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	padding: var(--apcom-spacing-sm) 1.25rem;
 	position: relative;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
@@ -3914,6 +3968,12 @@ small {
 
 .pagination a.page-numbers:focus {
 	outline: none;
+}
+
+@media (any-pointer: fine) {
+	.pagination a.page-numbers {
+		padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	}
 }
 
 .pagination a.page-numbers:hover, .pagination a.page-numbers:focus {
@@ -4270,13 +4330,13 @@ small {
 		box-shadow: 0 0 0 0.125rem var(--apcom-color-primary), 0.125rem 0.125rem 0 0.125rem var(--apcom-color-shadow), 0.1875rem 0.1875rem 0.1875rem 0.125rem var(--apcom-color-shadow-darker), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
 		color: var(--apcom-color-fg-inverted);
 		font-variant: small-caps;
-		padding: var(--apcom-spacing-sm) var(--apcom-spacing-md);
+		padding: 1.25rem var(--apcom-spacing-md);
 		position: relative;
 		transform: skewX(-15deg);
 	}
 	.tools .search-form__btn:hover, .tools .search-form__btn:focus {
 		background-position: 50% 0;
-		padding: var(--apcom-spacing-sm) calc(var(--apcom-spacing-md) + 0.25rem);
+		padding: 1.25rem calc(var(--apcom-spacing-md) + 0.25rem);
 		transform: skewX(0deg);
 	}
 	.tools .search-form__btn:hover span, .tools .search-form__btn:focus span {
@@ -4291,12 +4351,27 @@ small {
 	.tools .search-form__btn:active {
 		background-position: 0 0;
 		box-shadow: 0 0 0 0.125rem var(--apcom-color-primary-dark), 0.0625rem 0.0625rem 0 0.0625rem var(--apcom-color-shadow), 0 0 0 0 var(--apcom-color-shadow-darker), inset 0 0 0 0.125rem var(--apcom-color-shadow-lighter), inset 0 -0.625rem 1rem 0.375rem rgba(0, 0, 0, 0.13), inset 0 0.5625rem 2rem 0.25rem rgba(255, 255, 255, 0.13);
-		padding: var(--apcom-spacing-sm) var(--apcom-spacing-sm);
+		padding: 1.25rem var(--apcom-spacing-sm);
 		transform: skewX(0deg) translateX(0.1875rem) translateY(0.1875rem);
 	}
 	.tools .search-form__btn:active span {
 		transform: skewX(0deg) scale(1);
 	}
+}
+
+@media only screen and (max-width: calc(80em - 1px)) and (any-pointer: fine) {
+	.tools .search-form__btn {
+		padding: var(--apcom-spacing-sm) var(--apcom-spacing-md);
+	}
+	.tools .search-form__btn:hover, .tools .search-form__btn:focus {
+		padding: var(--apcom-spacing-sm) calc(var(--apcom-spacing-md) + 0.25rem);
+	}
+	.tools .search-form__btn:active {
+		padding: var(--apcom-spacing-sm);
+	}
+}
+
+@media only screen and (max-width: calc(80em - 1px)) {
 	.tools .search-form__btn span {
 		transform: skewX(15deg);
 		transition: all 0.3s ease-in-out 0s;
