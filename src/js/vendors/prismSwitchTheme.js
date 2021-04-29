@@ -18,6 +18,7 @@ Prism.plugins.toolbar.registerButton('switch-theme', function (env) {
 
 	button.classList.add('prism-theme__btn');
 	button.type = 'button';
+	button.title = prism_vars.title;
 
 	lightSpanTxt.innerHTML = lightThemeTxt;
 	lightSpanIcon.innerHTML = moonIcon;

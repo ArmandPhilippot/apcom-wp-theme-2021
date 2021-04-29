@@ -163,6 +163,7 @@ function createSwitchThemeButton() {
   var switchButtonIcon = '';
   var switchButtonLabel = '';
   toggleDiv.classList.add('tools__item', 'themes');
+  toggleDiv.title = color_scheme_vars.title;
 
   if (preferredColorScheme === 'dark') {
     switchButtonLabel = getLightThemeLabel();

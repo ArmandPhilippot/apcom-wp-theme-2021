@@ -123,6 +123,7 @@ function apcom_enqueue_scripts() {
 	$color_scheme_vars = array(
 		'lightThemeText' => __( 'Switch to dark theme', 'APCom' ),
 		'darkThemeText'  => __( 'Switch to light theme', 'APCom' ),
+		'title'          => __( 'Switch theme', 'APCom' ),
 	);
 
 	$date_warning = array(

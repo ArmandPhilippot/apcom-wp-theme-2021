@@ -101,68 +101,72 @@ msgstr ""
 msgid "Switch to light theme"
 msgstr ""
 
+#: functions.php:126
+msgid "Switch theme"
+msgstr ""
+
 #. translators: %1$s Open HTML element. %2$s Closing HTML element.
-#: functions.php:131
+#: functions.php:132
 msgid "%1$sWarning:%2$s"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:136
 msgid "This content has not been updated for over a year."
 msgstr ""
 
-#: functions.php:136
+#: functions.php:137
 msgid "The content may no longer be valid."
 msgstr ""
 
-#: functions.php:137
+#: functions.php:138
 msgid "For example, the subject may have evolved since the writing of the article or my opinion may have changed."
 msgstr ""
 
-#: functions.php:141
+#: functions.php:142
 msgid "Table of contents"
 msgstr ""
 
-#: functions.php:142, template-parts/main/articles-list.php:111, template-parts/main/author-articles.php:97, template-parts/main/page-header.php:60, template-parts/cpt/article/header.php:58, template-parts/cpt/project/header.php:58, template-parts/cpt/project/projects-list.php:65, template-parts/cpt/subject/content.php:181, template-parts/cpt/thematic/content.php:144
+#: functions.php:143, template-parts/main/articles-list.php:111, template-parts/main/author-articles.php:97, template-parts/main/page-header.php:60, template-parts/cpt/article/header.php:58, template-parts/cpt/project/header.php:58, template-parts/cpt/project/projects-list.php:65, template-parts/cpt/subject/content.php:181, template-parts/cpt/thematic/content.php:144
 msgid "Comments"
 msgstr ""
 
-#: functions.php:196
+#: functions.php:197
 msgid "Blog Sidebar - Left/First"
 msgstr ""
 
-#: functions.php:198
+#: functions.php:199
 msgid "Add widgets here to appear in your blog sidebar (first on mobile view, left on large screens)."
 msgstr ""
 
-#: functions.php:208
+#: functions.php:209
 msgid "Blog Sidebar - Right/Last"
 msgstr ""
 
-#: functions.php:210
+#: functions.php:211
 msgid "Add widgets here to appear in your blog sidebar(last on mobile view, right on large screens)."
 msgstr ""
 
-#: functions.php:220
+#: functions.php:221
 msgid "Articles & Pages Widgets"
 msgstr ""
 
-#: functions.php:222
+#: functions.php:223
 msgid "Add widgets here to appear below the articles and pages."
 msgstr ""
 
-#: functions.php:232
+#: functions.php:233
 msgid "CV Widgets"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:235
 msgid "Add widgets here to appear below the CV page."
 msgstr ""
 
-#: functions.php:244
+#: functions.php:245
 msgid "Contact Widgets"
 msgstr ""
 
-#: functions.php:246
+#: functions.php:247
 msgid "Add widgets here to appear below the Contact page."
 msgstr ""
 
@@ -367,6 +371,10 @@ msgstr ""
 
 #: template-parts/header/main-nav.php:10
 msgid "Main"
+msgstr ""
+
+#: template-parts/header/tools.php:11
+msgid "Search"
 msgstr ""
 
 #: template-parts/header/tools.php:17
