@@ -1362,7 +1362,7 @@ figcaption {
 	font-weight: 700;
 	margin: var(--apcom-spacing-sm) auto 0;
 	text-align: center;
-	width: max-content;
+	width: auto;
 }
 
 a:hover img, a:focus img {
