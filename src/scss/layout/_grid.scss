@@ -96,8 +96,12 @@
 
 		@include dimensions("xl") {
 			grid-template-columns:
-				minmax(0, 1fr) minmax(0, 80ch) 80ch minmax(0, 80ch)
+				minmax(0, 1fr) minmax(0, 80ch) minmax(50ch, 80ch) minmax(
+					0,
+					80ch
+				)
 				minmax(0, 1fr);
+			column-gap: cssVar(spacing-2xl);
 		}
 
 		@include dimensions("2xl") {
