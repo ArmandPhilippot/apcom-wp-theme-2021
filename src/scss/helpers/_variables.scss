@@ -31,8 +31,14 @@ $breakpoints: (
 //=============================================================================
 // Fonts
 //=============================================================================
-$font-family_primary: (Arial, "Liberation Sans", sans-serif);
-$font-family_secondary: ("Kanit", Arial, "Liberation Sans", sans-serif);
+$font-family_primary: ("Inter", "Roboto", "Liberation Sans", Arial, sans-serif);
+$font-family_secondary: (
+	"Kanit",
+	"Roboto",
+	"Liberation Sans",
+	Arial,
+	sans-serif
+);
 $font-family_mono: ("Courier New", Courier, monospace);
 
 $line-height: $golden-number;
