@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.3...v1.0.4) (2021-04-29)
+
+
+### Bug Fixes
+
+* submit button alignment ([c028a8d](https://github.com/ArmandPhilippot/armandphilippot.com/commit/c028a8d90b602ede7d9d92bd571ed830b3a6d23a))
+
 ### [1.0.3](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.2...v1.0.3) (2021-04-29)
 
 
