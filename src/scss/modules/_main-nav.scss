@@ -26,8 +26,16 @@
 		overflow-y: auto;
 
 		@include media("screen") {
-			@include dimensions("lg") {
+			@include dimensions("sm") {
+				gap: cssVar(spacing-sm);
 				overflow: initial;
+				padding: 0 cssVar(spacing-md);
+			}
+
+			@include dimensions("lg") {
+				gap: cssVar(spacing-2xs);
+				overflow: initial;
+				padding: 0;
 			}
 		}
 	}
