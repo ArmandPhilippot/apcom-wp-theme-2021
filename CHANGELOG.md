@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.2...v1.0.3) (2021-04-29)
+
+
+### Bug Fixes
+
+* **buttons:** prevent overflow if the text is larger than screen ([1c882e0](https://github.com/ArmandPhilippot/armandphilippot.com/commit/1c882e00811ff5ee187e28948f11be1c185cc1b8))
+
 ### [1.0.2](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.1...v1.0.2) (2021-04-29)
 
 
