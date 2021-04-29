@@ -65,7 +65,7 @@
 				)
 				0 100% / 100% 200% no-repeat;
 		color: cssVar(color-fg-inverted);
-		font-size: cssVar(font-size-md);
+		font-size: cssVar(font-size-lg);
 		font-variant: small-caps;
 		font-weight: 700;
 		text-decoration: none;
@@ -89,7 +89,6 @@
 
 		@include media("screen") {
 			@include dimensions("sm") {
-				font-size: cssVar(font-size-lg);
 				height: pxToRem(70);
 			}
 

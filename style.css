@@ -3601,7 +3601,7 @@ small {
 	color: var(--apcom-color-fg-inverted);
 	display: flex;
 	flex-flow: row wrap;
-	font-size: var(--apcom-font-size-md);
+	font-size: var(--apcom-font-size-lg);
 	font-variant: small-caps;
 	font-weight: 700;
 	height: 3.75rem;
@@ -3630,7 +3630,6 @@ small {
 @media only screen and (min-width: 48em) {
 	.main-nav__link,
 	.main-nav__list--page-menu a {
-		font-size: var(--apcom-font-size-lg);
 		height: 4.375rem;
 	}
 }
