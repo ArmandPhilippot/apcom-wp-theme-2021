@@ -1,8 +1,8 @@
 @mixin buttonBase {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	justify-content: space-between;
-	width: max-content;
+	width: auto;
 	cursor: pointer;
 	font-weight: 700;
 	text-decoration: none;

@@ -9,7 +9,8 @@
 			&::before {
 				content: "";
 				background: url("assets/images/feed.svg");
-				background-size: cover;
+				background-repeat: no-repeat;
+				background-size: 100%;
 				width: pxToRem(30);
 				height: pxToRem(30);
 				margin-right: cssVar(spacing-sm);
