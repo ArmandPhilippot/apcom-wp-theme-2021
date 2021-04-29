@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.6](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.5...v1.0.6) (2021-04-29)
+
+
+### Bug Fixes
+
+* rename Inter font and add extra letter spacing to baseline ([befc835](https://github.com/ArmandPhilippot/armandphilippot.com/commit/befc8359d5900f25012a08d59fb95b8d1f3353cd))
+
 ### [1.0.5](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.4...v1.0.5) (2021-04-29)
 
 
