@@ -20,6 +20,10 @@
 		position: relative;
 
 		@include media("screen") {
+			@include dimensions("sm") {
+				column-gap: cssVar(spacing-lg);
+			}
+
 			@include dimensions("lg") {
 				padding: cssVar(spacing-2xl) 0;
 				grid-template-columns: minmax(0, 1fr) minmax(auto, 80ch) minmax(
