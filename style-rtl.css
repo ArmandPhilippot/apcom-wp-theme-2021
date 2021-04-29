@@ -622,7 +622,7 @@ template {
 	font-family: "Inter";
 	font-style: oblique 0deg 10deg;
 	font-weight: 100 900;
-	src: url("assets/fonts/Inter/Inter.var.woff2?v=3.18") format("woff2");
+	src: url("assets/fonts/Inter/Inter.woff2?v=3.18") format("woff2");
 }
 
 :root {
@@ -1867,6 +1867,7 @@ small {
 	font-family: var(--apcom-font-family-secondary);
 	font-size: var(--apcom-font-size-md);
 	font-weight: 400;
+	letter-spacing: 0.0625rem;
 	margin: 0;
 	text-transform: uppercase;
 }

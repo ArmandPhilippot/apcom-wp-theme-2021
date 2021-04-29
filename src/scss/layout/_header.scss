@@ -140,6 +140,7 @@
 		font-family: cssVar(font-family-secondary);
 		font-size: cssVar(font-size-md);
 		font-weight: 400;
+		letter-spacing: pxToRem(1);
 		text-transform: uppercase;
 		margin: 0;
 	}
