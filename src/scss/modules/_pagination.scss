@@ -43,9 +43,13 @@
 		background: cssVar(color-bg);
 		border: pxToRem(2) solid cssVar(color-primary);
 		text-decoration: none;
-		padding: cssVar(spacing-xs) cssVar(spacing-sm);
 		width: max-content;
 		position: relative;
+		padding: cssVar(spacing-sm) pxToRem(20);
+
+		@include pointer("fine") {
+			padding: cssVar(spacing-xs) cssVar(spacing-sm);
+		}
 	}
 
 	.current {
