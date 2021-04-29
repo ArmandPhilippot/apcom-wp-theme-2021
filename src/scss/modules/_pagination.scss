@@ -4,6 +4,10 @@
 	ul.page-numbers {
 		@include flexList;
 
+		li {
+			margin-bottom: cssVar(spacing-xs);
+		}
+
 		.page-numbers {
 			margin-left: pxToRem(-1);
 		}

@@ -3885,6 +3885,10 @@ small {
 	margin-bottom: 0;
 }
 
+.pagination ul.page-numbers li {
+	margin-bottom: var(--apcom-spacing-xs);
+}
+
 .pagination ul.page-numbers .page-numbers {
 	margin-right: -0.0625rem;
 }
