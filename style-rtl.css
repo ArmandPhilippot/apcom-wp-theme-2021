@@ -936,12 +936,12 @@ button,
 input[type="submit"] {
 	align-items: center;
 	cursor: pointer;
-	display: flex;
+	display: inline-flex;
 	font-weight: 700;
 	justify-content: space-between;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
-	width: max-content;
+	width: auto;
 }
 
 button:focus,
@@ -1753,6 +1753,14 @@ small {
 	}
 }
 
+.category .page__meta {
+	grid-area: unset;
+}
+
+.category .page__meta-feed {
+	grid-area: page__meta;
+}
+
 .header {
 	background: var(--apcom-color-bg-secondary);
 	padding: var(--apcom-spacing-xl) 0;
@@ -1995,8 +2003,78 @@ small {
 	z-index: -1;
 }
 
+@media only screen and (min-width: 48em) {
+	.page__meta-feed {
+		align-items: center;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+}
+
 .page__meta {
 	margin-bottom: 0;
+}
+
+.page__feed-link {
+	align-items: center;
+	background: var(--apcom-color-bg);
+	border: 0.125rem solid var(--apcom-color-primary);
+	box-shadow: -0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
+	cursor: pointer;
+	display: inline-flex;
+	font-weight: 700;
+	justify-content: space-between;
+	margin-top: var(--apcom-spacing-md);
+	padding: var(--apcom-spacing-sm) 1.25rem;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out 0s;
+	width: auto;
+}
+
+.page__feed-link:focus {
+	outline: none;
+}
+
+@media (any-pointer: fine) {
+	.page__feed-link {
+		padding: var(--apcom-spacing-xs) var(--apcom-spacing-sm);
+	}
+}
+
+.page__feed-link:hover, .page__feed-link:focus {
+	border-color: var(--apcom-color-primary-light);
+	box-shadow: -0.4375rem 0.4375rem 0 0 var(--apcom-color-shadow);
+	color: var(--apcom-color-primary-light);
+	transform: translateX(0.1875rem) translateY(-0.1875rem);
+}
+
+.page__feed-link:focus {
+	text-decoration: underline;
+}
+
+.page__feed-link:active {
+	border-color: var(--apcom-color-primary-dark);
+	box-shadow: 0 0 0 0 var(--apcom-color-shadow);
+	color: var(--apcom-color-primary-dark);
+	text-decoration: none;
+	transform: translateX(-0.25rem) translateY(0.25rem);
+}
+
+@media only screen and (min-width: 48em) {
+	.page__feed-link {
+		margin-top: 0;
+	}
+}
+
+.page__feed-link::before {
+	background: url("assets/images/feed.svg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	content: "";
+	height: 1.875rem;
+	margin-left: var(--apcom-spacing-sm);
+	width: 1.875rem;
 }
 
 .page__introduction {
@@ -2585,13 +2663,13 @@ small {
 	border: 0.125rem solid var(--apcom-color-primary);
 	box-shadow: -0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
-	display: flex;
+	display: inline-flex;
 	font-weight: 700;
 	justify-content: space-between;
 	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
-	width: max-content;
+	width: auto;
 }
 
 .front-page .buttons-list a:focus {
@@ -2733,14 +2811,14 @@ small {
 	border-radius: 50%;
 	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary), 0 0.125rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
 	cursor: pointer;
-	display: flex;
+	display: inline-flex;
 	font-weight: 700;
 	height: 3.125rem;
 	justify-content: space-between;
 	justify-content: center;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
-	width: max-content;
+	width: auto;
 	width: 3.125rem;
 }
 
@@ -3114,13 +3192,13 @@ small {
 	border: 0.125rem solid var(--apcom-color-primary);
 	box-shadow: -0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
-	display: flex;
+	display: inline-flex;
 	font-weight: 700;
 	justify-content: space-between;
 	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
-	width: max-content;
+	width: auto;
 }
 
 .comments__feed .feed__link:focus {
@@ -3154,7 +3232,8 @@ small {
 
 .comments__feed .feed__link::before {
 	background: url("assets/images/feed.svg");
-	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: 100%;
 	content: "";
 	height: 1.875rem;
 	margin-left: var(--apcom-spacing-sm);
@@ -3338,13 +3417,13 @@ small {
 	border: 0.125rem solid var(--apcom-color-primary);
 	box-shadow: -0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
-	display: flex;
+	display: inline-flex;
 	font-weight: 700;
 	justify-content: space-between;
 	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
-	width: max-content;
+	width: auto;
 }
 
 .comment__edit a:focus, .comment__reply a:focus {
@@ -3408,7 +3487,7 @@ small {
 	border: 0.125rem solid var(--apcom-color-primary);
 	box-shadow: -0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
-	display: flex;
+	display: inline-flex;
 	font-family: var(--apcom-font-family-primary);
 	font-weight: 700;
 	justify-content: space-between;
@@ -3416,7 +3495,7 @@ small {
 	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
-	width: max-content;
+	width: auto;
 }
 
 .comments__form #cancel-comment-reply-link:focus {
@@ -3867,13 +3946,13 @@ small {
 	border: 0.125rem solid var(--apcom-color-primary);
 	box-shadow: -0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
-	display: flex;
+	display: inline-flex;
 	font-weight: 700;
 	justify-content: space-between;
 	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
-	width: max-content;
+	width: auto;
 }
 
 .more-link:focus {
@@ -3952,14 +4031,14 @@ small {
 	border: 0.125rem solid var(--apcom-color-primary);
 	box-shadow: -0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
-	display: flex;
+	display: inline-flex;
 	font-weight: 700;
 	justify-content: space-between;
 	padding: var(--apcom-spacing-sm) 1.25rem;
 	position: relative;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
-	width: max-content;
+	width: auto;
 }
 
 .pagination a.page-numbers:focus {
@@ -4206,14 +4285,14 @@ small {
 	border-radius: 50%;
 	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary), 0 0.125rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
 	cursor: pointer;
-	display: flex;
+	display: inline-flex;
 	font-weight: 700;
 	height: 2.5rem;
 	justify-content: space-between;
 	justify-content: center;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
-	width: max-content;
+	width: auto;
 	width: 2.5rem;
 }
 

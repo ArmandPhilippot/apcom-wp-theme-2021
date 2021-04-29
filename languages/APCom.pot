@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: archive-project.php:25, archive.php:25, category.php:27, index.php:25, search.php:28, tag.php:26
+#: archive-project.php:25, archive.php:25, category.php:28, index.php:25, search.php:28, tag.php:26
 msgid "Total"
 msgstr ""
 
@@ -32,7 +32,7 @@ msgstr[1] ""
 #. translators: %s number of posts.
 #. translators: %s number of posts.
 #. translators: %s number of posts.
-#: archive.php:31, category.php:33, index.php:31, search.php:34, tag.php:32
+#: archive.php:31, category.php:34, index.php:31, search.php:34, tag.php:32
 msgid "%s article"
 msgid_plural "%s articles"
 msgstr[0] ""
@@ -50,6 +50,11 @@ msgstr ""
 #: author.php:53
 msgctxt "username"
 msgid "%s's articles"
+msgstr ""
+
+#. translators: %s the category name.
+#: category.php:52
+msgid "Subscribe to %s"
 msgstr ""
 
 #. translators: 1: number of comments, 2: post title.
@@ -326,29 +331,29 @@ msgstr ""
 
 #. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
 #. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
-#: inc/hooks.php:208, inc/hooks.php:235
+#: inc/hooks.php:212, inc/hooks.php:239
 msgid "Continue reading %1$s%2$s%3$s"
 msgstr ""
 
-#: inc/hooks.php:259
+#: inc/hooks.php:263
 msgid "Pagination"
 msgstr ""
 
-#: inc/hooks.php:277
+#: inc/hooks.php:281
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/hooks.php:408
+#: inc/hooks.php:412
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/hooks.php:406
+#: inc/hooks.php:410
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/hooks.php:404, template-parts/main/breadcrumb.php:71
+#: inc/hooks.php:408, template-parts/main/breadcrumb.php:71
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""

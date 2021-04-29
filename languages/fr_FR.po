@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: archive-project.php:25, archive.php:25, category.php:27, index.php:25,
+#: archive-project.php:25, archive.php:25, category.php:28, index.php:25,
 #: search.php:28, tag.php:26
 msgid "Total"
 msgstr "Total"
@@ -40,7 +40,7 @@ msgstr[1] "%s projets"
 #. translators: %s number of posts.
 #. translators: %s number of posts.
 #. translators: %s number of posts.
-#: archive.php:31, category.php:33, index.php:31, search.php:34, tag.php:32
+#: archive.php:31, category.php:34, index.php:31, search.php:34, tag.php:32
 msgid "%s article"
 msgid_plural "%s articles"
 msgstr[0] "%s article"
@@ -59,6 +59,11 @@ msgstr "Présentation"
 msgctxt "username"
 msgid "%s's articles"
 msgstr "Les articles de %s"
+
+#. translators: %s the category name.
+#: category.php:52
+msgid "Subscribe to %s"
+msgstr "S'abonner à %s"
 
 #. translators: 1: number of comments, 2: post title.
 #: comments.php:39
@@ -359,29 +364,29 @@ msgstr "Environ %1$s mots lus à une vitesse de %2$s mots par minute."
 
 #. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
 #. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
-#: inc/hooks.php:208, inc/hooks.php:235
+#: inc/hooks.php:212, inc/hooks.php:239
 msgid "Continue reading %1$s%2$s%3$s"
 msgstr "Lire la suite %1$sde %2$s%3$s"
 
-#: inc/hooks.php:259
+#: inc/hooks.php:263
 msgid "Pagination"
 msgstr "Pagination"
 
-#: inc/hooks.php:277
+#: inc/hooks.php:281
 msgid "Leave a comment"
 msgstr "Laisser un commentaire"
 
-#: inc/hooks.php:408
+#: inc/hooks.php:412
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "j F Y"
 
-#: inc/hooks.php:406
+#: inc/hooks.php:410
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
 
-#: inc/hooks.php:404, template-parts/main/breadcrumb.php:71
+#: inc/hooks.php:408, template-parts/main/breadcrumb.php:71
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"

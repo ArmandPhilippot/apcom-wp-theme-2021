@@ -121,8 +121,42 @@
 		}
 	}
 
+	&__meta-feed {
+		@include media("screen") {
+			@include dimensions("sm") {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+	}
+
 	&__meta {
 		margin-bottom: 0;
+	}
+
+	&__feed-link {
+		@include buttonBase;
+		@include buttonStyle2;
+
+		margin-top: cssVar(spacing-md);
+
+		@include media("screen") {
+			@include dimensions("sm") {
+				margin-top: 0;
+			}
+		}
+
+		&::before {
+			content: "";
+			background: url("assets/images/feed.svg");
+			background-repeat: no-repeat;
+			background-size: 100%;
+			width: pxToRem(30);
+			height: pxToRem(30);
+			margin-right: cssVar(spacing-sm);
+		}
 	}
 
 	&__introduction {

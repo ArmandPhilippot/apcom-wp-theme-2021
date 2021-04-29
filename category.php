@@ -22,27 +22,40 @@ if ( have_posts() ) {
 			$apcom_published_posts_number = get_category( $apcom_category_id )->count;
 			if ( $apcom_published_posts_number ) {
 				?>
-				<dl class="page__meta meta">
-					<div class="meta__item meta__item--has-icon meta__articles">
-						<dt class="meta__term"><?php esc_html_e( 'Total', 'APCom' ); ?></dt>
-						<dd class="meta__description">
+				<div class="page__meta-feed">
+					<dl class="page__meta meta">
+						<div class="meta__item meta__item--has-icon meta__articles">
+							<dt class="meta__term"><?php esc_html_e( 'Total', 'APCom' ); ?></dt>
+							<dd class="meta__description">
+								<?php
+								printf(
+									esc_html(
+										// translators: %s number of posts.
+										_n(
+											'%s article',
+											'%s articles',
+											$apcom_published_posts_number,
+											'APCom'
+										)
+									),
+									esc_html( $apcom_published_posts_number )
+								);
+								?>
+							</dd>
+						</div>
+					</dl>
+					<div class="page__feed">
+						<a href="<?php echo esc_url( get_category_feed_link( $apcom_category_id ) ); ?>" class="page__feed-link">
 							<?php
 							printf(
-								esc_html(
-									// translators: %s number of posts.
-									_n(
-										'%s article',
-										'%s articles',
-										$apcom_published_posts_number,
-										'APCom'
-									)
-								),
-								esc_html( $apcom_published_posts_number )
+								// translators: %s the category name.
+								esc_html__( 'Subscribe to %s', 'APCom' ),
+								esc_html( $apcom_current_category )
 							);
 							?>
-						</dd>
+						</a>
 					</div>
-				</dl>
+				</div>
 				<?php
 			}
 			if ( category_description() ) {

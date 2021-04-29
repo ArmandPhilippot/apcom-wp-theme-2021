@@ -70,6 +70,10 @@ function apcom_body_class( $classes ) {
 		$classes[] = 'author';
 	}
 
+	if ( is_category() ) {
+		$classes[] = 'category';
+	}
+
 	if ( is_page_template() ) {
 		$template_slug  = get_page_template_slug( $post_id );
 		$template_parts = explode( '/', $template_slug );

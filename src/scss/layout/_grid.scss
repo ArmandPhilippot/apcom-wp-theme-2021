@@ -300,3 +300,15 @@
 		}
 	}
 }
+
+.category {
+	.page {
+		&__meta {
+			grid-area: unset;
+		}
+
+		&__meta-feed {
+			grid-area: page__meta;
+		}
+	}
+}
