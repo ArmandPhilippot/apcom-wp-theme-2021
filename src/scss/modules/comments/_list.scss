@@ -145,7 +145,7 @@
 		}
 
 		&__name {
-			font-weight: 700;
+			font-weight: 600;
 		}
 
 		&__post {
@@ -154,7 +154,6 @@
 				pxToRem(2) pxToRem(2) 0 0 cssVar(color-shadow-dark);
 			color: cssVar(color-fg-inverted);
 			font-size: cssVar(font-size-sm);
-			font-variant: small-caps;
 			font-weight: 600;
 			padding: pxToRem(3) cssVar(spacing-3xs);
 			width: max-content;

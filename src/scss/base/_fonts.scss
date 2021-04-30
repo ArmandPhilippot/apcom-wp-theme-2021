@@ -168,6 +168,55 @@
 	src: url("assets/fonts/Inter/Inter.woff2?v=3.18") format("woff2");
 }
 
+@font-face {
+	font-family: "Cousine";
+	src: url("assets/fonts/Cousine/Cousine-Bold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Cousine";
+	src: url("assets/fonts/Cousine/Cousine-BoldItalic.woff2") format("woff2");
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Cousine";
+	src: url("assets/fonts/Cousine/Cousine-Italic.woff2") format("woff2");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Cousine";
+	src: url("assets/fonts/Cousine/Cousine-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "JetBrainsMono";
+	font-weight: 100 900;
+	font-display: swap;
+	font-style: normal;
+	src: url("assets/fonts/JetBrainsMono/JetBrainsMono.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "JetBrainsMono";
+	font-weight: 100 900;
+	font-display: swap;
+	font-style: italic;
+	src: url("assets/fonts/JetBrainsMono/JetBrainsMono-Italic.woff2")
+		format("woff2");
+}
+
 @include declareCssVars(
 	(
 		font-family-primary: #{$font-family_primary},

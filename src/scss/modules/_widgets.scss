@@ -59,7 +59,7 @@
 		caption {
 			color: cssVar(color-fg-tertiary);
 			font-variant: small-caps;
-			font-weight: 700;
+			font-weight: 600;
 			margin-bottom: cssVar(spacing-sm);
 		}
 	}
@@ -69,7 +69,7 @@
 			li {
 				&::before {
 					content: "#";
-					font-weight: 700;
+					font-weight: 500;
 				}
 			}
 		}
@@ -132,6 +132,12 @@
 		}
 	}
 
+	.msbwidget {
+		&__link {
+			font-weight: 600;
+		}
+	}
+
 	.mslwidget {
 		&__link {
 			&:hover,
@@ -157,15 +163,25 @@
 		}
 	}
 
-	.lup__item {
-		margin-bottom: cssVar(spacing-md);
+	.lup {
+		&__item {
+			margin-bottom: cssVar(spacing-md);
+		}
+
+		&__footer {
+			margin-top: cssVar(spacing-3xs);
+		}
+
+		&__term {
+			font-weight: 400;
+		}
 	}
 
 	@include media("screen") {
 		@include dimensions("lg") {
 			&.toc__wrapper {
 				font-size: cssVar(font-size-sm);
-				font-weight: 700;
+				font-weight: 600;
 
 				ol {
 					li {

@@ -625,10 +625,58 @@ template {
 	src: url("assets/fonts/Inter/Inter.woff2?v=3.18") format("woff2");
 }
 
+@font-face {
+	font-display: swap;
+	font-family: "Cousine";
+	font-style: normal;
+	font-weight: 600;
+	src: url("assets/fonts/Cousine/Cousine-Bold.woff2") format("woff2");
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Cousine";
+	font-style: italic;
+	font-weight: 600;
+	src: url("assets/fonts/Cousine/Cousine-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Cousine";
+	font-style: italic;
+	font-weight: normal;
+	src: url("assets/fonts/Cousine/Cousine-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Cousine";
+	font-style: normal;
+	font-weight: normal;
+	src: url("assets/fonts/Cousine/Cousine-Regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "JetBrainsMono";
+	font-style: normal;
+	font-weight: 100 900;
+	src: url("assets/fonts/JetBrainsMono/JetBrainsMono.woff2") format("woff2");
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "JetBrainsMono";
+	font-style: italic;
+	font-weight: 100 900;
+	src: url("assets/fonts/JetBrainsMono/JetBrainsMono-Italic.woff2") format("woff2");
+}
+
 :root {
-	--apcom-font-family-primary: Inter, Roboto, Liberation Sans, Arial, sans-serif;
-	--apcom-font-family-secondary: Kanit, Roboto, Liberation Sans, Arial, sans-serif;
-	--apcom-font-family-mono: Courier New, Courier, monospace;
+	--apcom-font-family-primary: Inter, Liberation Sans, Arial, sans-serif;
+	--apcom-font-family-secondary: Kanit, Liberation Sans, Arial, sans-serif;
+	--apcom-font-family-mono: Cousine, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
 	--apcom-font-size-sm: clamp(0.83333rem, calc( 0.83333rem + (100vw - 20rem) / (1280 - 320)), 0.83333rem * 2);
 	--apcom-font-size-md: clamp(1rem, calc( 1rem + (100vw - 20rem) / (1280 - 320)), 1rem * 2);
 	--apcom-font-size-lg: clamp(1.2rem, calc( 1.2rem + (100vw - 20rem) / (1280 - 320)), 1.2rem * 2);
@@ -718,7 +766,7 @@ body {
 	color: var(--apcom-color-primary);
 	display: block;
 	font-size: var(--apcom-font-size-md);
-	font-weight: 700;
+	font-weight: 600;
 	height: auto;
 	left: 0;
 	padding: var(--apcom-spacing-sm) var(--apcom-spacing-md);
@@ -931,7 +979,7 @@ input[type="submit"] {
 	align-items: center;
 	cursor: pointer;
 	display: inline-flex;
-	font-weight: 700;
+	font-weight: 600;
 	justify-content: space-between;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out 0s;
@@ -1305,7 +1353,7 @@ ol li ol > li::before {
 }
 
 dt {
-	font-weight: 700;
+	font-weight: 600;
 }
 
 @media only screen and (min-width: 35.5em) {
@@ -1349,7 +1397,7 @@ figcaption {
 	color: var(--apcom-color-fg-tertiary);
 	display: block;
 	font-size: var(--apcom-font-size-sm);
-	font-weight: 700;
+	font-weight: 600;
 	margin: var(--apcom-spacing-sm) auto 0;
 	text-align: center;
 	width: auto;
@@ -1459,7 +1507,6 @@ h4 {
 
 h5 {
 	font-size: var(--apcom-font-size-md);
-	font-weight: 700;
 }
 
 h6 {
@@ -2019,7 +2066,7 @@ small {
 	box-shadow: 0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
 	display: inline-flex;
-	font-weight: 700;
+	font-weight: 600;
 	justify-content: space-between;
 	margin-top: var(--apcom-spacing-md);
 	padding: var(--apcom-spacing-sm) 1.25rem;
@@ -2119,7 +2166,7 @@ small {
 
 .page__body .content-warning__label {
 	color: var(--apcom-color-secondary);
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .page__body .heading-warning {
@@ -2661,7 +2708,7 @@ small {
 	box-shadow: 0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
 	display: inline-flex;
-	font-weight: 700;
+	font-weight: 600;
 	justify-content: space-between;
 	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
@@ -2815,7 +2862,7 @@ small {
 	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary), 0 0.125rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
 	cursor: pointer;
 	display: inline-flex;
-	font-weight: 700;
+	font-weight: 600;
 	height: 3.125rem;
 	justify-content: space-between;
 	justify-content: center;
@@ -2882,7 +2929,7 @@ small {
 	color: var(--apcom-color-secondary);
 	content: "#";
 	display: inline-block;
-	font-weight: 700;
+	font-weight: 500;
 	margin-right: var(--apcom-spacing-3xs);
 }
 
@@ -3071,7 +3118,7 @@ small {
 }
 
 .wp-block-table tfoot {
-	font-weight: 700;
+	font-weight: 600;
 	text-align: center;
 }
 
@@ -3200,7 +3247,7 @@ small {
 	box-shadow: 0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
 	display: inline-flex;
-	font-weight: 700;
+	font-weight: 600;
 	justify-content: space-between;
 	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
@@ -3404,7 +3451,7 @@ small {
 }
 
 .comment .author__name {
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .comment .author__post {
@@ -3412,7 +3459,6 @@ small {
 	box-shadow: 0 0 0 0.0625rem var(--apcom-color-shadow-dark), 0.125rem 0.125rem 0 0 var(--apcom-color-shadow-dark);
 	color: var(--apcom-color-fg-inverted);
 	font-size: var(--apcom-font-size-sm);
-	font-variant: small-caps;
 	font-weight: 600;
 	padding: 0.1875rem var(--apcom-spacing-3xs);
 	width: max-content;
@@ -3425,7 +3471,7 @@ small {
 	box-shadow: 0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
 	display: inline-flex;
-	font-weight: 700;
+	font-weight: 600;
 	justify-content: space-between;
 	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
@@ -3496,7 +3542,7 @@ small {
 	cursor: pointer;
 	display: inline-flex;
 	font-family: var(--apcom-font-family-primary);
-	font-weight: 700;
+	font-weight: 600;
 	justify-content: space-between;
 	margin: var(--apcom-spacing-sm) 0;
 	padding: var(--apcom-spacing-sm) 1.25rem;
@@ -3728,6 +3774,12 @@ small {
 	}
 }
 
+@media only screen and (min-width: 100em) {
+	.main-nav__list {
+		gap: unset;
+	}
+}
+
 .main-nav__item,
 .main-nav__list--page-menu li {
 	display: flex;
@@ -3744,7 +3796,7 @@ small {
 	flex-flow: row wrap;
 	font-size: var(--apcom-font-size-lg);
 	font-variant: small-caps;
-	font-weight: 700;
+	font-weight: 600;
 	height: 3.75rem;
 	padding: 0 var(--apcom-spacing-sm);
 	text-decoration: none;
@@ -3965,7 +4017,7 @@ small {
 	box-shadow: 0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
 	display: inline-flex;
-	font-weight: 700;
+	font-weight: 600;
 	justify-content: space-between;
 	padding: var(--apcom-spacing-sm) 1.25rem;
 	text-decoration: none;
@@ -4050,7 +4102,7 @@ small {
 	box-shadow: 0.25rem 0.25rem 0 0 var(--apcom-color-shadow);
 	cursor: pointer;
 	display: inline-flex;
-	font-weight: 700;
+	font-weight: 600;
 	justify-content: space-between;
 	padding: var(--apcom-spacing-sm) 1.25rem;
 	position: relative;
@@ -4124,7 +4176,7 @@ small {
 }
 
 .pagination .current {
-	font-weight: 700;
+	font-weight: 600;
 	transform: translateX(0.25rem) translateY(0.25rem);
 }
 
@@ -4311,7 +4363,7 @@ small {
 	box-shadow: 0 0 0 0.125rem var(--apcom-color-primary), 0 0.125rem 0 0.125rem var(--apcom-color-shadow), 0 0.125rem 0.125rem 0.1875rem var(--apcom-color-shadow-light);
 	cursor: pointer;
 	display: inline-flex;
-	font-weight: 700;
+	font-weight: 600;
 	height: 2.5rem;
 	justify-content: space-between;
 	justify-content: center;
@@ -4566,13 +4618,13 @@ small {
 .widget_calendar caption {
 	color: var(--apcom-color-fg-tertiary);
 	font-variant: small-caps;
-	font-weight: 700;
+	font-weight: 600;
 	margin-bottom: var(--apcom-spacing-sm);
 }
 
 .widget_categories ul li::before {
 	content: "#";
-	font-weight: 700;
+	font-weight: 500;
 }
 
 .widget_tag_cloud .tagcloud {
@@ -4621,6 +4673,10 @@ small {
 	display: none;
 }
 
+.widget .msbwidget__link {
+	font-weight: 600;
+}
+
 .widget .mslwidget__link:hover .mslwidget__logo, .widget .mslwidget__link:focus .mslwidget__logo {
 	transform: scale(1.1);
 }
@@ -4639,10 +4695,18 @@ small {
 	margin-bottom: var(--apcom-spacing-md);
 }
 
+.widget .lup__footer {
+	margin-top: var(--apcom-spacing-3xs);
+}
+
+.widget .lup__term {
+	font-weight: 400;
+}
+
 @media only screen and (min-width: 80em) {
 	.widget.toc__wrapper {
 		font-size: var(--apcom-font-size-sm);
-		font-weight: 700;
+		font-weight: 600;
 	}
 	.widget.toc__wrapper ol li {
 		margin-bottom: 0.1875rem;

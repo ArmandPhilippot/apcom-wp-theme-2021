@@ -37,6 +37,10 @@
 				overflow: initial;
 				padding: 0;
 			}
+
+			@include dimensions("xl") {
+				gap: unset;
+			}
 		}
 	}
 
@@ -75,7 +79,7 @@
 		color: cssVar(color-fg-inverted);
 		font-size: cssVar(font-size-lg);
 		font-variant: small-caps;
-		font-weight: 700;
+		font-weight: 600;
 		text-decoration: none;
 		height: pxToRem(60);
 		padding: 0 cssVar(spacing-sm);
