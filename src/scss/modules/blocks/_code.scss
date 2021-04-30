@@ -10,4 +10,10 @@
 			max-height: pxToRem(600);
 		}
 	}
+
+	&.instructions {
+		.token.comment {
+			color: cssVar(color-token-blue);
+		}
+	}
 }

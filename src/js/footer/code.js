@@ -1,11 +1,13 @@
 /**
- * Init Prism line numbers plugin by adding automatically the class.
+ * Init Code Blocks by adding automatically some classes and attributes.
+ *
+ * These classes and attributes are needed by Prism or to customize comments.
  */
-function addPrismClassesToCodeBlock() {
-	let preTags = document.getElementsByTagName('pre');
+function initCodeBlocks() {
+	const preTags = document.getElementsByTagName('pre');
 
 	for (let i = 0; i < preTags.length; i++) {
-		let preClasses = preTags[i].classList.length;
+		const preClasses = preTags[i].classList.length;
 
 		preTags[i].tabIndex = '0';
 
@@ -16,10 +18,32 @@ function addPrismClassesToCodeBlock() {
 					!preTags[i].classList.contains('language-diff')
 				) {
 					preTags[i].classList.add('line-numbers');
+				} else if (
+					preTags[i].classList.contains('command-line') &&
+					preTags[i].classList.contains('filter-output')
+				) {
+					preTags[i].setAttribute('data-filter-output', '#output#');
+				}
+			} else if (preTags[i].classList.contains('instructions')) {
+				const codeTag = preTags[i].firstChild;
+				const codeLines = codeTag.innerHTML.split(/[\n\r]/g);
+				const codeLinesLength = codeLines.length;
+
+				for (var k = 0; k < codeLinesLength; k++) {
+					if (/^\/\//.test(codeLines[k])) {
+						const colorizeComment =
+							'<span class="token comment">' +
+							codeLines[k] +
+							'</span>';
+						codeTag.innerHTML = codeTag.innerHTML.replace(
+							codeLines[k],
+							colorizeComment
+						);
+					}
 				}
 			}
 		}
 	}
 }
 
-document.addEventListener('DOMContentLoaded', addPrismClassesToCodeBlock());
+document.addEventListener('DOMContentLoaded', initCodeBlocks());

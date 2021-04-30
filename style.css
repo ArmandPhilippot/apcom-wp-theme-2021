@@ -2902,6 +2902,10 @@ small {
 	}
 }
 
+.wp-block-code.instructions .token.comment {
+	color: var(--apcom-color-token-blue);
+}
+
 .wp-block-column *:last-child {
 	margin-bottom: 0;
 }
