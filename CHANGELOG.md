@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.8](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.7...v1.0.8) (2021-05-02)
+
+
+### Bug Fixes
+
+* add projects to posts list in subject CPT template ([cbf2fb6](https://github.com/ArmandPhilippot/armandphilippot.com/commit/cbf2fb6e5b9dfbb402655759afb6d0a2f5ec37a2))
+
 ### [1.0.7](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.6...v1.0.7) (2021-04-30)
 
 ### [1.0.6](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.5...v1.0.6) (2021-04-29)
