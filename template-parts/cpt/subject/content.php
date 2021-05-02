@@ -10,7 +10,7 @@ $apcom_current_subject_id    = get_the_ID();
 $apcom_current_subject_name  = get_the_title();
 $apcom_current_subject_query = new WP_Query(
 	array(
-		'post_type'         => array( 'post', 'article' ),
+		'post_type'         => array( 'post', 'article', 'project' ),
 		'posts_per_page'    => -1,
 		'orderby'           => 'date',
 		'order'             => 'DESC',
