@@ -200,23 +200,6 @@
 	font-display: swap;
 }
 
-@font-face {
-	font-family: "JetBrainsMono";
-	font-weight: 100 900;
-	font-display: swap;
-	font-style: normal;
-	src: url("assets/fonts/JetBrainsMono/JetBrainsMono.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "JetBrainsMono";
-	font-weight: 100 900;
-	font-display: swap;
-	font-style: italic;
-	src: url("assets/fonts/JetBrainsMono/JetBrainsMono-Italic.woff2")
-		format("woff2");
-}
-
 @include declareCssVars(
 	(
 		font-family-primary: #{$font-family_primary},

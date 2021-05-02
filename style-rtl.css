@@ -657,22 +657,6 @@ template {
 	src: url("assets/fonts/Cousine/Cousine-Regular.woff2") format("woff2");
 }
 
-@font-face {
-	font-display: swap;
-	font-family: "JetBrainsMono";
-	font-style: normal;
-	font-weight: 100 900;
-	src: url("assets/fonts/JetBrainsMono/JetBrainsMono.woff2") format("woff2");
-}
-
-@font-face {
-	font-display: swap;
-	font-family: "JetBrainsMono";
-	font-style: italic;
-	font-weight: 100 900;
-	src: url("assets/fonts/JetBrainsMono/JetBrainsMono-Italic.woff2") format("woff2");
-}
-
 :root {
 	--apcom-font-family-primary: Inter, Liberation Sans, Arial, sans-serif;
 	--apcom-font-family-secondary: Kanit, Liberation Sans, Arial, sans-serif;
