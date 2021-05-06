@@ -1,41 +1,5 @@
 @font-face {
 	font-family: "Kanit";
-	src: url("assets/fonts/Kanit/Kanit-Black.woff2") format("woff2"),
-		url("assets/fonts/Kanit/Kanit-Black.woff") format("woff");
-	font-weight: 900;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Kanit";
-	src: url("assets/fonts/Kanit/Kanit-BlackItalic.woff2") format("woff2"),
-		url("assets/fonts/Kanit/Kanit-BlackItalic.woff") format("woff");
-	font-weight: 900;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Kanit";
-	src: url("assets/fonts/Kanit/Kanit-ExtraBold.woff2") format("woff2"),
-		url("assets/fonts/Kanit/Kanit-ExtraBold.woff") format("woff");
-	font-weight: 800;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Kanit";
-	src: url("assets/fonts/Kanit/Kanit-ExtraBoldItalic.woff2") format("woff2"),
-		url("assets/fonts/Kanit/Kanit-ExtraBoldItalic.woff") format("woff");
-	font-weight: 800;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Kanit";
 	src: url("assets/fonts/Kanit/Kanit-Bold.woff2") format("woff2"),
 		url("assets/fonts/Kanit/Kanit-Bold.woff") format("woff");
 	font-weight: bold;
@@ -120,42 +84,6 @@
 	src: url("assets/fonts/Kanit/Kanit-LightItalic.woff2") format("woff2"),
 		url("assets/fonts/Kanit/Kanit-LightItalic.woff") format("woff");
 	font-weight: 300;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Kanit";
-	src: url("assets/fonts/Kanit/Kanit-ExtraLight.woff2") format("woff2"),
-		url("assets/fonts/Kanit/Kanit-ExtraLight.woff") format("woff");
-	font-weight: 200;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Kanit";
-	src: url("assets/fonts/Kanit/Kanit-ExtraLightItalic.woff2") format("woff2"),
-		url("assets/fonts/Kanit/Kanit-ExtraLightItalic.woff") format("woff");
-	font-weight: 200;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Kanit";
-	src: url("assets/fonts/Kanit/Kanit-Thin.woff2") format("woff2"),
-		url("assets/fonts/Kanit/Kanit-Thin.woff") format("woff");
-	font-weight: 100;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Kanit";
-	src: url("assets/fonts/Kanit/Kanit-ThinItalic.woff2") format("woff2"),
-		url("assets/fonts/Kanit/Kanit-ThinItalic.woff") format("woff");
-	font-weight: 100;
 	font-style: italic;
 	font-display: swap;
 }
