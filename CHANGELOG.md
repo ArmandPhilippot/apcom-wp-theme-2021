@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.9](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.8...v1.0.9) (2021-05-06)
+
+
+### Bug Fixes
+
+* remove unused Kanit fonts to load less ressources ([8927273](https://github.com/ArmandPhilippot/armandphilippot.com/commit/8927273ef3a92944ca5994fa49c33d0f551ad593))
+
 ### [1.0.8](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.7...v1.0.8) (2021-05-02)
 
 
