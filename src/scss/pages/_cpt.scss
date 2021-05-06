@@ -3,8 +3,8 @@
 		&__logo {
 			box-shadow: none;
 			width: auto;
-			height: clampThis(#{pxToRem(60)});
-			margin-right: cssVar(spacing-sm);
+			height: clampthis(#{pxtorem(60)});
+			margin-right: cssvar(spacing-sm);
 		}
 	}
 	.article {
@@ -17,7 +17,7 @@
 
 		&__footer {
 			grid-row: 2;
-			margin-bottom: cssVar(spacing-md);
+			margin-bottom: cssvar(spacing-md);
 		}
 
 		&__meta {
@@ -26,9 +26,9 @@
 
 		@include media("screen") {
 			@include dimensions("sm") {
-				grid-template-columns: 1fr #{pxToRem(200)};
+				grid-template-columns: 1fr #{pxtorem(200)};
 				grid-template-rows: max-content 1fr;
-				column-gap: cssVar(spacing-lg);
+				column-gap: cssvar(spacing-lg);
 
 				&__header {
 					grid-column: 1;
@@ -47,12 +47,12 @@
 				}
 
 				&__figure {
-					margin: 0 0 cssVar(spacing-md);
+					margin: 0 0 cssvar(spacing-md);
 				}
 
 				&__image {
-					max-width: pxToRem(200);
-					max-height: pxToRem(100);
+					max-width: pxtorem(200);
+					max-height: pxtorem(100);
 					margin: 0 auto;
 				}
 
@@ -62,7 +62,7 @@
 
 				.meta {
 					&__item {
-						margin-top: cssVar(spacing-sm);
+						margin-top: cssvar(spacing-sm);
 					}
 
 					&__theme {
@@ -75,18 +75,18 @@
 						}
 
 						&:not(:last-child) {
-							margin-bottom: pxToRem(2);
+							margin-bottom: pxtorem(2);
 						}
 					}
 				}
 			}
 
 			@include dimensions("lg") {
-				column-gap: cssVar(spacing-2xl);
+				column-gap: cssvar(spacing-2xl);
 
 				&:last-child {
 					border-bottom: none;
-					margin-bottom: cssVar(spacing-md);
+					margin-bottom: cssvar(spacing-md);
 					padding-bottom: 0;
 				}
 			}

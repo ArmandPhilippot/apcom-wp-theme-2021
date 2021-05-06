@@ -1,58 +1,58 @@
 .comments__list {
 	@include orderedListReset;
 
-	margin-bottom: cssVar(spacing-md);
+	margin-bottom: cssvar(spacing-md);
 
 	.comments__form {
-		background: cssVar(color-bg);
-		border: pxToRem(1) solid cssVar(color-border-light);
-		box-shadow: pxToRem(3) pxToRem(3) 0 0 cssVar(color-shadow-lighter),
-			pxToRem(4) pxToRem(4) pxToRem(3) pxToRem(-2)
-				cssVar(color-shadow-darker);
-		margin: cssVar(spacing-sm) 0 0;
-		padding: cssVar(spacing-md);
+		background: cssvar(color-bg);
+		border: pxtorem(1) solid cssvar(color-border-light);
+		box-shadow: pxtorem(3) pxtorem(3) 0 0 cssvar(color-shadow-lighter),
+			pxtorem(4) pxtorem(4) pxtorem(3) pxtorem(-2)
+				cssvar(color-shadow-darker);
+		margin: cssvar(spacing-sm) 0 0;
+		padding: cssvar(spacing-md);
 
 		@include media("screen") {
 			@include dimensions("sm") {
-				padding: cssVar(spacing-md) cssVar(spacing-xl);
+				padding: cssvar(spacing-md) cssvar(spacing-xl);
 			}
 		}
 	}
 
 	li {
-		margin: 0 0 cssVar(spacing-md);
+		margin: 0 0 cssvar(spacing-md);
 	}
 }
 
 .comment {
-	margin: 0 0 cssVar(spacing-md);
+	margin: 0 0 cssvar(spacing-md);
 
 	&:last-child {
-		margin-bottom: cssVar(spacing-md);
+		margin-bottom: cssvar(spacing-md);
 	}
 
 	&__inner {
-		background: cssVar(color-bg);
-		border: pxToRem(1) solid cssVar(color-border-light);
-		box-shadow: pxToRem(3) pxToRem(3) 0 0 cssVar(color-shadow-lighter),
-			pxToRem(4) pxToRem(4) pxToRem(3) pxToRem(-2)
-				cssVar(color-shadow-darker);
-		padding: cssVar(spacing-md);
+		background: cssvar(color-bg);
+		border: pxtorem(1) solid cssvar(color-border-light);
+		box-shadow: pxtorem(3) pxtorem(3) 0 0 cssvar(color-shadow-lighter),
+			pxtorem(4) pxtorem(4) pxtorem(3) pxtorem(-2)
+				cssvar(color-shadow-darker);
+		padding: cssvar(spacing-md);
 		position: relative;
 
 		@include media("screen") {
 			@include dimensions("sm") {
 				display: grid;
-				grid-template-columns: minmax(#{pxToRem(150)}, 1fr) minmax(
+				grid-template-columns: minmax(#{pxtorem(150)}, 1fr) minmax(
 						0,
 						85ch
 					);
-				column-gap: cssVar(spacing-md);
-				padding: cssVar(spacing-sm) cssVar(spacing-md);
+				column-gap: cssvar(spacing-md);
+				padding: cssvar(spacing-sm) cssvar(spacing-md);
 			}
 
 			@include dimensions("lg") {
-				column-gap: cssVar(spacing-xl);
+				column-gap: cssvar(spacing-xl);
 			}
 		}
 	}
@@ -69,35 +69,35 @@
 		display: flex;
 		flex-flow: column wrap;
 		align-items: center;
-		row-gap: cssVar(spacing-sm);
+		row-gap: cssvar(spacing-sm);
 
 		@include media("screen") {
 			@include dimensions("sm") {
 				grid-row: 1 / 4;
 				text-align: center;
-				padding: cssVar(spacing-md) 0;
+				padding: cssvar(spacing-md) 0;
 			}
 		}
 	}
 
 	&__date {
-		color: cssVar(color-fg-secondary);
-		font-size: cssVar(font-size-sm);
-		margin: cssVar(spacing-md) 0;
+		color: cssvar(color-fg-secondary);
+		font-size: cssvar(font-size-sm);
+		margin: cssvar(spacing-md) 0;
 		display: grid;
 		grid-template-columns: repeat(2, max-content);
-		column-gap: cssVar(spacing-2xs);
+		column-gap: cssvar(spacing-2xs);
 		justify-content: center;
 
 		@include media("screen") {
 			@include dimensions("xs") {
-				column-gap: cssVar(spacing-2xs);
-				margin: cssVar(spacing-md) auto;
+				column-gap: cssvar(spacing-2xs);
+				margin: cssvar(spacing-md) auto;
 				width: max-content;
 			}
 
 			@include dimensions("sm") {
-				margin: cssVar(spacing-md) 0;
+				margin: cssvar(spacing-md) 0;
 			}
 		}
 
@@ -125,7 +125,7 @@
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
-		padding: cssVar(spacing-sm) 0;
+		padding: cssvar(spacing-sm) 0;
 
 		@include media("screen") {
 			@include dimensions("sm") {
@@ -137,13 +137,13 @@
 
 	.author {
 		&__avatar {
-			background: cssVar(color-bg);
-			max-width: clampThis(#{pxToRem(85)});
+			background: cssvar(color-bg);
+			max-width: clampthis(#{pxtorem(85)});
 
 			.avatar {
-				border-radius: pxToRem(3);
-				box-shadow: 0 0 0 pxToRem(1) cssVar(color-shadow-dark),
-					pxToRem(3) pxToRem(3) 0 0 cssVar(color-shadow-dark);
+				border-radius: pxtorem(3);
+				box-shadow: 0 0 0 pxtorem(1) cssvar(color-shadow-dark),
+					pxtorem(3) pxtorem(3) 0 0 cssvar(color-shadow-dark);
 			}
 		}
 
@@ -152,13 +152,13 @@
 		}
 
 		&__post {
-			background: cssVar(color-primary);
-			box-shadow: 0 0 0 pxToRem(1) cssVar(color-shadow-dark),
-				pxToRem(2) pxToRem(2) 0 0 cssVar(color-shadow-dark);
-			color: cssVar(color-fg-inverted);
-			font-size: cssVar(font-size-sm);
+			background: cssvar(color-primary);
+			box-shadow: 0 0 0 pxtorem(1) cssvar(color-shadow-dark),
+				pxtorem(2) pxtorem(2) 0 0 cssvar(color-shadow-dark);
+			color: cssvar(color-fg-inverted);
+			font-size: cssvar(font-size-sm);
 			font-weight: 600;
-			padding: pxToRem(3) cssVar(spacing-3xs);
+			padding: pxtorem(3) cssvar(spacing-3xs);
 			width: max-content;
 		}
 	}
@@ -172,28 +172,28 @@
 	}
 
 	&__edit {
-		margin-right: cssVar(spacing-sm);
+		margin-right: cssvar(spacing-sm);
 	}
 
 	&__awaiting-moderation {
 		flex: 1 1 100%;
-		color: cssVar(color-fg-tertiary);
-		font-size: cssVar(font-size-sm);
+		color: cssvar(color-fg-tertiary);
+		font-size: cssvar(font-size-sm);
 		font-style: italic;
 	}
 
 	.children {
-		padding-top: cssVar(spacing-sm);
-		padding-left: cssVar(spacing-md);
+		padding-top: cssvar(spacing-sm);
+		padding-left: cssvar(spacing-md);
 
 		@include media("screen") {
 			@include dimensions("lg") {
-				padding-left: cssVar(spacing-2xl);
+				padding-left: cssvar(spacing-2xl);
 			}
 		}
 
 		.comment {
-			margin: 0 0 cssVar(spacing-sm);
+			margin: 0 0 cssvar(spacing-sm);
 		}
 	}
 }

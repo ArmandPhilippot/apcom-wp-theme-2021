@@ -1,40 +1,40 @@
 .footer {
-	background: cssVar(color-bg-tertiary);
+	background: cssvar(color-bg-tertiary);
 
 	text-align: center;
-	margin-bottom: pxToRem(60); // main-nav height
-	padding: cssVar(spacing-md) cssVar(spacing-md) cssVar(spacing-lg);
+	margin-bottom: pxtorem(60); // main-nav height
+	padding: cssvar(spacing-md) cssvar(spacing-md) cssvar(spacing-lg);
 	position: relative;
 
 	&::before {
 		display: block;
 		content: "";
 		position: absolute;
-		top: pxToRem(-30);
+		top: pxtorem(-30);
 		left: 0;
 		width: 100%;
-		height: pxToRem(30);
-		background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 95.839"><path fill="#{$color_link-water}" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/><path d="M394 9.395v36.778H194v39.666H0v4h198V50.173h200V13.395h184v36.778h200v39.666h18v-4h-14V46.173H586V9.395z" fill="#{$color_geyser}"/><path d="M398 13.395v36.778H198v39.666H0v6h204V56.173h200V19.395h172v36.778h200v39.666h24v-6h-18V50.173H582V13.395z" fill="#{$color_gull-gray-opacity}"/></svg>')});
+		height: pxtorem(30);
+		background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 95.839"><path fill="#{$color_link-water}" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/><path d="M394 9.395v36.778H194v39.666H0v4h198V50.173h200V13.395h184v36.778h200v39.666h18v-4h-14V46.173H586V9.395z" fill="#{$color_geyser}"/><path d="M398 13.395v36.778H198v39.666H0v6h204V56.173h200V19.395h172v36.778h200v39.666h24v-6h-18V50.173H582V13.395z" fill="#{$color_gull-gray-opacity}"/></svg>')});
 		transform: rotate(180deg);
 	}
 
 	@include media("screen") {
 		@include dimensions("lg") {
 			margin: 0;
-			padding: cssVar(spacing-lg) cssVar(spacing-md);
+			padding: cssvar(spacing-lg) cssvar(spacing-md);
 		}
 	}
 
 	&__copyright {
 		.copyright {
 			&__icon {
-				fill: cssVar(color-primary-dark);
-				max-height: pxToRem(30);
+				fill: cssvar(color-primary-dark);
+				max-height: pxtorem(30);
 			}
 
 			&__body {
-				font-family: cssVar(font-family-secondary);
-				margin: cssVar(spacing-sm);
+				font-family: cssvar(font-family-secondary);
+				margin: cssvar(spacing-sm);
 			}
 		}
 	}
@@ -52,7 +52,7 @@
 [data-color-scheme="dark"] {
 	.footer {
 		&::before {
-			background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 95.839"><path fill="#{$color_nile-blue}" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/><path d="M394 9.395v36.778H194v39.666H0v4h198V50.173h200V13.395h184v36.778h200v39.666h18v-4h-14V46.173H586V9.395z" fill="#{$color_mirage}"/><path d="M398 13.395v36.778H198v39.666H0v6h204V56.173h200V19.395h172v36.778h200v39.666h24v-6h-18V50.173H582V13.395z" fill="#{$color_rhino}"/></svg>')});
+			background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 95.839"><path fill="#{$color_nile-blue}" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/><path d="M394 9.395v36.778H194v39.666H0v4h198V50.173h200V13.395h184v36.778h200v39.666h18v-4h-14V46.173H586V9.395z" fill="#{$color_mirage}"/><path d="M398 13.395v36.778H198v39.666H0v6h204V56.173h200V19.395h172v36.778h200v39.666h24v-6h-18V50.173H582V13.395z" fill="#{$color_rhino}"/></svg>')});
 		}
 	}
 }

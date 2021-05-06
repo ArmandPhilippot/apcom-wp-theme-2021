@@ -5,46 +5,46 @@ h4,
 h5,
 h6,
 .greetings {
-	color: cssVar(color-fg-secondary);
-	font-family: cssVar(font-family-secondary);
+	color: cssvar(color-fg-secondary);
+	font-family: cssvar(font-family-secondary);
 	font-weight: 500;
-	margin: 0 0 cssVar(spacing-md);
+	margin: 0 0 cssvar(spacing-md);
 }
 
 h1,
 .greetings {
-	font-size: cssVar(font-size-3xl);
+	font-size: cssvar(font-size-3xl);
 }
 
 h2 {
-	font-size: cssVar(font-size-2xl);
+	font-size: cssvar(font-size-2xl);
 }
 
 h3 {
-	font-size: cssVar(font-size-xl);
+	font-size: cssvar(font-size-xl);
 }
 
 h4 {
-	font-size: cssVar(font-size-lg);
+	font-size: cssvar(font-size-lg);
 }
 
 h5 {
-	font-size: cssVar(font-size-md);
+	font-size: cssvar(font-size-md);
 }
 
 h6 {
-	font-size: cssVar(font-size-md);
+	font-size: cssvar(font-size-md);
 	font-weight: 600;
 }
 
 p {
-	margin: 0 0 cssVar(spacing-md);
+	margin: 0 0 cssvar(spacing-md);
 }
 
 hr {
-	margin: cssVar(spacing-md) 0;
+	margin: cssvar(spacing-md) 0;
 }
 
 small {
-	font-size: cssVar(font-size-sm);
+	font-size: cssvar(font-size-sm);
 }

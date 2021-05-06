@@ -2,21 +2,21 @@
 	/*rtl:ignore*/
 	float: left;
 	/*rtl:ignore*/
-	margin-right: cssVar(spacing-sm);
+	margin-right: cssvar(spacing-sm);
 }
 
 .alignright {
 	/*rtl:ignore*/
 	float: right;
 	/*rtl:ignore*/
-	margin-left: cssVar(spacing-sm);
+	margin-left: cssvar(spacing-sm);
 }
 
 .alignleft,
 .alignright {
-	margin-top: cssVar(spacing-xs);
-	margin-bottom: cssVar(spacing-xs);
-	max-width: calc(50% - #{cssVar(spacing-sm)});
+	margin-top: cssvar(spacing-xs);
+	margin-bottom: cssvar(spacing-xs);
+	max-width: calc(50% - #{cssvar(spacing-sm)});
 }
 
 .aligncenter {

@@ -1,16 +1,16 @@
 .wp-block-gallery {
 	.blocks-gallery-item {
-		margin: 0 cssVar(spacing-sm) cssVar(spacing-sm) 0;
+		margin: 0 cssvar(spacing-sm) cssvar(spacing-sm) 0;
 
 		&:last-child {
-			margin: 0 0 cssVar(spacing-sm) 0;
+			margin: 0 0 cssvar(spacing-sm) 0;
 		}
 
 		figcaption {
-			background: cssVar(color-bg-secondary);
-			color: cssVar(color-fg-tertiary);
-			font-size: cssVar(spacing-sm);
-			padding: cssVar(spacing-3xs);
+			background: cssvar(color-bg-secondary);
+			color: cssvar(color-fg-tertiary);
+			font-size: cssvar(spacing-sm);
+			padding: cssvar(spacing-3xs);
 		}
 	}
 }

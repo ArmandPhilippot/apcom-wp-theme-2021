@@ -19,17 +19,17 @@ html {
 }
 
 *::-moz-selection {
-	background: cssVar(color-primary-light-opacity);
+	background: cssvar(color-primary-light-opacity);
 }
 
 *::selection {
-	background: cssVar(color-primary-light-opacity);
+	background: cssvar(color-primary-light-opacity);
 }
 
 body {
-	background: cssVar(color-bg-secondary);
-	color: cssVar(color-fg);
-	font-family: cssVar(font-family-primary);
-	font-size: cssVar(font-size-md);
-	line-height: cssVar(line-height);
+	background: cssvar(color-bg-secondary);
+	color: cssvar(color-fg);
+	font-family: cssvar(font-family-primary);
+	font-size: cssvar(font-size-md);
+	line-height: cssvar(line-height);
 }

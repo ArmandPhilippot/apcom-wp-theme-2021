@@ -11,9 +11,9 @@
 				background: url("assets/images/feed.svg");
 				background-repeat: no-repeat;
 				background-size: 100%;
-				width: pxToRem(30);
-				height: pxToRem(30);
-				margin-right: cssVar(spacing-sm);
+				width: pxtorem(30);
+				height: pxtorem(30);
+				margin-right: cssvar(spacing-sm);
 			}
 		}
 	}

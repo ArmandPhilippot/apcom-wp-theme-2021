@@ -1,6 +1,6 @@
 .gallery {
 	display: grid;
-	grid-gap: cssVar(spacing-sm);
+	grid-gap: cssvar(spacing-sm);
 
 	@for $i from 2 through 9 {
 		&.gallery-columns-#{$i} {

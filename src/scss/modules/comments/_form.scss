@@ -3,12 +3,12 @@
 		@include buttonBase;
 		@include buttonStyle2;
 
-		font-family: cssVar(font-family-primary);
-		margin: cssVar(spacing-sm) 0;
+		font-family: cssvar(font-family-primary);
+		margin: cssvar(spacing-sm) 0;
 
 		@include media("screen") {
 			@include dimensions("xs") {
-				margin-left: cssVar(spacing-md);
+				margin-left: cssvar(spacing-md);
 			}
 		}
 	}
@@ -35,11 +35,11 @@
 	}
 
 	label {
-		margin-bottom: cssVar(spacing-3xs);
+		margin-bottom: cssvar(spacing-3xs);
 		text-align: left;
 	}
 
 	.required {
-		color: cssVar(color-secondary);
+		color: cssvar(color-secondary);
 	}
 }

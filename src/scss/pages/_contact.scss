@@ -7,7 +7,7 @@
 		&__body {
 			> p {
 				&:first-of-type {
-					margin-top: cssVar(spacing-sm);
+					margin-top: cssvar(spacing-sm);
 				}
 			}
 		}
@@ -15,10 +15,10 @@
 }
 
 .contact-form {
-	margin-bottom: cssVar(spacing-md);
+	margin-bottom: cssvar(spacing-md);
 
 	&__item {
-		margin-bottom: cssVar(spacing-md);
+		margin-bottom: cssvar(spacing-md);
 
 		&--none {
 			display: none;
@@ -26,12 +26,12 @@
 	}
 
 	&__label {
-		margin-bottom: cssVar(spacing-3xs);
+		margin-bottom: cssvar(spacing-3xs);
 	}
 
 	&__field {
 		&--textarea {
-			min-height: pxToRem(200);
+			min-height: pxtorem(200);
 		}
 	}
 
@@ -42,31 +42,31 @@
 	}
 
 	.required {
-		color: cssVar(color-secondary);
+		color: cssvar(color-secondary);
 	}
 
 	.alert {
-		border: pxToRem(2) solid cssVar(color-primary);
-		box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-primary);
+		border: pxtorem(2) solid cssvar(color-primary);
+		box-shadow: pxtorem(6) pxtorem(6) 0 0 cssvar(color-primary);
 		font-weight: 600;
-		padding: cssVar(spacing-sm);
+		padding: cssvar(spacing-sm);
 
 		&.error {
-			border-color: cssVar(color-token-red);
-			box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-token-red);
-			color: cssVar(color-token-red);
+			border-color: cssvar(color-token-red);
+			box-shadow: pxtorem(6) pxtorem(6) 0 0 cssvar(color-token-red);
+			color: cssvar(color-token-red);
 		}
 
 		&.valid {
-			border-color: cssVar(color-token-green);
-			box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-token-green);
-			color: cssVar(color-token-green);
+			border-color: cssvar(color-token-green);
+			box-shadow: pxtorem(6) pxtorem(6) 0 0 cssvar(color-token-green);
+			color: cssvar(color-token-green);
 		}
 
 		&.nice-try {
-			border-color: cssVar(color-token-orange);
-			box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-token-orange);
-			color: cssVar(color-token-orange);
+			border-color: cssvar(color-token-orange);
+			box-shadow: pxtorem(6) pxtorem(6) 0 0 cssvar(color-token-orange);
+			color: cssvar(color-token-orange);
 		}
 	}
 }

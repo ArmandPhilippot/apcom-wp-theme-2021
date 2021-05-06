@@ -6,7 +6,7 @@
 
 .header {
 	display: grid;
-	grid-template-columns: cssVar(spacing-md) minmax(0, 1fr) cssVar(spacing-md);
+	grid-template-columns: cssvar(spacing-md) minmax(0, 1fr) cssvar(spacing-md);
 	align-items: center;
 
 	.branding {
@@ -16,13 +16,13 @@
 	@include media("screen") {
 		@include dimensions("lg") {
 			grid-template-columns:
-				cssVar(spacing-3xl) max-content minmax(0, 1fr) max-content
-				cssVar(spacing-3xl);
+				cssvar(spacing-3xl) max-content minmax(0, 1fr) max-content
+				cssvar(spacing-3xl);
 
 			.branding {
 				display: grid;
 				grid-template-columns: max-content 1fr;
-				column-gap: cssVar(spacing-md);
+				column-gap: cssvar(spacing-md);
 				align-items: center;
 
 				&__logo {
@@ -53,22 +53,22 @@
 
 		@include dimensions("xl") {
 			grid-template-columns:
-				minmax(#{cssVar(spacing-3xl)}, 1fr) minmax(auto, 100ch) minmax(
+				minmax(#{cssvar(spacing-3xl)}, 1fr) minmax(auto, 100ch) minmax(
 					auto,
 					100ch
 				)
 				max-content
-				minmax(#{cssVar(spacing-3xl)}, 1fr);
+				minmax(#{cssvar(spacing-3xl)}, 1fr);
 		}
 
 		@include dimensions("2xl") {
 			grid-template-columns:
-				minmax(#{cssVar(spacing-4xl)}, 1fr) minmax(auto, 100ch) minmax(
+				minmax(#{cssvar(spacing-4xl)}, 1fr) minmax(auto, 100ch) minmax(
 					auto,
 					100ch
 				)
 				max-content
-				minmax(#{cssVar(spacing-4xl)}, 1fr);
+				minmax(#{cssvar(spacing-4xl)}, 1fr);
 		}
 	}
 }
@@ -82,16 +82,16 @@
 	grid-auto-rows: max-content;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 80ch) minmax(0, 1fr);
 	justify-content: center;
-	column-gap: cssVar(spacing-md);
+	column-gap: cssvar(spacing-md);
 
 	@include media("screen") {
 		@include dimensions("sm") {
-			column-gap: cssVar(spacing-lg);
+			column-gap: cssvar(spacing-lg);
 		}
 
 		@include dimensions("lg") {
 			grid-template-columns: 0 minmax(0, 80ch) minmax(0, 1fr);
-			column-gap: cssVar(spacing-3xl);
+			column-gap: cssvar(spacing-3xl);
 		}
 
 		@include dimensions("xl") {
@@ -101,11 +101,11 @@
 					80ch
 				)
 				minmax(0, 1fr);
-			column-gap: cssVar(spacing-2xl);
+			column-gap: cssvar(spacing-2xl);
 		}
 
 		@include dimensions("2xl") {
-			column-gap: cssVar(spacing-4xl);
+			column-gap: cssvar(spacing-4xl);
 		}
 	}
 }

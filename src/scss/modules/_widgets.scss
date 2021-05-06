@@ -1,11 +1,11 @@
 .widget {
-	background: cssVar(color-bg);
-	margin-bottom: cssVar(spacing-md);
+	background: cssvar(color-bg);
+	margin-bottom: cssvar(spacing-md);
 	max-width: 80ch;
 
 	@include media("screen") {
 		@include dimensions("lg") {
-			padding: 0 0 cssVar(spacing-md);
+			padding: 0 0 cssvar(spacing-md);
 		}
 	}
 
@@ -16,8 +16,8 @@
 			&::before {
 				display: inline-block;
 				content: "\0025B8";
-				color: cssVar(color-secondary);
-				margin-right: cssVar(spacing-3xs);
+				color: cssvar(color-secondary);
+				margin-right: cssvar(spacing-3xs);
 			}
 		}
 	}
@@ -25,20 +25,20 @@
 	&_recent_entries {
 		.post-date {
 			display: block;
-			color: cssVar(color-fg-tertiary);
-			font-size: cssVar(font-size-sm);
+			color: cssvar(color-fg-tertiary);
+			font-size: cssvar(font-size-sm);
 		}
 	}
 
 	&_rss {
 		.rss-date {
 			display: block;
-			color: cssVar(color-fg-tertiary);
-			font-size: cssVar(font-size-sm);
+			color: cssvar(color-fg-tertiary);
+			font-size: cssvar(font-size-sm);
 		}
 
 		.rssSummary {
-			font-size: cssVar(font-size-sm);
+			font-size: cssvar(font-size-sm);
 		}
 
 		cite {
@@ -57,10 +57,10 @@
 		}
 
 		caption {
-			color: cssVar(color-fg-tertiary);
+			color: cssvar(color-fg-tertiary);
 			font-variant: small-caps;
 			font-weight: 600;
-			margin-bottom: cssVar(spacing-sm);
+			margin-bottom: cssvar(spacing-sm);
 		}
 	}
 
@@ -80,16 +80,16 @@
 			display: flex;
 			flex-flow: row wrap;
 			align-items: center;
-			gap: cssVar(spacing-2xs);
+			gap: cssvar(spacing-2xs);
 		}
 
 		.tag-cloud-link {
-			border: pxToRem(1) solid cssVar(color-primary);
-			border-radius: pxToRem(3);
-			box-shadow: pxToRem(3) pxToRem(3) 0 0 cssVar(color-primary);
+			border: pxtorem(1) solid cssvar(color-primary);
+			border-radius: pxtorem(3);
+			box-shadow: pxtorem(3) pxtorem(3) 0 0 cssvar(color-primary);
 			text-decoration: none;
 			text-decoration-thickness: 0;
-			padding: cssVar(spacing-3xs);
+			padding: cssvar(spacing-3xs);
 
 			&::before {
 				content: "#";
@@ -98,21 +98,21 @@
 
 			&:hover,
 			&:focus {
-				box-shadow: pxToRem(5) pxToRem(5) 0 0
-					cssVar(color-primary-light);
-				transform: translateX(#{pxToRem(-2)}) translateY(#{pxToRem(-2)});
+				box-shadow: pxtorem(5) pxtorem(5) 0 0
+					cssvar(color-primary-light);
+				transform: translateX(#{pxtorem(-2)}) translateY(#{pxtorem(-2)});
 			}
 
 			&:focus {
 				text-decoration: underline;
-				text-decoration-color: cssVar(color-primary-light);
-				text-decoration-thickness: pxToRem(4);
+				text-decoration-color: cssvar(color-primary-light);
+				text-decoration-thickness: pxtorem(4);
 			}
 
 			&:active {
-				box-shadow: 0 0 0 0 cssVar(color-primary-dark);
+				box-shadow: 0 0 0 0 cssvar(color-primary-dark);
 				text-decoration: none;
-				transform: translateX(#{pxToRem(3)}) translateY(#{pxToRem(3)});
+				transform: translateX(#{pxtorem(3)}) translateY(#{pxtorem(3)});
 			}
 		}
 	}
@@ -165,11 +165,11 @@
 
 	.lup {
 		&__item {
-			margin-bottom: cssVar(spacing-md);
+			margin-bottom: cssvar(spacing-md);
 		}
 
 		&__footer {
-			margin-top: cssVar(spacing-3xs);
+			margin-top: cssvar(spacing-3xs);
 		}
 
 		&__term {
@@ -180,18 +180,18 @@
 	@include media("screen") {
 		@include dimensions("lg") {
 			&.toc__wrapper {
-				font-size: cssVar(font-size-sm);
+				font-size: cssvar(font-size-sm);
 				font-weight: 600;
 
 				ol {
 					li {
-						margin-bottom: pxToRem(3);
+						margin-bottom: pxtorem(3);
 					}
 				}
 			}
 
 			&.msbwidget {
-				font-size: cssVar(font-size-sm);
+				font-size: cssvar(font-size-sm);
 			}
 		}
 
@@ -200,7 +200,7 @@
 			&.msbwidget {
 				position: sticky;
 				top: 0;
-				margin-bottom: cssVar(spacing-xl);
+				margin-bottom: cssvar(spacing-xl);
 			}
 		}
 	}

@@ -19,7 +19,7 @@
 /// @param {String} $name - Variable name
 /// @param {String} $value - Variable value
 /// @param {String} $prefix - Variable prefix
-@mixin cssVar($name, $value: "", $prefix: apcom) {
+@mixin cssvar($name, $value: "", $prefix: apcom) {
 	--#{$prefix}-#{$name}: #{$value};
 }
 

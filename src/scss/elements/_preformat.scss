@@ -3,19 +3,19 @@ kbd,
 pre,
 tt,
 var {
-	font-family: cssVar(font-family-mono);
+	font-family: cssvar(font-family-mono);
 }
 
 pre {
 	display: block;
-	background: cssVar(color-bg-secondary);
-	border: pxToRem(1) solid cssVar(color-border-light);
-	border-radius: pxToRem(3);
-	font-size: cssVar(font-size-md);
+	background: cssvar(color-bg-secondary);
+	border: pxtorem(1) solid cssvar(color-border-light);
+	border-radius: pxtorem(3);
+	font-size: cssvar(font-size-md);
 	max-width: 100%;
 	overflow: auto;
-	margin: 0 0 cssVar(spacing-md);
-	padding: cssVar(spacing-sm);
+	margin: 0 0 cssvar(spacing-md);
+	padding: cssvar(spacing-sm);
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
@@ -23,18 +23,18 @@ pre {
 
 	@include media("screen") {
 		@include dimensions("sm") {
-			padding: cssVar(spacing-md);
+			padding: cssvar(spacing-md);
 		}
 	}
 }
 
 code {
-	background: cssVar(color-bg-tertiary);
-	border: pxToRem(1) solid cssVar(color-border-light);
+	background: cssvar(color-bg-tertiary);
+	border: pxtorem(1) solid cssvar(color-border-light);
 	box-decoration-break: clone;
-	border-radius: pxToRem(3);
-	color: cssVar(color-fg);
-	padding: pxToRem(2) pxToRem(5) 0;
+	border-radius: pxtorem(3);
+	color: cssvar(color-fg);
+	padding: pxtorem(2) pxtorem(5) 0;
 	word-wrap: break-word;
 }
 

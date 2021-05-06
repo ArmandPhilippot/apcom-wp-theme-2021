@@ -7,8 +7,8 @@ video {
 }
 
 img {
-	box-shadow: 0 0 pxToRem(1) 0 cssVar(color-shadow-light),
-		pxToRem(4) pxToRem(4) pxToRem(4) 0 cssVar(color-shadow-light);
+	box-shadow: 0 0 pxtorem(1) 0 cssvar(color-shadow-light),
+		pxtorem(4) pxtorem(4) pxtorem(4) 0 cssvar(color-shadow-light);
 	transition: all 0.3s ease-in-out 0s;
 }
 
@@ -28,36 +28,36 @@ figure {
 
 figcaption {
 	display: block;
-	color: cssVar(color-fg-tertiary);
-	font-size: cssVar(font-size-sm);
+	color: cssvar(color-fg-tertiary);
+	font-size: cssvar(font-size-sm);
 	font-weight: 600;
 	text-align: center;
 	width: auto;
-	margin: cssVar(spacing-sm) auto 0;
+	margin: cssvar(spacing-sm) auto 0;
 }
 
 a {
 	&:hover,
 	&:focus {
 		img {
-			box-shadow: 0 0 pxToRem(1) 0 cssVar(color-shadow-light),
-				pxToRem(4) pxToRem(4) pxToRem(4) pxToRem(2)
-					cssVar(color-shadow-light);
+			box-shadow: 0 0 pxtorem(1) 0 cssvar(color-shadow-light),
+				pxtorem(4) pxtorem(4) pxtorem(4) pxtorem(2)
+					cssvar(color-shadow-light);
 			transform: scale(1.05);
 		}
 	}
 
 	&:focus {
 		img {
-			outline: cssVar(color-primary-light-opacity) solid pxToRem(4);
+			outline: cssvar(color-primary-light-opacity) solid pxtorem(4);
 		}
 	}
 
 	&:active {
 		img {
-			box-shadow: 0 0 pxToRem(1) 0 cssVar(color-shadow-light),
-				pxToRem(1) pxToRem(1) pxToRem(1) pxToRem(1)
-					cssVar(color-shadow-light);
+			box-shadow: 0 0 pxtorem(1) 0 cssvar(color-shadow-light),
+				pxtorem(1) pxtorem(1) pxtorem(1) pxtorem(1)
+					cssvar(color-shadow-light);
 			outline: none;
 			transform: scale(1);
 		}

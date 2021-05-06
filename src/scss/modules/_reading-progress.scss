@@ -1,9 +1,9 @@
 .reading-progress {
-	background: cssVar(color-primary-light-opacity);
-	height: pxToRem(8);
+	background: cssvar(color-primary-light-opacity);
+	height: pxtorem(8);
 	z-index: 5;
 
 	&__bar {
-		background: cssVar(color-primary);
+		background: cssvar(color-primary);
 	}
 }

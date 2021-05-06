@@ -1,53 +1,53 @@
 .code-toolbar {
 	position: relative;
-	margin-top: pxToRem(50); // toolbar height
+	margin-top: pxtorem(50); // toolbar height
 	width: 100%;
 
 	> .toolbar {
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
-		background: cssVar(color-bg-tertiary);
-		border: solid cssVar(color-border-light);
-		border-width: pxToRem(1) pxToRem(1) 0 pxToRem(1);
-		border-top-left-radius: pxToRem(3);
-		border-top-left-radius: pxToRem(3);
-		border-top-right-radius: pxToRem(3);
-		box-shadow: 0 pxToRem(2) pxToRem(3) pxToRem(-2)
-			cssVar(color-shadow-darker);
+		background: cssvar(color-bg-tertiary);
+		border: solid cssvar(color-border-light);
+		border-width: pxtorem(1) pxtorem(1) 0 pxtorem(1);
+		border-top-left-radius: pxtorem(3);
+		border-top-left-radius: pxtorem(3);
+		border-top-right-radius: pxtorem(3);
+		box-shadow: 0 pxtorem(2) pxtorem(3) pxtorem(-2)
+			cssvar(color-shadow-darker);
 		width: 100%;
-		height: pxToRem(50);
+		height: pxtorem(50);
 		position: absolute;
-		top: pxToRem(-50);
+		top: pxtorem(-50);
 		left: 0;
 	}
 
 	.toolbar-item {
-		color: cssVar(color-fg-secondary);
+		color: cssvar(color-fg-secondary);
 
 		&:first-child {
-			font-size: cssVar(font-size-sm);
+			font-size: cssvar(font-size-sm);
 			font-weight: 600;
 			margin-right: auto;
-			margin-left: cssVar(spacing-sm);
+			margin-left: cssvar(spacing-sm);
 		}
 
 		&:last-child {
-			margin: 0 cssVar(spacing-sm);
+			margin: 0 cssvar(spacing-sm);
 		}
 
 		button {
 			@include buttonStyle3;
 
-			color: cssVar(color-fg-inverted);
-			font-size: cssVar(font-size-sm);
-			height: pxToRem(32);
-			padding: cssVar(spacing-3xs) cssVar(spacing-2xs);
+			color: cssvar(color-fg-inverted);
+			font-size: cssvar(font-size-sm);
+			height: pxtorem(32);
+			padding: cssvar(spacing-3xs) cssvar(spacing-2xs);
 		}
 
 		.prism-theme {
 			&__btn {
-				width: pxToRem(32);
+				width: pxtorem(32);
 				padding: 0;
 			}
 
@@ -55,10 +55,10 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				padding: cssVar(spacing-3xs);
+				padding: cssvar(spacing-3xs);
 
 				svg {
-					fill: cssVar(color-fg-inverted);
+					fill: cssvar(color-fg-inverted);
 					width: 100%;
 					height: 100%;
 				}
@@ -83,25 +83,25 @@ pre {
 			&.cdata,
 			&.comment,
 			&.prolog {
-				color: cssVar(color-token-grey);
+				color: cssvar(color-token-grey);
 			}
 
 			&.punctuation {
-				color: cssVar(color-fg);
+				color: cssvar(color-fg);
 			}
 
 			&.attr-name,
 			&.hexcode,
 			&.inserted,
 			&.string {
-				color: cssVar(color-token-green);
+				color: cssvar(color-token-green);
 			}
 
 			&.class,
 			&.coord,
 			&.id,
 			&.function {
-				color: cssVar(color-token-purple);
+				color: cssvar(color-token-purple);
 			}
 
 			&.builtin,
@@ -109,7 +109,7 @@ pre {
 			&.property-access,
 			&.regex,
 			&.scope {
-				color: cssVar(color-token-magenta);
+				color: cssvar(color-token-magenta);
 			}
 
 			&.class-name,
@@ -122,7 +122,7 @@ pre {
 			&.this,
 			&.title,
 			&.variable {
-				color: cssVar(color-token-blue);
+				color: cssvar(color-token-blue);
 			}
 
 			&.combinator,
@@ -133,13 +133,13 @@ pre {
 			&.rule,
 			&.selector,
 			&.unit {
-				color: cssVar(color-token-orange);
+				color: cssvar(color-token-orange);
 			}
 
 			&.attr-value,
 			&.boolean,
 			&.number {
-				color: cssVar(color-token-yellow);
+				color: cssvar(color-token-yellow);
 			}
 
 			&.delimiter,
@@ -148,11 +148,11 @@ pre {
 			&.parent,
 			&.shebang,
 			&.tag {
-				color: cssVar(color-token-cyan);
+				color: cssvar(color-token-cyan);
 			}
 
 			&.deleted {
-				color: cssVar(color-token-red);
+				color: cssvar(color-token-red);
 			}
 
 			&.deleted.prefix,
@@ -177,7 +177,7 @@ pre {
 		.language-scss {
 			.token {
 				&.variable {
-					color: cssVar(color-token-cyan);
+					color: cssvar(color-token-cyan);
 				}
 			}
 		}
@@ -185,23 +185,23 @@ pre {
 		.language-markdown {
 			.token {
 				&.url {
-					color: cssVar(color-token-yellow);
+					color: cssvar(color-token-yellow);
 
 					.token.content {
-						color: cssVar(color-token-green);
+						color: cssvar(color-token-green);
 					}
 				}
 
 				&.code {
-					color: cssVar(color-token-cyan);
+					color: cssvar(color-token-cyan);
 				}
 
 				&.hr.punctuation {
-					color: cssVar(color-token-blue);
+					color: cssvar(color-token-blue);
 				}
 
 				&.blockquote.punctuation {
-					color: cssVar(color-token-magenta);
+					color: cssvar(color-token-magenta);
 				}
 			}
 		}
@@ -217,20 +217,20 @@ pre {
 
 		> code {
 			position: relative;
-			padding: cssVar(spacing-md) cssVar(spacing-sm) cssVar(spacing-md)
-				calc(#{pxToRem(60)} + #{cssVar(spacing-sm)}); // gutter width + spacing
+			padding: cssvar(spacing-md) cssvar(spacing-sm) cssvar(spacing-md)
+				calc(#{pxtorem(60)} + #{cssvar(spacing-sm)}); // gutter width + spacing
 			overflow-wrap: normal;
 			white-space: pre;
 		}
 
 		.line-numbers-rows {
-			background: cssVar(color-bg-tertiary);
-			letter-spacing: pxToRem(-1);
+			background: cssvar(color-bg-tertiary);
+			letter-spacing: pxtorem(-1);
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: pxToRem(60);
-			padding: cssVar(spacing-md) 0;
+			width: pxtorem(60);
+			padding: cssvar(spacing-md) 0;
 			pointer-events: none;
 			user-select: none;
 
@@ -241,7 +241,7 @@ pre {
 				&::before {
 					display: block;
 					content: counter(linenumber);
-					padding-right: cssVar(spacing-sm);
+					padding-right: cssvar(spacing-sm);
 					text-align: right;
 				}
 			}
@@ -276,10 +276,10 @@ pre {
 		}
 
 		.command-line-prompt {
-			border-right: pxToRem(1) solid cssVar(color-border-light);
+			border-right: pxtorem(1) solid cssvar(color-border-light);
 			display: block;
 			float: left;
-			margin-right: cssVar(spacing-md);
+			margin-right: cssvar(spacing-md);
 			pointer-events: none;
 			user-select: none;
 
@@ -287,8 +287,8 @@ pre {
 				&::before {
 					display: block;
 					content: "";
-					color: cssVar(color-token-grey);
-					padding-right: cssVar(spacing-sm);
+					color: cssvar(color-token-grey);
+					padding-right: cssvar(spacing-sm);
 				}
 
 				&[data-user]::before {

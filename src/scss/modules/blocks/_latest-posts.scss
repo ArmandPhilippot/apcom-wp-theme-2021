@@ -6,8 +6,8 @@
 			&::before {
 				display: inline-block;
 				content: "\0025B8";
-				color: cssVar(color-secondary);
-				margin-right: cssVar(spacing-3xs);
+				color: cssvar(color-secondary);
+				margin-right: cssvar(spacing-3xs);
 			}
 		}
 	}
@@ -25,6 +25,6 @@
 	}
 
 	&__post-date {
-		color: cssVar(color-fg-tertiary);
+		color: cssvar(color-fg-tertiary);
 	}
 }

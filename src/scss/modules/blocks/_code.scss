@@ -1,19 +1,19 @@
 .wp-block-code {
-	max-height: pxToRem(400);
+	max-height: pxtorem(400);
 
 	@include media("screen") {
 		@include dimensions("lg") {
-			max-height: pxToRem(500);
+			max-height: pxtorem(500);
 		}
 
 		@include dimensions("xl") {
-			max-height: pxToRem(600);
+			max-height: pxtorem(600);
 		}
 	}
 
 	&.instructions {
 		.token.comment {
-			color: cssVar(color-token-blue);
+			color: cssvar(color-token-blue);
 		}
 	}
 }

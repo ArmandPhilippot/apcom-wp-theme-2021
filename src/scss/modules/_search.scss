@@ -13,8 +13,8 @@
 		opacity: 0;
 		z-index: 2;
 		position: absolute;
-		top: pxToRem(40/2 - 8); // label height/2 - approximate checkbox height
-		right: pxToRem(40/2 - 8); // label width/2 - approximate checkbox width;
+		top: pxtorem(40/2 - 8); // label height/2 - approximate checkbox height
+		right: pxtorem(40/2 - 8); // label width/2 - approximate checkbox width;
 
 		&:not(:checked) {
 			& ~ .search-form {
@@ -33,7 +33,7 @@
 					&::before {
 						display: block;
 						content: "";
-						background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{$color_catskill-white}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
+						background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{$color_catskill-white}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
 						width: 100%;
 						height: 100%;
 						position: absolute;
@@ -72,7 +72,7 @@
 
 		&:focus {
 			~ .search__label {
-				outline: cssVar(color-primary) dotted pxToRem(1);
+				outline: cssvar(color-primary) dotted pxtorem(1);
 			}
 		}
 	}
@@ -87,7 +87,7 @@
 						&::before {
 							display: block;
 							content: "";
-							background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{$color_firefly}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
+							background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{$color_firefly}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
 						}
 					}
 				}
@@ -103,13 +103,13 @@
 		background: linear-gradient(
 				to right,
 				transparent 0 33.3%,
-				cssVar(color-primary-light) 33.3% 66.6%,
-				cssVar(color-primary-dark) 66.6% 100%
+				cssvar(color-primary-light) 33.3% 66.6%,
+				cssvar(color-primary-dark) 66.6% 100%
 			)
 			0% 0% / 300% 100% no-repeat;
 		border: none;
 		box-shadow: none;
-		padding: 0 cssVar(spacing-3xs);
+		padding: 0 cssvar(spacing-3xs);
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -123,7 +123,7 @@
 			box-shadow: none;
 
 			svg {
-				fill: cssVar(color-fg-inverted);
+				fill: cssvar(color-fg-inverted);
 				transform: rotate(360deg);
 			}
 		}
@@ -140,8 +140,8 @@
 			align-items: center;
 
 			svg {
-				fill: cssVar(color-primary);
-				width: pxToRem(30);
+				fill: cssvar(color-primary);
+				width: pxtorem(30);
 				transition: all 0.3s ease-in 0s;
 			}
 		}
@@ -154,13 +154,13 @@
 	&__field {
 		&:hover {
 			~ .search-form__btn {
-				transform: translateX(#{pxToRem(-3)}) translateY(#{pxToRem(-3)});
+				transform: translateX(#{pxtorem(-3)}) translateY(#{pxtorem(-3)});
 			}
 		}
 
 		&:focus {
 			~ .search-form__btn {
-				transform: translateX(#{pxToRem(2)}) translateY(#{pxToRem(2)});
+				transform: translateX(#{pxtorem(2)}) translateY(#{pxtorem(2)});
 			}
 		}
 	}
@@ -168,6 +168,6 @@
 
 .page__body {
 	.search-form {
-		margin-bottom: cssVar(spacing-md);
+		margin-bottom: cssvar(spacing-md);
 	}
 }

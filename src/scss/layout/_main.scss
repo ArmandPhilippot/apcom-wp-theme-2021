@@ -1,14 +1,14 @@
 .main {
-	background: cssVar(color-bg);
+	background: cssvar(color-bg);
 }
 
 .article {
-	border-bottom: pxToRem(1) solid cssVar(color-border-light);
-	margin-bottom: cssVar(spacing-lg);
-	padding-bottom: cssVar(spacing-xl);
+	border-bottom: pxtorem(1) solid cssvar(color-border-light);
+	margin-bottom: cssvar(spacing-lg);
+	padding-bottom: cssvar(spacing-xl);
 
 	&__header {
-		margin-bottom: cssVar(spacing-md);
+		margin-bottom: cssvar(spacing-md);
 	}
 
 	&__body {
@@ -17,28 +17,28 @@
 	}
 
 	&__figure {
-		margin: 0 auto cssVar(spacing-md);
+		margin: 0 auto cssvar(spacing-md);
 
 		@include media("screen") {
 			@include dimensions("sm") {
 				order: 2;
-				margin-left: cssVar(spacing-md);
-				margin-top: cssVar(spacing-xs);
+				margin-left: cssvar(spacing-md);
+				margin-top: cssvar(spacing-xs);
 			}
 
 			@include dimensions("xl") {
-				margin-left: cssVar(spacing-xl);
+				margin-left: cssvar(spacing-xl);
 			}
 		}
 	}
 
 	&__image {
-		max-height: pxToRem(150);
+		max-height: pxtorem(150);
 		width: auto;
 
 		@include media("screen") {
 			@include dimensions("sm") {
-				max-width: pxToRem(250);
+				max-width: pxtorem(250);
 			}
 		}
 	}
@@ -46,7 +46,7 @@
 	&__description {
 		@include media("screen") {
 			@include dimensions("sm") {
-				flex: 1 1 calc(#{pxToRem(250)} - #{cssVar(spacing-md)}); // 100% - image width - spacing
+				flex: 1 1 calc(#{pxtorem(250)} - #{cssvar(spacing-md)}); // 100% - image width - spacing
 				order: 1;
 			}
 		}
@@ -61,14 +61,14 @@
 
 .page {
 	&__header {
-		background: cssVar(color-bg-secondary);
-		border-top: pxToRem(2) solid cssVar(color-border-lighter);
-		padding-bottom: cssVar(spacing-lg);
+		background: cssvar(color-bg-secondary);
+		border-top: pxtorem(2) solid cssvar(color-border-lighter);
+		padding-bottom: cssvar(spacing-lg);
 		position: relative;
 
 		@include media("screen") {
 			@include dimensions("lg") {
-				padding-bottom: cssVar(spacing-lg);
+				padding-bottom: cssvar(spacing-lg);
 			}
 		}
 
@@ -76,11 +76,11 @@
 			display: block;
 			content: "";
 			position: absolute;
-			bottom: pxToRem(-30);
+			bottom: pxtorem(-30);
 			left: 0;
 			width: 100%;
-			height: pxToRem(30);
-			background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130.427" preserveAspectRatio="none"><path d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_link-water}"/><path d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_catskill-white}"/></svg>')});
+			height: pxtorem(30);
+			background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130.427" preserveAspectRatio="none"><path d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_link-water}"/><path d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_catskill-white}"/></svg>')});
 			background-repeat: repeat-x;
 			background-size: 100% 100%;
 			transform: rotate(180deg);
@@ -92,27 +92,27 @@
 		flex-flow: row wrap;
 		align-items: center;
 		max-width: 100%;
-		padding: cssVar(spacing-3xs) cssVar(spacing-sm) cssVar(spacing-sm) 0;
+		padding: cssvar(spacing-3xs) cssvar(spacing-sm) cssvar(spacing-sm) 0;
 		position: relative;
-		margin-bottom: cssVar(spacing-lg);
+		margin-bottom: cssvar(spacing-lg);
 		z-index: 1;
 
 		@include media("screen") {
 			@include dimensions("sm") {
-				margin-bottom: cssVar(spacing-xl);
+				margin-bottom: cssvar(spacing-xl);
 			}
 		}
 
 		&::before {
 			display: block;
 			content: "";
-			background: cssVar(color-bg-secondary);
-			border: solid cssVar(color-border-lighter);
-			border-width: pxToRem(2) pxToRem(2) pxToRem(2) pxToRem(2);
-			box-shadow: 0 0 0 pxToRem(10) cssVar(color-bg),
-				pxToRem(12) pxToRem(12) 0 0 cssVar(color-border-lighter);
+			background: cssvar(color-bg-secondary);
+			border: solid cssvar(color-border-lighter);
+			border-width: pxtorem(2) pxtorem(2) pxtorem(2) pxtorem(2);
+			box-shadow: 0 0 0 pxtorem(10) cssvar(color-bg),
+				pxtorem(12) pxtorem(12) 0 0 cssvar(color-border-lighter);
 			position: absolute;
-			top: pxToRem(-12); // box shadow size
+			top: pxtorem(-12); // box shadow size
 			right: 0;
 			bottom: 0;
 			left: 0;
@@ -140,7 +140,7 @@
 		@include buttonBase;
 		@include buttonStyle2;
 
-		margin-top: cssVar(spacing-md);
+		margin-top: cssvar(spacing-md);
 
 		@include media("screen") {
 			@include dimensions("sm") {
@@ -153,14 +153,14 @@
 			background: url("assets/images/feed.svg");
 			background-repeat: no-repeat;
 			background-size: 100%;
-			width: pxToRem(30);
-			height: pxToRem(30);
-			margin-right: cssVar(spacing-sm);
+			width: pxtorem(30);
+			height: pxtorem(30);
+			margin-right: cssvar(spacing-sm);
 		}
 	}
 
 	&__introduction {
-		margin-top: cssVar(spacing-md);
+		margin-top: cssvar(spacing-md);
 
 		p:last-child {
 			margin-bottom: 0;
@@ -168,71 +168,71 @@
 	}
 
 	&__body {
-		padding: cssVar(spacing-2xl) 0 0;
+		padding: cssvar(spacing-2xl) 0 0;
 
 		&--single-page {
-			padding: cssVar(spacing-lg) 0 0;
+			padding: cssvar(spacing-lg) 0 0;
 
 			@include media("screen") {
 				@include dimensions("lg") {
-					padding: cssVar(spacing-2xl) 0 0;
+					padding: cssvar(spacing-2xl) 0 0;
 				}
 			}
 		}
 
 		&--front-page {
-			padding: cssVar(spacing-sm) 0 cssVar(spacing-md);
+			padding: cssvar(spacing-sm) 0 cssvar(spacing-md);
 
 			@include media("screen") {
 				@include dimensions("lg") {
-					padding: cssVar(spacing-md) 0 cssVar(spacing-sm);
+					padding: cssvar(spacing-md) 0 cssvar(spacing-sm);
 				}
 			}
 		}
 
 		iframe {
 			width: 100%;
-			margin-bottom: cssVar(spacing-md);
+			margin-bottom: cssvar(spacing-md);
 		}
 
 		.content-warning {
-			border: pxToRem(3) solid cssVar(color-secondary);
-			border-radius: pxToRem(3);
-			margin-bottom: cssVar(spacing-md);
-			padding: cssVar(spacing-sm);
+			border: pxtorem(3) solid cssvar(color-secondary);
+			border-radius: pxtorem(3);
+			margin-bottom: cssvar(spacing-md);
+			padding: cssvar(spacing-sm);
 
 			&__label {
-				color: cssVar(color-secondary);
+				color: cssvar(color-secondary);
 				font-weight: 600;
 			}
 		}
 
 		.heading-warning {
-			color: cssVar(color-secondary);
+			color: cssvar(color-secondary);
 		}
 	}
 
 	&__footer {
-		margin: cssVar(spacing-md) 0;
+		margin: cssvar(spacing-md) 0;
 
 		@include media("screen") {
 			@include dimensions("lg") {
-				margin: cssVar(spacing-md) 0 cssVar(spacing-lg);
+				margin: cssvar(spacing-md) 0 cssvar(spacing-lg);
 			}
 		}
 
 		.meta {
-			font-size: cssVar(font-size-md);
+			font-size: cssvar(font-size-md);
 
 			&__item {
-				border-right: pxToRem(1) solid cssVar(color-border);
-				padding-right: cssVar(spacing-sm);
+				border-right: pxtorem(1) solid cssvar(color-border);
+				padding-right: cssvar(spacing-sm);
 
 				@include media("screen") {
 					@include dimensions("xs") {
 						display: grid;
-						column-gap: cssVar(spacing-sm);
-						padding-right: cssVar(spacing-xl);
+						column-gap: cssvar(spacing-sm);
+						padding-right: cssvar(spacing-xl);
 					}
 				}
 
@@ -254,12 +254,12 @@
 		position: relative;
 
 		&--first {
-			margin-top: cssVar(spacing-md);
+			margin-top: cssvar(spacing-md);
 
 			@include media("screen") {
 				@include dimensions("lg") {
-					margin-top: cssVar(spacing-2xl);
-					padding-right: cssVar(spacing-lg);
+					margin-top: cssvar(spacing-2xl);
+					padding-right: cssvar(spacing-lg);
 				}
 
 				@include dimensions("xl") {
@@ -268,7 +268,7 @@
 			}
 
 			.toc {
-				margin-top: cssVar(spacing-lg);
+				margin-top: cssvar(spacing-lg);
 
 				@include media("screen") {
 					@include dimensions("lg") {
@@ -284,15 +284,15 @@
 		}
 
 		&--last {
-			margin-bottom: cssVar(spacing-xl);
+			margin-bottom: cssvar(spacing-xl);
 
 			@include media("screen") {
 				@include dimensions("lg") {
-					padding-right: cssVar(spacing-lg);
+					padding-right: cssvar(spacing-lg);
 				}
 
 				@include dimensions("xl") {
-					margin-top: cssVar(spacing-2xl);
+					margin-top: cssvar(spacing-2xl);
 					padding-right: 0;
 				}
 			}
@@ -300,16 +300,16 @@
 	}
 
 	&__comments {
-		background: cssVar(color-bg-secondary);
-		padding: 0 0 cssVar(spacing-3xl);
+		background: cssvar(color-bg-secondary);
+		padding: 0 0 cssvar(spacing-3xl);
 
 		@include media("screen") {
 			@include dimensions("lg") {
-				padding: 0 0 cssVar(spacing-4xl);
+				padding: 0 0 cssvar(spacing-4xl);
 			}
 
 			@include dimensions("xl") {
-				padding: 0 0 cssVar(spacing-5xl);
+				padding: 0 0 cssvar(spacing-5xl);
 			}
 		}
 		position: relative;
@@ -318,11 +318,11 @@
 			display: block;
 			content: "";
 			position: absolute;
-			top: pxToRem(-30);
+			top: pxtorem(-30);
 			left: 0;
 			width: 100%;
-			height: pxToRem(30);
-			background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130.427" preserveAspectRatio="none"><path d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_link-water}"/><path d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_catskill-white}"/></svg>')});
+			height: pxtorem(30);
+			background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130.427" preserveAspectRatio="none"><path d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_link-water}"/><path d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_catskill-white}"/></svg>')});
 			background-repeat: repeat-x;
 			background-size: 100% 100%;
 			transform: rotateY(180deg);
@@ -330,11 +330,11 @@
 
 		.comments {
 			&__header {
-				padding: cssVar(spacing-lg) 0;
+				padding: cssvar(spacing-lg) 0;
 			}
 
 			&__list {
-				margin-top: cssVar(spacing-md) 0;
+				margin-top: cssvar(spacing-md) 0;
 			}
 		}
 	}
@@ -344,13 +344,13 @@
 	.page {
 		&__header {
 			&::after {
-				background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130.427" preserveAspectRatio="none"><path d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_nile-blue}"/><path d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_big-stone}"/></svg>')});
+				background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130.427" preserveAspectRatio="none"><path d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_nile-blue}"/><path d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_big-stone}"/></svg>')});
 			}
 		}
 
 		&__comments {
 			&::before {
-				background-image: url(#{encodeSvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130.427" preserveAspectRatio="none"><path d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_nile-blue}"/><path d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_big-stone}"/></svg>')});
+				background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130.427" preserveAspectRatio="none"><path d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_nile-blue}"/><path d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z" fill="#{$color_big-stone}"/></svg>')});
 			}
 		}
 	}
@@ -360,7 +360,7 @@
 	.page {
 		&__body {
 			&--single-page {
-				padding-bottom: cssVar(spacing-md);
+				padding-bottom: cssvar(spacing-md);
 			}
 		}
 	}
@@ -372,14 +372,14 @@
 		&__body {
 			@include media("screen") {
 				@include dimensions("lg") {
-					padding-bottom: cssVar(spacing-5xl);
+					padding-bottom: cssvar(spacing-5xl);
 				}
 			}
 		}
 
 		&__aside {
 			&--last {
-				padding-bottom: cssVar(spacing-md);
+				padding-bottom: cssvar(spacing-md);
 			}
 		}
 	}

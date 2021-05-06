@@ -3,8 +3,8 @@
 	border: 0;
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
-	width: pxToRem(1);
-	height: pxToRem(1);
+	width: pxtorem(1);
+	height: pxtorem(1);
 	overflow: hidden;
 	padding: 0;
 	position: absolute !important;
@@ -13,11 +13,11 @@
 }
 
 .screen-reader-text:focus {
-	background: cssVar(color-bg);
-	border: pxToRem(3) solid cssVar(color-border);
-	box-shadow: 0 0 pxToRem(2) pxToRem(2) cssVar(color-shadow-light);
-	color: cssVar(color-primary);
-	font-size: cssVar(font-size-md);
+	background: cssvar(color-bg);
+	border: pxtorem(3) solid cssvar(color-border);
+	box-shadow: 0 0 pxtorem(2) pxtorem(2) cssvar(color-shadow-light);
+	color: cssvar(color-primary);
+	font-size: cssvar(font-size-md);
 	font-weight: 600;
 	display: block;
 	clip: auto !important;
@@ -25,7 +25,7 @@
 	top: 0;
 	width: auto;
 	height: auto;
-	padding: cssVar(spacing-sm) cssVar(spacing-md);
+	padding: cssvar(spacing-sm) cssvar(spacing-md);
 	z-index: 100000; /* Above WP toolbar. */
 }
 

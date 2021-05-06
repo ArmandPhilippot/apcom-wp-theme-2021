@@ -1,10 +1,10 @@
 .breadcrumb {
-	background: cssVar(color-bg);
-	padding: cssVar(spacing-2xl) 0 cssVar(spacing-xl);
+	background: cssvar(color-bg);
+	padding: cssvar(spacing-2xl) 0 cssvar(spacing-xl);
 
 	@include media("screen") {
 		@include dimensions("sm") {
-			padding: cssVar(spacing-3xl) 0 cssVar(spacing-xl);
+			padding: cssvar(spacing-3xl) 0 cssvar(spacing-xl);
 		}
 	}
 
@@ -12,7 +12,7 @@
 		@include orderedListReset;
 
 		display: inline-block;
-		font-size: cssVar(font-size-sm);
+		font-size: cssvar(font-size-sm);
 
 		li {
 			display: initial;
@@ -24,7 +24,7 @@
 			&::before {
 				display: inline-block;
 				content: ">";
-				margin-left: cssVar(spacing-xs);
+				margin-left: cssvar(spacing-xs);
 			}
 		}
 	}

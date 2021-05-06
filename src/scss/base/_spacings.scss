@@ -1,15 +1,15 @@
 @include declareCssVars(
 	(
-		spacing-3xs: clampThis($spacing_3xs),
-		spacing-2xs: clampThis($spacing_2xs),
-		spacing-xs: clampThis($spacing_xs),
-		spacing-sm: clampThis($spacing_sm),
-		spacing-md: clampThis($spacing_md),
-		spacing-lg: clampThis($spacing_lg),
-		spacing-xl: clampThis($spacing_xl),
-		spacing-2xl: clampThis($spacing_2xl),
-		spacing-3xl: clampThis($spacing_3xl),
-		spacing-4xl: clampThis($spacing_4xl),
-		spacing-5xl: clampThis($spacing_5xl),
+		spacing-3xs: clampthis($spacing_3xs),
+		spacing-2xs: clampthis($spacing_2xs),
+		spacing-xs: clampthis($spacing_xs),
+		spacing-sm: clampthis($spacing_sm),
+		spacing-md: clampthis($spacing_md),
+		spacing-lg: clampthis($spacing_lg),
+		spacing-xl: clampthis($spacing_xl),
+		spacing-2xl: clampthis($spacing_2xl),
+		spacing-3xl: clampthis($spacing_3xl),
+		spacing-4xl: clampthis($spacing_4xl),
+		spacing-5xl: clampthis($spacing_5xl),
 	)
 );

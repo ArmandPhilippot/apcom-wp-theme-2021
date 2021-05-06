@@ -2,15 +2,15 @@
 	&.is-style-stripes {
 		tbody {
 			tr:nth-child(2n + 1) {
-				background-color: cssVar(color-bg-secondary);
+				background-color: cssvar(color-bg-secondary);
 			}
 		}
 	}
 
 	td,
 	th {
-		border: pxToRem(1) solid cssVar(color-border);
-		padding: cssVar(spacing-xs);
+		border: pxtorem(1) solid cssvar(color-border);
+		padding: cssvar(spacing-xs);
 	}
 
 	tfoot {

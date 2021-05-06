@@ -5,7 +5,7 @@
 		&:focus {
 			color: currentColor;
 			opacity: 0.85;
-			outline: cssVar(color-primary-light) dotted pxToRem(2);
+			outline: cssvar(color-primary-light) dotted pxtorem(2);
 		}
 	}
 }

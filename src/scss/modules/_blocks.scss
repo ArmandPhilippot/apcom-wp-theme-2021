@@ -33,10 +33,10 @@
 .wp-block-image,
 .wp-block-gallery,
 .wp-block-pullquote {
-	margin-bottom: cssVar(spacing-md);
+	margin-bottom: cssvar(spacing-md);
 
 	&.alignleft,
 	&.alignright {
-		margin-bottom: cssVar(spacing-sm);
+		margin-bottom: cssvar(spacing-sm);
 	}
 }

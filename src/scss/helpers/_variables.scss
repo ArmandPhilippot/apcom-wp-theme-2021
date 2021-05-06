@@ -20,17 +20,18 @@ $theme_tags: "editor-style, translation-ready";
 $golden-number: 1.618;
 $ratio: 1.2;
 $breakpoints: (
-	"xs": pxToEm(568),
-	"sm": pxToEm(768),
-	"md": pxToEm(1024),
-	"lg": pxToEm(1280),
-	"xl": pxToEm(1600),
-	"2xl": pxToEm(1920),
+	"xs": pxtoem(568),
+	"sm": pxtoem(768),
+	"md": pxtoem(1024),
+	"lg": pxtoem(1280),
+	"xl": pxtoem(1600),
+	"2xl": pxtoem(1920),
 );
 
 //=============================================================================
 // Fonts
 //=============================================================================
+/* stylelint-disable -- Fonts name are not keywords, lowercase is not needed. */
 $font-family_primary: ("Inter", "Liberation Sans", Arial, sans-serif);
 $font-family_secondary: ("Kanit", "Liberation Sans", Arial, sans-serif);
 $font-family_mono: (
@@ -40,11 +41,12 @@ $font-family_mono: (
 	"Courier New",
 	monospace
 );
+/* stylelint-enable */
 
 $line-height: $golden-number;
 
 $font-size_base: 16px;
-$font-size_base-rem: pxToRem(16);
+$font-size_base-rem: pxtorem(16);
 
 $font-size_sm: $font-size_base-rem * pow($ratio, -1);
 $font-size_md: $font-size_base-rem * pow($ratio, 0);

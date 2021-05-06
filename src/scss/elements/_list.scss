@@ -1,10 +1,10 @@
 ul,
 ol,
 dl {
-	margin-bottom: cssVar(spacing-md);
+	margin-bottom: cssvar(spacing-md);
 
 	li {
-		margin-bottom: cssVar(spacing-3xs);
+		margin-bottom: cssvar(spacing-3xs);
 
 		&:last-child {
 			margin-bottom: 0;
@@ -18,18 +18,18 @@ dl {
 
 		li {
 			&:first-child {
-				margin-top: cssVar(spacing-3xs);
+				margin-top: cssvar(spacing-3xs);
 			}
 		}
 	}
 
 	::marker {
-		color: cssVar(color-secondary);
+		color: cssvar(color-secondary);
 	}
 }
 
 ul {
-	padding-left: cssVar(spacing-sm);
+	padding-left: cssvar(spacing-sm);
 }
 
 ol {
@@ -42,9 +42,9 @@ ol {
 
 		&::before {
 			content: counters(li, ".") ". ";
-			color: cssVar(color-secondary);
+			color: cssvar(color-secondary);
 			display: table-cell;
-			padding-right: cssVar(spacing-2xs);
+			padding-right: cssvar(spacing-2xs);
 		}
 	}
 
@@ -58,7 +58,7 @@ dl {
 		@include dimensions("xs") {
 			display: grid;
 			grid-template-columns: max-content auto;
-			column-gap: cssVar(spacing-sm);
+			column-gap: cssvar(spacing-sm);
 		}
 	}
 }

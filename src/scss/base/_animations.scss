@@ -1,5 +1,5 @@
 @include declareCssVars(
 	(
-		draw-border-width: #{pxToRem(4)},
+		draw-border-width: #{pxtorem(4)},
 	)
 );

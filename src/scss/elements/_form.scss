@@ -19,8 +19,8 @@ input[type="submit"] {
 label {
 	display: block;
 	cursor: pointer;
-	color: cssVar(color-fg-secondary);
-	font-size: cssVar(font-size-sm);
+	color: cssvar(color-fg-secondary);
+	font-size: cssvar(font-size-sm);
 	text-transform: uppercase;
 }
 
@@ -40,28 +40,28 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	background: cssVar(color-bg-tertiary);
-	border: pxToRem(1) solid cssVar(color-border);
-	box-shadow: pxToRem(4) pxToRem(4) 0 0 cssVar(color-shadow);
-	color: cssVar(color-fg);
-	padding: cssVar(spacing-sm);
+	background: cssvar(color-bg-tertiary);
+	border: pxtorem(1) solid cssvar(color-border);
+	box-shadow: pxtorem(4) pxtorem(4) 0 0 cssvar(color-shadow);
+	color: cssvar(color-fg);
+	padding: cssvar(spacing-sm);
 	width: 100%;
 	transition: all 0.2s ease-in 0s;
 
 	&:hover {
-		box-shadow: pxToRem(7) pxToRem(7) 0 0 cssVar(color-shadow);
-		transform: translateX(#{pxToRem(-3)}) translateY(#{pxToRem(-3)});
+		box-shadow: pxtorem(7) pxtorem(7) 0 0 cssvar(color-shadow);
+		transform: translateX(#{pxtorem(-3)}) translateY(#{pxtorem(-3)});
 	}
 
 	&:focus {
-		background: cssVar(color-bg);
-		box-shadow: pxToRem(2) pxToRem(2) 0 0 cssVar(color-primary-light);
+		background: cssvar(color-bg);
+		box-shadow: pxtorem(2) pxtorem(2) 0 0 cssvar(color-primary-light);
 		outline: none;
-		transform: translateX(#{pxToRem(2)}) translateY(#{pxToRem(2)});
+		transform: translateX(#{pxtorem(2)}) translateY(#{pxtorem(2)});
 	}
 
 	&::placeholder {
-		color: cssVar(color-fg-tertiary);
+		color: cssvar(color-fg-tertiary);
 	}
 }
 
@@ -72,7 +72,7 @@ input[type="checkbox"]:not(.toggle) {
 
 	+ label {
 		position: relative;
-		padding-left: cssVar(spacing-md);
+		padding-left: cssvar(spacing-md);
 		cursor: pointer;
 	}
 
@@ -83,13 +83,13 @@ input[type="checkbox"]:not(.toggle) {
 				content: "";
 				position: absolute;
 				left: 0;
-				top: pxToRem(-2);
-				width: pxToRem(20);
-				height: pxToRem(20);
-				background: cssVar(color-bg-tertiary);
-				border-radius: pxToRem(3);
-				border: pxToRem(1) solid cssVar(color-border);
-				box-shadow: pxToRem(2) pxToRem(2) 0 0 cssVar(color-shadow);
+				top: pxtorem(-2);
+				width: pxtorem(20);
+				height: pxtorem(20);
+				background: cssvar(color-bg-tertiary);
+				border-radius: pxtorem(3);
+				border: pxtorem(1) solid cssvar(color-border);
+				box-shadow: pxtorem(2) pxtorem(2) 0 0 cssvar(color-shadow);
 				transition: all 0.3s ease-in-out 0s;
 			}
 
@@ -97,10 +97,10 @@ input[type="checkbox"]:not(.toggle) {
 				content: "\2715";
 				speak: never;
 				position: absolute;
-				top: pxToRem(8);
-				left: pxToRem(2);
-				font-size: cssVar(font-size-lg);
-				color: cssVar(color-primary);
+				top: pxtorem(8);
+				left: pxtorem(2);
+				font-size: cssvar(font-size-lg);
+				color: cssvar(color-primary);
 				line-height: 0;
 				transition: all 0.3s ease-in-out 0s;
 			}
@@ -109,9 +109,9 @@ input[type="checkbox"]:not(.toggle) {
 		&:hover {
 			+ label {
 				&::before {
-					box-shadow: pxToRem(4) pxToRem(4) 0 0 cssVar(color-shadow);
-					transform: translateX(#{pxToRem(-2)})
-						translateY(#{pxToRem(-2)});
+					box-shadow: pxtorem(4) pxtorem(4) 0 0 cssvar(color-shadow);
+					transform: translateX(#{pxtorem(-2)})
+						translateY(#{pxtorem(-2)});
 				}
 			}
 		}
@@ -119,12 +119,12 @@ input[type="checkbox"]:not(.toggle) {
 		&:focus {
 			+ label {
 				&::before {
-					background: cssVar(color-bg);
-					box-shadow: 0 0 0 pxToRem(4)
-							cssVar(color-primary-light-opacity),
-						pxToRem(1) pxToRem(1) 0 0 cssVar(color-shadow);
-					transform: translateX(#{pxToRem(1)})
-						translateY(#{pxToRem(1)});
+					background: cssvar(color-bg);
+					box-shadow: 0 0 0 pxtorem(4)
+							cssvar(color-primary-light-opacity),
+						pxtorem(1) pxtorem(1) 0 0 cssvar(color-shadow);
+					transform: translateX(#{pxtorem(1)})
+						translateY(#{pxtorem(1)});
 				}
 			}
 		}
@@ -150,8 +150,8 @@ input[type="checkbox"]:not(.toggle) {
 		&:focus {
 			+ label {
 				&::after {
-					top: pxToRem(9);
-					left: pxToRem(3);
+					top: pxtorem(9);
+					left: pxtorem(3);
 				}
 			}
 		}
@@ -159,8 +159,8 @@ input[type="checkbox"]:not(.toggle) {
 		&:hover:not(:focus) {
 			+ label {
 				&::after {
-					top: pxToRem(6);
-					left: pxToRem(-1);
+					top: pxtorem(6);
+					left: pxtorem(-1);
 				}
 			}
 		}
@@ -169,39 +169,39 @@ input[type="checkbox"]:not(.toggle) {
 
 select {
 	appearance: none;
-	background-color: cssVar(color-bg-tertiary);
-	background-image: url(encodeSvg(
+	background-color: cssvar(color-bg-tertiary);
+	background-image: url(encodesvg(
 		'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path d="M3.707 7L3 7.707l6.125 6.125L11 15.707l1.875-1.875L19 7.707 18.293 7l-6.125 6.125L11 14.293l-1.168-1.168L3.707 7" fill="#{$color_chathams-blue-dark}"/></svg>'
 	));
-	background-position: calc(100% - #{cssVar(spacing-sm)}) center;
+	background-position: calc(100% - #{cssvar(spacing-sm)}) center;
 	background-repeat: no-repeat;
-	background-size: pxToRem(24);
-	border: pxToRem(1) solid cssVar(color-border);
-	box-shadow: pxToRem(4) pxToRem(4) 0 0 cssVar(color-shadow);
-	color: cssVar(color-fg);
+	background-size: pxtorem(24);
+	border: pxtorem(1) solid cssvar(color-border);
+	box-shadow: pxtorem(4) pxtorem(4) 0 0 cssvar(color-shadow);
+	color: cssvar(color-fg);
 	cursor: pointer;
-	padding: cssVar(spacing-sm);
+	padding: cssvar(spacing-sm);
 	width: 100%;
 	transition: all 0.3s ease-in-out 0s;
 
 	&:hover {
-		box-shadow: pxToRem(6) pxToRem(6) 0 0 cssVar(color-shadow);
-		transform: translateX(#{pxToRem(-2)}) translateY(#{pxToRem(-2)});
+		box-shadow: pxtorem(6) pxtorem(6) 0 0 cssvar(color-shadow);
+		transform: translateX(#{pxtorem(-2)}) translateY(#{pxtorem(-2)});
 	}
 
 	&:focus {
-		background-color: cssVar(color-bg);
-		box-shadow: pxToRem(1) pxToRem(1) 0 pxToRem(5)
-				cssVar(color-primary-light-opacity),
-			pxToRem(2) pxToRem(2) 0 0 cssVar(color-shadow);
+		background-color: cssvar(color-bg);
+		box-shadow: pxtorem(1) pxtorem(1) 0 pxtorem(5)
+				cssvar(color-primary-light-opacity),
+			pxtorem(2) pxtorem(2) 0 0 cssvar(color-shadow);
 		outline: none;
-		transform: translateX(#{pxToRem(2)}) translateY(#{pxToRem(2)});
+		transform: translateX(#{pxtorem(2)}) translateY(#{pxtorem(2)});
 	}
 }
 
 [data-color-scheme="dark"] {
 	select {
-		background-image: url(encodeSvg(
+		background-image: url(encodesvg(
 			'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path d="M3.707 7L3 7.707l6.125 6.125L11 15.707l1.875-1.875L19 7.707 18.293 7l-6.125 6.125L11 14.293l-1.168-1.168L3.707 7" fill="#{$color_spindle-dark}"/></svg>'
 		));
 	}
@@ -209,6 +209,6 @@ select {
 
 option {
 	&:hover {
-		background: cssVar(color-bg-secondary);
+		background: cssvar(color-bg-secondary);
 	}
 }

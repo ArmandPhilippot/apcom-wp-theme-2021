@@ -1,15 +1,15 @@
 .pagination {
-	margin: cssVar(spacing-sm) 0 cssVar(spacing-md);
+	margin: cssvar(spacing-sm) 0 cssvar(spacing-md);
 
 	ul.page-numbers {
 		@include flexList;
 
 		li {
-			margin-bottom: cssVar(spacing-xs);
+			margin-bottom: cssvar(spacing-xs);
 		}
 
 		.page-numbers {
-			margin-left: pxToRem(-1);
+			margin-left: pxtorem(-1);
 		}
 	}
 
@@ -21,16 +21,16 @@
 	}
 
 	&__icon {
-		fill: cssVar(color-primary);
-		width: pxToRem(15);
+		fill: cssvar(color-primary);
+		width: pxtorem(15);
 		transition: all 0.2s ease-in 0s;
 
 		&--next {
-			margin-left: cssVar(spacing-xs);
+			margin-left: cssvar(spacing-xs);
 		}
 
 		&--previous {
-			margin-right: cssVar(spacing-xs);
+			margin-right: cssvar(spacing-xs);
 			rotate: 180deg;
 		}
 	}
@@ -40,24 +40,24 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		background: cssVar(color-bg);
-		border: pxToRem(2) solid cssVar(color-primary);
+		background: cssvar(color-bg);
+		border: pxtorem(2) solid cssvar(color-primary);
 		text-decoration: none;
 		width: max-content;
 		position: relative;
-		padding: cssVar(spacing-sm) pxToRem(20);
+		padding: cssvar(spacing-sm) pxtorem(20);
 
 		@include pointer("fine") {
-			padding: cssVar(spacing-xs) cssVar(spacing-sm);
+			padding: cssvar(spacing-xs) cssvar(spacing-sm);
 		}
 	}
 
 	.current {
 		font-weight: 600;
-		transform: translateX(#{pxToRem(4)}) translateY(#{pxToRem(4)});
+		transform: translateX(#{pxtorem(4)}) translateY(#{pxtorem(4)});
 	}
 
 	.dots {
-		box-shadow: pxToRem(4) pxToRem(4) 0 0 cssVar(color-shadow);
+		box-shadow: pxtorem(4) pxtorem(4) 0 0 cssvar(color-shadow);
 	}
 }
