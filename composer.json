@@ -30,7 +30,7 @@
 		"paulthewalton/acf-stubs": "^5.8"
 	},
 	"scripts": {
-		"lint": "phpcs --standard=WordPress",
-		"fix": "phpcbf --standard=WordPress"
+		"lint": "phpcs -p -s --standard=phpcs.xml",
+		"fix": "phpcbf --standard=phpcs.xml"
 	}
 }
