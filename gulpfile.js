@@ -67,13 +67,15 @@ const zip = require('gulp-zip');
 /**
  * Load package.json data.
  */
-const package = JSON.parse(fs.readFileSync('./package.json'));
-const packageVersion = package.version;
+const packageJson = JSON.parse(fs.readFileSync('./package.json'));
+const packageVersion = packageJson.version;
 
 /**
  * Task: `serve`
  *
  * Init BrowserSync for live reloading.
+ *
+ * @param done
  */
 function serve(done) {
 	browserSync.init(config.browserSync);
@@ -84,6 +86,8 @@ function serve(done) {
  * Task: `clean`
  *
  * Delete all generated assets.
+ *
+ * @param done
  */
 function clean(done) {
 	del.sync(config.clean.paths);
@@ -347,6 +351,8 @@ function vendorsScripts() {
  * Task: `images`
  *
  * Compress images (png, jpg, gif, svg).
+ *
+ * @param done
  */
 function images(done) {
 	return pipeline(
@@ -373,6 +379,8 @@ function images(done) {
  * Task: `compilePotFile`
  *
  * Generate a pot file for translation.
+ *
+ * @param done
  */
 function compilePotFile(done) {
 	return pipeline(
@@ -393,6 +401,8 @@ function compilePotFile(done) {
  * Task: `moveFonts`
  *
  * Move fonts from src folder to assets folder.
+ *
+ * @param done
  */
 function moveFonts(done) {
 	return pipeline(
@@ -412,6 +422,8 @@ function moveFonts(done) {
  * Task: `zipTheme`
  *
  * Generate a zip version of the theme without development files.
+ *
+ * @param done
  */
 function zipTheme(done) {
 	return pipeline(
@@ -432,6 +444,8 @@ function zipTheme(done) {
  * Task: `bumpCSS`
  *
  * Copy package.json version in Sass variable and recompile CSS.
+ *
+ * @param done
  */
 function bumpCSS(done) {
 	return pipeline(
@@ -442,7 +456,7 @@ function bumpCSS(done) {
 			}),
 			dest(config.bump.styles.dest),
 		],
-		done()
+		done
 	);
 }
 
@@ -450,6 +464,8 @@ function bumpCSS(done) {
  * Task: `bumpPHP`
  *
  * Copy package.json version in functions.php.
+ *
+ * @param done
  */
 function bumpPHP(done) {
 	return pipeline(
@@ -460,7 +476,7 @@ function bumpPHP(done) {
 			}),
 			dest(config.bump.files.dest),
 		],
-		done()
+		done
 	);
 }
 
@@ -514,6 +530,8 @@ function initTheme(done) {
  * Task: `watchFiles`
  *
  * Reload tasks when files change.
+ *
+ * @param done
  */
 function watchFiles(done) {
 	watch(config.styles.watch.main).on(
