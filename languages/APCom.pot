@@ -331,29 +331,29 @@ msgstr ""
 
 #. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
 #. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
-#: inc/hooks.php:212, inc/hooks.php:239
+#: inc/hooks.php:216, inc/hooks.php:243
 msgid "Continue reading %1$s%2$s%3$s"
 msgstr ""
 
-#: inc/hooks.php:263
+#: inc/hooks.php:267
 msgid "Pagination"
 msgstr ""
 
-#: inc/hooks.php:281
+#: inc/hooks.php:285
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/hooks.php:412
+#: inc/hooks.php:416
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/hooks.php:410
+#: inc/hooks.php:414
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/hooks.php:408, template-parts/main/breadcrumb.php:71
+#: inc/hooks.php:412, template-parts/main/breadcrumb.php:71
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""

@@ -88,6 +88,10 @@ function apcom_body_class( $classes ) {
 		$classes[] = 'no-comments';
 	}
 
+	if ( has_block( 'code' ) ) {
+		$classes[] = 'has-code-block';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'apcom_body_class' );

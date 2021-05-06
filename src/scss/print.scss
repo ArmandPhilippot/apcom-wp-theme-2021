@@ -1,0 +1,416 @@
+/*
+ * Theme Name: ArmandPhilippot-com
+ * Adding print support. The print styles are based on the the great work of Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272/.
+ *
+ * @version      1.0
+ * @lastmodified 06.05.2021
+ */
+@import "helpers/functions";
+@import "helpers/variables";
+@import "helpers/mixins";
+
+/*==============================================================================
+ *>>> TABLE OF CONTENTS:
+ *==============================================================================
+ * 1.0 Margins
+ * 2.0 Fonts
+ * 3.0 Page breaks
+ * 4.0 Links
+ * 5.0 Unnecessary elements
+ * 6.0 Restyling elements
+ * 7.0 Custom messages
+ *============================================================================*/
+
+@media print {
+	/**
+	* 1.0 Margins
+	*
+	* Define page margins.
+	*/
+	@page {
+		margin: 2cm;
+	}
+
+	body:not(.has-code-block) {
+		.post,
+		.page {
+			-webkit-column-gap: 3em;
+			-moz-column-gap: 3em;
+			column-gap: 3em;
+			-webkit-column-width: 17em;
+			-moz-column-width: 17em;
+			column-width: 17em;
+		}
+	}
+
+	/**
+	* 2.0 Fonts
+	*
+	* Define font sizes and colors.
+	*/
+	body {
+		background: #fff !important;
+		color: #000;
+		font: 13pt Georgia, "Times New Roman", Times, serif;
+		line-height: 1.3;
+		hyphens: auto;
+	}
+
+	code {
+		font: 12pt Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+			"Lucida Sans Typewriter", "DejaVu Sans Mono",
+			"Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+			Monaco, "Courier New", Courier, monospace;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.branding__title,
+	.branding__baseline,
+	.copyright__body {
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+	}
+
+	h1,
+	.branding__title {
+		font-size: 24pt;
+	}
+
+	h2 {
+		font-size: 21pt;
+	}
+
+	h3 {
+		font-size: 18pt;
+	}
+
+	h4 {
+		font-size: 15pt;
+		font-weight: normal;
+	}
+
+	h5 {
+		font-size: 13pt;
+		font-weight: normal;
+	}
+
+	h6 {
+		font-size: 11pt;
+		font-weight: bold;
+	}
+
+	/**
+	* 3.0 Page breaks
+	*
+	* Define page breaks.
+	*/
+	a {
+		page-break-inside: avoid;
+	}
+
+	blockquote {
+		page-break-inside: avoid;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		page-break-after: avoid;
+		page-break-inside: avoid;
+	}
+
+	img {
+		page-break-after: avoid;
+		page-break-inside: avoid;
+	}
+
+	table,
+	pre {
+		page-break-inside: avoid;
+	}
+
+	ul,
+	ol,
+	dl {
+		page-break-before: avoid;
+	}
+
+	p {
+		orphans: 2;
+		widows: 2;
+	}
+
+	/**
+	* 4.0 Links
+	*
+	* Define links appearance.
+	*/
+	a:link,
+	a:visited,
+	a {
+		background: transparent;
+		font-weight: bold;
+		text-decoration: underline;
+		text-align: left;
+	}
+
+	a {
+		page-break-inside: avoid;
+
+		&::before {
+			display: none;
+		}
+
+		&::after {
+			display: initial !important;
+			font-size: 1em !important;
+			vertical-align: baseline !important;
+			width: auto !important;
+		}
+	}
+
+	a[href^="http"]::after,
+	a[href^="https"]::after,
+	a[href^="mailto"]::after,
+	a[href^="tel"]::after,
+	a[href^="/"]::after {
+		content: "\000020<‎\0000A0"attr(href) "‎\0000A0>\000020";
+	}
+
+	.header a[href^="/"]::after {
+		content: "";
+	}
+
+	a::after > img {
+		content: "";
+	}
+
+	article a[href^="#"]::after,
+	a[href^="javascript:"]::after {
+		content: "";
+	}
+
+	/**
+	* 5.0 Unnecessary elements
+	*
+	* Hide elements not needed on print.
+	*/
+	.back-to-top,
+	blockquote::before,
+	.breadcrumb,
+	.footer::before,
+	.header::before,
+	.main-nav,
+	.meta__comments,
+	.meta__themes,
+	.more-link,
+	.page__aside > h2,
+	.page__comments,
+	.page__footer,
+	.page__header::after,
+	.page__title::before,
+	.pagination,
+	.reading-progress,
+	.tools,
+	.widget:not(.toc__wrapper) {
+		display: none !important;
+	}
+
+	/**
+	* 6.0 Restyling elements
+	*
+	* Change some elements appearance on print.
+	*/
+	body {
+		display: block;
+		min-height: auto;
+	}
+
+	img {
+		box-shadow: none;
+		filter: none;
+	}
+
+	blockquote {
+		border: none;
+		box-shadow: none;
+	}
+
+	body,
+	code,
+	.front-page .wp-block-group:nth-child(2n),
+	.header,
+	.main,
+	.page__header,
+	.widget,
+	.footer {
+		background: none;
+	}
+
+	.front-page {
+		.wp-block-group {
+			display: initial;
+			padding: 0;
+
+			&:first-child {
+				padding: 0;
+			}
+
+			&:nth-child(2n) {
+				padding: 0;
+
+				&::before,
+				&::after {
+					display: none;
+				}
+			}
+		}
+
+		.buttons-list {
+			display: initial;
+			list-style-type: initial;
+
+			a {
+				display: initial;
+				padding: 0;
+				background: none;
+				border: none;
+				box-shadow: none;
+				font-weight: normal;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.wp-block-columns {
+		display: initial;
+	}
+
+	.wp-block-column:not(:first-child) {
+		margin: 0;
+	}
+
+	.wp-block-ptqblock__list.is-grid {
+		display: initial;
+	}
+
+	.header {
+		text-align: left;
+		padding: 1cm 0 2cm;
+	}
+
+	.branding {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		column-gap: 1cm;
+		align-items: center;
+		width: max-content;
+		margin: auto;
+
+		&__logo {
+			grid-column: 1;
+			grid-row: span 2;
+		}
+
+		&__title {
+			grid-column: 2;
+			grid-row: 1;
+			margin: 0;
+		}
+
+		&__baseline {
+			grid-column: 2;
+			grid-row: 2;
+		}
+	}
+
+	.branding__logo .logo__image {
+		box-shadow: 0 0 1px 0 #000;
+	}
+
+	.logo__link {
+		transform: rotateY(180deg);
+	}
+
+	.main,
+	.page,
+	.page__body,
+	.page__header {
+		display: block;
+	}
+
+	.page__header {
+		border: none;
+		padding: 0;
+	}
+
+	.page__title {
+		margin: 0 0 0.5cm;
+	}
+
+	.meta {
+		justify-content: flex-start;
+		gap: 1cm;
+
+		&__item {
+			flex: 0 0 auto;
+		}
+	}
+
+	.footer {
+		margin: 0;
+	}
+
+	.code-toolbar {
+		margin-top: pxToRem(60);
+		> .toolbar {
+			background: #ededed;
+			box-shadow: none;
+		}
+
+		button {
+			display: none;
+		}
+
+		pre.line-numbers {
+			> code {
+				background: none;
+			}
+
+			.line-numbers-rows {
+				background: #ededed;
+			}
+		}
+	}
+
+	.wp-block-code {
+		background: none;
+		max-height: initial;
+		overflow: initial;
+		width: max-content;
+
+		code {
+			overflow-wrap: break-word !important;
+		}
+	}
+
+	/**
+	* 7.0 Custom messages
+	*
+	* Add custom messages only visible on print.
+	*/
+	.footer::after {
+		display: block !important;
+		content: "\ This work is licensed under a Creative Commons Attribution-ShareAlike 2.0 Generic License < https://creativecommons.org/licenses/by-sa/2.0/ >.";
+		color: #000 !important;
+		font-size: 1em;
+		margin-top: 1cm;
+	}
+}
