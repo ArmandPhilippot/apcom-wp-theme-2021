@@ -86,8 +86,14 @@
 		"normalize.css": "^8.0.1"
 	},
 	"lint-staged": {
-		"*.js": "eslint --cache --fix",
-		"*.css": "stylelint --fix",
-		"*.{js,css,md}": "prettier --write"
+		"src/js/**/*.js": [
+			"eslint --cache --fix",
+			"prettier --write"
+		],
+		"src/scss/**/*.scss": [
+			"stylelint --fix --syntax=scss",
+			"prettier --write"
+		],
+		"*.md": "prettier --write"
 	}
 }

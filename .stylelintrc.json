@@ -3,5 +3,10 @@
 		"@wordpress/stylelint-config",
 		"@wordpress/stylelint-config/scss",
 		"stylelint-config-prettier"
-	]
+	],
+	"rules": {
+		"comment-empty-line-before": null,
+		"no-descending-specificity": null,
+		"selector-class-pattern": null
+	}
 }
