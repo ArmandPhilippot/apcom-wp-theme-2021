@@ -3233,7 +3233,8 @@ small {
 .comments__list .comments__form {
 	background: var(--apcom-color-bg);
 	border: 0.0625rem solid var(--apcom-color-border-light);
-	margin-bottom: var(--apcom-spacing-md);
+	box-shadow: -0.1875rem 0.1875rem 0 0 var(--apcom-color-shadow-lighter), -0.25rem 0.25rem 0.1875rem -0.125rem var(--apcom-color-shadow-darker);
+	margin: var(--apcom-spacing-sm) 0 0;
 	padding: var(--apcom-spacing-md);
 }
 
@@ -3494,6 +3495,12 @@ small {
 	color: var(--apcom-color-primary-dark);
 	text-decoration: none;
 	transform: translateX(-0.25rem) translateY(0.25rem);
+}
+
+@media only screen and (min-width: 35.5em) {
+	.comments__form #cancel-comment-reply-link {
+		margin-right: var(--apcom-spacing-md);
+	}
 }
 
 @media only screen and (min-width: 48em) {

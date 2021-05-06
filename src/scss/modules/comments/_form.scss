@@ -5,6 +5,12 @@
 
 		font-family: cssVar(font-family-primary);
 		margin: cssVar(spacing-sm) 0;
+
+		@include media("screen") {
+			@include dimensions("xs") {
+				margin-left: cssVar(spacing-md);
+			}
+		}
 	}
 }
 

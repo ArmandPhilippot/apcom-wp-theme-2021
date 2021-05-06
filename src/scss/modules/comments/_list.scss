@@ -6,7 +6,10 @@
 	.comments__form {
 		background: cssVar(color-bg);
 		border: pxToRem(1) solid cssVar(color-border-light);
-		margin-bottom: cssVar(spacing-md);
+		box-shadow: pxToRem(3) pxToRem(3) 0 0 cssVar(color-shadow-lighter),
+			pxToRem(4) pxToRem(4) pxToRem(3) pxToRem(-2)
+				cssVar(color-shadow-darker);
+		margin: cssVar(spacing-sm) 0 0;
 		padding: cssVar(spacing-md);
 
 		@include media("screen") {
