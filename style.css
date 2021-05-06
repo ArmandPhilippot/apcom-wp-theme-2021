@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* stylelint-disable -- Fonts name are not keywords, lowercase is not needed. */
+/* stylelint-enable */
 /*!
 Theme Name: ArmandPhilippot-com
 Theme URI: https://github.com/ArmandPhilippot/armandphilippot.com
@@ -475,122 +477,122 @@ template {
 
 @font-face {
 	font-display: swap;
-	font-family: "Kanit";
+	font-family: Kanit;
 	font-style: normal;
-	font-weight: bold;
-	src: url("assets/fonts/Kanit/Kanit-Bold.woff2") format("woff2"), url("assets/fonts/Kanit/Kanit-Bold.woff") format("woff");
+	font-weight: 700;
+	src: url(assets/fonts/Kanit/Kanit-Bold.woff2) format("woff2"), url(assets/fonts/Kanit/Kanit-Bold.woff) format("woff");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Kanit";
+	font-family: Kanit;
 	font-style: italic;
-	font-weight: bold;
-	src: url("assets/fonts/Kanit/Kanit-BoldItalic.woff2") format("woff2"), url("assets/fonts/Kanit/Kanit-BoldItalic.woff") format("woff");
+	font-weight: 700;
+	src: url(assets/fonts/Kanit/Kanit-BoldItalic.woff2) format("woff2"), url(assets/fonts/Kanit/Kanit-BoldItalic.woff) format("woff");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Kanit";
+	font-family: Kanit;
 	font-style: normal;
 	font-weight: 600;
-	src: url("assets/fonts/Kanit/Kanit-SemiBold.woff2") format("woff2"), url("assets/fonts/Kanit/Kanit-SemiBold.woff") format("woff");
+	src: url(assets/fonts/Kanit/Kanit-SemiBold.woff2) format("woff2"), url(assets/fonts/Kanit/Kanit-SemiBold.woff) format("woff");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Kanit";
+	font-family: Kanit;
 	font-style: italic;
 	font-weight: 600;
-	src: url("assets/fonts/Kanit/Kanit-SemiBoldItalic.woff2") format("woff2"), url("assets/fonts/Kanit/Kanit-SemiBoldItalic.woff") format("woff");
+	src: url(assets/fonts/Kanit/Kanit-SemiBoldItalic.woff2) format("woff2"), url(assets/fonts/Kanit/Kanit-SemiBoldItalic.woff) format("woff");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Kanit";
+	font-family: Kanit;
 	font-style: normal;
 	font-weight: 500;
-	src: url("assets/fonts/Kanit/Kanit-Medium.woff2") format("woff2"), url("assets/fonts/Kanit/Kanit-Medium.woff") format("woff");
+	src: url(assets/fonts/Kanit/Kanit-Medium.woff2) format("woff2"), url(assets/fonts/Kanit/Kanit-Medium.woff) format("woff");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Kanit";
+	font-family: Kanit;
 	font-style: italic;
 	font-weight: 500;
-	src: url("assets/fonts/Kanit/Kanit-MediumItalic.woff2") format("woff2"), url("assets/fonts/Kanit/Kanit-MediumItalic.woff") format("woff");
+	src: url(assets/fonts/Kanit/Kanit-MediumItalic.woff2) format("woff2"), url(assets/fonts/Kanit/Kanit-MediumItalic.woff) format("woff");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Kanit";
+	font-family: Kanit;
 	font-style: normal;
-	font-weight: normal;
-	src: url("assets/fonts/Kanit/Kanit-Regular.woff2") format("woff2"), url("assets/fonts/Kanit/Kanit-Regular.woff") format("woff");
+	font-weight: 400;
+	src: url(assets/fonts/Kanit/Kanit-Regular.woff2) format("woff2"), url(assets/fonts/Kanit/Kanit-Regular.woff) format("woff");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Kanit";
+	font-family: Kanit;
 	font-style: italic;
-	font-weight: normal;
-	src: url("assets/fonts/Kanit/Kanit-Italic.woff2") format("woff2"), url("assets/fonts/Kanit/Kanit-Italic.woff") format("woff");
+	font-weight: 400;
+	src: url(assets/fonts/Kanit/Kanit-Italic.woff2) format("woff2"), url(assets/fonts/Kanit/Kanit-Italic.woff) format("woff");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Kanit";
+	font-family: Kanit;
 	font-style: normal;
 	font-weight: 300;
-	src: url("assets/fonts/Kanit/Kanit-Light.woff2") format("woff2"), url("assets/fonts/Kanit/Kanit-Light.woff") format("woff");
+	src: url(assets/fonts/Kanit/Kanit-Light.woff2) format("woff2"), url(assets/fonts/Kanit/Kanit-Light.woff) format("woff");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Kanit";
+	font-family: Kanit;
 	font-style: italic;
 	font-weight: 300;
-	src: url("assets/fonts/Kanit/Kanit-LightItalic.woff2") format("woff2"), url("assets/fonts/Kanit/Kanit-LightItalic.woff") format("woff");
+	src: url(assets/fonts/Kanit/Kanit-LightItalic.woff2) format("woff2"), url(assets/fonts/Kanit/Kanit-LightItalic.woff) format("woff");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Inter";
+	font-family: Inter;
 	font-style: oblique 0deg 10deg;
 	font-weight: 100 900;
-	src: url("assets/fonts/Inter/Inter.woff2?v=3.18") format("woff2");
+	src: url(assets/fonts/Inter/Inter.woff2?v=3.18) format("woff2");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Cousine";
+	font-family: Cousine;
 	font-style: normal;
 	font-weight: 600;
-	src: url("assets/fonts/Cousine/Cousine-Bold.woff2") format("woff2");
+	src: url(assets/fonts/Cousine/Cousine-Bold.woff2) format("woff2");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Cousine";
+	font-family: Cousine;
 	font-style: italic;
 	font-weight: 600;
-	src: url("assets/fonts/Cousine/Cousine-BoldItalic.woff2") format("woff2");
+	src: url(assets/fonts/Cousine/Cousine-BoldItalic.woff2) format("woff2");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Cousine";
+	font-family: Cousine;
 	font-style: italic;
-	font-weight: normal;
-	src: url("assets/fonts/Cousine/Cousine-Italic.woff2") format("woff2");
+	font-weight: 400;
+	src: url(assets/fonts/Cousine/Cousine-Italic.woff2) format("woff2");
 }
 
 @font-face {
 	font-display: swap;
-	font-family: "Cousine";
+	font-family: Cousine;
 	font-style: normal;
-	font-weight: normal;
-	src: url("assets/fonts/Cousine/Cousine-Regular.woff2") format("woff2");
+	font-weight: 400;
+	src: url(assets/fonts/Cousine/Cousine-Regular.woff2) format("woff2");
 }
 
 :root {
@@ -634,8 +636,8 @@ html {
  * making all elements inheriting from the root box-sizing value.
  */
 *,
-*:after,
-*:before {
+*::after,
+*::before {
 	box-sizing: inherit;
 	margin: 0;
 	padding: 0;
@@ -845,7 +847,9 @@ blockquote {
 
 blockquote::before {
 	background-color: var(--apcom-color-bg);
+	/* stylelint-disable -- Stylelint does not recognize the SVG. */
 	background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28.215" height="24.303" version="1.0"%3E%3Cdefs%3E%3Cpath id="a" d="M-174.038-59.122h63.848v81.44h-63.848z"/%3E%3C/defs%3E%3Cg style="line-height:1.25;white-space:pre;shape-inside:url(%23a)"%3E%3Cpath d="M26.218 0C18.81 5.077 15.315 10.154 15.315 16.064c0 4.993 2.746 8.24 6.824 8.24 3.163 0 5.41-2.165 5.41-5.078 0-2.913-2.247-4.91-5.493-4.91l-1.498.083c-.166.083-.25.083-.333.083-.333 0-.5-.25-.5-.749 0-3.579 2.664-7.158 8.49-11.403zM10.903 0C3.496 5.077 0 10.154 0 16.064c0 4.993 2.747 8.24 6.825 8.24 3.163 0 5.41-2.165 5.41-5.078 0-2.913-2.247-4.91-5.493-4.91l-1.498.083c-.167.083-.25.083-.333.083-.333 0-.5-.25-.5-.749 0-3.579 3.413-8.24 8.49-11.403z" fill="%23133d6c"/%3E%3C/g%3E%3C/svg%3E');
+	/* stylelint-enable */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: calc(100% - var(--apcom-spacing-sm));
@@ -867,7 +871,9 @@ blockquote p:last-child {
 }
 
 [data-color-scheme="dark"] blockquote::before {
+	/* stylelint-disable -- Stylelint does not recognize the SVG. */
 	background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28.215" height="24.303" version="1.0"%3E%3Cdefs%3E%3Cpath id="a" d="M-174.038-59.122h63.848v81.44h-63.848z"/%3E%3C/defs%3E%3Cg style="line-height:1.25;white-space:pre;shape-inside:url(%23a)"%3E%3Cpath d="M26.218 0C18.81 5.077 15.315 10.154 15.315 16.064c0 4.993 2.746 8.24 6.824 8.24 3.163 0 5.41-2.165 5.41-5.078 0-2.913-2.247-4.91-5.493-4.91l-1.498.083c-.166.083-.25.083-.333.083-.333 0-.5-.25-.5-.749 0-3.579 2.664-7.158 8.49-11.403zM10.903 0C3.496 5.077 0 10.154 0 16.064c0 4.993 2.747 8.24 6.825 8.24 3.163 0 5.41-2.165 5.41-5.078 0-2.913-2.247-4.91-5.493-4.91l-1.498.083c-.167.083-.25.083-.333.083-.333 0-.5-.25-.5-.749 0-3.579 3.413-8.24 8.49-11.403z" fill="%238db3e2"/%3E%3C/g%3E%3C/svg%3E');
+	/* stylelint-enable */
 }
 
 cite {
@@ -1748,10 +1754,6 @@ small {
 	}
 }
 
-[data-color-scheme="dark"] .header::before {
-	background-image: url(data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 95.839"%3E%3Cpath fill="%23152537" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/%3E%3Cpath d="M394 9.395v36.778H194v39.666H0v4h198V50.173h200V13.395h184v36.778h200v39.666h18v-4h-14V46.173H586V9.395z" fill="%23172331"/%3E%3Cpath d="M398 13.395v36.778H198v39.666H0v6h204V56.173h200V19.395h172v36.778h200v39.666h24v-6h-18V50.173H582V13.395z" fill="%231a2f47"/%3E%3C/svg%3E);
-}
-
 .branding__logo {
 	margin: auto;
 	position: relative;
@@ -1841,6 +1843,10 @@ small {
 	letter-spacing: 0.0625rem;
 	margin: 0;
 	text-transform: uppercase;
+}
+
+[data-color-scheme="dark"] .header::before {
+	background-image: url(data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 95.839"%3E%3Cpath fill="%23152537" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/%3E%3Cpath d="M394 9.395v36.778H194v39.666H0v4h198V50.173h200V13.395h184v36.778h200v39.666h18v-4h-14V46.173H586V9.395z" fill="%23172331"/%3E%3Cpath d="M398 13.395v36.778H198v39.666H0v6h204V56.173h200V19.395h172v36.778h200v39.666h24v-6h-18V50.173H582V13.395z" fill="%231a2f47"/%3E%3C/svg%3E);
 }
 
 [data-color-scheme="dark"] .branding .logo__image {
@@ -2031,7 +2037,7 @@ small {
 }
 
 .page__feed-link::before {
-	background: url("assets/images/feed.svg");
+	background: url(assets/images/feed.svg);
 	background-repeat: no-repeat;
 	background-size: 100%;
 	content: "";
@@ -2961,13 +2967,17 @@ small {
 }
 
 .wp-block-pullquote::before {
+	/* stylelint-disable -- Stylelint does not recognize the SVG. */
 	background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28.215" height="24.303" version="1.0"%3E%3Cdefs%3E%3Cpath id="a" d="M-174.038-59.122h63.848v81.44h-63.848z"/%3E%3C/defs%3E%3Cg style="line-height:1.25;white-space:pre;shape-inside:url(%23a)"%3E%3Cpath d="M26.218 0C18.81 5.077 15.315 10.154 15.315 16.064c0 4.993 2.746 8.24 6.824 8.24 3.163 0 5.41-2.165 5.41-5.078 0-2.913-2.247-4.91-5.493-4.91l-1.498.083c-.166.083-.25.083-.333.083-.333 0-.5-.25-.5-.749 0-3.579 2.664-7.158 8.49-11.403zM10.903 0C3.496 5.077 0 10.154 0 16.064c0 4.993 2.747 8.24 6.825 8.24 3.163 0 5.41-2.165 5.41-5.078 0-2.913-2.247-4.91-5.493-4.91l-1.498.083c-.167.083-.25.083-.333.083-.333 0-.5-.25-.5-.749 0-3.579 3.413-8.24 8.49-11.403z" fill="%23133d6c"/%3E%3C/g%3E%3C/svg%3E');
 	left: 5%;
+	/* stylelint-enable */
 	top: calc(-0.625rem - (var(--apcom-spacing-sm) / 2));
 }
 
 .wp-block-pullquote::after {
+	/* stylelint-disable -- Stylelint does not recognize the SVG. */
 	background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28.215" height="24.303" version="1.0"%3E%3Cdefs%3E%3Cpath id="a" d="M-174.038-59.122h63.848v81.44h-63.848z"/%3E%3C/defs%3E%3Cg style="line-height:1.25;white-space:pre;shape-inside:url(%23a)"%3E%3Cpath d="M1.998 24.303C9.405 19.226 12.9 14.15 12.9 8.24 12.9 3.246 10.154 0 6.076 0 2.913 0 .666 2.164.666 5.077s2.247 4.91 5.493 4.91l1.498-.083c.167-.083.25-.083.333-.083.333 0 .5.25.5.75 0 3.578-2.664 7.157-8.49 11.402zm15.314 0C24.72 19.226 28.215 14.15 28.215 8.24 28.215 3.246 25.47 0 21.39 0c-3.162 0-5.41 2.164-5.41 5.077s2.248 4.91 5.494 4.91l1.498-.083c.166-.083.25-.083.333-.083.333 0 .5.25.5.75 0 3.578-3.413 8.24-8.49 11.402z" fill="%23133d6c"/%3E%3C/g%3E%3C/svg%3E');
+	/* stylelint-enable */
 	bottom: calc(-0.625rem - (var(--apcom-spacing-sm) / 2));
 	right: 5%;
 }
@@ -3205,7 +3215,7 @@ small {
 }
 
 .comments__feed .feed__link::before {
-	background: url("assets/images/feed.svg");
+	background: url(assets/images/feed.svg);
 	background-repeat: no-repeat;
 	background-size: 100%;
 	content: "";
@@ -3870,7 +3880,9 @@ small {
 }
 
 .meta__reading-time {
+	/* stylelint-disable -- Stylelint does not recognize the SVG. */
 	background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.458 26.458"%3E%3Ccircle cx="-79.87" cy="41.903" r="13.018" fill="%23133d6c" transform="translate(93.099 -28.463)"/%3E%3Ccircle cx="13.229" cy="13.44" r="11.418" fill="%23f3f7fc"/%3E%3Cpath d="M13.23 13.44V2.022c3.152 0 6.007 1.278 8.073 3.344z" fill="%2382431c" fill-opacity=".251"/%3E%3Cg fill="%23133d6c"%3E%3Cpath d="M12.69 1.036h1.078v3.688H12.69zm0 21.12h1.078v3.688H12.69zm-8.176-9.255v1.078H.826v-1.078zm21.119 0v1.078h-3.688v-1.078z"/%3E%3Ccircle cx="13.229" cy="13.44" r="1.246"/%3E%3C/g%3E%3Cpath d="M13.03 12.627l5.739-5.739c.47-.269.985-.368 1.504-.495-.08.538-.273 1.016-.495 1.504l-5.738 5.739zM18.89.078c.266-.463 3.291 1.276 3.021 1.743l-.762 1.32c-.125.217-3.14-1.538-3.021-1.744zM4.547 1.823C4.28 1.361 7.298-.389 7.567.08l.762 1.32c.125.216-2.902 1.95-3.02 1.744z" fill="%23133d6c"/%3E%3C/svg%3E');
+	/* stylelint-enable */
 }
 
 .meta__themes {
@@ -3898,7 +3910,9 @@ small {
 }
 
 .meta__website {
+	/* stylelint-disable -- Stylelint does not recognize the SVG. */
 	background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.458 26.458"%3E%3Cdefs%3E%3Cpath id="a" d="M-9.863 11.56h33.374v14.267H-9.863z"/%3E%3C/defs%3E%3Cpath d="M13.215 0A13.23 13.23 0 000 13.23a13.23 13.23 0 0013.23 13.228A13.23 13.23 0 0026.457 13.23 13.23 13.23 0 0013.23 0a13.23 13.23 0 00-.014 0zm-.032 1.323a11.906 11.906 0 01.046 0 11.906 11.906 0 0111.906 11.906A11.906 11.906 0 0113.23 25.135 11.906 11.906 0 011.323 13.23a11.906 11.906 0 0111.86-11.906z" fill="%23133d6c"/%3E%3Cpath d="M13.244 25.414c8.36-8.36 8.722-15.996 0-24.717m-.03 25.065c-8.36-8.36-8.721-15.996 0-24.717" fill="none" stroke="%23133d6c" stroke-width=".906"/%3E%3Cpath d="M22.199 3.71c-6.219 5.285-11.97 5.268-17.934 0m17.934 19.042c-6.219-5.285-11.97-5.269-17.934 0" fill="none" stroke="%23133d6c" stroke-width=".719"/%3E%3Cg fill="%23133d6c" stroke="%23133d6c" stroke-width=".672"%3E%3Cpath d="M13.168.336h.122v25.787h-.122z"/%3E%3Cpath d="M26.123 13.168v.122H.336v-.122z"/%3E%3C/g%3E%3Cpath fill="%23133d6c" d="M1.016 8.368h24.426v9.723H1.016z"/%3E%3Cpath fill="%23f3f7fc" d="M2.092 9.372h22.274v7.715H2.092z"/%3E%3Cg style="line-height:1.25;white-space:pre;shape-inside:url(%23a)"%3E%3Cpath d="M3.459 11.009h1.23l.662 3.06.668-3.06h1.056l.665 3.028.666-3.028h1.23l-1.043 4.44h-1.38l-.667-3.053-.664 3.053H4.5zm6.682 0h1.229l.664 3.06.666-3.06h1.057l.664 3.028.666-3.028h1.23l-1.042 4.44h-1.38l-.667-3.053-.665 3.053h-1.38zm6.68 0h1.231l.662 3.06.668-3.06h1.056l.665 3.028.666-3.028H23l-1.043 4.44h-1.38l-.667-3.053-.664 3.053h-1.381z" aria-label="www" font-weight="700" font-size="5.644" font-family="sans-serif" letter-spacing="0" word-spacing="0" fill="%23133d6c"/%3E%3C/g%3E%3C/svg%3E');
+	/* stylelint-enable */
 }
 
 [data-color-scheme="dark"] .meta__articles {
@@ -3914,7 +3928,9 @@ small {
 }
 
 [data-color-scheme="dark"] .meta__reading-time {
+	/* stylelint-disable -- Stylelint does not recognize the SVG. */
 	background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.458 26.458"%3E%3Ccircle cx="-79.87" cy="41.903" r="13.018" fill="%238db3e2" transform="translate(93.099 -28.463)"/%3E%3Ccircle cx="13.229" cy="13.44" r="11.418" fill="%230f1b29"/%3E%3Cpath d="M13.23 13.44V2.022c3.152 0 6.007 1.278 8.073 3.344z" fill="%23dfc59b" fill-opacity=".251"/%3E%3Cg fill="%238db3e2"%3E%3Cpath d="M12.69 1.036h1.078v3.688H12.69zm0 21.12h1.078v3.688H12.69zm-8.176-9.255v1.078H.826v-1.078zm21.119 0v1.078h-3.688v-1.078z"/%3E%3Ccircle cx="13.229" cy="13.44" r="1.246"/%3E%3C/g%3E%3Cpath d="M13.03 12.627l5.739-5.739c.47-.269.985-.368 1.504-.495-.08.538-.273 1.016-.495 1.504l-5.738 5.739zM18.89.078c.266-.463 3.291 1.276 3.021 1.743l-.762 1.32c-.125.217-3.14-1.538-3.021-1.744zM4.547 1.823C4.28 1.361 7.298-.389 7.567.08l.762 1.32c.125.216-2.902 1.95-3.02 1.744z" fill="%238db3e2"/%3E%3C/svg%3E');
+	/* stylelint-enable */
 }
 
 [data-color-scheme="dark"] .meta__themes {
@@ -3926,7 +3942,9 @@ small {
 }
 
 [data-color-scheme="dark"] .meta__website {
+	/* stylelint-disable -- Stylelint does not recognize the SVG. */
 	background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.458 26.458"%3E%3Cdefs%3E%3Cpath id="a" d="M-9.863 11.56h33.374v14.267H-9.863z"/%3E%3C/defs%3E%3Cpath d="M13.215 0A13.23 13.23 0 000 13.23a13.23 13.23 0 0013.23 13.228A13.23 13.23 0 0026.457 13.23 13.23 13.23 0 0013.23 0a13.23 13.23 0 00-.014 0zm-.032 1.323a11.906 11.906 0 01.046 0 11.906 11.906 0 0111.906 11.906A11.906 11.906 0 0113.23 25.135 11.906 11.906 0 011.323 13.23a11.906 11.906 0 0111.86-11.906z" fill="%238db3e2"/%3E%3Cpath d="M13.244 25.414c8.36-8.36 8.722-15.996 0-24.717m-.03 25.065c-8.36-8.36-8.721-15.996 0-24.717" fill="none" stroke="%238db3e2" stroke-width=".906"/%3E%3Cpath d="M22.199 3.71c-6.219 5.285-11.97 5.268-17.934 0m17.934 19.042c-6.219-5.285-11.97-5.269-17.934 0" fill="none" stroke="%238db3e2" stroke-width=".719"/%3E%3Cg fill="%238db3e2" stroke="%238db3e2" stroke-width=".672"%3E%3Cpath d="M13.168.336h.122v25.787h-.122z"/%3E%3Cpath d="M26.123 13.168v.122H.336v-.122z"/%3E%3C/g%3E%3Cpath fill="%238db3e2" d="M1.016 8.368h24.426v9.723H1.016z"/%3E%3Cpath fill="%230f1b29" d="M2.092 9.372h22.274v7.715H2.092z"/%3E%3Cg style="line-height:1.25;white-space:pre;shape-inside:url(%23a)"%3E%3Cpath d="M3.459 11.009h1.23l.662 3.06.668-3.06h1.056l.665 3.028.666-3.028h1.23l-1.043 4.44h-1.38l-.667-3.053-.664 3.053H4.5zm6.682 0h1.229l.664 3.06.666-3.06h1.057l.664 3.028.666-3.028h1.23l-1.042 4.44h-1.38l-.667-3.053-.665 3.053h-1.38zm6.68 0h1.231l.662 3.06.668-3.06h1.056l.665 3.028.666-3.028H23l-1.043 4.44h-1.38l-.667-3.053-.664 3.053h-1.381z" aria-label="www" font-weight="700" font-size="5.644" font-family="sans-serif" letter-spacing="0" word-spacing="0" fill="%238db3e2"/%3E%3C/g%3E%3C/svg%3E');
+	/* stylelint-enable */
 }
 
 .articles-list .meta__item--has-icon .meta__term:first-of-type, .articles-list .meta__item--has-icon .meta__description:first-of-type {

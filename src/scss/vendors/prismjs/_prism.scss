@@ -11,7 +11,6 @@
 		border: solid cssvar(color-border-light);
 		border-width: pxtorem(1) pxtorem(1) 0 pxtorem(1);
 		border-top-left-radius: pxtorem(3);
-		border-top-left-radius: pxtorem(3);
 		border-top-right-radius: pxtorem(3);
 		box-shadow: 0 pxtorem(2) pxtorem(3) pxtorem(-2)
 			cssvar(color-shadow-darker);
@@ -160,7 +159,7 @@ pre {
 			&.inserted.prefix,
 			&.bold,
 			&.this {
-				font-weight: bold;
+				font-weight: 600;
 			}
 
 			&.coord,

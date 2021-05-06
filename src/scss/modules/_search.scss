@@ -17,7 +17,7 @@
 		right: pxtorem(40/2 - 8); // label width/2 - approximate checkbox width;
 
 		&:not(:checked) {
-			& ~ .search-form {
+			~ .search-form {
 				display: none;
 			}
 		}

@@ -11,8 +11,8 @@ html {
  * making all elements inheriting from the root box-sizing value.
  */
 *,
-*:after,
-*:before {
+*::after,
+*::before {
 	box-sizing: inherit;
 	margin: 0;
 	padding: 0;

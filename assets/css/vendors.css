@@ -1,3 +1,5 @@
+/* stylelint-disable -- Fonts name are not keywords, lowercase is not needed. */
+/* stylelint-enable */
 /*!============================================================================
 >>> TABLE OF CONTENTS:
 ===============================================================================
@@ -18,7 +20,6 @@
 	align-items: center;
 	background: var(--apcom-color-bg-tertiary);
 	border: solid var(--apcom-color-border-light);
-	border-top-left-radius: 0.1875rem;
 	border-top-left-radius: 0.1875rem;
 	border-top-right-radius: 0.1875rem;
 	border-width: 0.0625rem 0.0625rem 0 0.0625rem;
@@ -153,7 +154,7 @@ pre[class*="language-"] .token.deleted {
 }
 
 pre[class*="language-"] .token.deleted.prefix, pre[class*="language-"] .token.important:not(.boolean), pre[class*="language-"] .token.inserted.prefix, pre[class*="language-"] .token.bold, pre[class*="language-"] .token.this {
-	font-weight: bold;
+	font-weight: 600;
 }
 
 pre[class*="language-"] .token.coord, pre[class*="language-"] .token.italic {
