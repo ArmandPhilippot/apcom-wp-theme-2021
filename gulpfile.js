@@ -371,7 +371,7 @@ function images(done) {
 				onLast: config.notify.onLastOption,
 			}),
 		],
-		done()
+		done
 	);
 }
 
@@ -393,7 +393,7 @@ function compilePotFile(done) {
 				message: 'POT file have been generated.',
 			}),
 		],
-		done()
+		done
 	);
 }
 
@@ -414,7 +414,7 @@ function moveFonts(done) {
 				message: 'Fonts have been moved to assets.',
 			}),
 		],
-		done()
+		done
 	);
 }
 
@@ -436,7 +436,7 @@ function zipTheme(done) {
 				message: 'Theme have been zipped.',
 			}),
 		],
-		done()
+		done
 	);
 }
 
@@ -522,7 +522,7 @@ function initTheme(done) {
 			}),
 			dest(config.init.dest),
 		],
-		done()
+		done
 	);
 }
 
