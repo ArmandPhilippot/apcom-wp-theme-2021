@@ -6,9 +6,11 @@
  * @license MIT <https://opensource.org/licenses/MIT>
  * @author Armand Philippot <https://www.armandphilippot.com>
  */
+const html = document;
 class readingProgress {
 	/**
 	 * Define the progress bar container.
+	 *
 	 * @param {string} containerId Id of the container.
 	 */
 	constructor(containerId) {
@@ -21,11 +23,12 @@ class readingProgress {
 
 	/**
 	 * Define the progress bar classes.
-	 * @param {array} barClasses - One or more classes for the progress bar.
+	 *
+	 * @param {Array} barClasses - One or more classes for the progress bar.
 	 */
 	setProgressBarClasses(barClasses) {
 		if (barClasses) {
-			barClasses.forEach(className => {
+			barClasses.forEach((className) => {
 				this.progressBar.classList.add(className);
 			});
 		} else {
@@ -35,11 +38,12 @@ class readingProgress {
 
 	/**
 	 * Define the progress bar wrapper classes.
-	 * @param {array} wrapperClasses - One or more classes for the progress bar wrapper.
+	 *
+	 * @param {Array} wrapperClasses - One or more classes for the progress bar wrapper.
 	 */
 	setProgressBarWrapperClasses(wrapperClasses) {
 		if (wrapperClasses) {
-			wrapperClasses.forEach(className => {
+			wrapperClasses.forEach((className) => {
 				this.progressBarWrapper.classList.add(className);
 			});
 		} else {
@@ -49,6 +53,7 @@ class readingProgress {
 
 	/**
 	 * Insert the progress bar inside the container.
+	 *
 	 * @param {string} position - The progress bar position: `top` or `bottom` of its container.
 	 */
 	insertReadingProgressBar(position) {
@@ -62,10 +67,10 @@ class readingProgress {
 			this.container.appendChild(this.progressBarWrapper);
 			this.progressBarWrapper.style.bottom = '0';
 		} else {
-			if (!this.container) {
+			if (! this.container) {
 				return;
 			}
-			let containerFirstChild = this.container.firstChild;
+			const containerFirstChild = this.container.firstChild;
 			this.container.insertBefore(
 				this.progressBarWrapper,
 				containerFirstChild
@@ -76,6 +81,7 @@ class readingProgress {
 
 	/**
 	 * Display or not the progress bar.
+	 *
 	 * @param {boolean} bool - True of false.
 	 */
 	showProgressBar(bool) {
@@ -88,6 +94,7 @@ class readingProgress {
 
 	/**
 	 * Calculate the distance traveled as a percentage without unit.
+	 *
 	 * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
 	 * @return {number} A percentage without unit.
 	 */
@@ -105,15 +112,15 @@ class readingProgress {
 			target = this.container;
 		}
 
-		if (!target) {
+		if (! target) {
 			return;
 		}
 
-		let windowHeight = window.innerHeight;
-		let windowTop = window.scrollY;
-		let targetHeight = target.offsetHeight;
-		let targetTop = target.offsetTop;
-		let scrollPercent =
+		const windowHeight = window.innerHeight;
+		const windowTop = window.scrollY;
+		const targetHeight = target.offsetHeight;
+		const targetTop = target.offsetTop;
+		const scrollPercent =
 			((windowTop - targetTop) / (targetHeight - windowHeight)) * 100;
 
 		return scrollPercent;
@@ -121,10 +128,11 @@ class readingProgress {
 
 	/**
 	 * Use the distance traveled as progressBar width.
+	 *
 	 * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
 	 */
 	recordProgression(recordFrom) {
-		let scrollPercent = this.getScrollPercent(recordFrom);
+		const scrollPercent = this.getScrollPercent(recordFrom);
 		if (scrollPercent > 1 && scrollPercent <= 100) {
 			this.showProgressBar(true);
 		} else {
@@ -135,8 +143,9 @@ class readingProgress {
 
 	/**
 	 * Initialize the reading progress bar.
-	 * @param {array}  wrapperClasses - One or more classes for the progress bar wrapper. Default: `['reading-progress']`.
-	 * @param {array}  barClasses - One or more classes for the progress bar. Default `['reading-progress__bar']`.
+	 *
+	 * @param {Array}  wrapperClasses - One or more classes for the progress bar wrapper. Default: `['reading-progress']`.
+	 * @param {Array}  barClasses - One or more classes for the progress bar. Default `['reading-progress__bar']`.
 	 * @param {string} position - The progress bar position: `top` or `bottom` of its container. Default: `top`.
 	 * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID. Default `container`.
 	 */
@@ -155,15 +164,15 @@ class readingProgress {
 	}
 }
 
-let bodyClasses = document.body.classList;
+const bodyClasses = document.body.classList;
 
 if (
 	bodyClasses.contains('single-page') &&
-	!bodyClasses.contains('attachment')
+	! bodyClasses.contains('attachment')
 ) {
 	const APComScrollBar = new readingProgress('page__content');
 
-	document.addEventListener('scroll', () => {
+	html.addEventListener('scroll', () => {
 		APComScrollBar.init();
 	});
 }

@@ -11,8 +11,8 @@ function getThemePreference() {
  * Update the theme to use based on the preferred color scheme.
  */
 function updateColorScheme() {
-	let body = document.getElementById('body');
-	let preferredColorScheme = getThemePreference();
+	const body = document.getElementById('body');
+	const preferredColorScheme = getThemePreference();
 
 	if (preferredColorScheme === 'dark') {
 		body.setAttribute('data-color-scheme', 'dark');

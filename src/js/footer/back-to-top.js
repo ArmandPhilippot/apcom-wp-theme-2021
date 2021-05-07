@@ -1,4 +1,5 @@
-let backToTop = document.getElementById('back-to-top');
+const html = document;
+const backToTop = document.getElementById('back-to-top');
 backToTop.style.display = 'none';
 
 /**
@@ -7,7 +8,7 @@ backToTop.style.display = 'none';
  * Determine scroll position to display or not the back to top link.
  */
 function showBackToTopOnScroll() {
-	let scrollPosition = window.scrollY;
+	const scrollPosition = window.scrollY;
 	if (scrollPosition < '300') {
 		backToTop.style.display = 'none';
 	} else {
@@ -16,4 +17,4 @@ function showBackToTopOnScroll() {
 	}
 }
 
-window.addEventListener('scroll', () => showBackToTopOnScroll());
+html.addEventListener('scroll', () => showBackToTopOnScroll());

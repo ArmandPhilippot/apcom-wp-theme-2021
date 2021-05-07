@@ -5,15 +5,15 @@
  *
  * @author Armand Philippot <contact@armandphilippot.com>
  */
+/* global toc_args */
 
 /**
  * Convert a text into a slug or id.
+ * https://gist.github.com/codeguy/6684588#gistcomment-3332719
  *
- * @see: https://gist.github.com/codeguy/6684588#gistcomment-3332719
- *
- * @param {String} text Text to slugify.
+ * @param {string} text Text to slugify.
  */
-const slugify = text => {
+const slugify = (text) => {
 	return text
 		.toString()
 		.normalize('NFD')
@@ -70,8 +70,8 @@ class TableOfContent {
 	getHeadingList() {
 		const allTitles = this.source.querySelectorAll(this.options.headings);
 		const titlesWithoutLinks = [...allTitles].filter(
-			title =>
-				!title.firstElementChild ||
+			(title) =>
+				! title.firstElementChild ||
 				'A' !== title.firstElementChild.tagName
 		);
 		const commentsTitle = document.getElementById('comments__title');
@@ -118,7 +118,7 @@ class TableOfContent {
 
 	createTocMarkup() {
 		let levelDiff;
-		let headingList = this.getHeadingList();
+		const headingList = this.getHeadingList();
 		let i = 0;
 		let markup = '';
 		let currentLevel;
@@ -129,7 +129,7 @@ class TableOfContent {
 		markup += this.startListNode();
 
 		for (i; i < headingList.length; i++) {
-			currentLevel = this.determineLevel(headingList[i].localName);
+			currentLevel = this.determineLevel(headingList[ i ].localName);
 			levelDiff = this.calculateLevelDiff(currentLevel, previousLevel);
 
 			if (levelDiff < 0) {
@@ -149,19 +149,19 @@ class TableOfContent {
 			}
 
 			markup += '<li>';
-			if ('comments__title' === headingList[i].id) {
+			if ('comments__title' === headingList[ i ].id) {
 				markup +=
 					'<a href="#' +
-					this.addSlug(headingList[i]) +
+					this.addSlug(headingList[ i ]) +
 					'">' +
 					toc_args.commentTitle +
 					'</a>';
 			} else {
 				markup +=
 					'<a href="#' +
-					this.addSlug(headingList[i]) +
+					this.addSlug(headingList[ i ]) +
 					'">' +
-					headingList[i].innerText +
+					headingList[ i ].innerText +
 					'</a>';
 			}
 
@@ -175,7 +175,7 @@ class TableOfContent {
 	}
 
 	printToc() {
-		let headingList = this.getHeadingList();
+		const headingList = this.getHeadingList();
 		if (headingList.length > 0) {
 			this.target.innerHTML = this.createTocMarkup();
 		}
@@ -184,8 +184,8 @@ class TableOfContent {
 	/**
 	 * Initialize the table of content.
 	 *
-	 * @param {String} source The container id to look for headings.
-	 * @param {String} target The container id to display the table of content.
+	 * @param {string} source The container id to look for headings.
+	 * @param {string} target The container id to display the table of content.
 	 * @param {Object} options Options.
 	 *
 	 * Options list :
@@ -204,8 +204,8 @@ class TableOfContent {
 	}
 }
 
-const Minimalist_TOC = new TableOfContent();
+const minimalistTOC = new TableOfContent();
 
-Minimalist_TOC.init('page__content', 'table-of-content', {
+minimalistTOC.init('page__content', 'table-of-content', {
 	title: toc_args.tocTitle,
 });

@@ -1,9 +1,11 @@
+/* global date_warning */
+
 /**
  * Check if the diff between two dates is longer than two years.
  *
- * @param {Int} firstDate A date in milliseconds.
- * @param {Int} secondDate A date in milliseconds.
- * @returns {Bool} True if the diff is greater than two years.
+ * @param {number} firstDate A date in milliseconds.
+ * @param {number} secondDate A date in milliseconds.
+ * @return {boolean} True if the diff is greater than two years.
  */
 const isMoreThanTwoYears = (firstDate, secondDate) => {
 	const diffInMilliseconds =
@@ -21,7 +23,7 @@ const isMoreThanTwoYears = (firstDate, secondDate) => {
  *
  * @param {HTMLElement} node An HTML element to insert.
  */
-const insertBeforeContent = node => {
+const insertBeforeContent = (node) => {
 	const pageContent = document.getElementById('page__content');
 	const firstChild = pageContent.firstChild;
 	pageContent.insertBefore(node, firstChild);
@@ -29,20 +31,22 @@ const insertBeforeContent = node => {
 
 /**
  * Check if the current page is an article.
- * @returns {Bool} True if it is an article.
+ *
+ * @return {boolean} True if it is an article.
  */
 const isArticle = () => {
 	const body = document.getElementById('body');
 	return (
 		body.classList.contains('single-page') &&
-		!body.classList.contains('cpt') &&
-		!body.classList.contains('no-comments')
+		! body.classList.contains('cpt') &&
+		! body.classList.contains('no-comments')
 	);
 };
 
 /**
  * Get warning message.
- * @returns {String} The translated warning message.
+ *
+ * @return {string} The translated warning message.
  */
 const getWarning = () => {
 	return (
@@ -58,7 +62,8 @@ const getWarning = () => {
 
 /**
  * Get the publication date of an article.
- * @returns {Mixed} Date element or null.
+ *
+ * @return {Date} Date element or null.
  */
 const getPublicationDate = () => {
 	const publicationDateWrapper = document.getElementById(
@@ -72,7 +77,8 @@ const getPublicationDate = () => {
 
 /**
  * Get the update date of an article.
- * @returns {Mixed} Date element or null
+ *
+ * @return {Date} Date element or null
  */
 const getUpdateDate = () => {
 	const updateDateWrapper = document.getElementById('meta__update-date');
@@ -92,13 +98,15 @@ const displayWarningIfNeeded = () => {
 		const currentDate = new Date().getTime();
 
 		if (
-			!publicationDate ||
-			!isMoreThanTwoYears(publicationDate, currentDate)
-		)
+			! publicationDate ||
+			! isMoreThanTwoYears(publicationDate, currentDate)
+		) {
 			return;
+		}
 
-		if (updateDate && !isMoreThanTwoYears(publicationDate, updateDate))
+		if (updateDate && ! isMoreThanTwoYears(publicationDate, updateDate)) {
 			return;
+		}
 
 		const div = document.createElement('div');
 		div.classList.add('content-warning');

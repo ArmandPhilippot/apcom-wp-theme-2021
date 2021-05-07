@@ -1,11 +1,12 @@
-let toolSearch = document.getElementById('tools__search');
-let searchForm = toolSearch.getElementsByClassName('search-form')[0];
+const body = document.getElementById('body');
+const toolSearch = document.getElementById('tools__search');
+const searchForm = toolSearch.getElementsByClassName('search-form')[ 0 ];
 let viewportWidth;
 
 /**
  * Get the viewport width based on the window width.
  *
- * @returns {number} The window inner width.
+ * @return {number} The window inner width.
  */
 function getViewportWidth() {
 	return window.innerWidth;
@@ -17,9 +18,9 @@ function getViewportWidth() {
  * @param {*} target Event target
  */
 function hideSearch(target) {
-	let searchCheckbox = document.getElementById('search__checkbox');
+	const searchCheckbox = document.getElementById('search__checkbox');
 
-	if (!toolSearch.contains(target) && target !== null) {
+	if (! toolSearch.contains(target) && target !== null) {
 		searchCheckbox.checked = false;
 	}
 }
@@ -28,8 +29,6 @@ function hideSearch(target) {
  * Disable body scroll
  */
 function preventScrolling() {
-	let body = document.body;
-	let bodyWith = body.offsetWidth;
 	body.style.overflow = 'hidden';
 }
 
@@ -47,15 +46,15 @@ function allowScrolling() {
  * @param {*} callback A function which is called when the targeted element is visible.
  */
 function createVisibilityObserver(element, callback) {
-	let options = {};
+	const options = {};
 
-	let intersectionCallback = entries => {
-		entries.forEach(entry => {
+	const intersectionCallback = (entries) => {
+		entries.forEach((entry) => {
 			callback(entry.intersectionRatio > 0);
 		});
 	};
 
-	let observer = new IntersectionObserver(intersectionCallback, options);
+	const observer = new IntersectionObserver(intersectionCallback, options);
 
 	observer.observe(element);
 }
@@ -68,7 +67,7 @@ function createVisibilityObserver(element, callback) {
 function observeDisplayChange(element) {
 	viewportWidth = getViewportWidth();
 
-	createVisibilityObserver(element, visible => {
+	createVisibilityObserver(element, (visible) => {
 		if (visible && viewportWidth < 1280) {
 			preventScrolling();
 		} else {
@@ -77,7 +76,7 @@ function observeDisplayChange(element) {
 	});
 }
 
-window.addEventListener(
+body.addEventListener(
 	'load',
 	() => {
 		observeDisplayChange(searchForm);
@@ -85,15 +84,15 @@ window.addEventListener(
 	false
 );
 
-window.addEventListener('resize', () => {
+body.addEventListener('resize', () => {
 	viewportWidth = getViewportWidth();
 	observeDisplayChange(searchForm);
 });
 
-document.addEventListener('click', event => {
+body.addEventListener('click', (event) => {
 	hideSearch(event.target);
 });
 
-document.addEventListener('focusout', event => {
+body.addEventListener('focusout', (event) => {
 	hideSearch(event.relatedTarget);
 });

@@ -1,5 +1,6 @@
 "use strict";
 
+var html = document;
 var backToTop = document.getElementById('back-to-top');
 backToTop.style.display = 'none';
 /**
@@ -19,7 +20,7 @@ function showBackToTopOnScroll() {
   }
 }
 
-window.addEventListener('scroll', function () {
+html.addEventListener('scroll', function () {
   return showBackToTopOnScroll();
 });
 "use strict";
@@ -29,6 +30,8 @@ window.addEventListener('scroll', function () {
  *
  * These classes and attributes are needed by Prism or to customize comments.
  */
+var body = document.getElementById('body');
+
 function initCodeBlocks() {
   var preTags = document.getElementsByTagName('pre');
 
@@ -59,12 +62,19 @@ function initCodeBlocks() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', initCodeBlocks());
+body.addEventListener('DOMContentLoaded', initCodeBlocks());
 "use strict";
 
+/* global color_scheme_vars */
+
+/* global getThemePreference */
+
+/* global updateColorScheme */
+var body = document.getElementById('body');
 /**
  * Get the light theme icon to display on dark theme.
  */
+
 function getLightThemeIcon() {
   var span = document.createElement('span');
   var sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M70 50a20 20 0 01-20 20 20 20 0 01-20-20 20 20 0 0120-20 20 20 0 0120 20zm28.557 1.16c2.74.07 1.192 12.435-1.48 11.819l-16.03-3.7c-2.67-.616-1.676-8.604 1.064-8.535zM79.931 89.565c1.695 2.156-9.31 8.877-10.44 6.38l-6.776-14.991c-1.13-2.499 5.358-6.48 7.051-4.324zM38.26 99.068c-.603 2.675-12.753-1.73-11.521-4.18l7.39-14.698c1.231-2.45 8.353.156 7.75 2.83zM4.81 72.51C2.362 73.741-1.81 61.508.864 60.905l16.049-3.619c2.674-.603 5.046 6.602 2.597 7.834zm-.02-43.073C2.34 28.205 9.394 17.36 11.47 19.15l12.465 10.737c2.077 1.79-1.997 8.172-4.448 6.94zm33.425-26.59C37.612.171 50.497-1.118 50.43 1.623l-.408 16.446c-.068 2.74-7.585 3.5-8.189.825zm41.655 9.446c1.686-2.163 10.761 7.085 8.598 8.77L75.49 31.172c-2.164 1.685-7.415-3.739-5.73-5.902zm18.686 38.419c2.74-.068 1.201 12.848-1.47 12.231l-16.029-3.7c-2.671-.616-1.687-8.056 1.053-8.124z"/></svg>';
@@ -122,6 +132,7 @@ function prefersDarkScheme() {
 }
 /**
  * Update the preferred color scheme in local storage.
+ *
  * @param {string} preference A color scheme, either `light` or `dark`.
  */
 
@@ -154,8 +165,6 @@ function defineThemePreference() {
 
 
 function switchColorScheme() {
-  var body = document.getElementById('body');
-
   if (body.getAttribute('data-color-scheme') === 'light') {
     updateThemePreference('dark');
   } else if (body.getAttribute('data-color-scheme') === 'dark') {
@@ -235,7 +244,7 @@ function initializeColorScheme() {
 
 
 function syncColorSchemeBetweenTabs() {
-  window.addEventListener('storage', function (e) {
+  body.addEventListener('storage', function (e) {
     if (e.key === 'apcom-color-scheme') {
       updateColorScheme();
       updateSwitchThemeButton();
@@ -251,12 +260,14 @@ document.getElementById('switch-theme').addEventListener('click', function () {
 });
 "use strict";
 
+/* global date_warning */
+
 /**
  * Check if the diff between two dates is longer than two years.
  *
- * @param {Int} firstDate A date in milliseconds.
- * @param {Int} secondDate A date in milliseconds.
- * @returns {Bool} True if the diff is greater than two years.
+ * @param {number} firstDate A date in milliseconds.
+ * @param {number} secondDate A date in milliseconds.
+ * @return {boolean} True if the diff is greater than two years.
  */
 var isMoreThanTwoYears = function isMoreThanTwoYears(firstDate, secondDate) {
   var diffInMilliseconds = firstDate > secondDate ? firstDate - secondDate : secondDate - firstDate;
@@ -278,7 +289,8 @@ var insertBeforeContent = function insertBeforeContent(node) {
 };
 /**
  * Check if the current page is an article.
- * @returns {Bool} True if it is an article.
+ *
+ * @return {boolean} True if it is an article.
  */
 
 
@@ -288,7 +300,8 @@ var isArticle = function isArticle() {
 };
 /**
  * Get warning message.
- * @returns {String} The translated warning message.
+ *
+ * @return {string} The translated warning message.
  */
 
 
@@ -297,7 +310,8 @@ var getWarning = function getWarning() {
 };
 /**
  * Get the publication date of an article.
- * @returns {Mixed} Date element or null.
+ *
+ * @return {Date} Date element or null.
  */
 
 
@@ -307,7 +321,8 @@ var getPublicationDate = function getPublicationDate() {
 };
 /**
  * Get the update date of an article.
- * @returns {Mixed} Date element or null
+ *
+ * @return {Date} Date element or null
  */
 
 
@@ -325,8 +340,15 @@ var displayWarningIfNeeded = function displayWarningIfNeeded() {
     var publicationDate = getPublicationDate();
     var updateDate = getUpdateDate();
     var currentDate = new Date().getTime();
-    if (!publicationDate || !isMoreThanTwoYears(publicationDate, currentDate)) return;
-    if (updateDate && !isMoreThanTwoYears(publicationDate, updateDate)) return;
+
+    if (!publicationDate || !isMoreThanTwoYears(publicationDate, currentDate)) {
+      return;
+    }
+
+    if (updateDate && !isMoreThanTwoYears(publicationDate, updateDate)) {
+      return;
+    }
+
     var div = document.createElement('div');
     div.classList.add('content-warning');
     div.innerHTML = getWarning();
@@ -351,9 +373,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  * @license MIT <https://opensource.org/licenses/MIT>
  * @author Armand Philippot <https://www.armandphilippot.com>
  */
+var html = document;
+
 var readingProgress = /*#__PURE__*/function () {
   /**
    * Define the progress bar container.
+   *
    * @param {string} containerId Id of the container.
    */
   function readingProgress(containerId) {
@@ -365,7 +390,8 @@ var readingProgress = /*#__PURE__*/function () {
   }
   /**
    * Define the progress bar classes.
-   * @param {array} barClasses - One or more classes for the progress bar.
+   *
+   * @param {Array} barClasses - One or more classes for the progress bar.
    */
 
 
@@ -384,7 +410,8 @@ var readingProgress = /*#__PURE__*/function () {
     }
     /**
      * Define the progress bar wrapper classes.
-     * @param {array} wrapperClasses - One or more classes for the progress bar wrapper.
+     *
+     * @param {Array} wrapperClasses - One or more classes for the progress bar wrapper.
      */
 
   }, {
@@ -402,6 +429,7 @@ var readingProgress = /*#__PURE__*/function () {
     }
     /**
      * Insert the progress bar inside the container.
+     *
      * @param {string} position - The progress bar position: `top` or `bottom` of its container.
      */
 
@@ -428,6 +456,7 @@ var readingProgress = /*#__PURE__*/function () {
     }
     /**
      * Display or not the progress bar.
+     *
      * @param {boolean} bool - True of false.
      */
 
@@ -442,6 +471,7 @@ var readingProgress = /*#__PURE__*/function () {
     }
     /**
      * Calculate the distance traveled as a percentage without unit.
+     *
      * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
      * @return {number} A percentage without unit.
      */
@@ -472,6 +502,7 @@ var readingProgress = /*#__PURE__*/function () {
     }
     /**
      * Use the distance traveled as progressBar width.
+     *
      * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
      */
 
@@ -490,8 +521,9 @@ var readingProgress = /*#__PURE__*/function () {
     }
     /**
      * Initialize the reading progress bar.
-     * @param {array}  wrapperClasses - One or more classes for the progress bar wrapper. Default: `['reading-progress']`.
-     * @param {array}  barClasses - One or more classes for the progress bar. Default `['reading-progress__bar']`.
+     *
+     * @param {Array}  wrapperClasses - One or more classes for the progress bar wrapper. Default: `['reading-progress']`.
+     * @param {Array}  barClasses - One or more classes for the progress bar. Default `['reading-progress__bar']`.
      * @param {string} position - The progress bar position: `top` or `bottom` of its container. Default: `top`.
      * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID. Default `container`.
      */
@@ -520,19 +552,20 @@ var bodyClasses = document.body.classList;
 
 if (bodyClasses.contains('single-page') && !bodyClasses.contains('attachment')) {
   var APComScrollBar = new readingProgress('page__content');
-  document.addEventListener('scroll', function () {
+  html.addEventListener('scroll', function () {
     APComScrollBar.init();
   });
 }
 "use strict";
 
+var body = document.getElementById('body');
 var toolSearch = document.getElementById('tools__search');
 var searchForm = toolSearch.getElementsByClassName('search-form')[0];
 var viewportWidth;
 /**
  * Get the viewport width based on the window width.
  *
- * @returns {number} The window inner width.
+ * @return {number} The window inner width.
  */
 
 function getViewportWidth() {
@@ -558,8 +591,6 @@ function hideSearch(target) {
 
 
 function preventScrolling() {
-  var body = document.body;
-  var bodyWith = body.offsetWidth;
   body.style.overflow = 'hidden';
 }
 /**
@@ -608,17 +639,17 @@ function observeDisplayChange(element) {
   });
 }
 
-window.addEventListener('load', function () {
+body.addEventListener('load', function () {
   observeDisplayChange(searchForm);
 }, false);
-window.addEventListener('resize', function () {
+body.addEventListener('resize', function () {
   viewportWidth = getViewportWidth();
   observeDisplayChange(searchForm);
 });
-document.addEventListener('click', function (event) {
+body.addEventListener('click', function (event) {
   hideSearch(event.target);
 });
-document.addEventListener('focusout', function (event) {
+body.addEventListener('focusout', function (event) {
   hideSearch(event.relatedTarget);
 });
 "use strict";
@@ -629,7 +660,7 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
@@ -649,12 +680,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  * @author Armand Philippot <contact@armandphilippot.com>
  */
 
+/* global toc_args */
+
 /**
  * Convert a text into a slug or id.
+ * https://gist.github.com/codeguy/6684588#gistcomment-3332719
  *
- * @see: https://gist.github.com/codeguy/6684588#gistcomment-3332719
- *
- * @param {String} text Text to slugify.
+ * @param {string} text Text to slugify.
  */
 var slugify = function slugify(text) {
   return text.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '-').replace(/\-\-+/g, '-').replace(/^-|-$/g, '');
@@ -818,8 +850,8 @@ var TableOfContent = /*#__PURE__*/function () {
     /**
      * Initialize the table of content.
      *
-     * @param {String} source The container id to look for headings.
-     * @param {String} target The container id to display the table of content.
+     * @param {string} source The container id to look for headings.
+     * @param {string} target The container id to display the table of content.
      * @param {Object} options Options.
      *
      * Options list :
@@ -845,7 +877,7 @@ var TableOfContent = /*#__PURE__*/function () {
   return TableOfContent;
 }();
 
-var Minimalist_TOC = new TableOfContent();
-Minimalist_TOC.init('page__content', 'table-of-content', {
+var minimalistTOC = new TableOfContent();
+minimalistTOC.init('page__content', 'table-of-content', {
   title: toc_args.tocTitle
 });

@@ -3,40 +3,42 @@
  *
  * These classes and attributes are needed by Prism or to customize comments.
  */
+const body = document.getElementById('body');
+
 function initCodeBlocks() {
 	const preTags = document.getElementsByTagName('pre');
 
 	for (let i = 0; i < preTags.length; i++) {
-		const preClasses = preTags[i].classList.length;
+		const preClasses = preTags[ i ].classList.length;
 
-		preTags[i].tabIndex = '0';
+		preTags[ i ].tabIndex = '0';
 
 		for (let j = 0; j < preClasses; j++) {
-			if (preTags[i].classList[j].startsWith('language')) {
+			if (preTags[ i ].classList[ j ].startsWith('language')) {
 				if (
-					!preTags[i].classList.contains('command-line') &&
-					!preTags[i].classList.contains('language-diff')
+					! preTags[ i ].classList.contains('command-line') &&
+					! preTags[ i ].classList.contains('language-diff')
 				) {
-					preTags[i].classList.add('line-numbers');
+					preTags[ i ].classList.add('line-numbers');
 				} else if (
-					preTags[i].classList.contains('command-line') &&
-					preTags[i].classList.contains('filter-output')
+					preTags[ i ].classList.contains('command-line') &&
+					preTags[ i ].classList.contains('filter-output')
 				) {
-					preTags[i].setAttribute('data-filter-output', '#output#');
+					preTags[ i ].setAttribute('data-filter-output', '#output#');
 				}
-			} else if (preTags[i].classList.contains('instructions')) {
-				const codeTag = preTags[i].firstChild;
+			} else if (preTags[ i ].classList.contains('instructions')) {
+				const codeTag = preTags[ i ].firstChild;
 				const codeLines = codeTag.innerHTML.split(/[\n\r]/g);
 				const codeLinesLength = codeLines.length;
 
-				for (var k = 0; k < codeLinesLength; k++) {
-					if (/^\/\//.test(codeLines[k])) {
+				for (let k = 0; k < codeLinesLength; k++) {
+					if (/^\/\//.test(codeLines[ k ])) {
 						const colorizeComment =
 							'<span class="token comment">' +
-							codeLines[k] +
+							codeLines[ k ] +
 							'</span>';
 						codeTag.innerHTML = codeTag.innerHTML.replace(
-							codeLines[k],
+							codeLines[ k ],
 							colorizeComment
 						);
 					}
@@ -46,4 +48,4 @@ function initCodeBlocks() {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', initCodeBlocks());
+body.addEventListener('DOMContentLoaded', initCodeBlocks());
