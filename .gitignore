@@ -12,3 +12,4 @@ certs
 # Files to ignore
 *.map
 *.zip
+.eslintcache
