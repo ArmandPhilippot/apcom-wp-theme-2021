@@ -1,8 +1,7 @@
 {
 	"extends": [
 		"@wordpress/stylelint-config",
-		"@wordpress/stylelint-config/scss",
-		"stylelint-config-prettier"
+		"@wordpress/stylelint-config/scss"
 	],
 	"rules": {
 		"comment-empty-line-before": null,
