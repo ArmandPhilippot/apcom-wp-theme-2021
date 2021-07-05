@@ -1,8 +1,4 @@
-const body = document.getElementById('body');
-const toolSearch = document.getElementById('tools__search');
-const searchForm = toolSearch.getElementsByClassName('search-form')[ 0 ];
-let viewportWidth;
-
+/* eslint-disable @wordpress/no-global-event-listener */
 /**
  * Get the viewport width based on the window width.
  *
@@ -18,25 +14,12 @@ function getViewportWidth() {
  * @param {*} target Event target
  */
 function hideSearch(target) {
+	const toolSearch = document.getElementById('tools__search');
 	const searchCheckbox = document.getElementById('search__checkbox');
 
 	if (! toolSearch.contains(target) && target !== null) {
 		searchCheckbox.checked = false;
 	}
-}
-
-/**
- * Disable body scroll
- */
-function preventScrolling() {
-	body.style.overflow = 'hidden';
-}
-
-/**
- * Allow body scroll
- */
-function allowScrolling() {
-	document.body.style.removeProperty('overflow');
 }
 
 /**
@@ -65,34 +48,38 @@ function createVisibilityObserver(element, callback) {
  * @param {*} element An array of elements or a single HTMLElement.
  */
 function observeDisplayChange(element) {
-	viewportWidth = getViewportWidth();
-
 	createVisibilityObserver(element, (visible) => {
+		const viewportWidth = getViewportWidth();
 		if (visible && viewportWidth < 1280) {
-			preventScrolling();
+			document.body.style.overflow = 'hidden';
 		} else {
-			allowScrolling();
+			document.body.style.removeProperty('overflow');
 		}
 	});
 }
 
-body.addEventListener(
-	'load',
-	() => {
+/**
+ * Handle visibility and overflow with event listeners.
+ */
+function initSearch() {
+	const toolSearch = document.getElementById('tools__search');
+	const searchForm = toolSearch.getElementsByClassName('search-form')[ 0 ];
+
+	window.addEventListener('load', () => {
 		observeDisplayChange(searchForm);
-	},
-	false
-);
+	});
 
-body.addEventListener('resize', () => {
-	viewportWidth = getViewportWidth();
-	observeDisplayChange(searchForm);
-});
+	window.addEventListener('resize', () => {
+		observeDisplayChange(searchForm);
+	});
 
-body.addEventListener('click', (event) => {
-	hideSearch(event.target);
-});
+	document.body.addEventListener('click', (event) => {
+		hideSearch(event.target);
+	});
 
-body.addEventListener('focusout', (event) => {
-	hideSearch(event.relatedTarget);
-});
+	document.body.addEventListener('focusout', (event) => {
+		hideSearch(event.relatedTarget);
+	});
+}
+
+initSearch();

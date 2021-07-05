@@ -6,7 +6,6 @@
  * @license MIT <https://opensource.org/licenses/MIT>
  * @author Armand Philippot <https://www.armandphilippot.com>
  */
-const html = document;
 class readingProgress {
 	/**
 	 * Define the progress bar container.
@@ -164,15 +163,23 @@ class readingProgress {
 	}
 }
 
-const bodyClasses = document.body.classList;
+/**
+ * Init the reading progress bar depending on the current page.
+ */
+function initReadingProgress() {
+	const html = document;
+	const bodyClasses = document.body.classList;
 
-if (
-	bodyClasses.contains('single-page') &&
-	! bodyClasses.contains('attachment')
-) {
-	const APComScrollBar = new readingProgress('page__content');
+	if (
+		bodyClasses.contains('single-page') &&
+		! bodyClasses.contains('attachment')
+	) {
+		const APComScrollBar = new readingProgress('page__content');
 
-	html.addEventListener('scroll', () => {
-		APComScrollBar.init();
-	});
+		html.addEventListener('scroll', () => {
+			APComScrollBar.init();
+		});
+	}
 }
+
+initReadingProgress();

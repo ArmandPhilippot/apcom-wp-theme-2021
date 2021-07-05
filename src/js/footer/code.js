@@ -1,11 +1,9 @@
 /**
- * Init Code Blocks by adding automatically some classes and attributes.
+ * Add automatically some classes and attributes.
  *
  * These classes and attributes are needed by Prism or to customize comments.
  */
-const body = document.getElementById('body');
-
-function initCodeBlocks() {
+function setCodeBlocksClasses() {
 	const preTags = document.getElementsByTagName('pre');
 
 	for (let i = 0; i < preTags.length; i++) {
@@ -48,4 +46,4 @@ function initCodeBlocks() {
 	}
 }
 
-body.addEventListener('DOMContentLoaded', initCodeBlocks());
+document.body.addEventListener('DOMContentLoaded', setCodeBlocksClasses());

@@ -1,16 +1,13 @@
 "use strict";
 
-var html = document;
-var backToTop = document.getElementById('back-to-top');
-backToTop.style.display = 'none';
 /**
  * showBackToTopOnScroll
  *
  * Determine scroll position to display or not the back to top link.
  */
-
 function showBackToTopOnScroll() {
-  var scrollPosition = window.scrollY;
+  const backToTop = document.getElementById('back-to-top');
+  const scrollPosition = window.scrollY;
 
   if (scrollPosition < '300') {
     backToTop.style.display = 'none';
@@ -19,27 +16,36 @@ function showBackToTopOnScroll() {
     backToTop.style.animation = 'fadeIn 1s';
   }
 }
+/**
+ * Init the back to top button
+ *
+ * Hide the button by default then listen for scroll.
+ */
 
-html.addEventListener('scroll', function () {
-  return showBackToTopOnScroll();
-});
+
+function initBackToTopButton() {
+  const html = document;
+  const backToTop = document.getElementById('back-to-top');
+  backToTop.style.display = 'none';
+  html.addEventListener('scroll', () => showBackToTopOnScroll());
+}
+
+initBackToTopButton();
 "use strict";
 
 /**
- * Init Code Blocks by adding automatically some classes and attributes.
+ * Add automatically some classes and attributes.
  *
  * These classes and attributes are needed by Prism or to customize comments.
  */
-var body = document.getElementById('body');
+function setCodeBlocksClasses() {
+  const preTags = document.getElementsByTagName('pre');
 
-function initCodeBlocks() {
-  var preTags = document.getElementsByTagName('pre');
-
-  for (var i = 0; i < preTags.length; i++) {
-    var preClasses = preTags[i].classList.length;
+  for (let i = 0; i < preTags.length; i++) {
+    const preClasses = preTags[i].classList.length;
     preTags[i].tabIndex = '0';
 
-    for (var j = 0; j < preClasses; j++) {
+    for (let j = 0; j < preClasses; j++) {
       if (preTags[i].classList[j].startsWith('language')) {
         if (!preTags[i].classList.contains('command-line') && !preTags[i].classList.contains('language-diff')) {
           preTags[i].classList.add('line-numbers');
@@ -47,13 +53,13 @@ function initCodeBlocks() {
           preTags[i].setAttribute('data-filter-output', '#output#');
         }
       } else if (preTags[i].classList.contains('instructions')) {
-        var codeTag = preTags[i].firstChild;
-        var codeLines = codeTag.innerHTML.split(/[\n\r]/g);
-        var codeLinesLength = codeLines.length;
+        const codeTag = preTags[i].firstChild;
+        const codeLines = codeTag.innerHTML.split(/[\n\r]/g);
+        const codeLinesLength = codeLines.length;
 
-        for (var k = 0; k < codeLinesLength; k++) {
+        for (let k = 0; k < codeLinesLength; k++) {
           if (/^\/\//.test(codeLines[k])) {
-            var colorizeComment = '<span class="token comment">' + codeLines[k] + '</span>';
+            const colorizeComment = '<span class="token comment">' + codeLines[k] + '</span>';
             codeTag.innerHTML = codeTag.innerHTML.replace(codeLines[k], colorizeComment);
           }
         }
@@ -62,7 +68,7 @@ function initCodeBlocks() {
   }
 }
 
-body.addEventListener('DOMContentLoaded', initCodeBlocks());
+document.body.addEventListener('DOMContentLoaded', setCodeBlocksClasses());
 "use strict";
 
 /* global color_scheme_vars */
@@ -70,14 +76,13 @@ body.addEventListener('DOMContentLoaded', initCodeBlocks());
 /* global getThemePreference */
 
 /* global updateColorScheme */
-var body = document.getElementById('body');
+
 /**
  * Get the light theme icon to display on dark theme.
  */
-
 function getLightThemeIcon() {
-  var span = document.createElement('span');
-  var sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M70 50a20 20 0 01-20 20 20 20 0 01-20-20 20 20 0 0120-20 20 20 0 0120 20zm28.557 1.16c2.74.07 1.192 12.435-1.48 11.819l-16.03-3.7c-2.67-.616-1.676-8.604 1.064-8.535zM79.931 89.565c1.695 2.156-9.31 8.877-10.44 6.38l-6.776-14.991c-1.13-2.499 5.358-6.48 7.051-4.324zM38.26 99.068c-.603 2.675-12.753-1.73-11.521-4.18l7.39-14.698c1.231-2.45 8.353.156 7.75 2.83zM4.81 72.51C2.362 73.741-1.81 61.508.864 60.905l16.049-3.619c2.674-.603 5.046 6.602 2.597 7.834zm-.02-43.073C2.34 28.205 9.394 17.36 11.47 19.15l12.465 10.737c2.077 1.79-1.997 8.172-4.448 6.94zm33.425-26.59C37.612.171 50.497-1.118 50.43 1.623l-.408 16.446c-.068 2.74-7.585 3.5-8.189.825zm41.655 9.446c1.686-2.163 10.761 7.085 8.598 8.77L75.49 31.172c-2.164 1.685-7.415-3.739-5.73-5.902zm18.686 38.419c2.74-.068 1.201 12.848-1.47 12.231l-16.029-3.7c-2.671-.616-1.687-8.056 1.053-8.124z"/></svg>';
+  const span = document.createElement('span');
+  const sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M70 50a20 20 0 01-20 20 20 20 0 01-20-20 20 20 0 0120-20 20 20 0 0120 20zm28.557 1.16c2.74.07 1.192 12.435-1.48 11.819l-16.03-3.7c-2.67-.616-1.676-8.604 1.064-8.535zM79.931 89.565c1.695 2.156-9.31 8.877-10.44 6.38l-6.776-14.991c-1.13-2.499 5.358-6.48 7.051-4.324zM38.26 99.068c-.603 2.675-12.753-1.73-11.521-4.18l7.39-14.698c1.231-2.45 8.353.156 7.75 2.83zM4.81 72.51C2.362 73.741-1.81 61.508.864 60.905l16.049-3.619c2.674-.603 5.046 6.602 2.597 7.834zm-.02-43.073C2.34 28.205 9.394 17.36 11.47 19.15l12.465 10.737c2.077 1.79-1.997 8.172-4.448 6.94zm33.425-26.59C37.612.171 50.497-1.118 50.43 1.623l-.408 16.446c-.068 2.74-7.585 3.5-8.189.825zm41.655 9.446c1.686-2.163 10.761 7.085 8.598 8.77L75.49 31.172c-2.164 1.685-7.415-3.739-5.73-5.902zm18.686 38.419c2.74-.068 1.201 12.848-1.47 12.231l-16.029-3.7c-2.671-.616-1.687-8.056 1.053-8.124z"/></svg>';
   span.innerHTML = sunIcon;
   span.classList.add('tools__icon', 'tools__icon--light');
   span.setAttribute('aria-hidden', 'true');
@@ -89,8 +94,8 @@ function getLightThemeIcon() {
 
 
 function getDarkThemeIcon() {
-  var span = document.createElement('span');
-  var moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M51.283 0A45.12 45.12 0 0173.95 39.135a45.12 45.12 0 01-45.12 45.12 45.12 45.12 0 01-25.09-7.618A50.133 50.133 0 0046.126 100 50.133 50.133 0 0096.26 49.867 50.133 50.133 0 0051.283 0z"/></svg>';
+  const span = document.createElement('span');
+  const moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M51.283 0A45.12 45.12 0 0173.95 39.135a45.12 45.12 0 01-45.12 45.12 45.12 45.12 0 01-25.09-7.618A50.133 50.133 0 0046.126 100 50.133 50.133 0 0096.26 49.867 50.133 50.133 0 0051.283 0z"/></svg>';
   span.innerHTML = moonIcon;
   span.classList.add('tools__icon', 'tools__icon--dark');
   span.setAttribute('aria-hidden', 'true');
@@ -102,8 +107,8 @@ function getDarkThemeIcon() {
 
 
 function getDarkThemeLabel() {
-  var span = document.createElement('span');
-  var label = color_scheme_vars.lightThemeText;
+  const span = document.createElement('span');
+  const label = color_scheme_vars.lightThemeText;
   span.innerHTML = label;
   span.classList.add('tools__label--light', 'screen-reader-text');
   return span;
@@ -114,8 +119,8 @@ function getDarkThemeLabel() {
 
 
 function getLightThemeLabel() {
-  var span = document.createElement('span');
-  var label = color_scheme_vars.darkThemeText;
+  const span = document.createElement('span');
+  const label = color_scheme_vars.darkThemeText;
   span.innerHTML = label;
   span.classList.add('tools__label--dark', 'screen-reader-text');
   return span;
@@ -146,7 +151,7 @@ function updateThemePreference(preference) {
 
 
 function defineThemePreference() {
-  var colorScheme = '';
+  let colorScheme = '';
 
   if (getThemePreference()) {
     colorScheme = getThemePreference();
@@ -165,6 +170,8 @@ function defineThemePreference() {
 
 
 function switchColorScheme() {
+  const body = document.getElementById('body');
+
   if (body.getAttribute('data-color-scheme') === 'light') {
     updateThemePreference('dark');
   } else if (body.getAttribute('data-color-scheme') === 'dark') {
@@ -179,13 +186,13 @@ function switchColorScheme() {
 
 
 function createSwitchThemeButton() {
-  var preferredColorScheme = getThemePreference();
-  var toolsBar = document.getElementById('tools');
-  var toolsBarFirstChild = toolsBar.firstChild;
-  var toggleDiv = document.createElement('div');
-  var switchButton = document.createElement('button');
-  var switchButtonIcon = '';
-  var switchButtonLabel = '';
+  const preferredColorScheme = getThemePreference();
+  const toolsBar = document.getElementById('tools');
+  const toolsBarFirstChild = toolsBar.firstChild;
+  const toggleDiv = document.createElement('div');
+  const switchButton = document.createElement('button');
+  let switchButtonIcon = '';
+  let switchButtonLabel = '';
   toggleDiv.classList.add('tools__item', 'themes');
   toggleDiv.title = color_scheme_vars.title;
 
@@ -211,10 +218,10 @@ function createSwitchThemeButton() {
 
 
 function updateSwitchThemeButton() {
-  var preferredColorScheme = getThemePreference();
-  var toggleButton = document.getElementById('switch-theme');
-  var switchButtonIcon = '';
-  var switchButtonLabel = '';
+  const preferredColorScheme = getThemePreference();
+  const toggleButton = document.getElementById('switch-theme');
+  let switchButtonIcon = '';
+  let switchButtonLabel = '';
   toggleButton.innerHTML = '';
 
   if (preferredColorScheme === 'dark') {
@@ -244,7 +251,8 @@ function initializeColorScheme() {
 
 
 function syncColorSchemeBetweenTabs() {
-  body.addEventListener('storage', function (e) {
+  const body = document.getElementById('body');
+  body.addEventListener('storage', e => {
     if (e.key === 'apcom-color-scheme') {
       updateColorScheme();
       updateSwitchThemeButton();
@@ -254,7 +262,7 @@ function syncColorSchemeBetweenTabs() {
 
 initializeColorScheme();
 syncColorSchemeBetweenTabs();
-document.getElementById('switch-theme').addEventListener('click', function () {
+document.getElementById('switch-theme').addEventListener('click', () => {
   switchColorScheme();
   updateSwitchThemeButton();
 });
@@ -269,10 +277,10 @@ document.getElementById('switch-theme').addEventListener('click', function () {
  * @param {number} secondDate A date in milliseconds.
  * @return {boolean} True if the diff is greater than two years.
  */
-var isMoreThanTwoYears = function isMoreThanTwoYears(firstDate, secondDate) {
-  var diffInMilliseconds = firstDate > secondDate ? firstDate - secondDate : secondDate - firstDate;
-  var diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
-  var twoYears = 365 * 2;
+const isMoreThanTwoYears = (firstDate, secondDate) => {
+  const diffInMilliseconds = firstDate > secondDate ? firstDate - secondDate : secondDate - firstDate;
+  const diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
+  const twoYears = 365 * 2;
   return diffInDays > twoYears;
 };
 /**
@@ -282,9 +290,9 @@ var isMoreThanTwoYears = function isMoreThanTwoYears(firstDate, secondDate) {
  */
 
 
-var insertBeforeContent = function insertBeforeContent(node) {
-  var pageContent = document.getElementById('page__content');
-  var firstChild = pageContent.firstChild;
+const insertBeforeContent = node => {
+  const pageContent = document.getElementById('page__content');
+  const firstChild = pageContent.firstChild;
   pageContent.insertBefore(node, firstChild);
 };
 /**
@@ -294,8 +302,8 @@ var insertBeforeContent = function insertBeforeContent(node) {
  */
 
 
-var isArticle = function isArticle() {
-  var body = document.getElementById('body');
+const isArticle = () => {
+  const body = document.getElementById('body');
   return body.classList.contains('single-page') && !body.classList.contains('cpt') && !body.classList.contains('no-comments');
 };
 /**
@@ -305,7 +313,7 @@ var isArticle = function isArticle() {
  */
 
 
-var getWarning = function getWarning() {
+const getWarning = () => {
   return date_warning.beAware + ' ' + date_warning.oldContent + ' ' + date_warning.noMoreValid + ' ' + date_warning.contentEvolved;
 };
 /**
@@ -315,8 +323,8 @@ var getWarning = function getWarning() {
  */
 
 
-var getPublicationDate = function getPublicationDate() {
-  var publicationDateWrapper = document.getElementById('meta__publication-date');
+const getPublicationDate = () => {
+  const publicationDateWrapper = document.getElementById('meta__publication-date');
   return publicationDateWrapper ? new Date(publicationDateWrapper.dateTime).getTime() : null;
 };
 /**
@@ -326,8 +334,8 @@ var getPublicationDate = function getPublicationDate() {
  */
 
 
-var getUpdateDate = function getUpdateDate() {
-  var updateDateWrapper = document.getElementById('meta__update-date');
+const getUpdateDate = () => {
+  const updateDateWrapper = document.getElementById('meta__update-date');
   return updateDateWrapper ? new Date(updateDateWrapper.dateTime).getTime() : null;
 };
 /**
@@ -335,11 +343,11 @@ var getUpdateDate = function getUpdateDate() {
  */
 
 
-var displayWarningIfNeeded = function displayWarningIfNeeded() {
+const displayWarningIfNeeded = () => {
   if (isArticle()) {
-    var publicationDate = getPublicationDate();
-    var updateDate = getUpdateDate();
-    var currentDate = new Date().getTime();
+    const publicationDate = getPublicationDate();
+    const updateDate = getUpdateDate();
+    const currentDate = new Date().getTime();
 
     if (!publicationDate || !isMoreThanTwoYears(publicationDate, currentDate)) {
       return;
@@ -349,7 +357,7 @@ var displayWarningIfNeeded = function displayWarningIfNeeded() {
       return;
     }
 
-    var div = document.createElement('div');
+    const div = document.createElement('div');
     div.classList.add('content-warning');
     div.innerHTML = getWarning();
     insertBeforeContent(div);
@@ -359,12 +367,6 @@ var displayWarningIfNeeded = function displayWarningIfNeeded() {
 displayWarningIfNeeded();
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
 /**
  * Reading progress
  *
@@ -373,17 +375,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  * @license MIT <https://opensource.org/licenses/MIT>
  * @author Armand Philippot <https://www.armandphilippot.com>
  */
-var html = document;
-
-var readingProgress = /*#__PURE__*/function () {
+class readingProgress {
   /**
    * Define the progress bar container.
    *
    * @param {string} containerId Id of the container.
    */
-  function readingProgress(containerId) {
-    _classCallCheck(this, readingProgress);
-
+  constructor(containerId) {
     this.container = containerId ? document.getElementById(containerId) : '';
     this.progressBarWrapper = document.createElement('div');
     this.progressBar = document.createElement('div');
@@ -395,179 +393,166 @@ var readingProgress = /*#__PURE__*/function () {
    */
 
 
-  _createClass(readingProgress, [{
-    key: "setProgressBarClasses",
-    value: function setProgressBarClasses(barClasses) {
-      var _this = this;
-
-      if (barClasses) {
-        barClasses.forEach(function (className) {
-          _this.progressBar.classList.add(className);
-        });
-      } else {
-        this.progressBar.classList.add('reading-progress__bar');
-      }
+  setProgressBarClasses(barClasses) {
+    if (barClasses) {
+      barClasses.forEach(className => {
+        this.progressBar.classList.add(className);
+      });
+    } else {
+      this.progressBar.classList.add('reading-progress__bar');
     }
-    /**
-     * Define the progress bar wrapper classes.
-     *
-     * @param {Array} wrapperClasses - One or more classes for the progress bar wrapper.
-     */
+  }
+  /**
+   * Define the progress bar wrapper classes.
+   *
+   * @param {Array} wrapperClasses - One or more classes for the progress bar wrapper.
+   */
 
-  }, {
-    key: "setProgressBarWrapperClasses",
-    value: function setProgressBarWrapperClasses(wrapperClasses) {
-      var _this2 = this;
 
-      if (wrapperClasses) {
-        wrapperClasses.forEach(function (className) {
-          _this2.progressBarWrapper.classList.add(className);
-        });
-      } else {
-        this.progressBarWrapper.classList.add('reading-progress');
-      }
+  setProgressBarWrapperClasses(wrapperClasses) {
+    if (wrapperClasses) {
+      wrapperClasses.forEach(className => {
+        this.progressBarWrapper.classList.add(className);
+      });
+    } else {
+      this.progressBarWrapper.classList.add('reading-progress');
     }
-    /**
-     * Insert the progress bar inside the container.
-     *
-     * @param {string} position - The progress bar position: `top` or `bottom` of its container.
-     */
+  }
+  /**
+   * Insert the progress bar inside the container.
+   *
+   * @param {string} position - The progress bar position: `top` or `bottom` of its container.
+   */
 
-  }, {
-    key: "insertReadingProgressBar",
-    value: function insertReadingProgressBar(position) {
-      this.progressBar.style.height = '100%';
-      this.progressBar.style.maxWidth = '100%';
-      this.progressBarWrapper.appendChild(this.progressBar);
-      this.progressBarWrapper.style.position = 'sticky';
 
-      if (position === 'bottom') {
-        this.container.appendChild(this.progressBarWrapper);
-        this.progressBarWrapper.style.bottom = '0';
-      } else {
-        if (!this.container) {
-          return;
-        }
+  insertReadingProgressBar(position) {
+    this.progressBar.style.height = '100%';
+    this.progressBar.style.maxWidth = '100%';
+    this.progressBarWrapper.appendChild(this.progressBar);
+    this.progressBarWrapper.style.position = 'sticky';
 
-        var containerFirstChild = this.container.firstChild;
-        this.container.insertBefore(this.progressBarWrapper, containerFirstChild);
-        this.progressBarWrapper.style.top = '0';
-      }
-    }
-    /**
-     * Display or not the progress bar.
-     *
-     * @param {boolean} bool - True of false.
-     */
-
-  }, {
-    key: "showProgressBar",
-    value: function showProgressBar(bool) {
-      if (bool === true) {
-        this.progressBarWrapper.style.display = 'block';
-      } else {
-        this.progressBarWrapper.style.display = 'none';
-      }
-    }
-    /**
-     * Calculate the distance traveled as a percentage without unit.
-     *
-     * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
-     * @return {number} A percentage without unit.
-     */
-
-  }, {
-    key: "getScrollPercent",
-    value: function getScrollPercent(recordFrom) {
-      var target = '';
-
-      if (recordFrom === 'body') {
-        target = document.body;
-      } else if (typeof recordFrom === 'string' && recordFrom !== 'container') {
-        target = document.getElementById(recordFrom);
-      } else {
-        target = this.container;
-      }
-
-      if (!target) {
+    if (position === 'bottom') {
+      this.container.appendChild(this.progressBarWrapper);
+      this.progressBarWrapper.style.bottom = '0';
+    } else {
+      if (!this.container) {
         return;
       }
 
-      var windowHeight = window.innerHeight;
-      var windowTop = window.scrollY;
-      var targetHeight = target.offsetHeight;
-      var targetTop = target.offsetTop;
-      var scrollPercent = (windowTop - targetTop) / (targetHeight - windowHeight) * 100;
-      return scrollPercent;
+      const containerFirstChild = this.container.firstChild;
+      this.container.insertBefore(this.progressBarWrapper, containerFirstChild);
+      this.progressBarWrapper.style.top = '0';
     }
-    /**
-     * Use the distance traveled as progressBar width.
-     *
-     * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
-     */
+  }
+  /**
+   * Display or not the progress bar.
+   *
+   * @param {boolean} bool - True of false.
+   */
 
-  }, {
-    key: "recordProgression",
-    value: function recordProgression(recordFrom) {
-      var scrollPercent = this.getScrollPercent(recordFrom);
 
-      if (scrollPercent > 1 && scrollPercent <= 100) {
-        this.showProgressBar(true);
-      } else {
-        this.showProgressBar(false);
-      }
-
-      this.progressBar.style.width = scrollPercent + '%';
+  showProgressBar(bool) {
+    if (bool === true) {
+      this.progressBarWrapper.style.display = 'block';
+    } else {
+      this.progressBarWrapper.style.display = 'none';
     }
-    /**
-     * Initialize the reading progress bar.
-     *
-     * @param {Array}  wrapperClasses - One or more classes for the progress bar wrapper. Default: `['reading-progress']`.
-     * @param {Array}  barClasses - One or more classes for the progress bar. Default `['reading-progress__bar']`.
-     * @param {string} position - The progress bar position: `top` or `bottom` of its container. Default: `top`.
-     * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID. Default `container`.
-     */
+  }
+  /**
+   * Calculate the distance traveled as a percentage without unit.
+   *
+   * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
+   * @return {number} A percentage without unit.
+   */
 
-  }, {
-    key: "init",
-    value: function init() {
-      var wrapperClasses = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ['reading-progress'];
-      var barClasses = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ['reading-progress__bar'];
-      var position = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'top';
-      var recordFrom = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'container';
 
-      if (this.container !== '') {
-        this.setProgressBarWrapperClasses(wrapperClasses);
-        this.setProgressBarClasses(barClasses);
-        this.insertReadingProgressBar(position);
-        this.recordProgression(recordFrom);
-      }
+  getScrollPercent(recordFrom) {
+    let target = '';
+
+    if (recordFrom === 'body') {
+      target = document.body;
+    } else if (typeof recordFrom === 'string' && recordFrom !== 'container') {
+      target = document.getElementById(recordFrom);
+    } else {
+      target = this.container;
     }
-  }]);
 
-  return readingProgress;
-}();
+    if (!target) {
+      return;
+    }
 
-var bodyClasses = document.body.classList;
+    const windowHeight = window.innerHeight;
+    const windowTop = window.scrollY;
+    const targetHeight = target.offsetHeight;
+    const targetTop = target.offsetTop;
+    const scrollPercent = (windowTop - targetTop) / (targetHeight - windowHeight) * 100;
+    return scrollPercent;
+  }
+  /**
+   * Use the distance traveled as progressBar width.
+   *
+   * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
+   */
 
-if (bodyClasses.contains('single-page') && !bodyClasses.contains('attachment')) {
-  var APComScrollBar = new readingProgress('page__content');
-  html.addEventListener('scroll', function () {
-    APComScrollBar.init();
-  });
+
+  recordProgression(recordFrom) {
+    const scrollPercent = this.getScrollPercent(recordFrom);
+
+    if (scrollPercent > 1 && scrollPercent <= 100) {
+      this.showProgressBar(true);
+    } else {
+      this.showProgressBar(false);
+    }
+
+    this.progressBar.style.width = scrollPercent + '%';
+  }
+  /**
+   * Initialize the reading progress bar.
+   *
+   * @param {Array}  wrapperClasses - One or more classes for the progress bar wrapper. Default: `['reading-progress']`.
+   * @param {Array}  barClasses - One or more classes for the progress bar. Default `['reading-progress__bar']`.
+   * @param {string} position - The progress bar position: `top` or `bottom` of its container. Default: `top`.
+   * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID. Default `container`.
+   */
+
+
+  init(wrapperClasses = ['reading-progress'], barClasses = ['reading-progress__bar'], position = 'top', recordFrom = 'container') {
+    if (this.container !== '') {
+      this.setProgressBarWrapperClasses(wrapperClasses);
+      this.setProgressBarClasses(barClasses);
+      this.insertReadingProgressBar(position);
+      this.recordProgression(recordFrom);
+    }
+  }
+
 }
+/**
+ * Init the reading progress bar depending on the current page.
+ */
+
+
+function initReadingProgress() {
+  const html = document;
+  const bodyClasses = document.body.classList;
+
+  if (bodyClasses.contains('single-page') && !bodyClasses.contains('attachment')) {
+    const APComScrollBar = new readingProgress('page__content');
+    html.addEventListener('scroll', () => {
+      APComScrollBar.init();
+    });
+  }
+}
+
+initReadingProgress();
 "use strict";
 
-var body = document.getElementById('body');
-var toolSearch = document.getElementById('tools__search');
-var searchForm = toolSearch.getElementsByClassName('search-form')[0];
-var viewportWidth;
+/* eslint-disable @wordpress/no-global-event-listener */
+
 /**
  * Get the viewport width based on the window width.
  *
  * @return {number} The window inner width.
  */
-
 function getViewportWidth() {
   return window.innerWidth;
 }
@@ -579,27 +564,12 @@ function getViewportWidth() {
 
 
 function hideSearch(target) {
-  var searchCheckbox = document.getElementById('search__checkbox');
+  const toolSearch = document.getElementById('tools__search');
+  const searchCheckbox = document.getElementById('search__checkbox');
 
   if (!toolSearch.contains(target) && target !== null) {
     searchCheckbox.checked = false;
   }
-}
-/**
- * Disable body scroll
- */
-
-
-function preventScrolling() {
-  body.style.overflow = 'hidden';
-}
-/**
- * Allow body scroll
- */
-
-
-function allowScrolling() {
-  document.body.style.removeProperty('overflow');
 }
 /**
  * Create an Intersection Observer to observe visibility of element objects.
@@ -610,15 +580,15 @@ function allowScrolling() {
 
 
 function createVisibilityObserver(element, callback) {
-  var options = {};
+  const options = {};
 
-  var intersectionCallback = function intersectionCallback(entries) {
-    entries.forEach(function (entry) {
+  const intersectionCallback = entries => {
+    entries.forEach(entry => {
       callback(entry.intersectionRatio > 0);
     });
   };
 
-  var observer = new IntersectionObserver(intersectionCallback, options);
+  const observer = new IntersectionObserver(intersectionCallback, options);
   observer.observe(element);
 }
 /**
@@ -629,48 +599,40 @@ function createVisibilityObserver(element, callback) {
 
 
 function observeDisplayChange(element) {
-  viewportWidth = getViewportWidth();
-  createVisibilityObserver(element, function (visible) {
+  createVisibilityObserver(element, visible => {
+    const viewportWidth = getViewportWidth();
+
     if (visible && viewportWidth < 1280) {
-      preventScrolling();
+      document.body.style.overflow = 'hidden';
     } else {
-      allowScrolling();
+      document.body.style.removeProperty('overflow');
     }
   });
 }
+/**
+ * Handle visibility and overflow with event listeners.
+ */
 
-body.addEventListener('load', function () {
-  observeDisplayChange(searchForm);
-}, false);
-body.addEventListener('resize', function () {
-  viewportWidth = getViewportWidth();
-  observeDisplayChange(searchForm);
-});
-body.addEventListener('click', function (event) {
-  hideSearch(event.target);
-});
-body.addEventListener('focusout', function (event) {
-  hideSearch(event.relatedTarget);
-});
+
+function initSearch() {
+  const toolSearch = document.getElementById('tools__search');
+  const searchForm = toolSearch.getElementsByClassName('search-form')[0];
+  window.addEventListener('load', () => {
+    observeDisplayChange(searchForm);
+  });
+  window.addEventListener('resize', () => {
+    observeDisplayChange(searchForm);
+  });
+  document.body.addEventListener('click', event => {
+    hideSearch(event.target);
+  });
+  document.body.addEventListener('focusout', event => {
+    hideSearch(event.relatedTarget);
+  });
+}
+
+initSearch();
 "use strict";
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /**
  * Minimalist ToC
@@ -688,14 +650,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  *
  * @param {string} text Text to slugify.
  */
-var slugify = function slugify(text) {
+const slugify = text => {
   return text.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '-').replace(/\-\-+/g, '-').replace(/^-|-$/g, '');
 };
 
-var TableOfContent = /*#__PURE__*/function () {
-  function TableOfContent() {
-    _classCallCheck(this, TableOfContent);
-
+class TableOfContent {
+  constructor() {
     this.source = '';
     this.target = '';
     this.options = {
@@ -706,178 +666,158 @@ var TableOfContent = /*#__PURE__*/function () {
     };
   }
 
-  _createClass(TableOfContent, [{
-    key: "setSource",
-    value: function setSource(source) {
-      if (source && typeof source === 'string') {
-        this.source = document.getElementById(source);
-      }
+  setSource(source) {
+    if (source && typeof source === 'string') {
+      this.source = document.getElementById(source);
     }
-  }, {
-    key: "setTarget",
-    value: function setTarget(target) {
-      if (target && typeof target === 'string') {
-        this.target = document.getElementById(target);
-      }
+  }
+
+  setTarget(target) {
+    if (target && typeof target === 'string') {
+      this.target = document.getElementById(target);
     }
-  }, {
-    key: "setOptions",
-    value: function setOptions(options) {
-      if (options) {
-        if (options.headings && options.headings instanceof Array) {
-          this.options.headings = options.headings;
-        }
+  }
 
-        if (options.title && typeof options.title === 'string') {
-          this.options.title = options.title;
-        }
-
-        if (options.titleTag && typeof options.titleTag === 'string') {
-          this.options.titleTag = options.titleTag;
-        }
-
-        if (options.listType && typeof options.listType === 'string') {
-          this.options.listType = options.listType;
-        }
-      }
-    }
-  }, {
-    key: "getHeadingList",
-    value: function getHeadingList() {
-      var allTitles = this.source.querySelectorAll(this.options.headings);
-
-      var titlesWithoutLinks = _toConsumableArray(allTitles).filter(function (title) {
-        return !title.firstElementChild || 'A' !== title.firstElementChild.tagName;
-      });
-
-      var commentsTitle = document.getElementById('comments__title');
-
-      if (commentsTitle) {
-        titlesWithoutLinks.push(commentsTitle);
+  setOptions(options) {
+    if (options) {
+      if (options.headings && options.headings instanceof Array) {
+        this.options.headings = options.headings;
       }
 
-      return titlesWithoutLinks;
-    }
-  }, {
-    key: "createTitleMarkup",
-    value: function createTitleMarkup() {
-      return '<' + this.options.titleTag + ' id="toc-title">' + this.options.title + '</' + this.options.titleTag + '>';
-    }
-  }, {
-    key: "startListNode",
-    value: function startListNode() {
-      return '<' + this.options.listType + '>';
-    }
-  }, {
-    key: "endListNode",
-    value: function endListNode() {
-      return '</' + this.options.listType + '>';
-    }
-  }, {
-    key: "determineLevel",
-    value: function determineLevel(currentHeading) {
-      return this.options.headings.indexOf(currentHeading);
-    }
-  }, {
-    key: "calculateLevelDiff",
-    value: function calculateLevelDiff(currentLevel, previousLevel) {
-      return currentLevel - previousLevel;
-    }
-  }, {
-    key: "addSlug",
-    value: function addSlug(heading) {
-      heading.id = heading.id ? heading.id : slugify(heading.innerText);
-      return heading.id;
-    }
-  }, {
-    key: "createTocMarkup",
-    value: function createTocMarkup() {
-      var levelDiff;
-      var headingList = this.getHeadingList();
-      var i = 0;
-      var markup = '';
-      var currentLevel;
-      var previousLevel = currentLevel;
-      markup += '<nav class="toc" aria-labelledby="toc-title">';
-      markup += this.createTitleMarkup();
-      markup += this.startListNode();
-
-      for (i; i < headingList.length; i++) {
-        currentLevel = this.determineLevel(headingList[i].localName);
-        levelDiff = this.calculateLevelDiff(currentLevel, previousLevel);
-
-        if (levelDiff < 0) {
-          while (levelDiff < 0) {
-            markup += this.endListNode();
-            levelDiff++;
-          }
-        } else if (levelDiff > 0) {
-          while (levelDiff > 0) {
-            markup += this.startListNode();
-            levelDiff--;
-          }
-        }
-
-        if (i !== 0) {
-          markup += '</li>';
-        }
-
-        markup += '<li>';
-
-        if ('comments__title' === headingList[i].id) {
-          markup += '<a href="#' + this.addSlug(headingList[i]) + '">' + toc_args.commentTitle + '</a>';
-        } else {
-          markup += '<a href="#' + this.addSlug(headingList[i]) + '">' + headingList[i].innerText + '</a>';
-        }
-
-        previousLevel = currentLevel;
+      if (options.title && typeof options.title === 'string') {
+        this.options.title = options.title;
       }
 
-      markup += '</li>';
-      markup += this.endListNode();
-      markup += '</nav>';
-      return markup;
-    }
-  }, {
-    key: "printToc",
-    value: function printToc() {
-      var headingList = this.getHeadingList();
+      if (options.titleTag && typeof options.titleTag === 'string') {
+        this.options.titleTag = options.titleTag;
+      }
 
-      if (headingList.length > 0) {
-        this.target.innerHTML = this.createTocMarkup();
+      if (options.listType && typeof options.listType === 'string') {
+        this.options.listType = options.listType;
       }
     }
-    /**
-     * Initialize the table of content.
-     *
-     * @param {string} source The container id to look for headings.
-     * @param {string} target The container id to display the table of content.
-     * @param {Object} options Options.
-     *
-     * Options list :
-     * - headings: an array of headings to retrieve. Default : `['h2', 'h3', 'h4', 'h5', 'h6']`
-     * - title: the title to print before the table of contents. Default: `Table of contents`.
-     * - titleTag: the title tag. Default: `h2`.
-     * - listType: the list type (`ul` or `ol`). Default: `ol`.
-     */
+  }
 
-  }, {
-    key: "init",
-    value: function init(source, target, options) {
-      this.setSource(source);
-      this.setTarget(target);
-      this.setOptions(options);
+  getHeadingList() {
+    const allTitles = this.source.querySelectorAll(this.options.headings);
+    const titlesWithoutLinks = [...allTitles].filter(title => !title.firstElementChild || 'A' !== title.firstElementChild.tagName);
+    const commentsTitle = document.getElementById('comments__title');
 
-      if (this.source && this.target) {
-        this.printToc();
-      }
+    if (commentsTitle) {
+      titlesWithoutLinks.push(commentsTitle);
     }
-  }]);
 
-  return TableOfContent;
-}();
+    return titlesWithoutLinks;
+  }
 
-var minimalistTOC = new TableOfContent();
+  createTitleMarkup() {
+    return '<' + this.options.titleTag + ' id="toc-title">' + this.options.title + '</' + this.options.titleTag + '>';
+  }
+
+  startListNode() {
+    return '<' + this.options.listType + '>';
+  }
+
+  endListNode() {
+    return '</' + this.options.listType + '>';
+  }
+
+  determineLevel(currentHeading) {
+    return this.options.headings.indexOf(currentHeading);
+  }
+
+  calculateLevelDiff(currentLevel, previousLevel) {
+    return currentLevel - previousLevel;
+  }
+
+  addSlug(heading) {
+    heading.id = heading.id ? heading.id : slugify(heading.innerText);
+    return heading.id;
+  }
+
+  createTocMarkup() {
+    let levelDiff;
+    const headingList = this.getHeadingList();
+    let i = 0;
+    let markup = '';
+    let currentLevel;
+    let previousLevel = currentLevel;
+    markup += '<nav class="toc" aria-labelledby="toc-title">';
+    markup += this.createTitleMarkup();
+    markup += this.startListNode();
+
+    for (i; i < headingList.length; i++) {
+      currentLevel = this.determineLevel(headingList[i].localName);
+      levelDiff = this.calculateLevelDiff(currentLevel, previousLevel);
+
+      if (levelDiff < 0) {
+        while (levelDiff < 0) {
+          markup += this.endListNode();
+          levelDiff++;
+        }
+      } else if (levelDiff > 0) {
+        while (levelDiff > 0) {
+          markup += this.startListNode();
+          levelDiff--;
+        }
+      }
+
+      if (i !== 0) {
+        markup += '</li>';
+      }
+
+      markup += '<li>';
+
+      if ('comments__title' === headingList[i].id) {
+        markup += '<a href="#' + this.addSlug(headingList[i]) + '">' + toc_args.commentTitle + '</a>';
+      } else {
+        markup += '<a href="#' + this.addSlug(headingList[i]) + '">' + headingList[i].innerText + '</a>';
+      }
+
+      previousLevel = currentLevel;
+    }
+
+    markup += '</li>';
+    markup += this.endListNode();
+    markup += '</nav>';
+    return markup;
+  }
+
+  printToc() {
+    const headingList = this.getHeadingList();
+
+    if (headingList.length > 0) {
+      this.target.innerHTML = this.createTocMarkup();
+    }
+  }
+  /**
+   * Initialize the table of content.
+   *
+   * @param {string} source The container id to look for headings.
+   * @param {string} target The container id to display the table of content.
+   * @param {Object} options Options.
+   *
+   * Options list :
+   * - headings: an array of headings to retrieve. Default : `['h2', 'h3', 'h4', 'h5', 'h6']`
+   * - title: the title to print before the table of contents. Default: `Table of contents`.
+   * - titleTag: the title tag. Default: `h2`.
+   * - listType: the list type (`ul` or `ol`). Default: `ol`.
+   */
+
+
+  init(source, target, options) {
+    this.setSource(source);
+    this.setTarget(target);
+    this.setOptions(options);
+
+    if (this.source && this.target) {
+      this.printToc();
+    }
+  }
+
+}
+
+const minimalistTOC = new TableOfContent();
 minimalistTOC.init('page__content', 'table-of-content', {
   title: toc_args.tocTitle
 });

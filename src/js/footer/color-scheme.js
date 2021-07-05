@@ -2,8 +2,6 @@
 /* global getThemePreference */
 /* global updateColorScheme */
 
-const body = document.getElementById('body');
-
 /**
  * Get the light theme icon to display on dark theme.
  */
@@ -105,6 +103,8 @@ function defineThemePreference() {
  * preference.
  */
 function switchColorScheme() {
+	const body = document.getElementById('body');
+
 	if (body.getAttribute('data-color-scheme') === 'light') {
 		updateThemePreference('dark');
 	} else if (body.getAttribute('data-color-scheme') === 'dark') {
@@ -183,6 +183,8 @@ function initializeColorScheme() {
  * Apply the theme to all tabs.
  */
 function syncColorSchemeBetweenTabs() {
+	const body = document.getElementById('body');
+
 	body.addEventListener('storage', (e) => {
 		if (e.key === 'apcom-color-scheme') {
 			updateColorScheme();
