@@ -30,7 +30,7 @@ const errorHandler = require('./gulp/error-handler');
  */
 /* CSS */
 const { src, dest, watch, series, parallel, lastRun } = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const sorting = require('postcss-sorting');
 const autoprefixer = require('autoprefixer');
@@ -451,7 +451,7 @@ function bumpCSS(done) {
 	return pipeline(
 		[
 			src(config.bump.styles.src),
-			replace(/theme_version: "(.{5})"/g, function () {
+			replace(/theme_version: "(.{5})"/g, function() {
 				return 'theme_version: "' + packageVersion + '"';
 			}),
 			dest(config.bump.styles.dest),
@@ -471,7 +471,7 @@ function bumpPHP(done) {
 	return pipeline(
 		[
 			src(config.bump.files.src),
-			replace(/_VERSION', '(.{5})'/g, function () {
+			replace(/_VERSION', '(.{5})'/g, function() {
 				return "_VERSION', '" + packageVersion + "'";
 			}),
 			dest(config.bump.files.dest),
@@ -484,40 +484,40 @@ function initTheme(done) {
 	return pipeline(
 		[
 			src(config.init.src, { base: './' }),
-			replace('Firstname Lastname', function () {
+			replace('Firstname Lastname', function() {
 				return config.init.authorName;
 			}),
-			replace('your@email.com', function () {
+			replace('your@email.com', function() {
 				return config.init.authorEmail;
 			}),
-			replace('https://www.yourWebsite.com/', function () {
+			replace('https://www.yourWebsite.com/', function() {
 				return config.init.authorUrl;
 			}),
-			replace('2020 Company Name', function () {
+			replace('2020 Company Name', function() {
 				return config.init.copyright;
 			}),
-			replace('Your theme description.', function () {
+			replace('Your theme description.', function() {
 				return config.init.description;
 			}),
-			replace('Your-Package-Name', function () {
+			replace('Your-Package-Name', function() {
 				return config.init.packageUppercase;
 			}),
-			replace('your-package-name', function () {
+			replace('your-package-name', function() {
 				return config.init.packageLowercase;
 			}),
-			replace('yourprefix', function () {
+			replace('yourprefix', function() {
 				return config.init.prefix;
 			}),
-			replace('YOURPREFIX', function () {
+			replace('YOURPREFIX', function() {
 				return config.init.prefix.toUpperCase();
 			}),
-			replace('https://github.com/your/repo', function () {
+			replace('https://github.com/your/repo', function() {
 				return config.init.repo;
 			}),
-			replace('yourTextDomain', function () {
+			replace('yourTextDomain', function() {
 				return config.init.textDomain;
 			}),
-			replace('your-vendor-name', function () {
+			replace('your-vendor-name', function() {
 				return config.init.vendorName;
 			}),
 			dest(config.init.dest),
