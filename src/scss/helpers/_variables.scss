@@ -1,3 +1,5 @@
+@use "sass:math";
+
 //==============================================================================
 // Theme Information
 //==============================================================================
@@ -61,10 +63,10 @@ $font-size_4xl: $font-size_base-rem * pow($ratio, 5);
 //==============================================================================
 $spacing_base: $golden-number * 1rem;
 
-$spacing_3xs: $spacing_base / 5;
-$spacing_2xs: $spacing_base / 4;
-$spacing_xs: $spacing_base / 3;
-$spacing_sm: $spacing_base / 2;
+$spacing_3xs: math.div($spacing_base, 5);
+$spacing_2xs: math.div($spacing_base, 4);
+$spacing_xs: math.div($spacing_base, 3);
+$spacing_sm: math.div($spacing_base, 2);
 $spacing_md: $spacing_base;
 $spacing_lg: $spacing_base * 1.5;
 $spacing_xl: $spacing_base * 2;

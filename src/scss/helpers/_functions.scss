@@ -1,9 +1,11 @@
+@use "sass:math";
+
 /// Convert px to rem
 /// @param  {Number} $px Value in px
 /// @param  {Number} $standard 1rem = 16px
 /// @return {Number} Value in rem
 @function pxtorem($px, $standard: 16) {
-	@return $px/$standard + 0rem; /* stylelint-disable-line */
+	@return math.div($px, $standard) + 0rem; /* stylelint-disable-line */
 }
 
 /// Convert px to em
@@ -11,7 +13,7 @@
 /// @param  {Number} $standard 1em = 16px
 /// @return {Number} Value in em
 @function pxtoem($px, $standard: 16) {
-	@return $px/$standard + 0em; /* stylelint-disable-line */
+	@return math.div($px, $standard) + 0em; /* stylelint-disable-line */
 }
 
 /// Retrieve a CSS variable value with prefix
@@ -41,7 +43,7 @@
 		}
 	} @else if $exponent < 0 {
 		@for $i from 1 through -$exponent {
-			$value: $value / $number;
+			$value: math.div($value, $number);
 		}
 	}
 
@@ -60,14 +62,13 @@
 	$minViewport: 320,
 	$maxViewport: 1280
 ) {
-	@return clamp(
-		#{$minSize},
-		calc(
-			#{$minSize} + (100vw - #{pxtorem($minViewport)}) / (#{$maxViewport} -
-						#{$minViewport})
-		),
-		#{$minSize} * #{$multiplier}
+	$viewportDiff: $maxViewport - $minViewport;
+	$maxSize: calc(#{$minSize} * #{$multiplier});
+	$preferredSize: calc(
+		#{$minSize} + calc((100vw - #{pxtorem($minViewport)}) / #{$viewportDiff})
 	);
+
+	@return clamp(#{$minSize}, #{$preferredSize}, #{$maxSize});
 }
 
 /// Replace `$search` with `$replace` in `$string`

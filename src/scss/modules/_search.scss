@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .search {
 	position: relative;
 
@@ -5,93 +7,6 @@
 		&::before,
 		&::after {
 			display: none;
-		}
-	}
-
-	&__checkbox {
-		cursor: pointer;
-		opacity: 0;
-		z-index: 2;
-		position: absolute;
-		top: pxtorem(40/2 - 8); // label height/2 - approximate checkbox height
-		right: pxtorem(40/2 - 8); // label width/2 - approximate checkbox width;
-
-		&:not(:checked) {
-			~ .search-form {
-				display: none;
-			}
-		}
-
-		&:checked {
-			~ .search__label {
-				background-position: 0 100%;
-				z-index: 5;
-
-				.search__icon {
-					position: relative;
-
-					&::before {
-						display: block;
-						content: "";
-						background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{$color_catskill-white}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
-						width: 100%;
-						height: 100%;
-						position: absolute;
-						top: 0;
-						left: 0;
-						animation: scaleFullWidth 0.5s;
-					}
-				}
-
-				svg {
-					display: none;
-				}
-			}
-
-			~ .search-form {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-flow: column wrap;
-			}
-
-			&:hover,
-			&:focus {
-				~ .search__label {
-					background-position: 0 50%;
-				}
-			}
-		}
-
-		&:hover,
-		&:focus {
-			~ .search__label {
-				background-position: 0 50%;
-			}
-		}
-
-		&:focus {
-			~ .search__label {
-				outline: cssvar(color-primary) dotted pxtorem(1);
-			}
-		}
-	}
-}
-
-[data-color-scheme="dark"] {
-	.search {
-		&__checkbox {
-			&:checked {
-				~ .search__label {
-					.search__icon {
-						&::before {
-							display: block;
-							content: "";
-							background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{$color_firefly}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
-						}
-					}
-				}
-			}
 		}
 	}
 }
@@ -117,6 +32,21 @@
 		transform: none;
 		transition: all 0.4s ease-in-out 0s;
 
+		&--icon {
+			display: flex;
+			align-items: center;
+
+			svg {
+				fill: cssvar(color-primary);
+				width: pxtorem(30);
+				transition: all 0.3s ease-in 0s;
+			}
+		}
+
+		&--txt {
+			display: none;
+		}
+
 		&:hover,
 		&:focus {
 			background-position: 50% 0;
@@ -133,21 +63,6 @@
 			border: none;
 			box-shadow: none;
 			transform: none;
-		}
-
-		&--icon {
-			display: flex;
-			align-items: center;
-
-			svg {
-				fill: cssvar(color-primary);
-				width: pxtorem(30);
-				transition: all 0.3s ease-in 0s;
-			}
-		}
-
-		&--txt {
-			display: none;
 		}
 	}
 
@@ -170,4 +85,95 @@
 	.search-form {
 		margin-bottom: cssvar(spacing-md);
 	}
+}
+
+.search__checkbox {
+	cursor: pointer;
+	opacity: 0;
+	z-index: 2;
+	position: absolute;
+	top: pxtorem(
+		math.div(40, 2) - 8
+	); // label height/2 - approximate checkbox height
+	right: pxtorem(
+		math.div(40, 2) - 8
+	); // label width/2 - approximate checkbox width;
+
+	&:hover,
+	&:focus {
+		~ .search__label {
+			background-position: 0 50%;
+		}
+	}
+
+	&:focus {
+		~ .search__label {
+			outline: cssvar(color-primary) dotted pxtorem(1);
+		}
+	}
+
+	&:not(:checked) {
+		~ .search-form {
+			display: none;
+		}
+	}
+}
+
+.search__checkbox:checked {
+	~ .search__label {
+		background-position: 0 100%;
+		z-index: 5;
+
+		.search__icon {
+			position: relative;
+
+			&::before {
+				display: block;
+				content: "";
+				background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{$color_catskill-white}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				animation: scaleFullWidth 0.5s;
+			}
+		}
+
+		svg {
+			display: none;
+		}
+	}
+
+	~ .search-form {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-flow: column wrap;
+	}
+
+	&:hover,
+	&:focus {
+		~ .search__label {
+			background-position: 0 50%;
+		}
+	}
+}
+
+[data-color-scheme="dark"] {
+	/* stylelint-disable */
+	.search__checkbox {
+		&:checked {
+			~ .search__label {
+				.search__icon {
+					&::before {
+						display: block;
+						content: "";
+						background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{$color_firefly}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
+					}
+				}
+			}
+		}
+	}
+	/* stylelint-enable */
 }
