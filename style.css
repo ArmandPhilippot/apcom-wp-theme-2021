@@ -3274,9 +3274,9 @@ small {
 	background-repeat: no-repeat;
 	background-size: 100%;
 	content: "";
-	height: 1.875rem;
-	margin-right: var(--apcom-spacing-sm);
-	width: 1.875rem;
+	height: 1.5625rem;
+	margin-right: var(--apcom-spacing-xs);
+	width: 1.5625rem;
 }
 
 .gallery {

@@ -1,6 +1,7 @@
 .feed {
 	&__link {
 		@include buttonBase;
+
 		@include buttonStyle2;
 
 		&::before {
@@ -8,9 +9,9 @@
 			background: url(assets/images/feed.svg);
 			background-repeat: no-repeat;
 			background-size: 100%;
-			width: pxtorem(30);
-			height: pxtorem(30);
-			margin-right: cssvar(spacing-sm);
+			width: pxtorem(25);
+			height: pxtorem(25);
+			margin-right: cssvar(spacing-xs);
 		}
 	}
 }
