@@ -6,9 +6,11 @@ module.exports = {
 		es6: true,
 		node: true,
 	},
-	extends: ['plugin:@wordpress/eslint-plugin/recommended-with-formatting'],
+	extends: [
+		'eslint:recommended',
+		'plugin:@wordpress/eslint-plugin/recommended',
+	],
 	rules: {
-		'array-bracket-spacing': ['error', 'never'],
-		'space-in-parens': ['error', 'never'],
+		'prettier/prettier': 'warn',
 	},
 };

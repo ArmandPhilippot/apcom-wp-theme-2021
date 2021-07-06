@@ -73,7 +73,8 @@
 		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
 		"sass": "^1.35.1",
 		"standard-version": "^9.0.0",
-		"stylelint": "^13.8.0"
+		"stylelint": "^13.8.0",
+		"stylelint-config-prettier": "^8.0.2"
 	},
 	"browserslist": [
 		"extends @wordpress/browserslist-config"
