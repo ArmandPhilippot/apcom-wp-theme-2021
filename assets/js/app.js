@@ -74,9 +74,12 @@ function setCodeBlocksClasses() {
 
 function translateCopyButton() {
   const pageContent = document.getElementById('page__content');
-  pageContent.setAttribute('data-prismjs-copy', 'Copier');
-  pageContent.setAttribute('data-prismjs-copy-success', 'Copié !');
-  pageContent.setAttribute('data-prismjs-copy-error', 'Utilisez Ctrl+c pour copier');
+
+  if (pageContent) {
+    pageContent.setAttribute('data-prismjs-copy', 'Copier');
+    pageContent.setAttribute('data-prismjs-copy-success', 'Copié !');
+    pageContent.setAttribute('data-prismjs-copy-error', 'Utilisez Ctrl+c pour copier');
+  }
 }
 
 document.body.addEventListener('DOMContentLoaded', setCodeBlocksClasses());
