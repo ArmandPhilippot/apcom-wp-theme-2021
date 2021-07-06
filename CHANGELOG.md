@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.1.0...v1.1.1) (2021-07-06)
+
+### Bug Fixes
+
+-   reduce feed icon size and margin ([cf2fac3](https://github.com/ArmandPhilippot/armandphilippot.com/commit/cf2fac3b4a5fce38afcda19857e19c9b2ac87158))
+
 ## [1.1.0](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.10...v1.1.0) (2021-07-06)
 
 ### Features
