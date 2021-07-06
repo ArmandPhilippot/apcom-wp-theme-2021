@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.10...v1.1.0) (2021-07-06)
+
+### Features
+
+-   move feed styles to its own module ([e5ee264](https://github.com/ArmandPhilippot/armandphilippot.com/commit/e5ee264297bb15dd87b7c5b8dd77e73aec4b3437))
+
+### Bug Fixes
+
+-   **prism:** check for parent existence before translate copy button ([e597606](https://github.com/ArmandPhilippot/armandphilippot.com/commit/e597606b57491f5e5d5268703476724c0017f1a7))
+
 ### [1.0.10](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.0.9...v1.0.10) (2021-05-06)
 
 ### Bug Fixes
