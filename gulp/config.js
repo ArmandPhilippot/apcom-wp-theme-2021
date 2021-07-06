@@ -2,21 +2,21 @@
  * Gulp configuration
  */
 
-const dotenv = require('dotenv');
-const dotenvExpand = require('dotenv-expand');
-const fs = require('fs');
+const dotenv = require( 'dotenv' );
+const dotenvExpand = require( 'dotenv-expand' );
+const fs = require( 'fs' );
 
 // Load environment variables
 const myDotenv = dotenv.config();
-dotenvExpand(myDotenv);
+dotenvExpand( myDotenv );
 
 /**
  * Load package.json data.
  */
-const package = JSON.parse(fs.readFileSync('./package.json'));
-const packageVersion = package.version;
+const packageJson = JSON.parse( fs.readFileSync( './package.json' ) );
+const packageVersion = packageJson.version;
 
-if (myDotenv.error) {
+if ( myDotenv.error ) {
 	throw myDotenv.error;
 }
 
@@ -40,13 +40,13 @@ module.exports = {
 			// Provide a custom Regex for inserting the snippet.
 			rule: {
 				match: /<\/body>/i,
-				fn: function (snippet, match) {
+				fn( snippet, match ) {
 					return snippet + match;
 				},
 			},
 		},
 		open: process.env.WP_BS_OPEN,
-		browser: process.env.WP_BS_BROWSER.split(','),
+		browser: process.env.WP_BS_BROWSER.split( ',' ),
 		notify: process.env.WP_BS_NOTIFY,
 	},
 	bump: {
@@ -60,10 +60,10 @@ module.exports = {
 		},
 	},
 	clean: {
-		paths: ['assets/', 'style.*', 'style-rtl.*', 'print.*'],
+		paths: [ 'assets/', 'style.*', 'style-rtl.*', 'print.*' ],
 	},
 	files: {
-		watch: ['./**/*.php', '!vendor/**/*.php'],
+		watch: [ './**/*.php', '!vendor/**/*.php' ],
 	},
 	fonts: {
 		src: 'src/fonts/**/*',
@@ -168,11 +168,11 @@ module.exports = {
 			outputStyle: 'expanded',
 			indentType: 'tab',
 			indentWidth: '1',
-			includePaths: ['node_modules'],
+			includePaths: [ 'node_modules' ],
 		},
 	},
 	translation: {
-		src: ['./**/*.php'],
+		src: [ './**/*.php' ],
 		dest: './languages/',
 		filename: process.env.WP_PROJECT_TEXT_DOMAIN + '.pot',
 		potOptions: {
