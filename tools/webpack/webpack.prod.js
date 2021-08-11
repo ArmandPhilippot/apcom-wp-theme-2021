@@ -1,5 +1,6 @@
 const paths = require( './paths' );
 
+const TerserPlugin = require( 'terser-webpack-plugin' );
 const CssMinimizerPlugin = require( 'css-minimizer-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
@@ -8,7 +9,7 @@ module.exports = {
 	devtool: false,
 	optimization: {
 		minimize: true,
-		minimizer: [ new CssMinimizerPlugin() ],
+		minimizer: [ new TerserPlugin(), new CssMinimizerPlugin() ],
 	},
 	module: {
 		rules: [
