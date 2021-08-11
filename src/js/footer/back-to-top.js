@@ -4,9 +4,9 @@
  * Determine scroll position to display or not the back to top link.
  */
 function showBackToTopOnScroll() {
-	const backToTop = document.getElementById('back-to-top');
+	const backToTop = document.getElementById( 'back-to-top' );
 	const scrollPosition = window.scrollY;
-	if (scrollPosition < '300') {
+	if ( scrollPosition < '300' ) {
 		backToTop.style.display = 'none';
 	} else {
 		backToTop.style.display = 'block';
@@ -21,9 +21,9 @@ function showBackToTopOnScroll() {
  */
 function initBackToTopButton() {
 	const html = document;
-	const backToTop = document.getElementById('back-to-top');
+	const backToTop = document.getElementById( 'back-to-top' );
 	backToTop.style.display = 'none';
-	html.addEventListener('scroll', () => showBackToTopOnScroll());
+	html.addEventListener( 'scroll', () => showBackToTopOnScroll() );
 }
 
 initBackToTopButton();

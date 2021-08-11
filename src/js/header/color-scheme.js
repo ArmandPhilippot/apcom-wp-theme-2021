@@ -1,35 +1,15 @@
-/**
- * Get preferred color scheme from local storage.
- */
-function getThemePreference() {
-	if (localStorage.getItem('apcom-color-scheme')) {
-		return localStorage.getItem('apcom-color-scheme');
-	}
-}
-
-/**
- * Update the theme to use based on the preferred color scheme.
- */
-function updateColorScheme() {
-	const body = document.getElementById('body');
-	const preferredColorScheme = getThemePreference();
-
-	if (preferredColorScheme === 'dark') {
-		body.setAttribute('data-color-scheme', 'dark');
-	} else {
-		body.setAttribute('data-color-scheme', 'light');
-	}
-}
+import getThemePreference from '../utils/get-theme-preference';
+import updateColorScheme from '../utils/update-color-scheme';
 
 /**
  * Use an observer to detect the existence of body tag.
  */
-const observer = new MutationObserver(() => {
-	if (document.body) {
+const observer = new MutationObserver( () => {
+	if ( document.body ) {
 		updateColorScheme();
 		observer.disconnect();
 	}
-});
+} );
 
 getThemePreference();
-observer.observe(document.documentElement, { childList: true });
+observer.observe( document.documentElement, { childList: true } );

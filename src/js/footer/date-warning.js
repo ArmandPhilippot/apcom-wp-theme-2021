@@ -3,16 +3,16 @@
 /**
  * Check if the diff between two dates is longer than two years.
  *
- * @param {number} firstDate A date in milliseconds.
+ * @param {number} firstDate  A date in milliseconds.
  * @param {number} secondDate A date in milliseconds.
  * @return {boolean} True if the diff is greater than two years.
  */
-const isMoreThanTwoYears = (firstDate, secondDate) => {
+const isMoreThanTwoYears = ( firstDate, secondDate ) => {
 	const diffInMilliseconds =
 		firstDate > secondDate
 			? firstDate - secondDate
 			: secondDate - firstDate;
-	const diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
+	const diffInDays = diffInMilliseconds / ( 1000 * 60 * 60 * 24 );
 	const twoYears = 365 * 2;
 
 	return diffInDays > twoYears;
@@ -23,10 +23,10 @@ const isMoreThanTwoYears = (firstDate, secondDate) => {
  *
  * @param {HTMLElement} node An HTML element to insert.
  */
-const insertBeforeContent = (node) => {
-	const pageContent = document.getElementById('page__content');
+const insertBeforeContent = ( node ) => {
+	const pageContent = document.getElementById( 'page__content' );
 	const firstChild = pageContent.firstChild;
-	pageContent.insertBefore(node, firstChild);
+	pageContent.insertBefore( node, firstChild );
 };
 
 /**
@@ -35,11 +35,11 @@ const insertBeforeContent = (node) => {
  * @return {boolean} True if it is an article.
  */
 const isArticle = () => {
-	const body = document.getElementById('body');
+	const body = document.getElementById( 'body' );
 	return (
-		body.classList.contains('single-page') &&
-		! body.classList.contains('cpt') &&
-		! body.classList.contains('no-comments')
+		body.classList.contains( 'single-page' ) &&
+		! body.classList.contains( 'cpt' ) &&
+		! body.classList.contains( 'no-comments' )
 	);
 };
 
@@ -71,7 +71,7 @@ const getPublicationDate = () => {
 	);
 
 	return publicationDateWrapper
-		? new Date(publicationDateWrapper.dateTime).getTime()
+		? new Date( publicationDateWrapper.dateTime ).getTime()
 		: null;
 };
 
@@ -81,10 +81,10 @@ const getPublicationDate = () => {
  * @return {Date} Date element or null
  */
 const getUpdateDate = () => {
-	const updateDateWrapper = document.getElementById('meta__update-date');
+	const updateDateWrapper = document.getElementById( 'meta__update-date' );
 
 	return updateDateWrapper
-		? new Date(updateDateWrapper.dateTime).getTime()
+		? new Date( updateDateWrapper.dateTime ).getTime()
 		: null;
 };
 
@@ -92,27 +92,27 @@ const getUpdateDate = () => {
  * Display a warning if an article is not updated since more than two years.
  */
 const displayWarningIfNeeded = () => {
-	if (isArticle()) {
+	if ( isArticle() ) {
 		const publicationDate = getPublicationDate();
 		const updateDate = getUpdateDate();
 		const currentDate = new Date().getTime();
 
 		if (
 			! publicationDate ||
-			! isMoreThanTwoYears(publicationDate, currentDate)
+			! isMoreThanTwoYears( publicationDate, currentDate )
 		) {
 			return;
 		}
 
-		if (updateDate && ! isMoreThanTwoYears(publicationDate, updateDate)) {
+		if ( updateDate && ! isMoreThanTwoYears( publicationDate, updateDate ) ) {
 			return;
 		}
 
-		const div = document.createElement('div');
-		div.classList.add('content-warning');
+		const div = document.createElement( 'div' );
+		div.classList.add( 'content-warning' );
 		div.innerHTML = getWarning();
 
-		insertBeforeContent(div);
+		insertBeforeContent( div );
 	}
 };
 

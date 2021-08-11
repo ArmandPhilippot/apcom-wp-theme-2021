@@ -13,17 +13,17 @@
  *
  * @param {string} text Text to slugify.
  */
-const slugify = (text) => {
+const slugify = ( text ) => {
 	return text
 		.toString()
-		.normalize('NFD')
-		.replace(/[\u0300-\u036f]/g, '')
+		.normalize( 'NFD' )
+		.replace( /[\u0300-\u036f]/g, '' )
 		.toLowerCase()
 		.trim()
-		.replace(/\s+/g, '-')
-		.replace(/[^\w\-]+/g, '-')
-		.replace(/\-\-+/g, '-')
-		.replace(/^-|-$/g, '');
+		.replace( /\s+/g, '-' )
+		.replace( /[^\w\-]+/g, '-' )
+		.replace( /\-\-+/g, '-' )
+		.replace( /^-|-$/g, '' );
 };
 
 class TableOfContent {
@@ -31,53 +31,53 @@ class TableOfContent {
 		this.source = '';
 		this.target = '';
 		this.options = {
-			headings: ['h2', 'h3', 'h4', 'h5', 'h6'],
+			headings: [ 'h2', 'h3', 'h4', 'h5', 'h6' ],
 			title: 'Table of contents',
 			titleTag: 'h2',
 			listType: 'ol',
 		};
 	}
 
-	setSource(source) {
-		if (source && typeof source === 'string') {
-			this.source = document.getElementById(source);
+	setSource( source ) {
+		if ( source && typeof source === 'string' ) {
+			this.source = document.getElementById( source );
 		}
 	}
 
-	setTarget(target) {
-		if (target && typeof target === 'string') {
-			this.target = document.getElementById(target);
+	setTarget( target ) {
+		if ( target && typeof target === 'string' ) {
+			this.target = document.getElementById( target );
 		}
 	}
 
-	setOptions(options) {
-		if (options) {
-			if (options.headings && options.headings instanceof Array) {
+	setOptions( options ) {
+		if ( options ) {
+			if ( options.headings && options.headings instanceof Array ) {
 				this.options.headings = options.headings;
 			}
-			if (options.title && typeof options.title === 'string') {
+			if ( options.title && typeof options.title === 'string' ) {
 				this.options.title = options.title;
 			}
-			if (options.titleTag && typeof options.titleTag === 'string') {
+			if ( options.titleTag && typeof options.titleTag === 'string' ) {
 				this.options.titleTag = options.titleTag;
 			}
-			if (options.listType && typeof options.listType === 'string') {
+			if ( options.listType && typeof options.listType === 'string' ) {
 				this.options.listType = options.listType;
 			}
 		}
 	}
 
 	getHeadingList() {
-		const allTitles = this.source.querySelectorAll(this.options.headings);
-		const titlesWithoutLinks = [...allTitles].filter(
-			(title) =>
+		const allTitles = this.source.querySelectorAll( this.options.headings );
+		const titlesWithoutLinks = [ ...allTitles ].filter(
+			( title ) =>
 				! title.firstElementChild ||
 				'A' !== title.firstElementChild.tagName
 		);
-		const commentsTitle = document.getElementById('comments__title');
+		const commentsTitle = document.getElementById( 'comments__title' );
 
-		if (commentsTitle) {
-			titlesWithoutLinks.push(commentsTitle);
+		if ( commentsTitle ) {
+			titlesWithoutLinks.push( commentsTitle );
 		}
 
 		return titlesWithoutLinks;
@@ -103,16 +103,16 @@ class TableOfContent {
 		return '</' + this.options.listType + '>';
 	}
 
-	determineLevel(currentHeading) {
-		return this.options.headings.indexOf(currentHeading);
+	determineLevel( currentHeading ) {
+		return this.options.headings.indexOf( currentHeading );
 	}
 
-	calculateLevelDiff(currentLevel, previousLevel) {
+	calculateLevelDiff( currentLevel, previousLevel ) {
 		return currentLevel - previousLevel;
 	}
 
-	addSlug(heading) {
-		heading.id = heading.id ? heading.id : slugify(heading.innerText);
+	addSlug( heading ) {
+		heading.id = heading.id ? heading.id : slugify( heading.innerText );
 		return heading.id;
 	}
 
@@ -128,38 +128,38 @@ class TableOfContent {
 		markup += this.createTitleMarkup();
 		markup += this.startListNode();
 
-		for (i; i < headingList.length; i++) {
-			currentLevel = this.determineLevel(headingList[ i ].localName);
-			levelDiff = this.calculateLevelDiff(currentLevel, previousLevel);
+		for ( i; i < headingList.length; i++ ) {
+			currentLevel = this.determineLevel( headingList[ i ].localName );
+			levelDiff = this.calculateLevelDiff( currentLevel, previousLevel );
 
-			if (levelDiff < 0) {
-				while (levelDiff < 0) {
+			if ( levelDiff < 0 ) {
+				while ( levelDiff < 0 ) {
 					markup += this.endListNode();
 					levelDiff++;
 				}
-			} else if (levelDiff > 0) {
-				while (levelDiff > 0) {
+			} else if ( levelDiff > 0 ) {
+				while ( levelDiff > 0 ) {
 					markup += this.startListNode();
 					levelDiff--;
 				}
 			}
 
-			if (i !== 0) {
+			if ( i !== 0 ) {
 				markup += '</li>';
 			}
 
 			markup += '<li>';
-			if ('comments__title' === headingList[ i ].id) {
+			if ( 'comments__title' === headingList[ i ].id ) {
 				markup +=
 					'<a href="#' +
-					this.addSlug(headingList[ i ]) +
+					this.addSlug( headingList[ i ] ) +
 					'">' +
 					toc_args.commentTitle +
 					'</a>';
 			} else {
 				markup +=
 					'<a href="#' +
-					this.addSlug(headingList[ i ]) +
+					this.addSlug( headingList[ i ] ) +
 					'">' +
 					headingList[ i ].innerText +
 					'</a>';
@@ -176,7 +176,7 @@ class TableOfContent {
 
 	printToc() {
 		const headingList = this.getHeadingList();
-		if (headingList.length > 0) {
+		if ( headingList.length > 0 ) {
 			this.target.innerHTML = this.createTocMarkup();
 		}
 	}
@@ -184,21 +184,21 @@ class TableOfContent {
 	/**
 	 * Initialize the table of content.
 	 *
-	 * @param {string} source The container id to look for headings.
-	 * @param {string} target The container id to display the table of content.
+	 * @param {string} source  The container id to look for headings.
+	 * @param {string} target  The container id to display the table of content.
 	 * @param {Object} options Options.
 	 *
-	 * Options list :
-	 * - headings: an array of headings to retrieve. Default : `['h2', 'h3', 'h4', 'h5', 'h6']`
-	 * - title: the title to print before the table of contents. Default: `Table of contents`.
-	 * - titleTag: the title tag. Default: `h2`.
-	 * - listType: the list type (`ul` or `ol`). Default: `ol`.
+	 *                         Options list :
+	 *                         - headings: an array of headings to retrieve. Default : `['h2', 'h3', 'h4', 'h5', 'h6']`
+	 *                         - title: the title to print before the table of contents. Default: `Table of contents`.
+	 *                         - titleTag: the title tag. Default: `h2`.
+	 *                         - listType: the list type (`ul` or `ol`). Default: `ol`.
 	 */
-	init(source, target, options) {
-		this.setSource(source);
-		this.setTarget(target);
-		this.setOptions(options);
-		if (this.source && this.target) {
+	init( source, target, options ) {
+		this.setSource( source );
+		this.setTarget( target );
+		this.setOptions( options );
+		if ( this.source && this.target ) {
 			this.printToc();
 		}
 	}
@@ -206,6 +206,6 @@ class TableOfContent {
 
 const minimalistTOC = new TableOfContent();
 
-minimalistTOC.init('page__content', 'table-of-content', {
+minimalistTOC.init( 'page__content', 'table-of-content', {
 	title: toc_args.tocTitle,
-});
+} );

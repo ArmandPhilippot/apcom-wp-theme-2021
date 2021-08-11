@@ -1,5 +1,1 @@
-/******/ (function() { // webpackBootstrap
-var __webpack_exports__ = {};
-
-/******/ })()
-;
+!function(){"use strict";var e=()=>{if(localStorage.getItem("apcom-color-scheme"))return localStorage.getItem("apcom-color-scheme")};var t=()=>{const t=document.getElementById("body");"dark"===e()?t.setAttribute("data-color-scheme","dark"):t.setAttribute("data-color-scheme","light")};const o=new MutationObserver((()=>{document.body&&(t(),o.disconnect())}));e(),o.observe(document.documentElement,{childList:!0})}();

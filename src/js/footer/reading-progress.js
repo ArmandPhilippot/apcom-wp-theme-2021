@@ -12,12 +12,12 @@ class readingProgress {
 	 *
 	 * @param {string} containerId Id of the container.
 	 */
-	constructor(containerId) {
+	constructor( containerId ) {
 		this.container = containerId
-			? document.getElementById(containerId)
+			? document.getElementById( containerId )
 			: '';
-		this.progressBarWrapper = document.createElement('div');
-		this.progressBar = document.createElement('div');
+		this.progressBarWrapper = document.createElement( 'div' );
+		this.progressBar = document.createElement( 'div' );
 	}
 
 	/**
@@ -25,13 +25,13 @@ class readingProgress {
 	 *
 	 * @param {Array} barClasses - One or more classes for the progress bar.
 	 */
-	setProgressBarClasses(barClasses) {
-		if (barClasses) {
-			barClasses.forEach((className) => {
-				this.progressBar.classList.add(className);
-			});
+	setProgressBarClasses( barClasses ) {
+		if ( barClasses ) {
+			barClasses.forEach( ( className ) => {
+				this.progressBar.classList.add( className );
+			} );
 		} else {
-			this.progressBar.classList.add('reading-progress__bar');
+			this.progressBar.classList.add( 'reading-progress__bar' );
 		}
 	}
 
@@ -40,13 +40,13 @@ class readingProgress {
 	 *
 	 * @param {Array} wrapperClasses - One or more classes for the progress bar wrapper.
 	 */
-	setProgressBarWrapperClasses(wrapperClasses) {
-		if (wrapperClasses) {
-			wrapperClasses.forEach((className) => {
-				this.progressBarWrapper.classList.add(className);
-			});
+	setProgressBarWrapperClasses( wrapperClasses ) {
+		if ( wrapperClasses ) {
+			wrapperClasses.forEach( ( className ) => {
+				this.progressBarWrapper.classList.add( className );
+			} );
 		} else {
-			this.progressBarWrapper.classList.add('reading-progress');
+			this.progressBarWrapper.classList.add( 'reading-progress' );
 		}
 	}
 
@@ -55,18 +55,18 @@ class readingProgress {
 	 *
 	 * @param {string} position - The progress bar position: `top` or `bottom` of its container.
 	 */
-	insertReadingProgressBar(position) {
+	insertReadingProgressBar( position ) {
 		this.progressBar.style.height = '100%';
 		this.progressBar.style.maxWidth = '100%';
 
-		this.progressBarWrapper.appendChild(this.progressBar);
+		this.progressBarWrapper.appendChild( this.progressBar );
 		this.progressBarWrapper.style.position = 'sticky';
 
-		if (position === 'bottom') {
-			this.container.appendChild(this.progressBarWrapper);
+		if ( position === 'bottom' ) {
+			this.container.appendChild( this.progressBarWrapper );
 			this.progressBarWrapper.style.bottom = '0';
 		} else {
-			if (! this.container) {
+			if ( ! this.container ) {
 				return;
 			}
 			const containerFirstChild = this.container.firstChild;
@@ -83,8 +83,8 @@ class readingProgress {
 	 *
 	 * @param {boolean} bool - True of false.
 	 */
-	showProgressBar(bool) {
-		if (bool === true) {
+	showProgressBar( bool ) {
+		if ( bool === true ) {
 			this.progressBarWrapper.style.display = 'block';
 		} else {
 			this.progressBarWrapper.style.display = 'none';
@@ -97,21 +97,21 @@ class readingProgress {
 	 * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
 	 * @return {number} A percentage without unit.
 	 */
-	getScrollPercent(recordFrom) {
+	getScrollPercent( recordFrom ) {
 		let target = '';
 
-		if (recordFrom === 'body') {
+		if ( recordFrom === 'body' ) {
 			target = document.body;
 		} else if (
 			typeof recordFrom === 'string' &&
 			recordFrom !== 'container'
 		) {
-			target = document.getElementById(recordFrom);
+			target = document.getElementById( recordFrom );
 		} else {
 			target = this.container;
 		}
 
-		if (! target) {
+		if ( ! target ) {
 			return;
 		}
 
@@ -120,7 +120,7 @@ class readingProgress {
 		const targetHeight = target.offsetHeight;
 		const targetTop = target.offsetTop;
 		const scrollPercent =
-			((windowTop - targetTop) / (targetHeight - windowHeight)) * 100;
+			( ( windowTop - targetTop ) / ( targetHeight - windowHeight ) ) * 100;
 
 		return scrollPercent;
 	}
@@ -130,12 +130,12 @@ class readingProgress {
 	 *
 	 * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID.
 	 */
-	recordProgression(recordFrom) {
-		const scrollPercent = this.getScrollPercent(recordFrom);
-		if (scrollPercent > 1 && scrollPercent <= 100) {
-			this.showProgressBar(true);
+	recordProgression( recordFrom ) {
+		const scrollPercent = this.getScrollPercent( recordFrom );
+		if ( scrollPercent > 1 && scrollPercent <= 100 ) {
+			this.showProgressBar( true );
 		} else {
-			this.showProgressBar(false);
+			this.showProgressBar( false );
 		}
 		this.progressBar.style.width = scrollPercent + '%';
 	}
@@ -144,21 +144,21 @@ class readingProgress {
 	 * Initialize the reading progress bar.
 	 *
 	 * @param {Array}  wrapperClasses - One or more classes for the progress bar wrapper. Default: `['reading-progress']`.
-	 * @param {Array}  barClasses - One or more classes for the progress bar. Default `['reading-progress__bar']`.
-	 * @param {string} position - The progress bar position: `top` or `bottom` of its container. Default: `top`.
-	 * @param {string} recordFrom - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID. Default `container`.
+	 * @param {Array}  barClasses     - One or more classes for the progress bar. Default `['reading-progress__bar']`.
+	 * @param {string} position       - The progress bar position: `top` or `bottom` of its container. Default: `top`.
+	 * @param {string} recordFrom     - An element to use for the calculation: `body` for the whole page, `container` for its container or an ID. Default `container`.
 	 */
 	init(
-		wrapperClasses = ['reading-progress'],
-		barClasses = ['reading-progress__bar'],
+		wrapperClasses = [ 'reading-progress' ],
+		barClasses = [ 'reading-progress__bar' ],
 		position = 'top',
 		recordFrom = 'container'
 	) {
-		if (this.container !== '') {
-			this.setProgressBarWrapperClasses(wrapperClasses);
-			this.setProgressBarClasses(barClasses);
-			this.insertReadingProgressBar(position);
-			this.recordProgression(recordFrom);
+		if ( this.container !== '' ) {
+			this.setProgressBarWrapperClasses( wrapperClasses );
+			this.setProgressBarClasses( barClasses );
+			this.insertReadingProgressBar( position );
+			this.recordProgression( recordFrom );
 		}
 	}
 }
@@ -171,14 +171,14 @@ function initReadingProgress() {
 	const bodyClasses = document.body.classList;
 
 	if (
-		bodyClasses.contains('single-page') &&
-		! bodyClasses.contains('attachment')
+		bodyClasses.contains( 'single-page' ) &&
+		! bodyClasses.contains( 'attachment' )
 	) {
-		const APComScrollBar = new readingProgress('page__content');
+		const APComScrollBar = new readingProgress( 'page__content' );
 
-		html.addEventListener('scroll', () => {
+		html.addEventListener( 'scroll', () => {
 			APComScrollBar.init();
-		});
+		} );
 	}
 }
 
