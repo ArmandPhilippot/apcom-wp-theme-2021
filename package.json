@@ -4,13 +4,13 @@
 	"description": "A WordPress theme for my personal website.",
 	"author": "Armand Philippot",
 	"license": "GPL-2.0-or-later",
-	"homepage": "https://github.com/ArmandPhilippot/armandphilippot.com#readme",
+	"homepage": "https://github.com/ArmandPhilippot/apcom#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ArmandPhilippot/armandphilippot.com.git"
+		"url": "git+https://github.com/ArmandPhilippot/apcom.git"
 	},
 	"bugs": {
-		"url": "https://github.com/ArmandPhilippot/armandphilippot.com/issues"
+		"url": "https://github.com/ArmandPhilippot/apcom/issues"
 	},
 	"keywords": [
 		"WordPress",
