@@ -1,29 +1,12 @@
 {
-	"extends": [
-		"@wordpress/stylelint-config",
-		"@wordpress/stylelint-config/scss",
-		"stylelint-config-prettier"
-	],
+	"extends": ["@wordpress/stylelint-config"],
 	"rules": {
-		"at-rule-empty-line-before": [
-			"always",
-			{
-				"ignore": ["after-comment", "first-nested"],
-				"ignoreAtRules": ["else"]
-			}
-		],
-		"at-rule-no-unknown": null,
-		"scss/at-rule-no-unknown": true,
-		"function-parentheses-space-inside": "never-single-line",
-		"max-line-length": [80, { "ignore": ["comments"] }],
-		"rule-empty-line-before": [
-			"always",
-			{ "ignore": ["after-comment", "first-nested", "inside-block"] }
-		],
+		"at-rule-no-unknown": [true, { "ignoreAtRules": ["use"] }],
+		"no-descending-specificity": null,
 		"selector-class-pattern": [
 			"^([a-z][a-z0-9]*)((-|__)[a-z0-9]+)*$",
 			{
-				"message": "Selector should use lowercase and separate words with hyphens or underscore (selector-class-pattern)"
+				"message": "Selector should use lowercase and separate words with hyphens or double underscore (selector-class-pattern)"
 			}
 		]
 	}

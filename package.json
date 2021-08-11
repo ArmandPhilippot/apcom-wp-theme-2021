@@ -96,22 +96,9 @@
 		"wp-pot": "^1.9.9",
 		"wp-pot-cli": "^1.5.0"
 	},
-	"browserslist": [
-		"extends @wordpress/browserslist-config"
-	],
 	"standard-version": {
 		"scripts": {
 			"postbump": "npm run bump && git add -A"
 		}
-	},
-	"lint-staged": {
-		"src/js/**/*.js": [
-			"eslint --cache --fix"
-		],
-		"src/scss/**/*.scss": [
-			"stylelint --fix --syntax=scss",
-			"prettier --write"
-		],
-		"*.md": "prettier --write"
 	}
 }

@@ -6,11 +6,16 @@ module.exports = {
 		es6: true,
 		node: true,
 	},
-	extends: [
-		'eslint:recommended',
-		'plugin:@wordpress/eslint-plugin/recommended',
-	],
+	extends: [ 'plugin:@wordpress/eslint-plugin/recommended-with-formatting' ],
 	rules: {
-		'prettier/prettier': 'warn',
+		'@wordpress/no-unused-vars-before-return': 'error',
 	},
+	overrides: [
+		{
+			files: [ './tools/**' ],
+			rules: {
+				'no-console': 'off',
+			},
+		},
+	],
 };

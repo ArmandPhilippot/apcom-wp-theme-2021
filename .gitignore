@@ -1,6 +1,6 @@
 # Packages folders
-node_modules
-vendor
+**/node_modules/**
+**/vendor/**
 
 # Dotenv
 .env
@@ -10,6 +10,7 @@ vendor
 certs
 
 # Files to ignore
+*.log
 *.map
 *.zip
 .eslintcache
