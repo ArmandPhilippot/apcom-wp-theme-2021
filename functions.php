@@ -5,19 +5,31 @@
  * This file is read by WordPress to setup the theme and his additional
  * features.
  *
- * @package ArmandPhilippot-com
- * @link https://github.com/ArmandPhilippot/armandphilippot.com
- * @author Armand Philippot <contact@armandphilippot.com>
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
+ * @package   ArmandPhilippot-com
+ * @author    Armand Philippot <contact@armandphilippot.com>
  * @copyright 2020 Armand Philippot
- * @license GPL-2.0-or-later
- * @since 0.0.1
+ * @license   GPL-2.0-or-later
+ * @since     0.0.1
  */
 
 /**
  * Currently theme version.
  */
 define( 'APCOM_VERSION', '1.0.10' );
+
+/**
+ * Load current environment defined in .env file.
+ * Can be used to define different settings in development or production env.
+ */
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
+
+	$apcom_dotenv = Dotenv\Dotenv::createImmutable( __DIR__ );
+	$apcom_dotenv->safeLoad();
+	$apcom_current_env = $_ENV['WP_THEME_ENV'];
+}
 
 if ( ! function_exists( 'apcom_setup' ) ) {
 	/**
