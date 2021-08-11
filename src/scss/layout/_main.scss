@@ -46,7 +46,8 @@
 	&__description {
 		@include media("screen") {
 			@include dimensions("sm") {
-				flex: 1 1 calc(#{pxtorem(250)} - #{cssvar(spacing-md)}); // 100% - image width - spacing
+				// basis = image width - spacing
+				flex: 1 1 calc(#{pxtorem(250)} - #{cssvar(spacing-md)});
 				order: 1;
 			}
 		}
@@ -138,6 +139,7 @@
 
 	&__feed-link {
 		@include buttonBase;
+
 		@include buttonStyle2;
 
 		margin-top: cssvar(spacing-md);
@@ -150,7 +152,7 @@
 
 		&::before {
 			content: "";
-			background: url(assets/images/feed.svg);
+			background: url(../img/feed.svg);
 			background-repeat: no-repeat;
 			background-size: 100%;
 			width: pxtorem(30);
