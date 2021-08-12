@@ -36,7 +36,10 @@ module.exports = {
 			import: paths.src.scripts.header,
 			filename: 'js/header.js',
 		},
-		style: { import: paths.src.styles.style, filename: 'webpack/style.js' },
+		style: {
+			import: paths.src.styles.style,
+			filename: 'webpack/style.js',
+		},
 		styleEditor: {
 			import: paths.src.styles.editor,
 			filename: 'webpack/editor-style.js',
@@ -78,6 +81,9 @@ module.exports = {
 		],
 	},
 	optimization: {
+		runtimeChunk: {
+			name: () => `webpack/runtime`,
+		},
 		splitChunks: {
 			cacheGroups: {
 				style: {

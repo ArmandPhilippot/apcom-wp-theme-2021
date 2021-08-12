@@ -145,9 +145,9 @@ function apcom_enqueue_styles() {
 		}
 
 		if ( file_exists( $print_path ) ) {
-			wp_register_style( 'apcom-style-print', $print_uri, array(), APCOM_VERSION );
-			wp_enqueue_style( 'apcom-style-print' );
-			wp_style_add_data( 'apcom-style-print', 'rtl', 'replace' );
+			wp_register_style( 'apcom-print', $print_uri, array(), APCOM_VERSION );
+			wp_enqueue_style( 'apcom-print' );
+			wp_style_add_data( 'apcom-print', 'rtl', 'replace' );
 		}
 	}
 }
@@ -189,17 +189,17 @@ function apcom_enqueue_scripts() {
 	);
 
 	if ( file_exists( $footer_scripts_path ) ) {
-		wp_register_script( 'apcom-footer-scripts', $footer_scripts_uri, array(), APCOM_VERSION, true );
-		wp_enqueue_script( 'apcom-footer-scripts' );
-		wp_localize_script( 'apcom-footer-scripts', 'prism_vars', $color_scheme_vars );
-		wp_localize_script( 'apcom-footer-scripts', 'color_scheme_vars', $color_scheme_vars );
-		wp_localize_script( 'apcom-footer-scripts', 'date_warning', $date_warning );
-		wp_localize_script( 'apcom-footer-scripts', 'toc_args', $toc_args );
+		wp_register_script( 'apcom-footer', $footer_scripts_uri, array(), APCOM_VERSION, true );
+		wp_enqueue_script( 'apcom-footer' );
+		wp_localize_script( 'apcom-footer', 'prism_vars', $color_scheme_vars );
+		wp_localize_script( 'apcom-footer', 'color_scheme_vars', $color_scheme_vars );
+		wp_localize_script( 'apcom-footer', 'date_warning', $date_warning );
+		wp_localize_script( 'apcom-footer', 'toc_args', $toc_args );
 	}
 
 	if ( file_exists( $header_scripts_path ) ) {
-		wp_register_script( 'apcom-header-scripts', $header_scripts_uri, array(), APCOM_VERSION, false );
-		wp_enqueue_script( 'apcom-header-scripts' );
+		wp_register_script( 'apcom-header', $header_scripts_uri, array(), APCOM_VERSION, false );
+		wp_enqueue_script( 'apcom-header' );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -207,12 +207,17 @@ function apcom_enqueue_scripts() {
 	}
 
 	if ( 'development' === $current_env ) {
-		$webpack_style_path  = get_template_directory() . '/assets/webpack/style.js';
-		$webpack_style_uri   = get_template_directory_uri() . '/assets/webpack/style.js';
-		$webpack_print_path  = get_template_directory() . '/assets/webpack/print.js';
-		$webpack_print_uri   = get_template_directory_uri() . '/assets/webpack/print.js';
-		$webpack_editor_path = get_template_directory() . '/assets/webpack/editor-style.js';
-		$webpack_editor_uri  = get_template_directory_uri() . '/assets/webpack/editor-style.js';
+		$webpack_runtime_path = get_template_directory() . '/assets/webpack/runtime.js';
+		$webpack_runtime_uri  = get_template_directory_uri() . '/assets/webpack/runtime.js';
+		$webpack_style_path   = get_template_directory() . '/assets/webpack/style.js';
+		$webpack_style_uri    = get_template_directory_uri() . '/assets/webpack/style.js';
+		$webpack_print_path   = get_template_directory() . '/assets/webpack/print.js';
+		$webpack_print_uri    = get_template_directory_uri() . '/assets/webpack/print.js';
+
+		if ( file_exists( $webpack_runtime_path ) ) {
+			wp_register_script( 'apcom-webpack-runtime', $webpack_runtime_uri, array(), APCOM_VERSION, true );
+			wp_enqueue_script( 'apcom-webpack-runtime' );
+		}
 
 		if ( file_exists( $webpack_style_path ) ) {
 			wp_register_script( 'apcom-webpack-style', $webpack_style_uri, array(), APCOM_VERSION, true );
@@ -220,13 +225,8 @@ function apcom_enqueue_scripts() {
 		}
 
 		if ( file_exists( $webpack_print_path ) ) {
-			wp_register_script( 'apcom-webpack-style', $webpack_print_uri, array(), APCOM_VERSION, true );
-			wp_enqueue_script( 'apcom-webpack-style' );
-		}
-
-		if ( file_exists( $webpack_editor_path ) ) {
-			wp_register_script( 'apcom-webpack-style', $webpack_editor_uri, array(), APCOM_VERSION, true );
-			wp_enqueue_script( 'apcom-webpack-style' );
+			wp_register_script( 'apcom-webpack-print', $webpack_print_uri, array(), APCOM_VERSION, true );
+			wp_enqueue_script( 'apcom-webpack-print' );
 		}
 	}
 }
@@ -238,12 +238,23 @@ add_action( 'wp_enqueue_scripts', 'apcom_enqueue_scripts' );
  * @since 2.0.0
  */
 function apcom_enqueue_editor_assets() {
+	$current_env         = apcom_get_current_env();
 	$editor_scripts_path = get_template_directory() . '/assets/js/editor.js';
 	$editor_scripts_uri  = get_template_directory_uri() . '/assets/js/editor.js';
 
 	if ( file_exists( $editor_scripts_path ) ) {
-		wp_register_script( 'apcom-editor-scripts', $editor_scripts_uri, array(), APCOM_VERSION, true );
-		wp_enqueue_script( 'apcom-editor-scripts' );
+		wp_register_script( 'apcom-editor', $editor_scripts_uri, array(), APCOM_VERSION, true );
+		wp_enqueue_script( 'apcom-editor' );
+	}
+
+	if ( 'development' === $current_env ) {
+		$webpack_editor_path = get_template_directory() . '/assets/webpack/editor-style.js';
+		$webpack_editor_uri  = get_template_directory_uri() . '/assets/webpack/editor-style.js';
+
+		if ( file_exists( $webpack_editor_path ) ) {
+			wp_register_script( 'apcom-webpack-editor', $webpack_editor_uri, array(), APCOM_VERSION, true );
+			wp_enqueue_script( 'apcom-webpack-editor' );
+		}
 	}
 }
 add_action( 'enqueue_block_editor_assets', 'apcom_enqueue_editor_assets' );
