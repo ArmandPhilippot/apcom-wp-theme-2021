@@ -5,22 +5,7 @@ const DotenvWebpackPlugin = require( 'dotenv-webpack' );
 const ImageMinimizerPlugin = require( 'image-minimizer-webpack-plugin' );
 const { extendDefaultPlugins } = require( 'svgo' );
 const paths = require( './paths' );
-
-function recursiveIssuer( m, c ) {
-	const issuer = c.moduleGraph.getIssuer( m );
-
-	if ( issuer ) {
-		return recursiveIssuer( issuer, c );
-	}
-
-	const chunks = c.chunkGraph.getModuleChunks( m );
-
-	for ( const chunk of chunks ) {
-		return chunk.name;
-	}
-
-	return false;
-}
+const { recursiveIssuer } = require( './utils' );
 
 module.exports = {
 	entry: {
@@ -88,25 +73,25 @@ module.exports = {
 			cacheGroups: {
 				style: {
 					name: '../style',
-					test: ( m, c, entry = 'style' ) =>
-						m.constructor.name === 'CssModule' &&
-						recursiveIssuer( m, c ) === entry,
+					test: ( module, graphs, entry = 'style' ) =>
+						module.constructor.name === 'CssModule' &&
+						recursiveIssuer( module, graphs ) === entry,
 					chunks: 'all',
 					enforce: true,
 				},
 				styleEditor: {
 					name: 'css/editor-style',
-					test: ( m, c, entry = 'styleEditor' ) =>
-						m.constructor.name === 'CssModule' &&
-						recursiveIssuer( m, c ) === entry,
+					test: ( module, graphs, entry = 'styleEditor' ) =>
+						module.constructor.name === 'CssModule' &&
+						recursiveIssuer( module, graphs ) === entry,
 					chunks: 'all',
 					enforce: true,
 				},
 				stylePrint: {
 					name: 'css/print',
-					test: ( m, c, entry = 'stylePrint' ) =>
-						m.constructor.name === 'CssModule' &&
-						recursiveIssuer( m, c ) === entry,
+					test: ( module, graphs, entry = 'stylePrint' ) =>
+						module.constructor.name === 'CssModule' &&
+						recursiveIssuer( module, graphs ) === entry,
 					chunks: 'all',
 					enforce: true,
 				},
