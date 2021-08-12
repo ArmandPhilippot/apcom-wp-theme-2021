@@ -159,11 +159,13 @@ add_action( 'wp_enqueue_scripts', 'apcom_enqueue_styles' );
  * @since 0.0.1
  */
 function apcom_enqueue_scripts() {
-	$current_env         = apcom_get_current_env();
-	$footer_scripts_path = get_template_directory() . '/assets/js/footer.js';
-	$footer_scripts_uri  = get_template_directory_uri() . '/assets/js/footer.js';
-	$header_scripts_path = get_template_directory() . '/assets/js/header.js';
-	$header_scripts_uri  = get_template_directory_uri() . '/assets/js/header.js';
+	$current_env          = apcom_get_current_env();
+	$webpack_runtime_path = get_template_directory() . '/assets/webpack/runtime.js';
+	$webpack_runtime_uri  = get_template_directory_uri() . '/assets/webpack/runtime.js';
+	$footer_scripts_path  = get_template_directory() . '/assets/js/footer.js';
+	$footer_scripts_uri   = get_template_directory_uri() . '/assets/js/footer.js';
+	$header_scripts_path  = get_template_directory() . '/assets/js/header.js';
+	$header_scripts_uri   = get_template_directory_uri() . '/assets/js/header.js';
 
 	$color_scheme_vars = array(
 		'lightThemeText' => __( 'Switch to dark theme', 'APCom' ),
@@ -188,6 +190,11 @@ function apcom_enqueue_scripts() {
 		'commentTitle' => __( 'Comments', 'APCom' ),
 	);
 
+	if ( file_exists( $webpack_runtime_path ) ) {
+		wp_register_script( 'apcom-webpack-runtime', $webpack_runtime_uri, array(), APCOM_VERSION, true );
+		wp_enqueue_script( 'apcom-webpack-runtime' );
+	}
+
 	if ( file_exists( $footer_scripts_path ) ) {
 		wp_register_script( 'apcom-footer', $footer_scripts_uri, array(), APCOM_VERSION, true );
 		wp_enqueue_script( 'apcom-footer' );
@@ -207,17 +214,10 @@ function apcom_enqueue_scripts() {
 	}
 
 	if ( 'development' === $current_env ) {
-		$webpack_runtime_path = get_template_directory() . '/assets/webpack/runtime.js';
-		$webpack_runtime_uri  = get_template_directory_uri() . '/assets/webpack/runtime.js';
-		$webpack_style_path   = get_template_directory() . '/assets/webpack/style.js';
-		$webpack_style_uri    = get_template_directory_uri() . '/assets/webpack/style.js';
-		$webpack_print_path   = get_template_directory() . '/assets/webpack/print.js';
-		$webpack_print_uri    = get_template_directory_uri() . '/assets/webpack/print.js';
-
-		if ( file_exists( $webpack_runtime_path ) ) {
-			wp_register_script( 'apcom-webpack-runtime', $webpack_runtime_uri, array(), APCOM_VERSION, true );
-			wp_enqueue_script( 'apcom-webpack-runtime' );
-		}
+		$webpack_style_path = get_template_directory() . '/assets/webpack/style.js';
+		$webpack_style_uri  = get_template_directory_uri() . '/assets/webpack/style.js';
+		$webpack_print_path = get_template_directory() . '/assets/webpack/print.js';
+		$webpack_print_uri  = get_template_directory_uri() . '/assets/webpack/print.js';
 
 		if ( file_exists( $webpack_style_path ) ) {
 			wp_register_script( 'apcom-webpack-style', $webpack_style_uri, array(), APCOM_VERSION, true );
