@@ -1,36 +1,39 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
 .pagination {
-	margin: cssvar(spacing-sm) 0 cssvar(spacing-md);
+	margin: f.cssvar(spacing-sm) 0 f.cssvar(spacing-md);
 
 	ul.page-numbers {
-		@include flexList;
+		@include m.flexList;
 
 		li {
-			margin-bottom: cssvar(spacing-xs);
+			margin-bottom: f.cssvar(spacing-xs);
 		}
 
 		.page-numbers {
-			margin-left: pxtorem(-1);
+			margin-left: f.pxtorem(-1);
 		}
 	}
 
 	a.page-numbers {
-		@include buttonBase;
-		@include buttonStyle2;
+		@include m.buttonBase;
+		@include m.buttonStyle2;
 
 		position: relative;
 	}
 
 	&__icon {
-		fill: cssvar(color-primary);
-		width: pxtorem(15);
+		fill: f.cssvar(color-primary);
+		width: f.pxtorem(15);
 		transition: all 0.2s ease-in 0s;
 
 		&--next {
-			margin-left: cssvar(spacing-xs);
+			margin-left: f.cssvar(spacing-xs);
 		}
 
 		&--previous {
-			margin-right: cssvar(spacing-xs);
+			margin-right: f.cssvar(spacing-xs);
 			rotate: 180deg;
 		}
 	}
@@ -40,24 +43,24 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		background: cssvar(color-bg);
-		border: pxtorem(2) solid cssvar(color-primary);
+		background: f.cssvar(color-bg);
+		border: f.pxtorem(2) solid f.cssvar(color-primary);
 		text-decoration: none;
 		width: max-content;
 		position: relative;
-		padding: cssvar(spacing-sm) pxtorem(20);
+		padding: f.cssvar(spacing-sm) f.pxtorem(20);
 
-		@include pointer("fine") {
-			padding: cssvar(spacing-xs) cssvar(spacing-sm);
+		@include m.pointer("fine") {
+			padding: f.cssvar(spacing-xs) f.cssvar(spacing-sm);
 		}
 	}
 
 	.current {
 		font-weight: 600;
-		transform: translateX(#{pxtorem(4)}) translateY(#{pxtorem(4)});
+		transform: translateX(#{f.pxtorem(4)}) translateY(#{f.pxtorem(4)});
 	}
 
 	.dots {
-		box-shadow: pxtorem(4) pxtorem(4) 0 0 cssvar(color-shadow);
+		box-shadow: f.pxtorem(4) f.pxtorem(4) 0 0 f.cssvar(color-shadow);
 	}
 }

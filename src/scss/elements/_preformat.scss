@@ -1,40 +1,43 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
 code,
 kbd,
 pre,
 tt,
 var {
-	font-family: cssvar(font-family-mono);
+	font-family: f.cssvar(font-family-mono);
 }
 
 pre {
 	display: block;
-	background: cssvar(color-bg-secondary);
-	border: pxtorem(1) solid cssvar(color-border-light);
-	border-radius: pxtorem(3);
-	font-size: cssvar(font-size-md);
+	background: f.cssvar(color-bg-secondary);
+	border: f.pxtorem(1) solid f.cssvar(color-border-light);
+	border-radius: f.pxtorem(3);
+	font-size: f.cssvar(font-size-md);
 	max-width: 100%;
 	overflow: auto;
-	margin: 0 0 cssvar(spacing-md);
-	padding: cssvar(spacing-sm);
+	margin: 0 0 f.cssvar(spacing-md);
+	padding: f.cssvar(spacing-sm);
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
 
-	@include media("screen") {
-		@include dimensions("sm") {
-			padding: cssvar(spacing-md);
+	@include m.media("screen") {
+		@include m.dimensions("sm") {
+			padding: f.cssvar(spacing-md);
 		}
 	}
 }
 
 code {
-	background: cssvar(color-bg-tertiary);
-	border: pxtorem(1) solid cssvar(color-border-light);
+	background: f.cssvar(color-bg-tertiary);
+	border: f.pxtorem(1) solid f.cssvar(color-border-light);
 	box-decoration-break: clone;
-	border-radius: pxtorem(3);
-	color: cssvar(color-fg);
-	padding: pxtorem(2) pxtorem(5) 0;
+	border-radius: f.pxtorem(3);
+	color: f.cssvar(color-fg);
+	padding: f.pxtorem(2) f.pxtorem(5) 0;
 	word-wrap: break-word;
 }
 

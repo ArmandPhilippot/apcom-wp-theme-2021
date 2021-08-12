@@ -1,38 +1,42 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+@use "../../abstracts/variables" as v;
+
 .wp-block-pullquote {
-	border-top: pxtorem(3) solid cssvar(color-primary);
-	border-bottom: pxtorem(3) solid cssvar(color-primary);
+	border-top: f.pxtorem(3) solid f.cssvar(color-primary);
+	border-bottom: f.pxtorem(3) solid f.cssvar(color-primary);
 	position: relative;
 
 	&::before,
 	&::after {
 		content: "";
-		background-color: cssvar(color-bg);
+		background-color: f.cssvar(color-bg);
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: calc(100% - #{cssvar(spacing-sm)});
-		width: pxtorem(10);
-		height: pxtorem(10);
-		padding: cssvar(spacing-sm);
+		background-size: calc(100% - #{f.cssvar(spacing-sm)});
+		width: f.pxtorem(10);
+		height: f.pxtorem(10);
+		padding: f.cssvar(spacing-sm);
 		position: absolute;
 	}
 
 	&::before {
 		/* stylelint-disable -- Stylelint does not recognize the SVG. */
-		background-image: url(encodesvg(
-			'<svg xmlns="http://www.w3.org/2000/svg" width="28.215" height="24.303" version="1.0"><defs><path id="a" d="M-174.038-59.122h63.848v81.44h-63.848z"/></defs><g style="line-height:1.25;white-space:pre;shape-inside:url(#a)"><path d="M26.218 0C18.81 5.077 15.315 10.154 15.315 16.064c0 4.993 2.746 8.24 6.824 8.24 3.163 0 5.41-2.165 5.41-5.078 0-2.913-2.247-4.91-5.493-4.91l-1.498.083c-.166.083-.25.083-.333.083-.333 0-.5-.25-.5-.749 0-3.579 2.664-7.158 8.49-11.403zM10.903 0C3.496 5.077 0 10.154 0 16.064c0 4.993 2.747 8.24 6.825 8.24 3.163 0 5.41-2.165 5.41-5.078 0-2.913-2.247-4.91-5.493-4.91l-1.498.083c-.167.083-.25.083-.333.083-.333 0-.5-.25-.5-.749 0-3.579 3.413-8.24 8.49-11.403z" fill="#{$color_chathams-blue-dark}"/></g></svg>'
+		background-image: url(f.encodesvg(
+			'<svg xmlns="http://www.w3.org/2000/svg" width="28.215" height="24.303" version="1.0"><defs><path id="a" d="M-174.038-59.122h63.848v81.44h-63.848z"/></defs><g style="line-height:1.25;white-space:pre;shape-inside:url(#a)"><path d="M26.218 0C18.81 5.077 15.315 10.154 15.315 16.064c0 4.993 2.746 8.24 6.824 8.24 3.163 0 5.41-2.165 5.41-5.078 0-2.913-2.247-4.91-5.493-4.91l-1.498.083c-.166.083-.25.083-.333.083-.333 0-.5-.25-.5-.749 0-3.579 2.664-7.158 8.49-11.403zM10.903 0C3.496 5.077 0 10.154 0 16.064c0 4.993 2.747 8.24 6.825 8.24 3.163 0 5.41-2.165 5.41-5.078 0-2.913-2.247-4.91-5.493-4.91l-1.498.083c-.167.083-.25.083-.333.083-.333 0-.5-.25-.5-.749 0-3.579 3.413-8.24 8.49-11.403z" fill="#{v.$color_chathams-blue-dark}"/></g></svg>'
 		));
 		/* stylelint-enable */
-		top: calc(#{pxtorem(-10)} - (#{cssvar(spacing-sm)} / 2));
+		top: calc(#{f.pxtorem(-10)} - (#{f.cssvar(spacing-sm)} / 2));
 		left: 5%;
 	}
 
 	&::after {
 		/* stylelint-disable -- Stylelint does not recognize the SVG. */
-		background-image: url(encodesvg(
-			'<svg xmlns="http://www.w3.org/2000/svg" width="28.215" height="24.303" version="1.0"><defs><path id="a" d="M-174.038-59.122h63.848v81.44h-63.848z"/></defs><g style="line-height:1.25;white-space:pre;shape-inside:url(#a)"><path d="M1.998 24.303C9.405 19.226 12.9 14.15 12.9 8.24 12.9 3.246 10.154 0 6.076 0 2.913 0 .666 2.164.666 5.077s2.247 4.91 5.493 4.91l1.498-.083c.167-.083.25-.083.333-.083.333 0 .5.25.5.75 0 3.578-2.664 7.157-8.49 11.402zm15.314 0C24.72 19.226 28.215 14.15 28.215 8.24 28.215 3.246 25.47 0 21.39 0c-3.162 0-5.41 2.164-5.41 5.077s2.248 4.91 5.494 4.91l1.498-.083c.166-.083.25-.083.333-.083.333 0 .5.25.5.75 0 3.578-3.413 8.24-8.49 11.402z" fill="#{$color_chathams-blue-dark}"/></g></svg>'
+		background-image: url(f.encodesvg(
+			'<svg xmlns="http://www.w3.org/2000/svg" width="28.215" height="24.303" version="1.0"><defs><path id="a" d="M-174.038-59.122h63.848v81.44h-63.848z"/></defs><g style="line-height:1.25;white-space:pre;shape-inside:url(#a)"><path d="M1.998 24.303C9.405 19.226 12.9 14.15 12.9 8.24 12.9 3.246 10.154 0 6.076 0 2.913 0 .666 2.164.666 5.077s2.247 4.91 5.493 4.91l1.498-.083c.167-.083.25-.083.333-.083.333 0 .5.25.5.75 0 3.578-2.664 7.157-8.49 11.402zm15.314 0C24.72 19.226 28.215 14.15 28.215 8.24 28.215 3.246 25.47 0 21.39 0c-3.162 0-5.41 2.164-5.41 5.077s2.248 4.91 5.494 4.91l1.498-.083c.166-.083.25-.083.333-.083.333 0 .5.25.5.75 0 3.578-3.413 8.24-8.49 11.402z" fill="#{v.$color_chathams-blue-dark}"/></g></svg>'
 		));
 		/* stylelint-enable */
-		bottom: calc(#{pxtorem(-10)} - (#{cssvar(spacing-sm)} / 2));
+		bottom: calc(#{f.pxtorem(-10)} - (#{f.cssvar(spacing-sm)} / 2));
 		right: 5%;
 	}
 

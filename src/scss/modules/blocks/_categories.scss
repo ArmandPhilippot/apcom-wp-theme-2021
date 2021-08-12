@@ -1,3 +1,5 @@
+@use "../../abstracts/functions" as f;
+
 .wp-block-categories {
 	&-list {
 		list-style: none;
@@ -7,9 +9,9 @@
 			&::before {
 				display: inline-block;
 				content: "#";
-				color: cssvar(color-secondary);
+				color: f.cssvar(color-secondary);
 				font-weight: 500;
-				margin-right: cssvar(spacing-3xs);
+				margin-right: f.cssvar(spacing-3xs);
 			}
 		}
 	}

@@ -12,6 +12,7 @@
 /// Ordered List Reset
 @mixin orderedListReset {
 	@include listReset;
+
 	li {
 		display: list-item;
 		counter-increment: none;

@@ -1,3 +1,5 @@
+@use "../../abstracts/functions" as f;
+
 .wp-block-search {
 	position: relative;
 
@@ -5,28 +7,30 @@
 		background: linear-gradient(
 				to right,
 				transparent 0 33.3%,
-				cssvar(color-primary-light) 33.3% 66.6%,
-				cssvar(color-primary-dark) 66.6% 100%
+				f.cssvar(color-primary-light) 33.3% 66.6%,
+				f.cssvar(color-primary-dark) 66.6% 100%
 			)
 			0% 0% / 300% 100% no-repeat;
-		border: pxtorem(1) solid cssvar(color-primary);
-		box-shadow: pxtorem(4) pxtorem(4) 0 0 cssvar(color-shadow);
-		margin-left: cssvar(spacing-sm);
-		padding: 0 cssvar(spacing-3xs);
+		border: f.pxtorem(1) solid f.cssvar(color-primary);
+		box-shadow: f.pxtorem(4) f.pxtorem(4) 0 0 f.cssvar(color-shadow);
+		margin-left: f.cssvar(spacing-sm);
+		padding: 0 f.cssvar(spacing-3xs);
 		transition: all 0.4s ease-in-out 0s;
 
 		&:hover,
 		&:focus {
 			background-position: 50% 0;
-			box-shadow: pxtorem(4) pxtorem(4) 0 0 cssvar(color-primary-light);
-			color: cssvar(color-fg-inverted);
+			box-shadow: f.pxtorem(4) f.pxtorem(4) 0 0
+				f.cssvar(color-primary-light);
+			color: f.cssvar(color-fg-inverted);
 		}
 
 		&:active {
 			background-position: 100% 0;
-			box-shadow: pxtorem(2) pxtorem(2) 0 0 cssvar(color-primary-dark);
-			color: cssvar(color-fg-inverted);
-			transform: translateX(#{pxtorem(2)}) translateY(#{pxtorem(2)});
+			box-shadow: f.pxtorem(2) f.pxtorem(2) 0 0
+				f.cssvar(color-primary-dark);
+			color: f.cssvar(color-fg-inverted);
+			transform: translateX(#{f.pxtorem(2)}) translateY(#{f.pxtorem(2)});
 		}
 	}
 }

@@ -1,10 +1,13 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
 ul,
 ol,
 dl {
-	margin-bottom: cssvar(spacing-md);
+	margin-bottom: f.cssvar(spacing-md);
 
 	li {
-		margin-bottom: cssvar(spacing-3xs);
+		margin-bottom: f.cssvar(spacing-3xs);
 
 		&:last-child {
 			margin-bottom: 0;
@@ -18,18 +21,18 @@ dl {
 
 		li {
 			&:first-child {
-				margin-top: cssvar(spacing-3xs);
+				margin-top: f.cssvar(spacing-3xs);
 			}
 		}
 	}
 
 	::marker {
-		color: cssvar(color-secondary);
+		color: f.cssvar(color-secondary);
 	}
 }
 
 ul {
-	padding-left: cssvar(spacing-sm);
+	padding-left: f.cssvar(spacing-sm);
 }
 
 ol {
@@ -42,9 +45,9 @@ ol {
 
 		&::before {
 			content: counters(li, ".") ". ";
-			color: cssvar(color-secondary);
+			color: f.cssvar(color-secondary);
 			display: table-cell;
-			padding-right: cssvar(spacing-2xs);
+			padding-right: f.cssvar(spacing-2xs);
 		}
 	}
 
@@ -54,11 +57,11 @@ ol {
 }
 
 dl {
-	@include media("screen") {
-		@include dimensions("xs") {
+	@include m.media("screen") {
+		@include m.dimensions("xs") {
 			display: grid;
 			grid-template-columns: max-content auto;
-			column-gap: cssvar(spacing-sm);
+			column-gap: f.cssvar(spacing-sm);
 		}
 	}
 }
@@ -66,16 +69,16 @@ dl {
 dt {
 	font-weight: 600;
 
-	@include media("screen") {
-		@include dimensions("xs") {
+	@include m.media("screen") {
+		@include m.dimensions("xs") {
 			grid-column: 1;
 		}
 	}
 }
 
 dd {
-	@include media("screen") {
-		@include dimensions("xs") {
+	@include m.media("screen") {
+		@include m.dimensions("xs") {
 			grid-column: 2;
 		}
 	}

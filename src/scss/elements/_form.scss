@@ -1,3 +1,7 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
 form {
 	position: relative;
 }
@@ -13,14 +17,14 @@ textarea {
 
 button,
 input[type="submit"] {
-	@include buttonBase;
+	@include m.buttonBase;
 }
 
 label {
 	display: block;
 	cursor: pointer;
-	color: cssvar(color-fg-secondary);
-	font-size: cssvar(font-size-sm);
+	color: f.cssvar(color-fg-secondary);
+	font-size: f.cssvar(font-size-sm);
 	text-transform: uppercase;
 }
 
@@ -40,28 +44,28 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	background: cssvar(color-bg-tertiary);
-	border: pxtorem(1) solid cssvar(color-border);
-	box-shadow: pxtorem(4) pxtorem(4) 0 0 cssvar(color-shadow);
-	color: cssvar(color-fg);
-	padding: cssvar(spacing-sm);
+	background: f.cssvar(color-bg-tertiary);
+	border: f.pxtorem(1) solid f.cssvar(color-border);
+	box-shadow: f.pxtorem(4) f.pxtorem(4) 0 0 f.cssvar(color-shadow);
+	color: f.cssvar(color-fg);
+	padding: f.cssvar(spacing-sm);
 	width: 100%;
 	transition: all 0.2s ease-in 0s;
 
 	&:hover {
-		box-shadow: pxtorem(7) pxtorem(7) 0 0 cssvar(color-shadow);
-		transform: translateX(#{pxtorem(-3)}) translateY(#{pxtorem(-3)});
+		box-shadow: f.pxtorem(7) f.pxtorem(7) 0 0 f.cssvar(color-shadow);
+		transform: translateX(#{f.pxtorem(-3)}) translateY(#{f.pxtorem(-3)});
 	}
 
 	&:focus {
-		background: cssvar(color-bg);
-		box-shadow: pxtorem(2) pxtorem(2) 0 0 cssvar(color-primary-light);
+		background: f.cssvar(color-bg);
+		box-shadow: f.pxtorem(2) f.pxtorem(2) 0 0 f.cssvar(color-primary-light);
 		outline: none;
-		transform: translateX(#{pxtorem(2)}) translateY(#{pxtorem(2)});
+		transform: translateX(#{f.pxtorem(2)}) translateY(#{f.pxtorem(2)});
 	}
 
 	&::placeholder {
-		color: cssvar(color-fg-tertiary);
+		color: f.cssvar(color-fg-tertiary);
 	}
 }
 
@@ -72,7 +76,7 @@ input[type="checkbox"]:not(.toggle) {
 
 	+ label {
 		position: relative;
-		padding-left: cssvar(spacing-md);
+		padding-left: f.cssvar(spacing-md);
 		cursor: pointer;
 	}
 
@@ -83,13 +87,13 @@ input[type="checkbox"]:not(.toggle) {
 				content: "";
 				position: absolute;
 				left: 0;
-				top: pxtorem(-2);
-				width: pxtorem(20);
-				height: pxtorem(20);
-				background: cssvar(color-bg-tertiary);
-				border-radius: pxtorem(3);
-				border: pxtorem(1) solid cssvar(color-border);
-				box-shadow: pxtorem(2) pxtorem(2) 0 0 cssvar(color-shadow);
+				top: f.pxtorem(-2);
+				width: f.pxtorem(20);
+				height: f.pxtorem(20);
+				background: f.cssvar(color-bg-tertiary);
+				border-radius: f.pxtorem(3);
+				border: f.pxtorem(1) solid f.cssvar(color-border);
+				box-shadow: f.pxtorem(2) f.pxtorem(2) 0 0 f.cssvar(color-shadow);
 				transition: all 0.3s ease-in-out 0s;
 			}
 
@@ -97,10 +101,10 @@ input[type="checkbox"]:not(.toggle) {
 				content: "\2715";
 				speak: never;
 				position: absolute;
-				top: pxtorem(8);
-				left: pxtorem(2);
-				font-size: cssvar(font-size-lg);
-				color: cssvar(color-primary);
+				top: f.pxtorem(8);
+				left: f.pxtorem(2);
+				font-size: f.cssvar(font-size-lg);
+				color: f.cssvar(color-primary);
 				line-height: 0;
 				transition: all 0.3s ease-in-out 0s;
 			}
@@ -109,9 +113,10 @@ input[type="checkbox"]:not(.toggle) {
 		&:hover {
 			+ label {
 				&::before {
-					box-shadow: pxtorem(4) pxtorem(4) 0 0 cssvar(color-shadow);
-					transform: translateX(#{pxtorem(-2)})
-						translateY(#{pxtorem(-2)});
+					box-shadow: f.pxtorem(4) f.pxtorem(4) 0 0
+						f.cssvar(color-shadow);
+					transform: translateX(#{f.pxtorem(-2)})
+						translateY(#{f.pxtorem(-2)});
 				}
 			}
 		}
@@ -119,12 +124,12 @@ input[type="checkbox"]:not(.toggle) {
 		&:focus {
 			+ label {
 				&::before {
-					background: cssvar(color-bg);
-					box-shadow: 0 0 0 pxtorem(4)
-							cssvar(color-primary-light-opacity),
-						pxtorem(1) pxtorem(1) 0 0 cssvar(color-shadow);
-					transform: translateX(#{pxtorem(1)})
-						translateY(#{pxtorem(1)});
+					background: f.cssvar(color-bg);
+					box-shadow: 0 0 0 f.pxtorem(4)
+							f.cssvar(color-primary-light-opacity),
+						f.pxtorem(1) f.pxtorem(1) 0 0 f.cssvar(color-shadow);
+					transform: translateX(#{f.pxtorem(1)})
+						translateY(#{f.pxtorem(1)});
 				}
 			}
 		}
@@ -150,8 +155,8 @@ input[type="checkbox"]:not(.toggle) {
 		&:focus {
 			+ label {
 				&::after {
-					top: pxtorem(9);
-					left: pxtorem(3);
+					top: f.pxtorem(9);
+					left: f.pxtorem(3);
 				}
 			}
 		}
@@ -159,8 +164,8 @@ input[type="checkbox"]:not(.toggle) {
 		&:hover:not(:focus) {
 			+ label {
 				&::after {
-					top: pxtorem(6);
-					left: pxtorem(-1);
+					top: f.pxtorem(6);
+					left: f.pxtorem(-1);
 				}
 			}
 		}
@@ -169,46 +174,46 @@ input[type="checkbox"]:not(.toggle) {
 
 select {
 	appearance: none;
-	background-color: cssvar(color-bg-tertiary);
-	background-image: url(encodesvg(
-		'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path d="M3.707 7L3 7.707l6.125 6.125L11 15.707l1.875-1.875L19 7.707 18.293 7l-6.125 6.125L11 14.293l-1.168-1.168L3.707 7" fill="#{$color_chathams-blue-dark}"/></svg>'
+	background-color: f.cssvar(color-bg-tertiary);
+	background-image: url(f.encodesvg(
+		'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path d="M3.707 7L3 7.707l6.125 6.125L11 15.707l1.875-1.875L19 7.707 18.293 7l-6.125 6.125L11 14.293l-1.168-1.168L3.707 7" fill="#{v.$color_chathams-blue-dark}"/></svg>'
 	));
-	background-position: calc(100% - #{cssvar(spacing-sm)}) center;
+	background-position: calc(100% - #{f.cssvar(spacing-sm)}) center;
 	background-repeat: no-repeat;
-	background-size: pxtorem(24);
-	border: pxtorem(1) solid cssvar(color-border);
-	box-shadow: pxtorem(4) pxtorem(4) 0 0 cssvar(color-shadow);
-	color: cssvar(color-fg);
+	background-size: f.pxtorem(24);
+	border: f.pxtorem(1) solid f.cssvar(color-border);
+	box-shadow: f.pxtorem(4) f.pxtorem(4) 0 0 f.cssvar(color-shadow);
+	color: f.cssvar(color-fg);
 	cursor: pointer;
-	padding: cssvar(spacing-sm);
+	padding: f.cssvar(spacing-sm);
 	width: 100%;
 	transition: all 0.3s ease-in-out 0s;
 
 	&:hover {
-		box-shadow: pxtorem(6) pxtorem(6) 0 0 cssvar(color-shadow);
-		transform: translateX(#{pxtorem(-2)}) translateY(#{pxtorem(-2)});
+		box-shadow: f.pxtorem(6) f.pxtorem(6) 0 0 f.cssvar(color-shadow);
+		transform: translateX(#{f.pxtorem(-2)}) translateY(#{f.pxtorem(-2)});
 	}
 
 	&:focus {
-		background-color: cssvar(color-bg);
-		box-shadow: pxtorem(1) pxtorem(1) 0 pxtorem(5)
-				cssvar(color-primary-light-opacity),
-			pxtorem(2) pxtorem(2) 0 0 cssvar(color-shadow);
+		background-color: f.cssvar(color-bg);
+		box-shadow: f.pxtorem(1) f.pxtorem(1) 0 f.pxtorem(5)
+				f.cssvar(color-primary-light-opacity),
+			f.pxtorem(2) f.pxtorem(2) 0 0 f.cssvar(color-shadow);
 		outline: none;
-		transform: translateX(#{pxtorem(2)}) translateY(#{pxtorem(2)});
+		transform: translateX(#{f.pxtorem(2)}) translateY(#{f.pxtorem(2)});
 	}
 }
 
 [data-color-scheme="dark"] {
 	select {
-		background-image: url(encodesvg(
-			'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path d="M3.707 7L3 7.707l6.125 6.125L11 15.707l1.875-1.875L19 7.707 18.293 7l-6.125 6.125L11 14.293l-1.168-1.168L3.707 7" fill="#{$color_spindle-dark}"/></svg>'
+		background-image: url(f.encodesvg(
+			'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path d="M3.707 7L3 7.707l6.125 6.125L11 15.707l1.875-1.875L19 7.707 18.293 7l-6.125 6.125L11 14.293l-1.168-1.168L3.707 7" fill="#{v.$color_spindle-dark}"/></svg>'
 		));
 	}
 }
 
 option {
 	&:hover {
-		background: cssvar(color-bg-secondary);
+		background: f.cssvar(color-bg-secondary);
 	}
 }

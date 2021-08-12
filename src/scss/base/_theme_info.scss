@@ -1,14 +1,16 @@
+@use "../abstracts/variables" as v;
+
 /*!
-Theme Name: #{ $theme_name }
-Theme URI: #{ $theme_uri }
-Description: #{ $theme_description }
-Version: #{ $theme_version }
-Requires at least: #{ $theme_wordpress_compatibility }
-Author: #{ $theme_author }
-Author URI: #{ $theme_author-uri }
-License: #{ $theme_license }
-License URI: #{ $theme_license-uri }
-Text Domain: #{ $theme_domain }
-Domain Path: #{ $theme_domain-path }
-Tags: #{ $theme_tags }
+Theme Name: #{ v.$theme_name }
+Theme URI: #{ v.$theme_uri }
+Description: #{ v.$theme_description }
+Version: #{ v.$theme_version }
+Requires at least: #{ v.$theme_wordpress_compatibility }
+Author: #{ v.$theme_author }
+Author URI: #{ v.$theme_author-uri }
+License: #{ v.$theme_license }
+License URI: #{ v.$theme_license-uri }
+Text Domain: #{ v.$theme_domain }
+Domain Path: #{ v.$theme_domain-path }
+Tags: #{ v.$theme_tags }
 */

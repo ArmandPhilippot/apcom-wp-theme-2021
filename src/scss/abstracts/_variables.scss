@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "../abstracts/functions" as f;
 
 //==============================================================================
 // Theme Information
@@ -22,12 +23,12 @@ $theme_tags: "editor-style, translation-ready";
 $golden-number: 1.618;
 $ratio: 1.2;
 $breakpoints: (
-	"xs": pxtoem(568),
-	"sm": pxtoem(768),
-	"md": pxtoem(1024),
-	"lg": pxtoem(1280),
-	"xl": pxtoem(1600),
-	"2xl": pxtoem(1920),
+	"xs": f.pxtoem(568),
+	"sm": f.pxtoem(768),
+	"md": f.pxtoem(1024),
+	"lg": f.pxtoem(1280),
+	"xl": f.pxtoem(1600),
+	"2xl": f.pxtoem(1920),
 );
 
 //=============================================================================
@@ -48,15 +49,15 @@ $font-family_mono: (
 $line-height: $golden-number;
 
 $font-size_base: 16px;
-$font-size_base-rem: pxtorem(16);
+$font-size_base-rem: f.pxtorem(16);
 
-$font-size_sm: $font-size_base-rem * pow($ratio, -1);
-$font-size_md: $font-size_base-rem * pow($ratio, 0);
-$font-size_lg: $font-size_base-rem * pow($ratio, 1);
-$font-size_xl: $font-size_base-rem * pow($ratio, 2);
-$font-size_2xl: $font-size_base-rem * pow($ratio, 3);
-$font-size_3xl: $font-size_base-rem * pow($ratio, 4);
-$font-size_4xl: $font-size_base-rem * pow($ratio, 5);
+$font-size_sm: $font-size_base-rem * f.pow($ratio, -1);
+$font-size_md: $font-size_base-rem * f.pow($ratio, 0);
+$font-size_lg: $font-size_base-rem * f.pow($ratio, 1);
+$font-size_xl: $font-size_base-rem * f.pow($ratio, 2);
+$font-size_2xl: $font-size_base-rem * f.pow($ratio, 3);
+$font-size_3xl: $font-size_base-rem * f.pow($ratio, 4);
+$font-size_4xl: $font-size_base-rem * f.pow($ratio, 5);
 
 //==============================================================================
 // Spacings

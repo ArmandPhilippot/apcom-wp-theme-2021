@@ -1,26 +1,18 @@
 @charset 'utf-8';
 //============================================================================
-// Configuration
-//============================================================================
-@import "helpers/functions";
-@import "helpers/variables";
-@import "helpers/mixins";
-
-//============================================================================
 // Theme info
 //============================================================================
-@import "base/theme_info";
+@use "base/theme_info";
 
 /*!===========================================================================
 >>> TABLE OF CONTENTS:
 ==============================================================================
 1.0 Normalize.css
-2.0 Base
-3.0 Helpers
-4.0 Elements
-5.0 Layout
+2.0 Vendors
+3.0 Base
+4.0 Layout
+5.0 Components
 6.0 Pages
-7.0 Modules
 ============================================================================*/
 
 /**
@@ -30,78 +22,77 @@
  * work of Nicolas Gallagher and Jonathan Neal
  * http://necolas.github.com/normalize.css/
  */
-@import "normalize.css/normalize";
+@use "modern-normalize";
 
 /**
-* 2.0 Base
+* 2.0 Vendors
+*
+* Import each files separately to define vendors styles order.
+*/
+@use "vendors/vendors";
+
+/**
+* 3.0 Base
 *
 * Define CSS variables (colors, fonts...) and box-sizing.
 */
-@import "base/animations";
-@import "base/colors";
-@import "base/fonts";
-@import "base/spacings";
-@import "base/base";
-
-/**
-* 3.0 Helpers
-*
-* Classes and other stuffs that can be used anywhere like screen-reader-text.
-*/
-@import "helpers/accessibility";
-@import "helpers/alignments";
-@import "helpers/animations";
+@use "base/animations";
+@use "base/colors";
+@use "base/fonts";
+@use "base/spacings";
+@use "base/base";
+@use "base/helpers";
+@use "base/typography";
 
 /**
 * 4.0 Elements
 *
 * Define elements styles like links, lists, forms...
 */
-@import "elements/blockquote";
-@import "elements/form";
-@import "elements/link";
-@import "elements/list";
-@import "elements/media";
-@import "elements/preformat";
-@import "elements/table";
-@import "elements/typography";
+@use "elements/blockquote";
+@use "elements/form";
+@use "elements/link";
+@use "elements/list";
+@use "elements/media";
+@use "elements/preformat";
+@use "elements/table";
 
 /**
 * 5.0 Layout
 *
 * Define website layout.
 */
-@import "layout/grid";
-@import "layout/header";
-@import "layout/main";
-@import "layout/footer";
+@use "layout/grid";
+@use "layout/header";
+@use "layout/main";
+@use "layout/footer";
 
 /**
 * 6.0 Pages
 *
 * Define pages specific styles.
 */
-@import "pages/author";
-@import "pages/contact";
-@import "pages/cpt";
-@import "pages/front-page";
+@use "pages/author";
+@use "pages/contact";
+@use "pages/cpt";
+@use "pages/front-page";
 
 /**
 * 7.0 Modules
 *
 * Define modules used like navigation, breadcrumbs...
 */
-@import "modules/back-to-top";
-@import "modules/blocks";
-@import "modules/breadcrumb";
-@import "modules/comments";
-@import "modules/feed";
-@import "modules/gallery";
-@import "modules/main-nav";
-@import "modules/meta";
-@import "modules/more-link";
-@import "modules/pagination";
-@import "modules/reading-progress";
-@import "modules/search";
-@import "modules/tools";
-@import "modules/widgets";
+@use "modules/back-to-top";
+@use "modules/blocks";
+@use "modules/breadcrumb";
+@use "modules/comments";
+@use "modules/feed";
+@use "modules/gallery";
+@use "modules/main-nav";
+@use "modules/meta";
+@use "modules/more-link";
+@use "modules/pagination";
+@use "modules/reading-progress";
+@use "modules/search";
+@use "modules/tools";
+@use "modules/widgets";

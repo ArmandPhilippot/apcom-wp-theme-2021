@@ -1,3 +1,6 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
 .body {
 	display: flex;
 	flex-flow: column nowrap;
@@ -6,23 +9,25 @@
 
 .header {
 	display: grid;
-	grid-template-columns: cssvar(spacing-md) minmax(0, 1fr) cssvar(spacing-md);
+	grid-template-columns: f.cssvar(spacing-md) minmax(0, 1fr) f.cssvar(
+			spacing-md
+		);
 	align-items: center;
 
 	.branding {
 		grid-column: 2;
 	}
 
-	@include media("screen") {
-		@include dimensions("lg") {
+	@include m.media("screen") {
+		@include m.dimensions("lg") {
 			grid-template-columns:
-				cssvar(spacing-3xl) max-content minmax(0, 1fr) max-content
-				cssvar(spacing-3xl);
+				f.cssvar(spacing-3xl) max-content minmax(0, 1fr) max-content
+				f.cssvar(spacing-3xl);
 
 			.branding {
 				display: grid;
 				grid-template-columns: max-content 1fr;
-				column-gap: cssvar(spacing-md);
+				column-gap: f.cssvar(spacing-md);
 				align-items: center;
 
 				&__logo {
@@ -51,24 +56,24 @@
 			}
 		}
 
-		@include dimensions("xl") {
+		@include m.dimensions("xl") {
 			grid-template-columns:
-				minmax(#{cssvar(spacing-3xl)}, 1fr) minmax(auto, 100ch) minmax(
+				minmax(#{f.cssvar(spacing-3xl)}, 1fr) minmax(auto, 100ch) minmax(
 					auto,
 					100ch
 				)
 				max-content
-				minmax(#{cssvar(spacing-3xl)}, 1fr);
+				minmax(#{f.cssvar(spacing-3xl)}, 1fr);
 		}
 
-		@include dimensions("2xl") {
+		@include m.dimensions("2xl") {
 			grid-template-columns:
-				minmax(#{cssvar(spacing-4xl)}, 1fr) minmax(auto, 100ch) minmax(
+				minmax(#{f.cssvar(spacing-4xl)}, 1fr) minmax(auto, 100ch) minmax(
 					auto,
 					100ch
 				)
 				max-content
-				minmax(#{cssvar(spacing-4xl)}, 1fr);
+				minmax(#{f.cssvar(spacing-4xl)}, 1fr);
 		}
 	}
 }
@@ -82,30 +87,30 @@
 	grid-auto-rows: max-content;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 80ch) minmax(0, 1fr);
 	justify-content: center;
-	column-gap: cssvar(spacing-md);
+	column-gap: f.cssvar(spacing-md);
 
-	@include media("screen") {
-		@include dimensions("sm") {
-			column-gap: cssvar(spacing-lg);
+	@include m.media("screen") {
+		@include m.dimensions("sm") {
+			column-gap: f.cssvar(spacing-lg);
 		}
 
-		@include dimensions("lg") {
+		@include m.dimensions("lg") {
 			grid-template-columns: 0 minmax(0, 80ch) minmax(0, 1fr);
-			column-gap: cssvar(spacing-3xl);
+			column-gap: f.cssvar(spacing-3xl);
 		}
 
-		@include dimensions("xl") {
+		@include m.dimensions("xl") {
 			grid-template-columns:
 				minmax(0, 1fr) minmax(0, 80ch) minmax(50ch, 80ch) minmax(
 					0,
 					80ch
 				)
 				minmax(0, 1fr);
-			column-gap: cssvar(spacing-2xl);
+			column-gap: f.cssvar(spacing-2xl);
 		}
 
-		@include dimensions("2xl") {
-			column-gap: cssvar(spacing-4xl);
+		@include m.dimensions("2xl") {
+			column-gap: f.cssvar(spacing-4xl);
 		}
 	}
 }
@@ -121,8 +126,8 @@
 		". page__aside--last ."
 		"page__comments page__comments page__comments";
 
-	@include media("screen") {
-		@include dimensions("lg") {
+	@include m.media("screen") {
+		@include m.dimensions("lg") {
 			grid-template-areas:
 				"breadcrumb breadcrumb breadcrumb"
 				"page__header page__header page__header"
@@ -133,7 +138,7 @@
 				"page__comments page__comments page__comments";
 		}
 
-		@include dimensions("xl") {
+		@include m.dimensions("xl") {
 			grid-template-areas:
 				"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb"
 				"page__header page__header page__header page__header page__header"
@@ -148,8 +153,8 @@
 	grid-area: breadcrumb;
 	grid-template-areas: ". breadcrumb__list .";
 
-	@include media("screen") {
-		@include dimensions("xl") {
+	@include m.media("screen") {
+		@include m.dimensions("xl") {
 			grid-template-areas: ". . breadcrumb__list . .";
 		}
 	}
@@ -169,8 +174,8 @@
 			". page__meta ."
 			". page__introduction .";
 
-		@include media("screen") {
-			@include dimensions("xl") {
+		@include m.media("screen") {
+			@include m.dimensions("xl") {
 				grid-template-areas:
 					". . page__title . ."
 					". . page__meta . ."
@@ -186,8 +191,8 @@
 		> *:not(.alignfull):not(.alignwide) {
 			grid-column: 2;
 
-			@include media("screen") {
-				@include dimensions("xl") {
+			@include m.media("screen") {
+				@include m.dimensions("xl") {
 					grid-column: 3;
 				}
 			}
@@ -215,12 +220,12 @@
 		&--first {
 			grid-area: page__aside--first;
 
-			@include media("screen") {
-				@include dimensions("xl") {
+			@include m.media("screen") {
+				@include m.dimensions("xl") {
 					justify-self: end;
 				}
 
-				@include dimensions("2xl") {
+				@include m.dimensions("2xl") {
 					justify-self: start;
 				}
 			}
@@ -238,8 +243,8 @@
 			". comments__list ."
 			". comments__form .";
 
-		@include media("screen") {
-			@include dimensions("xl") {
+		@include m.media("screen") {
+			@include m.dimensions("xl") {
 				grid-template-areas:
 					". . comments__header . ."
 					". . comments__list . ."
@@ -285,8 +290,8 @@
 			". page__aside--first ."
 			". page__aside--last .";
 
-		@include media("screen") {
-			@include dimensions("lg") {
+		@include m.media("screen") {
+			@include m.dimensions("lg") {
 				grid-template-areas:
 					"breadcrumb breadcrumb breadcrumb"
 					"page__header page__header page__header"
@@ -295,7 +300,7 @@
 					"page__body page__body .";
 			}
 
-			@include dimensions("xl") {
+			@include m.dimensions("xl") {
 				grid-template-areas:
 					"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb"
 					"page__header page__header page__header page__header page__header"

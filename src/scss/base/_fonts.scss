@@ -1,3 +1,7 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
 @font-face {
 	font-family: Kanit;
 	src: url(../fonts/Kanit/Kanit-Bold.woff2) format("woff2"),
@@ -128,18 +132,18 @@
 	font-display: swap;
 }
 
-@include declareCssVars(
+@include m.declareCssVars(
 	(
-		font-family-primary: #{$font-family_primary},
-		font-family-secondary: #{$font-family_secondary},
-		font-family-mono: #{$font-family_mono},
-		font-size-sm: clampthis($font-size_sm),
-		font-size-md: clampthis($font-size_md),
-		font-size-lg: clampthis($font-size_lg),
-		font-size-xl: clampthis($font-size_xl),
-		font-size-2xl: clampthis($font-size_2xl),
-		font-size-3xl: clampthis($font-size_3xl),
-		font-size-4xl: clampthis($font-size_4xl),
-		line-height: #{$line-height},
+		font-family-primary: #{v.$font-family_primary},
+		font-family-secondary: #{v.$font-family_secondary},
+		font-family-mono: #{v.$font-family_mono},
+		font-size-sm: f.clampthis(v.$font-size_sm),
+		font-size-md: f.clampthis(v.$font-size_md),
+		font-size-lg: f.clampthis(v.$font-size_lg),
+		font-size-xl: f.clampthis(v.$font-size_xl),
+		font-size-2xl: f.clampthis(v.$font-size_2xl),
+		font-size-3xl: f.clampthis(v.$font-size_3xl),
+		font-size-4xl: f.clampthis(v.$font-size_4xl),
+		line-height: #{v.$line-height},
 	)
 );

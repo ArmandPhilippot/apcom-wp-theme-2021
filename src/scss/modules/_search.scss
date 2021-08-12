@@ -1,4 +1,7 @@
 @use "sass:math";
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
 
 .search {
 	position: relative;
@@ -18,13 +21,13 @@
 		background: linear-gradient(
 				to right,
 				transparent 0 33.3%,
-				cssvar(color-primary-light) 33.3% 66.6%,
-				cssvar(color-primary-dark) 66.6% 100%
+				f.cssvar(color-primary-light) 33.3% 66.6%,
+				f.cssvar(color-primary-dark) 66.6% 100%
 			)
 			0% 0% / 300% 100% no-repeat;
 		border: none;
 		box-shadow: none;
-		padding: 0 cssvar(spacing-3xs);
+		padding: 0 f.cssvar(spacing-3xs);
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -37,8 +40,8 @@
 			align-items: center;
 
 			svg {
-				fill: cssvar(color-primary);
-				width: pxtorem(30);
+				fill: f.cssvar(color-primary);
+				width: f.pxtorem(30);
 				transition: all 0.3s ease-in 0s;
 			}
 		}
@@ -53,7 +56,7 @@
 			box-shadow: none;
 
 			svg {
-				fill: cssvar(color-fg-inverted);
+				fill: f.cssvar(color-fg-inverted);
 				transform: rotate(360deg);
 			}
 		}
@@ -69,13 +72,15 @@
 	&__field {
 		&:hover {
 			~ .search-form__btn {
-				transform: translateX(#{pxtorem(-3)}) translateY(#{pxtorem(-3)});
+				transform: translateX(#{f.pxtorem(-3)})
+					translateY(#{f.pxtorem(-3)});
 			}
 		}
 
 		&:focus {
 			~ .search-form__btn {
-				transform: translateX(#{pxtorem(2)}) translateY(#{pxtorem(2)});
+				transform: translateX(#{f.pxtorem(2)})
+					translateY(#{f.pxtorem(2)});
 			}
 		}
 	}
@@ -83,7 +88,7 @@
 
 .page__body {
 	.search-form {
-		margin-bottom: cssvar(spacing-md);
+		margin-bottom: f.cssvar(spacing-md);
 	}
 }
 
@@ -92,10 +97,10 @@
 	opacity: 0;
 	z-index: 2;
 	position: absolute;
-	top: pxtorem(
+	top: f.pxtorem(
 		math.div(40, 2) - 8
 	); // label height/2 - approximate checkbox height
-	right: pxtorem(
+	right: f.pxtorem(
 		math.div(40, 2) - 8
 	); // label width/2 - approximate checkbox width;
 
@@ -108,7 +113,7 @@
 
 	&:focus {
 		~ .search__label {
-			outline: cssvar(color-primary) dotted pxtorem(1);
+			outline: f.cssvar(color-primary) dotted f.pxtorem(1);
 		}
 	}
 
@@ -130,7 +135,7 @@
 			&::before {
 				display: block;
 				content: "";
-				background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{$color_catskill-white}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
+				background-image: url(#{f.encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{v.$color_catskill-white}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
 				width: 100%;
 				height: 100%;
 				position: absolute;
@@ -161,7 +166,6 @@
 }
 
 [data-color-scheme="dark"] {
-	/* stylelint-disable */
 	.search__checkbox {
 		&:checked {
 			~ .search__label {
@@ -169,11 +173,10 @@
 					&::before {
 						display: block;
 						content: "";
-						background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{$color_firefly}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
+						background-image: url(#{f.encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="stroke: #{v.$color_firefly}; stroke-width: 5; stroke-linecap: round;"><path d="M 10,10 90.00004,90.00004 M 90.00004,10 10,90.00004" id="path2" style="stroke-width:20" /></svg>')});
 					}
 				}
 			}
 		}
 	}
-	/* stylelint-enable */
 }

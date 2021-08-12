@@ -1,3 +1,6 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
 .template__page-contact {
 	.page {
 		&__introduction {
@@ -7,7 +10,7 @@
 		&__body {
 			> p {
 				&:first-of-type {
-					margin-top: cssvar(spacing-sm);
+					margin-top: f.cssvar(spacing-sm);
 				}
 			}
 		}
@@ -15,10 +18,10 @@
 }
 
 .contact-form {
-	margin-bottom: cssvar(spacing-md);
+	margin-bottom: f.cssvar(spacing-md);
 
 	&__item {
-		margin-bottom: cssvar(spacing-md);
+		margin-bottom: f.cssvar(spacing-md);
 
 		&--none {
 			display: none;
@@ -26,47 +29,49 @@
 	}
 
 	&__label {
-		margin-bottom: cssvar(spacing-3xs);
+		margin-bottom: f.cssvar(spacing-3xs);
 	}
 
 	&__field {
 		&--textarea {
-			min-height: pxtorem(200);
+			min-height: f.pxtorem(200);
 		}
 	}
 
 	&__btn {
-		@include buttonStyle1;
+		@include m.buttonStyle1;
 
 		margin: auto;
 	}
 
 	.required {
-		color: cssvar(color-secondary);
+		color: f.cssvar(color-secondary);
 	}
 
 	.alert {
-		border: pxtorem(2) solid cssvar(color-primary);
-		box-shadow: pxtorem(6) pxtorem(6) 0 0 cssvar(color-primary);
+		border: f.pxtorem(2) solid f.cssvar(color-primary);
+		box-shadow: f.pxtorem(6) f.pxtorem(6) 0 0 f.cssvar(color-primary);
 		font-weight: 600;
-		padding: cssvar(spacing-sm);
+		padding: f.cssvar(spacing-sm);
 
 		&.error {
-			border-color: cssvar(color-token-red);
-			box-shadow: pxtorem(6) pxtorem(6) 0 0 cssvar(color-token-red);
-			color: cssvar(color-token-red);
+			border-color: f.cssvar(color-token-red);
+			box-shadow: f.pxtorem(6) f.pxtorem(6) 0 0 f.cssvar(color-token-red);
+			color: f.cssvar(color-token-red);
 		}
 
 		&.valid {
-			border-color: cssvar(color-token-green);
-			box-shadow: pxtorem(6) pxtorem(6) 0 0 cssvar(color-token-green);
-			color: cssvar(color-token-green);
+			border-color: f.cssvar(color-token-green);
+			box-shadow: f.pxtorem(6) f.pxtorem(6) 0 0
+				f.cssvar(color-token-green);
+			color: f.cssvar(color-token-green);
 		}
 
 		&.nice-try {
-			border-color: cssvar(color-token-orange);
-			box-shadow: pxtorem(6) pxtorem(6) 0 0 cssvar(color-token-orange);
-			color: cssvar(color-token-orange);
+			border-color: f.cssvar(color-token-orange);
+			box-shadow: f.pxtorem(6) f.pxtorem(6) 0 0
+				f.cssvar(color-token-orange);
+			color: f.cssvar(color-token-orange);
 		}
 	}
 }

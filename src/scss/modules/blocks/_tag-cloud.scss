@@ -1,16 +1,18 @@
+@use "../../abstracts/functions" as f;
+
 .wp-block-tag-cloud {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
-	gap: cssvar(spacing-2xs);
+	gap: f.cssvar(spacing-2xs);
 
 	.tag-cloud-link {
-		border: pxtorem(1) solid cssvar(color-primary);
-		border-radius: pxtorem(3);
-		box-shadow: pxtorem(3) pxtorem(3) 0 0 cssvar(color-primary);
+		border: f.pxtorem(1) solid f.cssvar(color-primary);
+		border-radius: f.pxtorem(3);
+		box-shadow: f.pxtorem(3) f.pxtorem(3) 0 0 f.cssvar(color-primary);
 		text-decoration: none;
 		text-decoration-thickness: 0;
-		padding: cssvar(spacing-3xs);
+		padding: f.cssvar(spacing-3xs);
 
 		&::before {
 			content: "#";
@@ -19,20 +21,21 @@
 
 		&:hover,
 		&:focus {
-			box-shadow: pxtorem(5) pxtorem(5) 0 0 cssvar(color-primary-light);
-			transform: translateX(#{pxtorem(-2)}) translateY(#{pxtorem(-2)});
+			box-shadow: f.pxtorem(5) f.pxtorem(5) 0 0
+				f.cssvar(color-primary-light);
+			transform: translateX(#{f.pxtorem(-2)}) translateY(#{f.pxtorem(-2)});
 		}
 
 		&:focus {
 			text-decoration: underline;
-			text-decoration-color: cssvar(color-primary-light);
-			text-decoration-thickness: pxtorem(4);
+			text-decoration-color: f.cssvar(color-primary-light);
+			text-decoration-thickness: f.pxtorem(4);
 		}
 
 		&:active {
-			box-shadow: 0 0 0 0 cssvar(color-primary-dark);
+			box-shadow: 0 0 0 0 f.cssvar(color-primary-dark);
 			text-decoration: none;
-			transform: translateX(#{pxtorem(3)}) translateY(#{pxtorem(3)});
+			transform: translateX(#{f.pxtorem(3)}) translateY(#{f.pxtorem(3)});
 		}
 	}
 }

@@ -1,40 +1,43 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
 .back-to-top {
 	position: fixed;
-	right: cssvar(spacing-sm);
+	right: f.cssvar(spacing-sm);
 	bottom: calc(
-		#{pxtorem(60)} + #{cssvar(spacing-md)}
+		#{f.pxtorem(60)} + #{f.cssvar(spacing-md)}
 	); // main-nav height + spacing
 	z-index: 2;
 
-	@include media("screen") {
-		@include dimensions("sm") {
+	@include m.media("screen") {
+		@include m.dimensions("sm") {
 			bottom: calc(
-				#{pxtorem(70)} + #{cssvar(spacing-md)}
+				#{f.pxtorem(70)} + #{f.cssvar(spacing-md)}
 			); // main-nav height + spacing
 		}
 
-		@include dimensions("lg") {
-			bottom: cssvar(spacing-sm);
+		@include m.dimensions("lg") {
+			bottom: f.cssvar(spacing-sm);
 		}
 	}
 
 	&__link {
-		@include buttonBase;
-		@include buttonStyle3;
+		@include m.buttonBase;
+		@include m.buttonStyle3;
 
-		width: pxtorem(50);
-		height: pxtorem(50);
+		width: f.pxtorem(50);
+		height: f.pxtorem(50);
 	}
 
 	&__icon {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		max-width: pxtorem(30);
+		max-width: f.pxtorem(30);
 		transform: rotate(-90deg);
 
 		svg {
-			fill: cssvar(color-fg-inverted);
+			fill: f.cssvar(color-fg-inverted);
 			width: 100%;
 			height: 100%;
 		}

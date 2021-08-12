@@ -1,3 +1,5 @@
+@use "../../abstracts/functions" as f;
+
 .wp-block-social-links {
 	a {
 		background: none;
@@ -5,7 +7,7 @@
 		&:focus {
 			color: currentColor;
 			opacity: 0.85;
-			outline: cssvar(color-primary-light) dotted pxtorem(2);
+			outline: f.cssvar(color-primary-light) dotted f.pxtorem(2);
 		}
 	}
 }

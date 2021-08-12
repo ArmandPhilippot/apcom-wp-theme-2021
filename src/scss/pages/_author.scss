@@ -1,19 +1,22 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
 .author {
 	&__introduction {
-		margin-bottom: cssvar(spacing-lg);
+		margin-bottom: f.cssvar(spacing-lg);
 
-		@include media("screen") {
-			@include dimensions("xs") {
+		@include m.media("screen") {
+			@include m.dimensions("xs") {
 				display: grid;
 				grid-template-columns: max-content 1fr;
-				column-gap: cssvar(spacing-lg);
+				column-gap: f.cssvar(spacing-lg);
 			}
 		}
 	}
 
 	&__title {
-		@include media("screen") {
-			@include dimensions("xs") {
+		@include m.media("screen") {
+			@include m.dimensions("xs") {
 				grid-column: 1 / -1;
 				grid-row: 1;
 			}
@@ -21,8 +24,8 @@
 	}
 
 	&__avatar {
-		@include media("screen") {
-			@include dimensions("xs") {
+		@include m.media("screen") {
+			@include m.dimensions("xs") {
 				grid-column: 1;
 				grid-row: 2;
 			}
@@ -30,8 +33,8 @@
 	}
 
 	&__body {
-		@include media("screen") {
-			@include dimensions("xs") {
+		@include m.media("screen") {
+			@include m.dimensions("xs") {
 				grid-column: 2;
 				grid-row: 2;
 			}
@@ -48,18 +51,18 @@
 
 		&__footer {
 			grid-row: 2;
-			margin-bottom: cssvar(spacing-md);
+			margin-bottom: f.cssvar(spacing-md);
 		}
 
 		&__meta {
 			margin-bottom: 0;
 		}
 
-		@include media("screen") {
-			@include dimensions("sm") {
-				grid-template-columns: 1fr #{pxtorem(200)};
+		@include m.media("screen") {
+			@include m.dimensions("sm") {
+				grid-template-columns: 1fr #{f.pxtorem(200)};
 				grid-template-rows: max-content 1fr;
-				column-gap: cssvar(spacing-lg);
+				column-gap: f.cssvar(spacing-lg);
 
 				&__header {
 					grid-column: 1;
@@ -78,12 +81,12 @@
 				}
 
 				&__figure {
-					margin: 0 0 cssvar(spacing-md);
+					margin: 0 0 f.cssvar(spacing-md);
 				}
 
 				&__image {
-					max-width: pxtorem(200);
-					max-height: pxtorem(100);
+					max-width: f.pxtorem(200);
+					max-height: f.pxtorem(100);
 					margin: 0 auto;
 				}
 
@@ -93,7 +96,7 @@
 
 				.meta {
 					&__item {
-						margin-top: cssvar(spacing-sm);
+						margin-top: f.cssvar(spacing-sm);
 					}
 
 					&__theme {
@@ -106,18 +109,18 @@
 						}
 
 						&:not(:last-child) {
-							margin-bottom: pxtorem(2);
+							margin-bottom: f.pxtorem(2);
 						}
 					}
 				}
 			}
 
-			@include dimensions("lg") {
-				column-gap: cssvar(spacing-2xl);
+			@include m.dimensions("lg") {
+				column-gap: f.cssvar(spacing-2xl);
 
 				&:last-child {
 					border-bottom: none;
-					margin-bottom: cssvar(spacing-md);
+					margin-bottom: f.cssvar(spacing-md);
 					padding-bottom: 0;
 				}
 			}

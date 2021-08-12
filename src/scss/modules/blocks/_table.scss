@@ -1,16 +1,18 @@
+@use "../../abstracts/functions" as f;
+
 .wp-block-table {
 	&.is-style-stripes {
 		tbody {
 			tr:nth-child(2n + 1) {
-				background-color: cssvar(color-bg-secondary);
+				background-color: f.cssvar(color-bg-secondary);
 			}
 		}
 	}
 
 	td,
 	th {
-		border: pxtorem(1) solid cssvar(color-border);
-		padding: cssvar(spacing-xs);
+		border: f.pxtorem(1) solid f.cssvar(color-border);
+		padding: f.cssvar(spacing-xs);
 	}
 
 	tfoot {

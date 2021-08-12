@@ -1,22 +1,25 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+
 .comments__form {
 	#cancel-comment-reply-link {
-		@include buttonBase;
-		@include buttonStyle2;
+		@include m.buttonBase;
+		@include m.buttonStyle2;
 
-		font-family: cssvar(font-family-primary);
-		margin: cssvar(spacing-sm) 0;
+		font-family: f.cssvar(font-family-primary);
+		margin: f.cssvar(spacing-sm) 0;
 
-		@include media("screen") {
-			@include dimensions("xs") {
-				margin-left: cssvar(spacing-md);
+		@include m.media("screen") {
+			@include m.dimensions("xs") {
+				margin-left: f.cssvar(spacing-md);
 			}
 		}
 	}
 }
 
 .comment-form {
-	@include media("screen") {
-		@include dimensions("sm") {
+	@include m.media("screen") {
+		@include m.dimensions("sm") {
 			max-width: 80%;
 		}
 	}
@@ -31,15 +34,16 @@
 
 	&__button {
 		margin: auto;
-		@include buttonStyle1;
+
+		@include m.buttonStyle1;
 	}
 
 	label {
-		margin-bottom: cssvar(spacing-3xs);
+		margin-bottom: f.cssvar(spacing-3xs);
 		text-align: left;
 	}
 
 	.required {
-		color: cssvar(color-secondary);
+		color: f.cssvar(color-secondary);
 	}
 }

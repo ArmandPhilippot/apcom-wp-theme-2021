@@ -1,15 +1,18 @@
-@include declareCssVars(
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+@include m.declareCssVars(
 	(
-		spacing-3xs: clampthis($spacing_3xs),
-		spacing-2xs: clampthis($spacing_2xs),
-		spacing-xs: clampthis($spacing_xs),
-		spacing-sm: clampthis($spacing_sm),
-		spacing-md: clampthis($spacing_md),
-		spacing-lg: clampthis($spacing_lg),
-		spacing-xl: clampthis($spacing_xl),
-		spacing-2xl: clampthis($spacing_2xl),
-		spacing-3xl: clampthis($spacing_3xl),
-		spacing-4xl: clampthis($spacing_4xl),
-		spacing-5xl: clampthis($spacing_5xl),
+		spacing-3xs: f.clampthis(v.$spacing_3xs),
+		spacing-2xs: f.clampthis(v.$spacing_2xs),
+		spacing-xs: f.clampthis(v.$spacing_xs),
+		spacing-sm: f.clampthis(v.$spacing_sm),
+		spacing-md: f.clampthis(v.$spacing_md),
+		spacing-lg: f.clampthis(v.$spacing_lg),
+		spacing-xl: f.clampthis(v.$spacing_xl),
+		spacing-2xl: f.clampthis(v.$spacing_2xl),
+		spacing-3xl: f.clampthis(v.$spacing_3xl),
+		spacing-4xl: f.clampthis(v.$spacing_4xl),
+		spacing-5xl: f.clampthis(v.$spacing_5xl),
 	)
 );

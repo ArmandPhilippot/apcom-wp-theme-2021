@@ -1,23 +1,26 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
 .widget {
-	background: cssvar(color-bg);
-	margin-bottom: cssvar(spacing-md);
+	background: f.cssvar(color-bg);
+	margin-bottom: f.cssvar(spacing-md);
 	max-width: 80ch;
 
-	@include media("screen") {
-		@include dimensions("lg") {
-			padding: 0 0 cssvar(spacing-md);
+	@include m.media("screen") {
+		@include m.dimensions("lg") {
+			padding: 0 0 f.cssvar(spacing-md);
 		}
 	}
 
 	ul {
-		@include listReset;
+		@include m.listReset;
 
 		li {
 			&::before {
 				display: inline-block;
 				content: "\0025B8";
-				color: cssvar(color-secondary);
-				margin-right: cssvar(spacing-3xs);
+				color: f.cssvar(color-secondary);
+				margin-right: f.cssvar(spacing-3xs);
 			}
 		}
 	}
@@ -25,20 +28,21 @@
 	&_recent_entries {
 		.post-date {
 			display: block;
-			color: cssvar(color-fg-tertiary);
-			font-size: cssvar(font-size-sm);
+			color: f.cssvar(color-fg-tertiary);
+			font-size: f.cssvar(font-size-sm);
 		}
 	}
 
 	&_rss {
 		.rss-date {
 			display: block;
-			color: cssvar(color-fg-tertiary);
-			font-size: cssvar(font-size-sm);
+			color: f.cssvar(color-fg-tertiary);
+			font-size: f.cssvar(font-size-sm);
 		}
 
+		/* stylelint-disable-next-line -- WP native class. */
 		.rssSummary {
-			font-size: cssvar(font-size-sm);
+			font-size: f.cssvar(font-size-sm);
 		}
 
 		cite {
@@ -57,10 +61,10 @@
 		}
 
 		caption {
-			color: cssvar(color-fg-tertiary);
+			color: f.cssvar(color-fg-tertiary);
 			font-variant: small-caps;
 			font-weight: 600;
-			margin-bottom: cssvar(spacing-sm);
+			margin-bottom: f.cssvar(spacing-sm);
 		}
 	}
 
@@ -80,16 +84,16 @@
 			display: flex;
 			flex-flow: row wrap;
 			align-items: center;
-			gap: cssvar(spacing-2xs);
+			gap: f.cssvar(spacing-2xs);
 		}
 
 		.tag-cloud-link {
-			border: pxtorem(1) solid cssvar(color-primary);
-			border-radius: pxtorem(3);
-			box-shadow: pxtorem(3) pxtorem(3) 0 0 cssvar(color-primary);
+			border: f.pxtorem(1) solid f.cssvar(color-primary);
+			border-radius: f.pxtorem(3);
+			box-shadow: f.pxtorem(3) f.pxtorem(3) 0 0 f.cssvar(color-primary);
 			text-decoration: none;
 			text-decoration-thickness: 0;
-			padding: cssvar(spacing-3xs);
+			padding: f.cssvar(spacing-3xs);
 
 			&::before {
 				content: "#";
@@ -98,21 +102,23 @@
 
 			&:hover,
 			&:focus {
-				box-shadow: pxtorem(5) pxtorem(5) 0 0
-					cssvar(color-primary-light);
-				transform: translateX(#{pxtorem(-2)}) translateY(#{pxtorem(-2)});
+				box-shadow: f.pxtorem(5) f.pxtorem(5) 0 0
+					f.cssvar(color-primary-light);
+				transform: translateX(#{f.pxtorem(-2)})
+					translateY(#{f.pxtorem(-2)});
 			}
 
 			&:focus {
 				text-decoration: underline;
-				text-decoration-color: cssvar(color-primary-light);
-				text-decoration-thickness: pxtorem(4);
+				text-decoration-color: f.cssvar(color-primary-light);
+				text-decoration-thickness: f.pxtorem(4);
 			}
 
 			&:active {
-				box-shadow: 0 0 0 0 cssvar(color-primary-dark);
+				box-shadow: 0 0 0 0 f.cssvar(color-primary-dark);
 				text-decoration: none;
-				transform: translateX(#{pxtorem(3)}) translateY(#{pxtorem(3)});
+				transform: translateX(#{f.pxtorem(3)})
+					translateY(#{f.pxtorem(3)});
 			}
 		}
 	}
@@ -165,11 +171,11 @@
 
 	.lup {
 		&__item {
-			margin-bottom: cssvar(spacing-md);
+			margin-bottom: f.cssvar(spacing-md);
 		}
 
 		&__footer {
-			margin-top: cssvar(spacing-3xs);
+			margin-top: f.cssvar(spacing-3xs);
 		}
 
 		&__term {
@@ -177,30 +183,30 @@
 		}
 	}
 
-	@include media("screen") {
-		@include dimensions("lg") {
+	@include m.media("screen") {
+		@include m.dimensions("lg") {
 			&.toc__wrapper {
-				font-size: cssvar(font-size-sm);
+				font-size: f.cssvar(font-size-sm);
 				font-weight: 600;
 
 				ol {
 					li {
-						margin-bottom: pxtorem(3);
+						margin-bottom: f.pxtorem(3);
 					}
 				}
 			}
 
 			&.msbwidget {
-				font-size: cssvar(font-size-sm);
+				font-size: f.cssvar(font-size-sm);
 			}
 		}
 
-		@include dimensions("xl") {
+		@include m.dimensions("xl") {
 			&.toc__wrapper,
 			&.msbwidget {
 				position: sticky;
 				top: 0;
-				margin-bottom: cssvar(spacing-xl);
+				margin-bottom: f.cssvar(spacing-xl);
 			}
 		}
 	}

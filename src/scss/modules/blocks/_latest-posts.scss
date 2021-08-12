@@ -1,3 +1,5 @@
+@use "../../abstracts/functions" as f;
+
 .wp-block-latest-posts {
 	&#{&}__list {
 		padding-left: 0;
@@ -6,8 +8,8 @@
 			&::before {
 				display: inline-block;
 				content: "\0025B8";
-				color: cssvar(color-secondary);
-				margin-right: cssvar(spacing-3xs);
+				color: f.cssvar(color-secondary);
+				margin-right: f.cssvar(spacing-3xs);
 			}
 		}
 	}
@@ -25,6 +27,6 @@
 	}
 
 	&__post-date {
-		color: cssvar(color-fg-tertiary);
+		color: f.cssvar(color-fg-tertiary);
 	}
 }

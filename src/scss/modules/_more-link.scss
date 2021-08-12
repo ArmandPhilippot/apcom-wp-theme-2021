@@ -1,25 +1,28 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
 .more-link {
-	@include buttonBase;
-	@include buttonStyle2;
+	@include m.buttonBase;
+	@include m.buttonStyle2;
 
 	&__icon {
-		fill: cssvar(color-primary);
-		margin-left: cssvar(spacing-sm);
-		width: pxtorem(20);
+		fill: f.cssvar(color-primary);
+		margin-left: f.cssvar(spacing-sm);
+		width: f.pxtorem(20);
 		transition: all 0.3s ease-in-out 0s;
 	}
 
 	&:hover,
 	&:focus {
 		.more-link__icon {
-			fill: cssvar(color-primary-light);
+			fill: f.cssvar(color-primary-light);
 			transform: scale(1.2);
 		}
 	}
 
 	&:active {
 		.more-link__icon {
-			fill: cssvar(color-primary-dark);
+			fill: f.cssvar(color-primary-dark);
 			transform: scale(1);
 		}
 	}

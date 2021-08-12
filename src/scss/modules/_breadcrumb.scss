@@ -1,18 +1,21 @@
-.breadcrumb {
-	background: cssvar(color-bg);
-	padding: cssvar(spacing-2xl) 0 cssvar(spacing-xl);
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
 
-	@include media("screen") {
-		@include dimensions("sm") {
-			padding: cssvar(spacing-3xl) 0 cssvar(spacing-xl);
+.breadcrumb {
+	background: f.cssvar(color-bg);
+	padding: f.cssvar(spacing-2xl) 0 f.cssvar(spacing-xl);
+
+	@include m.media("screen") {
+		@include m.dimensions("sm") {
+			padding: f.cssvar(spacing-3xl) 0 f.cssvar(spacing-xl);
 		}
 	}
 
 	&__list {
-		@include orderedListReset;
+		@include m.orderedListReset;
 
 		display: inline-block;
-		font-size: cssvar(font-size-sm);
+		font-size: f.cssvar(font-size-sm);
 
 		li {
 			display: initial;
@@ -24,7 +27,7 @@
 			&::before {
 				display: inline-block;
 				content: ">";
-				margin-left: cssvar(spacing-xs);
+				margin-left: f.cssvar(spacing-xs);
 			}
 		}
 	}

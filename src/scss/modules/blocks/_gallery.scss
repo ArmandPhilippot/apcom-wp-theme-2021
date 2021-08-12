@@ -1,16 +1,18 @@
+@use "../../abstracts/functions" as f;
+
 .wp-block-gallery {
 	.blocks-gallery-item {
-		margin: 0 cssvar(spacing-sm) cssvar(spacing-sm) 0;
+		margin: 0 f.cssvar(spacing-sm) f.cssvar(spacing-sm) 0;
 
 		&:last-child {
-			margin: 0 0 cssvar(spacing-sm) 0;
+			margin: 0 0 f.cssvar(spacing-sm) 0;
 		}
 
 		figcaption {
-			background: cssvar(color-bg-secondary);
-			color: cssvar(color-fg-tertiary);
-			font-size: cssvar(spacing-sm);
-			padding: cssvar(spacing-3xs);
+			background: f.cssvar(color-bg-secondary);
+			color: f.cssvar(color-fg-tertiary);
+			font-size: f.cssvar(spacing-sm);
+			padding: f.cssvar(spacing-3xs);
 		}
 	}
 }

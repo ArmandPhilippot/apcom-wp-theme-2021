@@ -1,3 +1,4 @@
+@use "../variables" as v;
 /// Media query: media types
 ///
 /// @param {Arglist} $types - Media types list.
@@ -7,6 +8,7 @@
 	} @else if $type == "screen" or $type == "print" {
 		$type: "only #{$type}";
 	}
+
 	@media #{$type} {
 		@content;
 	}
@@ -21,7 +23,7 @@
 
 	@if $from {
 		@if type-of($from) == "string" {
-			$size: map-get($breakpoints, $from);
+			$size: map-get(v.$breakpoints, $from);
 			$query: "(min-width: #{$size})";
 		} @else {
 			@error "`$from` must be a string.";
@@ -34,7 +36,7 @@
 
 	@if $until {
 		@if type-of($until) == "string" {
-			$size: map-get($breakpoints, $until);
+			$size: map-get(v.$breakpoints, $until);
 			$size: calc(#{$size} - 1px);
 			$query: $query + "(max-width: #{$size})";
 		} @else {

@@ -1,3 +1,5 @@
+@use "../abstracts/functions" as f;
+
 /**
  * Set up a decent box model on the root element
  */
@@ -19,17 +21,17 @@ html {
 }
 
 *::-moz-selection {
-	background: cssvar(color-primary-light-opacity);
+	background: f.cssvar(color-primary-light-opacity);
 }
 
 *::selection {
-	background: cssvar(color-primary-light-opacity);
+	background: f.cssvar(color-primary-light-opacity);
 }
 
 body {
-	background: cssvar(color-bg-secondary);
-	color: cssvar(color-fg);
-	font-family: cssvar(font-family-primary);
-	font-size: cssvar(font-size-md);
-	line-height: cssvar(line-height);
+	background: f.cssvar(color-bg-secondary);
+	color: f.cssvar(color-fg);
+	font-family: f.cssvar(font-family-primary);
+	font-size: f.cssvar(font-size-md);
+	line-height: f.cssvar(line-height);
 }
