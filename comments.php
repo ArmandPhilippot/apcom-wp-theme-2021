@@ -50,11 +50,9 @@ $apcom_comment_form_args = array(
 			}
 			?>
 		</h2>
-		<p class="comments__feed">
-			<a href="<?php echo esc_url( get_permalink() ); ?>feed/" class="feed__link">
-				<?php esc_html_e( 'Subscribe to comments', 'APCom' ); ?>
-			</a>
-		</p>
+		<a href="<?php echo esc_url( get_permalink() ); ?>feed/" class="feed">
+			<?php esc_html_e( 'Subscribe to comments', 'APCom' ); ?>
+		</a>
 	</div>
 	<?php if ( have_comments() ) { ?>
 		<ol class="comments__list">

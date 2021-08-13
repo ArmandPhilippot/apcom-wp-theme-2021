@@ -79,7 +79,7 @@ $apcom_thematic_query = new WP_Query(
 						</figure>
 					<?php } ?>
 					<dl class="article__meta meta">
-						<div class="meta__item meta__item--has-icon meta__publication-date">
+						<div class="meta__item meta__item--has-icon meta__item--publication-date">
 							<dt class="meta__term">
 								<?php esc_html_e( 'Published on', 'APCom' ); ?>
 							</dt>
@@ -89,7 +89,7 @@ $apcom_thematic_query = new WP_Query(
 								</time>
 							</dd>
 						</div>
-						<div class="meta__item meta__item--has-icon meta__reading-time">
+						<div class="meta__item meta__item--has-icon meta__item--reading-time">
 							<dt class="meta__term">
 								<?php esc_html_e( 'Reading time', 'APCom' ); ?>
 							</dt>
@@ -101,7 +101,7 @@ $apcom_thematic_query = new WP_Query(
 						if ( $apcom_posted_in_subject && is_array( $apcom_posted_in_subject[0] ) ) {
 							$apcom_subjects_number = count( $apcom_posted_in_subject[0] );
 							?>
-							<div class="meta__item meta__item--has-icon meta__themes">
+							<div class="meta__item meta__item--has-icon meta__item--themes">
 								<dt class="meta__term">
 									<?php
 									echo esc_html(
@@ -121,11 +121,11 @@ $apcom_thematic_query = new WP_Query(
 									$apcom_meta_theme_class     = '';
 
 									if ( has_post_thumbnail( $apcom_subject_id ) ) {
-										$apcom_meta_theme_class = 'meta__theme--icon';
+										$apcom_meta_theme_class = 'meta__description--has-icon';
 									}
 									?>
-									<dd class="meta__description meta__theme <?php echo esc_attr( $apcom_meta_theme_class ); ?>" itemprop="keywords">
-										<?php echo get_the_post_thumbnail( $apcom_subject_id, 'post-thumbnail', array( 'class' => 'theme__img' ) ); ?>
+									<dd class="meta__description <?php echo esc_attr( $apcom_meta_theme_class ); ?>" itemprop="keywords">
+										<?php echo get_the_post_thumbnail( $apcom_subject_id, 'post-thumbnail', array( 'class' => 'meta__icon' ) ); ?>
 										<a href="<?php echo esc_url( $apcom_article_subject_link ); ?>" rel="tag">
 											<?php echo esc_html( $apcom_article_subject_name ); ?>
 										</a>
@@ -139,7 +139,7 @@ $apcom_thematic_query = new WP_Query(
 						$apcom_comment_count = get_comments_number( $post->ID );
 						?>
 						<?php if ( comments_open( $post->ID ) || $apcom_comment_count > 0 ) { ?>
-							<div class="meta__item meta__item--has-icon meta__comments">
+							<div class="meta__item meta__item--has-icon meta__item--comments">
 								<dt class="meta__term">
 									<?php esc_html_e( 'Comments', 'APCom' ); ?>
 								</dt>

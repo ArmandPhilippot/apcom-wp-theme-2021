@@ -127,41 +127,15 @@
 		}
 	}
 
-	&__meta-feed {
-		@include m.media("screen") {
-			@include m.dimensions("sm") {
-				display: flex;
-				flex-flow: row wrap;
-				justify-content: space-between;
-				align-items: center;
-			}
-		}
-	}
-
 	&__meta {
-		margin-bottom: 0;
-	}
+		.feed {
+			margin-top: f.cssvar(spacing-sm);
 
-	&__feed-link {
-		@include m.buttonBase;
-		@include m.buttonStyle2;
-
-		margin-top: f.cssvar(spacing-md);
-
-		@include m.media("screen") {
-			@include m.dimensions("sm") {
-				margin-top: 0;
+			@include m.media("screen") {
+				@include m.dimensions("xs") {
+					margin-top: 0;
+				}
 			}
-		}
-
-		&::before {
-			content: "";
-			background: url(../img/feed.svg);
-			background-repeat: no-repeat;
-			background-size: 100%;
-			width: f.pxtorem(30);
-			height: f.pxtorem(30);
-			margin-right: f.cssvar(spacing-sm);
 		}
 	}
 
@@ -229,6 +203,7 @@
 
 		.meta {
 			font-size: f.cssvar(font-size-md);
+			margin-bottom: f.cssvar(spacing-lg);
 
 			&__item {
 				border-right: f.pxtorem(1) solid f.cssvar(color-border);
@@ -385,6 +360,17 @@
 		&__aside {
 			&--last {
 				padding-bottom: f.cssvar(spacing-md);
+			}
+		}
+	}
+}
+
+.category {
+	.page__meta {
+		@include m.media("screen") {
+			@include m.dimensions("xs") {
+				justify-content: space-between;
+				align-items: center;
 			}
 		}
 	}

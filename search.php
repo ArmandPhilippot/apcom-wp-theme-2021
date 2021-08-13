@@ -24,7 +24,7 @@ if ( have_posts() ) {
 				?>
 			</h1>
 			<dl class="page__meta meta">
-				<div class="meta__item meta__item--has-icon meta__articles">
+				<div class="meta__item meta__item--has-icon meta__item--articles">
 					<dt class="meta__term"><?php esc_html_e( 'Total', 'APCom' ); ?></dt>
 					<dd class="meta__description">
 						<?php

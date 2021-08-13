@@ -67,7 +67,7 @@ const getWarning = () => {
  */
 const getPublicationDate = () => {
 	const publicationDateWrapper = document.getElementById(
-		'meta__publication-date'
+		'meta__item--publication-date'
 	);
 
 	return publicationDateWrapper
@@ -81,7 +81,7 @@ const getPublicationDate = () => {
  * @return {Date} Date element or null
  */
 const getUpdateDate = () => {
-	const updateDateWrapper = document.getElementById( 'meta__update-date' );
+	const updateDateWrapper = document.getElementById( 'meta__item--update-date' );
 
 	return updateDateWrapper
 		? new Date( updateDateWrapper.dateTime ).getTime()

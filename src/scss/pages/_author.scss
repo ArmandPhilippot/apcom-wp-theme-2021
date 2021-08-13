@@ -54,10 +54,6 @@
 			margin-bottom: f.cssvar(spacing-md);
 		}
 
-		&__meta {
-			margin-bottom: 0;
-		}
-
 		@include m.media("screen") {
 			@include m.dimensions("sm") {
 				grid-template-columns: 1fr #{f.pxtorem(200)};
@@ -97,19 +93,21 @@
 				.meta {
 					&__item {
 						margin-top: f.cssvar(spacing-sm);
-					}
 
-					&__theme {
-						display: block;
+						&--themes {
+							.meta__description {
+								display: block;
 
-						&:not(:first-child) {
-							&::before {
-								display: none;
+								&:not(:first-child) {
+									&::before {
+										display: none;
+									}
+								}
+
+								&:not(:last-child) {
+									margin-bottom: f.pxtorem(2);
+								}
 							}
-						}
-
-						&:not(:last-child) {
-							margin-bottom: f.pxtorem(2);
 						}
 					}
 				}

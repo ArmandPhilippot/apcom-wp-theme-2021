@@ -20,7 +20,7 @@ if ( have_posts() ) {
 			</h1>
 			<?php if ( '' !== get_the_author_meta( 'user_url', $apcom_author_id ) ) { ?>
 				<dl class="page__meta meta">
-					<div class="meta__item meta__item--has-icon meta__website">
+					<div class="meta__item meta__item--has-icon meta__item--website">
 						<dt class="meta__term"><?php esc_html_e( 'Website:', 'APCom' ); ?></dt>
 						<dd class="meta__description">
 							<a href="<?php echo esc_url( get_the_author_meta( 'user_url', $apcom_author_id ) ); ?>" class="website__link" itemprop="url">

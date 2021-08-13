@@ -18,23 +18,23 @@ $apcom_comment_count = get_comments_number();
 		<?php single_post_title(); ?>
 	</h1>
 	<dl class="page__meta meta">
-		<div class="meta__item meta__item--has-icon meta__publication-date">
+		<div class="meta__item meta__item--has-icon meta__item--publication-date">
 			<dt class="meta__term">
 				<?php esc_html_e( 'Published on', 'APCom' ); ?>
 			</dt>
 			<dd class="meta__description">
-				<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished" id="meta__publication-date">
+				<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished" id="meta__item--publication-date">
 					<?php echo esc_html( $apcom_published_on ); ?>
 				</time>
 			</dd>
 		</div>
 		<?php if ( $apcom_published_on !== $apcom_updated_on ) { ?>
-			<div class="meta__item meta__item--has-icon meta__update-date">
+			<div class="meta__item meta__item--has-icon meta__item--update-date">
 				<dt class="meta__term">
 					<?php esc_html_e( 'Updated on', 'APCom' ); ?>
 				</dt>
 				<dd class="meta__description">
-					<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="dateModified" id="meta__update-date">
+					<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="dateModified" id="meta__item--update-date">
 						<?php echo esc_html( $apcom_updated_on ); ?>
 					</time>
 				</dd>
@@ -42,7 +42,7 @@ $apcom_comment_count = get_comments_number();
 			<?php
 		}
 		?>
-		<div class="meta__item meta__item--has-icon meta__reading-time">
+		<div class="meta__item meta__item--has-icon meta__item--reading-time">
 			<dt class="meta__term">
 				<?php esc_html_e( 'Reading time', 'APCom' ); ?>
 			</dt>
@@ -53,7 +53,7 @@ $apcom_comment_count = get_comments_number();
 		<?php
 		if ( comments_open() || $apcom_comment_count > 0 ) {
 			?>
-			<div class="meta__item meta__item--has-icon meta__comments">
+			<div class="meta__item meta__item--has-icon meta__item--comments">
 				<dt class="meta__term">
 					<?php esc_html_e( 'Comments', 'APCom' ); ?>
 				</dt>

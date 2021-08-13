@@ -14,7 +14,7 @@
 			if ( has_category() ) {
 				$apcom_post_categories = get_the_category();
 				?>
-				<div class="meta__item meta__categories">
+				<div class="meta__item meta__item--categories">
 					<dt class="meta__term">
 						<?php
 						printf(
@@ -32,7 +32,7 @@
 					<?php
 					foreach ( $apcom_post_categories as $apcom_post_category ) {
 						?>
-						<dd class="meta__description meta__category" itemprop="keywords">
+						<dd class="meta__description" itemprop="keywords">
 							<a href="<?php echo esc_url( get_category_link( $apcom_post_category->term_id ) ); ?>" rel="tag">
 								<?php echo esc_html( $apcom_post_category->name ); ?>
 							</a>
@@ -46,7 +46,7 @@
 			if ( has_tag() ) {
 				$apcom_post_tags = get_the_tags();
 				?>
-				<div class="meta__item meta__tags">
+				<div class="meta__item meta__item--tags">
 					<dt class="meta__term">
 						<?php
 						printf(
@@ -64,7 +64,7 @@
 					<?php
 					foreach ( $apcom_post_tags as $apcom_post_tag ) {
 						?>
-						<dd class="meta__description meta__tag" itemprop="keywords">
+						<dd class="meta__description" itemprop="keywords">
 							<a href="<?php echo esc_url( get_tag_link( $apcom_post_tag->term_id ) ); ?>" rel="tag">
 								<?php echo esc_html( $apcom_post_tag->name ); ?>
 							</a>

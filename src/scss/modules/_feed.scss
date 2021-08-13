@@ -2,18 +2,17 @@
 @use "../abstracts/mixins" as m;
 
 .feed {
-	&__link {
-		@include m.buttonBase;
-		@include m.buttonStyle2;
+	@include m.buttonBase;
+	@include m.buttonStyle2;
+	font-size: f.cssvar(font-size-md);
 
-		&::before {
-			content: "";
-			background: url(../img/feed.svg);
-			background-repeat: no-repeat;
-			background-size: 100%;
-			width: f.pxtorem(25);
-			height: f.pxtorem(25);
-			margin-right: f.cssvar(spacing-xs);
-		}
+	&::before {
+		content: "";
+		background: url(../img/feed.svg);
+		background-repeat: no-repeat;
+		background-size: 100%;
+		width: f.pxtorem(25);
+		height: f.pxtorem(25);
+		margin-right: f.cssvar(spacing-xs);
 	}
 }

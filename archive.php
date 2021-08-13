@@ -21,7 +21,7 @@ if ( have_posts() ) {
 			if ( $apcom_published_posts_number ) {
 				?>
 				<dl class="page__meta meta">
-					<div class="meta__item meta__item--has-icon meta__articles">
+					<div class="meta__item meta__item--has-icon meta__item--articles">
 						<dt class="meta__term"><?php esc_html_e( 'Total', 'APCom' ); ?></dt>
 						<dd class="meta__description">
 							<?php

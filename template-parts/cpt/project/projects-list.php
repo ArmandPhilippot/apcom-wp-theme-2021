@@ -15,7 +15,7 @@
 			</a>
 		</h2>
 		<dl class="article__meta meta">
-			<div class="meta__item meta__item--has-icon meta__publication-date">
+			<div class="meta__item meta__item--has-icon meta__item--publication-date">
 				<dt class="meta__term">
 					<?php esc_html_e( 'Published on', 'APCom' ); ?>
 				</dt>
@@ -25,7 +25,7 @@
 					</time>
 				</dd>
 			</div>
-			<div class="meta__item meta__item--has-icon meta__reading-time">
+			<div class="meta__item meta__item--has-icon meta__item--reading-time">
 				<dt class="meta__term">
 					<?php esc_html_e( 'Reading time', 'APCom' ); ?>
 				</dt>
@@ -37,7 +37,7 @@
 			$apcom_project_subjects = get_post_meta( get_the_ID(), 'posts_in_subject' );
 			if ( $apcom_project_subjects && is_array( $apcom_project_subjects[0] ) ) {
 				?>
-				<div class="meta__item meta__item--has-icon meta__themes">
+				<div class="meta__item meta__item--has-icon meta__item--themes">
 					<dt class="meta__term">
 						<?php esc_html_e( 'About', 'APCom' ); ?>
 					</dt>
@@ -46,7 +46,7 @@
 						$apcom_project_subject_link = get_permalink( $apcom_project_subject_id );
 						$apcom_project_subject_name = get_the_title( $apcom_project_subject_id );
 						?>
-						<dd class="meta__description meta__theme" itemprop="keywords">
+						<dd class="meta__description" itemprop="keywords">
 							<a href="<?php echo esc_url( $apcom_project_subject_link ); ?>" rel="tag">
 								<?php echo esc_html( $apcom_project_subject_name ); ?>
 							</a>
@@ -60,7 +60,7 @@
 			$apcom_comment_count = get_comments_number();
 			?>
 			<?php if ( comments_open() || $apcom_comment_count > 0 ) { ?>
-				<div class="meta__item meta__item--has-icon meta__comments">
+				<div class="meta__item meta__item--has-icon meta__item--comments">
 					<dt class="meta__term">
 						<?php esc_html_e( 'Comments', 'APCom' ); ?>
 					</dt>
