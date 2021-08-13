@@ -22,7 +22,7 @@ define( 'APCOM_VERSION', '1.0.10' );
 /**
  * Get current environment defined in .env file.
  *
- * @since 2.0.0
+ * @since 1.2.0
  *
  * @return string Current env or empty string.
  */
@@ -196,17 +196,17 @@ function apcom_enqueue_scripts() {
 	}
 
 	if ( file_exists( $footer_scripts_path ) ) {
-		wp_register_script( 'apcom-footer', $footer_scripts_uri, array(), APCOM_VERSION, true );
-		wp_enqueue_script( 'apcom-footer' );
-		wp_localize_script( 'apcom-footer', 'prism_vars', $color_scheme_vars );
-		wp_localize_script( 'apcom-footer', 'color_scheme_vars', $color_scheme_vars );
-		wp_localize_script( 'apcom-footer', 'date_warning', $date_warning );
-		wp_localize_script( 'apcom-footer', 'toc_args', $toc_args );
+		wp_register_script( 'apcom-defer-footer', $footer_scripts_uri, array(), APCOM_VERSION, true );
+		wp_enqueue_script( 'apcom-defer-footer' );
+		wp_localize_script( 'apcom-defer-footer', 'prism_vars', $color_scheme_vars );
+		wp_localize_script( 'apcom-defer-footer', 'color_scheme_vars', $color_scheme_vars );
+		wp_localize_script( 'apcom-defer-footer', 'date_warning', $date_warning );
+		wp_localize_script( 'apcom-defer-footer', 'toc_args', $toc_args );
 	}
 
 	if ( file_exists( $header_scripts_path ) ) {
-		wp_register_script( 'apcom-header', $header_scripts_uri, array(), APCOM_VERSION, false );
-		wp_enqueue_script( 'apcom-header' );
+		wp_register_script( 'apcom-async-header', $header_scripts_uri, array(), APCOM_VERSION, false );
+		wp_enqueue_script( 'apcom-async-header' );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -235,7 +235,7 @@ add_action( 'wp_enqueue_scripts', 'apcom_enqueue_scripts' );
 /**
  * Register and enqueue editor assets.
  *
- * @since 2.0.0
+ * @since 1.2.0
  */
 function apcom_enqueue_editor_assets() {
 	$current_env         = apcom_get_current_env();
