@@ -1,6 +1,8 @@
+@use "../abstracts/functions" as f;
+
 .gallery {
 	display: grid;
-	grid-gap: cssvar(spacing-sm);
+	grid-gap: f.cssvar(spacing-sm);
 
 	@for $i from 2 through 9 {
 		&.gallery-columns-#{$i} {

@@ -1,20 +1,22 @@
+@use "../abstracts/functions" as f;
+
 /* Gutenberg blocks */
-@import "blocks/audio";
-@import "blocks/categories";
-@import "blocks/code";
-@import "blocks/columns";
-@import "blocks/cover";
-@import "blocks/gallery";
-@import "blocks/latest-comments";
-@import "blocks/latest-posts";
-@import "blocks/pullquote";
-@import "blocks/quote";
-@import "blocks/rss";
-@import "blocks/search";
-@import "blocks/social-links";
-@import "blocks/table";
-@import "blocks/tag-cloud";
-@import "blocks/video";
+@use "blocks/audio";
+@use "blocks/categories";
+@use "blocks/code";
+@use "blocks/columns";
+@use "blocks/cover";
+@use "blocks/gallery";
+@use "blocks/latest-comments";
+@use "blocks/latest-posts";
+@use "blocks/pullquote";
+@use "blocks/quote";
+@use "blocks/rss";
+@use "blocks/search";
+@use "blocks/social-links";
+@use "blocks/table";
+@use "blocks/tag-cloud";
+@use "blocks/video";
 
 .wp-block-calendar,
 .wp-block-categories,
@@ -23,7 +25,7 @@
 .wp-block-image,
 .wp-block-gallery,
 .wp-block-pullquote {
-	margin-bottom: cssvar(spacing-md);
+	margin-bottom: f.cssvar(spacing-md);
 
 	&.alignleft,
 	&.alignright {

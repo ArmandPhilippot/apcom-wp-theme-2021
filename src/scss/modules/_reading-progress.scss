@@ -1,9 +1,11 @@
+@use "../abstracts/functions" as f;
+
 .reading-progress {
-	background: cssvar(color-primary-light-opacity);
-	height: pxtorem(8);
+	background: f.cssvar(color-primary-light-opacity);
+	height: f.pxtorem(8);
 	z-index: 5;
 
 	&__bar {
-		background: cssvar(color-primary);
+		background: f.cssvar(color-primary);
 	}
 }
