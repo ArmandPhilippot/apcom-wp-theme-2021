@@ -184,15 +184,15 @@ class TableOfContent {
 	/**
 	 * Initialize the table of content.
 	 *
+	 * Options list :
+	 * - headings: an array of headings to retrieve. Default : `['h2', 'h3', 'h4', 'h5', 'h6']`
+	 * - title: the title to print before the table of contents. Default: `Table of contents`.
+	 * - titleTag: the title tag. Default: `h2`.
+	 * - listType: the list type (`ul` or `ol`). Default: `ol`.
+	 *
 	 * @param {string} source  The container id to look for headings.
 	 * @param {string} target  The container id to display the table of content.
 	 * @param {Object} options Options.
-	 *
-	 *                         Options list :
-	 *                         - headings: an array of headings to retrieve. Default : `['h2', 'h3', 'h4', 'h5', 'h6']`
-	 *                         - title: the title to print before the table of contents. Default: `Table of contents`.
-	 *                         - titleTag: the title tag. Default: `h2`.
-	 *                         - listType: the list type (`ul` or `ol`). Default: `ol`.
 	 */
 	init( source, target, options ) {
 		this.setSource( source );

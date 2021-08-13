@@ -6,3 +6,4 @@ import './footer/color-scheme';
 import './footer/date-warning';
 import './footer/reading-progress';
 import './footer/search';
+import './footer/toc';
