@@ -183,9 +183,13 @@
 		}
 	}
 
+	&.toc {
+		margin-bottom: 0;
+	}
+
 	@include m.media("screen") {
 		@include m.dimensions("lg") {
-			&.toc__wrapper {
+			&.toc {
 				font-size: f.cssvar(font-size-sm);
 				font-weight: 600;
 
@@ -202,7 +206,7 @@
 		}
 
 		@include m.dimensions("xl") {
-			&.toc__wrapper,
+			&.toc,
 			&.msbwidget {
 				position: sticky;
 				top: 0;

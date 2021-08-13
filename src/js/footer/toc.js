@@ -124,7 +124,7 @@ class TableOfContent {
 		let currentLevel;
 		let previousLevel = currentLevel;
 
-		markup += '<nav class="toc" aria-labelledby="toc-title">';
+		markup += '<nav class="widget toc" aria-labelledby="toc-title">';
 		markup += this.createTitleMarkup();
 		markup += this.startListNode();
 
