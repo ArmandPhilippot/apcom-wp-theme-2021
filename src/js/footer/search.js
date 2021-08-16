@@ -14,7 +14,7 @@ function getViewportWidth() {
  * @param {*} target Event target
  */
 function hideSearch( target ) {
-	const toolSearch = document.getElementById( 'tools__search' );
+	const toolSearch = document.getElementById( 'toolbar__search' );
 	const searchCheckbox = document.getElementById( 'search__checkbox' );
 
 	if ( ! toolSearch.contains( target ) && target !== null ) {
@@ -62,7 +62,7 @@ function observeDisplayChange( element ) {
  * Handle visibility and overflow with event listeners.
  */
 function initSearch() {
-	const toolSearch = document.getElementById( 'tools__search' );
+	const toolSearch = document.getElementById( 'toolbar__search' );
 	const searchForm = toolSearch.getElementsByClassName( 'search-form' )[ 0 ];
 
 	window.addEventListener( 'load', () => {
