@@ -4,7 +4,7 @@ const devFolder = path.resolve( __dirname, '../../src/' );
 module.exports = {
 	src: {
 		fonts: path.resolve( devFolder, './fonts/' ),
-		img: path.resolve( devFolder, './img/' ),
+		img: path.resolve( devFolder, './images/' ),
 		styles: {
 			editor: path.resolve( devFolder, './scss/editor.scss' ),
 			style: path.resolve( devFolder, './scss/style.scss' ),

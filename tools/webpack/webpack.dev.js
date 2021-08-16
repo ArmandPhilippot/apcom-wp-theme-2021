@@ -8,6 +8,8 @@ const port = process.env.WP_THEME_PORT;
 const contentFolder = process.env.WP_THEME_CONTENT_FOLDER;
 const themeFolder = process.env.WP_THEME_FOLDER;
 const siteURL = protocol + '://' + host;
+const isHotReload = process.env.WP_THEME_HOT_RELOAD === 'true';
+const isHttps = protocol === 'https';
 const publicPath =
 	siteURL +
 	':' +
@@ -17,8 +19,6 @@ const publicPath =
 	'/themes/' +
 	themeFolder +
 	'/assets/';
-
-const isHttps = protocol === 'https';
 
 module.exports = {
 	mode: 'development',
@@ -68,6 +68,8 @@ module.exports = {
 		publicPath,
 		contentBase: paths.contentBase,
 		watchContentBase: true,
+		hot: isHotReload,
+		liveReload: ! isHotReload,
 		https: ! isHttps
 			? false
 			: {
@@ -95,5 +97,8 @@ module.exports = {
 		},
 		open: process.env.WP_THEME_OPEN,
 		writeToDisk: true,
+	},
+	watchOptions: {
+		poll: true,
 	},
 };

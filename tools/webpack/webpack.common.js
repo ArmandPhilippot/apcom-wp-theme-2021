@@ -37,6 +37,8 @@ module.exports = {
 	output: {
 		path: paths.dist,
 		clean: true,
+		hotUpdateChunkFilename: 'hmr/[id].[fullhash].hot-update.js',
+		hotUpdateMainFilename: 'hmr/[runtime].[fullhash].hot-update.json',
 	},
 	module: {
 		rules: [
@@ -133,12 +135,8 @@ module.exports = {
 		} ),
 		new CopyPlugin( {
 			patterns: [
-				{
-					from: paths.src.fonts,
-					to: 'fonts',
-					noErrorOnMissing: true,
-				},
-				{ from: paths.src.img, to: 'img', noErrorOnMissing: true },
+				{ from: paths.src.fonts, to: 'fonts', noErrorOnMissing: true },
+				{ from: paths.src.img, to: 'images', noErrorOnMissing: true },
 			],
 		} ),
 		new DotenvWebpackPlugin(),
