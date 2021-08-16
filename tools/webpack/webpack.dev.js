@@ -66,8 +66,9 @@ module.exports = {
 		host,
 		port,
 		publicPath,
-		contentBase: paths.contentBase,
-		watchContentBase: true,
+		before( app, server ) {
+			server._watch( paths.files );
+		},
 		hot: isHotReload,
 		liveReload: ! isHotReload,
 		https: ! isHttps

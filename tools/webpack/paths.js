@@ -17,7 +17,7 @@ module.exports = {
 		},
 	},
 	dist: path.resolve( devFolder, '../assets/' ),
-	contentBase: [ path.resolve( devFolder, '../' ) ],
+	files: [ path.resolve( devFolder, '../**/*.php' ) ],
 	sassPaths: [
 		path.resolve( devFolder, '../node_modules/modern-normalize/' ),
 	],
