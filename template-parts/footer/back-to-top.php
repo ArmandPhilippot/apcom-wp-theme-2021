@@ -8,12 +8,10 @@
 
 ?>
 <div id="back-to-top" class="back-to-top">
-	<a href="#header" class="back-to-top__link">
-		<span class="back-to-top__txt screen-reader-text">
+	<a href="#header" class="back-to-top__link btn btn--round">
+		<span class="btn__body screen-reader-text">
 			<?php esc_html_e( 'Back to top', 'APCom' ); ?>
 		</span>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.442 15.531" aria-hidden="true" class="back-to-top__icon">
-			<path d="M0 10.221l20.697-.012v5.322l12.745-7.78L20.612 0v5.322L0 5.416v4.805z" />
-		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.476 64.644" aria-hidden="true" class="btn__icon"><path d="m15.45 64.645-.018-40.008h8.044L11.715 0 0 24.8h8.044l.142 39.845z"/></svg>
 	</a>
 </div>
