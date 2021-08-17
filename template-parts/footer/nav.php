@@ -9,9 +9,9 @@
 if ( has_nav_menu( 'footer-menu' ) ) {
 	wp_nav_menu(
 		array(
-			'menu_class'           => 'footer-nav__list',
+			'menu_class'           => 'nav__list',
 			'container'            => 'nav',
-			'container_class'      => 'footer__nav',
+			'container_class'      => 'footer__nav nav',
 			'container_aria_label' => __( 'Footer', 'APCom' ),
 			'theme_location'       => 'footer-menu',
 			'item_spacing'         => 'discard',
