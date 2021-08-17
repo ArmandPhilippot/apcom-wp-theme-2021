@@ -209,7 +209,7 @@ add_filter( 'nav_menu_link_attributes', 'apcom_nav_menu_link_attributes', 10, 4 
  */
 function apcom_content_more_link() {
 	$link = sprintf(
-		'<a href="%1$s" class="more-link" itemprop="url"><span class="more-link__body">%2$s</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.442 15.531" class="more-link__icon"><path d="M0 10.221l20.697-.012v5.322l12.745-7.78L20.612 0v5.322L0 5.416v4.805z" /></svg></a>',
+		'<a href="%1$s" class="more-link btn btn--secondary" itemprop="url"><span class="more-link__body btn__body">%2$s</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.442 15.531" class="more-link__icon btn__icon" aria-hidden="true"><path d="M0 10.221l20.697-.012v5.322l12.745-7.78L20.612 0v5.322L0 5.416v4.805z" /></svg></a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		sprintf(
 			// translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
@@ -236,7 +236,7 @@ add_filter( 'the_content_more_link', 'apcom_content_more_link' );
  */
 function apcom_excerpt_more_link( $output ) {
 	$link = sprintf(
-		'<a href="%1$s" class="more-link" itemprop="url"><span class="more-link__body">%2$s</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.442 15.531" class="more-link__icon"><path d="M0 10.221l20.697-.012v5.322l12.745-7.78L20.612 0v5.322L0 5.416v4.805z" /></svg></a>',
+		'<a href="%1$s" class="more-link btn btn--secondary" itemprop="url"><span class="more-link__body btn__body">%2$s</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.442 15.531" class="more-link__icon btn__icon" aria-hidden="true"><path d="M0 10.221l20.697-.012v5.322l12.745-7.78L20.612 0v5.322L0 5.416v4.805z" /></svg></a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		sprintf(
 			// translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
@@ -264,7 +264,7 @@ function apcom_navigation_markup_template( $template, $class ) {
 
 	$template = '
 	<nav class="pagination ' . $modifier . '" aria-labelledby="pagination__title">
-		<h2 class="screen-reader-text" id="pagination__title">' . __( 'Pagination', 'APCom' ) . '</h2>
+		<h2 class="pagination__title screen-reader-text" id="pagination__title">' . __( 'Pagination', 'APCom' ) . '</h2>
 		%3$s
 	</nav>';
 
@@ -282,7 +282,7 @@ add_filter( 'navigation_markup_template', 'apcom_navigation_markup_template', 10
  */
 function apcom_comment_form_submit_button( $button ) {
 	$button =
-	'<button class="comment-form__button" type="submit"><span class="button__body">' . __( 'Leave a comment', 'APCom' ) . '</span></button>';
+	'<button class="comment-form__btn btn btn--primary" type="submit"><span class="btn__body">' . __( 'Leave a comment', 'APCom' ) . '</span></button>';
 	return $button;
 }
 add_filter( 'comment_form_submit_button', 'apcom_comment_form_submit_button' );
