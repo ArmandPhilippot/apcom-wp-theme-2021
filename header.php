@@ -24,7 +24,7 @@
 		<?php
 		get_template_part( 'template-parts/header/branding' );
 		get_template_part( 'template-parts/header/main-nav' );
-		get_template_part( 'template-parts/header/tools' );
+		get_template_part( 'template-parts/header/toolbar' );
 		?>
 	</header>
 	<main class="main" id="main">

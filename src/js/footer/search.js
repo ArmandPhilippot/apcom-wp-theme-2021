@@ -63,7 +63,7 @@ function observeDisplayChange( element ) {
  */
 function initSearch() {
 	const toolSearch = document.getElementById( 'toolbar__search' );
-	const searchForm = toolSearch.getElementsByClassName( 'search-form' )[ 0 ];
+	const searchForm = toolSearch.getElementsByClassName( 'form--search' )[ 0 ];
 
 	window.addEventListener( 'load', () => {
 		observeDisplayChange( searchForm );
