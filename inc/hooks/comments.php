@@ -50,6 +50,20 @@ function apcom_edit_comment_link( $link ) {
 add_filter( 'edit_comment_link', 'apcom_edit_comment_link', 10, 1 );
 
 /**
+ * Add classes to cancel comment reply link.
+ *
+ * @since  1.2.0
+ *
+ * @param string $formatted_link The HTML-formatted cancel comment reply link.
+ * @return string The modified markup.
+ */
+function apcom_cancel_comment_reply_link( $formatted_link ) {
+	$classes = 'comment__link comment__link--cancel btn btn--secondary';
+	return preg_replace( '/cancel-comment-reply-link"/', 'cancel-comment-reply-link" class="' . $classes . '"', $formatted_link );
+}
+add_filter( 'cancel_comment_reply_link', 'apcom_cancel_comment_reply_link', 10, 1 );
+
+/**
  * Change comment form fields order and add class to label.
  *
  * @param array $fields Default fields.
@@ -79,3 +93,4 @@ function apcom_comment_form_fields( $fields ) {
 	return $fields;
 }
 add_filter( 'comment_form_fields', 'apcom_comment_form_fields', 10, 1 );
+
