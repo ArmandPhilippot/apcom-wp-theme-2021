@@ -35,10 +35,10 @@ class Custom_Walker_Comment extends Walker_Comment {
 			$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'APCom' );
 		}
 		?>
-		<<?php echo esc_attr( $tag ); ?> <?php comment_class( $this->has_children ? 'comment--parent' : '', $comment ); ?>>
-			<article id="comment-<?php comment_ID(); ?>" class="comment__inner" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+		<<?php echo esc_attr( $tag ); ?> class="comments__item <?php echo $args['has_children'] ? 'comments__item--has-children' : ''; ?>">
+			<article id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'comment--parent' : '', $comment ); ?> itemprop="comment" itemscope itemtype="http://schema.org/Comment">
 				<header class="comment__header">
-					<h3 class="screen-reader-text">
+					<h3 class="comment__title screen-reader-text">
 						<?php
 						printf(
 							// translators: %1$s Comment ID. %2$s Comment author.
@@ -48,7 +48,7 @@ class Custom_Walker_Comment extends Walker_Comment {
 						);
 						?>
 					</h3>
-					<div class="comment__author">
+					<div class="comment__author author">
 						<?php
 						if ( 0 !== $args['avatar_size'] ) {
 							?>
@@ -106,7 +106,7 @@ class Custom_Walker_Comment extends Walker_Comment {
 				</div>
 
 				<footer class="comment__footer">
-					<?php edit_comment_link( __( 'Edit', 'APCom' ), ' <div class="comment__edit">', '</div>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'APCom' ) ); ?>
 
 					<?php if ( '0' === $comment->comment_approved ) : ?>
 						<p class="comment__awaiting-moderation"><?php echo esc_html( $moderation_note ); ?></p>
@@ -121,8 +121,6 @@ class Custom_Walker_Comment extends Walker_Comment {
 									'add_below'  => 'comment',
 									'depth'      => $depth,
 									'max_depth'  => $args['max_depth'],
-									'before'     => '<div class="comment__reply">',
-									'after'      => '</div>',
 									'reply_text' => __( 'Reply', 'APCom' ),
 								)
 							)
