@@ -91,3 +91,25 @@ function apcom_get_reading_time( $content ) {
 
 	return $reading_time_markup;
 }
+
+/**
+ * Check if current page is contact page.
+ *
+ * @since  1.2.0
+ *
+ * @return boolean True if is contact page.
+ */
+function apcom_is_contact_page() {
+	return is_page_template( 'page-contact.php' );
+}
+
+/**
+ * Check if current page is CV page.
+ *
+ * @since  1.2.0
+ *
+ * @return boolean True if is CV page.
+ */
+function apcom_is_cv_page() {
+	return is_page_template( 'page-cv.php' );
+}
