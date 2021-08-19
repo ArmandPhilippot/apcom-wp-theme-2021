@@ -11,4 +11,5 @@
  * Require all helpers in helpers folder.
  */
 require_once 'helpers/checkings.php';
+require_once 'helpers/classes.php';
 require_once 'helpers/reading-time.php';
