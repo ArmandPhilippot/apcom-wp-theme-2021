@@ -113,3 +113,58 @@ function apcom_is_contact_page() {
 function apcom_is_cv_page() {
 	return is_page_template( 'page-cv.php' );
 }
+
+/**
+ * Check if current page is a CPT used by the theme.
+ *
+ * @since  1.2.0
+ *
+ * @return boolean True if is CPT.
+ */
+function apcom_is_cpt() {
+	return is_singular( array( 'article', 'project', 'subject', 'thematic' ) );
+}
+
+/**
+ * Check if current page is an article CPT.
+ *
+ * @since  1.2.0
+ *
+ * @return boolean True if is an article CPT.
+ */
+function apcom_is_article_cpt() {
+	return is_singular( array( 'article' ) );
+}
+
+/**
+ * Check if current page is an project CPT.
+ *
+ * @since  1.2.0
+ *
+ * @return boolean True if is an project CPT.
+ */
+function apcom_is_project_cpt() {
+	return is_singular( array( 'project' ) );
+}
+
+/**
+ * Check if current page is an subject CPT.
+ *
+ * @since  1.2.0
+ *
+ * @return boolean True if is an subject CPT.
+ */
+function apcom_is_subject_cpt() {
+	return is_singular( array( 'subject' ) );
+}
+
+/**
+ * Check if current page is an thematic CPT.
+ *
+ * @since  1.2.0
+ *
+ * @return boolean True if is an thematic CPT.
+ */
+function apcom_is_thematic_cpt() {
+	return is_singular( array( 'thematic' ) );
+}
