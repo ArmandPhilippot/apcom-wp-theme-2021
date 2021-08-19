@@ -44,7 +44,7 @@ if ( have_posts() ) {
 							</dd>
 						</div>
 					</dl>
-					<a href="<?php echo esc_url( get_category_feed_link( $apcom_category_id ) ); ?>" class="feed">
+					<a href="<?php echo esc_url( get_category_feed_link( $apcom_category_id ) ); ?>" class="btn btn--feed">
 						<?php
 						printf(
 							// translators: %s the category name.
