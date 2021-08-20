@@ -28,7 +28,7 @@ function apcom_is_frontpage() {
  */
 function apcom_is_paginated_post() {
 	global $multipage;
-	return 0 !== $multipage;
+	return $multipage && 0 !== $multipage;
 }
 
 /**
