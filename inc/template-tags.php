@@ -73,3 +73,144 @@ if ( ! function_exists( 'apcom_get_pagination' ) ) {
 		}
 	}
 }
+
+if ( ! function_exists( 'apcom_get_breadcrumb' ) ) {
+	/**
+	 * Generate a breadcrumb.
+	 *
+	 * @return array $breadcrumb An array representing the breadcrumb.
+	 */
+	function apcom_get_breadcrumb() {
+		$breadcrumb = array(
+			1 => array(
+				'url' => get_bloginfo( 'url' ),
+				'txt' => __( 'Home', 'APCom' ),
+			),
+		);
+
+		if ( is_home() ) {
+			$breadcrumb += array(
+				2 => array(
+					'txt' => single_post_title( '', false ),
+				),
+			);
+		} elseif ( is_page() ) {
+			$breadcrumb += array(
+				2 => array(
+					'txt' => single_post_title( '', false ),
+				),
+			);
+		} elseif ( is_search() ) {
+			$breadcrumb += array(
+				2 => array(
+					'txt' => sprintf(
+						// translators: %s: search query.
+						esc_html__( 'Search results for: %s', 'APCom' ),
+						get_search_query()
+					),
+				),
+			);
+		} elseif ( is_404() ) {
+			$breadcrumb += array(
+				2 => array(
+					'txt' => __( 'Page not found', 'APCom' ),
+				),
+			);
+		} else {
+			$breadcrumb += array(
+				2 => array(
+					'url' => get_post_type_archive_link( 'post' ),
+					'txt' => get_the_title( get_option( 'page_for_posts' ) ),
+				),
+			);
+			if ( is_archive() ) {
+				if ( is_category() ) {
+					$breadcrumb += array(
+						3 => array(
+							'txt' => single_cat_title( '', false ),
+						),
+					);
+				} elseif ( is_tag() ) {
+					$breadcrumb += array(
+						3 => array(
+							'txt' => single_tag_title( '', false ),
+						),
+					);
+				} elseif ( is_author() ) {
+					$breadcrumb += array(
+						3 => array(
+							'txt' => get_the_author(),
+						),
+					);
+				} elseif ( is_date() ) {
+					$apcom_year         = get_the_date( _x( 'Y', 'yearly archives date format', 'APCom' ) );
+					$apcom_month        = get_the_date( _x( 'F', 'monthly archives date format', 'APCom' ) );
+					$apcom_month_number = get_the_date( _x( 'm', 'monthly archives date format', 'APCom' ) );
+					$apcom_day          = get_the_date( _x( 'd', 'daily archives date format', 'APCom' ) );
+					if ( is_day() ) {
+						$breadcrumb += array(
+							3 => array(
+								'url' => get_year_link( $apcom_year ),
+								'txt' => $apcom_year,
+							),
+						);
+						$breadcrumb += array(
+							4 => array(
+								'url' => get_month_link( $apcom_year, $apcom_month_number ),
+								'txt' => $apcom_month,
+							),
+						);
+						$breadcrumb += array(
+							5 => array(
+								'txt' => $apcom_day,
+							),
+						);
+					} elseif ( is_month() ) {
+						$breadcrumb += array(
+							3 => array(
+								'url' => get_year_link( $apcom_year ),
+								'txt' => $apcom_year,
+							),
+						);
+						$breadcrumb += array(
+							4 => array(
+								'txt' => $apcom_month,
+							),
+						);
+					} elseif ( is_year() ) {
+						$breadcrumb += array(
+							3 => array(
+								'txt' => $apcom_year,
+							),
+						);
+					}
+				} else {
+					$breadcrumb += array(
+						3 => array(
+							'txt' => get_the_archive_title(),
+						),
+					);
+				}
+			} elseif ( is_singular( 'project' ) ) {
+				$apcom_post_type_object = get_post_type_object( 'project' );
+				$breadcrumb            += array(
+					3 => array(
+						'url' => get_post_type_archive_link( 'project' ),
+						'txt' => $apcom_post_type_object->labels->singular_name,
+					),
+					4 => array(
+						'txt' => single_post_title( '', false ),
+					),
+				);
+			} elseif ( is_single() ) {
+				$breadcrumb += array(
+					3 => array(
+						'txt' => single_post_title( '', false ),
+					),
+				);
+			}
+		}
+
+		return $breadcrumb;
+	}
+}
