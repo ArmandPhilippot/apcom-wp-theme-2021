@@ -461,6 +461,22 @@ if ( ! function_exists( 'apcom_get_page_classes' ) ) {
 			$classes .= ' page--has-no-results';
 		}
 
+		if ( ( apcom_is_single_page() && ! apcom_is_cv_page() && ! apcom_is_contact_page() ) && is_active_sidebar( 'sidebar__pages-widgets' ) ) {
+			$classes .= ' page--has-sidebar';
+		}
+
+		if ( apcom_is_contact_page() && is_active_sidebar( 'sidebar__contact-widgets' ) ) {
+			$classes .= ' page--has-sidebar';
+		}
+
+		if ( apcom_is_cv_page() && is_active_sidebar( 'sidebar__cv-widgets' ) ) {
+			$classes .= ' page--has-sidebar';
+		}
+
+		if ( apcom_is_listing_page() && ( is_active_sidebar( 'sidebar__blog1' ) ) || is_active_sidebar( 'sidebar__blog2' ) ) {
+			$classes .= ' page--has-sidebar';
+		}
+
 		return $classes;
 	}
 }

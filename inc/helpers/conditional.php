@@ -122,3 +122,26 @@ function apcom_is_subject_cpt() {
 function apcom_is_thematic_cpt() {
 	return is_singular( array( 'thematic' ) );
 }
+
+
+/**
+ * Check if current page is a post, a page or an article CPT.
+ *
+ * @since  1.2.0
+ *
+ * @return boolean True if is a single page.
+ */
+function apcom_is_single_page() {
+	return apcom_is_article_cpt() || is_single() || is_page();
+}
+
+/**
+ * Check if current page contains a list of posts like archive or blog index.
+ *
+ * @since  1.2.0
+ *
+ * @return boolean True if is a listing page.
+ */
+function apcom_is_listing_page() {
+	return ( is_home() && ! is_front_page() ) || is_archive() || is_search();
+}
