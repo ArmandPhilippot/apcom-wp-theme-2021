@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="28.21533"
-   height="24.303474"
+   width="100"
+   height="100"
    id="svg2"
    inkscape:label="Pozadí"
    sodipodi:version="0.32"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
    version="1.0"
    sodipodi:docname="icon-quote-end.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   sodipodi:modified="true">
+   sodipodi:modified="true"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs3">
     <rect
@@ -34,10 +34,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="-78.658466"
-     inkscape:cy="19.660683"
+     inkscape:cx="35.714286"
+     inkscape:cy="19.642857"
      inkscape:document-units="px"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="svg2"
      width="112px"
      height="76px"
      inkscape:window-width="1920"
@@ -50,7 +50,8 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="0" />
   <metadata
      id="metadata6">
     <rdf:RDF>
@@ -80,20 +81,7 @@
       </cc:License>
     </rdf:RDF>
   </metadata>
-  <g
-     inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="Calque 1"
-     transform="translate(-41.892335,-25.848263)">
-    <g
-       aria-label="“"
-       id="text862"
-       style="font-style:normal;font-weight:normal;font-size:64px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect864);fill:#194476;fill-opacity:1;stroke:none"
-       transform="rotate(180,56,38)">
-      <path
-         d="m 68.110125,25.848263 c -7.40757,5.077096 -10.90327,10.154191 -10.90327,16.063598 0,4.993864 2.74662,8.239876 6.82495,8.239876 3.16278,0 5.41002,-2.164008 5.41002,-5.077095 0,-2.913088 -2.24724,-4.910634 -5.49325,-4.910634 l -1.49816,0.08323 c -0.16647,0.08323 -0.2497,0.08323 -0.33293,0.08323 -0.33292,0 -0.49939,-0.249693 -0.49939,-0.749079 0,-3.578937 2.6634,-7.157873 8.48957,-11.402658 z m -15.31452,0 c -7.40756,5.077096 -10.90327,10.154191 -10.90327,16.063598 0,4.993864 2.74663,8.239876 6.82495,8.239876 3.16278,0 5.41002,-2.164008 5.41002,-5.077095 0,-2.913088 -2.24724,-4.910634 -5.49325,-4.910634 l -1.49816,0.08323 c -0.16646,0.08323 -0.2497,0.08323 -0.33293,0.08323 -0.33292,0 -0.49938,-0.249693 -0.49938,-0.749079 0,-3.578937 3.41247,-8.239877 8.48957,-11.402658 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:64px;font-family:C059;-inkscape-font-specification:C059;fill:#194476;fill-opacity:1;stroke-width:1.30049"
-         id="path868" />
-    </g>
-  </g>
+  <path
+     d="M 7.0796215,6.9321465 C 33.333331,24.926251 45.722695,42.920352 45.722695,63.864311 c 0,17.699112 -9.734493,29.203542 -24.188804,29.203542 -11.20944,0 -19.1740385,-7.669619 -19.1740385,-17.994101 0,-10.324487 7.9645985,-17.404135 19.4690195,-17.404135 l 5.30974,0.294983 c 0.59,0.294981 0.88498,0.294981 1.17996,0.294981 1.17993,0 1.76993,-0.884955 1.76993,-2.654865 0,-12.68437 -9.43955,-25.368737 -30.0884995,-40.412988 z m 54.2773045,0 c 26.25367,17.9941045 38.643071,35.9882055 38.643071,56.9321645 0,17.699112 -9.734531,29.203542 -24.188802,29.203542 -11.209438,0 -19.174043,-7.669619 -19.174043,-17.994101 0,-10.324487 7.964607,-17.404135 19.469025,-17.404135 l 5.309737,0.294983 c 0.589963,0.294981 0.88498,0.294981 1.179963,0.294981 1.179926,0 1.769888,-0.884955 1.769888,-2.654865 0,-12.68437 -12.094382,-29.203546 -30.088501,-40.412988 z"
+     id="path868" />
 </svg>
