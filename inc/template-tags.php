@@ -245,3 +245,61 @@ if ( ! function_exists( 'apcom_get_svg_icon' ) ) {
 		return $svg;
 	}
 }
+
+if ( ! function_exists( 'apcom_get_posts_count' ) ) {
+	/**
+	 * Get the total of posts for the current page.
+	 *
+	 * The blog index will show the total of published posts meanwhile an
+	 * archive page will show the total of published posts for this archive
+	 * page.
+	 *
+	 * @return int $total_posts The total of posts.
+	 */
+	function apcom_get_posts_count() {
+		$total_posts = 0;
+
+		if ( is_archive() ) {
+			$total_posts = $GLOBALS['wp_query']->found_posts;
+		}
+
+		if ( apcom_is_cpt() && ! apcom_is_article_cpt() ) {
+			$meta_id = get_queried_object_id();
+
+			if ( apcom_is_thematic_cpt() ) {
+				$meta_key = 'posts_in_thematic';
+			}
+
+			if ( apcom_is_subject_cpt() ) {
+				$meta_key = 'posts_in_subject';
+			}
+
+			if ( $meta_key ) {
+				$query       = new WP_Query(
+					array(
+						'post_type'         => array( 'post', 'article' ),
+						'post_status'       => 'publish',
+						'posts_per_page'    => -1,
+						'meta_query'        => array( // phpcs:ignore WordPress.DB.SlowDBQuery
+							array(
+								'key'     => $meta_key,
+								'value'   => $meta_id,
+								'compare' => 'LIKE',
+							),
+						),
+					)
+				);
+				$total_posts = $query->found_posts;
+				wp_reset_postdata();
+			}
+		}
+
+		if ( is_home() && ! is_front_page() ) {
+			$posts_count   = wp_count_posts( 'post', 'readable' )->publish;
+			$article_count = post_type_exists( 'article', 'readable' ) ? wp_count_posts( 'article' )->publish : 0;
+			$total_posts   = intval( $posts_count ) + intval( $article_count );
+		}
+
+		return $total_posts;
+	}
+}
