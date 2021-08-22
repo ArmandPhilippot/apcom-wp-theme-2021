@@ -91,33 +91,33 @@ function apcom_is_article_cpt() {
 }
 
 /**
- * Check if current page is an project CPT.
+ * Check if current page is a project CPT.
  *
  * @since  1.2.0
  *
- * @return boolean True if is an project CPT.
+ * @return boolean True if is a project CPT.
  */
 function apcom_is_project_cpt() {
 	return is_singular( array( 'project' ) );
 }
 
 /**
- * Check if current page is an subject CPT.
+ * Check if current page is a subject CPT.
  *
  * @since  1.2.0
  *
- * @return boolean True if is an subject CPT.
+ * @return boolean True if is a subject CPT.
  */
 function apcom_is_subject_cpt() {
 	return is_singular( array( 'subject' ) );
 }
 
 /**
- * Check if current page is an thematic CPT.
+ * Check if current page is a thematic CPT.
  *
  * @since  1.2.0
  *
- * @return boolean True if is an thematic CPT.
+ * @return boolean True if is a thematic CPT.
  */
 function apcom_is_thematic_cpt() {
 	return is_singular( array( 'thematic' ) );

@@ -3,7 +3,7 @@
  * Overwrite default WordPress walker comment.
  *
  * @package ArmandPhilippot-com
- * @since 0.0.1
+ * @since   0.0.1
  */
 
 namespace APCom\Includes;
@@ -17,7 +17,7 @@ class Custom_Walker_Comment extends Walker_Comment {
 	/**
 	 * Outputs a comment in the HTML5 format.
 	 *
-	 * @see wp_list_comments()
+	 * @see   https://developer.wordpress.org/reference/functions/wp_list_comments/
 	 *
 	 * @param WP_Comment $comment Comment to display.
 	 * @param int        $depth   Depth of the current comment.

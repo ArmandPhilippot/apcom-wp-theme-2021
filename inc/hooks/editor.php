@@ -3,17 +3,18 @@
  * Hooks related to editor.
  *
  * @package ArmandPhilippot-com
- * @since 1.2.0
+ * @since   1.2.0 Splitted from hooks.php
  */
 
 /**
  * Simulate non-empty content to enable Gutenberg editor on Blog page.
  *
  * @since  0.0.1
- * @see https://wordpress.stackexchange.com/a/350563
  *
- * @param bool    $replace Whether to replace the editor.
- * @param WP_Post $post    Post object.
+ * @see    https://wordpress.stackexchange.com/a/350563
+ *
+ * @param  bool    $replace Whether to replace the editor.
+ * @param  WP_Post $post    Post object.
  * @return bool
  */
 function apcom_enable_gutenberg_editor_for_blog_page( $replace, $post ) {

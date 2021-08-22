@@ -3,7 +3,7 @@
  * Hooks related to posts.
  *
  * @package ArmandPhilippot-com
- * @since 1.2.0
+ * @since   1.2.0 Splitted from hooks.php
  */
 
 /**

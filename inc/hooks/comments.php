@@ -3,7 +3,7 @@
  * Hooks related to comments.
  *
  * @package ArmandPhilippot-com
- * @since 1.2.0
+ * @since   1.2.0 Splitted from hooks.php
  */
 
 /**
@@ -26,7 +26,7 @@ add_filter( 'comment_form_submit_button', 'apcom_comment_form_submit_button' );
  *
  * @since  1.2.0
  *
- * @param string $link The HTML markup for the comment reply link.
+ * @param  string $link The HTML markup for the comment reply link.
  * @return string The modified link.
  */
 function apcom_comment_reply_link( $link ) {
@@ -40,7 +40,7 @@ add_filter( 'comment_reply_link', 'apcom_comment_reply_link', 10, 1 );
  *
  * @since  1.2.0
  *
- * @param string $link The HTML markup for the edit comment link.
+ * @param  string $link The HTML markup for the edit comment link.
  * @return string The modified link.
  */
 function apcom_edit_comment_link( $link ) {
@@ -54,7 +54,7 @@ add_filter( 'edit_comment_link', 'apcom_edit_comment_link', 10, 1 );
  *
  * @since  1.2.0
  *
- * @param string $formatted_link The HTML-formatted cancel comment reply link.
+ * @param  string $formatted_link The HTML-formatted cancel comment reply link.
  * @return string The modified markup.
  */
 function apcom_cancel_comment_reply_link( $formatted_link ) {
@@ -66,7 +66,7 @@ add_filter( 'cancel_comment_reply_link', 'apcom_cancel_comment_reply_link', 10, 
 /**
  * Change comment form fields order and add class to label.
  *
- * @param array $fields Default fields.
+ * @param  array $fields Default fields.
  * @return string $fields Custom fields order with label classes.
  *
  * @since 1.2.0

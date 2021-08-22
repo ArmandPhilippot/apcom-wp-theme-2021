@@ -1,9 +1,9 @@
 <?php
 /**
- * Overwrite default ACF functions.
+ * Hooks related to ACF plugin.
  *
  * @package ArmandPhilippot-com
- * @since 0.0.2
+ * @since   0.0.2
  */
 
 /**
@@ -11,9 +11,9 @@
  *
  * @since  0.0.2
  *
- * @param array $args The query args. See WP_Query for available args.
- * @param array $field The field array containing all settings.
- * @param int   $post_id The current post ID being edited.
+ * @param  array $args The query args. See WP_Query for available args.
+ * @param  array $field The field array containing all settings.
+ * @param  int   $post_id The current post ID being edited.
  * @return array The custom query args.
  */
 function apcom_relationship_query_by_date( $args, $field, $post_id ) {

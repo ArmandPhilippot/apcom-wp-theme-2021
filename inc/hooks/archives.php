@@ -3,7 +3,7 @@
  * Hooks related to archive pages.
  *
  * @package ArmandPhilippot-com
- * @since 1.2.0
+ * @since   1.2.0 Splitted from hooks.php
  */
 
 /**
@@ -11,7 +11,7 @@
  *
  * @since  0.0.2
  *
- * @param string $title Archive title.
+ * @param  string $title Archive title.
  * @return string Archive title without labels.
  */
 function apcom_archive_title( $title ) {

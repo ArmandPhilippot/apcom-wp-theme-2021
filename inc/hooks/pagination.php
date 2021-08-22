@@ -3,7 +3,7 @@
  * Hooks related to pagination.
  *
  * @package ArmandPhilippot-com
- * @since 1.2.0
+ * @since   1.2.0 Splitted from hooks.php
  */
 
 /**
@@ -31,7 +31,9 @@ add_filter( 'navigation_markup_template', 'apcom_navigation_markup_template', 10
 /**
  * Add classes to paginated links output.
  *
- * @param string $r HTML output.
+ * @since 1.2.0
+ *
+ * @param  string $r HTML output.
  * @return string $link The link with custom classes.
  */
 function apcom_paginate_links_output( $r ) {

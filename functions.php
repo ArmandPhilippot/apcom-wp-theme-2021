@@ -352,8 +352,7 @@ add_action( 'admin_head', 'apcom_favicon_links' );
  * REQUIRED FILES
  * Additional features and helpers functions.
  */
-require get_parent_theme_file_path( 'inc/helpers.php' );
-require get_parent_theme_file_path( 'inc/hooks.php' );
-require get_parent_theme_file_path( 'inc/class-custom-walker-comment.php' );
-require get_parent_theme_file_path( 'inc/acf-hooks.php' );
-require get_parent_theme_file_path( 'inc/contact-form.php' );
+require_once get_parent_theme_file_path( 'inc/helpers.php' );
+require_once get_parent_theme_file_path( 'inc/hooks.php' );
+require_once get_parent_theme_file_path( 'inc/class-custom-walker-comment.php' );
+require_once get_parent_theme_file_path( 'inc/contact-form.php' );

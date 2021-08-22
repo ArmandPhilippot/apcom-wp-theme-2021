@@ -3,7 +3,7 @@
  * Hooks related to Custom Post Types.
  *
  * @package ArmandPhilippot-com
- * @since 1.2.0
+ * @since   1.2.0 Splitted from hooks.php
  */
 
 /**
@@ -11,7 +11,7 @@
  *
  * @since  0.0.2
  *
- * @param WP_Query $query The WP_Query instance (passed by reference).
+ * @param  WP_Query $query The WP_Query instance (passed by reference).
  * @return WP_Query The custom query.
  */
 function apcom_add_cpt_to_query( $query ) {
@@ -28,7 +28,7 @@ add_action( 'pre_get_posts', 'apcom_add_cpt_to_query' );
  *
  * @since  0.0.2
  *
- * @param array $query_vars The array of requested query variables.
+ * @param  array $query_vars The array of requested query variables.
  * @return array The modified array of requested query variables.
  */
 function apcom_feed_request( $query_vars ) {
@@ -44,7 +44,7 @@ add_filter( 'request', 'apcom_feed_request' );
  *
  * @since  0.0.2
  *
- * @param array $args An array of arguments used to retrieve the recent posts.
+ * @param  array $args An array of arguments used to retrieve the recent posts.
  * @return array The custom arguments
  */
 function apcom_widget_posts_args_add_cpt( $args ) {
@@ -58,7 +58,7 @@ add_filter( 'widget_posts_args', 'apcom_widget_posts_args_add_cpt' );
  *
  * @since  0.0.2
  *
- * @param string $sql_where Portion of SQL query containing the WHERE clause.
+ * @param  string $sql_where Portion of SQL query containing the WHERE clause.
  * @return string The custom where clause.
  */
 function apcom_getarchives_where( $sql_where ) {

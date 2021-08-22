@@ -6,9 +6,61 @@
  * @since   1.2.0
  */
 
+if ( ! function_exists( 'apcom_get_reading_time' ) ) {
+	/**
+	 * Get a reading time estimation.
+	 *
+	 * @since  0.0.1
+	 *
+	 * @param  string $content The content to estimate.
+	 * @return int $reading_time An estimate time in minutes.
+	 */
+	function apcom_get_reading_time( $content ) {
+		$cleaned_content           = wp_strip_all_tags( strip_shortcodes( $content ) );
+		$words_number              = str_word_count( $cleaned_content );
+		$words_per_minute          = 245;
+		$words_per_second          = $words_per_minute / 60;
+		$estimated_time_in_seconds = $words_number / $words_per_second;
+		$estimated_time_in_minutes = floor( $estimated_time_in_seconds / 60 );
+		$remaining_seconds         = round( $estimated_time_in_seconds - $estimated_time_in_minutes * 60 );
+
+		if ( $estimated_time_in_minutes <= 0 ) {
+			$reading_time = $remaining_seconds . ' ' . __( 'seconds', 'APCom' );
+		} else {
+			if ( $remaining_seconds > 30 ) {
+				$estimated_time_in_minutes = $estimated_time_in_minutes + round( $remaining_seconds / 60 );
+			}
+			// translators: %s : reading time in minutes.
+			$reading_time = _nx(
+				'%s minute',
+				'%s minutes',
+				$estimated_time_in_minutes,
+				'reading time',
+				'APCom'
+			);
+			$reading_time = $estimated_time_in_minutes . ' ' . __( 'minutes', 'APCom' );
+		}
+
+		$reading_time_markup = sprintf(
+			'<span title="%s">%2s</span>',
+			sprintf(
+				// translators: %s : number of words.
+				__( 'Approximately %1$s words read at %2$s words per minute.', 'APCom' ),
+				$words_number,
+				$words_per_minute
+			),
+			$reading_time
+		);
+
+		return $reading_time_markup;
+	}
+}
+
 if ( ! function_exists( 'apcom_get_page_title' ) ) {
 	/**
 	 * Get the current page title.
+	 *
+	 * @since  1.2.0
 	 *
 	 * @return string $title The current page title.
 	 */
@@ -54,7 +106,7 @@ if ( ! function_exists( 'apcom_get_pagination' ) ) {
 	/**
 	 * Print the pagination if available.
 	 *
-	 * @since 1.2.0
+	 * @since  1.2.0
 	 *
 	 * @return void
 	 */
@@ -77,6 +129,8 @@ if ( ! function_exists( 'apcom_get_pagination' ) ) {
 if ( ! function_exists( 'apcom_get_breadcrumb' ) ) {
 	/**
 	 * Generate a breadcrumb.
+	 *
+	 * @since  1.2.0
 	 *
 	 * @return array $breadcrumb An array representing the breadcrumb.
 	 */
@@ -219,6 +273,8 @@ if ( ! function_exists( 'apcom_get_svg_icon' ) ) {
 	/**
 	 * Get the SVG markup for a given icon name.
 	 *
+	 * @since  1.2.0
+	 *
 	 * @param string $icon_name The icon name.
 	 * @param string $svg_classes Optional. A list of classes.
 	 * @return string The SVG markup.
@@ -253,6 +309,8 @@ if ( ! function_exists( 'apcom_get_posts_count' ) ) {
 	 * The blog index will show the total of published posts meanwhile an
 	 * archive page will show the total of published posts for this archive
 	 * page.
+	 *
+	 * @since  1.2.0
 	 *
 	 * @return int $total_posts The total of posts.
 	 */
@@ -301,5 +359,108 @@ if ( ! function_exists( 'apcom_get_posts_count' ) ) {
 		}
 
 		return $total_posts;
+	}
+}
+
+if ( ! function_exists( 'apcom_get_page_classes' ) ) {
+	/**
+	 * Define classes for current page.
+	 *
+	 * @since  1.2.0
+	 *
+	 * @param  int $post_id The post ID.
+	 * @return string $classes The page classes.
+	 */
+	function apcom_get_page_classes( $post_id ) {
+		$post = get_post( $post_id );
+
+		$classes = 'page';
+
+		if ( apcom_is_frontpage() ) {
+			$classes .= ' page--is-home';
+		}
+
+		if ( is_category() ) {
+			$classes .= ' page--is-category';
+		}
+
+		if ( is_tag() ) {
+			$classes .= ' page--is-tag';
+		}
+
+		if ( is_page() && $post->post_parent > 0 ) {
+			$classes .= ' page--is-child';
+		}
+
+		if ( is_attachment() ) {
+			$classes .= ' page--is-attachment';
+		}
+
+		if ( is_author() ) {
+			$classes .= ' page--is-author';
+		}
+
+		if ( is_date() ) {
+			$classes .= ' page--is-date';
+		}
+
+		if ( is_search() ) {
+			$classes .= ' page--is-search';
+		}
+
+		if ( is_404() ) {
+			$classes .= ' page--is-404';
+		}
+
+		if ( ! is_page() && ! is_single() ) {
+			$classes .= ' page--is-listing';
+		}
+
+		if ( apcom_is_contact_page() ) {
+			$classes .= ' page--is-contact';
+		}
+
+		if ( apcom_is_cv_page() ) {
+			$classes .= ' page--is-cv';
+		}
+
+		if ( apcom_is_article_cpt() ) {
+			$classes .= ' page--is-article';
+		}
+
+		if ( apcom_is_project_cpt() ) {
+			$classes .= ' page--is-project';
+		}
+
+		if ( apcom_is_subject_cpt() ) {
+			$classes .= ' page--is-subject';
+		}
+
+		if ( apcom_is_thematic_cpt() ) {
+			$classes .= ' page--is-thematic';
+		}
+
+		if ( apcom_is_paginated_post() ) {
+			$classes .= ' page--is-paginated';
+		}
+
+		if ( has_post_thumbnail( $post_id ) && ! is_attachment( $post ) ) {
+			$classes .= ' page--has-thumbnail';
+		}
+
+		if ( has_block( 'code' ) ) {
+			$classes .= ' page--has-code';
+		}
+
+		$comment_count = get_comments_number( $post_id );
+		if ( ( is_page() || is_single() ) && ( true === comments_open() || $comment_count > 0 ) ) {
+			$classes .= ' page--has-comments';
+		}
+
+		if ( is_404() || apcom_is_search_has_results() === false ) {
+			$classes .= ' page--has-no-results';
+		}
+
+		return $classes;
 	}
 }
