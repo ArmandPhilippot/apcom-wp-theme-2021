@@ -37,8 +37,11 @@ if ( ! apcom_is_frontpage() ) {
 			<?php
 			get_template_part( 'template-parts/page/partials/header', 'feed' );
 		}
-		if ( ! is_author() ) {
+		if ( apcom_is_listing_page() && ! is_author() ) {
 			get_template_part( 'template-parts/page/partials/intro', 'listing' );
+		}
+		if ( apcom_is_single_page() ) {
+			get_template_part( 'template-parts/page/partials/intro', 'article' );
 		}
 		?>
 	</header>
