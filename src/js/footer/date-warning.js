@@ -35,12 +35,9 @@ const insertBeforeContent = ( node ) => {
  * @return {boolean} True if it is an article.
  */
 const isArticle = () => {
-	const body = document.getElementById( 'body' );
-	return (
-		body.classList.contains( 'single-page' ) &&
-		! body.classList.contains( 'cpt' ) &&
-		! body.classList.contains( 'no-comments' )
-	);
+	const page = document.querySelector( '.page' );
+
+	return ! page.classList.contains( 'page--is-listing' );
 };
 
 /**
@@ -109,7 +106,7 @@ const displayWarningIfNeeded = () => {
 		}
 
 		const div = document.createElement( 'div' );
-		div.classList.add( 'content-warning' );
+		div.classList.add( 'modal', 'modal--warning' );
 		div.innerHTML = getWarning();
 
 		insertBeforeContent( div );

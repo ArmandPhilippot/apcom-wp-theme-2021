@@ -174,7 +174,7 @@ function apcom_enqueue_scripts() {
 		'beAware'        => sprintf(
 			// translators: %1$s Open HTML element. %2$s Closing HTML element.
 			__( '%1$sWarning:%2$s', 'APCom' ),
-			'<span class="content-warning__label">',
+			'<span class="modal__label">',
 			'</span>'
 		),
 		'oldContent'     => __( 'This content has not been updated for over a year.', 'APCom' ),
