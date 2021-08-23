@@ -111,9 +111,6 @@ if ( ! function_exists( 'apcom_setup' ) ) {
 		// Let WordPress manage the document title.
 		add_theme_support( 'title-tag' );
 
-		// Add support for Block Styles.
-		add_theme_support( 'wp-block-styles' );
-
 		// Register custom menu.
 		register_nav_menus(
 			array(
