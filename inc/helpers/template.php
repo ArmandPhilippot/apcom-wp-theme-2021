@@ -412,7 +412,7 @@ if ( ! function_exists( 'apcom_get_page_classes' ) ) {
 			$classes .= ' page--is-404';
 		}
 
-		if ( ! is_page() && ! is_single() ) {
+		if ( apcom_is_listing_page() ) {
 			$classes .= ' page--is-listing';
 		}
 
@@ -473,7 +473,7 @@ if ( ! function_exists( 'apcom_get_page_classes' ) ) {
 			$classes .= ' page--has-sidebar';
 		}
 
-		if ( apcom_is_listing_page() && ( is_active_sidebar( 'sidebar__blog1' ) ) || is_active_sidebar( 'sidebar__blog2' ) ) {
+		if ( apcom_is_listing_page() && ( is_active_sidebar( 'sidebar__blog1' ) || is_active_sidebar( 'sidebar__blog2' ) ) ) {
 			$classes .= ' page--has-sidebar';
 		}
 
