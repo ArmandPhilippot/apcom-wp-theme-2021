@@ -137,6 +137,7 @@ module.exports = {
 			patterns: [
 				{ from: paths.src.fonts, to: 'fonts', noErrorOnMissing: true },
 				{ from: paths.src.img, to: 'images', noErrorOnMissing: true },
+				{ from: paths.src.scripts.prismComponents, to: 'js/components', noErrorOnMissing: true },
 			],
 		} ),
 		new DotenvWebpackPlugin(),

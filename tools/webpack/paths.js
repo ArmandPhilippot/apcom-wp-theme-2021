@@ -14,6 +14,7 @@ module.exports = {
 			editor: path.resolve( devFolder, './js/editor.js' ),
 			footer: path.resolve( devFolder, './js/footer.js' ),
 			header: path.resolve( devFolder, './js/header.js' ),
+			prismComponents: path.resolve( devFolder, './js/prism-components/' ),
 		},
 	},
 	dist: path.resolve( devFolder, '../assets/' ),
