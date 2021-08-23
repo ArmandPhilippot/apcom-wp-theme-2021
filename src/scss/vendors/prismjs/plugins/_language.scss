@@ -1,0 +1,134 @@
+@use "../../../abstracts/functions" as fun;
+
+pre[class*="language-"] {
+	.prism--token {
+		&.prism--cdata,
+		&.prism--comment,
+		&.prism--prolog {
+			color: fun.get-var(color-token-grey);
+		}
+
+		&.prism--punctuation {
+			color: fun.get-var(color-fg);
+		}
+
+		&.prism--attr-name,
+		&.prism--hexcode,
+		&.prism--inserted,
+		&.prism--string {
+			color: fun.get-var(color-token-green);
+		}
+
+		&.prism--class,
+		&.prism--coord,
+		&.prism--id,
+		&.prism--function {
+			color: fun.get-var(color-token-purple);
+		}
+
+		&.prism--builtin,
+		&.prism--builtin.class-name,
+		&.prism--property-access,
+		&.prism--regex,
+		&.prism--scope {
+			color: fun.get-var(color-token-magenta);
+		}
+
+		&.prism--class-name,
+		&.prism--constant,
+		&.prism--global,
+		&.prism--interpolation,
+		&.prism--key,
+		&.prism--package,
+		&.prism--property,
+		&.prism--this,
+		&.prism--title,
+		&.prism--variable {
+			color: fun.get-var(color-token-blue);
+		}
+
+		&.prism--combinator,
+		&.prism--keyword,
+		&.prism--operator,
+		&.prism--pseudo-class,
+		&.prism--pseudo-element,
+		&.prism--rule,
+		&.prism--selector,
+		&.prism--unit {
+			color: fun.get-var(color-token-orange);
+		}
+
+		&.prism--attr-value,
+		&.prism--boolean,
+		&.prism--number {
+			color: fun.get-var(color-token-yellow);
+		}
+
+		&.prism--delimiter,
+		&.prism--doctype,
+		&.prism--parameter,
+		&.prism--parent,
+		&.prism--shebang,
+		&.prism--tag {
+			color: fun.get-var(color-token-cyan);
+		}
+
+		&.prism--deleted {
+			color: fun.get-var(color-token-red);
+		}
+
+		&.prism--deleted.prefix,
+		&.prism--important:not(.boolean),
+		&.prism--inserted.prefix,
+		&.prism--bold,
+		&.prism--this {
+			font-weight: 600;
+		}
+
+		&.prism--coord,
+		&.prism--italic {
+			font-style: italic;
+		}
+
+		&.prism--entity {
+			cursor: help;
+		}
+	}
+
+	&.language-css,
+	&.language-scss {
+		.prism--token {
+			&.prism--variable {
+				color: fun.get-var(color-token-cyan);
+			}
+		}
+	}
+
+	&.language-markdown {
+		.prism--token {
+			&.prism--url {
+				color: fun.get-var(color-token-yellow);
+
+				.prism--token.prism--content {
+					color: fun.get-var(color-token-green);
+				}
+			}
+
+			&.prism--code {
+				color: fun.get-var(color-token-cyan);
+			}
+
+			&.prism--hr.prism--punctuation {
+				color: fun.get-var(color-token-blue);
+			}
+
+			&.prism--blockquote.prism--punctuation {
+				color: fun.get-var(color-token-magenta);
+			}
+		}
+	}
+
+	code {
+		white-space: pre;
+	}
+}

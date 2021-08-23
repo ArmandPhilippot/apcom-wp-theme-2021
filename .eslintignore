@@ -1,3 +1,4 @@
 **/node_modules/**
 **/vendor/**
-src/js/vendors/prism.js
+src/js/vendors/prism.min.js
+src/js/prism-components/**

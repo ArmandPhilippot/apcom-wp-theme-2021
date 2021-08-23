@@ -1,0 +1,17 @@
+pre.diff-highlight {
+	> code .token.deleted:not(.prefix) {
+		display: block;
+		background-color: rgba(140, 33, 33, 0.15);
+		color: inherit;
+	}
+
+	> code .token.inserted:not(.prefix) {
+		display: block;
+		background-color: rgba(12, 87, 5, 0.15);
+		color: inherit;
+	}
+
+	.token.unchanged {
+		opacity: 0.5;
+	}
+}

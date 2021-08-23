@@ -18,6 +18,7 @@ function setCodeBlocksClasses() {
 					! preTags[ i ].classList.contains( 'language-diff' )
 				) {
 					preTags[ i ].classList.add( 'line-numbers' );
+					preTags[ i ].classList.add( 'match-braces' );
 				} else if (
 					preTags[ i ].classList.contains( 'command-line' ) &&
 					preTags[ i ].classList.contains( 'filter-output' )
@@ -35,7 +36,7 @@ function setCodeBlocksClasses() {
 				for ( let k = 0; k < codeLinesLength; k++ ) {
 					if ( /^\/\//.test( codeLines[ k ] ) ) {
 						const colorizeComment =
-							'<span class="token comment">' +
+							'<span class="instructions--comment">' +
 							codeLines[ k ] +
 							'</span>';
 						codeTag.innerHTML = codeTag.innerHTML.replace(
