@@ -1,4 +1,5 @@
-import './vendors/prism';
+import './vendors/prism.min';
+import './vendors/prismCustomClass';
 import './vendors/prismSwitchTheme';
 import './footer/back-to-top';
 import './footer/code';
