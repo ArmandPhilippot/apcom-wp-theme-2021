@@ -24,7 +24,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="0"
+     inkscape:cx="-28.571429"
      inkscape:cy="0"
      inkscape:document-units="px"
      inkscape:current-layer="svg8"
@@ -54,26 +54,8 @@
   </metadata>
   <path
      id="rect835"
-     style="opacity: 1;
-	fill: #000;
-	fill-opacity: 1;
-	stroke: none;
-	stroke-width: 7.26189;
-	stroke-linecap: butt;
-	stroke-linejoin: round;
-	stroke-miterlimit: 4;
-	stroke-dasharray: none;
-	stroke-opacity: 1;"
      d="M 100,-1.9724579e-6 59.542678,5.887278 l 20.800024,6.522854 -51.133534,51.133517 7.24862,7.248608 51.133504,-51.133516 6.52142,20.798568 z" />
   <path
-     id="rect832"
-     style="opacity: 1;
-	fill: none;
-	stroke: #000;
-	stroke-width: 8.00027;
-	stroke-linejoin: round;
-	stroke-miterlimit: 4;
-	stroke-dasharray: none;
-	stroke-opacity: 1;"
-     d="M 85.999862,62.313958 V 95.999867 H 4.000133 v -81.999738 0 h 33.685903" />
+     d="m 4,10 a 4.000535,4.000535 0 0 0 -4,4 v 82 a 4.000535,4.000535 0 0 0 4,4 h 82 a 4.000535,4.000535 0 0 0 4,-4 V 62.314453 H 82 V 92 H 8 V 18 h 29.685547 v -8 z"
+     id="rect832" />
 </svg>

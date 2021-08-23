@@ -1,87 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    width="100"
    height="100"
-   id="svg2"
-   inkscape:label="Pozadí"
-   sodipodi:version="0.32"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
    inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
-   version="1.0"
-   sodipodi:docname="icon-quote-end.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   sodipodi:modified="true"
+   sodipodi:docname="icon-quote-begin (copie 1).svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <defs
-     id="defs3">
-    <rect
-       x="-174.0383"
-       y="-59.121887"
-       width="63.847633"
-       height="81.439781"
-       id="rect864" />
-  </defs>
+   xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="base"
+     id="namedview7"
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="35.714286"
-     inkscape:cy="19.642857"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
-     inkscape:current-layer="svg2"
-     width="112px"
-     height="76px"
+     showgrid="false"
+     units="px"
+     width="100px"
+     inkscape:zoom="2.9647587"
+     inkscape:cx="3.0356602"
+     inkscape:cy="106.9227"
      inkscape:window-width="1920"
      inkscape:window-height="1019"
      inkscape:window-x="0"
      inkscape:window-y="33"
-     inkscape:document-rotation="0"
-     showgrid="false"
      inkscape:window-maximized="1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:pagecheckerboard="0" />
-  <metadata
-     id="metadata6">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>Czech right quotation mark</dc:title>
-        <dc:date>2007-08-27</dc:date>
-        <dc:creator>
-          <cc:Agent>
-            <dc:title>Petr Kadlec &lt;http://cs.wikipedia.org/wiki/User:Mormegil&gt;</dc:title>
-          </cc:Agent>
-        </dc:creator>
-        <cc:license
-           rdf:resource="http://web.resource.org/cc/PublicDomain" />
-      </cc:Work>
-      <cc:License
-         rdf:about="http://web.resource.org/cc/PublicDomain">
-        <cc:permits
-           rdf:resource="http://web.resource.org/cc/Reproduction" />
-        <cc:permits
-           rdf:resource="http://web.resource.org/cc/Distribution" />
-        <cc:permits
-           rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
-      </cc:License>
-    </rdf:RDF>
-  </metadata>
+     inkscape:current-layer="svg5" />
+  <defs
+     id="defs2" />
   <path
-     d="M 7.0796215,6.9321465 C 33.333331,24.926251 45.722695,42.920352 45.722695,63.864311 c 0,17.699112 -9.734493,29.203542 -24.188804,29.203542 -11.20944,0 -19.1740385,-7.669619 -19.1740385,-17.994101 0,-10.324487 7.9645985,-17.404135 19.4690195,-17.404135 l 5.30974,0.294983 c 0.59,0.294981 0.88498,0.294981 1.17996,0.294981 1.17993,0 1.76993,-0.884955 1.76993,-2.654865 0,-12.68437 -9.43955,-25.368737 -30.0884995,-40.412988 z m 54.2773045,0 c 26.25367,17.9941045 38.643071,35.9882055 38.643071,56.9321645 0,17.699112 -9.734531,29.203542 -24.188802,29.203542 -11.209438,0 -19.174043,-7.669619 -19.174043,-17.994101 0,-10.324487 7.964607,-17.404135 19.469025,-17.404135 l 5.309737,0.294983 c 0.589963,0.294981 0.88498,0.294981 1.179963,0.294981 1.179926,0 1.769888,-0.884955 1.769888,-2.654865 0,-12.68437 -12.094382,-29.203546 -30.088501,-40.412988 z"
+     d="M 7.0796198,6.9321468 C 33.33333,24.926251 45.722694,42.920352 45.722694,63.864311 c 0,17.699112 -9.734493,29.203542 -24.188804,29.203542 -11.20944,0 -19.1740392,-7.669619 -19.1740392,-17.994101 0,-10.324487 7.9645992,-17.404135 19.4690202,-17.404135 l 5.30974,0.294983 c 0.59,0.294981 0.88498,0.294981 1.17996,0.294981 1.17993,0 1.76993,-0.884955 1.76993,-2.654865 0,-12.68437 -9.43955,-25.368737 -30.088496215,-40.412988 z m 54.2773042,0 C 87.610595,24.926251 99.999995,42.920352 99.999995,63.864311 c 0,17.699112 -9.734531,29.203542 -24.188801,29.203542 -11.209438,0 -19.174044,-7.669619 -19.174044,-17.994101 0,-10.324487 7.964607,-17.404135 19.469026,-17.404135 l 5.309737,0.294983 c 0.589963,0.294981 0.88498,0.294981 1.179963,0.294981 1.179926,0 1.769888,-0.884955 1.769888,-2.654865 0,-12.68437 -12.094382,-29.203546 -30.088501,-40.412988 z"
      id="path868" />
 </svg>
