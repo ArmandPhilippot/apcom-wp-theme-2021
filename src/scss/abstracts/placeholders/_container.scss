@@ -1,0 +1,7 @@
+@use "../functions" as fun;
+
+%container {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 80ch) minmax(0, 1fr);
+	column-gap: fun.get-var(spacing-md);
+}

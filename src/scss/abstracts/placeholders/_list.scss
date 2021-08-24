@@ -1,5 +1,5 @@
 /// List Reset
-@mixin listReset {
+%reset-list {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -10,8 +10,8 @@
 }
 
 /// Ordered List Reset
-@mixin orderedListReset {
-	@include listReset;
+%reset-ordered-list {
+	@extend %reset-list;
 
 	li {
 		display: list-item;
@@ -23,9 +23,9 @@
 	}
 }
 
-/// Display an inline list with Flexbox
-@mixin flexList {
-	@include listReset();
+/// Display an inline list with flexbox
+%flex-list {
+	@extend %reset-list;
 	display: flex;
 	flex-flow: row wrap;
 }

@@ -4,7 +4,7 @@
 
 .code-toolbar {
 	position: relative;
-	margin-top: fun.px-to-rem(70); // toolbar height
+	margin-top: fun.convert-px(70); // toolbar height
 	width: 100%;
 
 	> .toolbar {
@@ -15,16 +15,16 @@
 		gap: fun.get-var(spacing-sm);
 		background: fun.get-var(color-bg-tertiary);
 		border: solid fun.get-var(color-border-light);
-		border-width: fun.px-to-rem(1) fun.px-to-rem(1) 0 fun.px-to-rem(1);
-		border-top-left-radius: fun.px-to-rem(3);
-		border-top-right-radius: fun.px-to-rem(3);
-		box-shadow: 0 fun.px-to-rem(2) fun.px-to-rem(3) fun.px-to-rem(-2)
+		border-width: fun.convert-px(1) fun.convert-px(1) 0 fun.convert-px(1);
+		border-top-left-radius: fun.convert-px(3);
+		border-top-right-radius: fun.convert-px(3);
+		box-shadow: 0 fun.convert-px(2) fun.convert-px(3) fun.convert-px(-2)
 			fun.get-var(color-shadow-darker);
 		width: 100%;
-		height: fun.px-to-rem(70);
+		height: fun.convert-px(70);
 		margin: 0;
 		position: absolute;
-		top: fun.px-to-rem(-70);
+		top: fun.convert-px(-70);
 		left: 0;
 	}
 
@@ -50,46 +50,18 @@
 		@extend .btn--round;
 		color: fun.get-var(color-fg-inverted);
 		font-size: fun.get-var(font-size-sm);
-		height: fun.px-to-rem(40);
+		height: fun.convert-px(40);
 		padding: 0 fun.get-var(spacing-sm);
 	}
 
 	.prism__btn {
-		width: fun.px-to-rem(40);
-		height: fun.px-to-rem(40);
+		width: fun.convert-px(40);
+		height: fun.convert-px(40);
 	}
 
 	pre {
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
 		width: auto;
-	}
-
-	@include mix.media("screen") {
-		@include mix.dimensions("lg") {
-			@include mix.pointer("fine") {
-				margin-top: fun.px-to-rem(50); // toolbar height
-
-				> .toolbar {
-					height: fun.px-to-rem(50);
-					top: fun.px-to-rem(-50);
-				}
-
-				.toolbar-item {
-					&:first-child {
-						font-size: fun.get-var(font-size-sm);
-					}
-				}
-
-				.copy-to-clipboard-button {
-					height: fun.px-to-rem(32);
-				}
-
-				.prism__btn {
-					width: fun.px-to-rem(32);
-					height: fun.px-to-rem(32);
-				}
-			}
-		}
 	}
 }

@@ -1,13 +1,15 @@
 @use "sass:math";
-@use "../abstracts/functions" as f;
+@use "../abstracts/functions" as fun;
 
-//==============================================================================
+//===========================================================================
 // Theme Information
-//==============================================================================
+// @see https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/
+//===========================================================================
+
 $theme_name: "ArmandPhilippot-com";
 $theme_uri: "https://github.com/ArmandPhilippot/armandphilippot.com";
 $theme_description: "A WordPress theme for my personal website.";
-$theme_version: "1.0.10";
+$theme_version: "1.1.1";
 $theme_wordpress_compatibility: "5.2";
 $theme_author: "Armand Philippot <contact@armandphilippot.com>";
 $theme_author-uri: "https://www.armandphilippot.com/";
@@ -17,26 +19,62 @@ $theme_domain: "APCom";
 $theme_domain-path: "/languages/";
 $theme_tags: "editor-style, translation-ready";
 
-//=============================================================================
-// Globals
-//=============================================================================
-$golden-number: 1.618;
-$ratio: 1.2;
-$breakpoints: (
-	"xs": f.pxtoem(568),
-	"sm": f.pxtoem(768),
-	"md": f.pxtoem(1024),
-	"lg": f.pxtoem(1280),
-	"xl": f.pxtoem(1600),
-	"2xl": f.pxtoem(1920),
+//===========================================================================
+// Ratios
+//===========================================================================
+
+$ratios: (
+	"minor-second": 1.067,
+	"major-second": 1.125,
+	"minor-third": 1.2,
+	"major-third": 1.25,
+	"perfect-fourth": 1.333,
+	"augmented-fourth": 1.414,
+	"perfect-fifth": 1.5,
+	"golden-number": 1.618,
 );
 
-//=============================================================================
+// Cannot declare the following function in partials due to module loop.
+// Also, it will only be used in this file so it is not a problem.
+
+/// Get ratio
+/// @prop {String} keys - Keys are identifiers mapped to a given ratio
+/// @prop {Map} values - Values are actual ratio
+@function get-ratio($key) {
+	@return map-get($ratios, $key);
+}
+
+//===========================================================================
+// Layout
+//===========================================================================
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+	"xs": fun.convert-px(568, "em"),
+	"sm": fun.convert-px(768, "em"),
+	"md": fun.convert-px(1024, "em"),
+	"lg": fun.convert-px(1280, "em"),
+	"xl": fun.convert-px(1600, "em"),
+	"2xl": fun.convert-px(1920, "em"),
+);
+
+//===========================================================================
 // Fonts
-//=============================================================================
+//===========================================================================
+
 /* stylelint-disable -- Fonts name are not keywords, lowercase is not needed. */
+/// Regular font family
+/// @type List
 $font-family_primary: ("Inter", "Liberation Sans", Arial, sans-serif);
+
+/// Alternative regular font family
+/// @type List
 $font-family_secondary: ("Kanit", "Liberation Sans", Arial, sans-serif);
+
+/// Monospace font family
+/// @type List
 $font-family_mono: (
 	"Cousine",
 	"Liberation Mono",
@@ -46,23 +84,25 @@ $font-family_mono: (
 );
 /* stylelint-enable */
 
-$line-height: $golden-number;
+$line-height: get-ratio("golden-number");
 
 $font-size_base: 16px;
-$font-size_base-rem: f.pxtorem(16);
+$font-size_base-rem: fun.convert-px(16); // font-size_base without unit
+$font-size_ratio: get-ratio("minor-third");
+$font-size_sm: $font-size_base-rem * math.pow($font-size_ratio, -1);
+$font-size_md: $font-size_base-rem * math.pow($font-size_ratio, 0);
+$font-size_lg: $font-size_base-rem * math.pow($font-size_ratio, 1);
+$font-size_xl: $font-size_base-rem * math.pow($font-size_ratio, 2);
+$font-size_2xl: $font-size_base-rem * math.pow($font-size_ratio, 3);
+$font-size_3xl: $font-size_base-rem * math.pow($font-size_ratio, 4);
+$font-size_4xl: $font-size_base-rem * math.pow($font-size_ratio, 5);
 
-$font-size_sm: $font-size_base-rem * f.pow($ratio, -1);
-$font-size_md: $font-size_base-rem * f.pow($ratio, 0);
-$font-size_lg: $font-size_base-rem * f.pow($ratio, 1);
-$font-size_xl: $font-size_base-rem * f.pow($ratio, 2);
-$font-size_2xl: $font-size_base-rem * f.pow($ratio, 3);
-$font-size_3xl: $font-size_base-rem * f.pow($ratio, 4);
-$font-size_4xl: $font-size_base-rem * f.pow($ratio, 5);
-
-//==============================================================================
+//============================================================================
 // Spacings
-//==============================================================================
-$spacing_base: $golden-number * 1rem;
+//============================================================================
+
+$spacing_ratio: get-ratio("golden-number");
+$spacing_base: $spacing_ratio * 1rem;
 
 $spacing_3xs: math.div($spacing_base, 5);
 $spacing_2xs: math.div($spacing_base, 4);
@@ -76,16 +116,16 @@ $spacing_3xl: $spacing_base * 3;
 $spacing_4xl: $spacing_base * 4;
 $spacing_5xl: $spacing_base * 5;
 
-//==============================================================================
+//============================================================================
 // Colors
-//==============================================================================
+//============================================================================
+
 $color_black-squeeze: hsl(212, 55%, 97%);
 $color_catskill-white: hsl(212, 53%, 92%);
 $color_link-water: hsl(212, 51%, 87%);
 $color_geyser: hsl(212, 27%, 83%);
 $color_gull-gray: hsl(212, 15%, 66%);
-// Used by header shape. HSLA not working inside SVG.
-$color_gull-gray-opacity: #9ba7b58a;
+$color_gull-gray-opacity: hsla(212, 15%, 66%, 0.55);
 $color_pale-sky: hsl(212, 13%, 46%);
 $color_fiord: hsl(212, 29%, 35%);
 $color_rhino: hsl(212, 33%, 28%);
@@ -100,6 +140,7 @@ $color_chathams-blue-light: hsl(212, 90%, 30%);
 $color_chathams-blue-light-opacity-25: hsla(212, 90%, 30%, 0.25);
 $color_chathams-blue-dark: hsl(212, 70%, 25%);
 $color_russet: hsl(23, 65%, 31%);
+$color_russet-opacity-25: hsla(23, 65%, 31%, 0.25);
 $color_horizon: hsl(213, 30%, 54%);
 $color_kashmir-blue: hsl(212, 30%, 46%);
 $color_spindle: hsl(212, 56%, 75%);
@@ -107,6 +148,7 @@ $color_spindle-light: hsl(212, 52%, 78%);
 $color_spindle-light-opacity-35: hsla(212, 52%, 78%, 0.35);
 $color_spindle-dark: hsl(213, 60%, 72%);
 $color_brandy: hsl(37, 51%, 74%);
+$color_brandy-opacity-40: hsla(37, 51%, 74%, 0.4);
 
 $color_light-theme_red: hsl(0, 87%, 31%);
 $color_light-theme_green: hsl(126, 91%, 18%);

@@ -10,7 +10,7 @@ pre.command-line {
 	}
 
 	.command-line-prompt {
-		border-right: fun.px-to-rem(1) solid fun.get-var(color-border-light);
+		border-right: fun.convert-px(1) solid fun.get-var(color-border-light);
 		display: block;
 		float: left;
 		margin-right: fun.get-var(spacing-md);

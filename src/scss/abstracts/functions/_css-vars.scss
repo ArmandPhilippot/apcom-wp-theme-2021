@@ -1,0 +1,8 @@
+/// Retrieve a CSS variable value with prefix
+/// @see https://dev.to/felipperegazio/css-custom-properties-vars-with-sass-scss-a-practical-architecture-strategy-1m88
+/// @param  {String} $name Variable name
+/// @param  {String} $prefix Variable prefix
+/// @return {String} Variable in CSS format
+@function get-var($name, $prefix: apcom) {
+	@return var(--#{$prefix}-#{$name});
+}

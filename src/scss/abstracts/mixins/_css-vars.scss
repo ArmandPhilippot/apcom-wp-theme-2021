@@ -1,0 +1,20 @@
+/// Declare a set of CSS variables properly prefixed.
+///
+/// @see https://dev.to/felipperegazio/css-custom-properties-vars-with-sass-scss-a-practical-architecture-strategy-1m88
+///
+/// @param {List} $variables - A list of variable name and value.
+/// @param {Bool} $root - Set vars at root.
+/// @param {String} $prefix - The variables prefix.
+@mixin set-vars($variables, $root: true, $prefix: "apcom") {
+	@if $root {
+		:root {
+			@each $name, $value in $variables {
+				--#{$prefix}-#{$name}: #{$value};
+			}
+		}
+	} @else {
+		@each $name, $value in $variables {
+			--#{$prefix}-#{$name}: #{$value};
+		}
+	}
+}

@@ -1,19 +1,2 @@
-/// Set up clearfix
-@mixin clearfix {
-	*zoom: 1;
-
-	&::before,
-	&::after {
-		content: " ";
-		display: table;
-	}
-
-	&::after {
-		clear: both;
-	}
-}
-
-@import "mixins/variables";
-@import "mixins/media-queries";
-@import "mixins/lists";
-@import "mixins/buttons";
+@forward "./mixins/css-vars";
+@forward "./mixins/media-queries";

@@ -8,18 +8,18 @@ pre.line-numbers {
 		position: relative;
 		padding: fun.get-var(spacing-md) fun.get-var(spacing-sm)
 			fun.get-var(spacing-md)
-			calc(#{fun.px-to-rem(60)} + #{fun.get-var(spacing-sm)}); // gutter width + spacing
+			calc(#{fun.convert-px(60)} + #{fun.get-var(spacing-sm)}); // gutter width + spacing
 		overflow-wrap: normal;
 		white-space: pre;
 	}
 
 	.line-numbers-rows {
 		background: fun.get-var(color-bg-tertiary);
-		letter-spacing: fun.px-to-rem(-1);
+		letter-spacing: fun.convert-px(-1);
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: fun.px-to-rem(60);
+		width: fun.convert-px(60);
 		padding: fun.get-var(spacing-md) 0;
 		pointer-events: none;
 		user-select: none;
