@@ -168,12 +168,9 @@ class readingProgress {
  */
 function initReadingProgress() {
 	const html = document;
-	const bodyClasses = document.body.classList;
+	const article = document.querySelector( '.page--is-article' );
 
-	if (
-		bodyClasses.contains( 'single-page' ) &&
-		! bodyClasses.contains( 'attachment' )
-	) {
+	if ( article ) {
 		const APComScrollBar = new readingProgress( 'page__content' );
 
 		html.addEventListener( 'scroll', () => {
