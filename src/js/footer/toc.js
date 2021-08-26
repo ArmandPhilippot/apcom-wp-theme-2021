@@ -200,6 +200,7 @@ class TableOfContent {
 		this.setOptions( options );
 		if ( this.source && this.target ) {
 			this.printToc();
+			this.source.parentElement.classList.add( 'page--has-toc' );
 		}
 	}
 }
