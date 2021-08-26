@@ -461,7 +461,7 @@ if ( ! function_exists( 'apcom_get_page_classes' ) ) {
 			$classes .= ' page--has-no-results';
 		}
 
-		if ( ( apcom_is_single_page() && ! apcom_is_cv_page() && ! apcom_is_contact_page() ) && ! apcom_is_frontpage() && is_active_sidebar( 'sidebar__pages-widgets' ) ) {
+		if ( ( apcom_is_single_page() && ! apcom_is_cv_page() && ! apcom_is_contact_page() ) && ! apcom_is_frontpage() && ! apcom_is_page_no_sidebar() && is_active_sidebar( 'sidebar__pages-widgets' ) ) {
 			$classes .= ' page--has-sidebar';
 		}
 

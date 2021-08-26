@@ -69,6 +69,17 @@ function apcom_is_cv_page() {
 }
 
 /**
+ * Check if current page is a page with ToC but no other sidebar.
+ *
+ * @since  1.2.0
+ *
+ * @return boolean True if is page has no sidebar.
+ */
+function apcom_is_page_no_sidebar() {
+	return is_page_template( 'page-toc-no-sidebar.php' );
+}
+
+/**
  * Check if current page is a CPT used by the theme.
  *
  * @since  1.2.0
