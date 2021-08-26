@@ -26,9 +26,9 @@ if ( have_posts() ) {
 			apcom_get_pagination();
 			?>
 		</div>
+		<?php get_sidebar(); ?>
 	</article>
 	<?php
-	get_sidebar();
 } else {
 	get_template_part( 'template-parts/page/page', 'none' );
 }

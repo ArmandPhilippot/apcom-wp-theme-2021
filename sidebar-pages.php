@@ -8,8 +8,8 @@
 
 if ( is_active_sidebar( 'sidebar__pages-widgets' ) ) {
 	?>
-	<section class="sidebar sidebar--last">
+	<aside class="page__sidebar sidebar sidebar--last">
 		<?php dynamic_sidebar( 'sidebar__pages-widgets' ); ?>
-	</section>
+	</aside>
 	<?php
 }

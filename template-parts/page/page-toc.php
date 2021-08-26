@@ -7,5 +7,5 @@
  */
 
 ?>
-<div class="sidebar sidebar--first" id="table-of-content">
+<div class="page__sidebar sidebar sidebar--first" id="table-of-content">
 </div>
