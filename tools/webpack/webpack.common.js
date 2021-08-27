@@ -3,7 +3,6 @@ require( 'dotenv' ).config();
 const CopyPlugin = require( 'copy-webpack-plugin' );
 const DotenvWebpackPlugin = require( 'dotenv-webpack' );
 const ImageMinimizerPlugin = require( 'image-minimizer-webpack-plugin' );
-const { extendDefaultPlugins } = require( 'svgo' );
 const paths = require( './paths' );
 const { recursiveIssuer } = require( './utils' );
 
@@ -114,20 +113,18 @@ module.exports = {
 					[
 						'svgo',
 						{
-							plugins: extendDefaultPlugins( [
+							plugins: [
 								{
-									name: 'removeTitle',
-									active: true,
+									name: 'preset-default',
+									params: {
+										overrides: {
+											removeTitle: false,
+											removeViewBox: false,
+										},
+									},
 								},
-								{
-									name: 'removeViewBox',
-									active: false,
-								},
-								{
-									name: 'removeXMLNS',
-									active: false,
-								},
-							] ),
+								'removeDimensions',
+							],
 						},
 					],
 				],
