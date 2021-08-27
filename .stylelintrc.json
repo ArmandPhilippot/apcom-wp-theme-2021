@@ -42,6 +42,7 @@
 			}
 		],
 		"declaration-colon-newline-after": null,
+		"function-calc-no-unspaced-operator": null,
 		"function-comma-space-after": "always-single-line",
 		"function-parentheses-space-inside": "never-single-line",
 		"indentation": [
