@@ -15,18 +15,20 @@
 				<?php the_title(); ?>
 			</a>
 		</h2>
-		<dl class="page__meta meta">
+		<dl class="article__meta meta">
 			<?php
 			get_template_part( 'template-parts/page/partials/meta', 'date' );
-			get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
-			if ( is_category() ) {
-				get_template_part( 'template-parts/page/partials/meta', 'tags' );
-			} else {
-				get_template_part( 'template-parts/page/partials/meta', 'categories' );
-				get_template_part( 'template-parts/page/partials/meta', 'projects' );
-				get_template_part( 'template-parts/page/partials/meta', 'thematics' );
+			if ( ! apcom_is_thematic_cpt() && ! apcom_is_subject_cpt() ) {
+				get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
+				if ( is_category() ) {
+					get_template_part( 'template-parts/page/partials/meta', 'tags' );
+				} else {
+					get_template_part( 'template-parts/page/partials/meta', 'categories' );
+					get_template_part( 'template-parts/page/partials/meta', 'projects' );
+					get_template_part( 'template-parts/page/partials/meta', 'thematics' );
+				}
+				get_template_part( 'template-parts/page/partials/meta', 'comments' );
 			}
-			get_template_part( 'template-parts/page/partials/meta', 'comments' );
 			?>
 		</dl>
 	</header>
