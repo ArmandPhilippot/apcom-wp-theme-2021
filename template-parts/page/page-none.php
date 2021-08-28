@@ -37,6 +37,5 @@
 		}
 		?>
 	</div>
+	<?php get_sidebar(); ?>
 </article>
-<?php
-get_sidebar();
