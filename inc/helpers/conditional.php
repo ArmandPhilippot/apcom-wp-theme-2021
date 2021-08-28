@@ -80,25 +80,19 @@ function apcom_is_page_no_sidebar() {
 }
 
 /**
- * Check if current page is a CPT used by the theme.
- *
- * @since  1.2.0
- *
- * @return boolean True if is CPT.
- */
-function apcom_is_cpt() {
-	return is_singular( array( 'article', 'project', 'subject', 'thematic' ) );
-}
-
-/**
  * Check if current page is an article CPT.
  *
  * @since  1.2.0
  *
+ * @param  int $post_id The post ID. Default is current page.
  * @return boolean True if is an article CPT.
  */
-function apcom_is_article_cpt() {
-	return is_singular( array( 'article' ) );
+function apcom_is_article_cpt( $post_id = null ) {
+	if ( '' !== $post_id && is_integer( $post_id ) ) {
+		return 'article' === get_post_type( $post_id );
+	} else {
+		return 'article' === get_post_type();
+	}
 }
 
 /**
@@ -106,10 +100,15 @@ function apcom_is_article_cpt() {
  *
  * @since  1.2.0
  *
+ * @param  int $post_id The post ID. Default is current page.
  * @return boolean True if is a project CPT.
  */
-function apcom_is_project_cpt() {
-	return is_singular( array( 'project' ) );
+function apcom_is_project_cpt( $post_id = null ) {
+	if ( '' !== $post_id && is_integer( $post_id ) ) {
+		return 'project' === get_post_type( $post_id );
+	} else {
+		return 'project' === get_post_type();
+	}
 }
 
 /**
@@ -117,10 +116,15 @@ function apcom_is_project_cpt() {
  *
  * @since  1.2.0
  *
+ * @param  int $post_id The post ID. Default is current page.
  * @return boolean True if is a subject CPT.
  */
-function apcom_is_subject_cpt() {
-	return is_singular( array( 'subject' ) );
+function apcom_is_subject_cpt( $post_id = null ) {
+	if ( '' !== $post_id && is_integer( $post_id ) ) {
+		return 'subject' === get_post_type( $post_id );
+	} else {
+		return 'subject' === get_post_type();
+	}
 }
 
 /**
@@ -128,12 +132,32 @@ function apcom_is_subject_cpt() {
  *
  * @since  1.2.0
  *
+ * @param  int $post_id The post ID. Default is current page.
  * @return boolean True if is a thematic CPT.
  */
-function apcom_is_thematic_cpt() {
-	return is_singular( array( 'thematic' ) );
+function apcom_is_thematic_cpt( $post_id = null ) {
+	if ( '' !== $post_id && is_integer( $post_id ) ) {
+		return 'thematic' === get_post_type( $post_id );
+	} else {
+		return 'thematic' === get_post_type();
+	}
 }
 
+/**
+ * Check if current page is a CPT used by the theme.
+ *
+ * @since  1.2.0
+ *
+ * @param  int $post_id The post ID. Default is current page.
+ * @return boolean True if is CPT.
+ */
+function apcom_is_cpt( $post_id = null ) {
+	if ( '' !== $post_id && is_integer( $post_id ) ) {
+		return apcom_is_article_cpt( $post_id ) || apcom_is_project_cpt( $post_id ) || apcom_is_subject_cpt( $post_id ) || apcom_is_thematic_cpt( $post_id );
+	} else {
+		return apcom_is_article_cpt() || apcom_is_project_cpt() || apcom_is_subject_cpt() || apcom_is_thematic_cpt();
+	}
+}
 
 /**
  * Check if current page is a post, a page or an article CPT.
