@@ -201,8 +201,8 @@ function apcom_enqueue_scripts() {
 	}
 
 	if ( file_exists( $header_scripts_path ) ) {
-		wp_register_script( 'apcom-async-header', $header_scripts_uri, array(), APCOM_VERSION, false );
-		wp_enqueue_script( 'apcom-async-header' );
+		wp_register_script( 'apcom-header', $header_scripts_uri, array(), APCOM_VERSION, false );
+		wp_enqueue_script( 'apcom-header' );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
