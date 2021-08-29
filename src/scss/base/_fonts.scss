@@ -1,6 +1,6 @@
-@use "../abstracts/functions" as f;
-@use "../abstracts/mixins" as m;
-@use "../abstracts/variables" as v;
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
 
 @font-face {
 	font-family: Kanit;
@@ -132,18 +132,18 @@
 	font-display: swap;
 }
 
-@include m.declareCssVars(
+@include mix.set-vars(
 	(
-		font-family-primary: #{v.$font-family_primary},
-		font-family-secondary: #{v.$font-family_secondary},
-		font-family-mono: #{v.$font-family_mono},
-		font-size-sm: f.clampthis(v.$font-size_sm),
-		font-size-md: f.clampthis(v.$font-size_md),
-		font-size-lg: f.clampthis(v.$font-size_lg),
-		font-size-xl: f.clampthis(v.$font-size_xl),
-		font-size-2xl: f.clampthis(v.$font-size_2xl),
-		font-size-3xl: f.clampthis(v.$font-size_3xl),
-		font-size-4xl: f.clampthis(v.$font-size_4xl),
-		line-height: #{v.$line-height},
+		font-family-primary: #{var.$font-family_primary},
+		font-family-secondary: #{var.$font-family_secondary},
+		font-family-mono: #{var.$font-family_mono},
+		font-size-sm: fun.clamp-lock(var.$font-size_sm),
+		font-size-md: fun.clamp-lock(var.$font-size_md),
+		font-size-lg: fun.clamp-lock(var.$font-size_lg),
+		font-size-xl: fun.clamp-lock(var.$font-size_xl),
+		font-size-2xl: fun.clamp-lock(var.$font-size_2xl),
+		font-size-3xl: fun.clamp-lock(var.$font-size_3xl),
+		font-size-4xl: fun.clamp-lock(var.$font-size_4xl),
+		line-height: #{var.$line-height},
 	)
 );

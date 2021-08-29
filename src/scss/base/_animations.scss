@@ -1,5 +1,5 @@
-@use "../abstracts/functions" as f;
-@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
 
 @keyframes fadeIn {
 	from {
@@ -38,79 +38,87 @@
 @keyframes drawBorders {
 	0% {
 		background-position: top left, top right, bottom right, bottom left;
-		background-size: 0% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%, 0% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%, 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%;
 	}
 
 	25% {
 		background-position: top left, top right, bottom right, bottom left;
-		background-size: 0% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%, 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%;
 	}
 
 	50% {
 		background-position: top left, top right, bottom right, bottom left;
-		background-size: 0% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%, 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 100%;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
 	}
 
 	75% {
 		background-position: top left, top right, bottom right, bottom left;
-		background-size: 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%, 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 100%;
+		background-size: 100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
 	}
 
 	100% {
 		background-position: top left, top right, bottom right, bottom left;
-		background-size: 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 100%, 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 100%;
+		background-size: 100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
 	}
 }
 
 @keyframes undrawBorders {
 	0% {
 		background-position: top left, top right, bottom right, bottom left;
-		background-size: 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 100%, 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 100%;
+		background-size: 100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
 	}
 
 	25% {
 		background-position: top left, top right, bottom right, bottom left;
-		background-size: 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%, 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 100%;
+		background-size: 100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
 	}
 
 	50% {
 		background-position: top left, top right, bottom right, bottom left;
-		background-size: 0% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%, 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 100%;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
 	}
 
 	75% {
 		background-position: top left, top right, bottom right, bottom left;
-		background-size: 0% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%, 100% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%;
 	}
 
 	100% {
 		background-position: top left, top right, bottom right, bottom left;
-		background-size: 0% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%, 0% f.cssvar(draw-border-width),
-			f.cssvar(draw-border-width) 0%;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%, 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%;
 	}
 }
 
-@include m.declareCssVars(
+@include mix.set-vars(
 	(
-		draw-border-width: #{f.pxtorem(4)},
+		draw-border-width: #{fun.convert-px(4)},
 	)
 );

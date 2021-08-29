@@ -1,16 +1,16 @@
-@use "../abstracts/variables" as v;
+@use "../abstracts/variables" as var;
 
 /*!
-Theme Name: #{ v.$theme_name }
-Theme URI: #{ v.$theme_uri }
-Description: #{ v.$theme_description }
-Version: #{ v.$theme_version }
-Requires at least: #{ v.$theme_wordpress_compatibility }
-Author: #{ v.$theme_author }
-Author URI: #{ v.$theme_author-uri }
-License: #{ v.$theme_license }
-License URI: #{ v.$theme_license-uri }
-Text Domain: #{ v.$theme_domain }
-Domain Path: #{ v.$theme_domain-path }
-Tags: #{ v.$theme_tags }
+Theme Name: #{ var.$theme_name }
+Theme URI: #{ var.$theme_uri }
+Description: #{ var.$theme_description }
+Version: #{ var.$theme_version }
+Requires at least: #{ var.$theme_wordpress_compatibility }
+Author: #{ var.$theme_author }
+Author URI: #{ var.$theme_author-uri }
+License: #{ var.$theme_license }
+License URI: #{ var.$theme_license-uri }
+Text Domain: #{ var.$theme_domain }
+Domain Path: #{ var.$theme_domain-path }
+Tags: #{ var.$theme_tags }
 */

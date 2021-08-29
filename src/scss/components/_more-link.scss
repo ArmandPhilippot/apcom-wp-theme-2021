@@ -1,0 +1,26 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/variables" as var;
+
+.more-link {
+	.btn__icon {
+		fill: fun.get-var(color-primary);
+		margin-left: fun.get-var(margin-sm);
+		width: var.get-dim(icon-size-md);
+		transition: all 0.3s ease-in-out 0s;
+	}
+
+	&:hover,
+	&:focus {
+		.btn__icon {
+			fill: fun.get-var(color-primary-light);
+			transform: scale(1.2);
+		}
+	}
+
+	&:active {
+		.btn__icon {
+			fill: fun.get-var(color-primary-dark);
+			transform: scale(1);
+		}
+	}
+}

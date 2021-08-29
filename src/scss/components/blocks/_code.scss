@@ -1,0 +1,12 @@
+@use "../../abstracts/functions" as fun;
+@use "../../abstracts/mixins" as mix;
+
+.wp-block-code {
+	max-height: fun.convert-px(400);
+
+	&.instructions {
+		.instructions--comment {
+			color: fun.get-var(color-token-blue);
+		}
+	}
+}

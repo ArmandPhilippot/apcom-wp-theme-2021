@@ -1,5 +1,0 @@
-@use "../variables" as var;
-
-@function get-ratio($key) {
-	@return map-get(var.$ratios, $key);
-}

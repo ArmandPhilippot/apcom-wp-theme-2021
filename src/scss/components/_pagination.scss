@@ -1,0 +1,52 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/placeholders";
+
+.pagination {
+	margin: fun.get-var(margin-sm) 0 0;
+
+	&__list {
+		@extend %flex-list;
+	}
+
+	&__item {
+		display: flex;
+
+		&:not(:first-child) {
+			position: relative;
+			margin-left: fun.convert-px(-2);
+		}
+	}
+
+	& &__item {
+		margin-bottom: fun.get-var(margin-sm);
+	}
+
+	&__link {
+		&--current,
+		&--dots {
+			display: flex;
+			align-items: center;
+			background: fun.get-var(color-bg);
+			border: fun.convert-px(2) solid fun.get-var(color-primary);
+			padding: fun.get-var(padding-xs) fun.get-var(padding-md);
+			font-weight: 600;
+			transform: translateX(#{fun.convert-px(3)})
+				translateY(#{fun.convert-px(4)});
+		}
+	}
+
+	&__icon {
+		fill: fun.get-var(color-primary);
+		width: fun.convert-px(15);
+
+		&--previous {
+			margin-right: fun.get-var(margin-xs);
+			transform: rotate(180deg);
+		}
+
+		&--next {
+			margin-left: fun.get-var(margin-xs);
+		}
+	}
+}

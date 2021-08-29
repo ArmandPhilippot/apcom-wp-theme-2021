@@ -23,6 +23,9 @@ $theme_tags: "editor-style, translation-ready";
 // Ratios
 //===========================================================================
 
+/// Ratios map
+/// @prop {String} keys - Keys are identifiers mapped to a given ratio
+/// @prop {Map} value - Value is actual ratio
 $ratios: (
 	"minor-second": 1.067,
 	"major-second": 1.125,
@@ -38,10 +41,10 @@ $ratios: (
 // Also, it will only be used in this file so it is not a problem.
 
 /// Get ratio
-/// @prop {String} keys - Keys are identifiers mapped to a given ratio
-/// @prop {Map} values - Values are actual ratio
-@function get-ratio($key) {
-	@return map-get($ratios, $key);
+/// @param {String} $name - Ratio name.
+/// @return {Integer} The ratio value.
+@function get-ratio($name) {
+	@return map-get($ratios, $name);
 }
 
 //===========================================================================
@@ -59,6 +62,30 @@ $breakpoints: (
 	"xl": fun.convert-px(1600, "em"),
 	"2xl": fun.convert-px(1920, "em"),
 );
+
+/// Dimensions map
+/// @prop {String} keys - Keys are identifiers mapped to a given value.
+/// @prop {Map} values - Values are actual Sass value.
+$dimensions: (
+	"icon-size-xs": fun.convert-px(12),
+	"icon-size-sm": fun.convert-px(18),
+	"icon-size-md": fun.convert-px(24),
+	"icon-size-lg": fun.convert-px(32),
+	"icon-size-xl": fun.convert-px(44),
+	"logo-size": fun.convert-px(100),
+	"main-nav-height":
+		clamp(#{fun.convert-px(60)}, 10vh, calc(#{fun.convert-px(70)})),
+	"shape-height": fun.convert-px(30),
+);
+
+/// Get dimensions
+/// Useful to avoid repeating some calculation between components depending on
+/// each other.
+/// @param {String} $key - Dimension key name.
+/// @return {Integer} The key value.
+@function get-dim($key) {
+	@return map-get($dimensions, $key);
+}
 
 //===========================================================================
 // Fonts
@@ -104,23 +131,22 @@ $font-size_4xl: $font-size_base-rem * math.pow($font-size_ratio, 5);
 $spacing_ratio: get-ratio("golden-number");
 $spacing_base: $spacing_ratio * 1rem;
 
-$spacing_3xs: math.div($spacing_base, 5);
-$spacing_2xs: math.div($spacing_base, 4);
-$spacing_xs: math.div($spacing_base, 3);
-$spacing_sm: math.div($spacing_base, 2);
+$spacing_3xs: math.div($spacing_base, 4);
+$spacing_2xs: math.div($spacing_base, 3);
+$spacing_xs: math.div($spacing_base, 2);
+$spacing_sm: math.div($spacing_base, 1.5);
 $spacing_md: $spacing_base;
 $spacing_lg: $spacing_base * 1.5;
 $spacing_xl: $spacing_base * 2;
-$spacing_2xl: $spacing_base * 2.5;
-$spacing_3xl: $spacing_base * 3;
-$spacing_4xl: $spacing_base * 4;
-$spacing_5xl: $spacing_base * 5;
+$spacing_2xl: $spacing_base * 3;
+$spacing_3xl: $spacing_base * 4;
 
 //============================================================================
 // Colors
 //============================================================================
 
 $color_black-squeeze: hsl(212, 55%, 97%);
+$color_black-squeeze-opacity-80: hsla(212, 55%, 97%, 0.8);
 $color_catskill-white: hsl(212, 53%, 92%);
 $color_link-water: hsl(212, 51%, 87%);
 $color_geyser: hsl(212, 27%, 83%);
@@ -134,6 +160,7 @@ $color_mirage: hsl(211, 36%, 14%);
 $color_nile-blue: hsl(212, 47%, 19%);
 $color_big-stone: hsl(212, 45%, 15%);
 $color_firefly: hsl(212, 45%, 11%);
+$color_firefly-opacity-80: hsla(212, 45%, 11%, 0.8);
 $color_chambray: hsl(212, 45%, 40%);
 $color_chathams-blue: hsl(212, 65%, 28%);
 $color_chathams-blue-light: hsl(212, 90%, 30%);

@@ -13,7 +13,7 @@ pre.command-line {
 		border-right: fun.convert-px(1) solid fun.get-var(color-border-light);
 		display: block;
 		float: left;
-		margin-right: fun.get-var(spacing-md);
+		margin-right: fun.get-var(margin-md);
 		pointer-events: none;
 		user-select: none;
 
@@ -22,7 +22,7 @@ pre.command-line {
 				display: block;
 				content: "";
 				color: fun.get-var(color-token-grey);
-				padding-right: fun.get-var(spacing-sm);
+				padding-right: fun.get-var(padding-sm);
 			}
 
 			&[data-user]::before {

@@ -1,0 +1,218 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	width: auto;
+	cursor: pointer;
+	font-family: fun.get-var(font-family-primary);
+	font-weight: 600;
+	text-decoration: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.btn--primary {
+	display: flex;
+	background: linear-gradient(
+			to left,
+			fun.get-var(color-primary) 0 33.3%,
+			fun.get-var(color-primary-light) 33.3% 66.6%,
+			fun.get-var(color-primary-dark) 66.6% 100%
+		)
+		100% 0 / 300% 100% no-repeat;
+	border: none;
+	border-radius: fun.convert-px(6);
+	color: fun.get-var(color-fg-inverted);
+	font-variant: small-caps;
+	box-shadow: 0 0 0 fun.convert-px(2) fun.get-var(color-primary),
+		fun.convert-px(2) fun.convert-px(2) 0 fun.convert-px(2)
+			fun.get-var(color-shadow),
+		fun.convert-px(3) fun.convert-px(3) fun.convert-px(3) fun.convert-px(2)
+			fun.get-var(color-shadow-darker),
+		inset 0 0 0 fun.convert-px(2) fun.get-var(color-shadow-lighter),
+		inset 0 fun.convert-px(-10) fun.convert-px(16) fun.convert-px(6)
+			rgba(0, 0, 0, 0.13),
+		inset 0 fun.convert-px(9) fun.convert-px(32) fun.convert-px(4)
+			rgba(255, 255, 255, 0.13);
+	padding: fun.get-var(padding-sm) fun.get-var(padding-md);
+	transform: skewX(-12deg);
+	transition: all 0.3s ease-in-out 0s;
+
+	span,
+	svg {
+		transform: skewX(12deg);
+		transition: all 0.3s ease-in-out 0s;
+	}
+
+	&:hover,
+	&:focus {
+		background-position: 50% 0;
+		padding: fun.get-var(padding-sm) fun.get-var(padding-lg);
+		transform: skewX(0deg);
+
+		span,
+		svg {
+			transform: skewX(0deg);
+		}
+	}
+
+	&:hover {
+		box-shadow: 0 0 0 fun.convert-px(2) fun.get-var(color-primary-light),
+			fun.convert-px(2) fun.convert-px(2) 0 0 fun.get-var(color-primary),
+			fun.convert-px(3) fun.convert-px(3) fun.convert-px(3)
+				fun.convert-px(2) fun.get-var(color-shadow-darker),
+			inset 0 0 0 fun.convert-px(2) fun.get-var(color-shadow-lighter),
+			inset 0 fun.convert-px(-10) fun.convert-px(16) fun.convert-px(6)
+				rgba(0, 0, 0, 0.13),
+			inset 0 fun.convert-px(9) fun.convert-px(32) fun.convert-px(4)
+				rgba(255, 255, 255, 0.13);
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 fun.convert-px(2) fun.get-var(color-primary-light),
+			fun.convert-px(2) fun.convert-px(2) 0 0 fun.get-var(color-primary),
+			fun.convert-px(3) fun.convert-px(3) fun.convert-px(3)
+				fun.convert-px(2) fun.get-var(color-shadow-darker),
+			fun.convert-px(1) fun.convert-px(1) 0 fun.convert-px(8)
+				fun.get-var(color-primary-light-opacity),
+			inset 0 0 0 fun.convert-px(2) fun.get-var(color-shadow-lighter),
+			inset 0 fun.convert-px(-10) fun.convert-px(16) fun.convert-px(6)
+				rgba(0, 0, 0, 0.13),
+			inset 0 fun.convert-px(9) fun.convert-px(32) fun.convert-px(4)
+				rgba(255, 255, 255, 0.13);
+	}
+
+	&:active {
+		background-position: 0 0;
+		box-shadow: 0 0 0 fun.convert-px(2) fun.get-var(color-primary-dark),
+			fun.convert-px(1) fun.convert-px(1) 0 fun.convert-px(1)
+				fun.get-var(color-shadow),
+			0 0 0 0 fun.get-var(color-shadow-darker),
+			inset 0 0 0 fun.convert-px(2) fun.get-var(color-shadow-lighter),
+			inset 0 fun.convert-px(-10) fun.convert-px(16) fun.convert-px(6)
+				rgba(0, 0, 0, 0.13),
+			inset 0 fun.convert-px(9) fun.convert-px(32) fun.convert-px(4)
+				rgba(255, 255, 255, 0.13);
+		padding: fun.get-var(padding-sm) fun.get-var(padding-sm);
+		transform: skewX(0deg) translateX(#{fun.convert-px(3)})
+			translateY(#{fun.convert-px(3)});
+
+		span,
+		svg {
+			transform: skewX(0deg);
+		}
+	}
+}
+
+.btn--secondary {
+	background: fun.get-var(color-bg);
+	border: fun.convert-px(2) solid fun.get-var(color-primary);
+	box-shadow: fun.convert-px(4) fun.convert-px(4) 0 0
+		fun.get-var(color-shadow);
+	padding: fun.get-var(padding-xs) fun.get-var(padding-md);
+	transition: all 0.3s ease-in-out 0s;
+
+	&:hover,
+	&:focus {
+		color: fun.get-var(color-primary-light);
+		border-color: fun.get-var(color-primary-light);
+		box-shadow: fun.convert-px(7) fun.convert-px(7) 0 0
+			fun.get-var(color-shadow);
+		transform: translateX(#{fun.convert-px(-3)})
+			translateY(#{fun.convert-px(-3)});
+	}
+
+	&:focus {
+		text-decoration: underline;
+	}
+
+	&:active {
+		border-color: fun.get-var(color-primary-dark);
+		box-shadow: 0 0 0 0 fun.get-var(color-shadow);
+		color: fun.get-var(color-primary-dark);
+		text-decoration: none;
+		transform: translateX(#{fun.convert-px(3)})
+			translateY(#{fun.convert-px(4)});
+	}
+}
+
+.btn--round {
+	justify-content: center;
+	background: linear-gradient(
+			to bottom,
+			fun.get-var(color-primary) 0 33.33%,
+			fun.get-var(color-primary-light) 33.33% 66.66%,
+			fun.get-var(color-primary-dark) 66.66% 100%
+		)
+		0 0 / 100% 300% no-repeat;
+	border: fun.convert-px(2) solid fun.get-var(color-border-light);
+	border-radius: 50%;
+	box-shadow: 0 0 0 fun.convert-px(2) fun.get-var(color-primary),
+		0 fun.convert-px(2) 0 fun.convert-px(2) fun.get-var(color-shadow),
+		0 fun.convert-px(2) fun.convert-px(2) fun.convert-px(3)
+			fun.get-var(color-shadow-light);
+	transition: all 0.3s ease-in-out 0s;
+
+	.btn__icon {
+		fill: fun.get-var(color-bg-secondary);
+		padding: fun.convert-px(8);
+	}
+
+	&:hover,
+	&:focus {
+		background-position: 0 50%;
+		box-shadow: 0 0 0 fun.convert-px(2) fun.get-var(color-primary-light),
+			0 fun.convert-px(3) 0 fun.convert-px(2) fun.get-var(color-shadow),
+			0 fun.convert-px(2) fun.convert-px(2) fun.convert-px(3)
+				fun.get-var(color-shadow-light);
+		transform: translateY(#{fun.convert-px(-1)});
+
+		svg {
+			animation: pulse 1.2s;
+			animation-iteration-count: infinite;
+		}
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 fun.convert-px(2) fun.get-var(color-primary-light),
+			0 fun.convert-px(3) 0 fun.convert-px(2) fun.get-var(color-shadow),
+			0 fun.convert-px(2) fun.convert-px(2) fun.convert-px(3)
+				fun.get-var(color-shadow-light),
+			0 fun.convert-px(1) 0 fun.convert-px(7)
+				fun.get-var(color-primary-light-opacity);
+	}
+
+	&:active {
+		background-position: 0 100%;
+		box-shadow: 0 0 0 fun.convert-px(2) fun.get-var(color-primary),
+			0 0 0 fun.convert-px(2) fun.get-var(color-shadow-darker),
+			0 fun.convert-px(1) fun.convert-px(2) fun.convert-px(3)
+				fun.get-var(color-shadow-light);
+		transform: translateY(#{fun.convert-px(2)});
+
+		svg {
+			animation: unset;
+		}
+	}
+}
+
+.btn--feed {
+	@extend .btn--secondary;
+	font-size: fun.get-var(font-size-md);
+
+	&::before {
+		content: "";
+		background: url(../images/feed.svg);
+		background-repeat: no-repeat;
+		background-size: 100%;
+		width: var.get-dim(icon-size-lg);
+		height: var.get-dim(icon-size-lg);
+		margin-right: fun.get-var(margin-xs);
+	}
+}

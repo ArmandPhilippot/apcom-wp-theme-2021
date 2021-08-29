@@ -1,5 +1,13 @@
-@use "../abstracts/functions" as f;
-@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+
+/*=========================================================================
+>>> TABLE OF CONTENTS:
+===========================================================================
+	1.0 Accessibility
+	2.0. Alignments
+===========================================================================*/
+
 //=========================================================================
 // 1.0. Accessibility
 //=========================================================================
@@ -7,35 +15,35 @@
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
-	width: f.pxtorem(1);
-	height: f.pxtorem(1);
+	width: fun.convert-px(1);
+	height: fun.convert-px(1);
 	overflow: hidden;
 	padding: 0;
 	position: absolute !important;
 	word-break: normal;
 	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+
+	&:focus {
+		background: fun.get-var(color-bg);
+		border: fun.convert-px(3) solid fun.get-var(color-border);
+		box-shadow: 0 0 fun.convert-px(2) fun.convert-px(2)
+			fun.get-var(color-shadow-light);
+		color: fun.get-var(color-primary);
+		font-size: fun.get-var(font-size-md);
+		font-weight: 600;
+		display: block;
+		clip: auto !important;
+		left: 0;
+		top: 0;
+		width: auto;
+		height: auto;
+		padding: fun.get-var(padding-sm) fun.get-var(padding-md);
+		z-index: 100000; /* Above WP toolbar. */
+	}
 }
 
-.screen-reader-text:focus {
-	background: f.cssvar(color-bg);
-	border: f.pxtorem(3) solid f.cssvar(color-border);
-	box-shadow: 0 0 f.pxtorem(2) f.pxtorem(2) f.cssvar(color-shadow-light);
-	color: f.cssvar(color-primary);
-	font-size: f.cssvar(font-size-md);
-	font-weight: 600;
-	display: block;
-	clip: auto !important;
-	left: 0;
-	top: 0;
-	width: auto;
-	height: auto;
-	padding: f.cssvar(spacing-sm) f.cssvar(spacing-md);
-	z-index: 100000; /* Above WP toolbar. */
-}
-
-@include m.reduced-motion("reduce") {
+@include mix.motion("reduce") {
 	* {
 		transition: none !important;
 	}
@@ -46,26 +54,11 @@
 //=========================================================================
 
 .alignleft {
-	/*rtl:ignore*/
-	float: left;
-
-	/*rtl:ignore*/
-	margin-right: f.cssvar(spacing-sm);
+	margin-right: auto;
 }
 
 .alignright {
-	/*rtl:ignore*/
-	float: right;
-
-	/*rtl:ignore*/
-	margin-left: f.cssvar(spacing-sm);
-}
-
-.alignleft,
-.alignright {
-	margin-top: f.cssvar(spacing-xs);
-	margin-bottom: f.cssvar(spacing-xs);
-	max-width: calc(50% - #{f.cssvar(spacing-sm)});
+	margin-left: auto;
 }
 
 .aligncenter {
@@ -79,18 +72,13 @@
 }
 
 .alignwide {
-	width: 95vw;
+	width: 72vmax;
 	margin-left: auto;
 	margin-right: auto;
 
-	@include m.media("screen") {
-		@include m.dimensions("lg") {
+	@include mix.media("screen") {
+		@include mix.dimensions("lg", "xl") {
 			margin-left: 0;
-			width: 80vw;
-		}
-
-		@include m.dimensions("xl") {
-			margin-left: auto;
 		}
 	}
 }

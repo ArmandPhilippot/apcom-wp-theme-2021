@@ -1,0 +1,20 @@
+@use "../../abstracts/functions" as fun;
+
+.wp-block-gallery {
+	margin-bottom: fun.get-var(margin-sm);
+
+	.blocks-gallery-item {
+		margin: 0 fun.get-var(margin-sm) fun.get-var(margin-sm) 0;
+
+		&:last-child {
+			margin: 0 0 fun.get-var(margin-sm) 0;
+		}
+
+		figcaption {
+			background: fun.get-var(color-bg-secondary);
+			color: fun.get-var(color-fg-tertiary);
+			font-size: fun.get-var(font-size-sm);
+			padding: fun.get-var(padding-2xs) fun.get-var(padding-3xs);
+		}
+	}
+}

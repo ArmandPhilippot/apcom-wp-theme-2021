@@ -1,0 +1,27 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+
+.sidebar {
+	margin: fun.get-var(margin-xs) 0;
+
+	> h2 {
+		padding: fun.get-var(padding-sm) 0;
+		margin: 0;
+
+		@include mix.media("screen") {
+			@include mix.dimensions("lg") {
+				padding: fun.get-var(padding-sm) fun.get-var(padding-md);
+			}
+		}
+	}
+
+	&--last {
+		padding-bottom: fun.get-var(padding-3xl);
+	}
+
+	@include mix.media("screen") {
+		@include mix.dimensions("xl") {
+			padding-bottom: fun.get-var(padding-3xl);
+		}
+	}
+}

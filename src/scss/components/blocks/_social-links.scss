@@ -1,0 +1,13 @@
+@use "../../abstracts/functions" as fun;
+
+.wp-block-social-links {
+	a {
+		background: none;
+
+		&:focus {
+			color: currentColor;
+			opacity: 0.85;
+			outline: fun.get-var(color-primary-light) dotted fun.convert-px(2);
+		}
+	}
+}

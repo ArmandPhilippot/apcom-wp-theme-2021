@@ -1,7 +1,0 @@
-@use "../../abstracts/functions" as f;
-
-.wp-block-quote {
-	&.is-style-large {
-		padding: f.cssvar(spacing-sm) f.cssvar(spacing-md);
-	}
-}

@@ -1,0 +1,50 @@
+@use "../../abstracts/functions" as fun;
+@use "../../abstracts/placeholders";
+
+.wp-block-latest-comments {
+	@extend %reset-ordered-list;
+
+	li {
+		margin-bottom: fun.get-var(margin-sm);
+	}
+
+	&__comment {
+		line-height: inherit;
+	}
+
+	&__comment-date {
+		color: fun.get-var(color-fg-tertiary);
+		font-size: fun.get-var(font-size-sm);
+		line-height: inherit;
+		margin-top: fun.get-var(margin-3xs);
+	}
+
+	&__comment-excerpt {
+		p {
+			font-size: fun.get-var(font-size-sm);
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&.has-avatars & {
+		&__comment {
+			display: flex;
+			gap: fun.get-var(margin-sm);
+		}
+
+		&__comment-avatar {
+			margin-right: 0;
+		}
+
+		&__comment-meta {
+			margin-left: 0;
+		}
+
+		&__comment-excerpt {
+			margin-left: 0;
+		}
+	}
+}

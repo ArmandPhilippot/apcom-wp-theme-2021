@@ -1,0 +1,8 @@
+@use "../../abstracts/functions" as fun;
+
+.wp-block-rss {
+	&__item-publish-date,
+	&__item-author {
+		color: fun.get-var(color-fg-tertiary);
+	}
+}

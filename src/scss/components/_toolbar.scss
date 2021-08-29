@@ -1,0 +1,246 @@
+@use "sass:math";
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+@use "./button";
+
+.toolbar {
+	display: flex;
+	flex-flow: row wrap;
+	align-content: flex-start;
+	gap: fun.get-var(margin-sm);
+	width: fun.convert-px(40);
+
+	@include mix.media("screen") {
+		@include mix.dimensions("xs") {
+			width: auto;
+		}
+	}
+
+	&__item {
+		flex: 0 0 fun.convert-px(40);
+		width: fun.convert-px(40);
+		height: fun.convert-px(40);
+		position: relative;
+		z-index: 3;
+
+		@include mix.media("screen") {
+			@include mix.dimensions("lg") {
+				position: unset;
+			}
+		}
+
+		> .btn {
+			width: fun.convert-px(40);
+			height: fun.convert-px(40);
+		}
+	}
+
+	&__checkbox {
+		cursor: pointer;
+		opacity: 0;
+		position: absolute;
+		top: fun.convert-px(math.div(40, 2) - 8); // label/2 - checkbox (height)
+		right: fun.convert-px(
+			math.div(40, 2) - 8
+		); // label/2 - checkbox (width)
+		z-index: 2;
+
+		&:hover,
+		&:focus {
+			~ .btn {
+				background-position: 0 50%;
+				box-shadow: 0 0 0 fun.convert-px(2)
+						fun.get-var(color-primary-light),
+					0 fun.convert-px(3) 0 fun.convert-px(2)
+						fun.get-var(color-shadow),
+					0 fun.convert-px(2) fun.convert-px(2) fun.convert-px(3)
+						fun.get-var(color-shadow-light);
+				transform: translateY(#{fun.convert-px(-1)});
+
+				.btn__icon {
+					animation: pulse 1.2s;
+					animation-iteration-count: infinite;
+				}
+			}
+		}
+
+		&:focus {
+			~ .btn {
+				box-shadow: 0 0 0 fun.convert-px(2)
+						fun.get-var(color-primary-light),
+					0 fun.convert-px(3) 0 fun.convert-px(2)
+						fun.get-var(color-shadow),
+					0 fun.convert-px(2) fun.convert-px(2) fun.convert-px(3)
+						fun.get-var(color-shadow-light),
+					0 fun.convert-px(1) 0 fun.convert-px(7)
+						fun.get-var(color-primary-light-opacity);
+				outline: none;
+			}
+		}
+
+		&:active {
+			~ .btn {
+				transform: translateY(#{fun.convert-px(2)});
+			}
+		}
+
+		&:not(:checked) {
+			~ .btn .btn__body--activated,
+			~ .form--search {
+				display: none;
+			}
+		}
+
+		&:checked {
+			~ .btn {
+				position: relative;
+
+				&::before {
+					display: block;
+					content: "";
+					background-image: url(fun.encode-svg(
+						'<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="stroke: #{var.$color_catskill-white}; stroke-width: 5; stroke-linecap: round;">><path d="m10 10 80 80m0-80L10 90" style="stroke-width:20"/></svg>'
+					));
+					background-position: center;
+					background-size: 40%;
+					background-repeat: no-repeat;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					transition: all 0.3s ease-in-out 0s;
+				}
+
+				.btn__icon path,
+				.btn__body--inactivated {
+					display: none;
+				}
+			}
+
+			~ .form--search {
+				display: grid;
+				place-content: center;
+			}
+
+			&:hover,
+			&:focus {
+				~ .btn {
+					&::before {
+						animation: pulse 1.2s;
+						animation-iteration-count: infinite;
+					}
+				}
+			}
+		}
+	}
+
+	.form--search {
+		@include mix.media("screen") {
+			@include mix.dimensions(null, "lg") {
+				background: fun.get-var(color-bg-tertiary);
+				padding: fun.get-var(padding-md);
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: var.get-dim("main-nav-height");
+				left: 0;
+				z-index: -1;
+				animation: fadeIn 0.3s;
+
+				.form__field {
+					background: fun.get-var(color-bg-secondary);
+					margin-top: fun.get-var(margin-md);
+					width: min(
+						calc(100vw - #{fun.get-var(padding-md)} * 2),
+						80ch
+					);
+				}
+			}
+
+			@include mix.dimensions("lg") {
+				position: absolute;
+				bottom: calc(#{fun.get-var(margin-2xl)} * -1);
+				right: 0;
+				max-width: unset;
+				animation: scaleFullWidth 0.6s;
+
+				.form {
+					&__btn {
+						background: linear-gradient(
+								to right,
+								transparent 0 33.3%,
+								fun.get-var(color-primary-light) 33.3% 66.6%,
+								fun.get-var(color-primary-dark) 66.6% 100%
+							)
+							0% 0% / 300% 100% no-repeat;
+						border: none;
+						box-shadow: none;
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						margin: 0;
+						padding: 0 fun.get-var(padding-sm);
+						transform: none;
+
+						.btn {
+							&__body {
+								border: 0;
+								clip: rect(1px, 1px, 1px, 1px);
+								width: fun.convert-px(1);
+								height: fun.convert-px(1);
+								overflow: hidden;
+								padding: 0;
+								position: absolute !important;
+								word-break: normal;
+								word-wrap: normal !important;
+							}
+
+							&__icon {
+								fill: fun.get-var(color-primary);
+								margin: 0;
+								width: fun.convert-px(25);
+								transform: none;
+							}
+						}
+
+						&:hover,
+						&:focus {
+							background-position: 50% 0;
+
+							.btn__icon {
+								fill: fun.get-var(color-fg-inverted);
+								transform: rotate(360deg);
+							}
+						}
+
+						&:active {
+							background-position: 100% 0;
+						}
+					}
+
+					&__field {
+						padding-right: fun.get-var(padding-2xl);
+						width: 40ch;
+
+						&:hover {
+							~ .form__btn {
+								transform: translateX(#{fun.convert-px(-3)})
+									translateY(#{fun.convert-px(-3)});
+							}
+						}
+
+						&:focus {
+							~ .form__btn {
+								transform: translateX(#{fun.convert-px(2)})
+									translateY(#{fun.convert-px(2)});
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,8 +1,0 @@
-@use "../../abstracts/functions" as f;
-
-.wp-block-rss {
-	&__item-publish-date,
-	&__item-author {
-		color: f.cssvar(color-fg-tertiary);
-	}
-}

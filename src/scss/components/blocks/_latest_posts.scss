@@ -1,0 +1,13 @@
+@use "../../abstracts/functions" as fun;
+
+.wp-block-latest-posts {
+	&__list {
+		padding-left: 0;
+	}
+
+	&__post-date {
+		color: fun.get-var(color-fg-tertiary);
+		font-size: fun.get-var(font-size-sm);
+		margin-top: fun.get-var(margin-3xs);
+	}
+}

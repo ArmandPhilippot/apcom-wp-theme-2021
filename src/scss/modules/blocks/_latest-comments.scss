@@ -1,5 +1,0 @@
-@use "../../abstracts/mixins" as m;
-
-.wp-block-latest-comments {
-	@include m.orderedListReset;
-}

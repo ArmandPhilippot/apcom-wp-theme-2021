@@ -4,95 +4,83 @@
 //============================================================================
 @use "base/theme_info";
 
-/*!===========================================================================
+/*===========================================================================
 >>> TABLE OF CONTENTS:
-==============================================================================
-1.0 Normalize.css
-2.0 Vendors
-3.0 Base
-4.0 Layout
-5.0 Components
-6.0 Pages
+=============================================================================
+	1.0 Vendors
+	2.0 Base
+	3.0 Layout
+	4.0 Components
+	5.0 Pages
+	6.0 Themes
 ============================================================================*/
 
 /**
- * 1.0 Modern-normalize.css
+ * 1.0 Vendors
  *
- * Resetting and rebuilding styles based on Nicolas Gallagher and Jonathan Neal
- * work (normalize.css) and improved by Sindre Sorhus.
- * https://github.com/sindresorhus/modern-normalize
+ * Import each files separately to define vendors styles order.
  */
 @use "modern-normalize";
-
-/**
-* 2.0 Vendors
-*
-* Import each files separately to define vendors styles order.
-*/
 @use "vendors/vendors";
 
 /**
-* 3.0 Base
+* 2.0 Base
 *
-* Define CSS variables (colors, fonts...) and box-sizing.
+* Define some standard styles and CSS variables (colors, fonts...).
 */
+@use "base/base";
 @use "base/animations";
 @use "base/colors";
 @use "base/fonts";
 @use "base/spacings";
-@use "base/base";
 @use "base/helpers";
 @use "base/typography";
 
 /**
-* 4.0 Elements
-*
-* Define elements styles like links, lists, forms...
-*/
-@use "elements/blockquote";
-@use "elements/form";
-@use "elements/link";
-@use "elements/list";
-@use "elements/media";
-@use "elements/preformat";
-@use "elements/table";
-
-/**
-* 5.0 Layout
+* 3.0 Layout
 *
 * Define website layout.
 */
 @use "layout/grid";
 @use "layout/header";
-@use "layout/main";
+@use "layout/page";
+@use "layout/article";
 @use "layout/footer";
+@use "layout/comments";
+@use "layout/form";
+@use "layout/nav";
+@use "layout/sidebar";
 
 /**
-* 6.0 Pages
+* 4.0 Components
+*
+* Define styles for all kind of specific modules like buttons, widgets...
+*/
+@use "components/back-to-top";
+@use "components/breadcrumb";
+@use "components/button";
+@use "components/comment";
+@use "components/gutenberg-blocks";
+@use "components/meta";
+@use "components/modal";
+@use "components/more-link";
+@use "components/pagination";
+@use "components/reading-progress";
+@use "components/toolbar";
+@use "components/widget";
+
+/**
+* 5.0 Pages
 *
 * Define pages specific styles.
 */
-@use "pages/author";
-@use "pages/contact";
-@use "pages/cpt";
-@use "pages/front-page";
+@use "pages/home";
 
 /**
-* 7.0 Modules
+* 6.0 Themes
 *
-* Define modules used like navigation, breadcrumbs...
+* Define themes (like dark mode) specific styles.
 */
-@use "modules/back-to-top";
-@use "modules/blocks";
-@use "modules/breadcrumb";
-@use "modules/comments";
-@use "modules/feed";
-@use "modules/gallery";
-@use "modules/main-nav";
-@use "modules/meta";
-@use "modules/more-link";
-@use "modules/pagination";
-@use "modules/reading-progress";
-@use "modules/search";
-@use "modules/tools";
-@use "modules/widgets";
+@use "themes/dark";
+@use "themes/code-light";
+@use "themes/code-dark";

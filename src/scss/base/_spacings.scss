@@ -1,18 +1,25 @@
-@use "../abstracts/functions" as f;
-@use "../abstracts/mixins" as m;
-@use "../abstracts/variables" as v;
-@include m.declareCssVars(
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+@include mix.set-vars(
 	(
-		spacing-3xs: f.clampthis(v.$spacing_3xs),
-		spacing-2xs: f.clampthis(v.$spacing_2xs),
-		spacing-xs: f.clampthis(v.$spacing_xs),
-		spacing-sm: f.clampthis(v.$spacing_sm),
-		spacing-md: f.clampthis(v.$spacing_md),
-		spacing-lg: f.clampthis(v.$spacing_lg),
-		spacing-xl: f.clampthis(v.$spacing_xl),
-		spacing-2xl: f.clampthis(v.$spacing_2xl),
-		spacing-3xl: f.clampthis(v.$spacing_3xl),
-		spacing-4xl: f.clampthis(v.$spacing_4xl),
-		spacing-5xl: f.clampthis(v.$spacing_5xl),
+		margin-3xs: var.$spacing_3xs,
+		margin-2xs: var.$spacing_2xs,
+		margin-xs: var.$spacing_xs,
+		margin-sm: var.$spacing_sm,
+		margin-md: var.$spacing_md,
+		margin-lg: var.$spacing_lg,
+		margin-xl: var.$spacing_xl,
+		margin-2xl: var.$spacing_2xl,
+		margin-3xl: var.$spacing_3xl,
+		padding-3xs: var.$spacing_3xs,
+		padding-2xs: var.$spacing_2xs,
+		padding-xs: var.$spacing_xs,
+		padding-sm: var.$spacing_sm,
+		padding-md: var.$spacing_md,
+		padding-lg: var.$spacing_lg,
+		padding-xl: var.$spacing_xl,
+		padding-2xl: var.$spacing_2xl,
+		padding-3xl: var.$spacing_3xl,
 	)
 );

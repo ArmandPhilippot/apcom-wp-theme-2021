@@ -1,4 +1,5 @@
 @use "convert" as fun;
+@use "sass:math";
 
 /// Use CSS lock to define `clamp` values from a minimum size.
 /// @param {String} $minSize The minimum size.
@@ -6,12 +7,11 @@
 /// @param {Number} $minVw Min viewport size in px without unit.
 /// @param {Number} $maxVw Max viewport size in px without unit.
 /// @return {String} The `clamp` function.
-@function set-clamp($minSize, $multiplier: 2, $minVw: 320, $maxVw: 1600) {
-	$viewportDiff: $maxVw - $minVw;
+@function clamp-lock($minSize, $multiplier: 2, $minVw: 320, $maxVw: 1600) {
+	$viewportDiff: calc(#{$maxVw} - #{$minVw});
 	$maxSize: calc(#{$minSize} * #{$multiplier});
-	$preferredSize: calc(
-		#{$minSize} + calc((100vw - #{fun.convert-px($minVw)}) / #{$viewportDiff})
-	);
+	$sizeDiff: calc(#{$maxSize} - #{$minSize});
+	$preferredSize: calc(0.1vw + #{$minSize} + #{$sizeDiff} / #{$viewportDiff});
 
 	@return clamp(#{$minSize}, #{$preferredSize}, #{$maxSize});
 }

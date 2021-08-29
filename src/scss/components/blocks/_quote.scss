@@ -1,0 +1,8 @@
+@use "../../abstracts/functions" as fun;
+
+.wp-block-quote {
+	&.is-large,
+	&.is-style-large {
+		padding: fun.get-var(padding-sm) fun.get-var(padding-md);
+	}
+}
