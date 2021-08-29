@@ -183,6 +183,8 @@ Prism.plugins.toolbar.registerButton( 'switch-theme', function() {
 	}
 
 	const switchButton = createButton();
+
+	updateTheme();
 	switchButton.addEventListener( 'click', () => {
 		switchTheme();
 	} );
