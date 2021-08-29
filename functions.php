@@ -184,7 +184,6 @@ function apcom_enqueue_scripts() {
 
 	$toc_args = array(
 		'tocTitle'     => __( 'Table of contents', 'APCom' ),
-		'commentTitle' => __( 'Comments', 'APCom' ),
 	);
 
 	if ( file_exists( $webpack_runtime_path ) ) {

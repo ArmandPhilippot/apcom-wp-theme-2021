@@ -5,7 +5,6 @@
  *
  * @author Armand Philippot <contact@armandphilippot.com>
  */
-/* global toc_args */
 
 /**
  * Convert a text into a slug or id.
@@ -26,7 +25,7 @@ const slugify = ( text ) => {
 		.replace( /^-|-$/g, '' );
 };
 
-class TableOfContent {
+export class TableOfContent {
 	constructor() {
 		this.source = '';
 		this.target = '';
@@ -74,11 +73,6 @@ class TableOfContent {
 				! title.firstElementChild ||
 				'A' !== title.firstElementChild.tagName
 		);
-		const commentsTitle = document.getElementById( 'comments__title' );
-
-		if ( commentsTitle ) {
-			titlesWithoutLinks.push( commentsTitle );
-		}
 
 		return titlesWithoutLinks;
 	}
@@ -149,21 +143,12 @@ class TableOfContent {
 			}
 
 			markup += '<li>';
-			if ( 'comments__title' === headingList[ i ].id ) {
-				markup +=
-					'<a href="#' +
-					this.addSlug( headingList[ i ] ) +
-					'">' +
-					toc_args.commentTitle +
-					'</a>';
-			} else {
-				markup +=
+			markup +=
 					'<a href="#' +
 					this.addSlug( headingList[ i ] ) +
 					'">' +
 					headingList[ i ].innerText +
 					'</a>';
-			}
 
 			previousLevel = currentLevel;
 		}
@@ -200,13 +185,6 @@ class TableOfContent {
 		this.setOptions( options );
 		if ( this.source && this.target ) {
 			this.printToc();
-			this.source.parentElement.classList.add( 'page--has-toc' );
 		}
 	}
 }
-
-const minimalistTOC = new TableOfContent();
-
-minimalistTOC.init( 'page__content', 'table-of-content', {
-	title: toc_args.tocTitle,
-} );
