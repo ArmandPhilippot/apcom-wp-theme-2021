@@ -3,6 +3,6 @@
 .wp-block-quote {
 	&.is-large,
 	&.is-style-large {
-		padding: fun.get-var(padding-sm) fun.get-var(padding-md);
+		padding: fun.get-var(spacing-sm) fun.get-var(spacing-md);
 	}
 }

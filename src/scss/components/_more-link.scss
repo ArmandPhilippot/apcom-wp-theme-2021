@@ -4,7 +4,7 @@
 .more-link {
 	.btn__icon {
 		fill: fun.get-var(color-primary);
-		margin-left: fun.get-var(margin-sm);
+		margin-left: fun.get-var(spacing-sm);
 		width: var.get-dim(icon-size-md);
 		transition: all 0.3s ease-in-out 0s;
 	}

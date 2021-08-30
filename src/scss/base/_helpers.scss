@@ -38,7 +38,7 @@
 		top: 0;
 		width: auto;
 		height: auto;
-		padding: fun.get-var(padding-sm) fun.get-var(padding-md);
+		padding: fun.get-var(spacing-sm) fun.get-var(spacing-md);
 		z-index: 100000; /* Above WP toolbar. */
 	}
 }

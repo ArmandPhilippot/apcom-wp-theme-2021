@@ -5,7 +5,7 @@
 
 .comments {
 	background: fun.get-var(color-bg-secondary);
-	padding: 0 0 fun.get-var(padding-2xl);
+	padding: 0 0 fun.get-var(spacing-2xl);
 	position: relative;
 
 	&::before {
@@ -25,16 +25,16 @@
 	}
 
 	&__header {
-		padding: fun.get-var(padding-lg) 0;
+		padding: fun.get-var(spacing-lg) 0;
 	}
 
 	&__list {
 		@extend %reset-ordered-list;
-		margin: fun.get-var(margin-sm) 0 fun.get-var(margin-lg);
+		margin: fun.get-var(spacing-sm) 0 fun.get-var(spacing-lg);
 	}
 
 	&__item {
-		margin: fun.get-var(margin-sm) 0;
+		margin: fun.get-var(spacing-sm) 0;
 
 		.comments__form {
 			background: fun.get-var(color-bg);
@@ -43,8 +43,8 @@
 					fun.get-var(color-shadow-lighter),
 				fun.convert-px(4) fun.convert-px(4) fun.convert-px(3)
 					fun.convert-px(-2) fun.get-var(color-shadow-darker);
-			margin-top: fun.get-var(margin-sm);
-			padding: fun.get-var(padding-md);
+			margin-top: fun.get-var(spacing-sm);
+			padding: fun.get-var(spacing-md);
 
 			.form--comments {
 				max-width: 95%;
@@ -54,12 +54,12 @@
 		.form__title {
 			display: flex;
 			flex-flow: row wrap;
-			gap: fun.get-var(margin-md);
+			gap: fun.get-var(spacing-md);
 		}
 	}
 
 	.children {
-		margin: fun.get-var(margin-sm) 0;
-		padding-left: fun.get-var(padding-sm);
+		margin: fun.get-var(spacing-sm) 0;
+		padding-left: fun.get-var(spacing-sm);
 	}
 }

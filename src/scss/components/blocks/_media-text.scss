@@ -1,5 +1,5 @@
 @use "../../abstracts/functions" as fun;
 
 .wp-block-media-text {
-	gap: fun.get-var(margin-sm);
+	gap: fun.get-var(spacing-sm);
 }

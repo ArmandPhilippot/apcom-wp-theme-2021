@@ -16,7 +16,7 @@
 	td,
 	th {
 		border: fun.convert-px(1) solid fun.get-var(color-border);
-		padding: fun.get-var(padding-xs);
+		padding: fun.get-var(spacing-xs);
 	}
 
 	tfoot {

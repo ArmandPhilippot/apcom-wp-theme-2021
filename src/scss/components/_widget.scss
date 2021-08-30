@@ -3,7 +3,7 @@
 @use "../abstracts/placeholders";
 
 .widget {
-	padding: fun.get-var(padding-xs) 0;
+	padding: fun.get-var(spacing-xs) 0;
 
 	@include mix.media("screen") {
 		@include mix.dimensions(null, "lg") {
@@ -13,7 +13,7 @@
 		}
 
 		@include mix.dimensions("lg") {
-			padding: fun.get-var(padding-sm) fun.get-var(padding-md);
+			padding: fun.get-var(spacing-sm) fun.get-var(spacing-md);
 		}
 	}
 
@@ -21,13 +21,13 @@
 		@extend %reset-list;
 
 		li {
-			margin-bottom: fun.get-var(margin-xs);
+			margin-bottom: fun.get-var(spacing-xs);
 
 			&::before {
 				display: inline-block;
 				content: "\0025B8";
 				color: fun.get-var(color-secondary);
-				margin-right: fun.get-var(margin-2xs);
+				margin-right: fun.get-var(spacing-2xs);
 			}
 		}
 	}
@@ -68,7 +68,7 @@
 
 	.lup {
 		&__item {
-			margin-bottom: fun.get-var(margin-md);
+			margin-bottom: fun.get-var(spacing-md);
 
 			&:last-child {
 				margin-bottom: 0;
@@ -76,7 +76,7 @@
 		}
 
 		&__footer {
-			margin-top: fun.get-var(margin-3xs);
+			margin-top: fun.get-var(spacing-3xs);
 		}
 
 		&__term {

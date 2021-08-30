@@ -12,8 +12,8 @@
 	display: grid;
 	grid-auto-rows: max-content;
 	grid-template-columns:
-		minmax(#{fun.get-var(padding-md)}, 1fr) minmax(0, 80ch)
-		minmax(#{fun.get-var(padding-md)}, 1fr);
+		minmax(#{fun.get-var(spacing-md)}, 1fr) minmax(0, 80ch)
+		minmax(#{fun.get-var(spacing-md)}, 1fr);
 
 	&__branding {
 		grid-column: 2;
@@ -22,8 +22,8 @@
 
 	&__toolbar {
 		position: absolute;
-		top: fun.get-var(margin-md);
-		right: fun.get-var(margin-md);
+		top: fun.get-var(spacing-md);
+		right: fun.get-var(spacing-md);
 	}
 }
 
@@ -36,11 +36,11 @@
 	display: grid;
 	grid-template-columns:
 		minmax(0, 1fr)
-		min(80ch, 100vw - #{fun.get-var(padding-md)} * 2)
+		min(80ch, 100vw - #{fun.get-var(spacing-md)} * 2)
 		minmax(0, 1fr);
 	grid-auto-flow: row;
 	grid-auto-rows: max-content;
-	column-gap: fun.get-var(margin-md);
+	column-gap: fun.get-var(spacing-md);
 }
 
 .page,
@@ -97,19 +97,19 @@
 	@include mix.dimensions("lg") {
 		.header {
 			grid-template-columns:
-				minmax(#{fun.get-var(padding-2xl)}, 1fr) minmax(
+				minmax(#{fun.get-var(spacing-2xl)}, 1fr) minmax(
 					max-content,
 					100ch
 				)
 				minmax(auto, 100ch)
 				max-content
-				minmax(#{fun.get-var(padding-2xl)}, 1fr);
+				minmax(#{fun.get-var(spacing-2xl)}, 1fr);
 			align-items: center;
 
 			&__branding {
 				display: grid;
 				grid-template-columns: max-content minmax(0, 1fr);
-				column-gap: fun.get-var(margin-md);
+				column-gap: fun.get-var(spacing-md);
 				align-items: center;
 				justify-items: start;
 			}
@@ -154,7 +154,7 @@
 				minmax(80ch, 1fr)
 				minmax(0, 45ch)
 				minmax(0, 1fr);
-			column-gap: fun.get-var(margin-xl);
+			column-gap: fun.get-var(spacing-xl);
 		}
 
 		.page {
@@ -195,7 +195,7 @@
 				minmax(70ch, 1fr)
 				minmax(25ch, 50ch)
 				minmax(0, 1fr);
-			column-gap: fun.get-var(margin-xl);
+			column-gap: fun.get-var(spacing-xl);
 		}
 
 		.breadcrumb {

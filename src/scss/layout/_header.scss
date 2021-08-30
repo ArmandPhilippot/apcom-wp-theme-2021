@@ -4,8 +4,8 @@
 
 .header {
 	background: fun.get-var(color-bg-secondary);
-	padding: clamp(#{fun.get-var(padding-lg)}, 4vw, #{fun.get-var(padding-2xl)})
-		0 clamp(#{fun.get-var(padding-xl)}, 4vw, #{fun.get-var(padding-3xl)});
+	padding: clamp(#{fun.get-var(spacing-lg)}, 4vw, #{fun.get-var(spacing-2xl)})
+		0 clamp(#{fun.get-var(spacing-xl)}, 4vw, #{fun.get-var(spacing-3xl)});
 	position: relative;
 	text-align: center;
 
@@ -32,7 +32,7 @@
 		font-family: fun.get-var(font-family-secondary);
 		font-size: fun.get-var(font-size-3xl);
 		font-weight: 500;
-		margin: fun.get-var(margin-xs) 0;
+		margin: fun.get-var(spacing-xs) 0;
 
 		@include mix.media("screen") {
 			@include mix.dimensions("lg") {

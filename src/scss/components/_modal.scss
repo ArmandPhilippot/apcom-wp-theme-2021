@@ -5,8 +5,8 @@
 	box-shadow: fun.convert-px(6) fun.convert-px(6) 0 0
 		fun.get-var(color-primary);
 	font-weight: 600;
-	margin-bottom: fun.get-var(margin-md);
-	padding: fun.get-var(padding-xs) fun.get-var(padding-sm);
+	margin-bottom: fun.get-var(spacing-md);
+	padding: fun.get-var(spacing-xs) fun.get-var(spacing-sm);
 
 	&__label {
 		color: fun.get-var(color-token-orange);

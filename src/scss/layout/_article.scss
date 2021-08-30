@@ -4,19 +4,19 @@
 
 .article {
 	border-bottom: fun.convert-px(1) solid fun.get-var(color-border-light);
-	margin-bottom: fun.get-var(margin-md);
-	padding-bottom: fun.get-var(margin-xl);
+	margin-bottom: fun.get-var(spacing-md);
+	padding-bottom: fun.get-var(spacing-xl);
 
 	&__title {
 		margin-bottom: 0;
 	}
 
 	&__meta {
-		margin: fun.get-var(margin-md) 0;
+		margin: fun.get-var(spacing-md) 0;
 	}
 
 	&__figure {
-		margin: 0 0 fun.get-var(margin-md);
+		margin: 0 0 fun.get-var(spacing-md);
 	}
 
 	&__image {
@@ -37,8 +37,8 @@
 
 			&__figure {
 				order: 2;
-				margin-top: fun.get-var(margin-xs);
-				margin-left: fun.get-var(margin-md);
+				margin-top: fun.get-var(spacing-xs);
+				margin-left: fun.get-var(spacing-md);
 			}
 
 			&__image {
@@ -47,14 +47,14 @@
 
 			&__description {
 				flex: 1 1
-					calc(#{fun.convert-px(250)} - #{fun.get-var(margin-md)}); // image-width - margin
+					calc(#{fun.convert-px(250)} - #{fun.get-var(spacing-md)}); // image-width - margin
 				order: 1;
 			}
 		}
 
 		@include mix.dimensions("xl") {
 			&__figure {
-				margin-left: fun.get-var(margin-xl);
+				margin-left: fun.get-var(spacing-xl);
 			}
 		}
 	}
@@ -64,12 +64,12 @@
 	.article {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
-		gap: fun.get-var(margin-md);
+		gap: fun.get-var(spacing-md);
 
 		&__footer {
 			grid-row: 2;
 			display: grid;
-			gap: fun.get-var(margin-md);
+			gap: fun.get-var(spacing-md);
 		}
 
 		&__figure {
@@ -106,7 +106,7 @@
 
 				&__figure {
 					text-align: left;
-					margin-bottom: fun.get-var(margin-md);
+					margin-bottom: fun.get-var(spacing-md);
 				}
 
 				&__image {
@@ -137,8 +137,8 @@
 			}
 
 			@include mix.dimensions("lg") {
-				column-gap: fun.get-var(margin-2xl);
-				margin-bottom: fun.get-var(margin-lg);
+				column-gap: fun.get-var(spacing-2xl);
+				margin-bottom: fun.get-var(spacing-lg);
 
 				&:last-child {
 					border-bottom: none;

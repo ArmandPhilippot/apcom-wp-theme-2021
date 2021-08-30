@@ -5,16 +5,16 @@
 
 .back-to-top {
 	position: fixed;
-	right: fun.get-var(margin-sm);
+	right: fun.get-var(spacing-sm);
 	bottom: calc(
-		#{var.get-dim("main-nav-height")} + #{fun.get-var(margin-md)}
+		#{var.get-dim("main-nav-height")} + #{fun.get-var(spacing-md)}
 	); // main-nav height + spacing
 	z-index: 2;
 
 	@include mix.media("screen") {
 		@include mix.dimensions("lg") {
-			right: fun.get-var(margin-md);
-			bottom: fun.get-var(margin-md);
+			right: fun.get-var(spacing-md);
+			bottom: fun.get-var(spacing-md);
 		}
 	}
 

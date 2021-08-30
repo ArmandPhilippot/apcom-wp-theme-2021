@@ -1,20 +1,20 @@
 @use "../../abstracts/functions" as fun;
 
 .wp-block-gallery {
-	margin-bottom: fun.get-var(margin-sm);
+	margin-bottom: fun.get-var(spacing-sm);
 
 	.blocks-gallery-item {
-		margin: 0 fun.get-var(margin-sm) fun.get-var(margin-sm) 0;
+		margin: 0 fun.get-var(spacing-sm) fun.get-var(spacing-sm) 0;
 
 		&:last-child {
-			margin: 0 0 fun.get-var(margin-sm) 0;
+			margin: 0 0 fun.get-var(spacing-sm) 0;
 		}
 
 		figcaption {
 			background: fun.get-var(color-bg-secondary);
 			color: fun.get-var(color-fg-tertiary);
 			font-size: fun.get-var(font-size-sm);
-			padding: fun.get-var(padding-2xs) fun.get-var(padding-3xs);
+			padding: fun.get-var(spacing-2xs) fun.get-var(spacing-3xs);
 		}
 	}
 }

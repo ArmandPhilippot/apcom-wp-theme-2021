@@ -5,8 +5,8 @@
 .meta {
 	color: fun.get-var(color-fg-secondary);
 	font-size: fun.get-var(font-size-sm);
-	column-gap: fun.get-var(margin-md);
-	row-gap: fun.get-var(margin-xs);
+	column-gap: fun.get-var(spacing-md);
+	row-gap: fun.get-var(spacing-xs);
 
 	&__item {
 		&--has-icon {
@@ -15,7 +15,7 @@
 
 			.meta__term,
 			.meta__description {
-				margin-left: fun.get-var(margin-xs);
+				margin-left: fun.get-var(spacing-xs);
 				padding-left: var.get-dim("icon-size-md");
 			}
 		}
@@ -51,7 +51,7 @@
 
 			.meta__description {
 				&:not(:first-of-type) {
-					margin-top: fun.get-var(margin-3xs);
+					margin-top: fun.get-var(spacing-3xs);
 				}
 
 				@include mix.media("screen") {
@@ -101,9 +101,9 @@
 		&__item {
 			display: flex;
 			flex-flow: row wrap;
-			column-gap: fun.get-var(margin-xs);
+			column-gap: fun.get-var(spacing-xs);
 			border-right: fun.convert-px(1) solid fun.get-var(color-border);
-			padding-right: fun.get-var(padding-sm);
+			padding-right: fun.get-var(spacing-sm);
 
 			&--has-icon {
 				background: none;

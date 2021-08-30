@@ -6,7 +6,7 @@
 .footer {
 	background: fun.get-var(color-bg-tertiary);
 	margin-bottom: var.get-dim("main-nav-height");
-	padding: fun.get-var(padding-lg) fun.get-var(padding-md);
+	padding: fun.get-var(spacing-lg) fun.get-var(spacing-md);
 	position: relative;
 	text-align: center;
 
@@ -39,6 +39,6 @@
 
 	&__body {
 		font-family: fun.get-var(font-family-secondary);
-		margin: fun.get-var(margin-xs) 0;
+		margin: fun.get-var(spacing-xs) 0;
 	}
 }

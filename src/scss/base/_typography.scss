@@ -32,7 +32,7 @@ h6,
 	color: fun.get-var(color-fg-secondary);
 	font-family: fun.get-var(font-family-secondary);
 	font-weight: 500;
-	margin: 0 0 fun.get-var(margin-md);
+	margin: 0 0 fun.get-var(spacing-md);
 }
 
 h1,
@@ -62,11 +62,11 @@ h6 {
 }
 
 p {
-	margin: 0 0 fun.get-var(margin-md);
+	margin: 0 0 fun.get-var(spacing-md);
 }
 
 hr {
-	margin: fun.get-var(margin-md) 0;
+	margin: fun.get-var(spacing-md) 0;
 }
 
 small {
@@ -159,7 +159,7 @@ a {
 		&.tel {
 			&::after {
 				margin-left: fun.convert-px(5);
-				margin-right: fun.get-var(margin-md);
+				margin-right: fun.get-var(spacing-md);
 			}
 		}
 
@@ -204,10 +204,10 @@ a {
 ul,
 ol,
 dl {
-	margin-bottom: fun.get-var(margin-md);
+	margin-bottom: fun.get-var(spacing-md);
 
 	li {
-		margin-bottom: fun.get-var(margin-3xs);
+		margin-bottom: fun.get-var(spacing-3xs);
 
 		&:last-child {
 			margin-bottom: 0;
@@ -219,7 +219,7 @@ dl {
 
 		li {
 			&:first-child {
-				margin-top: fun.get-var(margin-3xs);
+				margin-top: fun.get-var(spacing-3xs);
 			}
 		}
 	}
@@ -230,7 +230,7 @@ dl {
 }
 
 ul {
-	padding-left: fun.get-var(padding-sm);
+	padding-left: fun.get-var(spacing-sm);
 }
 
 ol {
@@ -245,7 +245,7 @@ ol {
 			content: counters(li, ".") ". ";
 			color: fun.get-var(color-secondary);
 			display: table-cell;
-			padding-right: fun.get-var(padding-3xs);
+			padding-right: fun.get-var(spacing-3xs);
 		}
 	}
 
@@ -257,7 +257,7 @@ ol {
 dl {
 	display: flex;
 	flex-flow: row wrap;
-	gap: fun.get-var(margin-xs);
+	gap: fun.get-var(spacing-xs);
 }
 
 dt {
@@ -285,8 +285,8 @@ pre {
 	font-size: fun.get-var(font-size-md);
 	max-width: 100%;
 	overflow: auto;
-	margin: 0 0 fun.get-var(margin-md);
-	padding: fun.get-var(padding-sm);
+	margin: 0 0 fun.get-var(spacing-md);
+	padding: fun.get-var(spacing-sm);
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
@@ -322,8 +322,8 @@ blockquote {
 	box-shadow: fun.convert-px(1) fun.convert-px(1) fun.convert-px(3)
 		fun.convert-px(1) fun.get-var(color-shadow-light);
 	font-style: italic;
-	margin: 0 0 fun.get-var(margin-md);
-	padding: fun.get-var(padding-sm) fun.get-var(padding-md);
+	margin: 0 0 fun.get-var(spacing-md);
+	padding: fun.get-var(spacing-sm) fun.get-var(spacing-md);
 	position: relative;
 
 	&::before {
@@ -337,17 +337,17 @@ blockquote {
 		background-size: 50%;
 		width: var.get-dim("icon-size-sm");
 		height: var.get-dim("icon-size-sm");
-		padding: fun.get-var(padding-sm);
+		padding: fun.get-var(spacing-sm);
 		position: absolute;
 		top: calc(
 			50% -
 				(
-					#{var.get-dim("icon-size-sm")} + (#{fun.get-var(padding-xs)} /
+					#{var.get-dim("icon-size-sm")} + (#{fun.get-var(spacing-xs)} /
 								2)
 				)
 		);
 		left: calc(
-			(#{var.get-dim("icon-size-sm")} + (#{fun.get-var(padding-sm)} / 2)) *
+			(#{var.get-dim("icon-size-sm")} + (#{fun.get-var(spacing-sm)} / 2)) *
 				-1
 		);
 	}
@@ -368,6 +368,6 @@ cite {
 
 	&::before {
 		content: "\2014 \2009";
-		margin-right: fun.get-var(margin-2xs);
+		margin-right: fun.get-var(spacing-2xs);
 	}
 }

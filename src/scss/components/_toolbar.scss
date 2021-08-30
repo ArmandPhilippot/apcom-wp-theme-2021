@@ -8,7 +8,7 @@
 	display: flex;
 	flex-flow: row wrap;
 	align-content: flex-start;
-	gap: fun.get-var(margin-sm);
+	gap: fun.get-var(spacing-sm);
 	width: fun.convert-px(40);
 
 	@include mix.media("screen") {
@@ -140,7 +140,7 @@
 		@include mix.media("screen") {
 			@include mix.dimensions(null, "lg") {
 				background: fun.get-var(color-bg-tertiary);
-				padding: fun.get-var(padding-md);
+				padding: fun.get-var(spacing-md);
 				position: fixed;
 				top: 0;
 				right: 0;
@@ -151,9 +151,9 @@
 
 				.form__field {
 					background: fun.get-var(color-bg-secondary);
-					margin-top: fun.get-var(margin-md);
+					margin-top: fun.get-var(spacing-md);
 					width: min(
-						calc(100vw - #{fun.get-var(padding-md)} * 2),
+						calc(100vw - #{fun.get-var(spacing-md)} * 2),
 						80ch
 					);
 				}
@@ -161,7 +161,7 @@
 
 			@include mix.dimensions("lg") {
 				position: absolute;
-				bottom: calc(#{fun.get-var(margin-2xl)} * -1);
+				bottom: calc(#{fun.get-var(spacing-2xl)} * -1);
 				right: 0;
 				max-width: unset;
 				animation: scaleFullWidth 0.6s;
@@ -183,7 +183,7 @@
 						right: 0;
 						bottom: 0;
 						margin: 0;
-						padding: 0 fun.get-var(padding-sm);
+						padding: 0 fun.get-var(spacing-sm);
 						transform: none;
 
 						.btn {
@@ -223,7 +223,7 @@
 					}
 
 					&__field {
-						padding-right: fun.get-var(padding-2xl);
+						padding-right: fun.get-var(spacing-2xl);
 						width: 40ch;
 
 						&:hover {

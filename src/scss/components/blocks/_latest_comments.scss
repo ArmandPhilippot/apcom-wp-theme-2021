@@ -5,7 +5,7 @@
 	@extend %reset-ordered-list;
 
 	li {
-		margin-bottom: fun.get-var(margin-sm);
+		margin-bottom: fun.get-var(spacing-sm);
 	}
 
 	&__comment {
@@ -16,7 +16,7 @@
 		color: fun.get-var(color-fg-tertiary);
 		font-size: fun.get-var(font-size-sm);
 		line-height: inherit;
-		margin-top: fun.get-var(margin-3xs);
+		margin-top: fun.get-var(spacing-3xs);
 	}
 
 	&__comment-excerpt {
@@ -32,7 +32,7 @@
 	&.has-avatars & {
 		&__comment {
 			display: flex;
-			gap: fun.get-var(margin-sm);
+			gap: fun.get-var(spacing-sm);
 		}
 
 		&__comment-avatar {

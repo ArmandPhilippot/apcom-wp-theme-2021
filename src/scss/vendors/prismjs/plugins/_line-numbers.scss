@@ -6,9 +6,9 @@ pre.line-numbers {
 
 	> code {
 		position: relative;
-		padding: fun.get-var(padding-md) fun.get-var(padding-sm)
-			fun.get-var(padding-md)
-			calc(#{fun.convert-px(60)} + #{fun.get-var(padding-sm)}); // gutter width + spacing
+		padding: fun.get-var(spacing-md) fun.get-var(spacing-sm)
+			fun.get-var(spacing-md)
+			calc(#{fun.convert-px(60)} + #{fun.get-var(spacing-sm)}); // gutter width + spacing
 		overflow-wrap: normal;
 		white-space: pre;
 	}
@@ -20,7 +20,7 @@ pre.line-numbers {
 		top: 0;
 		left: 0;
 		width: fun.convert-px(60);
-		padding: fun.get-var(padding-md) 0;
+		padding: fun.get-var(spacing-md) 0;
 		pointer-events: none;
 		user-select: none;
 
@@ -31,7 +31,7 @@ pre.line-numbers {
 			&::before {
 				display: block;
 				content: counter(linenumber);
-				padding-right: fun.get-var(padding-sm);
+				padding-right: fun.get-var(spacing-sm);
 				text-align: right;
 			}
 		}

@@ -2,7 +2,7 @@
 @use "../../abstracts/mixins" as mix;
 
 .wp-block-columns {
-	gap: fun.get-var(margin-md);
+	gap: fun.get-var(spacing-md);
 
 	.wp-block-column {
 		&:nth-child(2n) {

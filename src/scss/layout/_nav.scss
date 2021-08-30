@@ -18,7 +18,7 @@
 			background: none;
 			box-shadow: none;
 			position: relative;
-			margin-right: fun.get-var(margin-md);
+			margin-right: fun.get-var(spacing-md);
 		}
 	}
 
@@ -68,7 +68,7 @@
 		font-weight: 600;
 		text-decoration: none;
 		height: var.get-dim("main-nav-height");
-		padding: 0 fun.get-var(padding-sm);
+		padding: 0 fun.get-var(spacing-sm);
 
 		&:hover {
 			background-position: center, 0 66.6%, 0 100%;
@@ -107,7 +107,7 @@
 				color: fun.get-var(color-primary);
 				height: auto;
 				margin: 0 fun.convert-px(3);
-				padding: fun.get-var(padding-3xs) fun.get-var(padding-sm);
+				padding: fun.get-var(spacing-3xs) fun.get-var(spacing-sm);
 				transform: skew(-20deg);
 				transition: all 0.3s linear 0s;
 

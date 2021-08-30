@@ -9,7 +9,7 @@
 		border-top: fun.convert-px(2) solid fun.get-var(color-border-lighter);
 		position: relative;
 		margin-bottom: var.get-dim("shape-height");
-		padding-bottom: fun.get-var(padding-sm);
+		padding-bottom: fun.get-var(spacing-sm);
 
 		&::after {
 			display: block;
@@ -31,7 +31,7 @@
 	&__logo {
 		width: auto;
 		height: var.get-dim(icon-size-xl);
-		margin-right: fun.get-var(margin-sm);
+		margin-right: fun.get-var(spacing-sm);
 	}
 
 	&__title {
@@ -39,9 +39,9 @@
 		flex-flow: row wrap;
 		align-items: center;
 		max-width: 100%;
-		padding: 0 fun.get-var(padding-sm) fun.get-var(padding-sm) 0;
+		padding: 0 fun.get-var(spacing-sm) fun.get-var(spacing-sm) 0;
 		position: relative;
-		margin-bottom: fun.get-var(margin-lg);
+		margin-bottom: fun.get-var(spacing-lg);
 		z-index: 1;
 
 		&::before {
@@ -65,29 +65,29 @@
 	}
 
 	&__meta {
-		margin-bottom: fun.get-var(margin-xs);
+		margin-bottom: fun.get-var(spacing-xs);
 	}
 
 	&__feed {
 		justify-content: flex-start;
-		margin-bottom: fun.get-var(margin-sm);
+		margin-bottom: fun.get-var(spacing-sm);
 		margin-right: auto;
 	}
 
 	&__introduction {
-		margin-top: fun.get-var(margin-sm);
+		margin-top: fun.get-var(spacing-sm);
 
 		> *:last-child {
-			margin-bottom: fun.get-var(margin-sm);
+			margin-bottom: fun.get-var(spacing-sm);
 		}
 	}
 
 	&__body {
-		padding: fun.get-var(padding-md) 0 fun.get-var(padding-3xl);
+		padding: fun.get-var(spacing-md) 0 fun.get-var(spacing-3xl);
 
 		/* Align first paragraph if page does not start with a title. */
 		> p:first-child {
-			margin-top: fun.get-var(margin-sm);
+			margin-top: fun.get-var(spacing-sm);
 		}
 
 		/*
@@ -95,7 +95,7 @@
 		* more link.
 		*/
 		> span:first-child + p {
-			margin-top: fun.get-var(margin-sm);
+			margin-top: fun.get-var(spacing-sm);
 		}
 
 		img:not([class*="__icon"]) {
@@ -112,7 +112,7 @@
 			font-weight: 600;
 			text-align: center;
 			width: auto;
-			margin: fun.get-var(margin-sm) auto 0;
+			margin: fun.get-var(spacing-sm) auto 0;
 		}
 
 		> *:last-child:not(.pagination) {
@@ -121,11 +121,11 @@
 	}
 
 	&__footer {
-		margin: fun.get-var(margin-md) 0 fun.get-var(margin-sm);
+		margin: fun.get-var(spacing-md) 0 fun.get-var(spacing-sm);
 
 		@include mix.media("screen") {
 			@include mix.dimensions("lg") {
-				margin: fun.get-var(margin-xl) 0 fun.get-var(margin-2xl);
+				margin: fun.get-var(spacing-xl) 0 fun.get-var(spacing-2xl);
 			}
 		}
 	}
@@ -164,11 +164,11 @@
 	&--has-toc {
 		.sidebar {
 			&--first {
-				margin: fun.get-var(margin-sm) 0 0;
+				margin: fun.get-var(spacing-sm) 0 0;
 
 				@include mix.media("screen") {
 					@include mix.dimensions("lg") {
-						margin: fun.get-var(margin-2xs) 0 0;
+						margin: fun.get-var(spacing-2xs) 0 0;
 					}
 				}
 			}
@@ -178,7 +178,7 @@
 
 				@include mix.media("screen") {
 					@include mix.dimensions("xl") {
-						margin: fun.get-var(margin-2xs) 0 0;
+						margin: fun.get-var(spacing-2xs) 0 0;
 					}
 				}
 			}
@@ -194,18 +194,18 @@
 
 	&--has-sidebar {
 		.page__body {
-			margin-bottom: fun.get-var(margin-xs);
+			margin-bottom: fun.get-var(spacing-xs);
 
 			@include mix.media("screen") {
 				@include mix.dimensions("lg") {
-					margin-bottom: fun.get-var(margin-3xl);
+					margin-bottom: fun.get-var(spacing-3xl);
 				}
 			}
 		}
 
 		.sidebar {
 			&--last {
-				padding-bottom: fun.get-var(padding-2xl);
+				padding-bottom: fun.get-var(spacing-2xl);
 			}
 		}
 	}
@@ -213,14 +213,14 @@
 	&--has-comments {
 		.sidebar {
 			&--last {
-				padding-bottom: fun.get-var(padding-md);
+				padding-bottom: fun.get-var(spacing-md);
 			}
 		}
 
 		@include mix.media("screen") {
 			@include mix.dimensions("lg") {
 				.page__body {
-					margin-bottom: fun.get-var(margin-xs);
+					margin-bottom: fun.get-var(spacing-xs);
 				}
 			}
 		}
@@ -229,14 +229,14 @@
 	&--is-cv {
 		.sidebar {
 			&--last {
-				margin-top: fun.get-var(margin-md);
+				margin-top: fun.get-var(spacing-md);
 			}
 		}
 	}
 
 	&--has-no-results {
 		.page__body {
-			padding-bottom: fun.get-var(padding-sm);
+			padding-bottom: fun.get-var(spacing-sm);
 		}
 	}
 }

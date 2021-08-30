@@ -2,26 +2,26 @@
 @use "../abstracts/mixins" as mix;
 
 .sidebar {
-	margin: fun.get-var(margin-xs) 0;
+	margin: fun.get-var(spacing-xs) 0;
 
 	> h2 {
-		padding: fun.get-var(padding-sm) 0;
+		padding: fun.get-var(spacing-sm) 0;
 		margin: 0;
 
 		@include mix.media("screen") {
 			@include mix.dimensions("lg") {
-				padding: fun.get-var(padding-sm) fun.get-var(padding-md);
+				padding: fun.get-var(spacing-sm) fun.get-var(spacing-md);
 			}
 		}
 	}
 
 	&--last {
-		padding-bottom: fun.get-var(padding-3xl);
+		padding-bottom: fun.get-var(spacing-3xl);
 	}
 
 	@include mix.media("screen") {
 		@include mix.dimensions("xl") {
-			padding-bottom: fun.get-var(padding-3xl);
+			padding-bottom: fun.get-var(spacing-3xl);
 		}
 	}
 }

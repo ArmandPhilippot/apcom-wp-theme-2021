@@ -37,11 +37,11 @@
 	position: relative;
 
 	.btn {
-		margin: fun.get-var(margin-md) auto 0;
+		margin: fun.get-var(spacing-md) auto 0;
 
 		&__icon {
 			fill: fun.get-var(color-fg-inverted);
-			margin-left: fun.get-var(margin-sm);
+			margin-left: fun.get-var(spacing-sm);
 			width: var.get-dim("icon-size-md");
 			transition: all 0.3s ease-in 0s;
 		}
@@ -69,7 +69,7 @@ textarea {
 	box-shadow: fun.convert-px(4) fun.convert-px(4) 0 0
 		fun.get-var(color-shadow);
 	color: fun.get-var(color-fg);
-	padding: fun.get-var(padding-sm);
+	padding: fun.get-var(spacing-sm);
 	width: 100%;
 	transition: all 0.2s ease-in 0s;
 
@@ -102,7 +102,7 @@ input[type="checkbox"]:not(.toggle) {
 	+ label {
 		position: relative;
 		padding-left: calc(
-			#{fun.convert-px(20)} + #{fun.get-var(padding-sm)}
+			#{fun.convert-px(20)} + #{fun.get-var(spacing-sm)}
 		); // before width + padding
 		cursor: pointer;
 
@@ -202,7 +202,7 @@ select {
 	background-image: url(fun.encode-svg(
 		'<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue-dark}" d="M3.707 7 3 7.707l6.125 6.125L11 15.707l1.875-1.875L19 7.707 18.293 7l-6.125 6.125L11 14.293l-1.168-1.168L3.707 7"/></svg>'
 	));
-	background-position: calc(100% - #{fun.get-var(padding-sm)}) center;
+	background-position: calc(100% - #{fun.get-var(spacing-sm)}) center;
 	background-repeat: no-repeat;
 	background-size: fun.convert-px(24);
 	border: fun.convert-px(1) solid fun.get-var(color-border);
@@ -210,7 +210,7 @@ select {
 		fun.get-var(color-shadow);
 	color: fun.get-var(color-fg);
 	cursor: pointer;
-	padding: fun.get-var(padding-sm);
+	padding: fun.get-var(spacing-sm);
 	width: 100%;
 	transition: all 0.3s ease-in-out 0s;
 

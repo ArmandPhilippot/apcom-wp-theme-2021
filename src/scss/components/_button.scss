@@ -40,7 +40,7 @@
 			rgba(0, 0, 0, 0.13),
 		inset 0 fun.convert-px(9) fun.convert-px(32) fun.convert-px(4)
 			rgba(255, 255, 255, 0.13);
-	padding: fun.get-var(padding-sm) fun.get-var(padding-md);
+	padding: fun.get-var(spacing-sm) fun.get-var(spacing-md);
 	transform: skewX(-12deg);
 	transition: all 0.3s ease-in-out 0s;
 
@@ -53,7 +53,7 @@
 	&:hover,
 	&:focus {
 		background-position: 50% 0;
-		padding: fun.get-var(padding-sm) fun.get-var(padding-lg);
+		padding: fun.get-var(spacing-sm) fun.get-var(spacing-lg);
 		transform: skewX(0deg);
 
 		span,
@@ -99,7 +99,7 @@
 				rgba(0, 0, 0, 0.13),
 			inset 0 fun.convert-px(9) fun.convert-px(32) fun.convert-px(4)
 				rgba(255, 255, 255, 0.13);
-		padding: fun.get-var(padding-sm) fun.get-var(padding-sm);
+		padding: fun.get-var(spacing-sm) fun.get-var(spacing-sm);
 		transform: skewX(0deg) translateX(#{fun.convert-px(3)})
 			translateY(#{fun.convert-px(3)});
 
@@ -115,7 +115,7 @@
 	border: fun.convert-px(2) solid fun.get-var(color-primary);
 	box-shadow: fun.convert-px(4) fun.convert-px(4) 0 0
 		fun.get-var(color-shadow);
-	padding: fun.get-var(padding-xs) fun.get-var(padding-sm);
+	padding: fun.get-var(spacing-xs) fun.get-var(spacing-sm);
 	transition: all 0.3s ease-in-out 0s;
 
 	&:hover,
@@ -213,6 +213,6 @@
 		background-size: 100%;
 		width: var.get-dim(icon-size-md);
 		height: var.get-dim(icon-size-md);
-		margin-right: fun.get-var(margin-xs);
+		margin-right: fun.get-var(spacing-xs);
 	}
 }

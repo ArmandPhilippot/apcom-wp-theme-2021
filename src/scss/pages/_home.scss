@@ -6,22 +6,22 @@
 
 .page--is-home {
 	.wp-block-group {
-		padding: fun.get-var(padding-xl) 0 fun.get-var(padding-2xl);
+		padding: fun.get-var(spacing-xl) 0 fun.get-var(spacing-2xl);
 		position: relative;
 
 		&:first-child {
-			padding-top: fun.get-var(padding-xl);
+			padding-top: fun.get-var(spacing-xl);
 		}
 
 		&:nth-child(2n) {
 			background: fun.get-var(color-bg-secondary);
-			padding: fun.get-var(padding-md) 0 fun.get-var(padding-xl);
+			padding: fun.get-var(spacing-md) 0 fun.get-var(spacing-xl);
 
 			&::before,
 			&::after {
 				display: block;
 				width: 100%;
-				height: fun.get-var(margin-md);
+				height: fun.get-var(spacing-md);
 				content: "";
 				background-image: url(fun.encode-svg(
 					'<svg viewBox="0 0 500 130.427" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path fill="#{var.$color_link-water}" d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z"/><path fill="#{var.$color_catskill-white}" d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z"/></svg>'
@@ -33,17 +33,17 @@
 			}
 
 			&::before {
-				top: calc(#{fun.get-var(margin-md)} * -1);
+				top: calc(#{fun.get-var(spacing-md)} * -1);
 			}
 
 			&::after {
-				bottom: calc(#{fun.get-var(margin-md)} * -1);
+				bottom: calc(#{fun.get-var(spacing-md)} * -1);
 				transform: rotate(180deg);
 			}
 		}
 
 		&:last-child {
-			padding-bottom: fun.get-var(padding-3xl);
+			padding-bottom: fun.get-var(spacing-3xl);
 		}
 
 		&__inner-container {
@@ -57,8 +57,8 @@
 
 	.buttons-list {
 		@extend %flex-list;
-		gap: fun.get-var(margin-md);
-		margin-bottom: fun.get-var(margin-md);
+		gap: fun.get-var(spacing-md);
+		margin-bottom: fun.get-var(spacing-md);
 
 		a {
 			@extend .btn;

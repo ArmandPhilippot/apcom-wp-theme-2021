@@ -5,8 +5,8 @@
 .breadcrumb {
 	background: fun.get-var(color-bg);
 	margin-top: var.get-dim(shape-height); // header shape
-	padding: clamp(#{fun.get-var(padding-lg)}, 3vw, #{fun.get-var(padding-xl)})
-		0 clamp(#{fun.get-var(padding-xl)}, 3vw, #{fun.get-var(padding-2xl)});
+	padding: clamp(#{fun.get-var(spacing-lg)}, 3vw, #{fun.get-var(spacing-xl)})
+		0 clamp(#{fun.get-var(spacing-xl)}, 3vw, #{fun.get-var(spacing-2xl)});
 
 	&__list {
 		@extend %reset-ordered-list;
@@ -23,7 +23,7 @@
 			&::before {
 				display: inline-block;
 				content: ">";
-				padding-left: fun.get-var(padding-3xs);
+				padding-left: fun.get-var(spacing-3xs);
 			}
 		}
 	}
