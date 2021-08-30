@@ -49,6 +49,15 @@
 		}
 	}
 
+	&.msbwidget,
+	&.mslwidget {
+		ul {
+			li::before {
+				display: none;
+			}
+		}
+	}
+
 	.lup,
 	.ptl {
 		&__item {
