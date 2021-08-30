@@ -87,8 +87,9 @@
 
 	&__icon {
 		box-shadow: none;
-		max-width: var.get-dim("icon-size-sm");
-		max-height: var.get-dim("icon-size-sm");
+		max-width: var.get-dim("icon-size-md");
+		max-height: var.get-dim("icon-size-md");
+		margin-right: fun.convert-px(2);
 	}
 
 	&--footer {

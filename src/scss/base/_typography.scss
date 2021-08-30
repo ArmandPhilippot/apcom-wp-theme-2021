@@ -335,19 +335,19 @@ blockquote {
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 50%;
-		width: var.get-dim("icon-size-xs");
-		height: var.get-dim("icon-size-xs");
+		width: var.get-dim("icon-size-sm");
+		height: var.get-dim("icon-size-sm");
 		padding: fun.get-var(padding-sm);
 		position: absolute;
 		top: calc(
 			50% -
 				(
-					#{var.get-dim("icon-size-xs")} + (#{fun.get-var(padding-xs)} /
+					#{var.get-dim("icon-size-sm")} + (#{fun.get-var(padding-xs)} /
 								2)
 				)
 		);
 		left: calc(
-			(#{var.get-dim("icon-size-xs")} + (#{fun.get-var(padding-sm)} / 2)) *
+			(#{var.get-dim("icon-size-sm")} + (#{fun.get-var(padding-sm)} / 2)) *
 				-1
 		);
 	}

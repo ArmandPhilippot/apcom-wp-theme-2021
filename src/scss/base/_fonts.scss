@@ -137,7 +137,7 @@
 		font-family-primary: #{var.$font-family_primary},
 		font-family-secondary: #{var.$font-family_secondary},
 		font-family-mono: #{var.$font-family_mono},
-		font-size-sm: fun.clamp-lock(var.$font-size_sm),
+		font-size-sm: fun.clamp-lock(var.$font-size_sm, 1.05),
 		font-size-md: fun.clamp-lock(var.$font-size_md),
 		font-size-lg: fun.clamp-lock(var.$font-size_lg),
 		font-size-xl: fun.clamp-lock(var.$font-size_xl),

@@ -7,13 +7,16 @@
 	margin-bottom: fun.get-var(margin-md);
 	padding-bottom: fun.get-var(margin-xl);
 
+	&__title {
+		margin-bottom: 0;
+	}
+
 	&__meta {
-		margin-bottom: fun.get-var(margin-md);
+		margin: fun.get-var(margin-md) 0;
 	}
 
 	&__figure {
-		margin: 0 auto fun.get-var(margin-md);
-		text-align: center;
+		margin: 0 0 fun.get-var(margin-md);
 	}
 
 	&__image {
@@ -61,9 +64,22 @@
 	.article {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
+		gap: fun.get-var(margin-md);
 
 		&__footer {
 			grid-row: 2;
+			display: grid;
+			gap: fun.get-var(margin-md);
+		}
+
+		&__figure {
+			order: 2;
+			margin: 0;
+		}
+
+		&__meta {
+			order: 1;
+			margin: 0;
 		}
 
 		@include mix.media("screen") {
@@ -82,14 +98,15 @@
 				}
 
 				&__footer {
+					display: block;
 					grid-column: 2;
 					grid-row: 1 / -1;
 					margin-bottom: 0;
 				}
 
 				&__figure {
-					margin: 0 0 fun.get-var(margin-md);
 					text-align: left;
+					margin-bottom: fun.get-var(margin-md);
 				}
 
 				&__image {
@@ -102,11 +119,12 @@
 					&__item--themes {
 						.meta__description {
 							display: block;
-							padding-left: calc(
-								#{var.get-dim("icon-size-sm")} + #{fun.get-var(
-										padding-2xs
-									)}
-							); // icon size + padding
+							padding: fun.convert-px(2) 0 fun.convert-px(2)
+								calc(
+									#{var.get-dim("icon-size-md")} + #{fun.convert-px(
+											2
+										)}
+								); // icon size + padding
 
 							&:not(:first-child) {
 								&::before {

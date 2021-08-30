@@ -42,7 +42,7 @@
 		&__icon {
 			fill: fun.get-var(color-fg-inverted);
 			margin-left: fun.get-var(margin-sm);
-			width: var.get-dim("icon-size-sm");
+			width: var.get-dim("icon-size-md");
 			transition: all 0.3s ease-in 0s;
 		}
 	}
