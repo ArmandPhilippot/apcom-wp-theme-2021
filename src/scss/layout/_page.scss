@@ -165,10 +165,22 @@
 		.sidebar {
 			&--first {
 				margin: fun.get-var(margin-sm) 0 0;
+
+				@include mix.media("screen") {
+					@include mix.dimensions("lg") {
+						margin: fun.get-var(margin-2xs) 0 0;
+					}
+				}
 			}
 
 			&--last {
 				margin-top: 0;
+
+				@include mix.media("screen") {
+					@include mix.dimensions("xl") {
+						margin: fun.get-var(margin-2xs) 0 0;
+					}
+				}
 			}
 		}
 	}
