@@ -68,10 +68,10 @@ $breakpoints: (
 /// @prop {Map} values - Values are actual Sass value.
 $dimensions: (
 	"icon-size-xs": fun.convert-px(12),
-	"icon-size-sm": fun.convert-px(18),
+	"icon-size-sm": fun.convert-px(20),
 	"icon-size-md": fun.convert-px(24),
-	"icon-size-lg": fun.convert-px(32),
-	"icon-size-xl": fun.convert-px(44),
+	"icon-size-lg": clamp(#{fun.convert-px(32)}, 3vw, #{fun.convert-px(35)}),
+	"icon-size-xl": clamp(#{fun.convert-px(44)}, 3vw, #{fun.convert-px(52)}),
 	"logo-size": fun.convert-px(100),
 	"main-nav-height":
 		clamp(#{fun.convert-px(60)}, 10vh, calc(#{fun.convert-px(70)})),

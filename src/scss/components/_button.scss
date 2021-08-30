@@ -115,7 +115,7 @@
 	border: fun.convert-px(2) solid fun.get-var(color-primary);
 	box-shadow: fun.convert-px(4) fun.convert-px(4) 0 0
 		fun.get-var(color-shadow);
-	padding: fun.get-var(padding-xs) fun.get-var(padding-md);
+	padding: fun.get-var(padding-xs) fun.get-var(padding-sm);
 	transition: all 0.3s ease-in-out 0s;
 
 	&:hover,
@@ -211,8 +211,8 @@
 		background: url(../images/feed.svg);
 		background-repeat: no-repeat;
 		background-size: 100%;
-		width: var.get-dim(icon-size-lg);
-		height: var.get-dim(icon-size-lg);
+		width: var.get-dim(icon-size-md);
+		height: var.get-dim(icon-size-md);
 		margin-right: fun.get-var(margin-xs);
 	}
 }

@@ -18,10 +18,6 @@
 		}
 	}
 
-	&__link {
-		@extend .btn--round;
-	}
-
 	.btn__icon {
 		width: var.get-dim("icon-size-xl");
 		height: var.get-dim("icon-size-xl");
