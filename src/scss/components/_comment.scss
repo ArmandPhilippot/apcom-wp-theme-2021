@@ -96,10 +96,6 @@
 	}
 
 	&__link {
-		&--cancel {
-			margin: fun.get-var(margin-md) 0 0;
-		}
-
 		&--edit {
 			margin-right: fun.get-var(margin-sm);
 		}

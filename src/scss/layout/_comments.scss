@@ -50,6 +50,12 @@
 				max-width: 95%;
 			}
 		}
+
+		.form__title {
+			display: flex;
+			flex-flow: row wrap;
+			gap: fun.get-var(margin-md);
+		}
 	}
 
 	.children {
