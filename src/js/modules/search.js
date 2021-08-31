@@ -58,11 +58,22 @@ function observeDisplayChange( element ) {
 	} );
 }
 
+function giveFieldFocus( checkbox, field ) {
+	if ( ! checkbox.checked ) {
+		return;
+	}
+
+	field.focus();
+}
+
 /**
  * Handle visibility and overflow with event listeners.
  */
 function initSearch() {
 	const toolSearch = document.getElementById( 'toolbar__search' );
+	const label = toolSearch.querySelector( '.toolbar__btn' );
+	const checkbox = document.getElementById( 'search__checkbox' );
+	const field = toolSearch.querySelector( '.form__field' );
 	const searchForm = toolSearch.getElementsByClassName( 'form--search' )[ 0 ];
 
 	window.addEventListener( 'load', () => {
@@ -80,6 +91,10 @@ function initSearch() {
 	document.body.addEventListener( 'focusout', ( event ) => {
 		hideSearch( event.relatedTarget );
 	} );
+
+	label.addEventListener( 'click', () => giveFieldFocus( checkbox, field ) );
+
+	checkbox.addEventListener( 'click', () => giveFieldFocus( checkbox, field ) );
 }
 
 initSearch();
