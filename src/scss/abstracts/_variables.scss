@@ -72,7 +72,6 @@ $dimensions: (
 	"icon-size-md": fun.convert-px(24),
 	"icon-size-lg": clamp(#{fun.convert-px(32)}, 3vw, #{fun.convert-px(35)}),
 	"icon-size-xl": clamp(#{fun.convert-px(44)}, 3vw, #{fun.convert-px(52)}),
-	"logo-size": fun.convert-px(100),
 	"main-nav-height":
 		clamp(#{fun.convert-px(60)}, 10vh, calc(#{fun.convert-px(70)})),
 	"shape-height": fun.convert-px(30),
@@ -123,6 +122,7 @@ $font-size_xl: $font-size_base-rem * math.pow($font-size_ratio, 2);
 $font-size_2xl: $font-size_base-rem * math.pow($font-size_ratio, 3);
 $font-size_3xl: $font-size_base-rem * math.pow($font-size_ratio, 4);
 $font-size_4xl: $font-size_base-rem * math.pow($font-size_ratio, 5);
+$font-size_5xl: $font-size_base-rem * math.pow($font-size_ratio, 6);
 
 //============================================================================
 // Spacings

@@ -5,7 +5,11 @@
 .article {
 	border-bottom: fun.convert-px(1) solid fun.get-var(color-border-light);
 	margin-bottom: fun.get-var(spacing-md);
-	padding-bottom: fun.get-var(spacing-xl);
+	padding-bottom: clamp(
+		#{fun.get-var(spacing-xl)},
+		2vw,
+		#{fun.get-var(spacing-xl)} * 2
+	);
 
 	&__title {
 		margin-bottom: 0;

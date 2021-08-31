@@ -2,7 +2,6 @@
 @use "../abstracts/functions" as fun;
 @use "../abstracts/mixins" as mix;
 @use "../abstracts/variables" as var;
-@use "./button";
 
 .toolbar {
 	display: flex;
@@ -151,7 +150,7 @@
 
 				.form__field {
 					background: fun.get-var(color-bg-secondary);
-					margin-top: fun.get-var(spacing-md);
+					margin-top: fun.get-var(spacing-lg);
 					width: min(
 						calc(100vw - #{fun.get-var(spacing-md)} * 2),
 						80ch

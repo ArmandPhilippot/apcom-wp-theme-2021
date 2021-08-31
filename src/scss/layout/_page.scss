@@ -83,7 +83,12 @@
 	}
 
 	&__body {
-		padding: fun.get-var(spacing-md) 0 fun.get-var(spacing-3xl);
+		padding: fun.get-var(spacing-md) 0
+			clamp(
+				#{fun.get-var(spacing-3xl)},
+				8vw,
+				#{fun.get-var(spacing-3xl)} * 2
+			);
 
 		/* Align first paragraph if page does not start with a title. */
 		> p:first-child {
@@ -170,6 +175,14 @@
 					@include mix.dimensions("lg") {
 						margin: fun.get-var(spacing-2xs) 0 0;
 					}
+
+					@include mix.dimensions("xl") {
+						padding-bottom: clamp(
+							#{fun.get-var(spacing-3xl)},
+							8vw,
+							#{fun.get-var(spacing-3xl)} * 2
+						);
+					}
 				}
 			}
 
@@ -198,7 +211,11 @@
 
 			@include mix.media("screen") {
 				@include mix.dimensions("lg") {
-					margin-bottom: fun.get-var(spacing-3xl);
+					margin-bottom: clamp(
+						#{fun.get-var(spacing-3xl)},
+						8vw,
+						#{fun.get-var(spacing-3xl)} * 2
+					);
 				}
 			}
 		}
@@ -206,6 +223,16 @@
 		.sidebar {
 			&--last {
 				padding-bottom: fun.get-var(spacing-2xl);
+
+				@include mix.media("screen") {
+					@include mix.dimensions("xl") {
+						padding-bottom: clamp(
+							#{fun.get-var(spacing-3xl)},
+							8vw,
+							#{fun.get-var(spacing-3xl)} * 2
+						);
+					}
+				}
 			}
 		}
 	}
@@ -221,6 +248,14 @@
 			@include mix.dimensions("lg") {
 				.page__body {
 					margin-bottom: fun.get-var(spacing-xs);
+				}
+			}
+
+			@include mix.dimensions("xl") {
+				.sidebar {
+					&--first {
+						padding-bottom: fun.get-var(spacing-md);
+					}
 				}
 			}
 		}

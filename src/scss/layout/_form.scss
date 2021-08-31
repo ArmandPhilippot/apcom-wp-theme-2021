@@ -1,5 +1,4 @@
 @use "../abstracts/functions" as fun;
-@use "../abstracts/mixins" as mix;
 @use "../abstracts/variables" as var;
 
 .form {
@@ -45,6 +44,12 @@
 			width: var.get-dim("icon-size-md");
 			transition: all 0.3s ease-in 0s;
 		}
+	}
+}
+
+.form--comments {
+	.form__submit {
+		margin-bottom: 0;
 	}
 }
 

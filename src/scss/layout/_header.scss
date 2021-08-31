@@ -93,8 +93,8 @@
 
 	&__link {
 		display: block;
-		width: var.get-dim("logo-size");
-		height: var.get-dim("logo-size");
+		width: fun.clamp-lock(#{fun.convert-px(90)});
+		height: fun.clamp-lock(#{fun.convert-px(90)});
 		transform-style: preserve-3d;
 		transition: all 0.6s linear 0s;
 

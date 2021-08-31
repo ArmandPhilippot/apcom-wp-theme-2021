@@ -5,23 +5,21 @@
 	margin: fun.get-var(spacing-xs) 0;
 
 	> h2 {
-		padding: fun.get-var(spacing-sm) 0;
+		padding: fun.get-var(spacing-sm) 0 0;
 		margin: 0;
 
 		@include mix.media("screen") {
 			@include mix.dimensions("lg") {
-				padding: fun.get-var(spacing-sm) fun.get-var(spacing-md);
+				padding: fun.get-var(spacing-sm) fun.get-var(spacing-md) 0;
 			}
 		}
 	}
 
 	&--last {
-		padding-bottom: fun.get-var(spacing-3xl);
-	}
-
-	@include mix.media("screen") {
-		@include mix.dimensions("xl") {
-			padding-bottom: fun.get-var(spacing-3xl);
-		}
+		padding-bottom: clamp(
+			#{fun.get-var(spacing-3xl)},
+			8vw,
+			#{fun.get-var(spacing-3xl)} * 2
+		);
 	}
 }

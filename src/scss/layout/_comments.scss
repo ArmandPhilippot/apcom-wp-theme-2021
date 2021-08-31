@@ -1,11 +1,11 @@
 @use "../abstracts/functions" as fun;
-@use "../abstracts/mixins" as mix;
 @use "../abstracts/placeholders";
 @use "../abstracts/variables" as var;
 
 .comments {
 	background: fun.get-var(color-bg-secondary);
-	padding: 0 0 fun.get-var(spacing-2xl);
+	padding: 0 0
+		clamp(#{fun.get-var(spacing-3xl)}, 8vw, #{fun.get-var(spacing-3xl)} * 2);
 	position: relative;
 
 	&::before {
@@ -25,12 +25,12 @@
 	}
 
 	&__header {
-		padding: fun.get-var(spacing-lg) 0;
+		padding: fun.get-var(spacing-lg) 0 fun.get-var(spacing-md);
 	}
 
 	&__list {
 		@extend %reset-ordered-list;
-		margin: fun.get-var(spacing-sm) 0 fun.get-var(spacing-lg);
+		margin: 0 0 fun.get-var(spacing-md);
 	}
 
 	&__item {
@@ -44,7 +44,7 @@
 				fun.convert-px(4) fun.convert-px(4) fun.convert-px(3)
 					fun.convert-px(-2) fun.get-var(color-shadow-darker);
 			margin-top: fun.get-var(spacing-sm);
-			padding: fun.get-var(spacing-md);
+			padding: fun.get-var(spacing-lg) fun.get-var(spacing-md);
 
 			.form--comments {
 				max-width: 95%;

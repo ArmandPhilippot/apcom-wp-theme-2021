@@ -1,21 +1,36 @@
 @use "../abstracts/functions" as fun;
-@use "../abstracts/mixins" as mix;
 @use "../abstracts/placeholders";
 @use "../abstracts/variables" as var;
 @use "../components/button";
 
 .page--is-home {
 	.wp-block-group {
-		padding: fun.get-var(spacing-xl) 0 fun.get-var(spacing-2xl);
+		padding: clamp(
+				#{fun.get-var(spacing-xl)},
+				4vw,
+				#{fun.get-var(spacing-xl)} * 2
+			)
+			0
+			clamp(
+				#{fun.get-var(spacing-2xl)},
+				5vw,
+				#{fun.get-var(spacing-2xl)} * 2
+			);
 		position: relative;
-
-		&:first-child {
-			padding-top: fun.get-var(spacing-xl);
-		}
 
 		&:nth-child(2n) {
 			background: fun.get-var(color-bg-secondary);
-			padding: fun.get-var(spacing-md) 0 fun.get-var(spacing-xl);
+			padding: clamp(
+					#{fun.get-var(spacing-md)},
+					2vw,
+					#{fun.get-var(spacing-md)} * 2
+				)
+				0
+				clamp(
+					#{fun.get-var(spacing-xl)},
+					4vw,
+					#{fun.get-var(spacing-xl)} * 2
+				);
 
 			&::before,
 			&::after {
@@ -43,7 +58,11 @@
 		}
 
 		&:last-child {
-			padding-bottom: fun.get-var(spacing-3xl);
+			padding-bottom: clamp(
+				#{fun.get-var(spacing-3xl)},
+				8vw,
+				#{fun.get-var(spacing-3xl)} * 2
+			);
 		}
 
 		&__inner-container {
