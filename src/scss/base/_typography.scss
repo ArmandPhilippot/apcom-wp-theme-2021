@@ -1,5 +1,4 @@
 @use "../abstracts/functions" as fun;
-@use "../abstracts/mixins" as mix;
 @use "../abstracts/variables" as var;
 
 *::-moz-selection {
@@ -335,19 +334,19 @@ blockquote {
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 50%;
-		width: var.get-dim("icon-size-sm");
-		height: var.get-dim("icon-size-sm");
+		width: var.get-dim("icon-size-xs");
+		height: var.get-dim("icon-size-xs");
 		padding: fun.get-var(spacing-sm);
 		position: absolute;
 		top: calc(
 			50% -
 				(
-					#{var.get-dim("icon-size-sm")} + (#{fun.get-var(spacing-xs)} /
+					#{var.get-dim("icon-size-xs")} + (#{fun.get-var(spacing-xs)} /
 								2)
 				)
 		);
 		left: calc(
-			(#{var.get-dim("icon-size-sm")} + (#{fun.get-var(spacing-sm)} / 2)) *
+			(#{var.get-dim("icon-size-xs")} + (#{fun.get-var(spacing-sm)} / 2)) *
 				-1
 		);
 	}

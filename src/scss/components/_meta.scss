@@ -71,8 +71,8 @@
 
 	&__icon {
 		box-shadow: none;
-		max-width: var.get-dim("icon-size-md");
-		max-height: var.get-dim("icon-size-md");
+		max-width: var.get-dim("icon-size-sm");
+		max-height: var.get-dim("icon-size-sm");
 		margin-right: fun.convert-px(2);
 	}
 

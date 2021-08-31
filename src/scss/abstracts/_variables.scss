@@ -67,8 +67,9 @@ $breakpoints: (
 /// @prop {String} keys - Keys are identifiers mapped to a given value.
 /// @prop {Map} values - Values are actual Sass value.
 $dimensions: (
-	"icon-size-sm": fun.convert-px(12),
-	"icon-size-md": fun.convert-px(22),
+	"icon-size-xs": fun.convert-px(12),
+	"icon-size-sm": fun.convert-px(18),
+	"icon-size-md": fun.convert-px(24),
 	"icon-size-lg": clamp(#{fun.convert-px(32)}, 3vw, #{fun.convert-px(35)}),
 	"icon-size-xl": clamp(#{fun.convert-px(44)}, 3vw, #{fun.convert-px(52)}),
 	"logo-size": fun.convert-px(100),

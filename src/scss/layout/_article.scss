@@ -121,11 +121,7 @@
 						.meta__description {
 							display: block;
 							padding: fun.convert-px(2) 0 fun.convert-px(2)
-								calc(
-									#{var.get-dim("icon-size-md")} + #{fun.convert-px(
-											2
-										)}
-								); // icon size + padding
+								var.get-dim("icon-size-md");
 
 							&:not(:first-child) {
 								&::before {
