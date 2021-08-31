@@ -17,4 +17,12 @@
 			padding: fun.get-var(spacing-2xs) fun.get-var(spacing-3xs);
 		}
 	}
+
+	.blocks-gallery-grid {
+		gap: fun.get-var(spacing-md);
+
+		.blocks-gallery-item {
+			margin: 0;
+		}
+	}
 }
