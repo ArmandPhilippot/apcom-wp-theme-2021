@@ -322,7 +322,7 @@ if ( ! function_exists( 'apcom_get_posts_count' ) ) {
 		}
 
 		if ( apcom_is_cpt() && ! apcom_is_article_cpt() ) {
-			$meta_id = get_queried_object_id();
+			$meta_id = get_the_ID();
 
 			if ( apcom_is_thematic_cpt() ) {
 				$meta_key = 'posts_in_thematic';

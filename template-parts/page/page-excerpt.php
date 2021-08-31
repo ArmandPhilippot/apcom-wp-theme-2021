@@ -18,6 +18,9 @@
 		<dl class="article__meta meta">
 			<?php
 			get_template_part( 'template-parts/page/partials/meta', 'date' );
+			if ( is_search() ) {
+				get_template_part( 'template-parts/page/partials/meta', 'posts-count' );
+			}
 			if ( ! apcom_is_thematic_cpt() && ! apcom_is_subject_cpt() ) {
 				get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
 				get_template_part( 'template-parts/page/partials/meta', 'comments' );
