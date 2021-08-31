@@ -81,9 +81,10 @@ if ( $apcom_current_subject_query->have_posts() ) {
 					<?php
 					get_template_part( 'template-parts/page/partials/meta', 'date' );
 					get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
+					get_template_part( 'template-parts/page/partials/meta', 'comments' );
+					get_template_part( 'template-parts/page/partials/meta', 'projects' );
 					get_template_part( 'template-parts/page/partials/meta', 'thematics' );
 					get_template_part( 'template-parts/page/partials/meta', 'subjects' );
-					get_template_part( 'template-parts/page/partials/meta', 'comments' );
 					?>
 				</dl>
 			</footer>

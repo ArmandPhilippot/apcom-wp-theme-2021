@@ -80,8 +80,8 @@ if ( $apcom_thematic_query->have_posts() ) {
 					<?php
 					get_template_part( 'template-parts/page/partials/meta', 'date' );
 					get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
-					get_template_part( 'template-parts/page/partials/meta', 'subjects' );
 					get_template_part( 'template-parts/page/partials/meta', 'comments' );
+					get_template_part( 'template-parts/page/partials/meta', 'subjects' );
 					?>
 				</dl>
 			</footer>

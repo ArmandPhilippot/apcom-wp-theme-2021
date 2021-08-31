@@ -8,8 +8,9 @@
 
 $apcom_posted_in_subject = get_post_meta( get_the_ID(), 'posts_in_subject' );
 $apcom_article_subjects  = $apcom_posted_in_subject[0];
+$apcom_page_id           = get_queried_object_id();
 
-if ( apcom_is_subject_cpt() ) {
+if ( apcom_is_subject_cpt( $apcom_page_id ) ) {
 	$apcom_current_page_id  = get_queried_object_id();
 	$apcom_this_subject     = array( $apcom_current_page_id );
 	$apcom_article_subjects = array_diff( $apcom_article_subjects, $apcom_this_subject );
@@ -20,7 +21,7 @@ if ( $apcom_posted_in_subject && is_array( $apcom_article_subjects ) && count( $
 	<div class="meta__item meta__item--has-icon meta__item--themes">
 		<dt class="meta__term">
 			<?php
-			if ( apcom_is_subject_cpt() ) {
+			if ( apcom_is_subject_cpt( $apcom_page_id ) ) {
 				printf(
 					esc_html(
 						_n(
