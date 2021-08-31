@@ -2,7 +2,7 @@
 @use "../../abstracts/mixins" as mix;
 
 .wp-block-code {
-	max-height: fun.convert-px(400);
+	max-height: clamp(#{fun.convert-px(400)}, 30vw, #{fun.convert-px(600)});
 
 	&.instructions {
 		.instructions--comment {
