@@ -2,12 +2,9 @@
  * Theme Name: ArmandPhilippot-com
  * Adding print support. The print styles are based on the the great work of Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272/.
  *
- * @version      1.0
- * @lastmodified 06.05.2021
+ * @version      1.0.1
+ * @lastmodified 12.08.2021
  */
-@import "helpers/functions";
-@import "helpers/variables";
-@import "helpers/mixins";
 
 /*==============================================================================
  *>>> TABLE OF CONTENTS:
@@ -200,8 +197,8 @@
 	.footer::before,
 	.header::before,
 	.main-nav,
-	.meta__comments,
-	.meta__themes,
+	.meta__item--comments,
+	.meta__item--themes,
 	.more-link,
 	.page__aside > h2,
 	.page__comments,
@@ -211,7 +208,7 @@
 	.pagination,
 	.reading-progress,
 	.tools,
-	.widget:not(.toc__wrapper) {
+	.widget:not(.toc) {
 		display: none !important;
 	}
 
@@ -367,7 +364,8 @@
 	}
 
 	.code-toolbar {
-		margin-top: pxtorem(60);
+		margin-top: 60px;
+
 		> .toolbar {
 			background: #ededed;
 			box-shadow: none;

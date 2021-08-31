@@ -1,0 +1,8 @@
+pre {
+	.prism--token {
+		&.prism--punctuation.prism--brace-hover,
+		&.prism--punctuation.prism--brace-selected {
+			outline: solid 1px;
+		}
+	}
+}

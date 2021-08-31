@@ -1,0 +1,32 @@
+/// Styles for Prism Inline Color plugin.
+/// @see https://prismjs.com/plugins/inline-color/
+/// Largely inspired by default styles.
+@use "../../../abstracts/functions" as fun;
+
+pre {
+	span.inline-color-wrapper {
+		background: url(fun.encode-svg(
+			'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="gray" d="M0 0h2v2H0z"/><path fill="white" d="M0 0h1v1H0zM1 1h1v1H1z"/></svg>'
+		));
+
+		/* Prevent glitches where 1px from the repeating pattern could be seen. */
+		background-position: center;
+		background-size: 110%;
+
+		display: inline-block;
+		height: 1.1ch;
+		width: 1.1ch;
+		margin: 0 0.5ch 0 0;
+		border: 1px solid fun.get-var(color-bg);
+		outline: 1px solid fun.get-var(color-border);
+		overflow: hidden;
+	}
+
+	span.inline-color {
+		display: block;
+
+		/* To prevent visual glitches again */
+		height: 120%;
+		width: 120%;
+	}
+}

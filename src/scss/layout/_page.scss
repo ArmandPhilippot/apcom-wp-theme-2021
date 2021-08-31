@@ -1,0 +1,277 @@
+@use "sass:selector";
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+.page {
+	&__header {
+		background: fun.get-var(color-bg-secondary);
+		border-top: fun.convert-px(2) solid fun.get-var(color-border-lighter);
+		position: relative;
+		margin-bottom: var.get-dim("shape-height");
+		padding-bottom: fun.get-var(spacing-sm);
+
+		&::after {
+			display: block;
+			content: "";
+			position: absolute;
+			bottom: calc(#{var.get-dim("shape-height")} * -1);
+			left: 0;
+			width: 100%;
+			height: var.get-dim("shape-height");
+			background-image: url(fun.encode-svg(
+				'<svg viewBox="0 0 500 130.427" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path fill="#{var.$color_link-water}" d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z"/><path fill="#{var.$color_catskill-white}" d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z"/></svg>'
+			));
+			background-repeat: repeat-x;
+			background-size: 100% 100%;
+			transform: rotate(180deg);
+		}
+	}
+
+	&__logo {
+		width: auto;
+		height: var.get-dim(icon-size-xl);
+		margin-right: fun.get-var(spacing-sm);
+	}
+
+	&__title {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		max-width: 100%;
+		padding: 0 fun.get-var(spacing-sm) fun.get-var(spacing-sm) 0;
+		position: relative;
+		margin-bottom: fun.get-var(spacing-lg);
+		z-index: 1;
+
+		&::before {
+			display: block;
+			content: "";
+			background: fun.get-var(color-bg-secondary);
+			border: solid fun.get-var(color-border-lighter);
+			border-width: fun.convert-px(2) fun.convert-px(2) fun.convert-px(2)
+				fun.convert-px(2);
+			box-shadow: 0 0 0 fun.convert-px(10) fun.get-var(color-bg),
+				fun.convert-px(12) fun.convert-px(12) 0 0
+					fun.get-var(color-border-lighter);
+			position: absolute;
+			top: fun.convert-px(-15);
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin-left: -1000%;
+			z-index: -1;
+		}
+	}
+
+	&__meta {
+		margin-bottom: fun.get-var(spacing-xs);
+	}
+
+	&__feed {
+		justify-content: flex-start;
+		margin-bottom: fun.get-var(spacing-sm);
+		margin-right: auto;
+	}
+
+	&__introduction {
+		margin-top: fun.get-var(spacing-sm);
+
+		> *:last-child {
+			margin-bottom: fun.get-var(spacing-sm);
+		}
+	}
+
+	&__body {
+		padding: fun.get-var(spacing-md) 0
+			clamp(
+				#{fun.get-var(spacing-3xl)},
+				8vw,
+				#{fun.get-var(spacing-3xl)} * 2
+			);
+
+		/* Align first paragraph if page does not start with a title. */
+		> p:first-child {
+			margin-top: fun.get-var(spacing-sm);
+		}
+
+		/*
+		* Align first paragraph if page does not start with a title but have
+		* more link.
+		*/
+		> span:first-child + p {
+			margin-top: fun.get-var(spacing-sm);
+		}
+
+		img:not([class*="__icon"]) {
+			box-shadow: 0 0 fun.convert-px(1) 0 fun.get-var(color-shadow-light),
+				fun.convert-px(4) fun.convert-px(4) fun.convert-px(4) 0
+					fun.get-var(color-shadow-light);
+			transition: all 0.3s ease-in-out 0s;
+		}
+
+		figcaption {
+			display: block;
+			color: fun.get-var(color-fg-tertiary);
+			font-size: fun.get-var(font-size-sm);
+			font-weight: 600;
+			text-align: center;
+			width: auto;
+			margin: fun.get-var(spacing-sm) auto 0;
+		}
+
+		> *:last-child:not(.pagination) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__footer {
+		margin: fun.get-var(spacing-md) 0 fun.get-var(spacing-sm);
+
+		@include mix.media("screen") {
+			@include mix.dimensions("lg") {
+				margin: fun.get-var(spacing-xl) 0 fun.get-var(spacing-2xl);
+			}
+		}
+	}
+
+	a {
+		&:hover,
+		&:focus {
+			img {
+				box-shadow: 0 0 fun.convert-px(1) 0
+						fun.get-var(color-shadow-light),
+					fun.convert-px(4) fun.convert-px(4) fun.convert-px(4)
+						fun.convert-px(2) fun.get-var(color-shadow-light);
+				transform: scale(1.05);
+			}
+		}
+
+		&:focus {
+			img {
+				outline: fun.get-var(color-primary-light-opacity) solid
+					fun.convert-px(4);
+			}
+		}
+
+		&:active {
+			img {
+				box-shadow: 0 0 fun.convert-px(1) 0
+						fun.get-var(color-shadow-light),
+					fun.convert-px(1) fun.convert-px(1) fun.convert-px(1)
+						fun.convert-px(1) fun.get-var(color-shadow-light);
+				outline: none;
+				transform: scale(1);
+			}
+		}
+	}
+
+	&--has-toc {
+		.sidebar {
+			&--first {
+				margin: fun.get-var(spacing-sm) 0 0;
+
+				@include mix.media("screen") {
+					@include mix.dimensions("lg") {
+						margin: fun.get-var(spacing-2xs) 0 0;
+					}
+
+					@include mix.dimensions("xl") {
+						padding-bottom: clamp(
+							#{fun.get-var(spacing-3xl)},
+							8vw,
+							#{fun.get-var(spacing-3xl)} * 2
+						);
+					}
+				}
+			}
+
+			&--last {
+				margin-top: 0;
+
+				@include mix.media("screen") {
+					@include mix.dimensions("xl") {
+						margin: fun.get-var(spacing-2xs) 0 0;
+					}
+				}
+			}
+		}
+	}
+
+	&--has-sidebar,
+	&--is-home {
+		.page__body {
+			padding-bottom: 0;
+		}
+	}
+
+	&--has-sidebar {
+		.page__body {
+			margin-bottom: fun.get-var(spacing-xs);
+
+			@include mix.media("screen") {
+				@include mix.dimensions("lg") {
+					margin-bottom: clamp(
+						#{fun.get-var(spacing-3xl)},
+						8vw,
+						#{fun.get-var(spacing-3xl)} * 2
+					);
+				}
+			}
+		}
+
+		.sidebar {
+			&--last {
+				padding-bottom: fun.get-var(spacing-2xl);
+
+				@include mix.media("screen") {
+					@include mix.dimensions("xl") {
+						padding-bottom: clamp(
+							#{fun.get-var(spacing-3xl)},
+							8vw,
+							#{fun.get-var(spacing-3xl)} * 2
+						);
+					}
+				}
+			}
+		}
+	}
+
+	&--has-comments {
+		.sidebar {
+			&--last {
+				padding-bottom: fun.get-var(spacing-md);
+			}
+		}
+
+		@include mix.media("screen") {
+			@include mix.dimensions("lg") {
+				.page__body {
+					margin-bottom: fun.get-var(spacing-xs);
+				}
+			}
+
+			@include mix.dimensions("xl") {
+				.sidebar {
+					&--first {
+						padding-bottom: fun.get-var(spacing-md);
+					}
+				}
+			}
+		}
+	}
+
+	&--is-cv {
+		.sidebar {
+			&--last {
+				margin-top: fun.get-var(spacing-md);
+			}
+		}
+	}
+
+	&--has-no-results {
+		.page__body {
+			padding-bottom: fun.get-var(spacing-sm);
+		}
+	}
+}

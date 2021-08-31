@@ -5,19 +5,39 @@
  * This file is read by WordPress to setup the theme and his additional
  * features.
  *
- * @package ArmandPhilippot-com
- * @link https://github.com/ArmandPhilippot/armandphilippot.com
- * @author Armand Philippot <contact@armandphilippot.com>
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
+ * @package   ArmandPhilippot-com
+ * @author    Armand Philippot <contact@armandphilippot.com>
  * @copyright 2020 Armand Philippot
- * @license GPL-2.0-or-later
- * @since 0.0.1
+ * @license   GPL-2.0-or-later
+ * @since     0.0.1
  */
 
 /**
  * Currently theme version.
  */
-define( 'APCOM_VERSION', '1.0.10' );
+define( 'APCOM_VERSION', '1.1.1' );
+
+/**
+ * Get current environment defined in .env file.
+ *
+ * @since 1.2.0
+ *
+ * @return string Current env or empty string.
+ */
+function apcom_get_current_env() {
+	if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+		require_once __DIR__ . '/vendor/autoload.php';
+		$apcom_dotenv = Dotenv\Dotenv::createImmutable( __DIR__ );
+		$apcom_dotenv->safeLoad();
+		$apcom_current_env = $_ENV['WP_THEME_ENV'];
+		return $apcom_current_env;
+	} else {
+		return '';
+	}
+}
+
 
 if ( ! function_exists( 'apcom_setup' ) ) {
 	/**
@@ -26,10 +46,16 @@ if ( ! function_exists( 'apcom_setup' ) ) {
 	 * @since 0.0.1
 	 */
 	function apcom_setup() {
+		// Make theme available for translation.
 		load_theme_textdomain( 'APCom', get_template_directory() . '/languages' );
 
+		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
+
+		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
+
+		// Add support for custom logo.
 		add_theme_support(
 			'custom-logo',
 			array(
@@ -39,7 +65,13 @@ if ( ! function_exists( 'apcom_setup' ) ) {
 				'flex-width'  => true,
 			)
 		);
+
+		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
+		$editor_css_path = get_template_directory() . '/assets/css/editor-style.css';
+		add_editor_style( $editor_css_path );
+
+		// Switch default core markup to output valid HTML5.
 		add_theme_support(
 			'html5',
 			array(
@@ -47,27 +79,39 @@ if ( ! function_exists( 'apcom_setup' ) ) {
 				'comment-form',
 				'comment-list',
 				'gallery',
+				'navigation-widgets',
 				'script',
 				'search-form',
 				'style',
 			)
 		);
+
+		// Add post-formats support.
 		add_theme_support(
 			'post-formats',
 			array(
 				'aside',
 				'audio',
+				'chat',
 				'gallery',
 				'image',
 				'link',
 				'quote',
+				'status',
 				'video',
 			)
 		);
+
+		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails' );
+
+		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
+
+		// Let WordPress manage the document title.
 		add_theme_support( 'title-tag' );
 
+		// Register custom menu.
 		register_nav_menus(
 			array(
 				'main-menu'   => __( 'Main menu', 'APCom' ),
@@ -84,26 +128,24 @@ add_action( 'after_setup_theme', 'apcom_setup' );
  * @since 0.0.1
  */
 function apcom_enqueue_styles() {
-	$theme_uri          = get_template_directory_uri();
-	$theme_directory    = get_template_directory();
-	$style_path         = $theme_directory . '/style.min.css';
-	$print_style_path   = $theme_directory . '/print.min.css';
-	$vendors_style_path = $theme_directory . '/assets/css/vendors.min.css';
+	$current_env = apcom_get_current_env();
+	$style_path  = get_template_directory() . '/style.css';
+	$style_uri   = get_template_directory_uri() . '/style.css';
+	$print_path  = get_template_directory() . '/assets/css/print.css';
+	$print_uri   = get_template_directory_uri() . '/assets/css/print.css';
 
-	if ( file_exists( $vendors_style_path ) ) {
-		wp_register_style( 'apcom-style-vendors', $theme_uri . '/assets/css/vendors.min.css', array(), APCOM_VERSION );
-		wp_enqueue_style( 'apcom-style-vendors' );
-	}
+	if ( 'development' !== $current_env ) {
+		if ( file_exists( $style_path ) ) {
+			wp_register_style( 'apcom-style', $style_uri, array(), APCOM_VERSION );
+			wp_enqueue_style( 'apcom-style' );
+			wp_style_add_data( 'apcom-style', 'rtl', 'replace' );
+		}
 
-	if ( file_exists( $style_path ) ) {
-		wp_register_style( 'apcom-style', $theme_uri . '/style.min.css', array(), APCOM_VERSION );
-		wp_enqueue_style( 'apcom-style' );
-		wp_style_add_data( 'apcom-style', 'rtl', 'replace' );
-	}
-
-	if ( file_exists( $print_style_path ) ) {
-		wp_register_style( 'apcom-style-print', $theme_uri . '/print.min.css', array(), APCOM_VERSION );
-		wp_enqueue_style( 'apcom-style-print' );
+		if ( file_exists( $print_path ) ) {
+			wp_register_style( 'apcom-print', $print_uri, array(), APCOM_VERSION );
+			wp_enqueue_style( 'apcom-print' );
+			wp_style_add_data( 'apcom-print', 'rtl', 'replace' );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'apcom_enqueue_styles' );
@@ -114,11 +156,13 @@ add_action( 'wp_enqueue_scripts', 'apcom_enqueue_styles' );
  * @since 0.0.1
  */
 function apcom_enqueue_scripts() {
-	$theme_uri            = get_template_directory_uri();
-	$theme_directory      = get_template_directory();
-	$footer_scripts_path  = $theme_directory . '/assets/js/app.min.js';
-	$header_scripts_path  = $theme_directory . '/assets/js/scripts.min.js';
-	$vendors_scripts_path = $theme_directory . '/assets/js/vendors.min.js';
+	$current_env          = apcom_get_current_env();
+	$webpack_runtime_path = get_template_directory() . '/assets/webpack/runtime.js';
+	$webpack_runtime_uri  = get_template_directory_uri() . '/assets/webpack/runtime.js';
+	$footer_scripts_path  = get_template_directory() . '/assets/js/footer.js';
+	$footer_scripts_uri   = get_template_directory_uri() . '/assets/js/footer.js';
+	$header_scripts_path  = get_template_directory() . '/assets/js/header.js';
+	$header_scripts_uri   = get_template_directory_uri() . '/assets/js/header.js';
 
 	$color_scheme_vars = array(
 		'lightThemeText' => __( 'Switch to dark theme', 'APCom' ),
@@ -130,7 +174,7 @@ function apcom_enqueue_scripts() {
 		'beAware'        => sprintf(
 			// translators: %1$s Open HTML element. %2$s Closing HTML element.
 			__( '%1$sWarning:%2$s', 'APCom' ),
-			'<span class="content-warning__label">',
+			'<span class="modal__label">',
 			'</span>'
 		),
 		'oldContent'     => __( 'This content has not been updated for over a year.', 'APCom' ),
@@ -140,50 +184,76 @@ function apcom_enqueue_scripts() {
 
 	$toc_args = array(
 		'tocTitle'     => __( 'Table of contents', 'APCom' ),
-		'commentTitle' => __( 'Comments', 'APCom' ),
 	);
 
+	if ( file_exists( $webpack_runtime_path ) ) {
+		wp_register_script( 'apcom-webpack-runtime', $webpack_runtime_uri, array(), APCOM_VERSION, true );
+		wp_enqueue_script( 'apcom-webpack-runtime' );
+	}
+
 	if ( file_exists( $footer_scripts_path ) ) {
-		wp_register_script( 'apcom-app', $theme_uri . '/assets/js/app.min.js', array(), APCOM_VERSION, true );
-		wp_enqueue_script( 'apcom-app' );
-		wp_localize_script( 'apcom-app', 'color_scheme_vars', $color_scheme_vars );
-		wp_localize_script( 'apcom-app', 'date_warning', $date_warning );
-		wp_localize_script( 'apcom-app', 'toc_args', $toc_args );
+		wp_register_script( 'apcom-defer-footer', $footer_scripts_uri, array(), APCOM_VERSION, true );
+		wp_enqueue_script( 'apcom-defer-footer' );
+		wp_localize_script( 'apcom-defer-footer', 'prism_vars', $color_scheme_vars );
+		wp_localize_script( 'apcom-defer-footer', 'color_scheme_vars', $color_scheme_vars );
+		wp_localize_script( 'apcom-defer-footer', 'date_warning', $date_warning );
+		wp_localize_script( 'apcom-defer-footer', 'toc_args', $toc_args );
 	}
 
 	if ( file_exists( $header_scripts_path ) ) {
-		wp_register_script( 'apcom-scripts', $theme_uri . '/assets/js/scripts.min.js', array(), APCOM_VERSION, false );
-		wp_enqueue_script( 'apcom-scripts' );
-	}
-
-	if ( file_exists( $vendors_scripts_path ) ) {
-		wp_register_script( 'vendors-scripts', $theme_uri . '/assets/js/vendors.min.js', array(), APCOM_VERSION, true );
-		wp_enqueue_script( 'vendors-scripts' );
-		wp_localize_script( 'vendors-scripts', 'prism_vars', $color_scheme_vars );
+		wp_register_script( 'apcom-header', $header_scripts_uri, array(), APCOM_VERSION, false );
+		wp_enqueue_script( 'apcom-header' );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if ( 'development' === $current_env ) {
+		$webpack_style_path = get_template_directory() . '/assets/webpack/style.js';
+		$webpack_style_uri  = get_template_directory_uri() . '/assets/webpack/style.js';
+		$webpack_print_path = get_template_directory() . '/assets/webpack/print.js';
+		$webpack_print_uri  = get_template_directory_uri() . '/assets/webpack/print.js';
+
+		if ( file_exists( $webpack_style_path ) ) {
+			wp_register_script( 'apcom-webpack-style', $webpack_style_uri, array(), APCOM_VERSION, true );
+			wp_enqueue_script( 'apcom-webpack-style' );
+		}
+
+		if ( file_exists( $webpack_print_path ) ) {
+			wp_register_script( 'apcom-webpack-print', $webpack_print_uri, array(), APCOM_VERSION, true );
+			wp_enqueue_script( 'apcom-webpack-print' );
+		}
+	}
 }
 add_action( 'wp_enqueue_scripts', 'apcom_enqueue_scripts' );
 
 /**
- * Register and enqueue editor styles.
+ * Register and enqueue editor assets.
  *
- * @since 0.0.1
+ * @since 1.2.0
  */
-function apcom_enqueue_editor_styles() {
-	$theme_uri         = get_template_directory_uri();
-	$theme_directory   = get_template_directory();
-	$style_editor_path = $theme_directory . '/assets/css/style-editor.min.css';
+function apcom_enqueue_editor_assets() {
+	$current_env         = apcom_get_current_env();
+	$editor_scripts_path = get_template_directory() . '/assets/js/editor.js';
+	$editor_scripts_uri  = get_template_directory_uri() . '/assets/js/editor.js';
 
-	if ( file_exists( $style_editor_path ) ) {
-		wp_register_style( 'apcom-block-editor-styles', $theme_uri . '/assets/css/style-editor.min.css', array(), APCOM_VERSION );
-		wp_enqueue_style( 'apcom-block-editor-styles' );
+	if ( file_exists( $editor_scripts_path ) ) {
+		wp_register_script( 'apcom-editor', $editor_scripts_uri, array(), APCOM_VERSION, true );
+		wp_enqueue_script( 'apcom-editor' );
+	}
+
+	if ( 'development' === $current_env ) {
+		$webpack_editor_path = get_template_directory() . '/assets/webpack/editor-style.js';
+		$webpack_editor_uri  = get_template_directory_uri() . '/assets/webpack/editor-style.js';
+
+		if ( file_exists( $webpack_editor_path ) ) {
+			wp_register_script( 'apcom-webpack-editor', $webpack_editor_uri, array(), APCOM_VERSION, true );
+			wp_enqueue_script( 'apcom-webpack-editor' );
+		}
 	}
 }
-add_action( 'enqueue_block_editor_assets', 'apcom_enqueue_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'apcom_enqueue_editor_assets' );
 
 /**
  * Register sidebars.
@@ -278,8 +348,7 @@ add_action( 'admin_head', 'apcom_favicon_links' );
  * REQUIRED FILES
  * Additional features and helpers functions.
  */
-require get_parent_theme_file_path( 'inc/helpers.php' );
-require get_parent_theme_file_path( 'inc/hooks.php' );
-require get_parent_theme_file_path( 'inc/class-custom-walker-comment.php' );
-require get_parent_theme_file_path( 'inc/acf-hooks.php' );
-require get_parent_theme_file_path( 'inc/contact-form.php' );
+require_once get_parent_theme_file_path( 'inc/helpers.php' );
+require_once get_parent_theme_file_path( 'inc/hooks.php' );
+require_once get_parent_theme_file_path( 'inc/class-custom-walker-comment.php' );
+require_once get_parent_theme_file_path( 'inc/contact-form.php' );

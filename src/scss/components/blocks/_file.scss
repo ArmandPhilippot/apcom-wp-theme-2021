@@ -1,0 +1,18 @@
+@use "../../abstracts/functions" as fun;
+@use "../button";
+
+.wp-block-file {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	gap: fun.get-var(spacing-xs);
+
+	&__button {
+		@extend .btn;
+	}
+
+	& * + &__button {
+		margin-left: 0;
+	}
+}

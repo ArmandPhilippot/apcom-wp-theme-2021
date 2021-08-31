@@ -1,9 +1,13 @@
 <?php
 /**
- * The template for displaying the comments and comment form.
+ * The comments template.
+ *
+ * Used to display comments and comment form.
+ *
+ * @link https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/comment-template/
  *
  * @package ArmandPhilippot-com
- * @since 0.0.1
+ * @since   0.0.1
  */
 
 /*
@@ -16,11 +20,11 @@ if ( post_password_required() ) {
 
 $apcom_comment_form_args = array(
 	'class_container'    => 'comments__form',
-	'class_form'         => 'comment-form',
-	'class_submit'       => 'comment-form__btn',
-	'title_reply_before' => '<h2 id="reply-title" class="comment-form__title">',
+	'class_form'         => 'form form--comments',
+	'class_submit'       => 'form__btn btn btn--primary',
+	'title_reply_before' => '<h2 id="reply-title" class="form__title">',
 	'title_reply_after'  => '</h2>',
-	'submit_field'       => '<p class="comment-form__submit">%1$s %2$s</p>',
+	'submit_field'       => '<p class="form__submit">%1$s %2$s</p>',
 	'format'             => 'html5',
 );
 ?>
@@ -50,11 +54,9 @@ $apcom_comment_form_args = array(
 			}
 			?>
 		</h2>
-		<p class="comments__feed">
-			<a href="<?php echo esc_url( get_permalink() ); ?>feed/" class="feed__link">
-				<?php esc_html_e( 'Subscribe to comments', 'APCom' ); ?>
-			</a>
-		</p>
+		<a href="<?php echo esc_url( get_permalink() ); ?>feed/" class="btn btn--feed">
+			<?php esc_html_e( 'Subscribe to comments', 'APCom' ); ?>
+		</a>
 	</div>
 	<?php if ( have_comments() ) { ?>
 		<ol class="comments__list">
@@ -80,7 +82,7 @@ $apcom_comment_form_args = array(
 	}
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) {
 		?>
-		<p class="no-comments">
+		<p class="comments__no-comments">
 			<?php
 			esc_html_e( 'Comments are closed.', 'APCom' );
 			?>

@@ -1,0 +1,8 @@
+/**
+ * Reading progress
+ *
+ * Represents a progress bar to indicate reading progression based on scroll position.
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Armand Philippot <https://www.armandphilippot.com>
+ */

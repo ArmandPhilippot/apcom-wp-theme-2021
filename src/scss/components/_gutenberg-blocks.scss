@@ -1,0 +1,38 @@
+@use "../abstracts/functions" as fun;
+@forward "blocks/audio";
+@forward "blocks/buttons";
+@forward "blocks/code";
+@forward "blocks/columns";
+@forward "blocks/cover";
+@forward "blocks/file";
+@forward "blocks/gallery";
+@forward "blocks/latest_comments";
+@forward "blocks/latest_posts";
+@forward "blocks/media-text";
+@forward "blocks/pullquote";
+@forward "blocks/quote";
+@forward "blocks/rss";
+@forward "blocks/search";
+@forward "blocks/social-links";
+@forward "blocks/table";
+
+.wp-block-audio,
+.wp-block-buttons,
+.wp-block-calendar,
+.wp-block-categories,
+.wp-block-columns,
+.wp-block-cover,
+.wp-block-embed,
+.wp-block-file,
+.wp-block-image,
+.wp-block-latest-comments,
+.wp-block-media-text,
+.wp-block-pullquote,
+.wp-block-quote,
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large,
+.wp-block-search,
+.wp-block-table,
+.wp-block-video {
+	margin-bottom: fun.get-var(spacing-md);
+}

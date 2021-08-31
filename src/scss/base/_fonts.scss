@@ -1,7 +1,11 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
 @font-face {
 	font-family: Kanit;
-	src: url(assets/fonts/Kanit/Kanit-Bold.woff2) format("woff2"),
-		url(assets/fonts/Kanit/Kanit-Bold.woff) format("woff");
+	src: url(../fonts/Kanit/Kanit-Bold.woff2) format("woff2"),
+		url(../fonts/Kanit/Kanit-Bold.woff) format("woff");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -9,8 +13,8 @@
 
 @font-face {
 	font-family: Kanit;
-	src: url(assets/fonts/Kanit/Kanit-BoldItalic.woff2) format("woff2"),
-		url(assets/fonts/Kanit/Kanit-BoldItalic.woff) format("woff");
+	src: url(../fonts/Kanit/Kanit-BoldItalic.woff2) format("woff2"),
+		url(../fonts/Kanit/Kanit-BoldItalic.woff) format("woff");
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
@@ -18,8 +22,8 @@
 
 @font-face {
 	font-family: Kanit;
-	src: url(assets/fonts/Kanit/Kanit-SemiBold.woff2) format("woff2"),
-		url(assets/fonts/Kanit/Kanit-SemiBold.woff) format("woff");
+	src: url(../fonts/Kanit/Kanit-SemiBold.woff2) format("woff2"),
+		url(../fonts/Kanit/Kanit-SemiBold.woff) format("woff");
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
@@ -27,8 +31,8 @@
 
 @font-face {
 	font-family: Kanit;
-	src: url(assets/fonts/Kanit/Kanit-SemiBoldItalic.woff2) format("woff2"),
-		url(assets/fonts/Kanit/Kanit-SemiBoldItalic.woff) format("woff");
+	src: url(../fonts/Kanit/Kanit-SemiBoldItalic.woff2) format("woff2"),
+		url(../fonts/Kanit/Kanit-SemiBoldItalic.woff) format("woff");
 	font-weight: 600;
 	font-style: italic;
 	font-display: swap;
@@ -36,8 +40,8 @@
 
 @font-face {
 	font-family: Kanit;
-	src: url(assets/fonts/Kanit/Kanit-Medium.woff2) format("woff2"),
-		url(assets/fonts/Kanit/Kanit-Medium.woff) format("woff");
+	src: url(../fonts/Kanit/Kanit-Medium.woff2) format("woff2"),
+		url(../fonts/Kanit/Kanit-Medium.woff) format("woff");
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
@@ -45,8 +49,8 @@
 
 @font-face {
 	font-family: Kanit;
-	src: url(assets/fonts/Kanit/Kanit-MediumItalic.woff2) format("woff2"),
-		url(assets/fonts/Kanit/Kanit-MediumItalic.woff) format("woff");
+	src: url(../fonts/Kanit/Kanit-MediumItalic.woff2) format("woff2"),
+		url(../fonts/Kanit/Kanit-MediumItalic.woff) format("woff");
 	font-weight: 500;
 	font-style: italic;
 	font-display: swap;
@@ -54,8 +58,8 @@
 
 @font-face {
 	font-family: Kanit;
-	src: url(assets/fonts/Kanit/Kanit-Regular.woff2) format("woff2"),
-		url(assets/fonts/Kanit/Kanit-Regular.woff) format("woff");
+	src: url(../fonts/Kanit/Kanit-Regular.woff2) format("woff2"),
+		url(../fonts/Kanit/Kanit-Regular.woff) format("woff");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -63,8 +67,8 @@
 
 @font-face {
 	font-family: Kanit;
-	src: url(assets/fonts/Kanit/Kanit-Italic.woff2) format("woff2"),
-		url(assets/fonts/Kanit/Kanit-Italic.woff) format("woff");
+	src: url(../fonts/Kanit/Kanit-Italic.woff2) format("woff2"),
+		url(../fonts/Kanit/Kanit-Italic.woff) format("woff");
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -72,8 +76,8 @@
 
 @font-face {
 	font-family: Kanit;
-	src: url(assets/fonts/Kanit/Kanit-Light.woff2) format("woff2"),
-		url(assets/fonts/Kanit/Kanit-Light.woff) format("woff");
+	src: url(../fonts/Kanit/Kanit-Light.woff2) format("woff2"),
+		url(../fonts/Kanit/Kanit-Light.woff) format("woff");
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
@@ -81,8 +85,8 @@
 
 @font-face {
 	font-family: Kanit;
-	src: url(assets/fonts/Kanit/Kanit-LightItalic.woff2) format("woff2"),
-		url(assets/fonts/Kanit/Kanit-LightItalic.woff) format("woff");
+	src: url(../fonts/Kanit/Kanit-LightItalic.woff2) format("woff2"),
+		url(../fonts/Kanit/Kanit-LightItalic.woff) format("woff");
 	font-weight: 300;
 	font-style: italic;
 	font-display: swap;
@@ -93,12 +97,12 @@
 	font-weight: 100 900;
 	font-display: swap;
 	font-style: oblique 0deg 10deg;
-	src: url(assets/fonts/Inter/Inter.woff2?v=3.18) format("woff2");
+	src: url(../fonts/Inter/Inter.woff2?v=3.18) format("woff2");
 }
 
 @font-face {
 	font-family: Cousine;
-	src: url(assets/fonts/Cousine/Cousine-Bold.woff2) format("woff2");
+	src: url(../fonts/Cousine/Cousine-Bold.woff2) format("woff2");
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
@@ -106,7 +110,7 @@
 
 @font-face {
 	font-family: Cousine;
-	src: url(assets/fonts/Cousine/Cousine-BoldItalic.woff2) format("woff2");
+	src: url(../fonts/Cousine/Cousine-BoldItalic.woff2) format("woff2");
 	font-weight: 600;
 	font-style: italic;
 	font-display: swap;
@@ -114,7 +118,7 @@
 
 @font-face {
 	font-family: Cousine;
-	src: url(assets/fonts/Cousine/Cousine-Italic.woff2) format("woff2");
+	src: url(../fonts/Cousine/Cousine-Italic.woff2) format("woff2");
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -122,24 +126,24 @@
 
 @font-face {
 	font-family: Cousine;
-	src: url(assets/fonts/Cousine/Cousine-Regular.woff2) format("woff2");
+	src: url(../fonts/Cousine/Cousine-Regular.woff2) format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 
-@include declareCssVars(
+@include mix.set-vars(
 	(
-		font-family-primary: #{$font-family_primary},
-		font-family-secondary: #{$font-family_secondary},
-		font-family-mono: #{$font-family_mono},
-		font-size-sm: clampthis($font-size_sm),
-		font-size-md: clampthis($font-size_md),
-		font-size-lg: clampthis($font-size_lg),
-		font-size-xl: clampthis($font-size_xl),
-		font-size-2xl: clampthis($font-size_2xl),
-		font-size-3xl: clampthis($font-size_3xl),
-		font-size-4xl: clampthis($font-size_4xl),
-		line-height: #{$line-height},
+		font-family-primary: #{var.$font-family_primary},
+		font-family-secondary: #{var.$font-family_secondary},
+		font-family-mono: #{var.$font-family_mono},
+		font-size-sm: fun.clamp-lock(var.$font-size_sm, 1.05),
+		font-size-md: fun.clamp-lock(var.$font-size_md),
+		font-size-lg: fun.clamp-lock(var.$font-size_lg),
+		font-size-xl: fun.clamp-lock(var.$font-size_xl),
+		font-size-2xl: fun.clamp-lock(var.$font-size_2xl),
+		font-size-3xl: fun.clamp-lock(var.$font-size_3xl),
+		font-size-4xl: fun.clamp-lock(var.$font-size_4xl),
+		line-height: #{var.$line-height},
 	)
 );

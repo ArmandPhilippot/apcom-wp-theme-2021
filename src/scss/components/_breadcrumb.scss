@@ -1,0 +1,34 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/placeholders";
+@use "../abstracts/variables" as var;
+
+.breadcrumb {
+	background: fun.get-var(color-bg);
+	margin-top: var.get-dim(shape-height); // header shape
+	padding: clamp(#{fun.get-var(spacing-lg)}, 3vw, #{fun.get-var(spacing-xl)})
+		0 clamp(#{fun.get-var(spacing-xl)}, 3vw, #{fun.get-var(spacing-2xl)});
+
+	&__list {
+		@extend %reset-ordered-list;
+
+		li {
+			display: initial;
+		}
+	}
+
+	&__item {
+		font-size: fun.get-var(font-size-sm);
+
+		&:not(:first-child) {
+			&::before {
+				display: inline-block;
+				content: ">";
+				padding-left: fun.get-var(spacing-3xs);
+			}
+		}
+	}
+
+	&__link {
+		display: inline-block;
+	}
+}

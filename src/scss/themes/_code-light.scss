@@ -1,0 +1,23 @@
+/// Light theme for code blocks.
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+[data-theme="light"] pre {
+	@include mix.set-vars(
+		(
+			color-bg-secondary: #{var.$color_catskill-white},
+			color-bg-tertiary: #{var.$color_link-water},
+			color-fg: #{var.$color_firefly},
+			color-token-blue: #{var.$color_light-theme_blue},
+			color-token-cyan: #{var.$color_light-theme_cyan},
+			color-token-green: #{var.$color_light-theme_green},
+			color-token-grey: #{var.$color_light-theme_grey},
+			color-token-magenta: #{var.$color_light-theme_magenta},
+			color-token-orange: #{var.$color_light-theme_orange},
+			color-token-purple: #{var.$color_light-theme_purple},
+			color-token-red: #{var.$color_light-theme_red},
+			color-token-yellow: #{var.$color_light-theme_yellow},
+		),
+		false
+	);
+}

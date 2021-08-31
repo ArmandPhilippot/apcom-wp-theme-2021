@@ -1,0 +1,15 @@
+@use "../../abstracts/functions" as fun;
+
+.wp-block-columns {
+	gap: fun.get-var(spacing-md);
+
+	.wp-block-column {
+		&:nth-child(2n) {
+			margin-left: 0;
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

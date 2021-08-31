@@ -1,0 +1,65 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/placeholders";
+@use "../abstracts/variables" as var;
+
+.comments {
+	background: fun.get-var(color-bg-secondary);
+	padding: 0 0
+		clamp(#{fun.get-var(spacing-3xl)}, 8vw, #{fun.get-var(spacing-3xl)} * 2);
+	position: relative;
+
+	&::before {
+		display: block;
+		content: "";
+		position: absolute;
+		top: fun.convert-px(-30);
+		left: 0;
+		width: 100%;
+		height: fun.convert-px(30);
+		background-image: url(fun.encode-svg(
+			'<svg viewBox="0 0 500 130.427" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path fill="#{var.$color_link-water}" d="M0 47.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z"/><path fill="#{var.$color_catskill-white}" d="M0 57.229c89.246-74 171.777-50.893 250 0 67.57 43.962 161.317 91.238 250 0v73.198H0z"/></svg>'
+		));
+		background-repeat: repeat-x;
+		background-size: 100% 100%;
+		transform: rotateY(180deg);
+	}
+
+	&__header {
+		padding: fun.get-var(spacing-lg) 0 fun.get-var(spacing-md);
+	}
+
+	&__list {
+		@extend %reset-ordered-list;
+		margin: 0 0 fun.get-var(spacing-md);
+	}
+
+	&__item {
+		margin: fun.get-var(spacing-sm) 0;
+
+		.comments__form {
+			background: fun.get-var(color-bg);
+			border: fun.convert-px(1) solid fun.get-var(color-border-light);
+			box-shadow: fun.convert-px(3) fun.convert-px(3) 0 0
+					fun.get-var(color-shadow-lighter),
+				fun.convert-px(4) fun.convert-px(4) fun.convert-px(3)
+					fun.convert-px(-2) fun.get-var(color-shadow-darker);
+			margin-top: fun.get-var(spacing-sm);
+			padding: fun.get-var(spacing-lg) fun.get-var(spacing-md);
+
+			.form--comments {
+				max-width: 95%;
+			}
+		}
+
+		.form__title {
+			display: flex;
+			flex-flow: row wrap;
+			gap: fun.get-var(spacing-md);
+		}
+	}
+
+	.children {
+		margin: fun.get-var(spacing-sm) 0;
+		padding-left: fun.get-var(spacing-sm);
+	}
+}

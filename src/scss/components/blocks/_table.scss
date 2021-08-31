@@ -1,0 +1,26 @@
+@use "../../abstracts/functions" as fun;
+
+.wp-block-table {
+	table {
+		border-collapse: collapse;
+	}
+
+	&.is-style-stripes {
+		tbody {
+			tr:nth-child(2n + 1) {
+				background-color: fun.get-var(color-bg-secondary);
+			}
+		}
+	}
+
+	td,
+	th {
+		border: fun.convert-px(1) solid fun.get-var(color-border);
+		padding: fun.get-var(spacing-xs);
+	}
+
+	tfoot {
+		font-weight: 600;
+		text-align: center;
+	}
+}

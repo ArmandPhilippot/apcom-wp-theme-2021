@@ -1,108 +1,41 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
 .header {
-	background: cssvar(color-bg-secondary);
-	text-align: center;
-	padding: cssvar(spacing-xl) 0;
+	background: fun.get-var(color-bg-secondary);
+	padding: clamp(#{fun.get-var(spacing-lg)}, 4vw, #{fun.get-var(spacing-2xl)})
+		0 clamp(#{fun.get-var(spacing-xl)}, 4vw, #{fun.get-var(spacing-3xl)});
 	position: relative;
+	text-align: center;
 
 	&::before {
 		display: block;
+		width: 100%;
+		height: fun.convert-px(30);
+		background-image: url(fun.encode-svg(
+			'<svg viewBox="0 0 800 95.839" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_catskill-white}" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/><path fill="#{var.$color_link-water}" d="M398 13.395v36.778H198v39.666H0v6h204V56.173h200V19.395h172v36.778h200v39.666h24v-6h-18V50.173H582V13.395z"/><path fill="#{var.$color_geyser}" d="M394 9.395v36.778H194v39.666H0v4h198V50.173h200V13.395h184v36.778h200v39.666h18v-4h-14V46.173H586V9.395z"/></svg>'
+		));
 		content: "";
 		position: absolute;
-		bottom: pxtorem(-30);
+		bottom: fun.convert-px(-30);
 		left: 0;
-		width: 100%;
-		height: pxtorem(30);
-		background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 95.839"><path fill="#{$color_catskill-white}" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/><path d="M394 9.395v36.778H194v39.666H0v4h198V50.173h200V13.395h184v36.778h200v39.666h18v-4h-14V46.173H586V9.395z" fill="#{$color_link-water}"/><path d="M398 13.395v36.778H198v39.666H0v6h204V56.173h200V19.395h172v36.778h200v39.666h24v-6h-18V50.173H582V13.395z" fill="#{$color_geyser}"/></svg>')});
-	}
-
-	@include media("screen") {
-		@include dimensions("lg") {
-			text-align: left;
-			padding: cssvar(spacing-3xl) 0;
-		}
 	}
 }
 
 .branding {
 	&__logo {
-		position: relative;
-		width: max-content;
 		margin: auto;
-
-		&:hover {
-			.logo__link {
-				transform: rotateY(180deg);
-			}
-		}
-
-		.logo {
-			&__link {
-				display: block;
-				margin: 0 auto;
-				width: clampthis(#{pxtorem(90)});
-				height: clampthis(#{pxtorem(90)});
-				transform-style: preserve-3d;
-				transition: all 0.6s linear 0s;
-
-				&:hover,
-				&:focus {
-					transform: rotateY(180deg);
-					outline: none;
-
-					.logo__image {
-						&--front {
-							transform: none;
-						}
-
-						&--back {
-							transform: rotateY(180deg);
-						}
-					}
-				}
-
-				&:focus {
-					.logo__image {
-						box-shadow: 0 0 pxtorem(6) pxtorem(1)
-								cssvar(color-shadow-dark),
-							0 0 0 pxtorem(5) cssvar(color-primary-light-opacity);
-						outline: none;
-					}
-				}
-
-				&:active {
-					.logo__image {
-						box-shadow: 0 0 pxtorem(6) pxtorem(1)
-								cssvar(color-shadow-dark),
-							0 0 0 pxtorem(7) cssvar(color-primary-light-opacity);
-					}
-				}
-			}
-
-			&__image {
-				border: pxtorem(3) solid cssvar(color-border-light);
-				border-radius: 50%;
-				box-shadow: 0 0 pxtorem(6) pxtorem(1)
-					cssvar(color-shadow-darker);
-				backface-visibility: hidden;
-				position: absolute;
-				top: 0;
-				left: 0;
-
-				&--back {
-					transform: rotateY(180deg);
-				}
-			}
-		}
 	}
 
 	&__title {
-		font-family: cssvar(font-family-secondary);
-		font-size: cssvar(font-size-3xl);
+		font-family: fun.get-var(font-family-secondary);
+		font-size: fun.get-var(font-size-3xl);
 		font-weight: 500;
-		margin: cssvar(spacing-sm) 0;
+		margin: fun.get-var(spacing-xs) 0;
 
-		@include media("screen") {
-			@include dimensions("lg") {
+		@include mix.media("screen") {
+			@include mix.dimensions("lg") {
 				margin: 0;
 			}
 		}
@@ -111,8 +44,8 @@
 	&__link {
 		background: linear-gradient(
 				to top,
-				cssvar(color-primary-light) pxtorem(5),
-				transparent pxtorem(5)
+				fun.get-var(color-primary-light) fun.convert-px(5),
+				transparent fun.convert-px(5)
 			)
 			center / 0 100% no-repeat;
 		text-decoration: none;
@@ -129,25 +62,88 @@
 	}
 
 	&__baseline {
-		font-family: cssvar(font-family-secondary);
-		font-size: cssvar(font-size-md);
+		font-family: fun.get-var(font-family-secondary);
+		font-size: fun.get-var(font-size-md);
 		font-weight: 400;
-		letter-spacing: pxtorem(1);
+		letter-spacing: fun.convert-px(1);
 		text-transform: uppercase;
 		margin: 0;
 	}
 }
 
-[data-color-scheme="dark"] {
-	.header {
-		&::before {
-			background-image: url(#{encodesvg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 95.839"><path fill="#{$color_big-stone}" d="M0 85.84h194V46.172h200V9.395h192v36.778h200V85.84h14V0H0z"/><path d="M394 9.395v36.778H194v39.666H0v4h198V50.173h200V13.395h184v36.778h200v39.666h18v-4h-14V46.173H586V9.395z" fill="#{$color_mirage}"/><path d="M398 13.395v36.778H198v39.666H0v6h204V56.173h200V19.395h172v36.778h200v39.666h24v-6h-18V50.173H582V13.395z" fill="#{$color_nile-blue}"/></svg>')});
+.logo {
+	position: relative;
+	width: max-content;
+
+	&__image {
+		backface-visibility: hidden;
+		border: fun.convert-px(3) solid fun.get-var(color-border-light);
+		border-radius: 50%;
+		box-shadow: 0 0 fun.convert-px(6) fun.convert-px(1)
+			fun.get-var(color-shadow-darker);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+
+		&--back {
+			transform: rotateY(180deg);
 		}
 	}
 
-	.branding {
-		.logo__image {
-			filter: brightness(0.9);
+	&__link {
+		display: block;
+		width: fun.clamp-lock(#{fun.convert-px(90)});
+		height: fun.clamp-lock(#{fun.convert-px(90)});
+		transform-style: preserve-3d;
+		transition: all 0.6s linear 0s;
+
+		&:hover,
+		&:focus {
+			transform: rotateY(180deg);
+			outline: none;
+		}
+
+		&:hover &,
+		&:focus & {
+			&__image {
+				&---front {
+					transform: none;
+				}
+
+				&--back {
+					transform: rotateY(180deg);
+				}
+			}
+		}
+
+		&:focus & {
+			&__image {
+				box-shadow: 0 0 fun.convert-px(6) fun.convert-px(1)
+						fun.get-var(color-shadow-dark),
+					0 0 0 fun.convert-px(5)
+						fun.get-var(color-primary-light-opacity);
+				outline: none;
+			}
+		}
+
+		&:active & {
+			&__image {
+				box-shadow: 0 0 fun.convert-px(6) fun.convert-px(1)
+						fun.get-var(color-shadow-dark),
+					0 0 0 fun.convert-px(7)
+						fun.get-var(color-primary-light-opacity);
+			}
 		}
 	}
+
+	&:hover & {
+		&__link {
+			transform: rotateY(180deg);
+		}
+	}
+}
+
+.main {
+	background: fun.get-var(color-bg);
 }

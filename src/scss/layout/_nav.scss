@@ -1,0 +1,276 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/placeholders";
+@use "../abstracts/variables" as var;
+
+.main-nav {
+	background: fun.get-var(color-primary);
+	box-shadow: 0 fun.convert-px(-2) fun.convert-px(2) 0
+		fun.get-var(color-shadow-darker);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+
+	@include mix.media("screen") {
+		@include mix.dimensions("lg") {
+			background: none;
+			box-shadow: none;
+			position: relative;
+			margin-right: fun.get-var(spacing-md);
+		}
+	}
+
+	&__list {
+		@extend %flex-list;
+		flex-flow: row nowrap;
+		overflow-y: auto;
+
+		@include mix.media("screen") {
+			@include mix.dimensions("lg") {
+				overflow: initial;
+			}
+		}
+	}
+
+	&__item {
+		flex: 0 0 auto;
+	}
+
+	&__link {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		background: linear-gradient(
+					to top,
+					fun.get-var(color-bg) fun.convert-px(3),
+					transparent fun.convert-px(3)
+				)
+				center / 0 100% no-repeat,
+			linear-gradient(
+					to bottom,
+					transparent 0 25%,
+					fun.get-var(color-primary) 25% 50%,
+					fun.get-var(color-primary-light) 50% 75%,
+					fun.get-var(color-primary-dark) 75% 100%
+				)
+				0 33.3% / 100% 400% no-repeat,
+			linear-gradient(
+					to bottom,
+					fun.get-var(color-bg) 0 50%,
+					transparent 50% 100%
+				)
+				0 100% / 100% 200% no-repeat;
+		color: fun.get-var(color-fg-inverted);
+		font-size: fun.get-var(font-size-lg);
+		font-variant: small-caps;
+		font-weight: 600;
+		text-decoration: none;
+		height: var.get-dim("main-nav-height");
+		padding: 0 fun.get-var(spacing-sm);
+
+		&:hover {
+			background-position: center, 0 66.6%, 0 100%;
+			color: fun.get-var(color-fg-inverted);
+		}
+
+		&:focus {
+			background-position: center, 0 0, 0 0;
+			color: fun.get-var(color-primary);
+		}
+
+		&:active {
+			background-position: center, 0 100%, 0 100%;
+			color: fun.get-var(color-fg-inverted);
+		}
+
+		@include mix.media("screen") {
+			@include mix.dimensions("lg") {
+				background-image: linear-gradient(
+						to right,
+						transparent,
+						transparent
+					),
+					linear-gradient(to bottom, transparent, transparent),
+					linear-gradient(to left, transparent, transparent),
+					linear-gradient(to top, transparent, transparent);
+				background-position: top left, top right, bottom right,
+					bottom left;
+				background-size: 0 fun.get-var(draw-border-width),
+					fun.get-var(draw-border-width) 0,
+					0 fun.get-var(draw-border-width),
+					fun.get-var(draw-border-width) 0;
+				background-color: transparent;
+				background-repeat: no-repeat;
+				border-radius: 8%;
+				color: fun.get-var(color-primary);
+				height: auto;
+				margin: 0 fun.convert-px(3);
+				padding: fun.get-var(spacing-3xs) fun.get-var(spacing-sm);
+				transform: skew(-20deg);
+				transition: all 0.3s linear 0s;
+
+				&:hover,
+				&:focus {
+					background-image: linear-gradient(
+							to right,
+							fun.get-var(color-primary-light),
+							fun.get-var(color-primary-light)
+						),
+						linear-gradient(
+							to bottom,
+							fun.get-var(color-primary-light),
+							fun.get-var(color-primary-light)
+						),
+						linear-gradient(
+							to left,
+							fun.get-var(color-primary-light),
+							fun.get-var(color-primary-light)
+						),
+						linear-gradient(
+							to top,
+							fun.get-var(color-primary-light),
+							fun.get-var(color-primary-light)
+						);
+					background-position: top left, top right, bottom right,
+						bottom left;
+					background-size: 100% fun.get-var(draw-border-width),
+						fun.get-var(draw-border-width) 100%,
+						100% fun.get-var(draw-border-width),
+						fun.get-var(draw-border-width) 100%;
+					color: fun.get-var(color-primary-light);
+					animation: drawBorders 1s linear 1 0s;
+				}
+
+				&:active {
+					background-image: linear-gradient(
+							to right,
+							fun.get-var(color-primary-dark),
+							fun.get-var(color-primary-dark)
+						),
+						linear-gradient(
+							to bottom,
+							fun.get-var(color-primary-dark),
+							fun.get-var(color-primary-dark)
+						),
+						linear-gradient(
+							to left,
+							fun.get-var(color-primary-dark),
+							fun.get-var(color-primary-dark)
+						),
+						linear-gradient(
+							to top,
+							fun.get-var(color-primary-dark),
+							fun.get-var(color-primary-dark)
+						);
+					background-position: top left, top right, bottom right,
+						bottom left;
+					background-size: 0 fun.get-var(draw-border-width),
+						fun.get-var(draw-border-width) 0,
+						0 fun.get-var(draw-border-width),
+						fun.get-var(draw-border-width) 0;
+					color: fun.get-var(color-primary-dark);
+				}
+
+				span {
+					transform: skew(20deg);
+				}
+			}
+		}
+	}
+
+	/* stylelint-disable-next-line -- WP native class in conflict with WPCS. */
+	.current_page_item {
+		.main-nav__link {
+			background-size: 50% 100%, 100% 400%, 100% 200%;
+
+			@include mix.media("screen") {
+				@include mix.dimensions("lg") {
+					background-image: linear-gradient(
+							to right,
+							transparent,
+							transparent
+						),
+						linear-gradient(to bottom, transparent, transparent),
+						linear-gradient(
+							to left,
+							fun.get-var(color-primary-light),
+							fun.get-var(color-primary-light)
+						),
+						linear-gradient(to top, transparent, transparent);
+					background-position: top left, top right, bottom right 25%,
+						bottom left;
+					background-size: 0 fun.get-var(draw-border-width),
+						fun.get-var(draw-border-width) 0,
+						70% fun.get-var(draw-border-width),
+						fun.get-var(draw-border-width) 0;
+
+					&:hover,
+					&:focus {
+						background-image: linear-gradient(
+								to right,
+								fun.get-var(color-primary-light),
+								fun.get-var(color-primary-light)
+							),
+							linear-gradient(
+								to bottom,
+								fun.get-var(color-primary-light),
+								fun.get-var(color-primary-light)
+							),
+							linear-gradient(
+								to left,
+								fun.get-var(color-primary-light),
+								fun.get-var(color-primary-light)
+							),
+							linear-gradient(
+								to top,
+								fun.get-var(color-primary-light),
+								fun.get-var(color-primary-light)
+							);
+						background-size: 100% fun.get-var(draw-border-width),
+							fun.get-var(draw-border-width) 100%,
+							100% fun.get-var(draw-border-width),
+							fun.get-var(draw-border-width) 100%;
+					}
+
+					&:active {
+						background-image: linear-gradient(
+								to right,
+								fun.get-var(color-primary-light),
+								fun.get-var(color-primary-light)
+							),
+							linear-gradient(
+								to bottom,
+								fun.get-var(color-primary-light),
+								fun.get-var(color-primary-light)
+							),
+							linear-gradient(
+								to left,
+								fun.get-var(color-primary-light),
+								fun.get-var(color-primary-light)
+							),
+							linear-gradient(
+								to top,
+								fun.get-var(color-primary-light),
+								fun.get-var(color-primary-light)
+							);
+						background-size: 0 fun.get-var(draw-border-width),
+							fun.get-var(draw-border-width) 0,
+							0 fun.get-var(draw-border-width),
+							fun.get-var(draw-border-width) 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer__nav {
+	.nav {
+		&__list {
+			@extend %flex-list;
+			justify-content: center;
+		}
+	}
+}

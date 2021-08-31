@@ -1,98 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="28.21533"
-   height="24.303474"
-   id="svg2"
-   inkscape:label="Pozadí"
-   sodipodi:version="0.32"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
-   version="1.0"
+   width="100"
+   height="100"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
    sodipodi:docname="icon-quote-begin.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   sodipodi:modified="true">
-  <defs
-     id="defs3">
-    <rect
-       x="-174.0383"
-       y="-59.121887"
-       width="63.847633"
-       height="81.439781"
-       id="rect864" />
-  </defs>
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="base"
+     id="namedview7"
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="-78.658466"
-     inkscape:cy="19.660683"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
-     inkscape:current-layer="layer3"
-     width="112px"
-     height="76px"
+     showgrid="false"
+     units="px"
+     width="100px"
+     inkscape:zoom="2.9647587"
+     inkscape:cx="3.0356602"
+     inkscape:cy="106.9227"
      inkscape:window-width="1920"
      inkscape:window-height="1019"
      inkscape:window-x="0"
      inkscape:window-y="33"
-     inkscape:document-rotation="0"
-     showgrid="false"
      inkscape:window-maximized="1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0" />
-  <metadata
-     id="metadata6">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>Czech right quotation mark</dc:title>
-        <dc:date>2007-08-27</dc:date>
-        <dc:creator>
-          <cc:Agent>
-            <dc:title>Petr Kadlec &lt;http://cs.wikipedia.org/wiki/User:Mormegil&gt;</dc:title>
-          </cc:Agent>
-        </dc:creator>
-        <cc:license
-           rdf:resource="http://web.resource.org/cc/PublicDomain" />
-      </cc:Work>
-      <cc:License
-         rdf:about="http://web.resource.org/cc/PublicDomain">
-        <cc:permits
-           rdf:resource="http://web.resource.org/cc/Reproduction" />
-        <cc:permits
-           rdf:resource="http://web.resource.org/cc/Distribution" />
-        <cc:permits
-           rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
-      </cc:License>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="Calque 1"
-     transform="translate(-41.892335,-25.848263)">
-    <g
-       aria-label="“"
-       id="text862"
-       style="font-style:normal;font-weight:normal;font-size:64px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect864);fill:#194476;fill-opacity:1;stroke:none">
-      <path
-         d="m 68.110125,25.848263 c -7.40757,5.077096 -10.90327,10.154191 -10.90327,16.063598 0,4.993864 2.74662,8.239876 6.82495,8.239876 3.16278,0 5.41002,-2.164008 5.41002,-5.077095 0,-2.913088 -2.24724,-4.910634 -5.49325,-4.910634 l -1.49816,0.08323 c -0.16647,0.08323 -0.2497,0.08323 -0.33293,0.08323 -0.33292,0 -0.49939,-0.249693 -0.49939,-0.749079 0,-3.578937 2.6634,-7.157873 8.48957,-11.402658 z m -15.31452,0 c -7.40756,5.077096 -10.90327,10.154191 -10.90327,16.063598 0,4.993864 2.74663,8.239876 6.82495,8.239876 3.16278,0 5.41002,-2.164008 5.41002,-5.077095 0,-2.913088 -2.24724,-4.910634 -5.49325,-4.910634 l -1.49816,0.08323 c -0.16646,0.08323 -0.2497,0.08323 -0.33293,0.08323 -0.33292,0 -0.49938,-0.249693 -0.49938,-0.749079 0,-3.578937 3.41247,-8.239877 8.48957,-11.402658 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:64px;font-family:C059;-inkscape-font-specification:C059;fill:#194476;fill-opacity:1;stroke-width:1.30049"
-         id="path868" />
-    </g>
-  </g>
+     inkscape:current-layer="svg5" />
+  <defs
+     id="defs2" />
+  <path
+     d="M 92.92038,6.9321468 C 66.66667,24.926251 54.277306,42.920352 54.277306,63.864311 c 0,17.699112 9.734493,29.203542 24.188804,29.203542 11.20944,0 19.174039,-7.669619 19.174039,-17.994101 0,-10.324487 -7.964599,-17.404135 -19.46902,-17.404135 l -5.30974,0.294983 c -0.59,0.294981 -0.88498,0.294981 -1.17996,0.294981 -1.17993,0 -1.76993,-0.884955 -1.76993,-2.654865 0,-12.68437 9.43955,-25.368737 30.088496,-40.412988 z m -54.277304,0 C 12.389405,24.926251 4.785e-6,42.920352 4.785e-6,63.864311 c 0,17.699112 9.734531415,29.203542 24.188801215,29.203542 11.209438,0 19.174044,-7.669619 19.174044,-17.994101 0,-10.324487 -7.964607,-17.404135 -19.469026,-17.404135 L 18.584087,57.9646 c -0.589963,0.294981 -0.88498,0.294981 -1.179963,0.294981 -1.179926,0 -1.769888,-0.884955 -1.769888,-2.654865 0,-12.68437 12.094382,-29.203546 30.088501,-40.412988 z"
+     id="path868" />
 </svg>

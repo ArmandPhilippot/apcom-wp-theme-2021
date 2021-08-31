@@ -1,5 +1,124 @@
-@include declareCssVars(
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes scaleFullWidth {
+	from {
+		transform: scale(0);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
+@keyframes pulse {
+	from {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(0.8);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
+@keyframes drawBorders {
+	0% {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%, 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%;
+	}
+
+	25% {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%;
+	}
+
+	50% {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
+	}
+
+	75% {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
+	}
+
+	100% {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
+	}
+}
+
+@keyframes undrawBorders {
+	0% {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
+	}
+
+	25% {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
+	}
+
+	50% {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 100%;
+	}
+
+	75% {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%,
+			100% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%;
+	}
+
+	100% {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%, 0% fun.get-var(draw-border-width),
+			fun.get-var(draw-border-width) 0%;
+	}
+}
+
+@include mix.set-vars(
 	(
-		draw-border-width: #{pxtorem(4)},
+		draw-border-width: #{fun.convert-px(4)},
 	)
 );

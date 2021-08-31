@@ -4,97 +4,100 @@
 	"description": "A WordPress theme for my personal website.",
 	"author": "Armand Philippot",
 	"license": "GPL-2.0-or-later",
-	"homepage": "https://github.com/ArmandPhilippot/armandphilippot.com#readme",
+	"homepage": "https://github.com/ArmandPhilippot/apcom#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ArmandPhilippot/armandphilippot.com.git"
+		"url": "git+https://github.com/ArmandPhilippot/apcom.git"
 	},
 	"bugs": {
-		"url": "https://github.com/ArmandPhilippot/armandphilippot.com/issues"
+		"url": "https://github.com/ArmandPhilippot/apcom/issues"
 	},
 	"keywords": [
 		"WordPress",
 		"theme"
 	],
-	"main": "gulpfile.js",
 	"scripts": {
-		"init": "gulp initTheme",
-		"build": "gulp",
-		"watch": "gulp watch",
-		"release": "standard-version -a",
-		"translate": "gulp translate",
-		"zip": "gulp zipTheme",
-		"prepare": "husky install",
+		"build": "webpack --node-env=production && npm run rtl",
+		"bump": "npm-run-all --parallel bump:*",
+		"bump:css": "replace-in-file --configFile=tools/bump/css.js",
+		"bump:function": "replace-in-file --configFile=tools/bump/functions.js",
+		"bump:readme": "replace-in-file --configFile=tools/bump/readme.js",
+		"fix": "npm-run-all --parallel fix:*",
+		"fix:js": "eslint --ext .js,.jsx --fix",
+		"fix:php": "composer fix",
+		"fix:scss": "stylelint \"**/*.scss\" --fix",
+		"init": "node ./tools/init.js",
 		"lint": "npm-run-all --parallel lint:*",
-		"lint:scss": "stylelint \"**/*.scss\" --syntax scss",
 		"lint:js": "eslint --ext .js,.jsx",
-		"lint:php": "composer lint"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.14.6",
-		"@babel/preset-env": "^7.14.7",
-		"@commitlint/cli": "^12.1.4",
-		"@commitlint/config-conventional": "^12.1.4",
-		"@wordpress/browserslist-config": "^4.0.1",
-		"@wordpress/eslint-plugin": "^9.0.6",
-		"@wordpress/stylelint-config": "^19.0.5",
-		"autoprefixer": "^10.2.6",
-		"browser-sync": "^2.27.4",
-		"browserslist": "^4.15.0",
-		"del": "^6.0.0",
-		"dotenv": "^10.0.0",
-		"dotenv-expand": "^5.1.0",
-		"eslint": "^7.30.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-prettier": "^3.4.0",
-		"gulp": "^4.0.2",
-		"gulp-babel": "^8.0.0",
-		"gulp-clean-css": "^4.3.0",
-		"gulp-concat": "^2.6.1",
-		"gulp-filter": "^7.0.0",
-		"gulp-imagemin": "^7.1.0",
-		"gulp-line-ending-corrector": "^1.0.3",
-		"gulp-notify": "^4.0.0",
-		"gulp-postcss": "^9.0.0",
-		"gulp-rename": "^2.0.0",
-		"gulp-replace": "^1.1.3",
-		"gulp-rtlcss": "^1.4.2",
-		"gulp-sass": "^5.0.0",
-		"gulp-sort": "^2.0.0",
-		"gulp-uglify": "^3.0.2",
-		"gulp-wp-pot": "^2.5.0",
-		"gulp-zip": "^5.0.2",
-		"husky": "^7.0.0",
-		"lint-staged": "^11.0.0",
-		"npm-run-all": "^4.1.5",
-		"plugin-error": "^1.0.1",
-		"postcss": "^8.3.5",
-		"postcss-sorting": "^6.0.0",
-		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
-		"sass": "^1.35.1",
-		"standard-version": "^9.0.0",
-		"stylelint": "^13.8.0",
-		"stylelint-config-prettier": "^8.0.2"
-	},
-	"browserslist": [
-		"extends @wordpress/browserslist-config"
-	],
-	"standard-version": {
-		"scripts": {
-			"postbump": "gulp bump && gulp recompileCSS && git add -A"
-		}
+		"lint:php": "composer lint",
+		"lint:scss": "stylelint \"**/*.scss\" --syntax scss --formatter verbose",
+		"release": "standard-version -a -s",
+		"rtl": "npm-run-all --parallel rtl:*",
+		"rtl:style": "rtlcss style.css style-rtl.css",
+		"rtl:editor": "rtlcss assets/css/editor-style.css assets/css/editor-style-rtl.css",
+		"rtl:print": "rtlcss assets/css/print.css assets/css/print-rtl.css",
+		"screenshot": "node ./tools/screenshot.js",
+		"serve": "webpack serve --node-env=development",
+		"translate": "npm-run-all --parallel translate:*",
+		"translate:php": "node ./tools/translate.js",
+		"watch": "webpack --watch --progress --node-env=development",
+		"zip": "node ./tools/zip.js"
 	},
 	"dependencies": {
-		"normalize.css": "^8.0.1"
+		"dotenv": "^10.0.0",
+		"dotenv-expand": "^5.1.0",
+		"modern-normalize": "^1.1.0"
 	},
-	"lint-staged": {
-		"src/js/**/*.js": [
-			"eslint --cache --fix"
-		],
-		"src/scss/**/*.scss": [
-			"stylelint --fix --syntax=scss",
-			"prettier --write"
-		],
-		"*.md": "prettier --write"
+	"devDependencies": {
+		"@babel/core": "^7.15.0",
+		"@babel/preset-env": "^7.15.0",
+		"@commitlint/cli": "^13.1.0",
+		"@commitlint/config-conventional": "^13.1.0",
+		"@wordpress/babel-preset-default": "^6.3.1",
+		"@wordpress/browserslist-config": "^4.1.0",
+		"@wordpress/eslint-plugin": "^9.1.1",
+		"@wordpress/prettier-config": "^1.1.0",
+		"@wordpress/stylelint-config": "^19.1.0",
+		"archiver": "^5.3.0",
+		"autoprefixer": "^10.3.3",
+		"babel-loader": "^8.2.2",
+		"browserslist": "^4.16.8",
+		"copy-webpack-plugin": "^9.0.1",
+		"css-loader": "^6.2.0",
+		"css-minimizer-webpack-plugin": "^3.0.2",
+		"dotenv-webpack": "^7.0.3",
+		"eslint": "^7.32.0",
+		"husky": "^7.0.2",
+		"image-minimizer-webpack-plugin": "^2.2.0",
+		"imagemin-gifsicle": "^7.0.0",
+		"imagemin-mozjpeg": "^9.0.0",
+		"imagemin-optipng": "^8.0.0",
+		"imagemin-svgo": "^9.0.0",
+		"lint-staged": "^11.1.2",
+		"mini-css-extract-plugin": "^2.2.0",
+		"npm-run-all": "^4.1.5",
+		"playwright-firefox": "^1.14.1",
+		"postcss": "^8.3.6",
+		"postcss-loader": "^6.1.1",
+		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
+		"replace-in-file": "^6.2.0",
+		"rtlcss": "^3.3.0",
+		"sass": "^1.38.1",
+		"sass-loader": "^12.1.0",
+		"standard-version": "^9.3.1",
+		"style-loader": "^3.2.1",
+		"stylelint": "^13.13.1",
+		"stylelint-config-prettier": "^8.0.2",
+		"webpack": "^5.51.1",
+		"webpack-cli": "^4.8.0",
+		"webpack-dev-server": "^4.0.0",
+		"webpack-merge": "^5.8.0",
+		"wp-pot": "^1.9.9",
+		"wp-pot-cli": "^1.5.0"
+	},
+	"standard-version": {
+		"scripts": {
+			"postbump": "npm run bump && git add -A"
+		}
 	}
 }

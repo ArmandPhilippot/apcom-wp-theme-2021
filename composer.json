@@ -9,10 +9,10 @@
 			"homepage": "https://www.armandphilippot.com/"
 		}
 	],
-	"homepage": "https://github.com/ArmandPhilippot/armandphilippot.com#readme",
+	"homepage": "https://github.com/ArmandPhilippot/apcom#readme",
 	"support": {
-		"issues": "https://github.com/ArmandPhilippot/armandphilippot.com/issues",
-		"source": "https://github.com/ArmandPhilippot/armandphilippot.com"
+		"issues": "https://github.com/ArmandPhilippot/apcom/issues",
+		"source": "https://github.com/ArmandPhilippot/apcom"
 	},
 	"keywords": [
 		"WordPress",
@@ -20,7 +20,8 @@
 	],
 	"type": "wordpress-theme",
 	"require": {
-		"composer/installers": "^1.9"
+		"composer/installers": "^2.0.0",
+		"vlucas/phpdotenv": "^5.3"
 	},
 	"require-dev": {
 		"wp-coding-standards/wpcs": "^2.3",
@@ -30,7 +31,7 @@
 		"paulthewalton/acf-stubs": "^5.8"
 	},
 	"scripts": {
-		"lint": "phpcs -p -s --standard=phpcs.xml",
+		"lint": "phpcs --standard=phpcs.xml",
 		"fix": "phpcbf --standard=phpcs.xml"
 	}
 }

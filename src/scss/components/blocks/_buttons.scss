@@ -1,0 +1,9 @@
+@use "../button";
+
+.wp-block-button {
+	&__link {
+		@extend .btn;
+		@extend .btn--secondary;
+		color: inherit;
+	}
+}

@@ -1,0 +1,25 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+@use "./button";
+
+.back-to-top {
+	position: fixed;
+	right: fun.get-var(spacing-sm);
+	bottom: calc(
+		#{var.get-dim("main-nav-height")} + #{fun.get-var(spacing-md)}
+	); // main-nav height + spacing
+	z-index: 2;
+
+	@include mix.media("screen") {
+		@include mix.dimensions("lg") {
+			right: fun.get-var(spacing-md);
+			bottom: fun.get-var(spacing-md);
+		}
+	}
+
+	.btn__icon {
+		width: var.get-dim("icon-size-xl");
+		height: var.get-dim("icon-size-xl");
+	}
+}

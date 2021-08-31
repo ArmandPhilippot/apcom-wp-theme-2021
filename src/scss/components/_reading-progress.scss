@@ -1,0 +1,11 @@
+@use "../abstracts/functions" as fun;
+
+.reading-progress {
+	background: fun.get-var(color-primary-light-opacity);
+	height: fun.convert-px(8);
+	z-index: 5;
+
+	&__bar {
+		background: fun.get-var(color-primary);
+	}
+}

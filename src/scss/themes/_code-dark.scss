@@ -1,0 +1,23 @@
+/// Dark theme for code blocks.
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+[data-theme="dark"] pre {
+	@include mix.set-vars(
+		(
+			color-bg-secondary: #{var.$color_big-stone},
+			color-bg-tertiary: #{var.$color_nile-blue},
+			color-fg: #{var.$color_black-squeeze},
+			color-token-blue: #{var.$color_dark-theme_blue},
+			color-token-cyan: #{var.$color_dark-theme_cyan},
+			color-token-green: #{var.$color_dark-theme_green},
+			color-token-grey: #{var.$color_dark-theme_grey},
+			color-token-magenta: #{var.$color_dark-theme_magenta},
+			color-token-orange: #{var.$color_dark-theme_orange},
+			color-token-purple: #{var.$color_dark-theme_purple},
+			color-token-red: #{var.$color_dark-theme_red},
+			color-token-yellow: #{var.$color_dark-theme_yellow},
+		),
+		false
+	);
+}

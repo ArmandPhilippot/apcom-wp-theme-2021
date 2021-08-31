@@ -1,15 +1,15 @@
-@include declareCssVars(
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+@include mix.set-vars(
 	(
-		spacing-3xs: clampthis($spacing_3xs),
-		spacing-2xs: clampthis($spacing_2xs),
-		spacing-xs: clampthis($spacing_xs),
-		spacing-sm: clampthis($spacing_sm),
-		spacing-md: clampthis($spacing_md),
-		spacing-lg: clampthis($spacing_lg),
-		spacing-xl: clampthis($spacing_xl),
-		spacing-2xl: clampthis($spacing_2xl),
-		spacing-3xl: clampthis($spacing_3xl),
-		spacing-4xl: clampthis($spacing_4xl),
-		spacing-5xl: clampthis($spacing_5xl),
+		spacing-3xs: var.$spacing_3xs,
+		spacing-2xs: var.$spacing_2xs,
+		spacing-xs: var.$spacing_xs,
+		spacing-sm: var.$spacing_sm,
+		spacing-md: var.$spacing_md,
+		spacing-lg: var.$spacing_lg,
+		spacing-xl: var.$spacing_xl,
+		spacing-2xl: var.$spacing_2xl,
+		spacing-3xl: var.$spacing_3xl,
 	)
 );

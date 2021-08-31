@@ -1,0 +1,41 @@
+@use "../../../abstracts/functions" as fun;
+
+pre.command-line {
+	overflow-wrap: normal;
+	white-space: pre;
+
+	code {
+		overflow-wrap: normal;
+		white-space: pre;
+	}
+
+	.command-line-prompt {
+		border-right: fun.convert-px(1) solid fun.get-var(color-border-light);
+		display: block;
+		float: left;
+		margin-right: fun.get-var(spacing-md);
+		pointer-events: none;
+		user-select: none;
+
+		> span {
+			&::before {
+				display: block;
+				content: "";
+				color: fun.get-var(color-token-grey);
+				padding-right: fun.get-var(spacing-sm);
+			}
+
+			&[data-user]::before {
+				content: "[" attr(data-user) "@" attr(data-host) "] $";
+			}
+
+			&[data-user="root"]::before {
+				content: "[" attr(data-user) "@" attr(data-host) "] #";
+			}
+
+			&[data-prompt]::before {
+				content: attr(data-prompt);
+			}
+		}
+	}
+}

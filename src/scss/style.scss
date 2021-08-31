@@ -1,107 +1,86 @@
 @charset 'utf-8';
 //============================================================================
-// Configuration
-//============================================================================
-@import "helpers/functions";
-@import "helpers/variables";
-@import "helpers/mixins";
-
-//============================================================================
 // Theme info
 //============================================================================
-@import "base/theme_info";
+@use "base/theme_info";
 
-/*!===========================================================================
+/*===========================================================================
 >>> TABLE OF CONTENTS:
-==============================================================================
-1.0 Normalize.css
-2.0 Base
-3.0 Helpers
-4.0 Elements
-5.0 Layout
-6.0 Pages
-7.0 Modules
+=============================================================================
+	1.0 Vendors
+	2.0 Base
+	3.0 Layout
+	4.0 Components
+	5.0 Pages
+	6.0 Themes
 ============================================================================*/
 
 /**
- * 1.0 Normalize.css
+ * 1.0 Vendors
  *
- * Resetting and rebuilding styles have been helped along thanks to the fine
- * work of Nicolas Gallagher and Jonathan Neal
- * http://necolas.github.com/normalize.css/
+ * Import each files separately to define vendors styles order.
  */
-@import "normalize.css/normalize";
+@use "modern-normalize";
+@use "vendors/vendors";
 
 /**
 * 2.0 Base
 *
-* Define CSS variables (colors, fonts...) and box-sizing.
+* Define some standard styles and CSS variables (colors, fonts...).
 */
-@import "base/animations";
-@import "base/colors";
-@import "base/fonts";
-@import "base/spacings";
-@import "base/base";
+@use "base/base";
+@use "base/animations";
+@use "base/colors";
+@use "base/fonts";
+@use "base/spacings";
+@use "base/helpers";
+@use "base/typography";
 
 /**
-* 3.0 Helpers
-*
-* Classes and other stuffs that can be used anywhere like screen-reader-text.
-*/
-@import "helpers/accessibility";
-@import "helpers/alignments";
-@import "helpers/animations";
-
-/**
-* 4.0 Elements
-*
-* Define elements styles like links, lists, forms...
-*/
-@import "elements/blockquote";
-@import "elements/form";
-@import "elements/link";
-@import "elements/list";
-@import "elements/media";
-@import "elements/preformat";
-@import "elements/table";
-@import "elements/typography";
-
-/**
-* 5.0 Layout
+* 3.0 Layout
 *
 * Define website layout.
 */
-@import "layout/grid";
-@import "layout/header";
-@import "layout/main";
-@import "layout/footer";
+@use "layout/grid";
+@use "layout/header";
+@use "layout/page";
+@use "layout/article";
+@use "layout/footer";
+@use "layout/comments";
+@use "layout/form";
+@use "layout/nav";
+@use "layout/sidebar";
 
 /**
-* 6.0 Pages
+* 4.0 Components
+*
+* Define styles for all kind of specific modules like buttons, widgets...
+*/
+@use "components/back-to-top";
+@use "components/breadcrumb";
+@use "components/button";
+@use "components/comment";
+@use "components/gutenberg-blocks";
+@use "components/meta";
+@use "components/modal";
+@use "components/more-link";
+@use "components/pagination";
+@use "components/reading-progress";
+@use "components/toolbar";
+@use "components/widget";
+
+/**
+* 5.0 Pages
 *
 * Define pages specific styles.
 */
-@import "pages/author";
-@import "pages/contact";
-@import "pages/cpt";
-@import "pages/front-page";
+@use "pages/home";
 
 /**
-* 7.0 Modules
+* 6.0 Themes
 *
-* Define modules used like navigation, breadcrumbs...
+* Define themes (like dark mode) specific styles.
 */
-@import "modules/back-to-top";
-@import "modules/blocks";
-@import "modules/breadcrumb";
-@import "modules/comments";
-@import "modules/feed";
-@import "modules/gallery";
-@import "modules/main-nav";
-@import "modules/meta";
-@import "modules/more-link";
-@import "modules/pagination";
-@import "modules/reading-progress";
-@import "modules/search";
-@import "modules/tools";
-@import "modules/widgets";
+@use "themes/dark";
+@use "themes/code-light";
+@use "themes/code-dark";

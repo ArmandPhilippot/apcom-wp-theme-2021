@@ -3,8 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ArmandPhilippot-com\n"
-"Report-Msgid-Bugs-To: https://github.com/ArmandPhilippot/armandphilippot.com/"
-"issues\n"
+"Report-Msgid-Bugs-To: https://github.com/ArmandPhilippot/apcom/issues\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: Armand Philippot <contact@armandphilippot.com>\n"
@@ -19,119 +18,83 @@ msgstr ""
 "esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: archive-project.php:25, archive.php:25, category.php:28, index.php:25,
-#: search.php:28, tag.php:26
-msgid "Total"
-msgstr "Total"
-
-#. translators: %s number of posts.
-#: archive-project.php:31
-msgid "%s project"
-msgid_plural "%s projects"
-msgstr[0] "%s projet"
-msgstr[1] "%s projets"
-
-#. translators: %s number of posts.
-#. translators: %s number of posts.
-#. translators: %s number of posts.
-#. translators: %s number of posts.
-#. translators: %s number of posts.
-#: archive.php:31, category.php:34, index.php:31, search.php:34, tag.php:32
-msgid "%s article"
-msgid_plural "%s articles"
-msgstr[0] "%s article"
-msgstr[1] "%s articles"
-
-#: author.php:24
-msgid "Website:"
-msgstr "Site web :"
-
-#: author.php:38
-msgid "Introduction"
-msgstr "Présentation"
-
 #. translators: %s: author name.
-#: author.php:53
+#: ../author.php:27
 msgctxt "username"
 msgid "%s's articles"
 msgstr "Les articles de %s"
 
-#. translators: %s the category name.
-#: category.php:52
-msgid "Subscribe to %s"
-msgstr "S'abonner à %s"
-
 #. translators: 1: number of comments, 2: post title.
-#: comments.php:39
+#: ../comments.php:43
 msgctxt "comments title"
 msgid "%1$s reply to &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s replies to &ldquo;%2$s&rdquo;"
 msgstr[0] "%1$s réponse à &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s réponses à &ldquo;%2$s&rdquo;"
 
-#: comments.php:34
+#: ../comments.php:38
 msgctxt "comments title"
 msgid "No comments to &ldquo;%s&rdquo; yet."
 msgstr "Aucun commentaire sur &ldquo;%s&rdquo; pour le moment."
 
-#: comments.php:55
+#: ../comments.php:58
 msgid "Subscribe to comments"
 msgstr "S'abonner aux commentaires"
 
-#: comments.php:66, inc/class-custom-walker-comment.php:126
+#: ../comments.php:68, ../inc/class-custom-walker-comment.php:124
 msgid "Reply"
 msgstr "Répondre"
 
-#: comments.php:76, template-parts/main/pagination.php:13
+#: ../comments.php:78, ../inc/helpers/template.php:118
 msgid "Previous"
 msgstr "Précédent"
 
-#: comments.php:77, template-parts/main/pagination.php:14
+#: ../comments.php:79, ../inc/helpers/template.php:119
 msgid "Next"
 msgstr "Suivant"
 
-#: comments.php:85
+#: ../comments.php:87
 msgid "Comments are closed."
 msgstr "Les commentaires sont fermés."
 
-#: functions.php:73
+#: ../functions.php:117
 msgid "Main menu"
 msgstr "Menu principal"
 
-#: functions.php:74
+#: ../functions.php:118
 msgid "Footer menu"
 msgstr "Menu du pied de page"
 
-#: functions.php:124
+#: ../functions.php:168
 msgid "Switch to dark theme"
 msgstr "Basculer sur le thème foncé"
 
-#: functions.php:125
+#: ../functions.php:169
 msgid "Switch to light theme"
 msgstr "Basculer sur le thème clair"
 
-#: functions.php:126
+#: ../functions.php:170
 msgid "Switch theme"
 msgstr "Changer de thème"
 
 #. translators: %1$s Open HTML element. %2$s Closing HTML element.
-#: functions.php:132
+#: ../functions.php:176
 msgid "%1$sWarning:%2$s"
 msgstr "%1$sAttention :%2$s"
 
-#: functions.php:136
+#: ../functions.php:180
 msgid "This content has not been updated for over a year."
 msgstr "Ce contenu n'a pas été mis à jour depuis plus d'un an."
 
-#: functions.php:137
+#: ../functions.php:181
 msgid "The content may no longer be valid."
 msgstr "Le contenu n'est peut-être plus valide."
 
-#: functions.php:138
+#: ../functions.php:182
 msgid ""
 "For example, the subject may have evolved since the writing of the article "
 "or my opinion may have changed."
@@ -139,26 +102,15 @@ msgstr ""
 "Par exemple, le sujet a pu évoluer depuis l'écriture de l'article ou mon "
 "opinion a pu changer."
 
-#: functions.php:142
+#: ../functions.php:186
 msgid "Table of contents"
 msgstr "Table des matières"
 
-#: functions.php:143, template-parts/main/articles-list.php:111,
-#: template-parts/main/author-articles.php:97,
-#: template-parts/main/page-header.php:60,
-#: template-parts/cpt/article/header.php:58,
-#: template-parts/cpt/project/header.php:58,
-#: template-parts/cpt/project/projects-list.php:65,
-#: template-parts/cpt/subject/content.php:181,
-#: template-parts/cpt/thematic/content.php:144
-msgid "Comments"
-msgstr "Commentaires"
-
-#: functions.php:197
+#: ../functions.php:267
 msgid "Blog Sidebar - Left/First"
 msgstr "Barre latérale du blog - Gauche/Début"
 
-#: functions.php:199
+#: ../functions.php:269
 msgid ""
 "Add widgets here to appear in your blog sidebar (first on mobile view, left "
 "on large screens)."
@@ -166,11 +118,11 @@ msgstr ""
 "Ajouter des widgets ici pour les faire apparaître dans la barre latérale du "
 "blog (au début sur mobile, à gauche sur les écrans larges)."
 
-#: functions.php:209
+#: ../functions.php:279
 msgid "Blog Sidebar - Right/Last"
 msgstr "Barre latérale du blog - Droite/Fin"
 
-#: functions.php:211
+#: ../functions.php:281
 msgid ""
 "Add widgets here to appear in your blog sidebar(last on mobile view, right "
 "on large screens)."
@@ -178,136 +130,37 @@ msgstr ""
 "Ajouter des widgets ici pour les faire apparaître dans la barre latérale du "
 "blog (à la fin sur mobile, à droite sur les écrans larges)."
 
-#: functions.php:221
+#: ../functions.php:291
 msgid "Articles & Pages Widgets"
 msgstr "Widgets des Articles & Pages"
 
-#: functions.php:223
+#: ../functions.php:293
 msgid "Add widgets here to appear below the articles and pages."
 msgstr ""
 "Ajouter des widgets ici pour les faire apparaître sous les articles et pages."
 
-#: functions.php:233
+#: ../functions.php:303
 msgid "CV Widgets"
 msgstr "Widgets du CV"
 
-#: functions.php:235
+#: ../functions.php:305
 msgid "Add widgets here to appear below the CV page."
 msgstr "Ajouter des widgets ici pour les faire apparaître sous la page du CV."
 
-#: functions.php:245
+#: ../functions.php:315
 msgid "Contact Widgets"
 msgstr "Widgets de Contact"
 
-#: functions.php:247
+#: ../functions.php:317
 msgid "Add widgets here to appear below the Contact page."
 msgstr ""
 "Ajouter des widgets ici pour les faire apparaître sous la page de contact."
 
-#: header.php:21
+#: ../header.php:25
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: page-contact.php:3
-msgid "Contact"
-msgstr "Contact"
-
-#: page-contact.php:42
-msgid "Some required fields have not been completed."
-msgstr "Certains champs requis n'ont pas été complétés."
-
-#: page-contact.php:45
-msgid "Your email address contains errors."
-msgstr "Votre adresse e-mail contient des erreurs."
-
-#: page-contact.php:48
-msgid "Your message has been sent."
-msgstr "Votre message a bien été envoyé."
-
-#: page-contact.php:51
-msgid "Nice try"
-msgstr "Bien essayé"
-
-#: page-contact.php:54
-msgid "An error has occurred."
-msgstr "Une erreur est survenue."
-
-#: page-contact.php:60
-msgid "Name"
-msgstr "Nom"
-
-#: page-contact.php:63
-msgid "Firstname Lastname"
-msgstr "Prénom Nom"
-
-#: page-contact.php:67
-msgid "Email"
-msgstr "Email"
-
-#: page-contact.php:70
-msgid "your@email.com"
-msgstr "votre@email.fr"
-
-#: page-contact.php:74
-msgid "Object"
-msgstr "Objet"
-
-#: page-contact.php:76
-msgid "Mail subject"
-msgstr "Sujet du message"
-
-#: page-contact.php:80
-msgid "Message"
-msgstr "Message"
-
-#: page-contact.php:83
-msgid "Your message here..."
-msgstr "Votre message ici..."
-
-#: page-contact.php:87
-msgid "Phone"
-msgstr "Téléphone"
-
-#: page-contact.php:93
-msgid "Send"
-msgstr "Envoyer"
-
-#: page-cv.php:3
-msgid "CV"
-msgstr "CV"
-
-#: page-toc-no-sidebar.php:3
-msgid "ToC no sidebar"
-msgstr "TdM sans sidebar"
-
-#. translators: %s: search query.
-#: search.php:21, template-parts/main/breadcrumb.php:33
-msgid "Search results for: %s"
-msgstr "Résultats de la recherche pour : %s"
-
-#: searchform.php:17
-msgid "Search for:"
-msgstr "Rechercher :"
-
-#: searchform.php:20
-msgctxt "placeholder"
-msgid "Keywords &hellip;"
-msgstr "Mots-clés&hellip;"
-
-#: searchform.php:23
-msgctxt "submit button"
-msgid "Search"
-msgstr "Rechercher"
-
-#: sidebar-cv.php:12
-msgid "In addition"
-msgstr "En complément"
-
-#: sidebar.php:19
-msgid "Filter articles by:"
-msgstr "Filtrer les articles par :"
-
-#: inc/class-custom-walker-comment.php:35
+#: ../inc/class-custom-walker-comment.php:35
 msgid ""
 "Your comment is awaiting moderation. This is a preview; your comment will be "
 "visible after it has been approved."
@@ -315,274 +168,384 @@ msgstr ""
 "Votre commentaire est en attente de modération. Ceci est un aperçu, votre "
 "commentaire sera visible après avoir été approuvé."
 
-#: inc/class-custom-walker-comment.php:33
+#: ../inc/class-custom-walker-comment.php:33
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération."
 
 #. translators: %1$s Comment ID. %2$s Comment author.
-#: inc/class-custom-walker-comment.php:45
+#: ../inc/class-custom-walker-comment.php:45
 msgid "Comment %1$s written by %2$s"
 msgstr "Commentaire %1$s écrit par %2$s"
 
-#: inc/class-custom-walker-comment.php:78
+#: ../inc/class-custom-walker-comment.php:78
 msgid "Author"
 msgstr "Auteur"
 
-#: inc/class-custom-walker-comment.php:84
+#: ../inc/class-custom-walker-comment.php:84
 msgid "Published on:"
 msgstr "Publié le :"
 
 #. translators: 1: Comment date, 2: Comment time.
-#: inc/class-custom-walker-comment.php:92
+#: ../inc/class-custom-walker-comment.php:92
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
 
-#: inc/class-custom-walker-comment.php:109
+#: ../inc/class-custom-walker-comment.php:109
 msgid "Edit"
 msgstr "Modifier"
 
 #. translators: %s : reading time in minutes.
-#: inc/helpers.php:71
+#: ../inc/helpers/template.php:34
 msgctxt "reading time"
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s minute"
 msgstr[1] "%s minutes"
 
-#: inc/helpers.php:78
+#: ../inc/helpers/template.php:41
 msgid "minutes"
 msgstr "minutes"
 
-#: inc/helpers.php:65
+#: ../inc/helpers/template.php:28
 msgid "seconds"
 msgstr "secondes"
 
 #. translators: %s : number of words.
-#: inc/helpers.php:85
+#: ../inc/helpers/template.php:48
 msgid "Approximately %1$s words read at %2$s words per minute."
 msgstr "Environ %1$s mots lus à une vitesse de %2$s mots par minute."
 
-#. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
-#. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
-#: inc/hooks.php:216, inc/hooks.php:243
-msgid "Continue reading %1$s%2$s%3$s"
-msgstr "Lire la suite %1$sde %2$s%3$s"
+#. translators: %s: search query.
+#: ../inc/helpers/template.php:78, ../inc/helpers/template.php:162
+msgid "Search results for: %s"
+msgstr "Résultats de la recherche pour : %s"
 
-#: inc/hooks.php:267
-msgid "Pagination"
-msgstr "Pagination"
+#: ../inc/helpers/template.php:84
+msgid "Nothing found"
+msgstr "Aucun résultat"
 
-#: inc/hooks.php:285
-msgid "Leave a comment"
-msgstr "Laisser un commentaire"
+#: ../inc/helpers/template.php:122
+msgid "Page"
+msgstr "Page"
 
-#: inc/hooks.php:416
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr "j F Y"
+#: ../inc/helpers/template.php:141
+msgid "Home"
+msgstr "Accueil"
 
-#: inc/hooks.php:414
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr "F Y"
-
-#: inc/hooks.php:412, template-parts/main/breadcrumb.php:71
+#: ../inc/helpers/template.php:200, ../inc/hooks/archives.php:29
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"
 
-#: template-parts/footer/back-to-top.php:12
-msgid "Back to top"
-msgstr "Retour en haut de page"
-
-#: template-parts/footer/copyright.php:20
-msgid "CC BY SA"
-msgstr "CC BY SA"
-
-#: template-parts/footer/nav.php:15
-msgid "Footer"
-msgstr "Pied de page"
-
-#: template-parts/header/branding.php:23, template-parts/header/branding.php:24
-msgid "Back to Armand Philippot homepage"
-msgstr "Retour à la page d'accueil d'Armand Philippot"
-
-#: template-parts/header/main-nav.php:10
-msgid "Main"
-msgstr "Principal"
-
-#: template-parts/header/tools.php:11
-msgid "Search"
-msgstr "Rechercher"
-
-#: template-parts/header/tools.php:17
-msgid "Open search"
-msgstr "Ouvrir la recherche"
-
-#: template-parts/header/tools.php:18
-msgid "Close search"
-msgstr "Fermer la recherche"
-
-#: template-parts/main/articles-list.php:20,
-#: template-parts/main/author-articles.php:50,
-#: template-parts/main/page-header.php:23,
-#: template-parts/cpt/article/header.php:23,
-#: template-parts/cpt/project/header.php:23,
-#: template-parts/cpt/project/projects-list.php:20,
-#: template-parts/cpt/subject/content.php:85,
-#: template-parts/cpt/subject/header.php:26,
-#: template-parts/cpt/thematic/content.php:84,
-#: template-parts/cpt/thematic/header.php:22
-msgid "Published on"
-msgstr "Publié le"
-
-#: template-parts/main/articles-list.php:30,
-#: template-parts/main/author-articles.php:60,
-#: template-parts/main/page-header.php:48,
-#: template-parts/cpt/article/header.php:47,
-#: template-parts/cpt/project/header.php:47,
-#: template-parts/cpt/project/projects-list.php:30,
-#: template-parts/cpt/subject/content.php:95,
-#: template-parts/cpt/thematic/content.php:94
-msgid "Reading time"
-msgstr "Temps de lecture"
-
-#: template-parts/main/articles-list.php:89,
-#: template-parts/main/articles-list.php:65,
-#: template-parts/main/articles-list.php:43,
-#: template-parts/main/author-articles.php:76
-msgid "Posted in"
-msgstr "Publié dans"
-
-#: template-parts/main/breadcrumb.php:12
-msgid "Home"
-msgstr "Accueil"
-
-#: template-parts/main/breadcrumb.php:72
+#: ../inc/helpers/template.php:201
 msgctxt "monthly archives date format"
 msgid "F"
 msgstr "F"
 
-#: template-parts/main/breadcrumb.php:73
+#: ../inc/helpers/template.php:202
 msgctxt "monthly archives date format"
 msgid "m"
 msgstr "m"
 
-#: template-parts/main/breadcrumb.php:74
+#: ../inc/helpers/template.php:203
 msgctxt "daily archives date format"
 msgid "d"
 msgstr "d"
 
-#: template-parts/main/breadcrumb.php:41
+#: ../inc/helpers/template.php:170
 msgid "Page not found"
 msgstr "Page non trouvée"
 
-#: template-parts/main/breadcrumb.php:148
+#: ../inc/helpers/template.php:287
+msgid "CC BY SA"
+msgstr "CC BY SA"
+
+#: ../inc/hooks/archives.php:33
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "j F Y"
+
+#: ../inc/hooks/archives.php:31
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: ../inc/hooks/comments.php:19
+msgid "Leave a comment"
+msgstr "Laisser un commentaire"
+
+#. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
+#. translators: %1$s + $3$s : screen reader wrapper. %2$s: Name of the current post.
+#: ../inc/hooks/more-link.php:22, ../inc/hooks/more-link.php:49
+msgid "Continue reading %1$s%2$s%3$s"
+msgstr "Lire la suite %1$sde %2$s%3$s"
+
+#: ../inc/hooks/pagination.php:23
+msgid "Pagination"
+msgstr "Pagination"
+
+#: ../page-contact.php:3
+msgid "Contact"
+msgstr "Contact"
+
+#: ../page-cv.php:3
+msgid "CV"
+msgstr "CV"
+
+#: ../page-toc-no-sidebar.php:3
+msgid "ToC no sidebar"
+msgstr "TdM sans sidebar"
+
+#: ../searchform.php:18
+msgid "Search for:"
+msgstr "Rechercher :"
+
+#: ../searchform.php:20
+msgctxt "placeholder"
+msgid "Keywords &hellip;"
+msgstr "Mots-clés&hellip;"
+
+#: ../searchform.php:23
+msgctxt "submit button"
+msgid "Search"
+msgstr "Rechercher"
+
+#: ../sidebar-cv.php:12
+msgid "In addition"
+msgstr "En complément"
+
+#: ../sidebar.php:20
+msgid "Filter articles by:"
+msgstr "Filtrer les articles par :"
+
+#: ../template-parts/author/author-intro.php:14
+msgid "Introduction"
+msgstr "Présentation"
+
+#: ../template-parts/footer/site-back-to-top.php:15
+msgid "Back to top"
+msgstr "Retour en haut de page"
+
+#: ../template-parts/footer/site-nav.php:15
+msgid "Footer"
+msgstr "Pied de page"
+
+#: ../template-parts/header/site-branding.php:23,
+#: ../template-parts/header/site-branding.php:24
+msgid "Back to Armand Philippot homepage"
+msgstr "Retour à la page d'accueil d'Armand Philippot"
+
+#: ../template-parts/header/site-breadcrumb.php:14
 msgid "Breadcrumb"
 msgstr "Fil d'Ariane"
 
-#: template-parts/main/breadcrumb.php:150
+#: ../template-parts/header/site-breadcrumb.php:16
 msgid "You are here:"
 msgstr "Vous êtes ici :"
 
-#: template-parts/main/none.php:13
-msgid "Nothing found"
-msgstr "Aucun résultat"
+#: ../template-parts/header/site-nav.php:12
+msgid "Main"
+msgstr "Principal"
 
-#: template-parts/main/none.php:30
+#: ../template-parts/header/site-toolbar.php:13
+msgid "Search"
+msgstr "Rechercher"
+
+#: ../template-parts/header/site-toolbar.php:18
+msgid "Open search"
+msgstr "Ouvrir la recherche"
+
+#: ../template-parts/header/site-toolbar.php:21
+msgid "Close search"
+msgstr "Fermer la recherche"
+
+#: ../template-parts/page/page-none.php:32
 msgid ""
 "It seems we can't find what you're looking for. Perhaps searching can help."
 msgstr ""
 "Il semblerait que nous ne pouvons trouver ce que vous cherchez. Une "
 "recherche pourrait vous être utile."
 
-#: template-parts/main/none.php:22
+#: ../template-parts/page/page-none.php:24
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 "Prêt à publier votre premier article ? <a href=\"%1$s\">Commencez ici</a>."
 
-#: template-parts/main/page-content-attachment.php:41
-msgid "The file can be downloaded here:"
-msgstr "Le fichier peut être téléchargé ici :"
+#: ../template-parts/page/partials/content-contact.php:17
+msgid "Some required fields have not been completed."
+msgstr "Certains champs requis n'ont pas été complétés."
 
-#: template-parts/main/page-footer.php:94
-msgid "Is not attached to any article."
-msgstr "N'est attaché à aucun article."
+#: ../template-parts/page/partials/content-contact.php:20
+msgid "Your email address contains errors."
+msgstr "Votre adresse e-mail contient des erreurs."
 
-#: template-parts/main/page-footer.php:86
+#: ../template-parts/page/partials/content-contact.php:23
+msgid "Your message has been sent."
+msgstr "Votre message a bien été envoyé."
+
+#: ../template-parts/page/partials/content-contact.php:26
+msgid "Nice try"
+msgstr "Bien essayé"
+
+#: ../template-parts/page/partials/content-contact.php:29
+msgid "An error has occurred."
+msgstr "Une erreur est survenue."
+
+#: ../template-parts/page/partials/content-contact.php:35
+msgid "Name"
+msgstr "Nom"
+
+#: ../template-parts/page/partials/content-contact.php:38
+msgid "Firstname Lastname"
+msgstr "Prénom Nom"
+
+#: ../template-parts/page/partials/content-contact.php:42
+msgid "Email"
+msgstr "Email"
+
+#: ../template-parts/page/partials/content-contact.php:45
+msgid "your@email.com"
+msgstr "votre@email.fr"
+
+#: ../template-parts/page/partials/content-contact.php:49
+msgid "Object"
+msgstr "Objet"
+
+#: ../template-parts/page/partials/content-contact.php:51
+msgid "Mail subject"
+msgstr "Sujet du message"
+
+#: ../template-parts/page/partials/content-contact.php:55
+msgid "Message"
+msgstr "Message"
+
+#: ../template-parts/page/partials/content-contact.php:58
+msgid "Your message here..."
+msgstr "Votre message ici..."
+
+#: ../template-parts/page/partials/content-contact.php:62
+msgid "Phone"
+msgstr "Téléphone"
+
+#: ../template-parts/page/partials/content-contact.php:68
+msgid "Send"
+msgstr "Envoyer"
+
+#. translators: %s The subject name.
+#. translators: %s The thematic name.
+#: ../template-parts/page/partials/content-subject.php:31,
+#: ../template-parts/page/partials/content-thematic.php:31
+msgid "All articles in %s"
+msgstr "Tous les articles dans %s"
+
+#. translators: %s the page title.
+#: ../template-parts/page/partials/header-feed.php:18
+msgid "Subscribe to %s"
+msgstr "S'abonner à %s"
+
+#: ../template-parts/page/partials/meta-attachment.php:12
 msgid "Published in:"
 msgstr "Publié dans :"
 
-#: template-parts/main/page-footer.php:22
+#: ../template-parts/page/partials/meta-attachment.php:23
+msgid "Is not attached to any article."
+msgstr "N'est attaché à aucun article."
+
+#: ../template-parts/page/partials/meta-categories.php:20
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] "Catégorie :"
 msgstr[1] "Catégories :"
 
-#: template-parts/main/page-footer.php:54
-msgid "Tag:"
-msgid_plural "Tags:"
-msgstr[0] "Étiquette :"
-msgstr[1] "Étiquettes :"
+#: ../template-parts/page/partials/meta-categories.php:16,
+#: ../template-parts/page/partials/meta-projects.php:17,
+#: ../template-parts/page/partials/meta-thematics.php:16
+msgid "Posted in"
+msgstr "Publié dans"
 
-#: template-parts/main/page-header.php:34,
-#: template-parts/cpt/article/header.php:34,
-#: template-parts/cpt/project/header.php:34,
-#: template-parts/cpt/subject/header.php:37,
-#: template-parts/cpt/thematic/header.php:33
+#: ../template-parts/page/partials/meta-comments.php:14
+msgid "Comments"
+msgstr "Commentaires"
+
+#: ../template-parts/page/partials/meta-date.php:14
+msgid "Published on"
+msgstr "Publié le"
+
+#: ../template-parts/page/partials/meta-date.php:25
 msgid "Updated on"
 msgstr "Mis à jour le"
 
-#: template-parts/cpt/article/footer.php:23
-msgid "Thematic:"
-msgid_plural "Thematics:"
-msgstr[0] "Thématique :"
-msgstr[1] "Thématiques :"
+#: ../template-parts/page/partials/meta-posts-count.php:14
+msgid "Total"
+msgstr "Total"
 
-#: template-parts/cpt/article/footer.php:54,
-#: template-parts/cpt/project/footer.php:34
+#. translators: %s number of posts.
+#: ../template-parts/page/partials/meta-posts-count.php:20
+msgid "%s article"
+msgid_plural "%s articles"
+msgstr[0] "%s article"
+msgstr[1] "%s articles"
+
+#: ../template-parts/page/partials/meta-projects.php:15
+msgid "Posted in:"
+msgstr "Publié dans :"
+
+#: ../template-parts/page/partials/meta-reading-time.php:12
+msgid "Reading time"
+msgstr "Temps de lecture"
+
+#: ../template-parts/page/partials/meta-subjects.php:38
 msgid "Topic:"
 msgid_plural "Topics:"
 msgstr[0] "Sujet :"
 msgstr[1] "Sujets :"
 
-#: template-parts/cpt/project/footer.php:15
-msgid "Posted in:"
-msgstr "Publié dans :"
+#: ../template-parts/page/partials/meta-subjects.php:27
+msgid "Related topic:"
+msgid_plural "Related topics:"
+msgstr[0] "Sujet lié :"
+msgstr[1] "Sujets liés :"
 
-#: template-parts/cpt/project/projects-list.php:42
-msgid "About"
-msgstr "Au sujet de"
+#: ../template-parts/page/partials/meta-tags.php:17
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] "Étiquette :"
+msgstr[1] "Étiquettes :"
 
-#. translators: %s The subject name.
-#. translators: %s The thematic name.
-#: template-parts/cpt/subject/content.php:33,
-#: template-parts/cpt/thematic/content.php:33
-msgid "All articles in %s"
-msgstr "Tous les articles dans %s"
+#: ../template-parts/page/partials/meta-thematics.php:20
+msgid "Thematic:"
+msgid_plural "Thematics:"
+msgstr[0] "Thématique :"
+msgstr[1] "Thématiques :"
 
-#: template-parts/cpt/subject/content.php:109
-msgid "Thematic"
-msgid_plural "Thematics"
-msgstr[0] "Thématique"
-msgstr[1] "Thématiques"
+#: ../template-parts/page/partials/meta-website.php:23
+msgid "Website:"
+msgstr "Site web :"
 
-#: template-parts/cpt/subject/content.php:144
-msgid "Related topic"
-msgid_plural "Related topics"
-msgstr[0] "Sujet lié"
-msgstr[1] "Sujets liés"
+#~ msgid "%s project"
+#~ msgid_plural "%s projects"
+#~ msgstr[0] "%s projet"
+#~ msgstr[1] "%s projets"
 
-#: template-parts/cpt/subject/header.php:51
-msgid "Website"
-msgstr "Site web"
+#~ msgid "The file can be downloaded here:"
+#~ msgstr "Le fichier peut être téléchargé ici :"
 
-#: template-parts/cpt/thematic/content.php:108
-msgid "Topic"
-msgid_plural "Topics"
-msgstr[0] "Sujet"
-msgstr[1] "Sujets"
+#~ msgid "About"
+#~ msgstr "Au sujet de"
+
+#~ msgid "Thematic"
+#~ msgid_plural "Thematics"
+#~ msgstr[0] "Thématique"
+#~ msgstr[1] "Thématiques"
+
+#~ msgid "Website"
+#~ msgstr "Site web"
+
+#~ msgid "Topic"
+#~ msgid_plural "Topics"
+#~ msgstr[0] "Sujet"
+#~ msgstr[1] "Sujets"
 
 #~ msgid ""
 #~ "This page lists the presentations of my different open source projects."

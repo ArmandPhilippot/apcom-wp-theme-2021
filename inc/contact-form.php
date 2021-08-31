@@ -3,11 +3,13 @@
  * Contact form functions to control inputs and sending.
  *
  * @package ArmandPhilippot-com
- * @since 0.0.2
+ * @since   0.0.2
  */
 
 /**
  * Custom contact form
+ *
+ * @since 0.0.1
  */
 function apcom_contact_form() {
 	if ( isset( $_POST['contact-submitted'] ) && isset( $_POST['contact-form'] ) ) {
@@ -62,7 +64,9 @@ add_action( 'template_redirect', 'apcom_contact_form' );
 /**
  * Pass variable as parameter in URL.
  *
- * @param array $vars The array of allowed query variable names.
+ * @since 0.0.1
+ *
+ * @param  array $vars The array of allowed query variable names.
  * @return array Allowed query variable names.
  */
 function apcom_add_query_vars_filter( $vars ) {

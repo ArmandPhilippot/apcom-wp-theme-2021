@@ -1,5 +1,5 @@
 /**
- * Set up a decent box model on the root element
+ * Set up a decent box model on the root element.
  */
 html {
 	box-sizing: border-box;
@@ -18,18 +18,24 @@ html {
 	padding: 0;
 }
 
-*::-moz-selection {
-	background: cssvar(color-primary-light-opacity);
+audio,
+button,
+figure,
+form,
+img,
+input,
+optgroup,
+pre,
+select,
+table,
+textarea,
+video {
+	max-width: 100%;
 }
 
-*::selection {
-	background: cssvar(color-primary-light-opacity);
-}
-
-body {
-	background: cssvar(color-bg-secondary);
-	color: cssvar(color-fg);
-	font-family: cssvar(font-family-primary);
-	font-size: cssvar(font-size-md);
-	line-height: cssvar(line-height);
+audio,
+img,
+video {
+	height: auto;
+	vertical-align: middle;
 }

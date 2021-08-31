@@ -1,0 +1,41 @@
+@use "../abstracts/functions" as fun;
+
+.modal {
+	border: fun.convert-px(2) solid fun.get-var(color-primary);
+	box-shadow: fun.convert-px(6) fun.convert-px(6) 0 0
+		fun.get-var(color-primary);
+	font-weight: 600;
+	margin-bottom: fun.get-var(spacing-md);
+	padding: fun.get-var(spacing-xs) fun.get-var(spacing-sm);
+
+	&__label {
+		color: fun.get-var(color-token-orange);
+	}
+
+	&--warning {
+		border-color: fun.get-var(color-token-orange);
+		box-shadow: fun.convert-px(6) fun.convert-px(6) 0 0
+			fun.get-var(color-token-orange);
+	}
+
+	&--error {
+		border-color: fun.get-var(color-token-red);
+		box-shadow: fun.convert-px(6) fun.convert-px(6) 0 0
+			fun.get-var(color-token-red);
+		color: fun.get-var(color-token-red);
+	}
+
+	&--valid {
+		border-color: fun.get-var(color-token-green);
+		box-shadow: fun.convert-px(6) fun.convert-px(6) 0 0
+			fun.get-var(color-token-green);
+		color: fun.get-var(color-token-green);
+	}
+
+	&--nice-try {
+		border-color: fun.get-var(color-token-orange);
+		box-shadow: fun.convert-px(6) fun.convert-px(6) 0 0
+			fun.get-var(color-token-orange);
+		color: fun.get-var(color-token-orange);
+	}
+}

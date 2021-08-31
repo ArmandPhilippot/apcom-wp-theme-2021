@@ -1,0 +1,7 @@
+.wp-block-cover {
+	&__inner-container {
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

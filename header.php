@@ -1,9 +1,14 @@
 <?php
 /**
- * The template for displaying the header.
+ * The header template.
+ *
+ * This is the template that displays all of the <head> section and everything
+ * up until main.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package ArmandPhilippot-com
- * @since 0.0.1
+ * @since   0.0.1
  */
 
 ?>
@@ -12,7 +17,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
 <body id="body" <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -20,13 +24,15 @@
 	<a href="#main" class="skip-link screen-reader-text">
 		<?php esc_html_e( 'Skip to content', 'APCom' ); ?>
 	</a>
-	<header class="header" id="header">
+	<header id="header" class="header">
 		<?php
-		get_template_part( 'template-parts/header/branding' );
-		get_template_part( 'template-parts/header/main-nav' );
-		get_template_part( 'template-parts/header/tools' );
+		get_template_part( 'template-parts/header/site', 'branding' );
+		get_template_part( 'template-parts/header/site', 'nav' );
+		get_template_part( 'template-parts/header/site', 'toolbar' );
 		?>
 	</header>
-	<main class="main" id="main">
+	<main id="main" class="main">
 		<?php
-		get_template_part( 'template-parts/main/breadcrumb' );
+		if ( ! apcom_is_frontpage() ) {
+			get_template_part( 'template-parts/header/site', 'breadcrumb' );
+		}

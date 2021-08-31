@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="100"
    height="100"
    viewBox="0 0 100 100"
    version="1.1"
    id="svg8"
    sodipodi:docname="icon-moon.svg"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -24,10 +24,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="-22.663785"
-     inkscape:cy="69.560174"
+     inkscape:cx="38.133258"
+     inkscape:cy="69.447987"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="svg8"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
@@ -35,7 +35,8 @@
      inkscape:window-height="1019"
      inkscape:window-x="0"
      inkscape:window-y="33"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -44,17 +45,10 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <g
-     inkscape:label="Calque 1"
-     inkscape:groupmode="layer"
-     id="layer1">
-    <path
-       id="path831"
-       style="opacity:1;fill:#000000;stroke-width:3.54206"
-       d="M 51.282697,1.5e-6 A 45.11985,45.11985 0 0 1 73.950338,39.135204 45.11985,45.11985 0 0 1 28.830488,84.255054 45.11985,45.11985 0 0 1 3.7404025,76.637163 50.133167,50.133167 0 0 0 46.12643,99.999999 50.133167,50.133167 0 0 0 96.259597,49.866834 50.133167,50.133167 0 0 0 51.282697,1.5e-6 Z" />
-  </g>
+  <path
+     id="path831"
+     d="M 51.282697,1.25e-6 A 45.11985,45.11985 0 0 1 73.950338,39.135204 45.11985,45.11985 0 0 1 28.830488,84.255054 45.11985,45.11985 0 0 1 3.7404027,76.637163 50.133167,50.133167 0 0 0 46.12643,99.999999 50.133167,50.133167 0 0 0 96.259597,49.866834 50.133167,50.133167 0 0 0 51.282697,1.25e-6 Z" />
 </svg>

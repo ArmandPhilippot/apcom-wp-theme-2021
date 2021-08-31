@@ -1,70 +1,35 @@
 <?php
 /**
- * The main template file.
+ * The main template.
+ *
+ * This is the most generic template file in a WordPress theme and one of the
+ * two required files for a theme. It is used to display a page when nothing
+ * more specific matches a query.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package ArmandPhilippot-com
- * @since 0.0.1
+ * @since   0.0.1
  */
 
 get_header();
 if ( have_posts() ) {
 	?>
-	<article class="page" itemscope itemtype="http://schema.org/Blog">
-		<header class="page__header">
-			<h1 class="page__title" itemprop="headline name">
-				<?php single_post_title(); ?>
-			</h1>
-			<?php
-			$apcom_posts_number_post      = wp_count_posts( 'post' )->publish;
-			$apcom_posts_number_article   = post_type_exists( 'article' ) ? wp_count_posts( 'article' )->publish : 0;
-			$apcom_published_posts_number = intval( $apcom_posts_number_post ) + intval( $apcom_posts_number_article );
-			if ( $apcom_published_posts_number ) {
-				?>
-				<dl class="page__meta meta">
-					<div class="meta__item meta__item--has-icon meta__articles">
-						<dt class="meta__term"><?php esc_html_e( 'Total', 'APCom' ); ?></dt>
-						<dd class="meta__description">
-							<?php
-							printf(
-								esc_html(
-									// translators: %s number of posts.
-									_n(
-										'%s article',
-										'%s articles',
-										$apcom_published_posts_number,
-										'APCom'
-									)
-								),
-								esc_html( $apcom_published_posts_number )
-							);
-							?>
-						</dd>
-					</div>
-				</dl>
-				<?php
-			}
-			$apcom_page_for_posts_id      = get_option( 'page_for_posts' );
-			$apcom_page_for_posts_content = get_the_content( null, false, $apcom_page_for_posts_id );
-			if ( '' !== $apcom_page_for_posts_content ) {
-				?>
-				<div class="page__introduction">
-					<?php echo wp_kses_post( $apcom_page_for_posts_content ); ?>
-				</div>
-			<?php } ?>
-		</header>
+	<article class="<?php echo esc_attr( apcom_get_page_classes( get_the_ID() ) ); ?>" itemscope itemtype="http://schema.org/Blog">
+		<?php get_template_part( 'template-parts/page/page', 'header' ); ?>
 		<div class="page__body" itemprop="articleBody">
 			<?php
 			while ( have_posts() ) {
 				the_post();
-				get_template_part( 'template-parts/main/articles-list' );
+				get_template_part( 'template-parts/page/page', 'excerpt' );
 			}
-			get_template_part( 'template-parts/main/pagination' );
+			apcom_get_pagination();
 			?>
 		</div>
+		<?php get_sidebar(); ?>
 	</article>
 	<?php
-	get_sidebar();
 } else {
-	get_template_part( 'template-parts/main/none' );
+	get_template_part( 'template-parts/page/page', 'none' );
 }
 get_footer();

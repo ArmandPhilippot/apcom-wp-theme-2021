@@ -1,107 +1,36 @@
-@include declareCssVars(
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+@include mix.set-vars(
 	(
-		color-bg: #{$color_black-squeeze},
-		color-bg-secondary: #{$color_catskill-white},
-		color-bg-tertiary: #{$color_link-water},
-		color-fg: #{$color_firefly},
-		color-fg-inverted: #{$color_black-squeeze},
-		color-fg-secondary: #{$color_chathams-blue-dark},
-		color-fg-tertiary: #{$color_nile-blue},
-		color-border: #{$color_chathams-blue},
-		color-border-light: #{$color_geyser},
-		color-border-lighter: #{$color_link-water},
-		color-shadow-darker: #{$color_nile-blue},
-		color-shadow-dark: #{$color_pale-sky},
-		color-shadow: #{$color_chambray},
-		color-shadow-light: #{$color_gull-gray},
-		color-shadow-lighter: #{$color_geyser},
-		color-primary: #{$color_chathams-blue},
-		color-primary-light: #{$color_chathams-blue-light},
-		color-primary-light-opacity: #{$color_chathams-blue-light-opacity-25},
-		color-primary-dark: #{$color_chathams-blue-dark},
-		color-secondary: #{$color_russet},
-		color-token-blue: #{$color_light-theme_blue},
-		color-token-cyan: #{$color_light-theme_cyan},
-		color-token-green: #{$color_light-theme_green},
-		color-token-grey: #{$color_light-theme_grey},
-		color-token-magenta: #{$color_light-theme_magenta},
-		color-token-orange: #{$color_light-theme_orange},
-		color-token-purple: #{$color_light-theme_purple},
-		color-token-red: #{$color_light-theme_red},
-		color-token-yellow: #{$color_light-theme_yellow},
+		color-bg: #{var.$color_black-squeeze},
+		color-bg-opacity: #{var.$color_black-squeeze-opacity-80},
+		color-bg-secondary: #{var.$color_catskill-white},
+		color-bg-tertiary: #{var.$color_link-water},
+		color-fg: #{var.$color_firefly},
+		color-fg-inverted: #{var.$color_black-squeeze},
+		color-fg-secondary: #{var.$color_chathams-blue-dark},
+		color-fg-tertiary: #{var.$color_nile-blue},
+		color-border: #{var.$color_chathams-blue},
+		color-border-light: #{var.$color_geyser},
+		color-border-lighter: #{var.$color_link-water},
+		color-shadow-darker: #{var.$color_nile-blue},
+		color-shadow-dark: #{var.$color_pale-sky},
+		color-shadow: #{var.$color_chambray},
+		color-shadow-light: #{var.$color_gull-gray},
+		color-shadow-lighter: #{var.$color_geyser},
+		color-primary: #{var.$color_chathams-blue},
+		color-primary-light: #{var.$color_chathams-blue-light},
+		color-primary-light-opacity: #{var.$color_chathams-blue-light-opacity-25},
+		color-primary-dark: #{var.$color_chathams-blue-dark},
+		color-secondary: #{var.$color_russet},
+		color-token-blue: #{var.$color_light-theme_blue},
+		color-token-cyan: #{var.$color_light-theme_cyan},
+		color-token-green: #{var.$color_light-theme_green},
+		color-token-grey: #{var.$color_light-theme_grey},
+		color-token-magenta: #{var.$color_light-theme_magenta},
+		color-token-orange: #{var.$color_light-theme_orange},
+		color-token-purple: #{var.$color_light-theme_purple},
+		color-token-red: #{var.$color_light-theme_red},
+		color-token-yellow: #{var.$color_light-theme_yellow},
 	)
 );
-
-[data-color-scheme="dark"] {
-	@include updateCssVars(
-		(
-			color-bg: #{$color_firefly},
-			color-bg-secondary: #{$color_big-stone},
-			color-bg-tertiary: #{$color_nile-blue},
-			color-fg: #{$color_black-squeeze},
-			color-fg-inverted: #{$color_firefly},
-			color-fg-secondary: #{$color_spindle-dark},
-			color-fg-tertiary: #{$color_geyser},
-			color-border: #{$color_spindle},
-			color-border-light: #{$color_fiord},
-			color-border-lighter: #{$color_nile-blue},
-			color-shadow-darker: #{$color_cloud-burst},
-			color-shadow-dark: #{$color_rhino},
-			color-shadow: #{$color_kashmir-blue},
-			color-shadow-light: #{$color_mirage},
-			color-shadow-lighter: #{$color_fiord},
-			color-primary: #{$color_spindle},
-			color-primary-light: #{$color_spindle-light},
-			color-primary-light-opacity: #{$color_spindle-light-opacity-35},
-			color-primary-dark: #{$color_spindle-dark},
-			color-secondary: #{$color_brandy},
-			color-token-blue: #{$color_dark-theme_blue},
-			color-token-cyan: #{$color_dark-theme_cyan},
-			color-token-green: #{$color_dark-theme_green},
-			color-token-grey: #{$color_dark-theme_grey},
-			color-token-magenta: #{$color_dark-theme_magenta},
-			color-token-orange: #{$color_dark-theme_orange},
-			color-token-purple: #{$color_dark-theme_purple},
-			color-token-red: #{$color_dark-theme_red},
-			color-token-yellow: #{$color_dark-theme_yellow},
-		)
-	);
-}
-
-[data-color-scheme="dark"] .code-toolbar[data-theme="light"] pre {
-	@include updateCssVars(
-		(
-			color-bg-secondary: #{$color_catskill-white},
-			color-bg-tertiary: #{$color_link-water},
-			color-fg: #{$color_firefly},
-			color-token-blue: #{$color_light-theme_blue},
-			color-token-cyan: #{$color_light-theme_cyan},
-			color-token-green: #{$color_light-theme_green},
-			color-token-grey: #{$color_light-theme_grey},
-			color-token-magenta: #{$color_light-theme_magenta},
-			color-token-orange: #{$color_light-theme_orange},
-			color-token-purple: #{$color_light-theme_purple},
-			color-token-red: #{$color_light-theme_red},
-			color-token-yellow: #{$color_light-theme_yellow},
-		)
-	);
-}
-
-[data-color-scheme="light"] .code-toolbar[data-theme="dark"] pre {
-	@include updateCssVars(
-		(
-			color-bg-secondary: #{$color_big-stone},
-			color-bg-tertiary: #{$color_nile-blue},
-			color-fg: #{$color_black-squeeze},
-			color-token-blue: #{$color_dark-theme_blue},
-			color-token-cyan: #{$color_dark-theme_cyan},
-			color-token-green: #{$color_dark-theme_green},
-			color-token-grey: #{$color_dark-theme_grey},
-			color-token-magenta: #{$color_dark-theme_magenta},
-			color-token-orange: #{$color_dark-theme_orange},
-			color-token-purple: #{$color_dark-theme_purple},
-			color-token-red: #{$color_dark-theme_red},
-			color-token-yellow: #{$color_dark-theme_yellow},
-		)
-	);
-}

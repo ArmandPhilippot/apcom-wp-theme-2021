@@ -1,3 +1,6 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+
 .body {
 	display: flex;
 	flex-flow: column nowrap;
@@ -6,25 +9,133 @@
 
 .header {
 	display: grid;
-	grid-template-columns: cssvar(spacing-md) minmax(0, 1fr) cssvar(spacing-md);
-	align-items: center;
+	grid-auto-rows: max-content;
+	grid-template-columns:
+		minmax(#{fun.get-var(spacing-md)}, 1fr) minmax(0, 80ch)
+		minmax(#{fun.get-var(spacing-md)}, 1fr);
 
-	.branding {
+	&__branding {
 		grid-column: 2;
+		grid-row: 1 / -1;
 	}
 
-	@include media("screen") {
-		@include dimensions("lg") {
+	&__toolbar {
+		position: absolute;
+		top: clamp(
+			#{fun.get-var(spacing-md)},
+			5vw,
+			#{fun.get-var(spacing-md)} * 2
+		);
+		right: clamp(
+			#{fun.get-var(spacing-md)},
+			5vw,
+			#{fun.get-var(spacing-md)} * 2
+		);
+	}
+}
+
+.main,
+.page,
+.page__header,
+.page__body,
+.page__body > .wp-block-group,
+.page__comments {
+	display: grid;
+	grid-template-columns:
+		minmax(0, 1fr)
+		min(
+			80ch,
+			100vw -
+				calc(
+					clamp(
+							#{fun.get-var(spacing-md)},
+							5vw,
+							#{fun.get-var(spacing-md)} * 2
+						) * 2
+				)
+		)
+		minmax(0, 1fr);
+	grid-auto-flow: row;
+	grid-auto-rows: max-content;
+	column-gap: clamp(
+		#{fun.get-var(spacing-md)},
+		5vw,
+		#{fun.get-var(spacing-md)} * 2
+	);
+}
+
+.page,
+.page__header,
+.page__body,
+.page__comments {
+	grid-column: 1 / -1;
+}
+
+.breadcrumb {
+	grid-column: 2;
+}
+
+.page {
+	&__header,
+	&__body,
+	&__comments {
+		grid-column: 1 / -1;
+
+		> *:not(.alignfull):not(.alignwide) {
+			grid-column: 2;
+		}
+
+		.alignfull,
+		.alignwide {
+			grid-column: 1 / -1;
+		}
+	}
+
+	&__footer,
+	.sidebar {
+		grid-column: 2;
+	}
+}
+
+@include mix.media("screen") {
+	@include mix.dimensions("sm") {
+		.page {
+			&--is-category & {
+				&__meta {
+					grid-row: 2;
+				}
+
+				&__feed {
+					grid-column: 2;
+					grid-row: 2;
+					margin-left: auto;
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	@include mix.dimensions("lg") {
+		.header {
 			grid-template-columns:
-				cssvar(spacing-3xl) max-content minmax(0, 1fr) max-content
-				cssvar(spacing-3xl);
+				minmax(#{fun.get-var(spacing-2xl)}, 1fr) minmax(
+					max-content,
+					100ch
+				)
+				minmax(auto, 100ch)
+				max-content
+				minmax(#{fun.get-var(spacing-2xl)}, 1fr);
+			align-items: center;
+
+			&__branding {
+				display: grid;
+				grid-template-columns: max-content minmax(0, 1fr);
+				column-gap: fun.get-var(spacing-md);
+				align-items: center;
+				justify-items: start;
+			}
 
 			.branding {
-				display: grid;
-				grid-template-columns: max-content 1fr;
-				column-gap: cssvar(spacing-md);
-				align-items: center;
-
 				&__logo {
 					grid-column: 1;
 					grid-row: span 2;
@@ -41,278 +152,105 @@
 				}
 			}
 
-			.main-nav {
+			&__nav {
 				grid-column: 3;
 				justify-self: end;
 			}
 
-			.tools {
+			&__toolbar {
 				grid-column: 4;
+				position: relative;
+				top: 0;
+				right: 0;
 			}
 		}
 
-		@include dimensions("xl") {
+		.main,
+		.page,
+		.page__header,
+		.page__body,
+		.page__comments {
 			grid-template-columns:
-				minmax(#{cssvar(spacing-3xl)}, 1fr) minmax(auto, 100ch) minmax(
-					auto,
-					100ch
-				)
-				max-content
-				minmax(#{cssvar(spacing-3xl)}, 1fr);
-		}
-
-		@include dimensions("2xl") {
-			grid-template-columns:
-				minmax(#{cssvar(spacing-4xl)}, 1fr) minmax(auto, 100ch) minmax(
-					auto,
-					100ch
-				)
-				max-content
-				minmax(#{cssvar(spacing-4xl)}, 1fr);
-		}
-	}
-}
-
-.main,
-.breadcrumb,
-.page__header,
-.page__body,
-.page__comments {
-	display: grid;
-	grid-auto-rows: max-content;
-	grid-template-columns: minmax(0, 1fr) minmax(0, 80ch) minmax(0, 1fr);
-	justify-content: center;
-	column-gap: cssvar(spacing-md);
-
-	@include media("screen") {
-		@include dimensions("sm") {
-			column-gap: cssvar(spacing-lg);
-		}
-
-		@include dimensions("lg") {
-			grid-template-columns: 0 minmax(0, 80ch) minmax(0, 1fr);
-			column-gap: cssvar(spacing-3xl);
-		}
-
-		@include dimensions("xl") {
-			grid-template-columns:
-				minmax(0, 1fr) minmax(0, 80ch) minmax(50ch, 80ch) minmax(
-					0,
-					80ch
-				)
+				minmax(0, 1fr)
+				minmax(80ch, 1fr)
+				minmax(0, 45ch)
 				minmax(0, 1fr);
-			column-gap: cssvar(spacing-2xl);
+			column-gap: fun.get-var(spacing-xl);
 		}
 
-		@include dimensions("2xl") {
-			column-gap: cssvar(spacing-4xl);
-		}
-	}
-}
+		.page {
+			&__body {
+				grid-row: 2 / 5;
+			}
 
-.main {
-	flex: 1;
-	grid-template-areas:
-		"breadcrumb breadcrumb breadcrumb"
-		"page__header page__header page__header"
-		". page__aside--first ."
-		"page__body page__body page__body"
-		". page__footer ."
-		". page__aside--last ."
-		"page__comments page__comments page__comments";
+			.sidebar {
+				grid-column: 3;
+				grid-row: 2;
+				z-index: 2;
+			}
 
-	@include media("screen") {
-		@include dimensions("lg") {
-			grid-template-areas:
-				"breadcrumb breadcrumb breadcrumb"
-				"page__header page__header page__header"
-				"page__body page__body page__aside--first"
-				"page__body page__body page__aside--last"
-				"page__body page__body ."
-				". page__footer ."
-				"page__comments page__comments page__comments";
-		}
+			&--has-toc,
+			&--is-listing {
+				.sidebar {
+					&--first {
+						grid-row: 2;
+					}
 
-		@include dimensions("xl") {
-			grid-template-areas:
-				"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb"
-				"page__header page__header page__header page__header page__header"
-				". page__aside--first page__body page__aside--last ."
-				". page__aside--first page__footer page__aside--last ."
-				"page__comments page__comments page__comments page__comments page__comments";
-		}
-	}
-}
-
-.breadcrumb {
-	grid-area: breadcrumb;
-	grid-template-areas: ". breadcrumb__list .";
-
-	@include media("screen") {
-		@include dimensions("xl") {
-			grid-template-areas: ". . breadcrumb__list . .";
-		}
-	}
-
-	&__list {
-		grid-area: breadcrumb__list;
-	}
-}
-
-.page {
-	display: contents;
-
-	&__header {
-		grid-area: page__header;
-		grid-template-areas:
-			". page__title ."
-			". page__meta ."
-			". page__introduction .";
-
-		@include media("screen") {
-			@include dimensions("xl") {
-				grid-template-areas:
-					". . page__title . ."
-					". . page__meta . ."
-					". . page__introduction . .";
+					&--last {
+						grid-row: 3;
+					}
+				}
 			}
 		}
 	}
 
-	&__body {
-		grid-area: page__body;
-		grid-column: 1 / -1;
+	@include mix.dimensions("xl") {
+		.main,
+		.page,
+		.page__header,
+		.page__body,
+		.page__comments {
+			grid-template-columns:
+				minmax(0, 1fr)
+				minmax(25ch, 80ch)
+				minmax(70ch, 1fr)
+				minmax(25ch, 50ch)
+				minmax(0, 1fr);
+			column-gap: fun.get-var(spacing-xl);
+		}
 
-		> *:not(.alignfull):not(.alignwide) {
-			grid-column: 2;
+		.breadcrumb {
+			grid-column: 3;
+		}
 
-			@include media("screen") {
-				@include dimensions("xl") {
+		.page {
+			&__header,
+			&__body,
+			&__comments {
+				> *:not(.alignfull):not(.alignwide) {
 					grid-column: 3;
 				}
 			}
-		}
 
-		.alignfull,
-		.alignwide {
-			grid-column: 1 / -1;
-		}
+			&__body {
+				grid-row: 2;
+			}
 
-		.alignleft {
-			justify-self: start;
-		}
+			&__footer {
+				grid-column: 3;
+			}
 
-		.alignright {
-			justify-self: end;
-		}
-	}
+			.sidebar {
+				grid-row: 2;
 
-	&__footer {
-		grid-area: page__footer;
-	}
-
-	&__aside {
-		&--first {
-			grid-area: page__aside--first;
-
-			@include media("screen") {
-				@include dimensions("xl") {
-					justify-self: end;
+				&--first {
+					grid-column: 2;
 				}
 
-				@include dimensions("2xl") {
-					justify-self: start;
+				&--last {
+					grid-column: 4;
 				}
 			}
-		}
-
-		&--last {
-			grid-area: page__aside--last;
-		}
-	}
-
-	&__comments {
-		grid-area: page__comments;
-		grid-template-areas:
-			". comments__header ."
-			". comments__list ."
-			". comments__form .";
-
-		@include media("screen") {
-			@include dimensions("xl") {
-				grid-template-areas:
-					". . comments__header . ."
-					". . comments__list . ."
-					". . comments__form . .";
-			}
-		}
-	}
-
-	&__title {
-		grid-area: page__title;
-	}
-
-	&__meta {
-		grid-area: page__meta;
-	}
-
-	&__introduction {
-		grid-area: page__introduction;
-	}
-}
-
-.comments {
-	&__header {
-		grid-area: comments__header;
-	}
-
-	&__list {
-		grid-area: comments__list;
-	}
-
-	&__form {
-		grid-area: comments__form;
-	}
-}
-
-.articles-list {
-	.main {
-		flex: 1;
-		grid-template-areas:
-			"breadcrumb breadcrumb breadcrumb"
-			"page__header page__header page__header"
-			"page__body page__body page__body"
-			". page__aside--first ."
-			". page__aside--last .";
-
-		@include media("screen") {
-			@include dimensions("lg") {
-				grid-template-areas:
-					"breadcrumb breadcrumb breadcrumb"
-					"page__header page__header page__header"
-					"page__body page__body page__aside--first"
-					"page__body page__body page__aside--last"
-					"page__body page__body .";
-			}
-
-			@include dimensions("xl") {
-				grid-template-areas:
-					"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb"
-					"page__header page__header page__header page__header page__header"
-					". page__aside--first page__body page__aside--last .";
-			}
-		}
-	}
-}
-
-.category {
-	.page {
-		&__meta {
-			grid-area: unset;
-		}
-
-		&__meta-feed {
-			grid-area: page__meta;
 		}
 	}
 }
