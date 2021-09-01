@@ -51,8 +51,6 @@ const getWarning = () => {
 		' ' +
 		date_warning.oldContent +
 		' ' +
-		date_warning.noMoreValid +
-		' ' +
 		date_warning.contentEvolved
 	);
 };

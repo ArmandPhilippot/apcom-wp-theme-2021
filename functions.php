@@ -177,9 +177,8 @@ function apcom_enqueue_scripts() {
 			'<span class="modal__label">',
 			'</span>'
 		),
-		'oldContent'     => __( 'This content has not been updated for over a year.', 'APCom' ),
-		'noMoreValid'    => __( 'The content may no longer be valid.', 'APCom' ),
-		'contentEvolved' => __( 'For example, the subject may have evolved since the writing of the article or my opinion may have changed.', 'APCom' ),
+		'oldContent'     => __( 'This content has not been updated for over a year. It is possible that it is no longer valid.', 'APCom' ),
+		'contentEvolved' => __( 'For example, my opinion may have evolved or the subject is no longer relevant (version has changed, software is dead...).', 'APCom' ),
 	);
 
 	$toc_args = array(

@@ -87,30 +87,30 @@ msgid "%1$sWarning:%2$s"
 msgstr "%1$sAttention :%2$s"
 
 #: ../functions.php:180
-msgid "This content has not been updated for over a year."
-msgstr "Ce contenu n'a pas été mis à jour depuis plus d'un an."
+msgid ""
+"This content has not been updated for over a year. It is possible that it is "
+"no longer valid."
+msgstr ""
+"Ce contenu n'a pas été mis à jour depuis plus d'un an. Il est possible qu'il "
+"ne soit plus valable."
 
 #: ../functions.php:181
-msgid "The content may no longer be valid."
-msgstr "Le contenu n'est peut-être plus valide."
-
-#: ../functions.php:182
 msgid ""
-"For example, the subject may have evolved since the writing of the article "
-"or my opinion may have changed."
+"For example, my opinion may have evolved or the subject is no longer "
+"relevant (version has changed, software is dead...)."
 msgstr ""
-"Par exemple, le sujet a pu évoluer depuis l'écriture de l'article ou mon "
-"opinion a pu changer."
+"Par exemple, mon opinion a pu évoluer ou le sujet n'est plus d'actualité (la "
+"version a changé, le logiciel est obsolète...)."
 
-#: ../functions.php:186
+#: ../functions.php:185
 msgid "Table of contents"
 msgstr "Table des matières"
 
-#: ../functions.php:267
+#: ../functions.php:266
 msgid "Blog Sidebar - Left/First"
 msgstr "Barre latérale du blog - Gauche/Début"
 
-#: ../functions.php:269
+#: ../functions.php:268
 msgid ""
 "Add widgets here to appear in your blog sidebar (first on mobile view, left "
 "on large screens)."
@@ -118,11 +118,11 @@ msgstr ""
 "Ajouter des widgets ici pour les faire apparaître dans la barre latérale du "
 "blog (au début sur mobile, à gauche sur les écrans larges)."
 
-#: ../functions.php:279
+#: ../functions.php:278
 msgid "Blog Sidebar - Right/Last"
 msgstr "Barre latérale du blog - Droite/Fin"
 
-#: ../functions.php:281
+#: ../functions.php:280
 msgid ""
 "Add widgets here to appear in your blog sidebar(last on mobile view, right "
 "on large screens)."
@@ -130,28 +130,28 @@ msgstr ""
 "Ajouter des widgets ici pour les faire apparaître dans la barre latérale du "
 "blog (à la fin sur mobile, à droite sur les écrans larges)."
 
-#: ../functions.php:291
+#: ../functions.php:290
 msgid "Articles & Pages Widgets"
 msgstr "Widgets des Articles & Pages"
 
-#: ../functions.php:293
+#: ../functions.php:292
 msgid "Add widgets here to appear below the articles and pages."
 msgstr ""
 "Ajouter des widgets ici pour les faire apparaître sous les articles et pages."
 
-#: ../functions.php:303
+#: ../functions.php:302
 msgid "CV Widgets"
 msgstr "Widgets du CV"
 
-#: ../functions.php:305
+#: ../functions.php:304
 msgid "Add widgets here to appear below the CV page."
 msgstr "Ajouter des widgets ici pour les faire apparaître sous la page du CV."
 
-#: ../functions.php:315
+#: ../functions.php:314
 msgid "Contact Widgets"
 msgstr "Widgets de Contact"
 
-#: ../functions.php:317
+#: ../functions.php:316
 msgid "Add widgets here to appear below the Contact page."
 msgstr ""
 "Ajouter des widgets ici pour les faire apparaître sous la page de contact."
@@ -522,6 +522,16 @@ msgstr[1] "Thématiques :"
 #: ../template-parts/page/partials/meta-website.php:23
 msgid "Website:"
 msgstr "Site web :"
+
+#~ msgid "The content may no longer be valid."
+#~ msgstr "Le contenu n'est peut-être plus valide."
+
+#~ msgid ""
+#~ "For example, the subject may have evolved since the writing of the "
+#~ "article or my opinion may have changed."
+#~ msgstr ""
+#~ "Par exemple, le sujet a pu évoluer depuis l'écriture de l'article ou mon "
+#~ "opinion a pu changer."
 
 #~ msgid "%s project"
 #~ msgid_plural "%s projects"
