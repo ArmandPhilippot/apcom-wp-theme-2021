@@ -53,6 +53,24 @@
 				&:not(:first-of-type) {
 					margin-top: fun.get-var(spacing-3xs);
 				}
+
+				@include mix.media("screen") {
+					@include mix.dimensions("xs") {
+						display: inline-block;
+
+						&:not(:first-of-type) {
+							margin-top: 0;
+							margin-left: fun.get-var(spacing-2xs);
+							padding-left: 0;
+
+							&::before {
+								display: inline-block;
+								content: "/";
+								margin-right: fun.get-var(spacing-2xs);
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -108,24 +126,10 @@
 				@include mix.dimensions(null, "sm") {
 					flex: 0 0 100%;
 				}
-			}
 
-			@include mix.media("screen") {
 				@include mix.dimensions("xs") {
-					.meta__description {
-						display: inline-block;
-
-						&:not(:first-of-type) {
-							margin-top: 0;
-							margin-left: fun.get-var(spacing-2xs);
-							padding-left: 0;
-
-							&::before {
-								display: inline-block;
-								content: "/";
-								margin-right: fun.get-var(spacing-2xs);
-							}
-						}
+					.meta__description:not(:first-of-type) {
+						margin-left: fun.get-var(spacing-2xs);
 					}
 				}
 
@@ -138,6 +142,17 @@
 						#{fun.get-var(spacing-lg)}
 					);
 				}
+			}
+		}
+	}
+}
+
+.page--is-thematic,
+.page--is-subject {
+	@include mix.media("screen") {
+		@include mix.dimensions("xs") {
+			.meta__description:not(:first-of-type) {
+				margin-left: fun.get-var(spacing-xs);
 			}
 		}
 	}
