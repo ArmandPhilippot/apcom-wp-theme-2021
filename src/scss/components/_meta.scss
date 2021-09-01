@@ -113,19 +113,17 @@
 			@include mix.media("screen") {
 				@include mix.dimensions("xs") {
 					.meta__description {
-						&--has-icon {
-							display: inline-block;
+						display: inline-block;
 
-							&:not(:first-of-type) {
-								margin-top: 0;
-								margin-left: fun.get-var(spacing-2xs);
-								padding-left: 0;
+						&:not(:first-of-type) {
+							margin-top: 0;
+							margin-left: fun.get-var(spacing-2xs);
+							padding-left: 0;
 
-								&::before {
-									display: inline-block;
-									content: "/";
-									margin-right: fun.get-var(spacing-2xs);
-								}
+							&::before {
+								display: inline-block;
+								content: "/";
+								margin-right: fun.get-var(spacing-2xs);
 							}
 						}
 					}
