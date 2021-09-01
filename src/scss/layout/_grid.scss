@@ -172,7 +172,7 @@
 		.page__comments {
 			grid-template-columns:
 				minmax(0, 1fr)
-				minmax(80ch, 1fr)
+				minmax(70ch, 1fr)
 				minmax(0, 45ch)
 				minmax(0, 1fr);
 			column-gap: fun.get-var(spacing-xl);

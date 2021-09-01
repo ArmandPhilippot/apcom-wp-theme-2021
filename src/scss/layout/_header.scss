@@ -4,10 +4,25 @@
 
 .header {
 	background: fun.get-var(color-bg-secondary);
-	padding: clamp(#{fun.get-var(spacing-lg)}, 4vw, #{fun.get-var(spacing-2xl)})
-		0 clamp(#{fun.get-var(spacing-xl)}, 4vw, #{fun.get-var(spacing-3xl)});
+	padding: fun.get-var(spacing-lg) 0 fun.get-var(spacing-xl);
 	position: relative;
 	text-align: center;
+
+	@include mix.media("screen") {
+		@include mix.dimensions("lg") {
+			padding: clamp(
+					#{fun.get-var(spacing-2xl)},
+					5vw,
+					#{fun.get-var(spacing-3xl)}
+				)
+				0
+				clamp(
+					#{fun.get-var(spacing-2xl)},
+					5vw,
+					#{fun.get-var(spacing-3xl)}
+				);
+		}
+	}
 
 	&::before {
 		display: block;
