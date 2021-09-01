@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/ArmandPhilippot/apcom/compare/v1.1.1...v1.2.0) (2021-09-01)
+
+### Features
+
+-   add posts count to search pages when thematic/subject is printed ([d110ac6](https://github.com/ArmandPhilippot/apcom/commit/d110ac6ffa957de29192340bd2a1c2b22af51339))
+-   display the posts count if a listing is displayed ([007155a](https://github.com/ArmandPhilippot/apcom/commit/007155aa0e7e6159c0e2241b2fef7634bfda4dfd))
+-   give search field focus when user click on toolbar search btn ([846ac2d](https://github.com/ArmandPhilippot/apcom/commit/846ac2ddc86c3d482f0dc956a852326f53c93fbc))
+
+### Bug Fixes
+
+-   update theme version ([b646f8f](https://github.com/ArmandPhilippot/apcom/commit/b646f8f3c651fe932a2476e851dab8b117f0bb90))
+
 ### [1.1.1](https://github.com/ArmandPhilippot/armandphilippot.com/compare/v1.1.0...v1.1.1) (2021-07-06)
 
 ### Bug Fixes

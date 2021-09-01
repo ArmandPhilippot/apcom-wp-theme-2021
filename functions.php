@@ -17,7 +17,7 @@
 /**
  * Currently theme version.
  */
-define( 'APCOM_VERSION', '1.1.1' );
+define( 'APCOM_VERSION', '1.2.0' );
 
 /**
  * Get current environment defined in .env file.
