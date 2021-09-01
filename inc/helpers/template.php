@@ -368,12 +368,10 @@ if ( ! function_exists( 'apcom_get_page_classes' ) ) {
 	 *
 	 * @since  1.2.0
 	 *
-	 * @param  int $post_id The post ID.
 	 * @return string $classes The page classes.
 	 */
-	function apcom_get_page_classes( $post_id ) {
-		$post = get_post( $post_id );
-
+	function apcom_get_page_classes() {
+		$post    = get_post();
 		$classes = 'page';
 
 		if ( apcom_is_frontpage() ) {
@@ -424,19 +422,19 @@ if ( ! function_exists( 'apcom_get_page_classes' ) ) {
 			$classes .= ' page--is-cv';
 		}
 
-		if ( apcom_is_article_cpt() ) {
+		if ( is_singular() && apcom_is_article_cpt() ) {
 			$classes .= ' page--is-article';
 		}
 
-		if ( apcom_is_project_cpt() ) {
+		if ( is_singular() && apcom_is_project_cpt() ) {
 			$classes .= ' page--is-project';
 		}
 
-		if ( apcom_is_subject_cpt() ) {
+		if ( is_singular() && apcom_is_subject_cpt() ) {
 			$classes .= ' page--is-subject';
 		}
 
-		if ( apcom_is_thematic_cpt() ) {
+		if ( is_singular() && apcom_is_thematic_cpt() ) {
 			$classes .= ' page--is-thematic';
 		}
 
@@ -444,15 +442,15 @@ if ( ! function_exists( 'apcom_get_page_classes' ) ) {
 			$classes .= ' page--is-paginated';
 		}
 
-		if ( has_post_thumbnail( $post_id ) && ! is_attachment( $post ) ) {
+		if ( is_singular() && has_post_thumbnail( $post ) && ! is_attachment( $post ) ) {
 			$classes .= ' page--has-thumbnail';
 		}
 
-		if ( has_block( 'code' ) ) {
+		if ( is_singular() && has_block( 'code' ) ) {
 			$classes .= ' page--has-code';
 		}
 
-		$comment_count = get_comments_number( $post_id );
+		$comment_count = get_comments_number( $post );
 		if ( ( is_page() || is_single() ) && ( true === comments_open() || $comment_count > 0 ) ) {
 			$classes .= ' page--has-comments';
 		}

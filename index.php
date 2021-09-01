@@ -15,7 +15,7 @@
 get_header();
 if ( have_posts() ) {
 	?>
-	<article class="<?php echo esc_attr( apcom_get_page_classes( get_the_ID() ) ); ?>" itemscope itemtype="http://schema.org/Blog">
+	<article class="<?php echo esc_attr( apcom_get_page_classes() ); ?>" itemscope itemtype="http://schema.org/Blog">
 		<?php get_template_part( 'template-parts/page/page', 'header' ); ?>
 		<div class="page__body" itemprop="articleBody">
 			<?php

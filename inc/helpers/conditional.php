@@ -88,11 +88,11 @@ function apcom_is_page_no_sidebar() {
  * @return boolean True if is an article CPT.
  */
 function apcom_is_article_cpt( $post_id = null ) {
-	if ( '' !== $post_id && is_integer( $post_id ) ) {
-		return 'article' === get_post_type( $post_id );
-	} else {
-		return 'article' === get_post_type();
+	if ( ! $post_id || ! is_integer( $post_id ) ) {
+		$post_id = get_queried_object_id();
 	}
+
+	return 'article' === get_post_type( $post_id );
 }
 
 /**
@@ -104,11 +104,11 @@ function apcom_is_article_cpt( $post_id = null ) {
  * @return boolean True if is a project CPT.
  */
 function apcom_is_project_cpt( $post_id = null ) {
-	if ( '' !== $post_id && is_integer( $post_id ) ) {
-		return 'project' === get_post_type( $post_id );
-	} else {
-		return 'project' === get_post_type();
+	if ( ! $post_id || ! is_integer( $post_id ) ) {
+		$post_id = get_queried_object_id();
 	}
+
+	return 'project' === get_post_type( $post_id );
 }
 
 /**
@@ -120,11 +120,11 @@ function apcom_is_project_cpt( $post_id = null ) {
  * @return boolean True if is a subject CPT.
  */
 function apcom_is_subject_cpt( $post_id = null ) {
-	if ( '' !== $post_id && is_integer( $post_id ) ) {
-		return 'subject' === get_post_type( $post_id );
-	} else {
-		return 'subject' === get_post_type();
+	if ( ! $post_id || ! is_integer( $post_id ) ) {
+		$post_id = get_queried_object_id();
 	}
+
+	return 'subject' === get_post_type( $post_id );
 }
 
 /**
@@ -136,11 +136,11 @@ function apcom_is_subject_cpt( $post_id = null ) {
  * @return boolean True if is a thematic CPT.
  */
 function apcom_is_thematic_cpt( $post_id = null ) {
-	if ( '' !== $post_id && is_integer( $post_id ) ) {
-		return 'thematic' === get_post_type( $post_id );
-	} else {
-		return 'thematic' === get_post_type();
+	if ( ! $post_id || ! is_integer( $post_id ) ) {
+		$post_id = get_queried_object_id();
 	}
+
+	return 'thematic' === get_post_type( $post_id );
 }
 
 /**
@@ -152,11 +152,7 @@ function apcom_is_thematic_cpt( $post_id = null ) {
  * @return boolean True if is CPT.
  */
 function apcom_is_cpt( $post_id = null ) {
-	if ( '' !== $post_id && is_integer( $post_id ) ) {
-		return apcom_is_article_cpt( $post_id ) || apcom_is_project_cpt( $post_id ) || apcom_is_subject_cpt( $post_id ) || apcom_is_thematic_cpt( $post_id );
-	} else {
-		return apcom_is_article_cpt() || apcom_is_project_cpt() || apcom_is_subject_cpt() || apcom_is_thematic_cpt();
-	}
+	return apcom_is_article_cpt( $post_id ) || apcom_is_project_cpt( $post_id ) || apcom_is_subject_cpt( $post_id ) || apcom_is_thematic_cpt( $post_id );
 }
 
 /**
