@@ -261,14 +261,6 @@
 		}
 	}
 
-	&--is-cv {
-		.sidebar {
-			&--last {
-				margin-top: fun.get-var(spacing-md);
-			}
-		}
-	}
-
 	&--has-no-results {
 		.page__body {
 			padding-bottom: fun.get-var(spacing-sm);
