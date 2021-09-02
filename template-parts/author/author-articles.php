@@ -49,11 +49,22 @@
 		<dl class="article__meta meta">
 			<?php
 			get_template_part( 'template-parts/page/partials/meta', 'date' );
+			if ( is_search() ) {
+				get_template_part( 'template-parts/page/partials/meta', 'posts-count' );
+			}
 			get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
-			get_template_part( 'template-parts/page/partials/meta', 'categories' );
-			get_template_part( 'template-parts/page/partials/meta', 'projects' );
-			get_template_part( 'template-parts/page/partials/meta', 'thematics' );
 			get_template_part( 'template-parts/page/partials/meta', 'comments' );
+			if ( apcom_is_article_cpt( get_the_ID() ) ) {
+				get_template_part( 'template-parts/page/partials/meta', 'thematics' );
+			} else {
+				! is_category() ? get_template_part( 'template-parts/page/partials/meta', 'categories' ) : '';
+				! is_tag() ? get_template_part( 'template-parts/page/partials/meta', 'tags' ) : '';
+			}
+			if ( apcom_is_project_cpt() ) {
+				get_template_part( 'template-parts/page/partials/meta', 'subjects' );
+			} else {
+				get_template_part( 'template-parts/page/partials/meta', 'projects' );
+			}
 			?>
 		</dl>
 	</footer>

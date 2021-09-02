@@ -38,9 +38,9 @@ if ( have_posts() ) {
 				?>
 			</div>
 		</div>
+		<?php get_sidebar(); ?>
 	</article>
 	<?php
-	get_sidebar();
 } else {
 	get_template_part( 'template-parts/page/page', 'none' );
 }
