@@ -60,13 +60,13 @@
 
 						&:not(:first-of-type) {
 							margin-top: 0;
-							margin-left: fun.get-var(spacing-2xs);
+							margin-left: fun.convert-px(4);
 							padding-left: 0;
 
 							&::before {
 								display: inline-block;
 								content: "/";
-								margin-right: fun.get-var(spacing-2xs);
+								margin-right: fun.convert-px(3);
 							}
 						}
 					}
@@ -129,7 +129,7 @@
 
 				@include mix.dimensions("xs") {
 					.meta__description:not(:first-of-type) {
-						margin-left: fun.get-var(spacing-2xs);
+						margin-left: fun.convert-px(4);
 					}
 				}
 

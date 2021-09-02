@@ -69,7 +69,7 @@ $breakpoints: (
 $dimensions: (
 	"icon-size-xs": fun.convert-px(12),
 	"icon-size-sm": fun.convert-px(18),
-	"icon-size-md": fun.convert-px(24),
+	"icon-size-md": fun.convert-px(21),
 	"icon-size-lg": clamp(#{fun.convert-px(32)}, 3vw, #{fun.convert-px(35)}),
 	"icon-size-xl": clamp(#{fun.convert-px(44)}, 3vw, #{fun.convert-px(52)}),
 	"main-nav-height":
