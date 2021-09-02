@@ -6,7 +6,8 @@
  * @since   1.2.0
  */
 
-$apcom_published_posts_number = apcom_get_posts_count();
+$apcom_caller_id              = $args['caller_id'] ? $args['caller_id'] : '';
+$apcom_published_posts_number = apcom_get_posts_count( $apcom_caller_id );
 
 if ( 0 !== $apcom_published_posts_number ) {
 	?>

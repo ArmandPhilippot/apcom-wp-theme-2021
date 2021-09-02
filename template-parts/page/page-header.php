@@ -7,13 +7,15 @@
  * @since   1.2.0 Split page title and header meta in separated files.
  */
 
+$apcom_page_id = get_queried_object_id();
+$apcom_page_id = 0 === $apcom_page_id ? '' : $apcom_page_id;
 if ( ! apcom_is_frontpage() ) {
 	?>
 	<header class="page__header">
 		<h1 class="page__title" itemprop="headline name">
 			<?php
-			if ( ! is_search() && apcom_is_subject_cpt() ) {
-				echo get_the_post_thumbnail( get_queried_object_id(), 'post-thumbnail', array( 'class' => 'page__logo' ) );
+			if ( $apcom_page_id && apcom_is_subject_cpt( $apcom_page_id ) ) {
+				echo get_the_post_thumbnail( $apcom_page_id, 'post-thumbnail', array( 'class' => 'page__logo' ) );
 			}
 			echo esc_html( apcom_get_page_title() );
 			?>
@@ -25,10 +27,12 @@ if ( ! apcom_is_frontpage() ) {
 					get_template_part( 'template-parts/page/partials/meta', 'date' );
 				}
 				if ( apcom_is_listing_page() || apcom_is_thematic_cpt() || apcom_is_subject_cpt() ) {
-					get_template_part( 'template-parts/page/partials/meta', 'posts-count' );
+					get_template_part( 'template-parts/page/partials/meta', 'posts-count', array( 'caller_id' => $apcom_page_id ) );
 				}
-				if ( ( is_single() || is_page() ) && ! apcom_is_thematic_cpt() && ! apcom_is_subject_cpt() ) {
+				if ( is_singular( 'post' ) || is_page() || apcom_is_article_cpt() ) {
 					get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
+				}
+				if ( is_singular( 'post' ) || apcom_is_article_cpt() ) {
 					get_template_part( 'template-parts/page/partials/meta', 'comments' );
 				}
 				if ( is_author() || apcom_is_subject_cpt() ) {

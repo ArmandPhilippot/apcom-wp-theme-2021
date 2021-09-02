@@ -20,15 +20,15 @@ $apcom_updated_on   = get_the_modified_date();
 	</dd>
 </div>
 <?php if ( $apcom_published_on !== $apcom_updated_on ) { ?>
-		<div class="meta__item meta__item--has-icon meta__item--update-date">
-			<dt class="meta__term">
-				<?php esc_html_e( 'Updated on', 'APCom' ); ?>
-			</dt>
-			<dd class="meta__description">
-				<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="dateModified" id="meta__item--update-date">
-					<?php echo esc_html( $apcom_updated_on ); ?>
-				</time>
-			</dd>
-		</div>
-		<?php
+	<div class="meta__item meta__item--has-icon meta__item--update-date">
+		<dt class="meta__term">
+			<?php esc_html_e( 'Updated on', 'APCom' ); ?>
+		</dt>
+		<dd class="meta__description">
+			<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="dateModified" id="meta__item--update-date">
+				<?php echo esc_html( $apcom_updated_on ); ?>
+			</time>
+		</dd>
+	</div>
+	<?php
 }

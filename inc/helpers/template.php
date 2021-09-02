@@ -312,51 +312,54 @@ if ( ! function_exists( 'apcom_get_posts_count' ) ) {
 	 *
 	 * @since  1.2.0
 	 *
+	 * @param int $page_id A page ID to identify the caller.
 	 * @return int $total_posts The total of posts.
 	 */
-	function apcom_get_posts_count() {
+	function apcom_get_posts_count( $page_id ) {
 		$total_posts = 0;
 
-		if ( is_archive() || is_search() ) {
-			$total_posts = $GLOBALS['wp_query']->found_posts;
-		}
+		if ( $page_id && apcom_is_cpt( $page_id ) ) {
+			if ( ! apcom_is_article_cpt( $page_id ) ) {
+				$meta_id  = get_the_ID();
+				$meta_key = null;
 
-		if ( apcom_is_cpt() && ! apcom_is_article_cpt() ) {
-			$meta_id  = get_the_ID();
-			$meta_key = null;
+				if ( apcom_is_thematic_cpt() ) {
+					$meta_key = 'posts_in_thematic';
+				}
 
-			if ( apcom_is_thematic_cpt() ) {
-				$meta_key = 'posts_in_thematic';
-			}
+				if ( apcom_is_subject_cpt() ) {
+					$meta_key = 'posts_in_subject';
+				}
 
-			if ( apcom_is_subject_cpt() ) {
-				$meta_key = 'posts_in_subject';
-			}
-
-			if ( $meta_key ) {
-				$query       = new WP_Query(
-					array(
-						'post_type'         => array( 'post', 'article' ),
-						'post_status'       => 'publish',
-						'posts_per_page'    => -1,
-						'meta_query'        => array( // phpcs:ignore WordPress.DB.SlowDBQuery
-							array(
-								'key'     => $meta_key,
-								'value'   => $meta_id,
-								'compare' => 'LIKE',
+				if ( $meta_key ) {
+					$query       = new WP_Query(
+						array(
+							'post_type'         => array( 'post', 'article' ),
+							'post_status'       => 'publish',
+							'posts_per_page'    => -1,
+							'meta_query'        => array( // phpcs:ignore WordPress.DB.SlowDBQuery
+								array(
+									'key'     => $meta_key,
+									'value'   => $meta_id,
+									'compare' => 'LIKE',
+								),
 							),
-						),
-					)
-				);
-				$total_posts = $query->found_posts;
-				wp_reset_postdata();
+						)
+					);
+					$total_posts = $query->found_posts;
+					wp_reset_postdata();
+				}
 			}
-		}
+		} else {
+			if ( is_archive() || ! $page_id ) {
+				$total_posts = $GLOBALS['wp_query']->found_posts;
+			}
 
-		if ( is_home() && ! is_front_page() ) {
-			$posts_count   = wp_count_posts( 'post', 'readable' )->publish;
-			$article_count = post_type_exists( 'article', 'readable' ) ? wp_count_posts( 'article' )->publish : 0;
-			$total_posts   = intval( $posts_count ) + intval( $article_count );
+			if ( is_home() && ! is_front_page() ) {
+				$posts_count   = wp_count_posts( 'post', 'readable' )->publish;
+				$article_count = post_type_exists( 'article', 'readable' ) ? wp_count_posts( 'article' )->publish : 0;
+				$total_posts   = intval( $posts_count ) + intval( $article_count );
+			}
 		}
 
 		return $total_posts;

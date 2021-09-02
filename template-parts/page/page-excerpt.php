@@ -7,6 +7,7 @@
  * @since   1.2.0 Template renamed and meta splitted.
  */
 
+$apcom_post_id = get_the_ID();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting">
 	<header class="article__header">
@@ -18,20 +19,21 @@
 		<dl class="article__meta meta">
 			<?php
 			get_template_part( 'template-parts/page/partials/meta', 'date' );
-			if ( apcom_is_thematic_cpt( get_the_ID() ) || apcom_is_subject_cpt( get_the_ID() ) ) {
-				get_template_part( 'template-parts/page/partials/meta', 'posts-count' );
+			if ( apcom_is_thematic_cpt( $apcom_post_id ) || apcom_is_subject_cpt( $apcom_post_id ) ) {
+				get_template_part( 'template-parts/page/partials/meta', 'posts-count', array( 'caller_id' => $apcom_post_id ) );
 			}
-			if ( ! apcom_is_thematic_cpt( get_the_ID() ) && ! apcom_is_subject_cpt( get_the_ID() ) ) {
+			if ( ! apcom_is_thematic_cpt( $apcom_post_id ) && ! apcom_is_subject_cpt( $apcom_post_id ) ) {
 				get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
 				get_template_part( 'template-parts/page/partials/meta', 'comments' );
 			}
-			if ( apcom_is_article_cpt( get_the_ID() ) ) {
+			if ( ! is_category() && ! apcom_is_article_cpt( $apcom_post_id ) ) {
+				get_template_part( 'template-parts/page/partials/meta', 'categories' );
+			}
+			if ( is_category() && ! apcom_is_article_cpt( $apcom_post_id ) ) {
+				get_template_part( 'template-parts/page/partials/meta', 'tags' );
+			}
+			if ( apcom_is_article_cpt( $apcom_post_id ) ) {
 				get_template_part( 'template-parts/page/partials/meta', 'thematics' );
-			} else {
-				if ( ! is_category() && ! apcom_is_article_cpt( get_the_ID() ) ) {
-					get_template_part( 'template-parts/page/partials/meta', 'categories' );
-				}
-				! is_tag() ? get_template_part( 'template-parts/page/partials/meta', 'tags' ) : '';
 			}
 			if ( apcom_is_project_cpt() ) {
 				get_template_part( 'template-parts/page/partials/meta', 'subjects' );
