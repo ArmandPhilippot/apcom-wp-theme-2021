@@ -21,7 +21,7 @@ $apcom_post_id = $args['post_id'];
 		get_template_part( 'template-parts/page/partials/meta', 'comments' );
 	}
 
-	if ( ! is_category() && ! apcom_is_article_cpt( $apcom_post_id ) && ! apcom_is_project_cpt() ) {
+	if ( ! is_category() && ! apcom_is_article_cpt( $apcom_post_id ) && ! apcom_is_project_cpt( $apcom_post_id ) ) {
 		get_template_part( 'template-parts/page/partials/meta', 'categories' );
 	}
 
