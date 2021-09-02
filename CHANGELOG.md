@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.4](https://github.com/ArmandPhilippot/apcom/compare/v1.2.3...v1.2.4) (2021-09-02)
+
+### Bug Fixes
+
+-   adjust Prism toolbar spacing on very small viewports ([6a97486](https://github.com/ArmandPhilippot/apcom/commit/6a974868b7e8d8a01e1b65dee6308e95f6765281))
+-   remove uncategorized category on projects CPT ([c0f8f25](https://github.com/ArmandPhilippot/apcom/commit/c0f8f25a3dd661ada409441e5e97032a6aa0e97f))
+
 ### [1.2.3](https://github.com/ArmandPhilippot/apcom/compare/v1.2.2...v1.2.3) (2021-09-02)
 
 ### Bug Fixes
