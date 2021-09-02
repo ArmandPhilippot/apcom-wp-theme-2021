@@ -26,7 +26,7 @@ $apcom_post_id = get_the_ID();
 				get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
 				get_template_part( 'template-parts/page/partials/meta', 'comments' );
 			}
-			if ( ! is_category() && ! apcom_is_article_cpt( $apcom_post_id ) ) {
+			if ( ! is_category() && ! apcom_is_article_cpt( $apcom_post_id ) && ! apcom_is_project_cpt() ) {
 				get_template_part( 'template-parts/page/partials/meta', 'categories' );
 			}
 			if ( is_category() && ! apcom_is_article_cpt( $apcom_post_id ) ) {
@@ -35,10 +35,12 @@ $apcom_post_id = get_the_ID();
 			if ( apcom_is_article_cpt( $apcom_post_id ) ) {
 				get_template_part( 'template-parts/page/partials/meta', 'thematics' );
 			}
-			if ( apcom_is_project_cpt() ) {
-				get_template_part( 'template-parts/page/partials/meta', 'subjects' );
-			} else {
-				get_template_part( 'template-parts/page/partials/meta', 'projects' );
+			if ( apcom_is_project_cpt( $apcom_post_id ) ) {
+				if ( is_post_type_archive( 'project' ) ) {
+					get_template_part( 'template-parts/page/partials/meta', 'subjects' );
+				} else {
+					get_template_part( 'template-parts/page/partials/meta', 'projects' );
+				}
 			}
 			?>
 		</dl>
