@@ -317,7 +317,7 @@ if ( ! function_exists( 'apcom_get_posts_count' ) ) {
 	function apcom_get_posts_count() {
 		$total_posts = 0;
 
-		if ( is_archive() ) {
+		if ( is_archive() || is_search() ) {
 			$total_posts = $GLOBALS['wp_query']->found_posts;
 		}
 

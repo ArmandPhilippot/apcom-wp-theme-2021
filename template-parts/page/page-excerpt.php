@@ -18,7 +18,7 @@
 		<dl class="article__meta meta">
 			<?php
 			get_template_part( 'template-parts/page/partials/meta', 'date' );
-			if ( is_search() ) {
+			if ( apcom_is_thematic_cpt( get_the_ID() ) || apcom_is_subject_cpt( get_the_ID() ) ) {
 				get_template_part( 'template-parts/page/partials/meta', 'posts-count' );
 			}
 			if ( ! apcom_is_thematic_cpt( get_the_ID() ) && ! apcom_is_subject_cpt( get_the_ID() ) ) {
