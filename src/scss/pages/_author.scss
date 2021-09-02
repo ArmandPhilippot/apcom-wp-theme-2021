@@ -1,0 +1,26 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
+
+.author {
+	&__introduction {
+		display: flex;
+		flex-flow: row wrap;
+		gap: clamp(#{fun.get-var(spacing-md)}, 3vw, #{fun.get-var(spacing-lg)});
+		margin-bottom: fun.get-var(spacing-md);
+	}
+
+	&__title {
+		flex: 0 0 100%;
+		margin-bottom: 0;
+	}
+
+	&__body {
+		flex: 0 0 100%;
+
+		@include mix.media("screen") {
+			@include mix.dimensions("xs") {
+				flex: 1;
+			}
+		}
+	}
+}
