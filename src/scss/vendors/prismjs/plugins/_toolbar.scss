@@ -13,7 +13,11 @@
 		flex-flow: row wrap;
 		align-content: center;
 		justify-content: flex-end;
-		gap: fun.get-var(spacing-sm);
+		gap: clamp(
+			#{fun.get-var(spacing-2xs)},
+			4vw,
+			#{fun.get-var(spacing-sm)}
+		);
 		background: fun.get-var(color-bg-tertiary);
 		border: solid fun.get-var(color-border-light);
 		border-width: fun.convert-px(1) fun.convert-px(1) 0 fun.convert-px(1);
@@ -38,11 +42,19 @@
 			font-size: fun.get-var(font-size-md);
 			font-weight: 600;
 			margin-right: auto;
-			margin-left: fun.get-var(spacing-sm);
+			margin-left: clamp(
+				#{fun.get-var(spacing-2xs)},
+				4vw,
+				#{fun.get-var(spacing-sm)}
+			);
 		}
 
 		&:last-child {
-			margin-right: fun.get-var(spacing-sm);
+			margin-right: clamp(
+				#{fun.get-var(spacing-2xs)},
+				4vw,
+				#{fun.get-var(spacing-sm)}
+			);
 		}
 	}
 
