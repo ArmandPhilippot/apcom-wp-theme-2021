@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/ArmandPhilippot/apcom/compare/v1.2.0...v1.2.1) (2021-09-02)
+
+### Bug Fixes
+
+-   add some checkings to avoid PHP warnings ([dbbc1ce](https://github.com/ArmandPhilippot/apcom/commit/dbbc1ce9c26abf99148da485c4e8d856e30e1733))
+-   move sidebar to respect layout and reorganize meta ([6ea0ef3](https://github.com/ArmandPhilippot/apcom/commit/6ea0ef3fae755dc23f2e123ca606a8d7b8a1176a))
+
 ## [1.2.0](https://github.com/ArmandPhilippot/apcom/compare/v1.1.1...v1.2.0) (2021-09-01)
 
 ### Features
