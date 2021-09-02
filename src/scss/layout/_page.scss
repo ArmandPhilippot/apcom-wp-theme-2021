@@ -120,6 +120,11 @@
 			margin: fun.get-var(spacing-sm) auto 0;
 		}
 
+		iframe {
+			width: 100%;
+			margin-bottom: fun.get-var(spacing-md);
+		}
+
 		> *:last-child:not(.pagination) {
 			margin-bottom: 0;
 		}
