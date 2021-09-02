@@ -21,12 +21,16 @@
 			if ( is_search() ) {
 				get_template_part( 'template-parts/page/partials/meta', 'posts-count' );
 			}
-			get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
-			get_template_part( 'template-parts/page/partials/meta', 'comments' );
+			if ( ! apcom_is_thematic_cpt( get_the_ID() ) && ! apcom_is_subject_cpt( get_the_ID() ) ) {
+				get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
+				get_template_part( 'template-parts/page/partials/meta', 'comments' );
+			}
 			if ( apcom_is_article_cpt( get_the_ID() ) ) {
 				get_template_part( 'template-parts/page/partials/meta', 'thematics' );
 			} else {
-				! is_category() ? get_template_part( 'template-parts/page/partials/meta', 'categories' ) : '';
+				if ( ! is_category() && ! apcom_is_article_cpt( get_the_ID() ) ) {
+					get_template_part( 'template-parts/page/partials/meta', 'categories' );
+				}
 				! is_tag() ? get_template_part( 'template-parts/page/partials/meta', 'tags' ) : '';
 			}
 			if ( apcom_is_project_cpt() ) {
