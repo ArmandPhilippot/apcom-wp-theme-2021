@@ -334,7 +334,7 @@ if ( ! function_exists( 'apcom_get_posts_count' ) ) {
 				if ( $meta_key ) {
 					$query       = new WP_Query(
 						array(
-							'post_type'         => array( 'post', 'article' ),
+							'post_type'         => array( 'post', 'article', 'project' ),
 							'post_status'       => 'publish',
 							'posts_per_page'    => -1,
 							'meta_query'        => array( // phpcs:ignore WordPress.DB.SlowDBQuery
