@@ -8,7 +8,7 @@
  */
 
 $apcom_page_id = get_queried_object_id();
-$apcom_page_id = 0 === $apcom_page_id ? '' : $apcom_page_id;
+
 if ( ! apcom_is_frontpage() ) {
 	?>
 	<header class="page__header">
@@ -26,16 +26,16 @@ if ( ! apcom_is_frontpage() ) {
 				if ( ! apcom_is_listing_page() ) {
 					get_template_part( 'template-parts/page/partials/meta', 'date' );
 				}
-				if ( apcom_is_listing_page() || apcom_is_thematic_cpt() || apcom_is_subject_cpt() ) {
+				if ( apcom_is_listing_page() || apcom_is_thematic_cpt( $apcom_page_id ) || apcom_is_subject_cpt( $apcom_page_id ) ) {
 					get_template_part( 'template-parts/page/partials/meta', 'posts-count', array( 'caller_id' => $apcom_page_id ) );
 				}
-				if ( is_singular( 'post' ) || is_page() || apcom_is_article_cpt() ) {
+				if ( is_singular( 'post' ) || is_page() || apcom_is_article_cpt( $apcom_page_id ) || apcom_is_project_cpt( $apcom_page_id ) ) {
 					get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
 				}
-				if ( is_singular( 'post' ) || apcom_is_article_cpt() ) {
+				if ( is_singular( 'post' ) || apcom_is_article_cpt( $apcom_page_id ) || apcom_is_project_cpt( $apcom_page_id ) ) {
 					get_template_part( 'template-parts/page/partials/meta', 'comments' );
 				}
-				if ( is_author() || apcom_is_subject_cpt() ) {
+				if ( is_author() || apcom_is_subject_cpt( $apcom_page_id ) ) {
 					get_template_part( 'template-parts/page/partials/meta', 'website' );
 				}
 				?>

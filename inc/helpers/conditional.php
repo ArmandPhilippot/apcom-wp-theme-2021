@@ -92,7 +92,7 @@ function apcom_is_article_cpt( $post_id = null ) {
 		$post_id = get_queried_object_id();
 	}
 
-	return 'article' === get_post_type( $post_id );
+	return 0 !== $post_id && 'article' === get_post_type( $post_id );
 }
 
 /**
@@ -108,7 +108,7 @@ function apcom_is_project_cpt( $post_id = null ) {
 		$post_id = get_queried_object_id();
 	}
 
-	return 'project' === get_post_type( $post_id );
+	return 0 !== $post_id && 'project' === get_post_type( $post_id );
 }
 
 /**
@@ -124,7 +124,7 @@ function apcom_is_subject_cpt( $post_id = null ) {
 		$post_id = get_queried_object_id();
 	}
 
-	return 'subject' === get_post_type( $post_id );
+	return 0 !== $post_id && 'subject' === get_post_type( $post_id );
 }
 
 /**
@@ -140,7 +140,7 @@ function apcom_is_thematic_cpt( $post_id = null ) {
 		$post_id = get_queried_object_id();
 	}
 
-	return 'thematic' === get_post_type( $post_id );
+	return 0 !== $post_id && 'thematic' === get_post_type( $post_id );
 }
 
 /**

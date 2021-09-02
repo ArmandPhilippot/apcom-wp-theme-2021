@@ -323,11 +323,11 @@ if ( ! function_exists( 'apcom_get_posts_count' ) ) {
 				$meta_id  = get_the_ID();
 				$meta_key = null;
 
-				if ( apcom_is_thematic_cpt() ) {
+				if ( apcom_is_thematic_cpt( $page_id ) ) {
 					$meta_key = 'posts_in_thematic';
 				}
 
-				if ( apcom_is_subject_cpt() ) {
+				if ( apcom_is_subject_cpt( $page_id ) ) {
 					$meta_key = 'posts_in_subject';
 				}
 
