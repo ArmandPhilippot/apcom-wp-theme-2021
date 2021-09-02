@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/ArmandPhilippot/apcom/compare/v1.2.1...v1.2.2) (2021-09-02)
+
+### Bug Fixes
+
+-   display correct meta on search pages ([0b41c42](https://github.com/ArmandPhilippot/apcom/commit/0b41c42c3d843731c10cd36fc79c9a3a4a2d8231))
+-   remove categories & reading time depending on CPT ([d8c9280](https://github.com/ArmandPhilippot/apcom/commit/d8c9280fb40de9519f28648dcec63907bba58e8e))
+-   remove thumbnail in page header for search pages ([88854dc](https://github.com/ArmandPhilippot/apcom/commit/88854dc87884be3b1354105a892daec12a89d55e))
+-   rewrite get posts count function ([d46d6a8](https://github.com/ArmandPhilippot/apcom/commit/d46d6a838c14f791f456fd75058e78f072af7df4))
+
 ### [1.2.1](https://github.com/ArmandPhilippot/apcom/compare/v1.2.0...v1.2.1) (2021-09-02)
 
 ### Bug Fixes
