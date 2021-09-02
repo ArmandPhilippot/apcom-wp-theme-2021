@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/ArmandPhilippot/apcom/compare/v1.2.2...v1.2.3) (2021-09-02)
+
+### Bug Fixes
+
+-   add project CPT to posts count ([9083ff7](https://github.com/ArmandPhilippot/apcom/commit/9083ff70c698a3d202123a6f20b81aac3ae92826))
+-   display correct meta when post is a project CPT ([5268353](https://github.com/ArmandPhilippot/apcom/commit/5268353877d71da2b517355a64a728facf3df789))
+-   prevent unwanted meta to appear ([14a4ee1](https://github.com/ArmandPhilippot/apcom/commit/14a4ee13ef564db87ea605b14e7a49ce5d55b155))
+
 ### [1.2.2](https://github.com/ArmandPhilippot/apcom/compare/v1.2.1...v1.2.2) (2021-09-02)
 
 ### Bug Fixes
