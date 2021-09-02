@@ -12,8 +12,8 @@ if ( ! apcom_is_frontpage() ) {
 	<header class="page__header">
 		<h1 class="page__title" itemprop="headline name">
 			<?php
-			if ( apcom_is_subject_cpt() ) {
-				echo get_the_post_thumbnail( null, 'post-thumbnail', array( 'class' => 'page__logo' ) );
+			if ( ! is_search() && apcom_is_subject_cpt() ) {
+				echo get_the_post_thumbnail( get_queried_object_id(), 'post-thumbnail', array( 'class' => 'page__logo' ) );
 			}
 			echo esc_html( apcom_get_page_title() );
 			?>
