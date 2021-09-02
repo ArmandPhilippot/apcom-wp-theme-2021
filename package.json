@@ -97,7 +97,7 @@
 	},
 	"standard-version": {
 		"scripts": {
-			"postbump": "npm run bump && git add -A"
+			"postbump": "npm run bump && npm run build && git add -A"
 		}
 	}
 }
