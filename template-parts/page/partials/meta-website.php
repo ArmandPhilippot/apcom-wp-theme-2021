@@ -14,10 +14,10 @@ if ( is_author() ) {
 	$apcom_website_url = get_the_author_meta( 'user_url', $apcom_author_id );
 } elseif ( apcom_is_subject_cpt() ) {
 	$apcom_subject_website = get_post_meta( get_queried_object_id(), 'official_website' );
-	$apcom_website_url     = $apcom_subject_website[0];
+	$apcom_website_url     = $apcom_subject_website ? $apcom_subject_website[0] : '';
 }
 
-if ( $apcom_website_url && '' !== $apcom_website_url ) {
+if ( $apcom_website_url ) {
 	?>
 	<div class="meta__item meta__item--has-icon meta__item--website">
 		<dt class="meta__term"><?php esc_html_e( 'Website:', 'APCom' ); ?></dt>

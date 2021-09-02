@@ -21,14 +21,16 @@ if ( ! apcom_is_frontpage() ) {
 		<?php if ( ! apcom_is_contact_page() ) { ?>
 			<dl class="page__meta meta">
 				<?php
-				if ( is_single() || is_page() ) {
+				if ( ! apcom_is_listing_page() ) {
 					get_template_part( 'template-parts/page/partials/meta', 'date' );
-					if ( ! apcom_is_thematic_cpt() && ! apcom_is_subject_cpt() ) {
-						get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
-					}
+				}
+				if ( apcom_is_listing_page() || apcom_is_thematic_cpt() || apcom_is_subject_cpt() ) {
+					get_template_part( 'template-parts/page/partials/meta', 'posts-count' );
+				}
+				if ( ( is_single() || is_page() ) && ! apcom_is_thematic_cpt() && ! apcom_is_subject_cpt() ) {
+					get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
 					get_template_part( 'template-parts/page/partials/meta', 'comments' );
 				}
-				get_template_part( 'template-parts/page/partials/meta', 'posts-count' );
 				if ( is_author() || apcom_is_subject_cpt() ) {
 					get_template_part( 'template-parts/page/partials/meta', 'website' );
 				}

@@ -13,9 +13,9 @@
 	</dt>
 	<dd class="meta__description">
 		<?php
-		$apcom_attachment_parent_link  = get_permalink( $post->post_parent );
-		$apcom_attachment_parent_title = get_the_title( $post->post_parent );
 		if ( $post->post_parent ) {
+			$apcom_attachment_parent_link  = get_permalink( $post->post_parent );
+			$apcom_attachment_parent_title = get_the_title( $post->post_parent );
 			?>
 			<a href="<?php echo esc_url( $apcom_attachment_parent_link ); ?>"><?php echo esc_html( $apcom_attachment_parent_title ); ?></a>
 			<?php
