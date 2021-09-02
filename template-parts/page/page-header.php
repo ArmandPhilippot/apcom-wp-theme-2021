@@ -20,27 +20,9 @@ if ( ! apcom_is_frontpage() ) {
 			echo esc_html( apcom_get_page_title() );
 			?>
 		</h1>
-		<?php if ( ! apcom_is_contact_page() ) { ?>
-			<dl class="page__meta meta">
-				<?php
-				if ( ! apcom_is_listing_page() ) {
-					get_template_part( 'template-parts/page/partials/meta', 'date' );
-				}
-				if ( apcom_is_listing_page() || apcom_is_thematic_cpt( $apcom_page_id ) || apcom_is_subject_cpt( $apcom_page_id ) ) {
-					get_template_part( 'template-parts/page/partials/meta', 'posts-count', array( 'caller_id' => $apcom_page_id ) );
-				}
-				if ( is_singular( 'post' ) || is_page() || apcom_is_article_cpt( $apcom_page_id ) || apcom_is_project_cpt( $apcom_page_id ) ) {
-					get_template_part( 'template-parts/page/partials/meta', 'reading-time' );
-				}
-				if ( is_singular( 'post' ) || apcom_is_article_cpt( $apcom_page_id ) || apcom_is_project_cpt( $apcom_page_id ) ) {
-					get_template_part( 'template-parts/page/partials/meta', 'comments' );
-				}
-				if ( is_author() || apcom_is_subject_cpt( $apcom_page_id ) ) {
-					get_template_part( 'template-parts/page/partials/meta', 'website' );
-				}
-				?>
-			</dl>
-			<?php
+		<?php
+		if ( ! apcom_is_contact_page() ) {
+			get_template_part( 'template-parts/page/partials/header', 'meta', array( 'page_id' => $apcom_page_id ) );
 			get_template_part( 'template-parts/page/partials/header', 'feed' );
 		}
 		if ( apcom_is_listing_page() && ! is_author() ) {
