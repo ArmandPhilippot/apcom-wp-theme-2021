@@ -76,12 +76,10 @@ module.exports = {
 					name: process.env.WP_THEME_OPEN,
 				},
 			},
-		port,
 		proxy: {
 			'/': {
 				target: siteURL,
 				secure: false,
-				changeOrigin: true,
 			},
 		},
 		static: false,
