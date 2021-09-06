@@ -102,11 +102,8 @@ a {
 	&.tel,
 	&[hreflang] {
 		&::after {
-			display: inline-flex;
-			align-items: center;
-			position: relative;
+			display: inline-block;
 			font-size: fun.get-var(font-size-sm);
-			width: fun.convert-px(12);
 			margin-left: fun.convert-px(6);
 			margin-right: fun.convert-px(3);
 		}
@@ -115,7 +112,7 @@ a {
 	&.download {
 		&::after {
 			content: url(fun.encode-svg(
-				'<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="m49 80.048-28.445-30.77 19.32 4.095V5.06h18.252v48.313l21.318-4.095z"/><path fill="#{var.$color_chathams-blue}" d="M0 67.57v27.37h100V67.57H87.973v15.344H12.027V67.569z"/></svg>'
+				'<svg width="12" height="12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="m49 80.048-28.445-30.77 19.32 4.095V5.06h18.252v48.313l21.318-4.095z"/><path fill="#{var.$color_chathams-blue}" d="M0 67.57v27.37h100V67.57H87.973v15.344H12.027V67.569z"/></svg>'
 			));
 		}
 	}
@@ -123,7 +120,7 @@ a {
 	&.external {
 		&::after {
 			content: url(fun.encode-svg(
-				'<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M100 0 59.543 5.887l20.8 6.523-51.134 51.134 7.249 7.248L87.59 19.66l6.522 20.798z"/><path fill="#{var.$color_chathams-blue}" d="M4 10a4 4 0 0 0-4 4v82a4 4 0 0 0 4 4h82a4 4 0 0 0 4-4V62.314h-8V92H8V18h29.686v-8z"/></svg>'
+				'<svg width="12" height="12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M100 0 59.543 5.887l20.8 6.523-51.134 51.134 7.249 7.248L87.59 19.66l6.522 20.798z"/><path fill="#{var.$color_chathams-blue}" d="M4 10a4 4 0 0 0-4 4v82a4 4 0 0 0 4 4h82a4 4 0 0 0 4-4V62.314h-8V92H8V18h29.686v-8z"/></svg>'
 			));
 		}
 	}
@@ -131,7 +128,7 @@ a {
 	&.mailto {
 		&::after {
 			content: url(fun.encode-svg(
-				'<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M100 28.3 66.288 50.512 100 71.825zM0 71.825l33.712-21.313L0 28.3zm93.75-56.2H6.25c-3.119 0-5.594 2.325-6.063 5.319L50 53.763l49.813-32.82c-.47-2.993-2.944-5.318-6.063-5.318zM60.563 54.288l-8.844 5.825a3.122 3.122 0 0 1-1.719.512c-.6 0-1.194-.169-1.719-.512l-8.843-5.832L.2 79.1c.481 2.969 2.944 5.275 6.05 5.275h87.5c3.106 0 5.569-2.306 6.05-5.275z"/></svg>'
+				'<svg width="12" height="12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M100 28.3 66.288 50.512 100 71.825zM0 71.825l33.712-21.313L0 28.3zm93.75-56.2H6.25c-3.119 0-5.594 2.325-6.063 5.319L50 53.763l49.813-32.82c-.47-2.993-2.944-5.318-6.063-5.318zM60.563 54.288l-8.844 5.825a3.122 3.122 0 0 1-1.719.512c-.6 0-1.194-.169-1.719-.512l-8.843-5.832L.2 79.1c.481 2.969 2.944 5.275 6.05 5.275h87.5c3.106 0 5.569-2.306 6.05-5.275z"/></svg>'
 			));
 		}
 	}
@@ -139,7 +136,7 @@ a {
 	&.tel {
 		&::after {
 			content: url(fun.encode-svg(
-				'<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M23.096 5.027C18.636 7.6 12.518 16.516 12.503 22.414c-.045 17.596 18.65 60.59 43.593 75.504 5.133 3.07 12.213 2.297 17.932.548 5.112-1.563 13.014-9.37 13.014-9.37 2.764-3.05-7.806-21.438-11.87-20.56l-8.06 2.287C56.206 77.12 30.758 32.61 41.477 26.42l6.01-5.836C50.603 17.146 39.203-.75 35.617.025c0 0-9.317 3.152-12.521 5.002z"/></svg>'
+				'<svg width="12" height="12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M23.096 5.027C18.636 7.6 12.518 16.516 12.503 22.414c-.045 17.596 18.65 60.59 43.593 75.504 5.133 3.07 12.213 2.297 17.932.548 5.112-1.563 13.014-9.37 13.014-9.37 2.764-3.05-7.806-21.438-11.87-20.56l-8.06 2.287C56.206 77.12 30.758 32.61 41.477 26.42l6.01-5.836C50.603 17.146 39.203-.75 35.617.025c0 0-9.317 3.152-12.521 5.002z"/></svg>'
 			));
 		}
 	}
@@ -152,49 +149,35 @@ a {
 			margin-left: 0;
 		}
 
-		&.download,
-		&.external,
-		&.mailto,
-		&.tel {
-			&::after {
-				margin-left: fun.convert-px(5);
-				margin-right: fun.get-var(spacing-md);
-			}
-		}
-
 		&.download {
 			&::after {
-				content: url(fun.encode-svg(
-						'<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="m49 80.048-28.445-30.77 19.32 4.095V5.06h18.252v48.313l21.318-4.095z"/><path fill="#{var.$color_chathams-blue}" d="M0 67.57v27.37h100V67.57H87.973v15.344H12.027V67.569z"/></svg>'
-					))
-					"\0000a0["attr(hreflang) "]";
+				content: "\0000a0["attr(hreflang) "]\0000a0"url(fun.encode-svg(
+						'<svg width="12" height="12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="m49 80.048-28.445-30.77 19.32 4.095V5.06h18.252v48.313l21.318-4.095z"/><path fill="#{var.$color_chathams-blue}" d="M0 67.57v27.37h100V67.57H87.973v15.344H12.027V67.569z"/></svg>'
+					));
 			}
 		}
 
 		&.external {
 			&::after {
-				content: url(fun.encode-svg(
-						'<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M100 0 59.543 5.887l20.8 6.523-51.134 51.134 7.249 7.248L87.59 19.66l6.522 20.798z"/><path fill="#{var.$color_chathams-blue}" d="M4 10a4 4 0 0 0-4 4v82a4 4 0 0 0 4 4h82a4 4 0 0 0 4-4V62.314h-8V92H8V18h29.686v-8z"/></svg>'
-					))
-					"\0000a0["attr(hreflang) "]";
+				content: "\0000a0["attr(hreflang) "]\0000a0"url(fun.encode-svg(
+						'<svg width="12" height="12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M100 0 59.543 5.887l20.8 6.523-51.134 51.134 7.249 7.248L87.59 19.66l6.522 20.798z"/><path fill="#{var.$color_chathams-blue}" d="M4 10a4 4 0 0 0-4 4v82a4 4 0 0 0 4 4h82a4 4 0 0 0 4-4V62.314h-8V92H8V18h29.686v-8z"/></svg>'
+					));
 			}
 		}
 
 		&.mailto {
 			&::after {
-				content: url(fun.encode-svg(
-						'<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M100 28.3 66.288 50.512 100 71.825zM0 71.825l33.712-21.313L0 28.3zm93.75-56.2H6.25c-3.119 0-5.594 2.325-6.063 5.319L50 53.763l49.813-32.82c-.47-2.993-2.944-5.318-6.063-5.318zM60.563 54.288l-8.844 5.825a3.122 3.122 0 0 1-1.719.512c-.6 0-1.194-.169-1.719-.512l-8.843-5.832L.2 79.1c.481 2.969 2.944 5.275 6.05 5.275h87.5c3.106 0 5.569-2.306 6.05-5.275z"/></svg>'
-					))
-					"\0000a0["attr(hreflang) "]";
+				content: "\0000a0["attr(hreflang) "]\0000a0"url(fun.encode-svg(
+						'<svg width="12" height="12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M100 28.3 66.288 50.512 100 71.825zM0 71.825l33.712-21.313L0 28.3zm93.75-56.2H6.25c-3.119 0-5.594 2.325-6.063 5.319L50 53.763l49.813-32.82c-.47-2.993-2.944-5.318-6.063-5.318zM60.563 54.288l-8.844 5.825a3.122 3.122 0 0 1-1.719.512c-.6 0-1.194-.169-1.719-.512l-8.843-5.832L.2 79.1c.481 2.969 2.944 5.275 6.05 5.275h87.5c3.106 0 5.569-2.306 6.05-5.275z"/></svg>'
+					));
 			}
 		}
 
 		&.tel {
 			&::after {
-				content: url(fun.encode-svg(
-						'<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M23.096 5.027C18.636 7.6 12.518 16.516 12.503 22.414c-.045 17.596 18.65 60.59 43.593 75.504 5.133 3.07 12.213 2.297 17.932.548 5.112-1.563 13.014-9.37 13.014-9.37 2.764-3.05-7.806-21.438-11.87-20.56l-8.06 2.287C56.206 77.12 30.758 32.61 41.477 26.42l6.01-5.836C50.603 17.146 39.203-.75 35.617.025c0 0-9.317 3.152-12.521 5.002z"/></svg>'
-					))
-					"\0000a0["attr(hreflang) "]";
+				content: "\0000a0["attr(hreflang) "]\0000a0"url(fun.encode-svg(
+						'<svg width="12" height="12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="#{var.$color_chathams-blue}" d="M23.096 5.027C18.636 7.6 12.518 16.516 12.503 22.414c-.045 17.596 18.65 60.59 43.593 75.504 5.133 3.07 12.213 2.297 17.932.548 5.112-1.563 13.014-9.37 13.014-9.37 2.764-3.05-7.806-21.438-11.87-20.56l-8.06 2.287C56.206 77.12 30.758 32.61 41.477 26.42l6.01-5.836C50.603 17.146 39.203-.75 35.617.025c0 0-9.317 3.152-12.521 5.002z"/></svg>'
+					));
 			}
 		}
 	}
