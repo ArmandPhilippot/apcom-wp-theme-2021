@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.6](https://github.com/ArmandPhilippot/apcom/compare/v1.2.5...v1.2.6) (2021-09-06)
+
+### Bug Fixes
+
+-   display correctly icons after links ([6af6f0a](https://github.com/ArmandPhilippot/apcom/commit/6af6f0a9ace4cf59623b30b857aa28075451c24f))
+
 ### [1.2.5](https://github.com/ArmandPhilippot/apcom/compare/v1.2.4...v1.2.5) (2021-09-02)
 
 ### [1.2.4](https://github.com/ArmandPhilippot/apcom/compare/v1.2.3...v1.2.4) (2021-09-02)
