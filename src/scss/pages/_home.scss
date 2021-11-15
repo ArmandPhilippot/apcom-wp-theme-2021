@@ -1,4 +1,5 @@
 @use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as mix;
 @use "../abstracts/placeholders";
 @use "../abstracts/variables" as var;
 @use "../components/button";
@@ -85,6 +86,21 @@
 
 			&.feed {
 				@extend .btn--feed;
+			}
+		}
+	}
+
+	@include mix.media("screen") {
+		@include mix.dimensions(null, "sm") {
+			.wp-block-ptqblock {
+				&__list.columns-3 {
+					grid-template-columns: minmax(0, 1fr);
+					gap: fun.get-var(spacing-sm);
+				}
+
+				&__featured-image.aligncenter {
+					text-align: left;
+				}
 			}
 		}
 	}
