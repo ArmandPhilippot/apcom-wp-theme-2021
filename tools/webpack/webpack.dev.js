@@ -5,7 +5,7 @@ require( 'dotenv' ).config();
 const protocol = process.env.WP_THEME_PROTOCOL;
 const host = process.env.WP_THEME_HOST;
 const port = process.env.WP_THEME_PORT;
-const siteURL = protocol + '://' + host + ':' + port + '/';
+const siteURL = `${ protocol }://${ host }`;
 const openIsBoolean = process.env.WP_THEME_OPEN === 'true' || process.env.WP_THEME_OPEN === 'false';
 const isHotReload = process.env.WP_THEME_HOT_RELOAD === 'true';
 const isHttps = protocol === 'https';
@@ -61,6 +61,7 @@ module.exports = {
 			writeToDisk: true,
 		},
 		host,
+		port,
 		hot: isHotReload,
 		https: ! isHttps
 			? false
@@ -79,8 +80,13 @@ module.exports = {
 		proxy: {
 			'/': {
 				target: siteURL,
+				changeOrigin: false,
 				secure: false,
 			},
+		},
+		allowedHosts: 'all',
+		headers: {
+			'Access-Control-Allow-Origin': '*',
 		},
 		static: false,
 		watchFiles: paths.files,
