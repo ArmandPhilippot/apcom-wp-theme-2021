@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.7](https://github.com/ArmandPhilippot/apcom/compare/v1.2.6...v1.2.7) (2021-11-15)
+
+### Bug Fixes
+
+-   **home:** display last articles stacked on small viewport ([b1c6a59](https://github.com/ArmandPhilippot/apcom/commit/b1c6a59f4e6267a91c615cbe2b9f1e0f5eaf9a53))
+
 ### [1.2.6](https://github.com/ArmandPhilippot/apcom/compare/v1.2.5...v1.2.6) (2021-09-06)
 
 ### Bug Fixes
