@@ -33,5 +33,11 @@
 	"scripts": {
 		"lint": "phpcs --standard=phpcs.xml",
 		"fix": "phpcbf --standard=phpcs.xml"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"composer/installers": true
+		}
 	}
 }
