@@ -1,5 +1,5 @@
 {
-	"name": "armandphilippot/armandphilippot-com",
+	"name": "armandphilippot/apcom-wp-theme",
 	"description": "A WordPress theme for my personal website.",
 	"license": "GPL-2.0-or-later",
 	"authors": [
@@ -9,10 +9,10 @@
 			"homepage": "https://www.armandphilippot.com/"
 		}
 	],
-	"homepage": "https://github.com/ArmandPhilippot/apcom#readme",
+	"homepage": "https://github.com/ArmandPhilippot/apcom-wp-theme#readme",
 	"support": {
-		"issues": "https://github.com/ArmandPhilippot/apcom/issues",
-		"source": "https://github.com/ArmandPhilippot/apcom"
+		"issues": "https://github.com/ArmandPhilippot/apcom-wp-theme/issues",
+		"source": "https://github.com/ArmandPhilippot/apcom-wp-theme"
 	},
 	"keywords": [
 		"WordPress",
